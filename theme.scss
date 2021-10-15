@@ -548,13 +548,15 @@ $interval: 8px;
 .toolbar {
   height: 30px;
   z-index: 99;
-  #toolbarVIP:empty {
-    -webkit-app-region: drag;
-    margin: 5px;
-    width: 25px;
-    height: 20px;
-    background-image: url("src/icons/siyuan.svg");
-    background-repeat: round;
+  #toolbarVIP {
+    &:empty {
+      -webkit-app-region: drag;
+      margin: 5px;
+      width: 25px;
+      height: 20px;
+      background-image: url("src/icons/siyuan.svg");
+      background-repeat: round;
+    }
   }
   .toolbar__item {
     color: $rc-topbar-color;
@@ -921,30 +923,21 @@ $interval: 8px;
 .emojis {
   padding: 0 2px 0;
   > div:first-child {
-    margin: 8px 0 2px;
-    // margin-bottom: 16px;
-    .b3-form__icon-icon {
-      top: (40px - 16px)/2;
-      left: (36px - 16px)/2;
-    }
-    input {
-      height: 40px;
-    }
+    margin: 4px 0 6px;
     .block__icon {
       @include block__icon__model(28px, 14px);
-      margin-top: (40px - 28px)/2;
     }
   }
   .emojis__panel {
     .emojis__title {
-      padding: 24px 0 10px;
-      font-size: 13px;
+      padding: 18px 0 8px;
+      font-size: 11px;
       font-weight: 500;
       color: rgba(31, 34, 37, 0.7);
       letter-spacing: 0.3px;
-      // &:first-child {
-      //   padding-top: 0;
-      // }
+      &:first-child {
+        padding-top: 12px;
+      }
     }
     .fn__hr {
       display: none;
@@ -965,16 +958,17 @@ $interval: 8px;
         align-items: center;
         -webkit-box-pack: center;
         justify-content: center;
-        height: 40px;
-        width: 40px;
-        border-radius: 8px;
+        height: 32px;
+        width: 32px;
+        font-size: 20px;
+        border-radius: 4px;
         background-color: transparent;
         border: 1px solid transparent;
         box-sizing: border-box;
         cursor: pointer;
         padding: 0;
         &[data-unicode*="-"] {
-          width: 80px;
+          width: 64px;
         }
         &:hover {
           background-color: rgb(247, 247, 247);
@@ -1148,7 +1142,7 @@ $content-margin: "max(calc(50% - 354px), 96px)";
         }
       }
     }
-    
+
     .protyle-background__icon {
       left: #{$content-margin} !important;
       width: 78px;

@@ -953,7 +953,7 @@ $interval: 8px;
       }
     }
     .emojis__content {
-      div[style="margin-left: 4px"] {
+      div[style*="4px"] {
         height: 28px;
         line-height: 28px;
         width: 100%;

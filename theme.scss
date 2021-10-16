@@ -928,6 +928,7 @@ $interval: 8px;
       @include block__icon__model(28px, 14px);
     }
   }
+
   .emojis__panel {
     .emojis__title {
       padding: 18px 0 8px;
@@ -991,17 +992,19 @@ $interval: 8px;
       margin: 0 6px 0 0;
       z-index: 99;
       &[data-type="pin"] {
-        &[aria-label="取消钉住"] {
-          svg {
-            transition: transform 300ms ease;
+        $pin-transition: transform 300ms ease;
+        svg {
+          transform: rotate(0deg);
+          transition: $pin-transition;
+          &.ft__primary {
+            transform: rotate(45deg);
+            transition: $pin-transition;
           }
+        }
+        &[aria-label="取消钉住"] {
           &:hover {
             background-color: $rc-dock-active;
           }
-        }
-        &[aria-label="钉住"] svg {
-          transition: transform 300ms ease;
-          transform: rotate(45deg);
         }
       }
       &[data-type="close"] {
@@ -1009,7 +1012,6 @@ $interval: 8px;
       }
     }
   }
-
   .protyle-breadcrumb {
     padding-right: 74px;
   }
@@ -1147,11 +1149,15 @@ $content-margin: "max(calc(50% - 354px), 96px)";
       left: #{$content-margin} !important;
       width: 78px;
       height: 78px;
-      font-size: 58px;
+      font-size: 54px;
       top: calc(30vh - 42px);
       line-height: 78px;
       text-align: center;
       border-radius: 4px;
+      svg {
+        width: 78px;
+        height: 78px;
+      }
       &:hover {
         background-color: rgba($rc-theme-surface-color, 0.5);
       }

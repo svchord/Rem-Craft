@@ -3,18 +3,26 @@ $rc-theme-primary: rgb(0, 135, 255);
 $rc-theme-primary-light: rgba($rc-theme-primary, 0.54);
 $rc-theme-primary-lighter: rgba($rc-theme-primary, 0.38);
 $rc-theme-primary-lightest: rgba($rc-theme-primary, 0.12);
+
 $rc-background: rgb(255, 255, 255);
-$rc-theme-surface: rgb(249, 249, 249); //rgb(252, 252, 252);
-$rc-theme-surface-color: rgb(238, 238, 238);
-$rc-theme-surface-hover: rgb(225, 225, 225); //rgb(231, 231, 231);
+
+$rc-theme-surface: rgb(252,252,252); //rgb(252, 252, 252);
+$rc-theme-surface-button: rgb(247,247,247);
+$rc-theme-surface-border: rgb(238, 238, 238);
+$rc-theme-surface-hover: rgb(225,225,225); //rgb(231, 231, 231);
+f
+$rc-theme-list-hover:rgb(246,246,246);
+$rc-theme-list-focus:rgb(246,246,246);
 
 //文字颜色
 $rc-theme-on-background: rgb(31, 34, 37);
 $rc-theme-on-surface: rgb(53, 56, 59); //rgba($rc-theme-on-background, 0.8);
 
-$rc-surface-boder: 1px solid $rc-theme-surface-color;
+$rc-surface-boder: 1px solid $rc-theme-surface-border;
 
 $rc-border-color: rgb(238, 238, 238);
+
+
 
 //页签
 $rc-topbar-color: #424243;
@@ -26,7 +34,7 @@ $rc-width-time: 0.25s;
 //滚动条
 $rc-scroll-color: rgba(0, 0, 0, 0.1);
 
-$rc-dock-active: rgba($rc-theme-primary, 0.2);
+$rc-dock-active: rgba($rc-theme-primary, 0.1);
 
 $rc-mark-background: rgb(212, 240, 255);
 
@@ -86,7 +94,7 @@ $rc-tooltips-color: rgb(15, 15, 15);
   --b3-scroll-color: #{$rc-scroll-color};
 
   // 列表
-  --b3-list-hover: #{$rc-theme-surface-color};
+  --b3-list-hover: #{$rc-theme-list-hover};
 
   // 菜单
   --b3-menu-background: #{$rc-menu-background};
@@ -230,7 +238,7 @@ $interval: 8px;
     margin: 1px 0px;
     cursor: pointer;
     &:hover {
-      background-color: $rc-theme-surface-color;
+      background-color: $rc-theme-surface-button;
     }
     &.dock__item--active:hover {
       background-color: $rc-dock-active;
@@ -285,7 +293,7 @@ $interval: 8px;
   padding: 0;
   border-radius: 4px;
   &:hover {
-    background-color: $rc-theme-surface-color;
+    background-color: $rc-theme-surface-button;
   }
   &.ft__primary:hover {
     background-color: $rc-dock-active;
@@ -434,7 +442,7 @@ $interval: 8px;
     }
 
     &.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
-      background-color: $rc-theme-surface-color !important;
+      background-color: $rc-theme-list-focus !important;
     }
     &.b3-list-item--big {
       margin-bottom: 8px;
@@ -652,7 +660,7 @@ $interval: 8px;
       }
     }
     &.item--focus {
-      background-color: $rc-theme-surface-color;
+      background-color: $rc-theme-list-focus;
       * {
         opacity: 1 !important;
       }
@@ -672,7 +680,7 @@ $interval: 8px;
     height: 24px;
     line-height: 24px;
     &:hover {
-      background-color: $rc-theme-surface-color;
+      background-color: $rc-theme-list-hover;
     }
     .protyle-breadcrumb__text:not(:empty) {
       margin-left: 4px;
@@ -994,10 +1002,10 @@ $interval: 8px;
       &[data-type="pin"] {
         $pin-transition: transform 300ms ease;
         svg {
-          transform: rotate(0deg);
+          transform: rotate(45deg);
           transition: $pin-transition;
           &.ft__primary {
-            transform: rotate(45deg);
+            transform: rotate(0deg);
             transition: $pin-transition;
           }
         }
@@ -1027,7 +1035,7 @@ $interval: 8px;
 
 //开关
 .b3-switch {
-  background-color: $rc-theme-surface-color;
+  background-color: $rc-theme-list-hover;
 }
 
 //label
@@ -1044,6 +1052,9 @@ $interval: 8px;
 // .layout__resize:hover:after{
 //   background-color: $rc-theme-surface-hover;
 // }
+::-webkit-scrollbar{
+  width: 6px;
+}
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
@@ -1159,7 +1170,7 @@ $content-margin: "max(calc(50% - 354px), 96px)";
         height: 78px;
       }
       &:hover {
-        background-color: rgba($rc-theme-surface-color, 0.5);
+        background-color: rgba($rc-theme-surface-button);
       }
     }
     &:hover {

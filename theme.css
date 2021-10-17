@@ -12,7 +12,7 @@
   --b3-theme-secondary: #f3a92f;
   --b3-theme-background: white;
   --b3-theme-background-light: white;
-  --b3-theme-surface: #f9f9f9;
+  --b3-theme-surface: #fcfcfc;
   --b3-theme-surface-light: rgba(243, 243, 243, 0.86);
   --b3-theme-error: #d23f31;
   --b3-theme-on-primary: #fff;
@@ -33,7 +33,7 @@
     "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji";
   --b3-border-color: white;
   --b3-scroll-color: rgba(0, 0, 0, 0.1);
-  --b3-list-hover: #eeeeee;
+  --b3-list-hover: #f6f6f6;
   --b3-menu-background: #fff;
   --b3-tooltips-color: #0f0f0f;
   --b3-card-error-color: rgb(97, 26, 21);
@@ -133,7 +133,7 @@
 .dock--vertical_model, .dock--vertical div:first-child:not(:empty), .dock--vertical div:last-child:not(:empty) {
   border-radius: 6px;
   padding: 4px;
-  background-color: #f9f9f9;
+  background-color: #fcfcfc;
   border: 1px solid #eeeeee;
 }
 
@@ -143,7 +143,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #f9f9f9;
+  background-color: #fcfcfc;
   -webkit-transform: translateZ(0px) scale(1);
           transform: translateZ(0px) scale(1);
   line-height: 0;
@@ -160,11 +160,11 @@
 }
 
 .dock--vertical_model span:hover, .dock--vertical div:first-child:not(:empty) span:hover, .dock--vertical div:last-child:not(:empty) span:hover {
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
 }
 
 .dock--vertical_model span.dock__item--active:hover, .dock--vertical div:first-child:not(:empty) span.dock__item--active:hover, .dock--vertical div:last-child:not(:empty) span.dock__item--active:hover {
-  background-color: rgba(0, 135, 255, 0.2);
+  background-color: rgba(0, 135, 255, 0.1);
 }
 
 .dock--vertical_model span svg, .dock--vertical div:first-child:not(:empty) span svg, .dock--vertical div:last-child:not(:empty) span svg {
@@ -241,11 +241,11 @@
 }
 
 .block__icons .block__icon:hover {
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
 }
 
 .block__icons .block__icon.ft__primary:hover {
-  background-color: rgba(0, 135, 255, 0.2);
+  background-color: rgba(0, 135, 255, 0.1);
 }
 
 .block__icons .block__icon svg {
@@ -437,7 +437,7 @@
 
 .b3-list--files .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom),
 .b3-list--background .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
-  background-color: #eeeeee !important;
+  background-color: #f6f6f6 !important;
 }
 
 .b3-list--files .b3-list-item.b3-list-item--big,
@@ -693,7 +693,7 @@
 }
 
 .layout-tab-bar .item:not(.item--focus):hover {
-  background-color: #f9f9f9;
+  background-color: #fcfcfc;
 }
 
 .layout-tab-bar .item * {
@@ -717,7 +717,7 @@
 }
 
 .layout-tab-bar .item.item--focus {
-  background-color: #eeeeee;
+  background-color: #f6f6f6;
 }
 
 .layout-tab-bar .item.item--focus * {
@@ -736,7 +736,7 @@
 }
 
 .protyle-breadcrumb .protyle-breadcrumb__item:hover {
-  background-color: #eeeeee;
+  background-color: #f6f6f6;
 }
 
 .protyle-breadcrumb .protyle-breadcrumb__item .protyle-breadcrumb__text:not(:empty) {
@@ -766,11 +766,11 @@
 }
 
 .protyle-breadcrumb .block__icon:hover {
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
 }
 
 .protyle-breadcrumb .block__icon.ft__primary:hover {
-  background-color: rgba(0, 135, 255, 0.2);
+  background-color: rgba(0, 135, 255, 0.1);
 }
 
 .protyle-breadcrumb .block__icon svg {
@@ -950,12 +950,12 @@
 
 .b3-dialog__container[style="width:50vw"] .b3-dialog__content .block__icon:hover,
 .b3-dialog__container[style="width:50vw"] .b3-form__space .block__icon:hover {
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
 }
 
 .b3-dialog__container[style="width:50vw"] .b3-dialog__content .block__icon.ft__primary:hover,
 .b3-dialog__container[style="width:50vw"] .b3-form__space .block__icon.ft__primary:hover {
-  background-color: rgba(0, 135, 255, 0.2);
+  background-color: rgba(0, 135, 255, 0.1);
 }
 
 .b3-dialog__container[style="width:50vw"] .b3-dialog__content .block__icon svg,
@@ -1067,11 +1067,11 @@
 }
 
 .emojis > div:first-child .block__icon:hover {
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
 }
 
 .emojis > div:first-child .block__icon.ft__primary:hover {
-  background-color: rgba(0, 135, 255, 0.2);
+  background-color: rgba(0, 135, 255, 0.1);
 }
 
 .emojis > div:first-child .block__icon svg {
@@ -1158,11 +1158,11 @@
 }
 
 .block__popover .block__icons--border .block__icon:hover {
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
 }
 
 .block__popover .block__icons--border .block__icon.ft__primary:hover {
-  background-color: rgba(0, 135, 255, 0.2);
+  background-color: rgba(0, 135, 255, 0.1);
 }
 
 .block__popover .block__icons--border .block__icon svg {
@@ -1172,15 +1172,6 @@
 }
 
 .block__popover .block__icons--border .block__icon[data-type="pin"] svg {
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-  -webkit-transition: -webkit-transform 300ms ease;
-  transition: -webkit-transform 300ms ease;
-  transition: transform 300ms ease;
-  transition: transform 300ms ease, -webkit-transform 300ms ease;
-}
-
-.block__popover .block__icons--border .block__icon[data-type="pin"] svg.ft__primary {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   -webkit-transition: -webkit-transform 300ms ease;
@@ -1189,8 +1180,17 @@
   transition: transform 300ms ease, -webkit-transform 300ms ease;
 }
 
+.block__popover .block__icons--border .block__icon[data-type="pin"] svg.ft__primary {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+}
+
 .block__popover .block__icons--border .block__icon[data-type="pin"][aria-label="取消钉住"]:hover {
-  background-color: rgba(0, 135, 255, 0.2);
+  background-color: rgba(0, 135, 255, 0.1);
 }
 
 .block__popover .block__icons--border .block__icon[data-type="close"] {
@@ -1201,11 +1201,11 @@
 }
 
 .block__popover .block__icons--border .block__icon[data-type="close"]:hover {
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
 }
 
 .block__popover .block__icons--border .block__icon[data-type="close"].ft__primary:hover {
-  background-color: rgba(0, 135, 255, 0.2);
+  background-color: rgba(0, 135, 255, 0.1);
 }
 
 .block__popover .block__icons--border .block__icon[data-type="close"] svg {
@@ -1219,7 +1219,7 @@
 }
 
 .b3-select {
-  background-color: #f9f9f9;
+  background-color: #fcfcfc;
 }
 
 .b3-select:focus {
@@ -1228,7 +1228,7 @@
 }
 
 .b3-switch {
-  background-color: #eeeeee;
+  background-color: #f6f6f6;
 }
 
 .b3-label {
@@ -1237,6 +1237,10 @@
 
 .b3-tooltips::before {
   border: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -1377,7 +1381,7 @@
 }
 
 .protyle .protyle-background .protyle-background__icon:hover {
-  background-color: rgba(238, 238, 238, 0.5);
+  background-color: rgba(247, 247, 247, 0.5);
 }
 
 .protyle .protyle-background:hover .protyle-icons {
@@ -1410,3 +1414,4 @@
   line-height: 22px;
   font-weight: 600;
 }
+/*# sourceMappingURL=theme.css.map */

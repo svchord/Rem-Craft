@@ -160,7 +160,7 @@
 }
 
 .dock--vertical_model span:hover, .dock--vertical div:first-child:not(:empty) span:hover, .dock--vertical div:last-child:not(:empty) span:hover {
-  background-color: #f7f7f7;
+  background-color: #f6f6f6;
 }
 
 .dock--vertical_model span.dock__item--active:hover, .dock--vertical div:first-child:not(:empty) span.dock__item--active:hover, .dock--vertical div:last-child:not(:empty) span.dock__item--active:hover {
@@ -197,7 +197,8 @@
 }
 
 .counter__model, .block__icons .listCount,
-.block__icons .listMCount, .b3-list--files .b3-list-item:not(.b3-list-item--big) .counter,
+.block__icons .listMCount, .b3-list--files .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter,
+.b3-list--background .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter, .b3-list--files .b3-list-item:not(.b3-list-item--big) .counter,
 .b3-list--background .b3-list-item:not(.b3-list-item--big) .counter, .protyle-attr--refcount {
   height: 22px;
   width: auto;
@@ -210,9 +211,10 @@
 }
 
 .counter__model:hover, .block__icons .listCount:hover,
-.block__icons .listMCount:hover, .b3-list--files .b3-list-item:not(.b3-list-item--big) .counter:hover,
+.block__icons .listMCount:hover, .b3-list--files .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter:hover,
+.b3-list--background .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter:hover, .b3-list--files .b3-list-item:not(.b3-list-item--big) .counter:hover,
 .b3-list--background .b3-list-item:not(.b3-list-item--big) .counter:hover, .protyle-attr--refcount:hover {
-  background-color: #e1e1e1;
+  background-color: #e7e7e7;
 }
 
 .block__icons {
@@ -241,7 +243,7 @@
 }
 
 .block__icons .block__icon:hover {
-  background-color: #f7f7f7;
+  background-color: #f6f6f6;
 }
 
 .block__icons .block__icon.ft__primary:hover {
@@ -437,7 +439,12 @@
 
 .b3-list--files .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom),
 .b3-list--background .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
-  background-color: #f6f6f6 !important;
+  background-color: #f0f0f0 !important;
+}
+
+.b3-list--files .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter,
+.b3-list--background .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter {
+  background-color: #f0f0f0;
 }
 
 .b3-list--files .b3-list-item.b3-list-item--big,
@@ -509,7 +516,7 @@
 
 .b3-list--files .b3-list-item:not(.b3-list-item--big) .b3-list-item__icon:hover,
 .b3-list--background .b3-list-item:not(.b3-list-item--big) .b3-list-item__icon:hover {
-  background-color: #e1e1e1;
+  background-color: #e7e7e7;
 }
 
 .b3-list--files .b3-list-item:not(.b3-list-item--big) .b3-list-item__icon svg,
@@ -541,7 +548,7 @@
 
 .b3-list--files .b3-list-item:not(.b3-list-item--big) .b3-list-item__action:hover,
 .b3-list--background .b3-list-item:not(.b3-list-item--big) .b3-list-item__action:hover {
-  background-color: #e1e1e1;
+  background-color: #e7e7e7;
 }
 
 .b3-list--files .b3-list-item:not(.b3-list-item--big) .b3-list-item__action + .fn__space,
@@ -688,20 +695,17 @@
   border-radius: 4px;
   height: 16px;
   padding: 4px 6px;
-  background-color: #fff;
+  background-color: white;
   margin-right: 4px;
 }
 
 .layout-tab-bar .item:not(.item--focus):hover {
-  background-color: #fcfcfc;
-}
-
-.layout-tab-bar .item * {
-  opacity: 0.6 !important;
+  background-color: #f6f6f6;
 }
 
 .layout-tab-bar .item .item__text {
   margin-top: 0.5px;
+  opacity: 0.5;
 }
 
 .layout-tab-bar .item .item__close {
@@ -710,14 +714,15 @@
   height: 9px;
   margin-left: 6px;
   margin-top: 0.5px;
+  opacity: 0.5;
 }
 
 .layout-tab-bar .item .item__close:hover {
-  background-color: #e1e1e1;
+  background-color: #e7e7e7;
 }
 
 .layout-tab-bar .item.item--focus {
-  background-color: #f6f6f6;
+  background-color: #f0f0f0;
 }
 
 .layout-tab-bar .item.item--focus * {
@@ -766,7 +771,7 @@
 }
 
 .protyle-breadcrumb .block__icon:hover {
-  background-color: #f7f7f7;
+  background-color: #f6f6f6;
 }
 
 .protyle-breadcrumb .block__icon.ft__primary:hover {
@@ -855,7 +860,7 @@
 }
 
 .b3-text-filed:not(.b3-text-filed--small):not(.b3-text-filed--text) {
-  background-color: #f7f7f7;
+  background-color: #f6f6f6;
 }
 
 .b3-text-filed:hover, .b3-text-filed:focus {
@@ -950,7 +955,7 @@
 
 .b3-dialog__container[style="width:50vw"] .b3-dialog__content .block__icon:hover,
 .b3-dialog__container[style="width:50vw"] .b3-form__space .block__icon:hover {
-  background-color: #f7f7f7;
+  background-color: #f6f6f6;
 }
 
 .b3-dialog__container[style="width:50vw"] .b3-dialog__content .block__icon.ft__primary:hover,
@@ -1067,7 +1072,7 @@
 }
 
 .emojis > div:first-child .block__icon:hover {
-  background-color: #f7f7f7;
+  background-color: #f6f6f6;
 }
 
 .emojis > div:first-child .block__icon.ft__primary:hover {
@@ -1129,10 +1134,6 @@
   padding: 0;
 }
 
-.emojis .emojis__panel .emojis__content .emojis__item[data-unicode*="-"] {
-  width: 64px;
-}
-
 .emojis .emojis__panel .emojis__content .emojis__item:hover {
   background-color: #f7f7f7;
 }
@@ -1158,7 +1159,7 @@
 }
 
 .block__popover .block__icons--border .block__icon:hover {
-  background-color: #f7f7f7;
+  background-color: #f6f6f6;
 }
 
 .block__popover .block__icons--border .block__icon.ft__primary:hover {
@@ -1174,19 +1175,19 @@
 .block__popover .block__icons--border .block__icon[data-type="pin"] svg {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  -webkit-transition: -webkit-transform 300ms ease;
-  transition: -webkit-transform 300ms ease;
-  transition: transform 300ms ease;
-  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
 }
 
 .block__popover .block__icons--border .block__icon[data-type="pin"] svg.ft__primary {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
-  -webkit-transition: -webkit-transform 300ms ease;
-  transition: -webkit-transform 300ms ease;
-  transition: transform 300ms ease;
-  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
 }
 
 .block__popover .block__icons--border .block__icon[data-type="pin"][aria-label="取消钉住"]:hover {
@@ -1201,7 +1202,7 @@
 }
 
 .block__popover .block__icons--border .block__icon[data-type="close"]:hover {
-  background-color: #f7f7f7;
+  background-color: #f6f6f6;
 }
 
 .block__popover .block__icons--border .block__icon[data-type="close"].ft__primary:hover {
@@ -1219,7 +1220,7 @@
 }
 
 .b3-select {
-  background-color: #fcfcfc;
+  background-color: #f6f6f6;
 }
 
 .b3-select:focus {
@@ -1323,12 +1324,12 @@
   height: 28px;
   border-radius: 4px;
   padding: 0 8px 0 6px;
-  color: rgba(55, 53, 47, 0.4);
+  color: rgba(53, 56, 59, 0.4);
   background-color: transparent;
 }
 
 .protyle .protyle-background .protyle-icons .b3-tooltips:hover {
-  background-color: rgba(55, 53, 47, 0.08);
+  background-color: #f6f6f6;
 }
 
 .protyle .protyle-background .protyle-icons .b3-tooltips svg {
@@ -1352,7 +1353,7 @@
   -webkit-transition: none;
   transition: none;
   opacity: 1;
-  color: rgba(55, 53, 47, 0.4);
+  color: rgba(53, 56, 59, 0.4);
   background-color: transparent;
   position: static;
   margin: 0;
@@ -1381,7 +1382,7 @@
 }
 
 .protyle .protyle-background .protyle-background__icon:hover {
-  background-color: rgba(247, 247, 247, 0.5);
+  background-color: rgba(231, 231, 231, 0.5);
 }
 
 .protyle .protyle-background:hover .protyle-icons {
@@ -1404,7 +1405,7 @@
 }
 
 .protyle .protyle-wysiwyg .list::before {
-  background-color: #e1e1e1 !important;
+  background-color: #e7e7e7 !important;
 }
 
 .protyle-attr--refcount {
@@ -1414,4 +1415,3 @@
   line-height: 22px;
   font-weight: 600;
 }
-/*# sourceMappingURL=theme.css.map */

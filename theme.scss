@@ -4,15 +4,23 @@ $rc-theme-primary-light: rgba($rc-theme-primary, 0.54);
 $rc-theme-primary-lighter: rgba($rc-theme-primary, 0.38);
 $rc-theme-primary-lightest: rgba($rc-theme-primary, 0.12);
 
-$rc-background: rgb(255, 255, 255);
+$rc-theme-background: rgb(255, 255, 255);
 
-$rc-theme-surface: rgb(252,252,252); //rgb(252, 252, 252);
-$rc-theme-surface-button: rgb(247,247,247);
+//边栏底色
+$rc-theme-surface-background: rgb(252, 252, 252); //rgb(252, 252, 252);
+//边栏上按钮正常悬浮
+$rc-theme-surface-button: rgb(246, 246, 246);
+//各控件的正常底色（开关，选择菜单、输入框等）
+$rc-theme-surface-control: $rc-theme-surface-button;
+//边栏边框
 $rc-theme-surface-border: rgb(238, 238, 238);
-$rc-theme-surface-hover: rgb(225,225,225); //rgb(231, 231, 231);
-f
-$rc-theme-list-hover:rgb(246,246,246);
-$rc-theme-list-focus:rgb(246,246,246);
+
+//列表项悬浮
+$rc-theme-list-hover: rgb(246, 246, 246);
+//列表项选中
+$rc-theme-list-focus: rgb(240, 240, 240);
+//列表上按钮正常悬浮
+$rc-theme-list-button: rgb(231, 231, 231); //rgb(225, 225, 225);
 
 //文字颜色
 $rc-theme-on-background: rgb(31, 34, 37);
@@ -21,8 +29,6 @@ $rc-theme-on-surface: rgb(53, 56, 59); //rgba($rc-theme-on-background, 0.8);
 $rc-surface-boder: 1px solid $rc-theme-surface-border;
 
 $rc-border-color: rgb(238, 238, 238);
-
-
 
 //页签
 $rc-topbar-color: #424243;
@@ -61,9 +67,9 @@ $rc-tooltips-color: rgb(15, 15, 15);
   --b3-theme-primary-lighter: #{$rc-theme-primary-lighter};
   --b3-theme-primary-lightest: #{$rc-theme-primary-lightest};
   --b3-theme-secondary: #f3a92f;
-  --b3-theme-background: #{$rc-background};
-  --b3-theme-background-light: #{$rc-background};
-  --b3-theme-surface: #{$rc-theme-surface};
+  --b3-theme-background: #{$rc-theme-background};
+  --b3-theme-background-light: #{$rc-theme-background};
+  --b3-theme-surface: #{$rc-theme-surface-background};
   --b3-theme-surface-light: rgba(243, 243, 243, 0.86);
   --b3-theme-error: #d23f31;
 
@@ -88,7 +94,7 @@ $rc-tooltips-color: rgb(15, 15, 15);
     "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji";
 
   // 线条
-  --b3-border-color: #{$rc-background};
+  --b3-border-color: #{$rc-theme-background};
 
   // 滚动条
   --b3-scroll-color: #{$rc-scroll-color};
@@ -221,13 +227,13 @@ $interval: 8px;
 .dock--vertical_model {
   border-radius: 6px;
   padding: 4px;
-  background-color: $rc-theme-surface;
+  background-color: $rc-theme-surface-background;
   border: $rc-surface-boder;
   span {
     width: 35px;
     padding: 0 0 0 1px;
     justify-content: center;
-    background-color: $rc-theme-surface;
+    background-color: $rc-theme-surface-background;
     transform: translateZ(0px) scale(1);
     line-height: 0;
     height: 40px;
@@ -283,7 +289,7 @@ $interval: 8px;
   justify-content: center;
   line-height: 22px;
   &:hover {
-    background-color: $rc-theme-surface-hover;
+    background-color: $rc-theme-list-button;
   }
 }
 
@@ -443,6 +449,10 @@ $interval: 8px;
 
     &.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
       background-color: $rc-theme-list-focus !important;
+      .counter {
+        @extend .counter__model;
+        background-color: $rc-theme-list-focus;
+      }
     }
     &.b3-list-item--big {
       margin-bottom: 8px;
@@ -489,7 +499,7 @@ $interval: 8px;
         text-align: center;
         justify-content: center;
         &:hover {
-          background-color: $rc-theme-surface-hover;
+          background-color: $rc-theme-list-button;
         }
         svg {
           margin: ($list-text-height - 14px)/2;
@@ -509,7 +519,7 @@ $interval: 8px;
           display: block;
         }
         &:hover {
-          background-color: $rc-theme-surface-hover;
+          background-color: $rc-theme-list-button;
         }
         + .fn__space {
           display: none;
@@ -638,16 +648,14 @@ $interval: 8px;
     border-radius: 4px;
     height: 16px;
     padding: 4px 6px;
-    background-color: #fff; //$rc-theme-surface;
+    background-color: $rc-theme-background;
     margin-right: 4px;
     &:not(.item--focus):hover {
-      background-color: $rc-theme-surface;
-    }
-    * {
-      opacity: 0.6 !important;
+      background-color: $rc-theme-list-hover;
     }
     .item__text {
       margin-top: 0.5px;
+      opacity: 0.5;
     }
     .item__close {
       border-radius: 4px;
@@ -655,8 +663,9 @@ $interval: 8px;
       height: 9px;
       margin-left: 6px;
       margin-top: 0.5px;
+      opacity: 0.5;
       &:hover {
-        background-color: $rc-theme-surface-hover;
+        background-color: $rc-theme-list-button;
       }
     }
     &.item--focus {
@@ -777,7 +786,7 @@ $interval: 8px;
     height: 24px;
   }
   &:not(.b3-text-filed--small):not(.b3-text-filed--text) {
-    background-color: rgb(247, 247, 247);
+    background-color: $rc-theme-surface-control;
   }
   &:hover,
   &:focus {
@@ -812,7 +821,7 @@ $interval: 8px;
   //小弹窗
   &[style="width:50vw"] {
     width: 420px !important; //320px !important;
-    background-color: $rc-background;
+    background-color: $rc-theme-background;
     padding: 0 16px;
     //弹窗标题
     .b3-dialog__header {
@@ -976,9 +985,6 @@ $interval: 8px;
         box-sizing: border-box;
         cursor: pointer;
         padding: 0;
-        &[data-unicode*="-"] {
-          width: 64px;
-        }
         &:hover {
           background-color: rgb(247, 247, 247);
         }
@@ -1000,7 +1006,7 @@ $interval: 8px;
       margin: 0 6px 0 0;
       z-index: 99;
       &[data-type="pin"] {
-        $pin-transition: transform 300ms ease;
+        $pin-transition: transform 200ms ease;
         svg {
           transform: rotate(45deg);
           transition: $pin-transition;
@@ -1027,7 +1033,7 @@ $interval: 8px;
 
 //选择菜单
 .b3-select {
-  background-color: $rc-theme-surface;
+  background-color: $rc-theme-surface-control;
   &:focus {
     box-shadow: none;
   }
@@ -1035,12 +1041,12 @@ $interval: 8px;
 
 //开关
 .b3-switch {
-  background-color: $rc-theme-list-hover;
+  background-color: $rc-theme-surface-control;
 }
 
 //label
 .b3-label {
-  background-color: $rc-background;
+  background-color: $rc-theme-background;
 }
 
 //tips
@@ -1050,9 +1056,9 @@ $interval: 8px;
 }
 
 // .layout__resize:hover:after{
-//   background-color: $rc-theme-surface-hover;
+//   background-color: $rc-theme-list-button;
 // }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 6px;
 }
 
@@ -1111,6 +1117,7 @@ $content-margin: "max(calc(50% - 354px), 96px)";
     //无题头图，无emoji
     min-height: 108px;
     margin: 0 !important;
+    //题头按钮组
     .protyle-icons {
       background-color: transparent;
       margin: 8px 0 4px;
@@ -1124,10 +1131,10 @@ $content-margin: "max(calc(50% - 354px), 96px)";
         height: 28px;
         border-radius: 4px;
         padding: 0 8px 0 6px;
-        color: rgba(55, 53, 47, 0.4);
+        color: rgba($rc-theme-on-surface, 0.4);
         background-color: transparent;
         &:hover {
-          background-color: rgba(55, 53, 47, 0.08);
+          background-color: $rc-theme-list-hover;
         }
         svg {
           width: 14px;
@@ -1143,7 +1150,7 @@ $content-margin: "max(calc(50% - 354px), 96px)";
           transform: none;
           transition: none;
           opacity: 1;
-          color: rgba(55, 53, 47, 0.4);
+          color: rgba($rc-theme-on-surface, 0.4);
           background-color: transparent;
           position: static;
           margin: 0;
@@ -1155,7 +1162,7 @@ $content-margin: "max(calc(50% - 354px), 96px)";
         }
       }
     }
-
+    //题头emoji
     .protyle-background__icon {
       left: #{$content-margin} !important;
       width: 78px;
@@ -1170,7 +1177,7 @@ $content-margin: "max(calc(50% - 354px), 96px)";
         height: 78px;
       }
       &:hover {
-        background-color: rgba($rc-theme-surface-button);
+        background-color: rgba($rc-theme-list-button, 0.5);
       }
     }
     &:hover {
@@ -1195,7 +1202,7 @@ $content-margin: "max(calc(50% - 354px), 96px)";
     }
     .list {
       &::before {
-        background-color: $rc-theme-surface-hover !important;
+        background-color: $rc-theme-list-button !important;
       }
     }
   }

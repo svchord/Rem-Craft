@@ -805,83 +805,6 @@
   padding-top: 6px;
 }
 
-.block__popover {
-  -webkit-box-shadow: rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 20%) 0px 20px 50px;
-          box-shadow: rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 20%) 0px 20px 50px;
-}
-
-.block__popover .block__icons--border .block__icon {
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  border-radius: 4px;
-  -webkit-transform: translateY(37px) translateX(2px);
-          transform: translateY(37px) translateX(2px);
-  margin: 0 6px 0 0;
-  z-index: 99;
-}
-
-.block__popover .block__icons--border .block__icon:hover {
-  background-color: #f6f6f6;
-}
-
-.block__popover .block__icons--border .block__icon.ft__primary:hover {
-  background-color: rgba(0, 135, 255, 0.1);
-}
-
-.block__popover .block__icons--border .block__icon svg {
-  width: 14px;
-  height: 14px;
-  padding: 7px;
-}
-
-.block__popover .block__icons--border .block__icon[data-type="pin"] svg {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transition: -webkit-transform 200ms ease;
-  transition: -webkit-transform 200ms ease;
-  transition: transform 200ms ease;
-  transition: transform 200ms ease, -webkit-transform 200ms ease;
-}
-
-.block__popover .block__icons--border .block__icon[data-type="pin"] svg.ft__primary {
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-  -webkit-transition: -webkit-transform 200ms ease;
-  transition: -webkit-transform 200ms ease;
-  transition: transform 200ms ease;
-  transition: transform 200ms ease, -webkit-transform 200ms ease;
-}
-
-.block__popover .block__icons--border .block__icon[data-type="pin"][aria-label="取消钉住"]:hover {
-  background-color: rgba(0, 135, 255, 0.1);
-}
-
-.block__popover .block__icons--border .block__icon[data-type="close"] {
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  border-radius: 4px;
-}
-
-.block__popover .block__icons--border .block__icon[data-type="close"]:hover {
-  background-color: #f6f6f6;
-}
-
-.block__popover .block__icons--border .block__icon[data-type="close"].ft__primary:hover {
-  background-color: rgba(0, 135, 255, 0.1);
-}
-
-.block__popover .block__icons--border .block__icon[data-type="close"] svg {
-  width: 12px;
-  height: 12px;
-  padding: 8px;
-}
-
-.block__popover .protyle-breadcrumb {
-  padding-right: 74px;
-}
-
 .b3-list--files,
 .b3-list--background {
   padding: 0 8px 8px;
@@ -1051,6 +974,83 @@
 .b3-list--files .b3-list-item:not(.b3-list-item--big) + ul > .b3-list-item + ul > .b3-list-item + ul > .b3-list-item + ul > .b3-list-item + ul > .b3-list-item + ul > .b3-list-item,
 .b3-list--background .b3-list-item:not(.b3-list-item--big) + ul > .b3-list-item + ul > .b3-list-item + ul > .b3-list-item + ul > .b3-list-item + ul > .b3-list-item + ul > .b3-list-item {
   margin-left: 144px !important;
+}
+
+.block__popover {
+  -webkit-box-shadow: rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 20%) 0px 20px 50px;
+          box-shadow: rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 20%) 0px 20px 50px;
+}
+
+.block__popover .block__icons--border .block__icon {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 4px;
+  -webkit-transform: translateY(37px) translateX(2px);
+          transform: translateY(37px) translateX(2px);
+  margin: 0 6px 0 0;
+  z-index: 99;
+}
+
+.block__popover .block__icons--border .block__icon:hover {
+  background-color: #f6f6f6;
+}
+
+.block__popover .block__icons--border .block__icon.ft__primary:hover {
+  background-color: rgba(0, 135, 255, 0.1);
+}
+
+.block__popover .block__icons--border .block__icon svg {
+  width: 14px;
+  height: 14px;
+  padding: 7px;
+}
+
+.block__popover .block__icons--border .block__icon[data-type="pin"] svg {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+
+.block__popover .block__icons--border .block__icon[data-type="pin"] svg.ft__primary {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+
+.block__popover .block__icons--border .block__icon[data-type="pin"][aria-label="取消钉住"]:hover {
+  background-color: rgba(0, 135, 255, 0.1);
+}
+
+.block__popover .block__icons--border .block__icon[data-type="close"] {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.block__popover .block__icons--border .block__icon[data-type="close"]:hover {
+  background-color: #f6f6f6;
+}
+
+.block__popover .block__icons--border .block__icon[data-type="close"].ft__primary:hover {
+  background-color: rgba(0, 135, 255, 0.1);
+}
+
+.block__popover .block__icons--border .block__icon[data-type="close"] svg {
+  width: 12px;
+  height: 12px;
+  padding: 8px;
+}
+
+.block__popover .protyle-breadcrumb {
+  padding-right: 74px;
 }
 
 .block__icons .listCount,

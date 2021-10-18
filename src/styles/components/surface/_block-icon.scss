@@ -1,20 +1,3 @@
-@mixin block__icon__model($width, $svg-width) {
-  width: $width;
-  height: $width;
-  padding: 0;
-  border-radius: 4px;
-  &:hover {
-    background-color: $rc-theme-surface-button;
-  }
-  &.ft__primary:hover {
-    background-color: $rc-theme-surface-button-focus;
-  }
-  svg {
-    width: $svg-width;
-    height: $svg-width;
-    padding: ($width - $svg-width)/2;
-  }
-}
 
 //边框上按钮
 .block__icons {

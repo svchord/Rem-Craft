@@ -41,6 +41,18 @@ $rc-button-cancel-hover: rgb(230, 243, 255);
 //编辑器两侧边距
 $content-margin: "max(calc(50% - 354px), 96px)";
 
+//菜单阴影
+$rc-menu-shadow: "rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 16%) 0px 10px 20px";
+//菜单底色
+$rc-menu-background: $rc-theme-background;
+
+//弹窗阴影
+$rc-dialog-shadow: "rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 20%) 0px 20px 50px";
+
+//边窗动画时间
+$rc-width-time: 0.25s;
+
+
 %counter__model {
   height: 22px;
   width: auto;
@@ -50,5 +62,23 @@ $content-margin: "max(calc(50% - 354px), 96px)";
   line-height: 22px;
   &:hover {
     background-color: $rc-theme-list-button;
+  }
+}
+
+@mixin block__icon__model($width, $svg-width) {
+  width: $width;
+  height: $width;
+  padding: 0;
+  border-radius: 4px;
+  &:hover {
+    background-color: $rc-theme-surface-button;
+  }
+  &.ft__primary:hover {
+    background-color: $rc-theme-surface-button-focus;
+  }
+  svg {
+    width: $svg-width;
+    height: $svg-width;
+    padding: ($width - $svg-width)/2;
   }
 }

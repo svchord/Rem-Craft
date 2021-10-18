@@ -1,0 +1,48 @@
+@mixin block__icon__model($width, $svg-width) {
+  width: $width;
+  height: $width;
+  padding: 0;
+  border-radius: 4px;
+  &:hover {
+    background-color: $rc-theme-surface-button;
+  }
+  &.ft__primary:hover {
+    background-color: $rc-theme-surface-button-focus;
+  }
+  svg {
+    width: $svg-width;
+    height: $svg-width;
+    padding: ($width - $svg-width)/2;
+  }
+}
+
+//边框上按钮
+.block__icons {
+  &.block__icons--active {
+    background-color: var(--b3-theme-surface);
+  }
+  :not(.block__popover) > & {
+    padding: 4px 16px;
+  }
+  font-size: 15px;
+  font-weight: 500;
+  // font-family: "Noto Sans SC Bold";
+  .fn__space {
+    width: 0;
+  }
+  .block__icon {
+    @include block__icon__model(24px, 12px);
+    margin-left: 6px;
+  }
+  .listCount,
+  .listMCount {
+    @extend %counter__model;
+    margin: 2px 8px 0 0;
+    + .fn__space {
+      display: none;
+    }
+  }
+  .b3-form__icon-icon {
+    padding-top: 1px;
+  }
+}

@@ -1,0 +1,35 @@
+//面包屑
+.protyle-breadcrumb {
+  height: 45px;
+  // .protyle:not(.block__edit) &{
+  //   padding-left: 60px;
+  // }
+  .protyle-breadcrumb__item {
+    border-radius: 4px;
+    padding: 0 6px;
+    height: 24px;
+    line-height: 24px;
+    &:hover {
+      background-color: $rc-theme-list-hover;
+    }
+    .protyle-breadcrumb__text:not(:empty) {
+      margin-left: 4px;
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+      margin: 1px 0 0 1px;
+      &.ft__primary {
+        color: $rc-theme-on-background;
+      }
+    }
+  }
+  .fn__space {
+    width: 0;
+  }
+  .block__icon {
+    @include block__icon__model(28px, 14px);
+    margin: 8.5px 6px 0 0;
+  }
+}

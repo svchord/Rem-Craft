@@ -1,0 +1,59 @@
+//边栏边框
+$rc-theme-surface-border: rgb(238, 238, 238);
+$rc-surface-boder: 1px solid $rc-theme-surface-border;
+
+//两侧边栏
+.dock--vertical_model {
+  border-radius: 6px;
+  padding: 4px;
+  background-color: $rc-theme-surface-background;
+  border: $rc-surface-boder;
+  span {
+    width: 35px;
+    padding: 0 0 0 1px;
+    justify-content: center;
+    background-color: $rc-theme-surface-background;
+    transform: translateZ(0px) scale(1);
+    line-height: 0;
+    height: 40px;
+    flex-grow: 1;
+    position: relative;
+    border-radius: 4px;
+    transition: all 0s ease 0s;
+    margin: 1px 0px;
+    cursor: pointer;
+    &:hover {
+      background-color: $rc-theme-surface-button;
+    }
+    &.dock__item--active:hover {
+      background-color: $rc-theme-surface-button-focus;
+    }
+    svg {
+      $dock-svg-width: 15px;
+      width: $dock-svg-width;
+      height: $dock-svg-width;
+    }
+  }
+}
+
+.dock--vertical {
+  width: 46px;
+  margin-left: $interval;
+  margin-right: $interval;
+  z-index: 43;
+  div:first-child:not(:empty) {
+    @extend .dock--vertical_model;
+    margin-top: $interval;
+  }
+  div:last-child:not(:empty) {
+    @extend .dock--vertical_model;
+    margin-bottom: $interval;
+  }
+  .dock__item[data-index="0"]::after {
+    margin: 0 10px;
+    top: -28px;
+  }
+  .dock__item[data-index="1"]::after {
+    bottom: 70%;
+  }
+}

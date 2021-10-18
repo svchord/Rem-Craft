@@ -1,0 +1,52 @@
+//菜单阴影
+$rc-menu-shadow: "rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 16%) 0px 10px 20px";
+//菜单底色
+$rc-menu-background: $rc-theme-background;
+
+//菜单
+%menu__model {
+  border-radius: 6px;
+  padding: 7px 6px 6px;
+  min-width: 200px;
+}
+
+.b3-menu {
+  @extend %menu__model;
+  .b3-menu__item:not(.b3-menu__item--readonly) {
+    height: 31.2px;
+    min-width: 0px;
+    padding: 8px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    transition: all 0.3s ease 0s;
+  }
+  .b3-menu__submenu {
+    $sub-menu-vertical: 10px;
+    @extend %menu__model;
+    margin-left: $sub-menu-vertical;
+    margin-right: $sub-menu-vertical;
+    top: -9px;
+  }
+  .b3-menu__separator {
+    margin-left: -6px;
+    margin-right: -6px;
+    width: calc(100% + 12px);
+    padding-top: 4px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgb(242, 242, 242);
+    padding: 0;
+    height: 0;
+  }
+  .b3-menu__item--readonly {
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(55, 53, 47, 0.4);
+    margin-bottom: 4px;
+  }
+  .b3-menu__item--custom.b3-menu__item--current {
+    background-color: $rc-menu-background;
+  }
+}

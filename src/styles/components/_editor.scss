@@ -1,0 +1,45 @@
+@import "main";
+@import "editor/cover";
+
+//编辑器
+.layout__center {
+  transition: width 0.01ms linear !important;
+  div[data-type="wnd"] {
+    min-height: 10% !important;
+    margin: $interval 0;
+  }
+}
+
+.layout__resize--lr {
+  margin: 0 $interval/2 - 3px;
+}
+
+.protyle-title {
+  margin: 0 #{$content-margin} !important;
+  max-width: 708px;
+}
+
+.protyle-wysiwyg {
+  *:not(.block__edit) & {
+    padding: 16px 96px 235px 96px !important;
+    max-width: 708px;
+    margin: 0 auto;
+  }
+  kbd {
+    font-family: var(--b3-font-family-code) !important;
+  }
+  .list {
+    &::before {
+      background-color: $rc-theme-list-button !important;
+    }
+  }
+}
+
+.protyle-attr--refcount {
+  @extend %counter__model;
+  height: 22px;
+  width: 22px;
+  padding: 0;
+  line-height: 22px;
+  font-weight: 600;
+}

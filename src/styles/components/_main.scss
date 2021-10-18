@@ -1,0 +1,54 @@
+//主色
+$rc-theme-primary: rgb(0, 135, 255);
+$rc-theme-primary-light: rgba($rc-theme-primary, 0.54);
+$rc-theme-primary-lighter: rgba($rc-theme-primary, 0.38);
+$rc-theme-primary-lightest: rgba($rc-theme-primary, 0.12);
+
+//UI底色
+$rc-theme-background: rgb(255, 255, 255);
+
+//文字颜色
+//编辑器文字颜色
+$rc-theme-on-background: rgb(31, 34, 37);
+//界面文字颜色
+$rc-theme-on-surface: rgb(53, 56, 59); //rgba($rc-theme-on-background, 0.8);
+
+//界面底色
+$rc-theme-surface-background: rgb(252, 252, 252); //rgb(252, 252, 252);
+//界面上按钮正常悬浮
+$rc-theme-surface-button: rgb(246, 246, 246);
+//界面上按钮选中悬浮
+$rc-theme-surface-button-focus: rgba($rc-theme-primary, 0.1);
+//各控件的正常底色（开关，选择菜单、输入框等）
+$rc-theme-surface-control: $rc-theme-surface-button;
+
+//列表项悬浮
+$rc-theme-list-hover: rgb(246, 246, 246);
+//列表项选中
+$rc-theme-list-focus: rgb(240, 240, 240);
+//列表上按钮正常悬浮
+$rc-theme-list-button: rgb(231, 231, 231); //rgb(225, 225, 225);
+
+//间隔空白宽度
+$interval: 8px;
+
+//输入框边框
+$rc-border-color: rgb(238, 238, 238);
+
+//带边框按钮悬浮底色
+$rc-button-cancel-hover: rgb(230, 243, 255);
+
+//编辑器两侧边距
+$content-margin: "max(calc(50% - 354px), 96px)";
+
+%counter__model {
+  height: 22px;
+  width: auto;
+  padding: 0 7px;
+  text-align: center;
+  justify-content: center;
+  line-height: 22px;
+  &:hover {
+    background-color: $rc-theme-list-button;
+  }
+}

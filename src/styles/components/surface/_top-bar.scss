@@ -1,22 +1,3 @@
-//顶部工具栏文字颜色
-$rc-topbar-color: #424243;
-
-//顶部工具栏悬浮
-$rc-button-background-hover: rgb(242, 242, 242);
-
-//顶部边栏
-%toolbar_before {
-  z-index: 1;
-  width: auto;
-  height: auto;
-  display: flex;
-  position: unset;
-  opacity: 1;
-  transform: none;
-  font-size: 13px;
-  color: $rc-topbar-color;
-}
-
 .toolbar {
   height: 30px;
   z-index: 99;
@@ -82,7 +63,7 @@ $rc-button-background-hover: rgb(242, 242, 242);
       padding: 0 16px;
       &:hover {
         color: #fff;
-        background-color: rgba(232, 17, 35, 0.9);
+        background-color: $rc-close-window;
       }
     }
     &.b3-tooltips__se::after {

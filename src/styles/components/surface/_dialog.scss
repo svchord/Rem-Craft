@@ -1,7 +1,4 @@
-
-
 //弹窗
-
 //蒙版
 .b3-dialog__scrim {
   background-color: rgba($rc-theme-on-background, 0.05);
@@ -9,18 +6,17 @@
 //大弹窗
 .b3-dialog__container {
   box-shadow: #{$rc-dialog-shadow};
-  $radius: 10px;
-  border-radius: $radius;
+  border-radius: $rc-dialog-radius;
   .b3-dialog__close {
     display: none;
   }
   .b3-text-filed.b3-text-filed--text {
-    border-top-left-radius: $radius;
-    border-top-right-radius: $radius;
+    border-top-left-radius: $rc-dialog-radius;
+    border-top-right-radius: $rc-dialog-radius;
   }
   #searchPreview {
-    border-bottom-left-radius: $radius;
-    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $rc-dialog-radius;
+    border-bottom-right-radius: $rc-dialog-radius;
   }
   //小弹窗
   &[style="width:50vw"] {
@@ -33,13 +29,13 @@
       font-weight: 500;
       color: $rc-theme-on-background;
       padding: 19px 0 18px 0;
-      border-bottom: 1px solid rgb(234, 234, 234);
+      border-bottom: 1px solid $rc-dialog-border;
     }
     //弹窗关闭按钮
     .b3-dialog__close {
       display: block;
       color: rgba($rc-theme-on-background, 0.4);
-      background-color: rgb(242, 242, 242);
+      background-color: $rc-dialog-close-background;
       border: 1px solid transparent;
       align-items: center;
       width: 24px;
@@ -52,7 +48,7 @@
       transform: translateX(-50px) translateY(9px);
       &:hover {
         color: rgba($rc-theme-on-background, 0.4);
-        background-color: rgb(234, 234, 234);
+        background-color: $rc-dialog-close-hover;
       }
     }
     //弹窗输入框

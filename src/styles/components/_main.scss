@@ -6,13 +6,23 @@ $rc-theme-primary-lightest: rgba($rc-theme-primary, 0.12);
 
 //UI底色
 $rc-theme-background: rgb(255, 255, 255);
-
-//文字颜色
-//编辑器文字颜色
+//主文字颜色
 $rc-theme-on-background: rgb(31, 34, 37);
+
+//顶部工具栏
+//顶部工具栏文字颜色
+$rc-topbar-color: #424243;
+//顶部工具栏悬浮
+$rc-button-background-hover: rgb(242, 242, 242);
+//关闭按钮悬浮
+$rc-close-window:rgba(232, 17, 35, 0.9);
+
+
+//界面
+//界面间空白宽度
+$interval: 8px;
 //界面文字颜色
 $rc-theme-on-surface: rgb(53, 56, 59); //rgba($rc-theme-on-background, 0.8);
-
 //界面底色
 $rc-theme-surface-background: rgb(252, 252, 252); //rgb(252, 252, 252);
 //界面上按钮正常悬浮
@@ -21,38 +31,105 @@ $rc-theme-surface-button: rgb(246, 246, 246);
 $rc-theme-surface-button-focus: rgba($rc-theme-primary, 0.1);
 //各控件的正常底色（开关，选择菜单、输入框等）
 $rc-theme-surface-control: $rc-theme-surface-button;
+//边栏边框
+$rc-theme-surface-border: rgb(238, 238, 238);
+$rc-surface-boder: 1px solid $rc-theme-surface-border;
+//边窗动画
+$rc-width-time: 0.25s;
+$wnd-transition: all $rc-width-time ease-out 0s;
 
+//UI列表
 //列表项悬浮
 $rc-theme-list-hover: rgb(246, 246, 246);
 //列表项选中
 $rc-theme-list-focus: rgb(240, 240, 240);
-//列表上按钮正常悬浮
+//列表项上按钮正常悬浮
 $rc-theme-list-button: rgb(231, 231, 231); //rgb(225, 225, 225);
+//子列表左边距
+$list-left: 24px;
+//列表高度
+$list-text-height: 24px;
 
-//间隔空白宽度
-$interval: 8px;
-
+//控件
 //输入框边框
 $rc-border-color: rgb(238, 238, 238);
-
 //带边框按钮悬浮底色
 $rc-button-cancel-hover: rgb(230, 243, 255);
+//钉住动画
+$pin-transition: transform 200ms ease;
+
 
 //编辑器两侧边距
 $content-margin: "max(calc(50% - 354px), 96px)";
 
+//菜单
 //菜单阴影
 $rc-menu-shadow: "rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 16%) 0px 10px 20px";
 //菜单底色
 $rc-menu-background: $rc-theme-background;
+//菜单分割线
+$rc-menu-separator:rgb(242, 242, 242);
 
+//弹窗
 //弹窗阴影
 $rc-dialog-shadow: "rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 20%) 0px 20px 50px";
+//弹窗关闭按钮底色
+$rc-dialog-close-background:rgb(242, 242, 242);
+//弹窗关闭按钮悬浮
+$rc-dialog-close-hover: rgb(234, 234, 234);
+//弹窗分割线
+$rc-dialog-border:rgb(234, 234, 234);
+//弹窗边框弧度
+$rc-dialog-radius: 10px;
 
-//边窗动画时间
-$rc-width-time: 0.25s;
+//顶部工具栏栏
+%toolbar_before {
+  z-index: 1;
+  width: auto;
+  height: auto;
+  display: flex;
+  position: unset;
+  opacity: 1;
+  transform: none;
+  font-size: 13px;
+  color: $rc-topbar-color;
+}
 
+//边栏
+%dock--vertical_model {
+  border-radius: 6px;
+  padding: 4px;
+  background-color: $rc-theme-surface-background;
+  border: $rc-surface-boder;
+  span {
+    width: 35px;
+    padding: 0 0 0 1px;
+    justify-content: center;
+    background-color: $rc-theme-surface-background;
+    transform: translateZ(0px) scale(1);
+    line-height: 0;
+    height: 40px;
+    flex-grow: 1;
+    position: relative;
+    border-radius: 4px;
+    transition: all 0s ease 0s;
+    margin: 1px 0px;
+    cursor: pointer;
+    &:hover {
+      background-color: $rc-theme-surface-button;
+    }
+    &.dock__item--active:hover {
+      background-color: $rc-theme-surface-button-focus;
+    }
+    svg {
+      $dock-svg-width: 15px;
+      width: $dock-svg-width;
+      height: $dock-svg-width;
+    }
+  }
+}
 
+//数量按钮
 %counter__model {
   height: 22px;
   width: auto;
@@ -65,6 +142,14 @@ $rc-width-time: 0.25s;
   }
 }
 
+//菜单
+%menu__model {
+  border-radius: 6px;
+  padding: 7px 6px 6px;
+  min-width: 200px;
+}
+
+//界面上按钮
 @mixin block__icon__model($width, $svg-width) {
   width: $width;
   height: $width;

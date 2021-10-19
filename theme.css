@@ -1,33 +1,27 @@
 @charset "UTF-8";
-.block__icons .listCount,
-.block__icons .listMCount, .b3-list--files .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter,
-.b3-list--background .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter, .b3-list--files .b3-list-item:not(.b3-list-item--big) .counter,
-.b3-list--background .b3-list-item:not(.b3-list-item--big) .counter, .protyle-attr--refcount {
-  height: 22px;
+.toolbar .toolbar__item#barDailyNote::before, .toolbar .toolbar__item#barSearch::before, .toolbar .toolbar__item#barDock::before, .toolbar .toolbar__item#barThemeMode::before, .toolbar .toolbar__item#barSync::before {
+  z-index: 1;
   width: auto;
-  padding: 0 7px;
-  text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  line-height: 22px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: unset;
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+  font-size: 13px;
+  color: #424243;
 }
 
-.block__icons .listCount:hover,
-.block__icons .listMCount:hover, .b3-list--files .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter:hover,
-.b3-list--background .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter:hover, .b3-list--files .b3-list-item:not(.b3-list-item--big) .counter:hover,
-.b3-list--background .b3-list-item:not(.b3-list-item--big) .counter:hover, .protyle-attr--refcount:hover {
-  background-color: #e7e7e7;
-}
-
-.dock--vertical_model, .dock--vertical div:first-child:not(:empty), .dock--vertical div:last-child:not(:empty) {
+.dock--vertical div:first-child:not(:empty), .dock--vertical div:last-child:not(:empty) {
   border-radius: 6px;
   padding: 4px;
   background-color: #fcfcfc;
   border: 1px solid #eeeeee;
 }
 
-.dock--vertical_model span, .dock--vertical div:first-child:not(:empty) span, .dock--vertical div:last-child:not(:empty) span {
+.dock--vertical div:first-child:not(:empty) span, .dock--vertical div:last-child:not(:empty) span {
   width: 35px;
   padding: 0 0 0 1px;
   -webkit-box-pack: center;
@@ -49,17 +43,44 @@
   cursor: pointer;
 }
 
-.dock--vertical_model span:hover, .dock--vertical div:first-child:not(:empty) span:hover, .dock--vertical div:last-child:not(:empty) span:hover {
+.dock--vertical div:first-child:not(:empty) span:hover, .dock--vertical div:last-child:not(:empty) span:hover {
   background-color: #f6f6f6;
 }
 
-.dock--vertical_model span.dock__item--active:hover, .dock--vertical div:first-child:not(:empty) span.dock__item--active:hover, .dock--vertical div:last-child:not(:empty) span.dock__item--active:hover {
+.dock--vertical div:first-child:not(:empty) span.dock__item--active:hover, .dock--vertical div:last-child:not(:empty) span.dock__item--active:hover {
   background-color: rgba(0, 135, 255, 0.1);
 }
 
-.dock--vertical_model span svg, .dock--vertical div:first-child:not(:empty) span svg, .dock--vertical div:last-child:not(:empty) span svg {
+.dock--vertical div:first-child:not(:empty) span svg, .dock--vertical div:last-child:not(:empty) span svg {
   width: 15px;
   height: 15px;
+}
+
+.block__icons .listCount,
+.block__icons .listMCount, .b3-list--files .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter,
+.b3-list--background .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter, .b3-list--files .b3-list-item:not(.b3-list-item--big) .counter,
+.b3-list--background .b3-list-item:not(.b3-list-item--big) .counter, .protyle-attr--refcount {
+  height: 22px;
+  width: auto;
+  padding: 0 7px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 22px;
+}
+
+.block__icons .listCount:hover,
+.block__icons .listMCount:hover, .b3-list--files .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter:hover,
+.b3-list--background .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter:hover, .b3-list--files .b3-list-item:not(.b3-list-item--big) .counter:hover,
+.b3-list--background .b3-list-item:not(.b3-list-item--big) .counter:hover, .protyle-attr--refcount:hover {
+  background-color: #e7e7e7;
+}
+
+.b3-menu, .b3-menu .b3-menu__submenu {
+  border-radius: 6px;
+  padding: 7px 6px 6px;
+  min-width: 200px;
 }
 
 .dock--vertical {
@@ -284,21 +305,6 @@
           transform: translateX(-50%);
 }
 
-.toolbar .toolbar__item#barDailyNote::before, .toolbar .toolbar__item#barSearch::before, .toolbar .toolbar__item#barDock::before, .toolbar .toolbar__item#barThemeMode::before, .toolbar .toolbar__item#barSync::before {
-  z-index: 1;
-  width: auto;
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: unset;
-  opacity: 1;
-  -webkit-transform: none;
-          transform: none;
-  font-size: 13px;
-  color: #424243;
-}
-
 .toolbar {
   height: 30px;
   z-index: 99;
@@ -482,12 +488,6 @@
   padding: 7px;
 }
 
-.b3-menu, .b3-menu .b3-menu__submenu {
-  border-radius: 6px;
-  padding: 7px 6px 6px;
-  min-width: 200px;
-}
-
 .b3-menu .b3-menu__item:not(.b3-menu__item--readonly) {
   height: 31.2px;
   min-width: 0px;
@@ -525,7 +525,7 @@
 .b3-menu .b3-menu__item--readonly {
   font-size: 12px;
   line-height: 16px;
-  color: rgba(55, 53, 47, 0.4);
+  color: rgba(31, 34, 37, 0.4);
   margin-bottom: 4px;
 }
 
@@ -1053,6 +1053,63 @@
   padding-right: 74px;
 }
 
+.toolbar .toolbar__item#barDailyNote::before, .toolbar .toolbar__item#barSearch::before, .toolbar .toolbar__item#barDock::before, .toolbar .toolbar__item#barThemeMode::before, .toolbar .toolbar__item#barSync::before {
+  z-index: 1;
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: unset;
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+  font-size: 13px;
+  color: #424243;
+}
+
+.dock--vertical div:first-child:not(:empty), .dock--vertical div:last-child:not(:empty) {
+  border-radius: 6px;
+  padding: 4px;
+  background-color: #fcfcfc;
+  border: 1px solid #eeeeee;
+}
+
+.dock--vertical div:first-child:not(:empty) span, .dock--vertical div:last-child:not(:empty) span {
+  width: 35px;
+  padding: 0 0 0 1px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fcfcfc;
+  -webkit-transform: translateZ(0px) scale(1);
+          transform: translateZ(0px) scale(1);
+  line-height: 0;
+  height: 40px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  position: relative;
+  border-radius: 4px;
+  -webkit-transition: all 0s ease 0s;
+  transition: all 0s ease 0s;
+  margin: 1px 0px;
+  cursor: pointer;
+}
+
+.dock--vertical div:first-child:not(:empty) span:hover, .dock--vertical div:last-child:not(:empty) span:hover {
+  background-color: #f6f6f6;
+}
+
+.dock--vertical div:first-child:not(:empty) span.dock__item--active:hover, .dock--vertical div:last-child:not(:empty) span.dock__item--active:hover {
+  background-color: rgba(0, 135, 255, 0.1);
+}
+
+.dock--vertical div:first-child:not(:empty) span svg, .dock--vertical div:last-child:not(:empty) span svg {
+  width: 15px;
+  height: 15px;
+}
+
 .block__icons .listCount,
 .block__icons .listMCount, .b3-list--files .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter,
 .b3-list--background .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter, .b3-list--files .b3-list-item:not(.b3-list-item--big) .counter,
@@ -1072,6 +1129,12 @@
 .b3-list--background .b3-list-item.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) .counter:hover, .b3-list--files .b3-list-item:not(.b3-list-item--big) .counter:hover,
 .b3-list--background .b3-list-item:not(.b3-list-item--big) .counter:hover, .protyle-attr--refcount:hover {
   background-color: #e7e7e7;
+}
+
+.b3-menu, .b3-menu .b3-menu__submenu {
+  border-radius: 6px;
+  padding: 7px 6px 6px;
+  min-width: 200px;
 }
 
 .protyle-background {

@@ -8,7 +8,6 @@
       margin: 0 6px 0 0;
       z-index: 99;
       &[data-type="pin"] {
-        $pin-transition: transform 200ms ease;
         svg {
           transform: rotate(45deg);
           transition: $pin-transition;

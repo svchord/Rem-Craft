@@ -1,5 +1,6 @@
 @import "main";
 @import "editor/cover";
+@import "editor/toolbar";
 
 //编辑器
 .layout__center {
@@ -17,10 +18,16 @@
 .protyle-title {
   margin: 0 #{$content-margin} !important;
   max-width: 708px;
+  font-weight: 700;
+  height: 54px;
+  .protyle-title__input {
+    height: 54px;
+    padding: 3px 2px;
+  }
 }
 
 .protyle-wysiwyg {
-  *:not(.block__edit) & {
+  .protyle:not(.block__edit) & {
     padding: 16px 96px 235px 96px !important;
     max-width: 708px;
     margin: 0 auto;

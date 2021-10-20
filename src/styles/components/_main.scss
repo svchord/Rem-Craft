@@ -82,7 +82,12 @@ $rc-dialog-border:rgb(234, 234, 234);
 //弹窗边框弧度
 $rc-dialog-radius: 10px;
 
-//顶部工具栏栏
+//行内工具栏阴影
+$rc-toolbar-shadow: "rgb(0 0 0 / 15%) 0px 5px 10px, rgb(0 0 0 / 20%) 0px 0px 1px";
+
+
+
+//顶部工具栏
 %toolbar_before {
   z-index: 1;
   width: auto;

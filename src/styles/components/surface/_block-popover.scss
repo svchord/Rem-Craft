@@ -2,9 +2,10 @@
 .block__popover {
   box-shadow: #{$rc-dialog-shadow};
   .block__icons--border {
+    height: 45px;
     .block__icon {
       @include block__icon__model(28px, 14px);
-      transform: translateY(37px) translateX(2px);
+      // transform: translateY(37px) translateX(2px);
       margin: 0 6px 0 0;
       z-index: 99;
       &[data-type="pin"] {
@@ -27,7 +28,17 @@
       }
     }
   }
-  .protyle-breadcrumb {
-    padding-right: 74px;
+
+  .block__content {
+    min-height: 74px+45px;
+    .block__edit {
+      min-height: 74px+45px;
+      // .protyle-breadcrumb {
+      //   padding-right: 74px;
+      // }
+      .protyle-content {
+        min-height: 74px;
+      }
+    }
   }
 }

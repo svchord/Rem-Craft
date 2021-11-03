@@ -1,6 +1,7 @@
 @import "main";
 @import "editor/cover";
 @import "editor/toolbar";
+@import "editor/util";
 
 //编辑器
 .layout__center {
@@ -12,7 +13,11 @@
 }
 
 .layout__resize--lr {
-  margin: 0 $interval/2 - 3px;
+  margin: 0 ($interval - 6px)/2;
+}
+
+.layout__resize:not(.layout__resize--lr) {
+  margin: ($interval - 6px)/2 - $interval  0;
 }
 
 .protyle-title {
@@ -28,7 +33,7 @@
 
 .protyle-wysiwyg {
   .protyle:not(.block__edit) & {
-    padding: 16px 96px 235px 96px !important;
+    padding: 20px 96px 235px 96px !important;
     max-width: 708px;
     margin: 0 auto;
   }

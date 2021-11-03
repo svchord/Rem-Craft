@@ -1,8 +1,12 @@
 //块引用窗口
 .block__popover {
   box-shadow: #{$rc-dialog-shadow};
+  // max-height: 671.5px + 36px - 28px !important;
+  // &.block__popover--top {
+  //   max-height: 214.8px + 36px - 28px;
+  // }
   .block__icons--border {
-    height: 45px;
+    min-height: 36px;
     .block__icon {
       @include block__icon__model(28px, 14px);
       // transform: translateY(37px) translateX(2px);

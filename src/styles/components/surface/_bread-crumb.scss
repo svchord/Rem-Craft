@@ -1,9 +1,16 @@
 //面包屑
 .protyle-breadcrumb {
   height: 45px;
-  // .protyle:not(.block__edit) &{
-  //   padding-left: 60px;
-  // }
+  .fullscreen > & {
+    .fn__space {
+      -webkit-app-region: drag;
+    }
+    .block__icon{
+      margin: (36px - 28px)/2;
+    }
+    height: 36px;
+    padding-right: 126px !important;
+  }
   .protyle-breadcrumb__item {
     border-radius: 4px;
     padding: 0 6px;

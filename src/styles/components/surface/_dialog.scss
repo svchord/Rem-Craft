@@ -19,8 +19,9 @@
     border-bottom-right-radius: $rc-dialog-radius;
   }
   //小弹窗
-  &[style="width:50vw"] {
-    width: 420px !important; //320px !important;
+  &[style*="50vw"],
+  &[style*="520px"] {
+    width: 470px !important;
     background-color: $rc-theme-background;
     padding: 0 16px;
     //弹窗标题
@@ -62,21 +63,23 @@
       .block__icon {
         @include block__icon__model(28px, 10px);
       }
-      .ft__on-surface {
+      .ft__on-surface,.b3-text-filed[placeholder="属性名"] {
         font-size: 15px;
         width: 80px !important;
         text-align: center !important;
       }
-
-      .b3-text-filed[placeholder="属性名"] {
-        text-align: center !important;
-        width: 76px !important;
-      }
       .fn__space {
         width: 15px;
       }
+      div[style*="var(--b3-border-color)"]{
+        background-color: $rc-dialog-border !important;
+      }
+      .custom-attr__add{
+        padding: 0;
+        height: 152px;
+      }
       .b3-button {
-        width: 76px !important;
+        width: 80px !important;
         svg {
           width: 10px;
           height: 10px;
@@ -85,7 +88,7 @@
     }
     //弹窗中的搜索按钮
     .b3-form__icon-icon {
-      top: (72px - 16px)/2;
+      top: (73.85px - 16px)/2;
     }
 
     .b3-text-filed {
@@ -133,5 +136,8 @@
         }
       }
     }
+  }
+  &[style="width:520px"]{
+    width: 320px !important;
   }
 }

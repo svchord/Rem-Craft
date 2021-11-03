@@ -199,7 +199,7 @@ $rc-selection-color: rgba(45, 170, 219, 0.3);
 
 //输入框
 .b3-text-filed {
-  border: 1px solid $rc-border-color;
+  border: 1px solid $rc-border-color !important;
   border-radius: 6px;
   &.b3-text-filed--small {
     height: 24px;
@@ -234,8 +234,19 @@ $rc-selection-color: rgba(45, 170, 219, 0.3);
 
 //tips
 
-.b3-tooltips::before {
-  border: none;
+.b3-tooltips {
+  &::before {
+    border: none;
+  }
+  // &::after{
+  //   z-index: 999 !important;
+  // }
+}
+//表单
+.b3-form__space--small {
+  .block__icon {
+    @include block__icon__model(28px, 14px);
+  }
 }
 
 // .layout__resize:hover:after{
@@ -253,4 +264,12 @@ $rc-selection-color: rgba(45, 170, 219, 0.3);
 
 ::selection {
   background-color: $rc-selection-color;
+}
+
+//提示语
+.protyle-title__input--untitled::after {
+  -webkit-text-fill-color: rgba($rc-theme-on-background, 0.15);
+}
+div[data-tip="键入文字或 '/' 选择"]::after {
+  -webkit-text-fill-color: rgba($rc-theme-on-background, 0.4);
 }

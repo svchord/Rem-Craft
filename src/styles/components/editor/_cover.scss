@@ -36,7 +36,7 @@
     height: 24px;
     top: 72px;
     left: #{$content-margin};
-    transition: opacity 100ms ease;
+    transition: opacity 300ms ease-in;
     opacity: 0;
     .b3-tooltips {
       display: inline-flex;

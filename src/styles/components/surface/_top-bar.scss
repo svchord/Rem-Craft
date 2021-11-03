@@ -1,6 +1,7 @@
+//顶部工具栏
 .toolbar {
   height: 30px;
-  z-index: 99;
+  // z-index: 99;
   #toolbarVIP {
     &:empty {
       -webkit-app-region: drag;
@@ -47,6 +48,13 @@
     &#barMore {
       width: 36px;
       padding: 0 11px;
+    }
+    &#barBack,
+    &#barForward{
+      svg{
+        width: 12px;
+        height: 12px;
+      }
     }
     &.toolbar__item--action {
       width: 42px;

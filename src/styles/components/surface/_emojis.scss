@@ -1,0 +1,59 @@
+//表情面板
+.emojis {
+  padding: 0 2px 0;
+  > div:first-child {
+    margin: 4px 0 6px;
+    .block__icon {
+      @include block__icon__model(28px, 14px);
+    }
+  }
+
+  .emojis__panel {
+    .emojis__title {
+      padding: 18px 0 8px;
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba($rc-theme-on-background, 0.7);
+      letter-spacing: 0.3px;
+      &:first-child {
+        padding-top: 12px;
+      }
+    }
+    .fn__hr {
+      display: none;
+      & + .emojis__content {
+        padding-top: 0;
+      }
+    }
+    .emojis__content {
+      div[style*="4px"] {
+        height: 28px;
+        line-height: 28px;
+        width: 100%;
+        margin: 0 !important;
+      }
+      .emojis__item {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        height: 32px;
+        width: 32px;
+        font-size: 20px;
+        border-radius: 4px;
+        background-color: transparent;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+        cursor: pointer;
+        padding: 0;
+        &:hover {
+          background-color: $rc-theme-list-hover;
+        }
+      }
+    }
+  }
+  > div:last-child {
+    padding-top: 6px;
+  }
+}

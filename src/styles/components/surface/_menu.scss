@@ -1,0 +1,51 @@
+//菜单
+.b3-menu {
+  @extend %menu__model;
+  .b3-menu__item:not(.b3-menu__item--readonly):not(.b3-menu__item--custom) {
+    height: 31.2px;
+    min-width: 0px;
+    padding: 8px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    transition: all 0.3s ease 0s;
+  }
+  .b3-menu__item--custom {
+    padding: 0 8px;
+    .b3-menu__icon,
+    .fn__hr {
+      display: none;
+    }
+    .b3-menu__label {
+      padding: 6px 0;
+    }
+  }
+  .b3-menu__submenu {
+    $sub-menu-vertical: 10px;
+    @extend %menu__model;
+    margin-left: $sub-menu-vertical;
+    margin-right: $sub-menu-vertical;
+    top: -9px;
+  }
+  .b3-menu__separator {
+    margin-left: -6px;
+    margin-right: -6px;
+    width: calc(100% + 12px);
+    padding-top: 4px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid $rc-menu-separator;
+    padding: 0;
+    height: 0;
+  }
+  .b3-menu__item--readonly {
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba($rc-theme-on-background, 0.4);
+    margin-bottom: 4px;
+  }
+  .b3-menu__item--custom.b3-menu__item--current {
+    background-color: $rc-menu-background;
+  }
+}

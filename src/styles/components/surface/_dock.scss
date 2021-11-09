@@ -1,4 +1,38 @@
 //边栏
+%dock--vertical_model {
+  border-radius: 6px;
+  padding: 4px;
+  background-color: $rc-theme-surface-background;
+  border: $rc-surface-boder;
+  span {
+    width: 35px;
+    padding: 0 0 0 1px;
+    justify-content: center;
+    background-color: $rc-theme-surface-background;
+    transform: translateZ(0px) scale(1);
+    line-height: 0;
+    height: 40px;
+    flex-grow: 1;
+    position: relative;
+    border-radius: 4px;
+    transition: all 0s ease 0s;
+    margin: 1px 0px;
+    cursor: pointer;
+    &:hover {
+      background-color: $rc-theme-surface-button;
+    }
+    &.dock__item--active:hover {
+      background-color: $rc-theme-surface-button-focus;
+    }
+    svg {
+      $dock-svg-width: 15px;
+      width: $dock-svg-width;
+      height: $dock-svg-width;
+    }
+  }
+}
+
+//边栏
 .dock--vertical {
   width: 46px;
   margin-left: $interval;

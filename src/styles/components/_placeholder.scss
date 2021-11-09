@@ -1,0 +1,13 @@
+
+//数量按钮
+%counter__model {
+    height: 22px;
+    width: auto;
+    padding: 0 7px;
+    text-align: center;
+    justify-content: center;
+    line-height: 22px;
+    &:hover {
+      background-color: $rc-theme-list-button;
+    }
+  }

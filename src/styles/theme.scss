@@ -1,11 +1,14 @@
-//界面
-@import "components/surface";
-//编辑器
-@import "components/editor";
+//公共属性
+@import "components/variables";
 
 @font-face {
   font-family: "HarmonyOS Sans SC";
   src: url("/src/fonts/HarmonyOS_Sans_SC_Regular.ttf");
+}
+
+@font-face {
+  font-family: "Noto Sans SC";
+  src: url("/src/fonts/NotoSansSC-Regular.otf");
 }
 
 @font-face {
@@ -34,11 +37,11 @@
   --b3-theme-on-error: #fff;
 
   // 字体
-  --b3-font-family: "quote", "HarmonyOS Sans SC", "JetBrains Mono","Helvetica Neue", "Luxi Sans",
+  --b3-font-family: "quote", "Noto Sans SC", "JetBrains Mono","Helvetica Neue", "Luxi Sans",
     "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol",
     "Android Emoji", "EmojiSymbols";
-  --b3-font-family-code: "JetBrains Mono", "HarmonyOS Sans SC", mononoki,
+  --b3-font-family-code: "JetBrains Mono", "Noto Sans SC", mononoki,
     Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji",
     "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
     "EmojiSymbols";
@@ -173,3 +176,9 @@
   mix-blend-mode: darken;
 }
 
+//占位符
+@import "components/placeholder";
+//界面
+@import "components/surface";
+//编辑器
+@import "components/editor";

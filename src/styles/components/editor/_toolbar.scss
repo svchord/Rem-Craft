@@ -2,7 +2,7 @@
   padding-left: 3px;
   border-radius: 8px;
   box-shadow: #{$rc-toolbar-shadow};
-  transform: translateY(-9px);
+  transform: translateY(-18px);
   .protyle-toolbar__item {
     height: 32px;
     width: 34px;
@@ -31,6 +31,6 @@
   }
   .protyle-toolbar__divider {
     margin: 0 3px 0 0;
-    border-color: rgb(242,242,242); //rgb(247, 247, 247);//
+    border-color: rgb(247, 247, 247);//rgb(242,242,242); //
   }
 }

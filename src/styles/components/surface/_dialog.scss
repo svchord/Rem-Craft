@@ -1,7 +1,7 @@
 //弹窗
 //蒙版
 .b3-dialog__scrim {
-  background-color: rgba($rc-theme-on-background, 0.05);
+  background-color: $rc-dialog-scrim;//rgba($rc-theme-on-background, 0.05);
 }
 //大弹窗
 .b3-dialog__container {

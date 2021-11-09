@@ -14,8 +14,12 @@
   .protyle-breadcrumb__item {
     border-radius: 4px;
     padding: 0 6px;
+    margin: 0 6px;
     height: 24px;
     line-height: 1;
+    &:first-child{
+      margin-left: 0;
+    }
     &:hover {
       background-color: $rc-theme-list-hover;
     }

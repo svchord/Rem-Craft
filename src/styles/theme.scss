@@ -3,21 +3,14 @@
 //编辑器
 @import "components/editor";
 
-//滚动条
-$rc-scroll-color: rgba(0, 0, 0, 0.1);
-
-//强调色
-$rc-mark-background: rgb(212, 240, 255);
-
-//提示条底色
-$rc-tooltips-color: rgb(15, 15, 15);
-
-//选中文字底色
-$rc-selection-color: rgba(45, 170, 219, 0.3);
-
 @font-face {
   font-family: "HarmonyOS Sans SC";
-  src: url("src/fonts/HarmonyOS_Sans_SC_Regular.ttf");
+  src: url("/src/fonts/HarmonyOS_Sans_SC_Regular.ttf");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/src/fonts/JetBrainsMono-Regular.ttf");
 }
 
 :root {
@@ -41,11 +34,11 @@ $rc-selection-color: rgba(45, 170, 219, 0.3);
   --b3-theme-on-error: #fff;
 
   // 字体
-  --b3-font-family: "quote", "HarmonyOS Sans SC", "Helvetica Neue", "Luxi Sans",
+  --b3-font-family: "quote", "HarmonyOS Sans SC", "JetBrains Mono","Helvetica Neue", "Luxi Sans",
     "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol",
     "Android Emoji", "EmojiSymbols";
-  --b3-font-family-code: "JetBrainsMono-Regular", "HarmonyOS Sans SC", mononoki,
+  --b3-font-family-code: "JetBrains Mono", "HarmonyOS Sans SC", mononoki,
     Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji",
     "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
     "EmojiSymbols";
@@ -150,7 +143,7 @@ $rc-selection-color: rgba(45, 170, 219, 0.3);
   --b3-protyle-search-current-background: #a5d3fe;
 
   // 代码片段背景
-  --b3-protyle-code-background: rgba(27, 31, 35, 0.05);
+  --b3-protyle-code-background: #{$rc-code-background};//rgba(27, 31, 35, 0.05);
 
   // 所见即所得行内元素颜色
   --b3-protyle-inline-strong-color: #202124;
@@ -180,96 +173,3 @@ $rc-selection-color: rgba(45, 170, 219, 0.3);
   mix-blend-mode: darken;
 }
 
-//按钮
-.b3-button:not(.b3-button--text):not(.b3-button--cancel):not(.b3-button--outline) {
-  &:hover {
-    background-color: rgba($rc-theme-primary, 0.9);
-    box-shadow: none;
-  }
-}
-.b3-button--outline {
-  svg {
-    width: 12px;
-    height: 12x;
-  }
-  &:hover {
-    background-color: $rc-button-cancel-hover;
-  }
-}
-
-//输入框
-.b3-text-filed {
-  border: 1px solid $rc-border-color !important;
-  border-radius: 6px;
-  &.b3-text-filed--small {
-    height: 24px;
-  }
-  &:not(.b3-text-filed--small):not(.b3-text-filed--text) {
-    background-color: $rc-theme-surface-control;
-  }
-  &:hover,
-  &:focus {
-    box-shadow: none;
-    border: 1px solid $rc-border-color !important;
-  }
-}
-
-//选择菜单
-.b3-select {
-  background-color: $rc-theme-surface-control;
-  &:focus {
-    box-shadow: none;
-  }
-}
-
-//开关
-.b3-switch {
-  background-color: $rc-theme-surface-control;
-}
-
-//label
-.b3-label {
-  background-color: $rc-theme-background;
-}
-
-//tips
-
-.b3-tooltips {
-  &::before {
-    border: none;
-  }
-  // &::after{
-  //   z-index: 999 !important;
-  // }
-}
-//表单
-.b3-form__space--small {
-  .block__icon {
-    @include block__icon__model(28px, 14px);
-  }
-}
-
-// .layout__resize:hover:after{
-//   background-color: $rc-theme-list-button;
-// }
-
-//滚动条
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 3px;
-}
-
-::selection {
-  background-color: $rc-selection-color;
-}
-
-//提示语
-.protyle-title__input--untitled::after {
-  -webkit-text-fill-color: rgba($rc-theme-on-background, 0.15);
-}
-div[data-tip="键入文字或 '/' 选择"]::after {
-  -webkit-text-fill-color: rgba($rc-theme-on-background, 0.4);
-}

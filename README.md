@@ -47,7 +47,7 @@
         "src/styles/theme.scss"
     ]
    ```
-3. 克隆该仓库到本地，并更换到`dev`分支（此步骤建议使用 Github Desktop）
+3. 克隆[本仓库](https://github.com/zqhjl/Rem-Craft)到本地，并更换到`dev`分支（此步骤建议使用 Github Desktop）
 4. 查看`src/styles/components/_main.scss`文件，其中包含了所有更改样式的相关颜色和部分共用样式，请按照自己的需求自行修改
 5. 点击编辑器底部的`Watch Sass`按钮，等待编译
 6. 将编译后的`theme.css`文件替换主题文件夹中的同名文件

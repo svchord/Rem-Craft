@@ -36,10 +36,10 @@ div[data-tip="键入文字或 '/' 选择"]::after {
 .protyle-title {
   margin: 0 #{$content-margin} !important;
   max-width: 708px;
-  font-weight: 700;
-  height: 54px;
+  // height: 54px;
   .protyle-title__input {
-    height: 54px;
+    // height: 54px;
+    font-weight: 700;
     padding: 3px 2px;
   }
 }

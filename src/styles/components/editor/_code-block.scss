@@ -1,0 +1,97 @@
+//多行代码块
+.code-block {
+  // .protyle-wysiwyg--hl,
+  background-color: $rc-code-background;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: "HarmonyOS Sans SC", "JetBrains Mono";
+  .protyle-icons {
+    left: 8px;
+    top: 8px;
+    right: 6px;
+    background-color: transparent;
+    %code-action {
+      border-radius: 4px;
+      font-size: 12px;
+      display: flex;
+      color: $rc-theme-on-surface;
+      &:hover {
+        background-color: $rc-theme-list-button;
+      }
+      &::after {
+        content: "";
+        display: flex;
+        flex-direction: column;
+        margin-left: 4px;
+      }
+    }
+    // display: block;
+    .protyle-action__language {
+      text-transform: capitalize;
+      @extend %code-action;
+      height: 20px;
+      padding: 0 5px;
+      &::after {
+        content: "";
+        width: 10px;
+        height: 20px;
+        $expand_more_url: "src/icons/expand_more_black_18dp.svg";
+        background-color: rgba($rc-theme-on-surface, 0.7);
+        -webkit-mask: url($expand_more_url) no-repeat center;
+        mask: url($expand_more_url) no-repeat center;
+      }
+    }
+    .protyle-action__copy {
+      @extend %code-action;
+      position: absolute;
+      top: -2px;
+      right: 0;
+      padding: 4px 6px;
+      height: 17px;
+      background-color: $rc-theme-list-focus;
+      svg {
+        display: flex;
+        width: 12px;
+        height: 17px;
+        margin-right: 4px;
+      }
+      &::before {
+        display: none;
+      }
+      &::after {
+        content: "Copy";
+        font-size: 12px;
+        line-height: 1.2;
+        height: 100%;
+        position: unset;
+        border-radius: 0;
+        background-color: transparent;
+        color: $rc-theme-on-surface;
+        padding: 0;
+        margin: 0 auto;
+        opacity: 1;
+        transition: unset;
+        transform: unset;
+      }
+      &:hover {
+        background-color: $rc-theme-list-focus;
+      }
+      &:active {
+        background-color: $rc-theme-list-button;
+      }
+    }
+  }
+  .hljs {
+    background-color: transparent !important;
+    padding: 34px 6px 32px 22px !important;
+    line-height: 1.625;
+    &.protyle-linenumber {
+      padding-left: 60px !important;
+    }
+  }
+  .protyle-linenumber__rows {
+    background-color: transparent !important;
+    // width: 32px;
+    padding: 34px 0px 32px 0px !important;
+  }
+}

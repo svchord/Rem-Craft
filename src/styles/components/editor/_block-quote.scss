@@ -1,0 +1,54 @@
+//引述块
+.bq {
+  background-color: transparent !important;
+  border: none !important;
+  &.protyle-wysiwyg--hl {
+    background-color: $rc-theme-primary-lightest !important;
+  }
+  .p {
+    padding: 0 0 0 18px !important;
+    // border-left: 4px solid $rc-theme-on-background !important;
+    height: auto;
+    line-height: 1.7;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 4px;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0px;
+      border-radius: 2px;
+      background-color: $rc-theme-on-background;
+    }
+    // div[contenteditable="true"] {
+    //   display: inline-block !important;
+    // }
+  }
+}
+
+blockquote {
+  background-color: transparent !important;
+  border: none !important;
+  p {
+    padding: 0 0 0 18px !important;
+    // border-left: 4px solid $rc-theme-on-background !important;
+    height: auto;
+    line-height: 1.7;
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 4px;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0px;
+      border-radius: 2px;
+      background-color: $rc-theme-on-background;
+    }
+  }
+}
+

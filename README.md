@@ -14,7 +14,7 @@
 - Notion 的面包屑
 - Logseq 的页签
 - Notion 的编辑器各类块
->编辑器目前仅对引述块、列表块、快捷键、多行代码块、表格块、公式块和嵌入块做了一定的更改
+>编辑器目前仅对引述块、列表块、快捷键、多行代码块、表格块、公式块和嵌入块等做了一定的更改
 
 
 ## 注意
@@ -47,7 +47,7 @@
         "src/styles/theme.scss"
     ]
    ```
-3. 克隆该仓库到本地，并更换到`dev`分支（此步骤建议使用 Github Desktop）
+3. 克隆[本仓库](https://github.com/zqhjl/Rem-Craft)到本地，并更换到`dev`分支（此步骤建议使用 Github Desktop）
 4. 查看`src/styles/components/_main.scss`文件，其中包含了所有更改样式的相关颜色和部分共用样式，请按照自己的需求自行修改
 5. 点击编辑器底部的`Watch Sass`按钮，等待编译
 6. 将编译后的`theme.css`文件替换主题文件夹中的同名文件
@@ -74,6 +74,4 @@
 
 ## LICENSE
 
-GNU GENERAL PUBLIC LICENSE
-
-Version 3, 29 June 2007
+[MIT License](LICENSE)

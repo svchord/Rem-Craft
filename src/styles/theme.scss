@@ -7,11 +7,6 @@
 }
 
 @font-face {
-  font-family: "Noto Sans SC";
-  src: url("/src/fonts/NotoSansSC-Regular.otf");
-}
-
-@font-face {
   font-family: "JetBrains Mono";
   src: url("/src/fonts/JetBrainsMono-Regular.ttf");
 }
@@ -37,11 +32,11 @@
   --b3-theme-on-error: #fff;
 
   // 字体
-  --b3-font-family: "quote", "Noto Sans SC", "JetBrains Mono","Helvetica Neue", "Luxi Sans",
-    "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol",
-    "Android Emoji", "EmojiSymbols";
-  --b3-font-family-code: "JetBrains Mono", "Noto Sans SC", mononoki,
+  --b3-font-family: "quote", "HarmonyOS Sans SC", "JetBrains Mono",
+    "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB",
+    "Microsoft Yahei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+  --b3-font-family-code: "JetBrains Mono", "HarmonyOS Sans SC", mononoki,
     Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji",
     "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
     "EmojiSymbols";
@@ -146,7 +141,7 @@
   --b3-protyle-search-current-background: #a5d3fe;
 
   // 代码片段背景
-  --b3-protyle-code-background: #{$rc-code-background};//rgba(27, 31, 35, 0.05);
+  --b3-protyle-code-background: #{$rc-code-background}; //rgba(27, 31, 35, 0.05);
 
   // 所见即所得行内元素颜色
   --b3-protyle-inline-strong-color: #202124;

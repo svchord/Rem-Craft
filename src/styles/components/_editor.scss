@@ -35,6 +35,20 @@ div[data-tip="键入文字或 '/' 选择"]::after {
   margin: 0 #{$content-margin} !important;
   max-width: 708px;
   // height: 54px;
+  &:hover .protyle-title__icon {
+    opacity: 0.6;
+  }
+  .protyle-title__icon {
+    transform: translateX(-6px);
+    border-right: 6px solid transparent;
+    &:hover {
+      opacity: 1;
+    }
+    &::after {
+      right: 100%;
+      left: auto;
+    }
+  }
   .protyle-title__input {
     // height: 54px;
     font-weight: 700;
@@ -111,4 +125,8 @@ div[data-type="NodeBlockQueryEmbed"].render-node {
 
 .protyle-speech {
   border-color: $rc-border-color;
+}
+
+.protyle-select{
+  max-width: 100vw;
 }

@@ -5,11 +5,6 @@
 }
 
 @font-face {
-  font-family: "Noto Sans SC";
-  src: url("/src/fonts/NotoSansSC-Regular.otf");
-}
-
-@font-face {
   font-family: "JetBrains Mono";
   src: url("/src/fonts/JetBrainsMono-Regular.ttf");
 }
@@ -30,11 +25,11 @@
   --b3-theme-on-background: #1f2225;
   --b3-theme-on-surface: #35383b;
   --b3-theme-on-error: #fff;
-  --b3-font-family: "quote", "Noto Sans SC", "JetBrains Mono","Helvetica Neue", "Luxi Sans",
-    "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol",
-    "Android Emoji", "EmojiSymbols";
-  --b3-font-family-code: "JetBrains Mono", "Noto Sans SC", mononoki,
+  --b3-font-family: "quote", "HarmonyOS Sans SC", "JetBrains Mono",
+    "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB",
+    "Microsoft Yahei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+  --b3-font-family-code: "JetBrains Mono", "HarmonyOS Sans SC", mononoki,
     Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji",
     "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
     "EmojiSymbols";
@@ -581,7 +576,76 @@
 }
 
 .protyle-breadcrumb {
-  height: 45px;
+  padding: 10.5px 8px;
+}
+
+.fullscreen > .protyle-breadcrumb {
+  height: 36px;
+  padding-right: 126px !important;
+}
+
+.fullscreen > .protyle-breadcrumb .fn__space {
+  -webkit-app-region: drag;
+}
+
+.fullscreen > .protyle-breadcrumb .block__icon {
+  margin: 4px;
+}
+
+.protyle-breadcrumb .fn__space {
+  width: 0;
+}
+
+.protyle-breadcrumb .protyle-breadcrumb__item {
+  border-radius: 4px;
+  padding: 0 6px;
+  margin: 0 6px;
+  height: 24px;
+  line-height: 1;
+}
+
+.protyle-breadcrumb .protyle-breadcrumb__item:first-child {
+  margin-left: 0;
+}
+
+.protyle-breadcrumb .protyle-breadcrumb__item:hover {
+  background-color: #f6f6f6;
+}
+
+.protyle-breadcrumb .protyle-breadcrumb__item svg {
+  width: 12px;
+  height: 12px;
+  margin: 6px 0;
+}
+
+.protyle-breadcrumb .protyle-breadcrumb__item svg.ft__primary {
+  color: #1f2225;
+}
+
+.protyle-breadcrumb .protyle-breadcrumb__item .protyle-breadcrumb__text:not(:empty) {
+  margin-left: 4px;
+}
+
+.protyle-breadcrumb .block__icon {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+
+.protyle-breadcrumb .block__icon:hover {
+  background-color: #f6f6f6;
+}
+
+.protyle-breadcrumb .block__icon.ft__primary:hover {
+  background-color: rgba(0, 135, 255, 0.1);
+}
+
+.protyle-breadcrumb .block__icon svg {
+  width: 14px;
+  height: 14px;
+  padding: 7px;
 }
 
 .b3-menu, .b3-menu .b3-menu__submenu {
@@ -1814,6 +1878,25 @@ div[data-tip="键入文字或 '/' 选择"]::after {
   max-width: 708px;
 }
 
+.protyle-title:hover .protyle-title__icon {
+  opacity: 0.6;
+}
+
+.protyle-title .protyle-title__icon {
+  -webkit-transform: translateX(-6px);
+          transform: translateX(-6px);
+  border-right: 6px solid transparent;
+}
+
+.protyle-title .protyle-title__icon:hover {
+  opacity: 1;
+}
+
+.protyle-title .protyle-title__icon::after {
+  right: 100%;
+  left: auto;
+}
+
 .protyle-title .protyle-title__input {
   font-weight: 700;
   padding: 3px 2px;
@@ -1885,4 +1968,8 @@ div[data-type="NodeBlockQueryEmbed"].render-node.protyle-wysiwyg--hl {
 
 .protyle-speech {
   border-color: #eeeeee;
+}
+
+.protyle-select {
+  max-width: 100vw;
 }

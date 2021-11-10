@@ -105,23 +105,3 @@ $rc-code-background: rgb(247, 247, 247);
 
 //通知栏阴影
 $rc-snackbar-shadow: "rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 10%) 0px 15px 30px";
-
-
-//界面上按钮
-@mixin block__icon__model($width, $svg-width) {
-  width: $width;
-  height: $width;
-  padding: 0;
-  border-radius: 4px;
-  &:hover {
-    background-color: $rc-theme-surface-button;
-  }
-  &.ft__primary:hover {
-    background-color: $rc-theme-surface-button-focus;
-  }
-  svg {
-    width: $svg-width;
-    height: $svg-width;
-    padding: ($width - $svg-width)/2;
-  }
-}

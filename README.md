@@ -48,7 +48,7 @@
     ]
    ```
 3. 克隆[本仓库](https://github.com/zqhjl/Rem-Craft)到本地，并更换到`dev`分支（此步骤建议使用 Github Desktop）
-4. 查看`src/styles/components/_main.scss`文件，其中包含了所有更改样式的相关颜色和部分共用样式，请按照自己的需求自行修改
+4. 查看[_variables.scss](/src/styles/components/_variables.scss)文件，其中包含了所有更改样式的相关颜色和部分共用样式，请按照自己的需求自行修改
 5. 点击编辑器底部的`Watch Sass`按钮，等待编译
 6. 将编译后的`theme.css`文件替换主题文件夹中的同名文件
 
@@ -56,14 +56,14 @@
 
 以下相关操作与[激进变更](#注意)按序号对应：
 
-1. 可通过修改`src/styles/components/_main.scss`文件中的`$list-left`变量调整
-2. 相关代码在`src/styles/components/surface/_dialog.scss`文件中，结构如下所示，注释后编译即可取消
+1. 可通过修改[_variables.scss](/src/styles/components/_variables.scss)文件中的`$list-left`变量调整
+2. 相关代码在[_dialog.scss](/src/styles/components/surface/_dialog.scss)文件中，结构如下所示，注释后编译即可取消
      ```css
     .b3-dialog__close {
       display: none;
     }
     ```
-3. 相关代码在`src/styles/components/editor/_util.scss`文件中，结构如下所示，注释后编译即可取消
+3. 相关代码在[_util.scss](src/styles/components/editor/_util.scss)文件中，结构如下所示，注释后编译即可取消
     ```css
     &[style*="width"] {
       ...

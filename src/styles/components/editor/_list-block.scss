@@ -1,7 +1,13 @@
 .list {
+  
   &::before {
     border-color: $rc-list-border !important;
-    top: 0 !important;
+    // top: 0 !important;
+    left: -1px !important;
+  }
+  .p::before{
+    border-color: $rc-list-border !important;
+    left: -17px !important;
   }
 }
 

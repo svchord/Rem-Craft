@@ -38,24 +38,25 @@
         display: none;
       }
     }
+    @each $id in DailyNote, Search, Dock, ThemeMode, Sync {
+      &#bar#{$id}::before {
+        @extend %toolbar_before;
+        // content: '#{$id}';
+      }
+    }
     &#barDailyNote::before {
-      @extend %toolbar_before;
       content: "日记";
     }
     &#barSearch::before {
-      @extend %toolbar_before;
       content: "搜索";
     }
     &#barDock::before {
-      @extend %toolbar_before;
       content: "边栏";
     }
     &#barThemeMode::before {
-      @extend %toolbar_before;
       content: "暗黑";
     }
     &#barSync::before {
-      @extend %toolbar_before;
       content: "同步";
     }
     &#barMore {
@@ -63,8 +64,8 @@
       padding: 0 11px;
     }
     &#barBack,
-    &#barForward{
-      svg{
+    &#barForward {
+      svg {
         width: 12px;
         height: 12px;
       }

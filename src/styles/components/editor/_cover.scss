@@ -98,3 +98,29 @@
     }
   }
 }
+
+
+//文档标题
+.protyle-title {
+  margin: 0 #{$content-margin} !important;
+  max-width: $rc-editor-width;
+  &:hover .protyle-title__icon {
+    opacity: 0.6;
+  }
+  .protyle-title__icon {
+    transform: translateX(-6px);
+    border-right: 6px solid transparent;
+    &:hover {
+      opacity: 1;
+    }
+    &::after {
+      right: 100%;
+      left: auto;
+    }
+  }
+  .protyle-title__input {
+    // height: 54px;
+    font-weight: 700;
+    padding: 3px 2px;
+  }
+}

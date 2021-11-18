@@ -1,7 +1,10 @@
 //面包屑
 .protyle-breadcrumb {
-  padding: 10.5px 8px;
+  padding: 6px 8px;
   // height: 45px;
+  .protyle-breadcrumb__bar {
+    padding: 2px 0;
+  }
   .fullscreen > & {
     .fn__space {
       -webkit-app-region: drag;

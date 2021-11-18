@@ -44,8 +44,10 @@ $rc-theme-list-hover: rgb(246, 246, 246);
 $rc-theme-list-focus: rgb(240, 240, 240);
 //列表项上按钮正常悬浮
 $rc-theme-list-button: rgb(231, 231, 231); //rgb(225, 225, 225);
-//子列表左边距
+//子列表缩进左边距
 $list-left: 24px;
+//子列表缩进最大深度
+$list-depth: 7;
 //列表高度
 $list-text-height: 24px;
 
@@ -57,8 +59,10 @@ $rc-button-cancel-hover: rgb(230, 243, 255);
 //钉住动画
 $pin-transition: transform 200ms ease;
 
+//编辑器宽度
+$rc-editor-width: 46.9vw;
 //编辑器两侧边距
-$content-margin: "max(calc(50% - 354px), 96px)";
+$content-margin: "max(calc((100% - #{$rc-editor-width}) / 2), 96px)";
 
 //菜单
 //菜单阴影

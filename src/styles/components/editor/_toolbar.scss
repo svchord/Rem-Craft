@@ -28,6 +28,9 @@
       width: 12px;
       height: 12px;
     }
+    &::after{
+      bottom: 110%;
+    }
   }
   .protyle-toolbar__divider {
     margin: 0 3px 0 0;

@@ -7,6 +7,9 @@
 .b3-dialog__container {
   box-shadow: #{$rc-dialog-shadow};
   border-radius: $rc-dialog-radius;
+  div[style="height:auto"] > div{
+    border-radius: 0 0 10px 10px;
+  }
   .b3-dialog__close {
     display: none;
   }

@@ -12,7 +12,6 @@
 //面包屑
 @import "surface/bread-crumb";
 
-
 //菜单
 @import "surface/menu";
 //对话弹窗
@@ -50,6 +49,9 @@
   }
   &:not(.b3-text-filed--small):not(.b3-text-filed--text) {
     background-color: $rc-theme-surface-control;
+  }
+  .b3-list-item > & {
+    background-color: $rc-theme-background !important;
   }
   &:hover,
   &:focus {

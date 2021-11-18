@@ -12,6 +12,8 @@
 @import "editor/code-block";
 //表格块
 @import "editor/table";
+//标题块
+@import "editor/heading";
 
 //提示语
 .protyle-title__input--untitled::after {
@@ -27,32 +29,6 @@ div[data-tip="键入文字或 '/' 选择"]::after {
   div[data-type="wnd"] {
     min-height: 10% !important;
     margin: $interval 0;
-  }
-}
-
-//文档标题
-.protyle-title {
-  margin: 0 #{$content-margin} !important;
-  max-width: 708px;
-  // height: 54px;
-  &:hover .protyle-title__icon {
-    opacity: 0.6;
-  }
-  .protyle-title__icon {
-    transform: translateX(-6px);
-    border-right: 6px solid transparent;
-    &:hover {
-      opacity: 1;
-    }
-    &::after {
-      right: 100%;
-      left: auto;
-    }
-  }
-  .protyle-title__input {
-    // height: 54px;
-    font-weight: 700;
-    padding: 3px 2px;
   }
 }
 
@@ -77,13 +53,16 @@ div[data-tip="键入文字或 '/' 选择"]::after {
 .b3-typography,
 .protyle-wysiwyg {
   .protyle:not(.block__edit) & {
-    padding: 20px 96px 235px 96px !important;
-    max-width: 708px;
+    padding: 16px 96px 235px 96px !important;
+    max-width: $rc-editor-width;
     margin: 0 auto;
   }
   > div {
     padding-left: 10px !important;
     padding-right: 10px !important;
+  }
+  div[data-type]{
+    border-radius: 4px;
   }
 }
 
@@ -129,4 +108,10 @@ div[data-type="NodeBlockQueryEmbed"].render-node {
 
 .protyle-select{
   max-width: 100vw;
+}
+
+.sb[data-sb-layout="col"]{
+  > div:not(:first-child):not(.protyle-attr){
+    margin-left: 50px !important;
+  }
 }

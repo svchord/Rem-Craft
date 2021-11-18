@@ -3,13 +3,13 @@
   // .protyle-wysiwyg--hl,
   background-color: $rc-code-background;
   border-radius: 4px;
-  font-size: 14px;
   font-family: "HarmonyOS Sans SC", "JetBrains Mono";
   .protyle-icons {
     left: 8px;
     top: 8px;
     right: 6px;
     background-color: transparent;
+    transition: opacity 0.5s ease-out;
     %code-action {
       border-radius: 4px;
       font-size: 12px;
@@ -81,17 +81,20 @@
       }
     }
   }
+
   .hljs {
     background-color: transparent !important;
     padding: 34px 6px 32px 22px !important;
+    font-size: 80%;
     line-height: 1.625;
     &.protyle-linenumber {
       padding-left: 60px !important;
     }
   }
   .protyle-linenumber__rows {
+    font-size: 80%;
+    // flex-direction: column;
     background-color: transparent !important;
-    // width: 32px;
     padding: 34px 0px 32px 0px !important;
   }
 }

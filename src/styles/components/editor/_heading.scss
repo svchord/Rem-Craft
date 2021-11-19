@@ -1,0 +1,39 @@
+.b3-typography,
+.protyle-wysiwyg {
+  @function avg-interval($max, $min, $num, $index) {
+    $interval: ($max - $min)/ ($num - 1);
+    $result: $max - $interval * ($index - 1);
+    @return $result;
+  }
+  $max-fs: 30px;
+  $min-fs: 16px;
+  $max-mt: 42px;
+  $min-mt: 24px;
+  $max-mb: 12px;
+  $min-mb: 4px;
+
+  @mixin heading($num, $index) {
+    font-size: avg-interval($max-fs, $min-fs, $num, $index);
+    margin-top: avg-interval($max-mt, $min-mt, $num, $index);
+    margin-bottom: avg-interval($max-mb, $min-mb, $num, $index);
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i},
+    .h#{$i} {
+      line-height: 1.2;
+      white-space: pre-wrap;
+      word-break: break-word;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      @include heading(6, $i);
+      [spellcheck="false"] {
+        min-height: 0;
+      }
+    }
+    & > h#{$i}:first-child,
+    & > .h#{$i}:first-child {
+      margin-top: 0;
+    }
+  }
+}

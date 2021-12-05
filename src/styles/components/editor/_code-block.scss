@@ -35,10 +35,12 @@
         content: "";
         width: 10px;
         height: 20px;
-        $expand_more_url: "src/icons/expand_more_black_18dp.svg";
-        background-color: rgba($rc-theme-on-surface, 0.7);
-        -webkit-mask: url($expand_more_url) no-repeat center;
-        mask: url($expand_more_url) no-repeat center;
+        @include add_icon(
+          "expand_more",
+          rgba($rc-theme-on-surface, 0.5),
+          18,
+          "no-repeat center"
+        );
       }
     }
     .protyle-action__copy {
@@ -98,3 +100,8 @@
     padding: 34px 0px 32px 0px !important;
   }
 }
+
+
+// code {
+//   // font-size: 70% !important;
+// }

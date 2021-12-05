@@ -31,8 +31,11 @@
     .fn__hr {
       display: none;
     }
-    .b3-menu__label {
+    &:first-child .b3-menu__label {
       padding: 6px 0;
+    }
+    &:not(:first-child) .b3-menu__label {
+      padding: 0 0 6px 0;
     }
   }
   .b3-menu__submenu {

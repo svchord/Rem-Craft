@@ -60,7 +60,7 @@ $rc-button-cancel-hover: rgb(230, 243, 255);
 $pin-transition: transform 200ms ease;
 
 //编辑器宽度
-$rc-editor-width: 46.9vw;
+$rc-editor-width: "min(1380px, max(720px, 46.9vw))";
 //编辑器两侧边距
 $content-margin: "max(calc((100% - #{$rc-editor-width}) / 2), 96px)";
 
@@ -93,7 +93,7 @@ $rc-toolbar-shadow: "rgb(0 0 0 / 15%) 0px 5px 10px, rgb(0 0 0 / 20%) 0px 0px 1px
 $rc-scroll-color: rgba(0, 0, 0, 0.1);
 
 //强调色
-$rc-mark-background: rgb(212, 240, 255);
+$rc-mark-background: transparent; //rgb(212, 240, 255);
 
 //提示条底色
 $rc-tooltips-color: rgb(15, 15, 15);
@@ -109,3 +109,28 @@ $rc-code-background: rgb(247, 247, 247);
 
 //通知栏阴影
 $rc-snackbar-shadow: "rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 10%) 0px 15px 30px";
+
+//超链接样式
+//颜色
+$rc-inline-link-color: #00008b; //rgba($rc-theme-on-background, 0.7);//#2156db;//rgb(16, 85, 146);
+//下划线
+$rc-inline-link-border-color: rgba(
+  $rc-inline-link-color,
+  0.4
+); //rgb(194, 217, 237);
+$rc-inline-link-border: 1px solid $rc-inline-link-border-color;
+//提示条阴影
+$rc-inline-link-tooltip-shadow: "rgb(0 0 0 / 15%) 0px 5px 10px, rgb(0 0 0 / 20%) 0px 0px 1px";
+
+//块引用样式
+$rc-inline-blockref-color: #2156db; //#0645ad;
+$rc-inline-blockref-hover: $rc-theme-primary-lightest; //rgb(232, 236, 255);
+
+//标签
+$rc-inline-tag-color: rgba($rc-theme-on-background, 0.5);
+// $rc-inline-tag-background: $rc-theme-list-hover;
+$rc-inline-tag-hover: $rc-theme-list-button;
+
+//集市卡片
+$rc-card-shadow: "rgb(0 0 0 / 5%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 15px 30px";
+$rc-card-hover-shadow: "rgb(0 0 0 / 5%) 0px 0px 1px, rgb(0 0 0 / 12%) 0px 15px 30px";

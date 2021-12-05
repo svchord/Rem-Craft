@@ -1,6 +1,13 @@
 //块引用窗口
 .block__popover {
   box-shadow: #{$rc-dialog-shadow};
+  opacity: 0;
+  margin-top: 25px;
+  &.block__popover--open {
+    opacity: 1;
+    margin-top: 0px;
+    transition: opacity,margin-top 0.3s ease-out;
+  }
   // max-height: 671.5px + 36px - 28px !important;
   // &.block__popover--top {
   //   max-height: 214.8px + 36px - 28px;
@@ -32,7 +39,6 @@
       }
     }
   }
-
   .block__content {
     min-height: 74px+45px;
     .block__edit {

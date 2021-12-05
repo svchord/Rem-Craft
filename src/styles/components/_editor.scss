@@ -14,6 +14,11 @@
 @import "editor/table";
 //标题块
 @import "editor/heading";
+//超链接
+@import "editor/link";
+//标签
+@import "editor/tag";
+
 
 //提示语
 .protyle-title__input--untitled::after {
@@ -32,6 +37,26 @@ div[data-tip="键入文字或 '/' 选择"]::after {
   }
 }
 
+.b3-typography,
+.protyle-wysiwyg {
+  .protyle:not(.block__edit) & {
+    padding: 16px 96px 235px 96px !important;
+    max-width: #{$rc-editor-width};
+    margin: 0 auto;
+  }
+  > div {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  div[data-type] {
+    border-radius: 4px;
+  }
+}
+
+.protyle:not(.block__edit) .b3-typography {
+  max-width: 900px;
+}
+
 //分割线
 .hr > div {
   border-color: $rc-border-color !important;
@@ -43,31 +68,11 @@ div[data-tip="键入文字或 '/' 选择"]::after {
   border-right: 6px solid transparent;
   button {
     // background-color: $rc-theme-background;
-    opacity: 0.6;
+    opacity: 0.35;
     &:hover {
       opacity: 1;
     }
   }
-}
-
-.b3-typography,
-.protyle-wysiwyg {
-  .protyle:not(.block__edit) & {
-    padding: 16px 96px 235px 96px !important;
-    max-width: $rc-editor-width;
-    margin: 0 auto;
-  }
-  > div {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-  }
-  div[data-type]{
-    border-radius: 4px;
-  }
-}
-
-.protyle:not(.block__edit) .b3-typography {
-  max-width: 900px;
 }
 
 kbd {
@@ -96,22 +101,63 @@ div[data-type="NodeBlockQueryEmbed"].render-node {
   }
 }
 
-//公式块
-.katex {
-  font-size: 100% !important;
-  font-family: KaTeX_Main, HarmonyOS Sans SC, Times New Roman, serif !important;
+//行内公式块
+span[data-type="inline-math"] {
+  margin: 0 3px;
+  .katex {
+    font-size: 100% !important;
+    font-family: KaTeX_Main, HarmonyOS Sans SC, Times New Roman, serif !important;
+  }
 }
 
+//行内代码块
+.b3-typography code:not(.hljs),
+.protyle-wysiwyg code:not(.hljs) {
+  margin: 0 3px;
+  white-space: nowrap;
+}
+
+//文本转语音按钮
 .protyle-speech {
   border-color: $rc-border-color;
 }
 
-.protyle-select{
+//鼠标拖拽选择
+.protyle-select {
   max-width: 100vw;
 }
 
-.sb[data-sb-layout="col"]{
-  > div:not(:first-child):not(.protyle-attr){
+//超级块横排
+.sb[data-sb-layout="col"] {
+  > div:not(:first-child):not(.protyle-attr) {
     margin-left: 50px !important;
   }
 }
+
+//块引用样式
+span[data-type="block-ref"] {
+  border-radius: 4px;
+  &:hover {
+    background-color: $rc-inline-blockref-hover;
+  }
+}
+
+mark {
+  background-image: linear-gradient(
+    transparent,
+    transparent 33%,
+    $rc-theme-primary-lighter
+  );
+}
+// .protyle-wysiwyg [data-node-id] .img {
+//   transition: width, height 300ms ease-in 0s;
+//   &:hover .protyle-action__drag {
+//     opacity: 1;
+//   }
+//   .protyle-action__drag {
+//     display: inline-block;
+//     border-radius: 3px;
+//     opacity: 0;
+//     transition: opacity 300ms ease-in 0s !important;
+//   }
+// }

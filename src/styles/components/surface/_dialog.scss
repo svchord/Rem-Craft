@@ -1,13 +1,14 @@
 //弹窗
 //蒙版
 .b3-dialog__scrim {
-  background-color: $rc-dialog-scrim;//rgba($rc-theme-on-background, 0.05);
+  background-color: $rc-dialog-scrim; //rgba($rc-theme-on-background, 0.05);
 }
 //大弹窗
 .b3-dialog__container {
   box-shadow: #{$rc-dialog-shadow};
   border-radius: $rc-dialog-radius;
-  div[style="height:auto"] > div{
+
+  div[style="height:auto"] > div {
     border-radius: 0 0 10px 10px;
   }
   .b3-dialog__close {
@@ -20,6 +21,52 @@
   #searchPreview {
     border-bottom-left-radius: $rc-dialog-radius;
     border-bottom-right-radius: $rc-dialog-radius;
+  }
+  //集市tab
+  .fn__flex.b3-list--background {
+    padding-top: 8px;
+    .b3-list-item {
+      margin-right: 8px;
+    }
+  }
+
+  //集市卡片
+  .b3-card {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: #{$rc-card-shadow};
+    border: 1px solid rgb(238, 238, 238);
+    transition: all 300ms cubic-bezier(0.2, 0.91, 0.85, 0.96) 0s;
+    &:hover {
+      box-shadow: #{$rc-card-hover-shadow};
+    }
+    .b3-card__img {
+      // margin: 12px 16px 8px 16px;
+      margin: 16px 16px 0 16px;
+      width: calc(100% - 16px * 2);
+      border-radius: 4px;
+      // transform: translateY(45.4px);
+      img {
+        object-fit: cover !important;
+        border-radius: 4px;
+      }
+    }
+    // .b3-card__info{
+    //   margin: 16px 16px 0 16px;
+    //   padding: 0 0 10px 0;
+    //   border-bottom: 1px solid rgb(247, 247, 247);
+    //   font-size: 16px;
+    //   transform: translateY(-128px);
+    // }
+  }
+  &[style*="80vw"] {
+    $setting-height: "min(70vh, 64px * 11 + 8px)";
+    .b3-tab-bar.b3-list.b3-list--background,
+    .b3-tab-container {
+      height: #{$setting-height} !important;
+    }
   }
   //小弹窗
   &[style*="50vw"],
@@ -66,7 +113,8 @@
       .block__icon {
         @include block__icon__model(28px, 10px);
       }
-      .ft__on-surface,.b3-text-filed[placeholder="属性名"] {
+      .ft__on-surface,
+      .b3-text-filed[placeholder="属性名"] {
         font-size: 15px;
         width: 80px !important;
         text-align: center !important;
@@ -74,10 +122,10 @@
       .fn__space {
         width: 15px;
       }
-      div[style*="var(--b3-border-color)"]{
+      div[style*="var(--b3-border-color)"] {
         background-color: $rc-dialog-border !important;
       }
-      .custom-attr__add{
+      .custom-attr__add {
         padding: 0;
         height: 152px;
       }
@@ -140,7 +188,7 @@
       }
     }
   }
-  &[style="width:520px"]{
+  &[style*="520px"] {
     width: 320px !important;
   }
 }

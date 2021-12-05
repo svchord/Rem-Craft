@@ -9,6 +9,7 @@
   }
   &.b3-menu {
     padding-top: 8px;
+    // width: 360px !important;
   }
   .b3-list-item {
     height: auto;
@@ -20,7 +21,7 @@
 
     &.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
       background-color: $rc-theme-list-focus !important;
-      .counter {
+      .counter:not(:empty) {
         @extend %counter__model;
         background-color: $rc-theme-list-focus;
       }
@@ -40,6 +41,19 @@
           width: 0;
           margin: 0;
           padding: 0;
+          // visibility: visible;
+          // &::before {
+          //   content: "·";
+          //   display: block;
+          //   line-height: 9px;
+          //   width: 9px;
+          //   height: 9px;
+          //   padding: 7.5px;
+          //   font-size: 24px;
+          // }
+          // svg {
+          //   display: none;
+          // }
         }
       }
       .b3-list-item__toggle--hl:hover {
@@ -102,7 +116,7 @@
           display: none;
         }
       }
-      .counter {
+      .counter:not(:empty) {
         @extend %counter__model;
         &::after {
           display: none;

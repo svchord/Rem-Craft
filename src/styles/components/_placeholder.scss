@@ -29,3 +29,10 @@
     padding: ($width - $svg-width)/2;
   }
 }
+
+@mixin add_icon($icon_name, $color, $size, $position) {
+  background-color: $color;
+  $icon_url: "src/icons/#{$icon_name}_black_#{$size}dp.svg";
+  -webkit-mask: url($icon_url) #{$position};
+  mask: url($icon_url) #{$position};
+}

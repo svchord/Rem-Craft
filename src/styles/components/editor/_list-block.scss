@@ -1,13 +1,11 @@
-.list {
-  
-  &::before {
-    border-color: $rc-list-border !important;
-    // top: 0 !important;
-    left: -1px !important;
-  }
-  .p::before{
+.protyle-wysiwyg [data-node-id].li {
+  > [data-node-id]:before {
     border-color: $rc-list-border !important;
     left: -17px !important;
+  }
+  .p + [data-node-id]:not(.p)::before{
+    border-color: $rc-list-border !important;
+    left: -1px !important;
   }
 }
 
@@ -31,5 +29,44 @@
   }
   &.protyle-action--task::after {
     border-radius: 0px !important;
+  }
+}
+
+$rc-task-done-opacity: 0.4;
+.protyle-task--done .p * {
+  color: rgba($rc-theme-on-surface, $rc-task-done-opacity);
+  border-color: rgba($rc-theme-on-surface, $rc-task-done-opacity);
+  //完成后的超链接样式
+  &[data-type="a"] {
+    color: rgba($rc-inline-link-color, $rc-task-done-opacity) !important;
+    border-color: rgba(
+      $rc-inline-link-border-color,
+      $rc-task-done-opacity
+    ) !important;
+    &::after {
+      background-color: rgba(
+        $rc-inline-link-color,
+        $rc-task-done-opacity
+      ) !important;
+    }
+    &:hover {
+      border-color: rgba(
+        $rc-inline-link-color,
+        $rc-task-done-opacity
+      ) !important;
+    }
+  }
+  //完成后的块引用
+  &[data-type="block-ref"] {
+    color: rgba($rc-inline-blockref-color, $rc-task-done-opacity) !important;
+    &:hover {
+      background-color: $rc-theme-primary-lightest !important;
+    }
+  }
+  &[data-type="tag"] {
+    color: rgba($rc-theme-on-background, $rc-task-done-opacity) !important;
+  }
+  &[style*="color"] {
+    opacity: $rc-task-done-opacity;
   }
 }

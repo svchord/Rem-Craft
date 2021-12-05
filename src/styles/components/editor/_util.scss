@@ -3,6 +3,7 @@
   border-radius: 6px;
   &[style*="width"] {
     width: 320px !important;
+    // transform: translateY(-100px);
     .b3-form__space--small {
       display: flex;
       margin: 8px 12px;

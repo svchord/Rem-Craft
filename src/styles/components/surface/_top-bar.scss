@@ -4,7 +4,11 @@
   width: auto;
   height: auto;
   display: flex;
-  position: unset;
+  top: unset;
+  bottom: unset;
+  right: unset;
+  left: 8px;
+  margin: 0 auto;
   opacity: 1;
   transform: none;
   font-size: 13px;

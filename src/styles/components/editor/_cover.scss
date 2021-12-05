@@ -103,7 +103,7 @@
 //文档标题
 .protyle-title {
   margin: 0 #{$content-margin} !important;
-  max-width: $rc-editor-width;
+  max-width: #{$rc-editor-width};
   &:hover .protyle-title__icon {
     opacity: 0.6;
   }

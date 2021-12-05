@@ -37,7 +37,7 @@
   width: 46px;
   margin-left: $interval;
   margin-right: $interval;
-  z-index: 43;
+  z-index: 1;
   div:first-child:not(:empty) {
     @extend %dock--vertical_model;
     margin-top: $interval;

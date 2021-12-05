@@ -1,5 +1,11 @@
 # Rem Craft
 
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/zqhjl/Rem-Craft?include_prereleases)
+![GitHub](https://img.shields.io/github/license/zqhjl/Rem-Craft)
+![GitHub last commit](https://img.shields.io/github/last-commit/zqhjl/Rem-Craft)
+![GitHub repo size](https://img.shields.io/github/repo-size/zqhjl/Rem-Craft)
+![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hy/zqhjl/Rem-Craft?label=hits)
+
 一款思源笔记软件的自用主题
 
 ——的**草稿**。
@@ -17,7 +23,6 @@
 - Logseq 的页签
 - Notion 的编辑器各类块
 >编辑器目前仅对引述块、列表块、快捷键、多行代码块、表格块、公式块、嵌入块和标题块等做了一定的更改
-
 
 ## 注意
 
@@ -76,10 +81,6 @@
 
 > 以上就是本菜鸡摸索出来的流程，也许之后我会开发一个主题自定义挂件，应该就不需要这么多复杂的步骤了…不过估计使用该主题的人不多，所以应该会鸽很久
 
-## CHANGELOG
+## 更改日志
 
 [CHANGELOG](src/docs/CHANGELOG.md)
-
-## LICENSE
-
-[MIT License](LICENSE)

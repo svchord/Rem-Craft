@@ -1,6 +1,6 @@
 # Rem Craft
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/zqhjl/Rem-Craft?include_prereleases)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/release/zqhjl/Rem-Craft?include_prereleases)
 ![GitHub](https://img.shields.io/github/license/zqhjl/Rem-Craft)
 ![GitHub last commit](https://img.shields.io/github/last-commit/zqhjl/Rem-Craft)
 ![GitHub repo size](https://img.shields.io/github/repo-size/zqhjl/Rem-Craft)
@@ -22,7 +22,6 @@
 - Notion 的面包屑
 - Logseq 的页签
 - Notion 的编辑器各类块
->编辑器目前仅对引述块、列表块、快捷键、多行代码块、表格块、公式块、嵌入块和标题块等做了一定的更改
 
 ## 注意
 

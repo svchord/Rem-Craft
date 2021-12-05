@@ -1,0 +1,102 @@
+//顶部工具栏
+%toolbar_before {
+  z-index: 1;
+  width: auto;
+  height: auto;
+  display: flex;
+  top: unset;
+  bottom: unset;
+  right: unset;
+  left: 8px;
+  margin: 0 auto;
+  opacity: 1;
+  transform: none;
+  font-size: 13px;
+  color: $rc-topbar-color;
+}
+
+//顶部工具栏
+.toolbar {
+  height: 30px;
+  // z-index: 99;
+  #toolbarVIP {
+    &:empty {
+      -webkit-app-region: drag;
+      margin: 5px;
+      width: 25px;
+      height: 20px;
+      background-image: url("src/icons/siyuan.svg");
+      background-repeat: round;
+    }
+  }
+  .toolbar__item {
+    color: $rc-topbar-color;
+    height: 30px;
+    cursor: unset;
+    &:hover {
+      background-color: $rc-button-background-hover;
+    }
+    &:not(#barMore):not(#barBack):not(#barForward):not(#closeWindow):not(.toolbar__item--action) {
+      width: 42px;
+      svg:not(.ft__secondary) {
+        display: none;
+      }
+    }
+    @each $id in DailyNote, Search, Dock, ThemeMode, Sync {
+      &#bar#{$id}::before {
+        @extend %toolbar_before;
+        // content: '#{$id}';
+      }
+    }
+    &#barDailyNote::before {
+      content: "日记";
+    }
+    &#barSearch::before {
+      content: "搜索";
+    }
+    &#barDock::before {
+      content: "边栏";
+    }
+    &#barThemeMode::before {
+      content: "暗黑";
+    }
+    &#barSync::before {
+      content: "同步";
+    }
+    &#barMore {
+      width: 36px;
+      padding: 0 11px;
+    }
+    &#barBack,
+    &#barForward {
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+    &.toolbar__item--action {
+      width: 42px;
+      padding: 0 14px;
+    }
+    &#restoreWindow,
+    &#maxWindow {
+      padding-top: 4px;
+      z-index: -1;
+    }
+    &#closeWindow {
+      z-index: -1;
+      width: 42px;
+      padding: 0 16px;
+      &:hover {
+        color: #fff;
+        background-color: $rc-close-window;
+      }
+    }
+    &.b3-tooltips__se::after {
+      left: 35%;
+    }
+    &.b3-tooltips__sw::after {
+      right: 35%;
+    }
+  }
+}

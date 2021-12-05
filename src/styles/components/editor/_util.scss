@@ -1,0 +1,54 @@
+//工具窗
+.protyle-util {
+  border-radius: 6px;
+  &[style*="width"] {
+    width: 320px !important;
+    // transform: translateY(-100px);
+    .b3-form__space--small {
+      display: flex;
+      margin: 8px 12px;
+      flex-direction: row;
+      .fn__flex:first-child {
+        margin-right: 12px;
+        flex: 4;
+      }
+      .ft__on-surface,.fn__space{
+        display: none;
+      }
+      .fn__hr {
+        display: none;
+        + .fn__flex:not(:last-child) {
+          display: none;
+        }
+      }
+      .fn__flex {
+        .fn__flex-1 {
+          display: none;
+        }
+        button:hover {
+          background-color: $rc-theme-surface-button;
+        }
+      }
+    }
+  }
+  .block__icons {
+    border-radius: 6px 6px 0 0;
+    padding: 0 8px;
+    height: 36px;
+  }
+  textarea {
+    border-radius: 0 0 6px 6px;
+    &,
+    &:hover,
+    &:focus {
+      border: none !important;
+    }
+  }
+  //代码块选择语言
+  .b3-list{
+    min-width: 240px;
+    // .b3-list-item{
+    //   text-transform: capitalize;
+    // }
+  }
+}

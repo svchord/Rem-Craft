@@ -1,6 +1,6 @@
 # Rem Craft
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/zqhjl/Rem-Craft?include_prereleases)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/release/zqhjl/Rem-Craft?include_prereleases)
 ![GitHub](https://img.shields.io/github/license/zqhjl/Rem-Craft)
 ![GitHub last commit](https://img.shields.io/github/last-commit/zqhjl/Rem-Craft)
 ![GitHub repo size](https://img.shields.io/github/repo-size/zqhjl/Rem-Craft)

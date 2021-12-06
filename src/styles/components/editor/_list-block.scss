@@ -3,9 +3,11 @@
     border-color: $rc-list-border !important;
     left: -17px !important;
   }
-  .p + [data-node-id]:not(.p)::before{
+  [data-node-id] + [data-node-id]:not(.p)::before{
     border-color: $rc-list-border !important;
     left: -1px !important;
+    top: 2px;
+    bottom: -2px;
   }
 }
 

@@ -1,2 +1,2 @@
-src\styles\**\* merge=ours
-src\styles\components\editor\_list-block.scss merge=ours
+src/styles/**/* merge=ours
+src/styles/components/editor/_list-block.scss merge=ours

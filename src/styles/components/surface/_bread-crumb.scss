@@ -10,9 +10,9 @@
       -webkit-app-region: drag;
     }
     .block__icon {
-      margin: (36px - 28px)/2;
+      transform: translateY(-4px);
     }
-    height: 36px;
+    height: 40px;
     padding-right: 126px !important;
   }
   .fn__space {

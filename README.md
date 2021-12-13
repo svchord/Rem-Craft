@@ -27,10 +27,9 @@
 
 该主题是自用，因此有部分对其他用户来说可能过于激进的变更，如果你希望取消以下更改，需要了解[自定义步骤](#自定义步骤)后进行[取消更改操作](#取消更改操作)：
 
-1. 文档树上父子文档的图标对齐（可凭左边框的位置来判断）
-2. 设置、搜索、笔记本设置等大宽度菜单的关闭键被隐藏（点击菜单四周的空白处即可关闭）
-3. 超链接的锚文本编辑功能被隐藏（可直接在编辑器内编辑）
-4. 编辑器输入区域的宽度写死了，目前为46.9vw
+1. 设置、搜索、笔记本设置等大宽度菜单的关闭键被隐藏（点击菜单四周的空白处即可关闭）
+2. 超链接的锚文本编辑功能被隐藏（可直接在编辑器内编辑）
+3. 编辑器输入区域的宽度写死了，目前为46.9vw
 
 ## 自定义步骤
 
@@ -63,20 +62,19 @@
 
 以下相关操作与[激进变更](#注意)按序号对应：
 
-1. 可通过修改[_variables.scss](/src/styles/components/_variables.scss)文件中的`$list-left`变量调整
-2. 相关代码在[_dialog.scss](/src/styles/components/surface/_dialog.scss)文件中，结构如下所示，注释后编译即可取消
+1. 相关代码在[_dialog.scss](/src/styles/components/surface/_dialog.scss)文件中，结构如下所示，注释后编译即可取消
      ```css
     .b3-dialog__close {
       display: none;
     }
     ```
-3. 相关代码在[_util.scss](src/styles/components/editor/_util.scss)文件中，结构如下所示，注释后编译即可取消
+2. 相关代码在[_util.scss](src/styles/components/editor/_util.scss)文件中，结构如下所示，注释后编译即可取消
     ```css
     &[style*="width"] {
       ...
     }
     ```
-4. 可通过修改[_variables.scss](/src/styles/components/_variables.scss)文件中的`$rc-editor-width`变量调整
+3. 可通过修改[_variables.scss](/src/styles/components/_variables.scss)文件中的`$rc-editor-width`变量调整
 
 > 以上就是本菜鸡摸索出来的流程，也许之后我会开发一个主题自定义挂件，应该就不需要这么多复杂的步骤了…不过估计使用该主题的人不多，所以应该会鸽很久
 

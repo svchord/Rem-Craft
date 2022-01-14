@@ -1,0 +1,67 @@
+
+
+//主色(Ant Design)
+$antd-1: #f0f5ff;
+$antd-2: #d6e4ff;
+$antd-3: #adc6ff;
+$antd-4: #85a5ff;
+$antd-5: #597ef7;
+$antd-6: #2f54eb;
+
+//主色(Material Design)
+$md-1: #e9ebfd;
+$md-2: #c8cdfa;
+$md-3: #a2adf6;
+$md-4: #788cf3;
+$md-5: #5670f0;
+$md-6: #2f54eb;
+
+//副色(Material Design)
+$rc-theme-secondary-1: #efe7fd;
+$rc-theme-secondary-2: #d5c4f9;
+$rc-theme-secondary-3: #b99df5;
+$rc-theme-secondary-4: #9b73f2;
+$rc-theme-secondary-5: #8352ef;
+$rc-theme-secondary-6: #672feb; //#722ed1;
+$rc-theme-secondary-7: #8352ef;
+
+//中性色(Ant Design)
+$antd-title: rgba(0, 0, 0, 0.85);
+$antd-primary-text: rgba(0, 0, 0, 0.85);
+$antd-secondary-text: rgba(0, 0, 0, 0.45);
+$antd-disable: rgba(0, 0, 0, 0.25);
+$antd-border: rgba(0, 0, 0, 0.15);
+$antd-dividers: rgba(0, 0, 0, 0.06);
+$antd-background: rgba(0, 0, 0, 0.04);
+$antd-table-header: rgba(0, 0, 0, 0.02);
+
+//文字颜色(Element UI)
+$ele-text-1: #303133;
+$ele-text-2: #606266;
+$ele-text-3: #909399;
+$ele-text-4: #c0c4cc;
+
+//线条颜色(Element UI)
+$ele-border-1: #dcdfe6;
+$ele-border-2: #e4e7ed;
+$ele-border-3: #ebeef5;
+$ele-border-4: #f2f6fc;
+
+//阴影
+//Material Design
+$md-shadow-1: "0 1px 1px 0 rgb(66 66 66 / 8%), 0 1px 3px 1px rgb(66 66 66 / 16%)";
+$md-shadow-2: "0 1px 3px 1px rgb(66 66 66 / 20%), 0 2px 8px 4px rgb(66 66 66 / 10%)";
+
+//Fluent Design
+@function fluent-shadow($dp) {
+  $y1: 0.4px;
+  $blur1: 0.9px;
+  $y2: 0.075px;
+  $blur2: 0.225px;
+  @return "0 #{$y1*$dp} #{$blur1*$dp} 0 rgb(0 0 0 / 13%), 0 #{$y2*$dp} #{$blur2*$dp} 0 rgb(0 0 0 / 11%)";
+}
+$ms-depth-4: fluent-shadow(4);
+$ms-depth-8: fluent-shadow(8);
+$ms-depth-16: fluent-shadow(16);
+
+//Semi-design

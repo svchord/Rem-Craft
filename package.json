@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "sass": "^1.45.2"
+  },
+  "version": "0.2.2",
+  "description": "My theme for siyuan",
+  "name": "rem-craft",
+  "scripts": {
+    "build": "sass --watch src/styles:./ -s compressed --no-source-map"
+  }
+}

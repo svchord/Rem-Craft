@@ -1,5 +1,3 @@
-
-
 //主色(Ant Design)
 $antd-1: #f0f5ff;
 $antd-2: #d6e4ff;
@@ -60,8 +58,5 @@ $md-shadow-2: "0 1px 3px 1px rgb(66 66 66 / 20%), 0 2px 8px 4px rgb(66 66 66 / 1
   $blur2: 0.225px;
   @return "0 #{$y1*$dp} #{$blur1*$dp} 0 rgb(0 0 0 / 13%), 0 #{$y2*$dp} #{$blur2*$dp} 0 rgb(0 0 0 / 11%)";
 }
-$ms-depth-4: fluent-shadow(4);
-$ms-depth-8: fluent-shadow(8);
-$ms-depth-16: fluent-shadow(16);
 
 //Semi-design

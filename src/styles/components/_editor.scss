@@ -18,6 +18,8 @@
 @import "editor/link";
 //标签
 @import "editor/tag";
+//块嵌入
+@import "editor/embed";
 
 //提示语
 .protyle-title__input--untitled::after {
@@ -98,15 +100,6 @@ kbd {
   font-weight: 600;
 }
 
-//块嵌入
-div[data-type="NodeBlockQueryEmbed"].render-node {
-  background-color: rgb(247, 247, 247) !important;
-  padding: 8px 28px 8px 12px !important;
-  border-radius: $rc-border-radius-small;
-  &.protyle-wysiwyg--hl {
-    background-color: $rc-highlight !important;
-  }
-}
 
 //行内公式块
 span[data-type="inline-math"] {
@@ -183,10 +176,10 @@ mark {
   background-color: $rc-theme-surface-background !important;
 }
 
-p,
-.p {
-  text-align: justify;
-}
+// p,
+// .p {
+//   text-align: justify;
+// }
 
 // .protyle-content{
 //   padding-top: 35px;

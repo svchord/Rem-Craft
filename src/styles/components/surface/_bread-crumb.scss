@@ -77,5 +77,8 @@
   .block__icon {
     @include block__icon__model(28px, 14px);
     // margin: 8.5px 6px 0 0;
+    &::after{
+      display: none;
+    }
   }
 }

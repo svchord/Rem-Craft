@@ -1,0 +1,19 @@
+//块嵌入
+div[data-type="NodeBlockQueryEmbed"].render-node {
+    background-color: rgb(247, 247, 247) !important;
+    padding: 12px 12px 6px !important; //8px 28px 8px
+    border-radius: $rc-border-radius-small;
+    &.protyle-wysiwyg--hl {
+      background-color: $rc-highlight !important;
+    }
+    .protyle-wysiwyg__embed {
+      border-radius: $rc-border-radius-small;
+      padding: 12px;
+      margin-bottom: 12px;
+      box-shadow: #{fluent-shadow(4)} !important;
+      transition: box-shadow 0.3s ease-out;
+      &:hover {
+        box-shadow: #{fluent-shadow(8)} !important;
+      }
+    }
+  }

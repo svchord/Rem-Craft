@@ -1,33 +1,37 @@
+$prop: calc(11 / 11);
 //边栏
 %dock--vertical_model {
-  border-radius: $rc-border-radius-medium;
-  padding: 4px;
-  background-color: $rc-theme-surface-background;
+  border-radius: $rc-border-radius-small;
+  padding: 0px;
+  background-color: $rc-theme-background;
   border: $rc-surface-boder;
-  box-shadow: #{$rc-theme-surface-shadow};
+  // box-shadow: #{$rc-theme-surface-shadow};
   margin-bottom: #{$interval};
   span {
-    width: 35px;
-    padding: 0 0 0 1px;
+    width: 36px * $prop;
+    height: 40px * $prop;
+    // border: 1px solid transparent;
+    padding: 0 0 0 0px;
     justify-content: center;
     color: $rc-theme-text-1;
-    background-color: $rc-theme-surface-background;
-    transform: translateZ(0px) scale(1);
+    background-color: $rc-theme-background;
+    // transform: translateZ(0px) scale(1);
     line-height: 0;
-    height: 40px;
     flex-grow: 1;
     position: relative;
     border-radius: $rc-border-radius-small;
-    transition: all 0s ease 0s;
+    transition: all 0.2s ease 0s;
     &:not(:last-child) {
-      margin-bottom: 4px;
+      margin-bottom: 4px * $prop;
     }
     cursor: pointer;
     &:hover {
-      background-color: $rc-theme-surface-button;
+      background-color: $rc-theme-list-button;
     }
     &.dock__item--active {
+      // border: 1px solid $rc-theme-primary-4;
       color: $rc-theme-primary;
+      background-color: $rc-theme-list-focus-button;
       // background-image: linear-gradient(
       //   to right,
       //   $rc-theme-surface-button-focus 33%,
@@ -36,11 +40,11 @@
       // );
       // background-color: $rc-theme-surface-button-focus;
       &:hover {
-        background-color: $rc-theme-surface-button-focus;
+        background-color: $rc-theme-list-focus-button;
       }
     }
     svg {
-      $dock-svg-width: 15px;
+      $dock-svg-width: 14px * $prop;
       width: $dock-svg-width;
       height: $dock-svg-width;
     }
@@ -49,7 +53,7 @@
 
 //边栏
 .dock--vertical {
-  width: 44px;
+  width: 36px * $prop;
   &#dockLeft {
     margin-left: #{$interval};
   }
@@ -65,10 +69,12 @@
     @extend %dock--vertical_model;
   }
   .dock__item[data-index="0"]::after {
-    margin: 0 10px;
-    top: -28px;
+    // margin: 0 10px;
+    // top: -28px;
+    display: none;
   }
   .dock__item[data-index="1"]::after {
-    bottom: 70%;
+    display: none;
+    // bottom: 70%;
   }
 }

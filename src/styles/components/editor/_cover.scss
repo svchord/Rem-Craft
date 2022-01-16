@@ -102,7 +102,7 @@
         height: 26px;
         svg {
           // display: none;
-          color: $rc-theme-text-2;
+          color: $rc-theme-text-1;
           width: 10px;
           height: 10px;
           padding-top: calc((26px - 10px) / 2);
@@ -110,7 +110,7 @@
         &::after {
           font-size: 12px;
           line-height: 26px;
-          color: $rc-theme-text-2;
+          color: $rc-theme-text-1;
         }
         &:first-child {
           border-radius: $rc-border-radius-small 0 0 $rc-border-radius-small;

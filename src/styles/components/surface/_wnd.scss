@@ -37,7 +37,7 @@
 %wnd {
   min-height: 10% !important;
   margin: #{$interval} !important;
-  border-radius: $rc-border-radius-large;
+  border-radius: $rc-border-radius-medium;
   border: $rc-surface-boder;
   transition: $wnd-transition;
   background-color: $rc-theme-surface-background;

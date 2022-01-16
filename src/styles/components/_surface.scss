@@ -27,7 +27,6 @@
 //通知弹窗
 @import "surface/snackbar";
 
-
 //按钮
 .b3-button:not(.b3-button--text):not(.b3-button--cancel):not(.b3-button--outline) {
   &:hover {
@@ -99,9 +98,11 @@
 //   background-color: $rc-theme-list-button;
 // }
 
-
 .layout__resize--lr {
   margin: #{$interval} calc((#{$interval} - 6px) / 2 - #{$interval});
+  &::after {
+    left: 2.5px;
+  }
 }
 
 .layout__resize:not(.layout__resize--lr) {

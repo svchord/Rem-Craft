@@ -2,10 +2,11 @@
 // .sy__files,
 .b3-list,
 .b3-list--background {
-  margin: 0 8px 8px;
+  margin: 0px 8px 8px;
   &.b3-tab-bar {
     border-radius: $rc-border-radius-small;
     padding-right: 4px;
+    margin-top: 8px;
     // padding: 0 8px;
     // background-color: #fff;
   }
@@ -25,9 +26,9 @@
     }
     &.b3-list-item--big {
       margin-top: 8px !important;
-      // &:last-child {
-      //   margin-bottom: 8px !important;
-      // }
+      &:first-child {
+        margin-top: 0px !important;
+      }
     }
     &:not(.b3-list-item--big) {
       padding: calc((32.8px - #{$list-text-height}) / 2) 6px !important;
@@ -214,6 +215,13 @@
     }
     &[data-type="toggle"] {
       margin-bottom: 0;
+    }
+  }
+  &:not(.b3-menu):not(.b3-tab-bar) {
+    > .b3-list-item {
+      color: $rc-theme-text-0;
+      // box-shadow: #{fluent-shadow(4)};
+      font-weight: 600;
     }
   }
 }

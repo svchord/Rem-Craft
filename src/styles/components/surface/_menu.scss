@@ -41,12 +41,12 @@
     .fn__hr {
       display: none;
     }
-    &:first-child .b3-menu__label {
-      padding: 6px 0;
-    }
-    &:not(:first-child) .b3-menu__label {
-      padding: 0 0 6px 0;
-    }
+    // &:first-child .b3-menu__label {
+    //   padding: 6px 0;
+    // }
+    // &:not(:first-child) .b3-menu__label {
+    //   padding: 0 0 6px 0;
+    // }
   }
   & &__submenu {
     $sub-menu-vertical: 10px;
@@ -83,7 +83,10 @@
       }
     }
   }
-  input {
+  > .fn__flex-column > input {
     margin: 1px 2px 8px !important;
   }
+  // button .fn__hr--small{
+  //   display: none;
+  // }
 }

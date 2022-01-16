@@ -20,7 +20,7 @@
 - VS Code 的顶栏
 - Craft 的边栏、呼出菜单、引述块
 - Rem Note 的文档树
-- Logseq 的页签、子弹流
+- Logseq 的页签、[子弹流](https://github.com/pengx17/logseq-dev-theme/blob/main/bullet_threading.css)
 - Notion 的题头图、面包屑、编辑器各类块
 
 ## 注意

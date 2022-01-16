@@ -1,0 +1,84 @@
+//面包屑
+.protyle-breadcrumb {
+  padding: 2px 8px 4px;
+  background-color: $rc-theme-surface-background;
+  // backdrop-filter: blur(10px);
+  // position: absolute;
+  // width: 100%;
+  // top: 0;
+  // left: 0;
+  // z-index: 3;
+  // background-color: rgba($rc-theme-surface-background, 0.2);
+  // box-shadow: #{$rc-topbar-shadow};
+  // height: 45px;
+  // .protyle-breadcrumb__bar {
+  //   padding: 2px 0;
+  // }
+  .fullscreen > & {
+    .fn__space {
+      -webkit-app-region: drag;
+    }
+    .block__icon {
+      transform: translateY(-4px);
+    }
+    height: 40px;
+    padding: 6px 126px 6px 8px !important;
+  }
+  .block__edit > & {
+    padding: 6px 8px 6px;
+    .block__icon {
+      margin-right: 6px;
+    }
+  }
+  .fn__space {
+    width: 0;
+  }
+  &__item {
+    border-radius: $rc-border-radius-extra-small;
+    padding: 0 6px;
+    margin: 0 2px;
+    height: 24px;
+    line-height: 1;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:hover {
+      background-color: $rc-theme-list-hover;
+    }
+    svg {
+      width: 12px;
+      height: 12px;
+      margin: 6px 0;
+      border-radius: $rc-border-radius-extra-small;
+      &.ft__primary {
+        color: $rc-theme-on-background;
+      }
+      &:not(.ft__primary) {
+        @include graphic(18px, 11px);
+        &:hover {
+          background-color: $rc-theme-list-button;
+        }
+      }
+    }
+    .protyle-breadcrumb__text:not(:empty) {
+      margin-left: 4px;
+      line-height: 13.6px;
+    }
+  }
+  &__arrow {
+    // border-right: 1px solid $rc-theme-on-background;
+    // width: 0;
+    // height: 13px;
+    // transform: rotate(20deg);
+    width: 10px;
+    height: 10px;
+    color: $rc-theme-on-background;
+  }
+  .block__icon {
+    @include block__icon__model(28px, 14px);
+    // margin: 8.5px 6px 0 0;
+    &::after{
+      display: none;
+    }
+  }
+}

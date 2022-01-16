@@ -1,0 +1,35 @@
+//面板上按钮
+.block__icons {
+  // font-size: 15px;
+  color: $rc-theme-text-0;
+  &--active {
+    background-color: var(--b3-theme-surface);
+  }
+  :not(.block__popover) > & {
+    padding: 5px 8px 5px 16px;
+  }
+  .fn__space {
+    width: 0;
+  }
+  .block__icon {
+    @include block__icon__model(24px, 12px);
+    margin-left: 6px;
+  }
+  .listCount,
+  .listMCount {
+    @extend %counter__model;
+    margin: 2px 8px 0 0;
+    + .fn__space {
+      display: none;
+    }
+  }
+  .b3-form__icon-icon {
+    padding-top: 1px;
+  }
+  .b3-text-filed {
+    border: transparent !important;
+    // &:focus{
+    //   border: 1px solid $rc-border-color;
+    // }
+  }
+}

@@ -1,0 +1,25 @@
+//超链接
+//下划线
+.protyle-wysiwyg [data-node-id] span[data-type="a"] {
+    // border-bottom: $rc-inline-link-border;
+    &:hover {
+      border-bottom: $rc-inline-link-border;
+    }
+    &::after {
+      display: inline-block;
+      content: "";
+      width: 12px;
+      height: 12px;
+      margin: 0 3px 0 3px;
+      fill: $rc-inline-link-color;
+      @include add_icon("launch", $rc-inline-link-color, 18, "round");
+    }
+  }
+  //悬浮提示条
+  #tooltip {
+    box-shadow: #{$rc-inline-link-tooltip-shadow};
+    background-color: $rc-theme-surface-background;
+    color: $rc-theme-on-background;
+    padding: 6px 8px;
+  }
+  

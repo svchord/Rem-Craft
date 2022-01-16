@@ -1,0 +1,232 @@
+//列表UI
+// .sy__files,
+.b3-list,
+.b3-list--background {
+  margin: 0px 8px 8px;
+  &.b3-tab-bar {
+    border-radius: $rc-border-radius-small;
+    padding-right: 4px;
+    margin-top: 8px;
+    // padding: 0 8px;
+    // background-color: #fff;
+  }
+  &.b3-menu {
+    padding-top: 8px;
+    // width: 360px !important;
+  }
+  .b3-list-item {
+    height: auto;
+    border-radius: $rc-border-radius-small;
+    line-height: $list-text-height;
+    * {
+      color: $rc-theme-on-surface !important;
+    }
+    &:hover {
+      background-color: $rc-theme-list-hover;
+    }
+    &.b3-list-item--big {
+      margin-top: 8px !important;
+      &:first-child {
+        margin-top: 0px !important;
+      }
+    }
+    &:not(.b3-list-item--big) {
+      padding: calc((32.8px - #{$list-text-height}) / 2) 6px !important;
+      margin: 4px 0;
+
+      // &:last-child {
+      //   margin-bottom: 0;
+      // }
+      // border: 2px solid $rc-theme-gray-0;
+      // border-bottom: 2px solid $rc-theme-gray-0;
+      // &:hover,
+      // &.b3-list-item--action {
+      //   box-shadow: 0 0 16.4px 16.4px $rc-theme-gray-3 inset;
+      // }
+      // &.b3-list-item--action:hover{
+      //   box-shadow: 0 0 16.4px 16.4px $rc-theme-primary-1 inset;
+      // }
+      // margin: 4px 0 !important;
+      .b3-list-item__toggle {
+        height: $list-text-height;
+        padding: 0 !important;
+        // &.fn__hidden {
+        //   width: 0;
+        //   margin: 0;
+        //   padding: 0;
+        // }
+        &.b3-list-item__toggle--hl:hover {
+          background-color: transparent;
+        }
+        .b3-list-item__arrow {
+          @include graphic($list-arrow-width, 9px);
+          // &.fn__hidden {
+          //   width: 0 !important;
+          //   margin: 0 !important;
+          //   padding: 0 !important;
+          // }
+        }
+        // + .b3-list-item__icon{
+        //   margin-left: 10px;
+        // }
+        // visibility: visible;
+        // &::before {
+        //   content: "·";
+        //   display: block;
+        //   line-height: 9px;
+        //   width: 9px;
+        //   height: 9px;
+        //   padding: 7.5px;
+        //   font-size: 24px;
+        // }
+        // svg {
+        //   display: none;
+        // }
+        // }
+      }
+
+      .b3-list-item__graphic {
+        opacity: 1 !important;
+        margin: 0;
+        @include graphic($list-text-height, 12px);
+        // &.fn__hidden {
+        //   display: none;
+        // }
+
+        &.popover__block {
+          border-radius: $rc-border-radius-small;
+          margin-right: 4px;
+          // @include graphic($list-text-height, 14px);
+          &:first-child {
+            margin-left: $list-arrow-width;
+          }
+          &:hover {
+            background-color: $rc-theme-list-button;
+          }
+        }
+      }
+      .b3-list-item__icon {
+        padding: 0;
+        height: $list-text-height;
+        width: $list-text-height;
+        font-size: 14px;
+        line-height: $list-text-height;
+        text-align: center;
+        justify-content: center;
+        &:hover {
+          background-color: $rc-theme-list-button;
+        }
+        svg {
+          @include graphic($list-text-height, 14px);
+        }
+        &::after {
+          display: none;
+        }
+      }
+      .b3-list-item__text {
+        margin-top: 1.5px;
+      }
+      .b3-list-item__action {
+        // padding: ($list-text-height - 18px)/2;
+        // width: 18px;
+        // height: 18px;
+        @include graphic($list-text-height, 12px);
+        justify-content: center;
+        margin-left: 4px;
+        border-radius: $rc-border-radius-small;
+        svg {
+          display: block;
+        }
+        &:hover {
+          background-color: $rc-theme-list-button;
+        }
+        &::after {
+          display: none;
+        }
+        + .fn__space {
+          display: none;
+        }
+      }
+      .counter:not(:empty) {
+        @extend %counter__model;
+        &::after {
+          display: none;
+        }
+      }
+      & + ul {
+        position: relative;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 2px;
+          width: 0px;
+          height: calc(100% - 2px);
+          border-left: 1px solid $rc-theme-border-1;
+        }
+      }
+      @mixin recursive-item-margin($cur, $end) {
+        + ul {
+          &::before {
+            left: calc(#{$list-left} * #{$cur} - #{$list-left} / 2);
+          }
+          & > .b3-list-item {
+            margin-left: $list-left * $cur !important;
+            @if $cur < $end {
+              @include recursive-item-margin($cur + 1, $end);
+            }
+          }
+        }
+      }
+      @include recursive-item-margin(1, $list-depth);
+    }
+
+    &.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
+      color: $rc-theme-list-focus-color !important;
+      background-color: $rc-theme-list-focus !important;
+      .counter:not(:empty) {
+        @extend %counter__model;
+        background-color: $rc-theme-list-focus;
+      }
+      * {
+        color: $rc-theme-list-focus-color !important;
+      }
+      .counter,
+      .b3-list-item__icon,
+      .b3-list-item__action,
+      .b3-list-item__graphic.popover__block {
+        &:hover {
+          background-color: $rc-theme-list-focus-button !important;
+        }
+      }
+      .b3-list-item__meta {
+        color: $rc-theme-primary-4 !important;
+      }
+    }
+    &--two {
+      .b3-list-item__first {
+        .b3-list-item__graphic.popover__block {
+          margin-left: 0 !important;
+        }
+      }
+      .b3-list-item__meta {
+        color: $rc-theme-text-2 !important;
+      }
+    }
+    &[data-type="toggle"] {
+      margin-bottom: 0;
+    }
+  }
+  &:not(.b3-menu):not(.b3-tab-bar) {
+    > .b3-list-item {
+      color: $rc-theme-text-0;
+      // box-shadow: #{fluent-shadow(4)};
+      font-weight: 600;
+    }
+  }
+}
+
+.sy__tags .b3-list-item__graphic {
+  display: none;
+}
+

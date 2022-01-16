@@ -64,7 +64,7 @@ $rc-theme-on-background: $rc-theme-text-1; //rgb(31, 34, 37);
 
 //界面
 //界面间空白宽度
-$interval: 6.5px; //"min(12px, max(6.5px, 0.520vw * 6.5 / 8))";
+$interval: "min(12px, max(6.5px, 0.520vw * 6.5 / 8))";
 //界面文字颜色
 $rc-theme-on-surface: $rc-theme-text-1; //rgb(53, 56, 59);
 //界面底色

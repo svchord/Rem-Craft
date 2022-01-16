@@ -25,7 +25,7 @@
   }
 
   &[style*="80vw"] {
-    $setting-height: "min(70vh, 64px * 11 + 8px)";
+    $setting-height: "min(66.1vh, 62px * 11 - 8px)";
     .b3-dialog__header {
       border-color: $rc-border-color;
     }
@@ -37,6 +37,12 @@
       .b3-label {
         background-color: $rc-theme-surface-background;
         border-color: $rc-border-color;
+        .config-query {
+          label {
+            margin-top: 8px;
+            // margin-bottom: 4px;
+          }
+        }
       }
     }
     // .b3-tab-bar.b3-list.b3-list--background,

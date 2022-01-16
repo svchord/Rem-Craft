@@ -64,7 +64,7 @@ $rc-theme-on-background: $rc-theme-text-1; //rgb(31, 34, 37);
 
 //界面
 //界面间空白宽度
-$interval: "min(12px, max(8px, 0.521vw))";
+$interval: 6.5px; //"min(12px, max(6.5px, 0.520vw * 6.5 / 8))";
 //界面文字颜色
 $rc-theme-on-surface: $rc-theme-text-1; //rgb(53, 56, 59);
 //界面底色
@@ -82,7 +82,7 @@ $rc-surface-boder: none; //1px solid $rc-theme-surface-border;
 $rc-width-time: 0.25s;
 $wnd-transition: all $rc-width-time ease-out 0s;
 //边窗阴影
-$rc-theme-surface-shadow: none;//"0 4px 10px rgb(0 0 0 / 5%), 0 0 1px rgb(0 0 0 / 10%)";
+$rc-theme-surface-shadow: none; //"0 4px 10px rgb(0 0 0 / 5%), 0 0 1px rgb(0 0 0 / 10%)";
 
 //列表项正常悬浮
 $rc-theme-list-hover: $rc-theme-gray-1;
@@ -128,7 +128,9 @@ $content-margin: "max(calc((100% - #{$rc-editor-width}) / 2), 96px)";
 
 //菜单
 //菜单阴影
-$rc-menu-shadow: fluent-shadow(64); //"rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 16%) 0px 10px 20px";
+$rc-menu-shadow: fluent-shadow(
+  64
+); //"rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 16%) 0px 10px 20px";
 //菜单底色
 $rc-menu-background: $rc-theme-surface-background;
 //菜单分割线
@@ -136,7 +138,9 @@ $rc-menu-separator: $rc-theme-border-1; //rgb(242, 242, 242);
 
 //弹窗
 //弹窗阴影
-$rc-dialog-shadow: fluent-shadow(64); //"rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 20%) 0px 20px 50px";
+$rc-dialog-shadow: fluent-shadow(
+  64
+); //"rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 20%) 0px 20px 50px";
 //弹窗关闭按钮底色
 $rc-dialog-close-background: $rc-theme-gray-2; //rgb(242, 242, 242);
 //弹窗关闭按钮悬浮
@@ -149,7 +153,9 @@ $rc-dialog-radius: 10px;
 $rc-dialog-scrim: rgba(36, 39, 41, 0.3);
 
 //行内工具栏阴影
-$rc-toolbar-shadow: fluent-shadow(16); // "rgb(0 0 0 / 15%) 0px 5px 10px, rgb(0 0 0 / 20%) 0px 0px 1px";
+$rc-toolbar-shadow: fluent-shadow(
+  16
+); // "rgb(0 0 0 / 15%) 0px 5px 10px, rgb(0 0 0 / 20%) 0px 0px 1px";
 
 //滚动条
 $rc-scroll-color: $rc-theme-list-hover;
@@ -179,7 +185,9 @@ $rc-list-border: $rc-theme-border-1; //rgb(213, 213, 213);
 $rc-code-background: $rc-fill-0; //rgb(247, 247, 247);
 
 //通知栏阴影
-$rc-snackbar-shadow: fluent-shadow(64); // "rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 10%) 0px 15px 30px";
+$rc-snackbar-shadow: fluent-shadow(
+  64
+); // "rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 10%) 0px 15px 30px";
 
 //超链接样式
 //颜色
@@ -188,7 +196,9 @@ $rc-inline-link-color: $purple-6; //$rc-theme-secondary-6; //#2156db;//rgb(16, 8
 $rc-inline-link-border-color: $purple-4; //$rc-theme-secondary-4; //rgb(194, 217, 237);
 $rc-inline-link-border: 1px solid $rc-inline-link-border-color;
 //提示条阴影
-$rc-inline-link-tooltip-shadow: fluent-shadow(16);//"rgb(0 0 0 / 15%) 0px 5px 10px, rgb(0 0 0 / 20%) 0px 0px 1px";
+$rc-inline-link-tooltip-shadow: fluent-shadow(
+  16
+); //"rgb(0 0 0 / 15%) 0px 5px 10px, rgb(0 0 0 / 20%) 0px 0px 1px";
 
 //块引用样式
 $rc-inline-blockref-color: $rc-theme-primary; //#2156db;
@@ -200,8 +210,12 @@ $rc-inline-tag-color: $rc-theme-text-3; //rgba($rc-theme-on-background, 0.5);
 $rc-inline-tag-hover: $rc-theme-list-hover;
 
 //集市卡片
-$rc-card-shadow: fluent-shadow(4); //"rgb(0 0 0 / 5%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 15px 30px";
-$rc-card-hover-shadow: fluent-shadow(16); //"rgb(0 0 0 / 5%) 0px 0px 1px, rgb(0 0 0 / 12%) 0px 15px 30px";
+$rc-card-shadow: fluent-shadow(
+  4
+); //"rgb(0 0 0 / 5%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 15px 30px";
+$rc-card-hover-shadow: fluent-shadow(
+  16
+); //"rgb(0 0 0 / 5%) 0px 0px 1px, rgb(0 0 0 / 12%) 0px 15px 30px";
 
 //高亮底色
 $rc-highlight: $rc-theme-primary-1; //rgba($rc-theme-primary, 0.1);

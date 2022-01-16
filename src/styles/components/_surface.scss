@@ -4,6 +4,10 @@
 @import "surface/block-icons";
 //边窗
 @import "surface/wnd";
+//开关
+@import "surface/switch";
+//输入框
+@import "surface/input";
 
 //顶栏
 @import "surface/top-bar";
@@ -26,43 +30,8 @@
 @import "surface/scroller";
 //通知弹窗
 @import "surface/snackbar";
-
 //按钮
-.b3-button:not(.b3-button--text):not(.b3-button--cancel):not(.b3-button--outline) {
-  &:hover {
-    background-color: rgba($rc-theme-primary, 0.9);
-    box-shadow: none;
-  }
-}
-.b3-button--outline {
-  svg {
-    width: 12px;
-    height: 12x;
-  }
-  &:hover {
-    background-color: $rc-button-cancel-hover;
-  }
-}
-
-//输入框
-.b3-text-filed {
-  border: 1px solid $rc-border-color !important;
-  border-radius: $rc-border-radius-small;
-  &.b3-text-filed--small {
-    height: 24px;
-  }
-  &:not(.b3-text-filed--small):not(.b3-text-filed--text) {
-    background-color: $rc-theme-surface-control;
-  }
-  .b3-list-item > & {
-    background-color: $rc-theme-surface-background !important;
-  }
-  &:hover,
-  &:focus {
-    box-shadow: none;
-    border: 1px solid $rc-border-color !important;
-  }
-}
+@import "surface/button";
 
 //选择菜单
 .b3-select {
@@ -72,13 +41,7 @@
   }
 }
 
-//开关
-.b3-switch {
-  background-color: $rc-theme-surface-control;
-}
-
 //tips
-
 .b3-tooltips {
   &::before {
     border: none;
@@ -87,6 +50,7 @@
   //   z-index: 999 !important;
   // }
 }
+
 //表单
 .b3-form__space--small {
   .block__icon {
@@ -114,33 +78,41 @@
   background-color: $rc-selection-color;
 }
 
-.protyle-img {
-  //   left: 30px;
-  //   right: 30px;
-  //   top: 30px;
-  //   bottom: 30px;
-  .protyle-img__bar {
-    top: 40px;
-    right: 45px;
-    .b3-button {
-      color: $rc-theme-text-2;
-      background-color: $rc-theme-gray-3;
-      border: 1px solid transparent;
-      user-select: none;
-      &:hover {
-        color: $rc-theme-text-2;
-        background-color: $rc-theme-gray-4 !important;
-      }
-      svg {
-        width: 9px;
-        height: 9px;
-        margin-right: 4px;
-      }
+.b3-slider {
+  height: 44px;
+  &::-webkit-slider-thumb {
+    width: 14px;
+    height: 14px;
+    box-shadow: unset;
+    border: 2px solid $rc-theme-primary-4;
+    background-color: $rc-theme-surface-background;
+    margin-top: -6px;
+    transform: unset !important;
+  }
+  &::-webkit-slider-runnable-track {
+    height: 2px;
+    background-color: $rc-theme-primary-4;
+    border-radius: 2px;
+  }
+  &:focus,
+  &:hover {
+    &::-webkit-slider-thumb {
+      box-shadow: unset;
+      width: 14px;
+      height: 14px;
+      transform: unset;
+      border-color: $rc-theme-primary-6;
+    }
+    &:-webkit-slider-runnable-track {
+      background-color: $rc-theme-primary-6 !important;
     }
   }
-  //   img {
-  //     width: 100%;
-  //     // height: 100%;
-  //     // transform: translate3d(0, 0, 0px) !important;
-  //   }
+}
+
+.protyle-scroll{
+  opacity: 0;
+  &:hover{
+    transition: opacity 0.3s ease-out;
+    opacity: 1;
+  }
 }

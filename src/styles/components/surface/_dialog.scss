@@ -50,6 +50,7 @@
       .b3-list-item {
         padding: 4.4px 12px !important;
         margin-right: 8px;
+        font-weight: normal;
       }
     }
 
@@ -164,12 +165,6 @@
         }
       }
     }
-    //弹窗中的搜索按钮
-    .b3-form__icon-icon {
-      top: calc((42.25px + 16px) / 2);
-      left: 9px + 8px;
-    }
-
     .b3-text-filed {
       background-color: $rc-theme-surface-control;
       border: 1px solid $rc-border-color;
@@ -184,6 +179,13 @@
       }
       &:focus {
         box-shadow: none;
+      }
+    }
+    //弹窗中的搜索按钮
+    .b3-form__icon {
+      &-icon {
+        top: calc((42.25px + 16px) / 2);
+        left: 9px + 8px;
       }
     }
     //弹窗按钮
@@ -224,4 +226,46 @@
   &[style*="520px"] {
     width: 320px !important;
   }
+}
+
+.search__header {
+  .b3-text-filed {
+    border: 1px solid $rc-border-color !important;
+    &:hover,
+    &:focus {
+      border: 1px solid $rc-border-color !important;
+    }
+  }
+}
+
+//集市图片
+.protyle-img {
+  //   left: 30px;
+  //   right: 30px;
+  //   top: 30px;
+  //   bottom: 30px;
+  .protyle-img__bar {
+    top: 40px;
+    right: 45px;
+    .b3-button {
+      color: $rc-theme-text-2;
+      background-color: $rc-theme-gray-3;
+      border: 1px solid transparent;
+      user-select: none;
+      &:hover {
+        color: $rc-theme-text-2;
+        background-color: $rc-theme-gray-4 !important;
+      }
+      svg {
+        width: 9px;
+        height: 9px;
+        margin-right: 4px;
+      }
+    }
+  }
+  //   img {
+  //     width: 100%;
+  //     // height: 100%;
+  //     // transform: translate3d(0, 0, 0px) !important;
+  //   }
 }

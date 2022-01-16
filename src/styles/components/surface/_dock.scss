@@ -21,9 +21,9 @@ $prop: calc(11 / 11);
     position: relative;
     border-radius: $rc-border-radius-small;
     transition: all 0.2s ease 0s;
-    &:not(:last-child) {
-      margin-bottom: 4px * $prop;
-    }
+    // &:not(:last-child) {
+    //   margin-bottom: #{$interval};
+    // }
     cursor: pointer;
     &:hover {
       background-color: $rc-theme-list-button;
@@ -31,7 +31,7 @@ $prop: calc(11 / 11);
     &.dock__item--active {
       // border: 1px solid $rc-theme-primary-4;
       color: $rc-theme-primary;
-      background-color: $rc-theme-list-focus-button;
+      // background-color: $rc-theme-list-focus-button;
       // background-image: linear-gradient(
       //   to right,
       //   $rc-theme-surface-button-focus 33%,

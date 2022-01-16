@@ -28,8 +28,8 @@
   }
   .b3-text-filed {
     border: transparent !important;
-    &:focus{
-      border: 1px solid $rc-border-color;
-    }
+    // &:focus{
+    //   border: 1px solid $rc-border-color;
+    // }
   }
 }

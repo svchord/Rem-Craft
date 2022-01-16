@@ -1,0 +1,76 @@
+//表情面板
+.emojis {
+  padding: 0 2px 0;
+  > div:first-child {
+    margin: 9px 0 8px;
+    // .fn__space:first-child,
+    // .fn__space:last-child {
+    //   display: none;
+    // }
+    input {
+      margin: 0 !important;
+    }
+    .block__icon {
+      @include block__icon__model(30px, 14px);
+    }
+  }
+
+  .emojis__panel {
+    // transform: translateY((32.8px - 24px)/2);
+    .emojis__title {
+      padding: 18px 0 8px;
+      font-size: 11px;
+      font-weight: 500;
+      color: $rc-theme-text-2;
+      letter-spacing: 0.3px;
+      // &:first-child {
+      // padding-top: 18px;
+      // }
+    }
+    .fn__hr {
+      display: none;
+      & + .emojis__content {
+        padding-top: 0;
+      }
+    }
+    .emojis__content {
+      div[style*="4px"] {
+        height: 28px;
+        line-height: 28px;
+        width: 100%;
+        margin: 0 !important;
+      }
+      .emojis__item {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        height: 32px;
+        width: 32px;
+        font-size: 20px;
+        border-radius: $rc-border-radius-small;
+        background-color: transparent;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+        cursor: pointer;
+        padding: 0;
+        &:hover {
+          background-color: $rc-theme-list-hover;
+        }
+      }
+    }
+  }
+  > div:last-child {
+    padding-top: 6px;
+    border-radius: 0 0 $rc-border-radius-small $rc-border-radius-small;
+    .emojis__type {
+      &:first-child {
+        border-radius: 0 0 0 $rc-border-radius-small;
+      }
+      &:last-child {
+        border-radius: 0 0 $rc-border-radius-small 0;
+      }
+    }
+  }
+}

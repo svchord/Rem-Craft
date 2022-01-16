@@ -1,0 +1,39 @@
+//表格块
+.b3-typography,
+.protyle-wysiwyg {
+  %table__model {
+    display: table;
+    width: 100%;
+    background-color: $rc-theme-surface-background;
+    border-radius: $rc-border-radius-small;;
+    border: 1.2px solid $rc-list-border !important;
+    border-collapse: separate;
+    tr {
+      border: none;
+      td {
+        border-top: 1px solid $rc-list-border;
+      }
+    }
+    th,
+    td {
+      background-color: $rc-theme-surface-background;
+      border: none;
+      &:not(:first-child) {
+        border-left: 1px solid $rc-list-border;
+      }
+      &:focus{
+        border: 1px solid $rc-theme-primary-3;
+      }
+    }
+  }
+  .table {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    table {
+      @extend %table__model;
+    }
+  }
+  table {
+    @extend %table__model;
+  }
+}

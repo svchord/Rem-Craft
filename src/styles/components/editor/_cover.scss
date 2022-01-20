@@ -87,47 +87,101 @@
   //题头图
   .protyle-background__img {
     .protyle-icons {
-      @extend %protyle-icons__model;
-      background-color: $rc-theme-surface-background;
-      color: $rc-theme-on-background;
-      height: 26px;
-      margin: 0 8px;
-      left: auto;
-      right: #{$content-margin};
-      box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px,
-        rgb(15 15 15 / 10%) 0px 2px 4px;
-      .b3-tooltips {
+      &:not([style]) {
+        @extend %protyle-icons__model;
         background-color: $rc-theme-surface-background;
-        border-radius: unset;
+        color: $rc-theme-on-background;
         height: 26px;
-        svg {
-          // display: none;
-          color: $rc-theme-text-1;
-          width: 10px;
-          height: 10px;
-          padding-top: calc((26px - 10px) / 2);
-        }
-        &::after {
-          font-size: 12px;
-          line-height: 26px;
-          color: $rc-theme-text-1;
-        }
-        &:first-child {
-          border-radius: $rc-border-radius-small 0 0 $rc-border-radius-small;
+        // margin: 0 8px;
+        left: auto;
+        right: #{$content-margin};
+        box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px,
+          rgb(15 15 15 / 10%) 0px 2px 4px;
+        .b3-tooltips {
+          background-color: $rc-theme-surface-background;
+          border-radius: unset;
+          height: 26px;
           svg {
-            width: 9px;
-            height: 9px;
-            padding-top: calc((26px - 9px) / 2);
+            // display: none;
+            color: $rc-theme-text-1;
+            width: 10px;
+            height: 10px;
+            padding-top: calc((26px - 10px) / 2);
+          }
+          &::after {
+            font-size: 12px;
+            line-height: 26px;
+            color: $rc-theme-text-1;
+          }
+          &:first-child {
+            border-radius: $rc-border-radius-small 0 0 $rc-border-radius-small;
+            svg {
+              width: 9px;
+              height: 9px;
+              padding-top: calc((26px - 9px) / 2);
+            }
+          }
+          &:last-child {
+            border-radius: 0 $rc-border-radius-small $rc-border-radius-small 0;
+          }
+          &:not(:last-child) {
+            border-right: 1px solid $rc-theme-border-1;
+          }
+          &:hover {
+            background-color: $rc-theme-list-hover;
           }
         }
-        &:last-child {
-          border-radius: 0 $rc-border-radius-small $rc-border-radius-small 0;
+      }
+      &[style*="right"] {
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: $rc-border-radius-extra-small;
+        color: white;
+        width: auto;
+        height: 25.2px;
+        text-align: center;
+        top: calc(50% - 25.2px / 2) !important;
+        left: calc(50% - 90px) !important;
+        margin: 0 !important;
+        span {
+          width: auto;
+          height: 25.2px;
+          font-size: 12px;
+          padding: 0em 18px;
+          line-height: 25.2px;
+          &:hover {
+            background-color: unset;
+          }
         }
-        &:not(:last-child) {
-          border-right: 1px solid $rc-theme-border-1;
-        }
-        &:hover {
-          background-color: $rc-theme-list-hover;
+      }
+      &[style*="opacity"]:not([style*="right"]) {
+        @extend %protyle-icons__model;
+        z-index: 1;
+        background-color: $rc-theme-surface-background;
+        color: $rc-theme-on-background;
+        height: 26px;
+        // margin: 0 8px;
+        right: #{$content-margin};
+        box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px,
+          rgb(15 15 15 / 10%) 0px 2px 4px;
+        span {
+          background-color: $rc-theme-surface-background;
+          border-radius: unset;
+          height: 26px;
+          line-height: 26px;
+          color: $rc-theme-text-1;
+          padding: 0 6px;
+          &:first-child {
+            border-radius: $rc-border-radius-extra-small 0 0 $rc-border-radius-extra-small;
+          }
+          &:last-child {
+            border-radius: 0 $rc-border-radius-extra-small $rc-border-radius-extra-small 0;
+          }
+          &:not(:last-child) {
+            border-right: 1px solid $rc-theme-border-1;
+          }
+          &:hover {
+            background-color: $rc-theme-list-hover;
+          }
         }
       }
     }

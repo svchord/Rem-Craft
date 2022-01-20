@@ -50,21 +50,21 @@
       .b3-list-item__toggle {
         height: $list-text-height;
         padding: 0 !important;
-        // &.fn__hidden {
-        //   width: 0;
-        //   margin: 0;
-        //   padding: 0;
-        // }
+        &.fn__hidden {
+          width: 0;
+          margin: 0;
+          padding: 0;
+        }
         &.b3-list-item__toggle--hl:hover {
           background-color: transparent;
         }
         .b3-list-item__arrow {
           @include graphic($list-arrow-width, 9px);
-          // &.fn__hidden {
-          //   width: 0 !important;
-          //   margin: 0 !important;
-          //   padding: 0 !important;
-          // }
+          &.fn__hidden {
+            width: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
         }
         // + .b3-list-item__icon{
         //   margin-left: 10px;
@@ -94,7 +94,7 @@
         // }
 
         &.popover__block {
-          border-radius: $rc-border-radius-small;
+          border-radius: $rc-border-radius-extra-small;
           margin-right: 4px;
           // @include graphic($list-text-height, 14px);
           &:first-child {
@@ -113,18 +113,22 @@
         line-height: $list-text-height;
         text-align: center;
         justify-content: center;
+        border-radius: $rc-border-radius-extra-small;
         &:hover {
           background-color: $rc-theme-list-button;
         }
+        img,
         svg {
-          @include graphic($list-text-height, 14px);
+          @include graphic($list-text-height, 13px);
         }
         &::after {
           display: none;
         }
       }
       .b3-list-item__text {
-        margin-top: 1.5px;
+        height: $list-text-height;
+        line-height: $list-text-height;
+        // margin-top: 1.5px;
       }
       .b3-list-item__action {
         // padding: ($list-text-height - 18px)/2;
@@ -133,7 +137,7 @@
         @include graphic($list-text-height, 12px);
         justify-content: center;
         margin-left: 4px;
-        border-radius: $rc-border-radius-small;
+        border-radius: $rc-border-radius-extra-small;
         svg {
           display: block;
         }
@@ -217,16 +221,11 @@
       margin-bottom: 0;
     }
   }
-  &:not(.b3-menu):not(.b3-tab-bar) {
-    > .b3-list-item {
-      color: $rc-theme-text-0;
-      // box-shadow: #{fluent-shadow(4)};
-      font-weight: 600;
-    }
-  }
+  // &:not(.b3-menu):not(.b3-tab-bar):not(.layout__empty):not(#foldList):not(#globalSearchList):not(#searchList) {
+  
 }
 
-.sy__tags .b3-list-item__graphic {
+.sy__tag  .b3-list .b3-list-item__graphic {
   display: none;
 }
 

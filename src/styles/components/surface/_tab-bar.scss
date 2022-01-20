@@ -10,9 +10,10 @@
     flex: unset;
     border-radius: $rc-border-radius-small;
     height: 16px;
+    min-height: 16px;
     padding: 4px 0px 4px 6px;
     background-color: $rc-theme-surface-background;
-    box-shadow: unset;
+    box-shadow: unset;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
     &:not(:last-child) {
       margin-right: 4px;
     }

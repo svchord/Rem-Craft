@@ -20,6 +20,8 @@
 @import "editor/tag";
 //块嵌入
 @import "editor/embed";
+//子弹流
+@import "editor/bullet-flow";
 
 //提示语
 .protyle-title__input--untitled::after {
@@ -114,7 +116,7 @@ span[data-type="inline-math"] {
 .b3-typography code:not(.hljs),
 .protyle-wysiwyg code:not(.hljs) {
   margin: 0 3px;
-  white-space: nowrap;
+  // white-space: nowrap;
 }
 
 //文本转语音按钮

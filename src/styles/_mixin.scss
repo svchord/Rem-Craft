@@ -6,6 +6,7 @@
   text-align: center;
   justify-content: center;
   line-height: 22px;
+  border-radius: $rc-border-radius-extra-small;
   &:hover {
     background-color: $rc-theme-list-button;
   }

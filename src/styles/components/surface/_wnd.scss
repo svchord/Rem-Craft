@@ -64,6 +64,11 @@
             > .fn__flex-1 {
               min-height: 0 !important;
             }
+            .b3-list > .b3-list-item {
+              color: $rc-theme-text-0;
+              // box-shadow: #{fluent-shadow(4)};
+              font-weight: 600;
+            }
           }
         }
       }
@@ -92,6 +97,10 @@
     div[data-type="wnd"] {
       position: relative;
       @extend %wnd;
+      #searchHistoryBtn,
+      #globalSearchReload {
+        @include block__icon__model(30px, 14px);
+      }
     }
     .b3-form__space--small {
       margin: 8px;

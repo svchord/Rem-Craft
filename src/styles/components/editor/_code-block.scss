@@ -11,7 +11,7 @@
     background-color: transparent;
     transition: opacity 0.5s ease-out;
     %code-action {
-      border-radius: $rc-border-radius-small;
+      border-radius: $rc-border-radius-extra-small;
       font-size: 12px;
       display: flex;
       color: $rc-theme-on-surface;
@@ -86,22 +86,28 @@
 
   .hljs {
     background-color: transparent !important;
-    padding: 34px 6px 32px 22px !important;
+    padding: 34px 16px 32px 22px !important;
     font-size: 80%;
     line-height: 1.625;
     &.protyle-linenumber {
       padding-left: 10px !important;
       margin-left: 50px;
     }
-    &::-webkit-scrollbar-thumb {
-      box-shadow: inset 0 0 10px 10px $rc-scroll-hover;
-    }
+    // &::-webkit-scrollbar-thumb {
+    //   box-shadow: inset 0 0 10px 10px $rc-scroll-hover;
+    // }
   }
   .protyle-linenumber__rows {
     font-size: 80%;
     // flex-direction: column;
     background-color: transparent !important;
-    padding: 34px 0px 32px 0px !important;
+    padding: 33px 0px 32px 0px !important;
+    line-height: 21px;
+    width: 40px;
+    margin-right: 10px;
+    span{
+      height: 21px;
+    }
   }
 }
 

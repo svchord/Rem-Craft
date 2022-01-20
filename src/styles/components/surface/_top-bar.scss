@@ -2,7 +2,7 @@ $topbar-height: 30px;
 //顶部工具栏
 %toolbar_before {
   z-index: 1;
-  width: auto;
+  width: 26px;
   height: auto;
   display: flex;
   top: unset;
@@ -26,13 +26,30 @@ $topbar-height: 30px;
   #toolbarVIP {
     &:empty {
       -webkit-app-region: drag;
-      margin: calc(#{$topbar-height} / 6);
-      width: calc(#{$topbar-height} * 5 / 6);
-      height: calc(#{$topbar-height} * 4 / 6);
-      background-image: url("#{$asset-path}/icons/siyuan.svg");
-      background-repeat: round; 
+      padding: 5px #{$interval};
+      width: 36px;
+      height: $topbar-height - 10px;
+      &::before {
+        content: "";
+        display: block;
+        width: 36px;
+        background-image: url("#{$asset-path}/icons/siyuan.svg");
+        background-repeat: round;
+        z-index: 0;
+      }
     }
-  } 
+    // &:hover {
+    //   @each $id in DailyNote, Search, Dock, ThemeMode, Sync {
+    //     ~ .toolbar__item#bar#{$id} {
+    //       padding: 0 8px;
+    //       width: calc(#{$topbar-height} * 7 / 5);
+    //       opacity: 1;
+    //       transition: width 0.2s ease-out, padding 0.2s ease-out,
+    //         opacity 0.2s ease-out;
+    //     }
+    //   }
+    // }
+  }
   .toolbar__item {
     color: $rc-topbar-color;
     height: $topbar-height;
@@ -47,9 +64,26 @@ $topbar-height: 30px;
       }
     }
     @each $id in DailyNote, Search, Dock, ThemeMode, Sync {
-      &#bar#{$id}::before {
-        @extend %toolbar_before;
-        // content: '#{$id}';
+      &#bar#{$id} {
+        // transform: translateX(-50px);
+        // padding: 0;
+        // width: 0;
+        // opacity: 0;
+        // transition: width, padding, opacity 0.3s ease-out;
+        &::before {
+          @extend %toolbar_before;
+          content: '#{$id}';
+        }
+        // &:hover {
+        //   padding: 0 8px;
+        //   width: calc(#{$topbar-height} * 7 / 5);
+        //   opacity: 1;
+        //   ~ .toolbar__item:not(#barMore):not(#barBack):not(#barForward):not(#closeWindow):not(.toolbar__item--action) {
+        //     padding: 0 8px;
+        //     width: calc(#{$topbar-height} * 7 / 5);
+        //     opacity: 1;
+        //   }
+        // }
       }
     }
     &#barDailyNote::before {
@@ -96,11 +130,18 @@ $topbar-height: 30px;
         background-color: $rc-close-window;
       }
     }
-    &.b3-tooltips__se::after {
-      left: 35%;
+    // &.b3-tooltips__se::after {
+    //   // left: 35%;
+    // }
+    // &.b3-tooltips__sw::after {
+    //   // right: 35%;
+    // }
+    &::after {
+      display: none;
     }
-    &.b3-tooltips__sw::after {
-      right: 35%;
-    }
+  }
+  .fn__ellipsis {
+    line-height: $topbar-height;
+    // color: $color-text-3;
   }
 }

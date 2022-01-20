@@ -56,6 +56,7 @@ $rc-border-radius-extra-small: 3px;
 $rc-border-radius-small: 4px;
 $rc-border-radius-medium: 6px;
 $rc-border-radius-large: 8px;
+$rc-border-radius-max: 9999px;
 $rc-border-radius-circle: 50%;
 //UI底色
 $rc-theme-background: $rc-theme-gray-0;
@@ -95,7 +96,7 @@ $rc-theme-list-focus-button: $rc-theme-primary-2;
 //列表项选中字体颜色
 $rc-theme-list-focus-color: $rc-theme-primary;
 //子列表缩进左边距
-$list-left: 24px;
+$list-left: 20px;
 //子列表缩进最大深度
 $list-depth: 7;
 //列表文本行高
@@ -205,7 +206,7 @@ $rc-inline-blockref-color: $rc-theme-primary; //#2156db;
 $rc-inline-blockref-hover: rgba($rc-theme-primary, 0.1);
 
 //标签
-$rc-inline-tag-color: $rc-theme-text-3; //rgba($rc-theme-on-background, 0.5);
+$rc-inline-tag-color: $rc-theme-text-2; //rgba($rc-theme-on-background, 0.5);
 // $rc-inline-tag-background: $rc-theme-list-hover;
 $rc-inline-tag-hover: $rc-theme-list-hover;
 

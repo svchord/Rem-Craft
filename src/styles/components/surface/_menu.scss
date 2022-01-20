@@ -9,6 +9,17 @@
   //   display: block !important;
   //   opacity: 0;
   // }
+  .b3-menu__item {
+    .b3-menu__icon {
+      transition: all 0.3s ease 0s;
+      color: $rc-theme-text-2;
+    }
+    &:hover {
+      .b3-menu__icon {
+        color: $rc-theme-text-0;
+      }
+    }
+  }
 }
 
 //菜单
@@ -35,6 +46,9 @@
         height: 10px;
       }
     }
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
   &__item--custom {
     padding: 0 8px;
@@ -55,6 +69,17 @@
     margin-left: $sub-menu-vertical;
     margin-right: $sub-menu-vertical;
     top: -9px;
+    .b3-menu__item {
+      .b3-menu__icon {
+        transition: all 0.3s ease 0s;
+        color: $rc-theme-text-2;
+      }
+      &:hover {
+        .b3-menu__icon {
+          color: $rc-theme-text-0;
+        }
+      }
+    }
   }
   &__separator {
     margin-left: -6px;
@@ -78,8 +103,8 @@
   .b3-list--background {
     padding: 0px 2px 2px;
     margin: 0;
-    .b3-list-item{
-      &:last-child{
+    .b3-list-item {
+      &:last-child {
         margin-bottom: 0;
       }
     }

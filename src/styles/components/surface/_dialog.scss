@@ -56,7 +56,7 @@
       .b3-list-item {
         padding: 4.4px 12px !important;
         margin-right: 8px;
-        font-weight: normal;
+        font-weight: normal !important;        
       }
     }
 
@@ -115,6 +115,16 @@
       color: $rc-theme-on-background;
       padding: 19px 0 18px 0;
       border-bottom: 1px solid $rc-dialog-border;
+      &.fn__none {
+        display: block !important;
+        &::before{
+          content: '新建日记';
+          display: block;
+        }
+        // + div[style*="height"] {
+        //   margin-top: 19px + 18px;
+        // }
+      }
     }
     //弹窗关闭按钮
     .b3-dialog__close {

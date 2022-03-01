@@ -16,7 +16,7 @@ $bullet-border: $rc-theme-primary-4;
         background-color: $rc-theme-primary-3 !important;
       }
     }
-    
+
     > div:nth-child(2):not(:focus-within)::before {
       border-color: $bullet-border !important;
       border-width: 2px !important;
@@ -28,9 +28,11 @@ $bullet-border: $rc-theme-primary-4;
       border-color: $bullet-border !important;
       border-width: 2px !important;
       top: -17px !important;
-      // height: 100%;
       height: auto;
       bottom: -6px !important;
+    }
+    > div:nth-last-child(3)::before {
+        border-bottom-left-radius: $rc-border-radius-large !important;
     }
   }
   .li {

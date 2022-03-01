@@ -127,6 +127,11 @@
           &:not(:last-child) {
             border-right: 1px solid $rc-theme-border-1;
           }
+          &:nth-child(4){
+            &::after{
+              content: '调整';
+            }
+          }
           &:hover {
             background-color: $rc-theme-list-hover;
           }

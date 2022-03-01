@@ -51,10 +51,10 @@
       border-right: 1px solid $rc-border-color;
     }
     //集市tab
-    .fn__flex.b3-list--background {
-      padding-top: 8px;
-      .b3-list-item {
-        padding: 4.4px 12px !important;
+    .layout-tab-bar {
+      padding: 16px 0 8px 16px;
+      .item {
+        padding: 6px 0px !important;
         margin-right: 8px;
         font-weight: normal !important;        
       }
@@ -245,6 +245,7 @@
 }
 
 .search__header {
+  border-radius: $rc-border-radius-large;
   .b3-text-filed {
     border: 1px solid $rc-border-color !important;
     &:hover,

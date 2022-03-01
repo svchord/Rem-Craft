@@ -50,21 +50,17 @@
       .b3-list-item__toggle {
         height: $list-text-height;
         padding: 0 !important;
-        &.fn__hidden {
-          width: 0;
-          margin: 0;
-          padding: 0;
-        }
+        // &.fn__hidden {
+        //   width: 0;
+        //   margin: 0;
+        //   padding: 0;
+        // }
         &.b3-list-item__toggle--hl:hover {
           background-color: transparent;
         }
         .b3-list-item__arrow {
           @include graphic($list-arrow-width, 9px);
-          &.fn__hidden {
-            width: 0 !important;
-            margin: 0 !important;
-            padding: 0 !important;
-          }
+          // &.
         }
         // + .b3-list-item__icon{
         //   margin-left: 10px;
@@ -157,23 +153,23 @@
           display: none;
         }
       }
-      & + ul {
-        position: relative;
-        &::before {
-          content: "";
-          display: block;
-          position: absolute;
-          top: 2px;
-          width: 0px;
-          height: calc(100% - 2px);
-          border-left: 1px solid $rc-theme-border-1;
-        }
-      }
+      // & + ul {
+      //   // position: relative;
+      //   // &::before {
+      //   //   content: "";
+      //   //   display: block;
+      //   //   position: absolute;
+      //   //   top: 2px;
+      //   //   width: 0px;
+      //   //   height: calc(100% - 2px);
+      //   //   border-left: 1px solid $rc-theme-border-1;
+      //   // }
+      // }
       @mixin recursive-item-margin($cur, $end) {
         + ul {
-          &::before {
-            left: calc(#{$list-left} * #{$cur} - #{$list-left} / 2);
-          }
+          // &::before {
+          //   left: calc(#{$list-left} * #{$cur} - #{$list-left} / 2);
+          // }
           & > .b3-list-item {
             margin-left: $list-left * $cur !important;
             @if $cur < $end {

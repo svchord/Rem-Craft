@@ -65,9 +65,9 @@ $min-fs: 16px;
       padding-top: 2px;
       padding-bottom: 2px;
       @include heading($i);
-      [spellcheck="false"] {
-        min-height: 0;
-      }
+      // [spellcheck="false"] {
+      //   min-height: 0;
+      // }
     }
   }
 }

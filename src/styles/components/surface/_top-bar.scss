@@ -37,6 +37,9 @@ $topbar-height: 30px;
         background-repeat: round;
         z-index: 0;
       }
+      svg{
+        width: 36px;
+      }
     }
     // &:hover {
     //   @each $id in DailyNote, Search, Dock, ThemeMode, Sync {

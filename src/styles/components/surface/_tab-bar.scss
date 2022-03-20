@@ -13,7 +13,7 @@
     min-height: 16px;
     padding: 4px 0px 4px 6px;
     background-color: $rc-theme-surface-background;
-    box-shadow: unset;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    box-shadow: unset;
     &:not(:last-child) {
       margin-right: 4px;
     }
@@ -52,9 +52,15 @@
         color: $rc-theme-list-focus-color;
         opacity: 1 !important;
       }
-      .item__close:hover {
+      .item__close {
         svg {
+          opacity: 0.5 !important;
+        }
+        &:hover {
+          svg {
+          opacity: 1 !important;
           background-color: $rc-theme-list-focus-button;
+          }
         }
       }
     }

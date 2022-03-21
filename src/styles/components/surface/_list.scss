@@ -1,3 +1,14 @@
+@keyframes list-item-active {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 //列表UI
 // .sy__files,
 .b3-list,
@@ -26,6 +37,9 @@
     }
     &.b3-list-item--big {
       margin-top: 8px !important;
+      // .b3-list-item__graphic{
+      //   margin-right: 32px;
+      // }
       &:first-child {
         margin-top: 0px !important;
       }
@@ -216,12 +230,14 @@
     &[data-type="toggle"] {
       margin-bottom: 0;
     }
+    &[data-type="navigation-root"] {
+      font-weight: 600;
+      // border-bottom: 1px solid $rc-border-color;
+    }
   }
   // &:not(.b3-menu):not(.b3-tab-bar):not(.layout__empty):not(#foldList):not(#globalSearchList):not(#searchList) {
-  
 }
 
-.sy__tag  .b3-list .b3-list-item__graphic {
+.sy__tag .b3-list .b3-list-item__graphic {
   display: none;
 }
-

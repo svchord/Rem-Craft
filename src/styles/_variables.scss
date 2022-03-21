@@ -12,6 +12,10 @@ $rc-theme-primary-4: $blue-3; //$antd-4; //#9580f3;
 $rc-theme-primary-5: $blue-4; //$antd-5; //#7963f0;
 $rc-theme-primary-6: $blue-5;
 
+$rc-theme-primary-light: rgba($rc-theme-primary, 0.5);
+$rc-theme-primary-lighter: rgba($rc-theme-primary, 0.3);
+$rc-theme-primary-lightest: rgba($rc-theme-primary, 0.1);
+
 //中性色(Material Design)
 $rc-theme-gray-0: $color-tertiary-light-default; //#ffffff; //$grey-0; //#f8f9fd; //
 $rc-theme-gray-1: $color-tertiary-light-hover; //#fafafa; //$grey-1; //#f2f3f7; //
@@ -80,7 +84,7 @@ $rc-theme-surface-control: $rc-theme-surface-button;
 $rc-theme-surface-border: rgb(238, 238, 238);
 $rc-surface-boder: none; //1px solid $rc-theme-surface-border;
 //边窗动画
-$rc-width-time: 0.25s;
+$rc-width-time: 0.2s;
 $wnd-transition: all $rc-width-time ease-out 0s;
 //边窗阴影
 $rc-theme-surface-shadow: none; //"0 4px 10px rgb(0 0 0 / 5%), 0 0 1px rgb(0 0 0 / 10%)";
@@ -215,7 +219,7 @@ $rc-card-shadow: fluent-shadow(
   4
 ); //"rgb(0 0 0 / 5%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 15px 30px";
 $rc-card-hover-shadow: fluent-shadow(
-  6
+  8
 ); //"rgb(0 0 0 / 5%) 0px 0px 1px, rgb(0 0 0 / 12%) 0px 15px 30px";
 
 //高亮底色

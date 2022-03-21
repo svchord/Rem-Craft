@@ -2,7 +2,7 @@
   "devDependencies": {
     "sass": "^1.45.2"
   },
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "My theme for siyuan",
   "name": "rem-craft",
   "scripts": {

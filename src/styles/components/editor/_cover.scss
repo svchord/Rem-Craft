@@ -4,6 +4,8 @@
   margin: 0 !important;
   padding: 0;
   //无题头图，有emoji
+  &[style*="56px"],
+  &[style*="92px"],
   &[style*="64px"] {
     min-height: 96px+78px+36px !important; //+36px
     margin: 0px !important;

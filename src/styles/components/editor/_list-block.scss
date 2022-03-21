@@ -9,6 +9,9 @@
     top: 2px;
     bottom: -2px;
   }
+  > .protyle-action:hover::after {
+    opacity: 0.4;
+  }
 }
 .b3-typography > .li > .protyle-action,
 .protyle-wysiwyg > .li > .protyle-action {

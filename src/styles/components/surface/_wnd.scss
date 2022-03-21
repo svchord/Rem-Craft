@@ -1,38 +1,39 @@
-@keyframes wnd-close-left {
+$wnd-scale:scale(0.9);
+@keyframes wnd-close {
   from {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);//translateX(0);
     max-height: 100%;
   }
   50% {
     opacity: 0;
-    transform: translateX(-50%);
+    transform: $wnd-scale;// translateX(-50%);
     max-height: 100%;
   }
   to {
     opacity: 0;
-    transform: translateX(-50%);
+    transform: $wnd-scale;//translateX(-50%);
     max-height: 0;
   }
 }
 
-@keyframes wnd-close-right {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-    max-height: 100%;
-  }
-  50% {
-    opacity: 0;
-    transform: translateX(50%);
-    max-height: 100%;
-  }
-  to {
-    opacity: 0;
-    transform: translateX(50%);
-    max-height: 0;
-  }
-}
+// @keyframes wnd-close-right {
+//   from {
+//     opacity: 1;
+//     transform: scale(1);//translateX(0);
+//     max-height: 100%;
+//   }
+//   50% {
+//     opacity: 0;
+//     transform: $wnd-scale;//translateX(50%);
+//     max-height: 100%;
+//   }
+//   to {
+//     opacity: 0;
+//     transform: $wnd-scale;//translateX(50%);
+//     max-height: 0;
+//   }
+// }
 
 %wnd {
   min-height: 10% !important;
@@ -55,7 +56,7 @@
       > div[data-type="wnd"] {
         @extend %wnd;
         opacity: 1;
-        transform: translateX(0);
+        transform: scale(1);//translateX(0);
         .layout-tab-container {
           overflow-y: hidden;
           & > .fn__flex-1 {
@@ -67,7 +68,7 @@
             .b3-list > .b3-list-item {
               color: $rc-theme-text-0;
               // box-shadow: #{fluent-shadow(4)};
-              font-weight: 600;
+              // font-weight: 600;
             }
           }
         }
@@ -75,20 +76,20 @@
     }
     > .fn__none:not(.layout__resize) {
       display: flex !important;
-      animation: wnd-close-right $rc-width-time * 2 forwards ease-in-out;
+      animation: wnd-close $rc-width-time * 2 forwards ease-in-out;
       > div[data-type="wnd"] {
         @extend %wnd;
         opacity: 0;
-        transform: translateX(50%);
+        transform: $wnd-scale;//translateX(50%);
       }
     }
   }
   //左侧边窗特殊处理
   > .fn__flex-shrink:not(.layout__center) {
     > .fn__none:not(.layout__resize) {
-      animation: wnd-close-left $rc-width-time * 2 forwards ease-in-out !important;
+      animation: wnd-close $rc-width-time * 2 forwards ease-in-out !important;
       > div[data-type="wnd"] {
-        transform: translateX(-50%);
+        transform: $wnd-scale;//translateX(-50%);
       }
     }
   }

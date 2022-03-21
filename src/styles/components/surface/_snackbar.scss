@@ -4,15 +4,16 @@
       display: inline-flex;
       border-radius: $rc-border-radius-small !important;
       box-shadow: #{$rc-snackbar-shadow} !important;
-      color: $rc-theme-primary;
-      border: 1px solid $rc-theme-primary;
-      background-color: $rc-theme-primary-2;
-      padding: 8px 35px;
-      padding-left: 15px;
+      color: $rc-theme-on-surface;//$rc-theme-primary;
+      // border: 1px solid $rc-theme-primary;
+      background-color: $rc-theme-surface-background;//$rc-theme-primary-2;
+      padding: 10px 16px;
+      font-size: 14px;
+      // padding-left: 15px;
   
       &::before {
         content: "";
-        margin-top: 1px;
+        margin-top: 2px;
         display: inline-flex;
         width: 16px;
         height: 16px;
@@ -31,9 +32,9 @@
     }
     &--error {
       .b3-snackbar__content {
-        color: $rc-danger-color;
-        border-color: $rc-danger-border;
-        background-color: $rc-danger-background;
+        // color: $rc-danger-color;
+        // border-color: $rc-danger-border;
+        // background-color: $rc-danger-background;
         &::before {
           @include add_icon("warning", $rc-danger-color, 18, "round");
         }

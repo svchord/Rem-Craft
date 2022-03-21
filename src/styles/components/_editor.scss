@@ -1,0 +1,201 @@
+//题头图
+@import "editor/cover";
+//工具条
+@import "editor/toolbar";
+//工具窗
+@import "editor/util";
+//列表块
+@import "editor/list-block";
+//引述块
+@import "editor/block-quote";
+//代码块
+@import "editor/code-block";
+//表格块
+@import "editor/table";
+//标题块
+@import "editor/heading";
+//超链接
+@import "editor/link";
+//标签
+@import "editor/tag";
+//块嵌入
+@import "editor/embed";
+//子弹流
+@import "editor/bullet-flow";
+
+//提示语
+.protyle-title__input--untitled::after {
+  -webkit-text-fill-color: $rc-theme-text-3; //rgba($rc-theme-on-background, 0.15);
+}
+div[data-tip="键入文字或 '/' 选择"]::after {
+  -webkit-text-fill-color: $rc-theme-text-3; //rgba($rc-theme-on-background, 0.4);
+}
+
+.protyle-preview,
+.protyle {
+  background-color: $rc-theme-surface-background;
+}
+
+.protyle {
+  .b3-typography,
+  .protyle-wysiwyg {
+    padding: 16px #{$content-margin} 235px !important;
+    max-width: #{$rc-editor-width};
+    margin: 0;
+    background-color: $rc-theme-surface-background;
+    > div {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+    div[data-type] {
+      border-radius: $rc-border-radius-small;
+    }
+  }
+  &#searchPreview,
+  &.block__edit {
+    .b3-typography,
+    .protyle-wysiwyg {
+      padding: 16px #{$content-margin} !important;
+    }
+  }
+
+  &:not(.block__edit) {
+    .b3-typography {
+      max-width: 100%;
+    }
+  }
+}
+
+.protyle:not(.block__edit) 
+
+//分割线
+.hr > div {
+  border-color: $rc-border-color !important;
+}
+
+//块标识按钮
+.protyle-gutters {
+  transform: translateX(-6px);
+  border-right: 6px solid transparent;
+  button {
+    // background-color: $rc-theme-background;
+    opacity: 0.35;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+kbd {
+  font-family: var(--b3-font-family-code) !important;
+  border-color: $rc-list-border !important;
+  background-color: rgb(247, 247, 247) !important;
+}
+
+//反链计数
+.protyle-attr--refcount {
+  @extend %counter__model;
+  height: 22px;
+  width: 22px;
+  padding: 0;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+
+//行内公式块
+span[data-type="inline-math"] {
+  margin: 0 3px;
+  .katex {
+    font-size: 100% !important;
+    font-family: var(--b3-font-family-math), HarmonyOS Sans SC, Times New Roman, serif !important;
+  }
+}
+
+//行内代码块
+.b3-typography code:not(.hljs),
+.protyle-wysiwyg code:not(.hljs) {
+  margin: 0 3px;
+  // white-space: nowrap;
+}
+
+//文本转语音按钮
+.protyle-speech {
+  border-color: $rc-border-color;
+}
+
+//鼠标拖拽选择
+.protyle-select {
+  // max-width: 100vw;
+  background-color: $rc-selection-background !important;
+}
+
+//超级块横排
+.sb[data-sb-layout="col"] {
+  > div:not(:first-child):not(.protyle-attr) {
+    margin-left: 50px !important;
+  }
+}
+
+//块引用样式
+span[data-type="block-ref"] {
+  border-radius: $rc-border-radius-small;
+  &:hover {
+    background-color: $rc-inline-blockref-hover;
+  }
+}
+
+mark {
+  background-image: $rc-mark-background-img;
+}
+
+.layout__empty {
+  margin: 0;
+  transform: translateY(-30px);
+  background-color: $rc-theme-surface-background;
+  h1 {
+    margin: 0;
+    color: $rc-theme-text-0;
+  }
+  .fn__hr {
+    height: 12px;
+  }
+  .b3-list-item {
+    font-size: 15px;
+    margin: 4px 0 !important;
+    span {
+      margin-left: 6px;
+    }
+  }
+}
+
+.protyle-wysiwyg--select,
+.protyle-wysiwyg--hl {
+  background-color: $rc-highlight !important;
+}
+
+.fn__loading {
+  background-color: $rc-theme-surface-background !important;
+}
+
+// p,
+// .p {
+//   text-align: justify;
+// }
+
+// .protyle-content{
+//   padding-top: 35px;
+// }
+
+// .protyle-wysiwyg [data-node-id] .img {
+//   transition: width, height 300ms ease-in 0s;
+//   &:hover .protyle-action__drag {
+//     opacity: 1;
+//   }
+//   .protyle-action__drag {
+//     display: inline-block;
+//     border-radius: 3px;
+//     opacity: 0;
+//     transition: opacity 300ms ease-in 0s !important;
+//   }
+// }

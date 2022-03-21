@@ -1,0 +1,20 @@
+//按钮
+.b3-button:not(.b3-button--text):not(.b3-button--cancel):not(.b3-button--outline) {
+  &:hover {
+    background-color: rgba($rc-theme-primary, 0.9);
+    box-shadow: none;
+  }
+}
+.b3-button--outline:not([data-type="goBack"]) {
+  background-color: $rc-theme-primary-1;
+  border: none;
+  font-size: 14px;
+  svg {
+    width: 12px;
+    height: 12x;
+  }
+  &:hover {
+    background-color: $rc-theme-primary-2;
+  }
+}
+

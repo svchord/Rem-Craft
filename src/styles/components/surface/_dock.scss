@@ -1,0 +1,80 @@
+$prop: calc(11 / 11);
+//边栏
+%dock--vertical_model {
+  border-radius: $rc-border-radius-small;
+  padding: 0px;
+  background-color: $rc-theme-background;
+  border: $rc-surface-boder;
+  // box-shadow: #{$rc-theme-surface-shadow};
+  margin-bottom: #{$interval};
+  span {
+    width: 36px * $prop;
+    height: 40px * $prop;
+    // border: 1px solid transparent;
+    padding: 0 0 0 0px;
+    justify-content: center;
+    color: $rc-theme-text-1;
+    background-color: $rc-theme-background;
+    // transform: translateZ(0px) scale(1);
+    line-height: 0;
+    flex-grow: 1;
+    position: relative;
+    border-radius: $rc-border-radius-small;
+    transition: all 0.2s ease 0s;
+    // &:not(:last-child) {
+    //   margin-bottom: #{$interval};
+    // }
+    cursor: pointer;
+    &:hover {
+      background-color: $rc-theme-list-button;
+    }
+    &.dock__item--active {
+      // border: 1px solid $rc-theme-primary-4;
+      color: $rc-theme-primary;
+      // background-color: $rc-theme-list-focus-button;
+      // background-image: linear-gradient(
+      //   to right,
+      //   $rc-theme-surface-button-focus 33%,
+      //   transparent ,
+      //   transparent
+      // );
+      // background-color: $rc-theme-surface-button-focus;
+      &:hover {
+        background-color: $rc-theme-list-focus-button;
+      }
+    }
+    svg {
+      $dock-svg-width: 14px * $prop;
+      width: $dock-svg-width;
+      height: $dock-svg-width;
+    }
+  }
+}
+
+//边栏
+.dock--vertical {
+  width: 36px * $prop;
+  &#dockLeft {
+    margin-left: #{$interval};
+  }
+  &#dockRight {
+    margin-right: #{$interval};
+  }
+  z-index: 1;
+  div:first-child:not(:empty) {
+    @extend %dock--vertical_model;
+    margin-top: #{$interval};
+  }
+  div:last-child:not(:empty) {
+    @extend %dock--vertical_model;
+  }
+  .dock__item[data-index="0"]::after {
+    // margin: 0 10px;
+    // top: -28px;
+    display: none;
+  }
+  .dock__item[data-index="1"]::after {
+    display: none;
+    // bottom: 70%;
+  }
+}

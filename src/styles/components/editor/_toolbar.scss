@@ -1,0 +1,40 @@
+.protyle-toolbar {
+  padding-left: 3px;
+  border-radius: $rc-border-radius-large;
+  box-shadow: #{$rc-toolbar-shadow};
+  transform: translateY(-10px);
+  background-color: $rc-theme-surface-background;
+  .protyle-toolbar__item {
+    height: 32px;
+    width: 34px;
+    margin: 3px 3px 3px 0px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: $rc-border-radius-medium;
+    transition: transform 0.3s ease 0s;
+    cursor: pointer;
+    &:hover {
+      background-color: $rc-theme-surface-button;
+    }
+    &.protyle-toolbar__item--current {
+      background-color: rgba($rc-theme-primary, 0.08);
+      &:hover {
+        background-color: rgba($rc-theme-primary, 0.16);
+      }
+    }
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+    &::after{
+      bottom: 110%;
+    }
+  }
+  .protyle-toolbar__divider {
+    margin: 0 3px 0 0;
+    border-color: $rc-theme-border-1;//rgb(242,242,242); //rgb(247, 247, 247);//
+  }
+}

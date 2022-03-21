@@ -52,7 +52,7 @@
       #agreeLogin + span + span {
         line-height: 22px;
       }
-      .b3-button.b3-button--cancel{
+      .b3-button.b3-button--cancel {
         color: $rc-theme-primary-5;
       }
     }
@@ -282,18 +282,21 @@
   .item__side {
     background-color: $rc-theme-surface-background;
     border-radius: $rc-border-radius-medium;
-    .b3-button[data-type="goBack"] {
-      border: none;
-      margin: 8px;
-      color: $rc-theme-text-2;
-      padding: 8px;
-      &:hover {
-        background-color: $rc-theme-gray-1;
-      }
-      svg {
-        width: 12px;
-        height: 12px;
-        transform: translateX(1px);
+    .b3-button {
+      box-shadow: unset;
+      &[data-type="goBack"] {
+        border: none;
+        margin: 8px;
+        color: $rc-theme-text-2;
+        padding: 8px;
+        &:hover {
+          background-color: $rc-theme-gray-1;
+        }
+        svg {
+          width: 12px;
+          height: 12px;
+          transform: translateX(1px);
+        }
       }
     }
     .item__nav {

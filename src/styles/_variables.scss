@@ -196,14 +196,15 @@ $rc-snackbar-shadow: fluent-shadow(
 
 //超链接样式
 //颜色
-$rc-inline-link-color: $purple-6; //$rc-theme-secondary-6; //#2156db;//rgb(16, 85, 146);
+$rc-inline-link-color: $rc-theme-text-2;//$purple-6; 
+$rc-inline-link-color-hover: $rc-theme-text-1;//$purple-6; 
+
 //下划线
-$rc-inline-link-border-color: $purple-4; //$rc-theme-secondary-4; //rgb(194, 217, 237);
+$rc-inline-link-border-color: $rc-theme-border-2;//$purple-4; 
+$rc-inline-link-border-color-hover: $rc-theme-border-3;//$purple-4; 
 $rc-inline-link-border: 1px solid $rc-inline-link-border-color;
 //提示条阴影
-$rc-inline-link-tooltip-shadow: fluent-shadow(
-  16
-); //"rgb(0 0 0 / 15%) 0px 5px 10px, rgb(0 0 0 / 20%) 0px 0px 1px";
+$rc-inline-link-tooltip-shadow: fluent-shadow(16);
 
 //块引用样式
 $rc-inline-blockref-color: $rc-theme-primary; //#2156db;

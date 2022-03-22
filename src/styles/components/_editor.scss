@@ -102,13 +102,13 @@ kbd {
   font-weight: 600;
 }
 
-
 //行内公式块
 span[data-type="inline-math"] {
   margin: 0 3px;
   .katex {
     font-size: 100% !important;
-    font-family: var(--b3-font-family-math), HarmonyOS Sans SC, Times New Roman, serif !important;
+    font-family: var(--b3-font-family-math), HarmonyOS Sans SC, Times New Roman,
+      serif !important;
   }
 }
 
@@ -162,6 +162,7 @@ mark {
   }
   .b3-list-item {
     font-size: 15px;
+    width: 196px - 6px * 2;
     margin: 4px 0 !important;
     span {
       margin-left: 6px;

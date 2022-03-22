@@ -55,8 +55,8 @@ $wnd-scale:scale(0.9);
       overflow-x: hidden;
       > div[data-type="wnd"] {
         @extend %wnd;
-        opacity: 1;
-        transform: scale(1);//translateX(0);
+        // opacity: 1;
+        // transform: scale(1);//translateX(0);
         .layout-tab-container {
           overflow-y: hidden;
           & > .fn__flex-1 {

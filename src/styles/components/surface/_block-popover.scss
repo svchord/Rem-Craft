@@ -41,7 +41,7 @@
         }
       }
       &[data-type="close"] {
-        @include block__icon__model(28px, 12px);
+        @include block__icon__model(28px, 10px);
       }
     }
   }

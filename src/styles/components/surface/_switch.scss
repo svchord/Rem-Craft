@@ -1,9 +1,9 @@
 //开关
 .b3-switch {
-  background-color: $rc-theme-surface-control;
-  width: 44px;
-  height: 22px;
-  border-radius: 100px;
+  background-color: $rc-theme-gray-3;
+  width: 40px;
+  height: 20px;
+  border-radius: $rc-border-radius-max;
   border: none;
   transition: all 0.2s ease-in-out;
   &::before {
@@ -12,28 +12,50 @@
   &::after {
     background-color: $rc-theme-surface-background !important;
     border: none;
-    width: 18px;
-    height: 18px;
-    left: 2px;
-    top: 2px;
+    width: 12px;
+    height: 12px;
+    left: 4px;
+    top: 4px;
     bottom: unset;
+    box-shadow: none;
     box-shadow: 0 2px 4px #00230b33;
     border-radius: 9px;
   }
-  &:active {
+  &:hover {
+    background-color: $rc-theme-gray-4;
     &::after {
-      width: 23.4px;
+      width: 15px;
+      height: 15px;
+      left: 2.5px;
+      top: 2.5px;
+    }
+  }
+  &:active {
+    background-color: $rc-theme-gray-5;
+    &::after {
+      width: 20px;
     }
   }
   &:checked {
     background-color: $rc-theme-primary;
     &::after {
+      background-color: $rc-theme-surface-background !important;
       right: 20px;
       left: unset;
-      top: 2px;
+      top: 4px;
       bottom: unset;
-      transform: translateX(18px);
+      transform: translateX(17px);
       transition: all 0.2s ease-in-out;
+    }
+    &:hover {
+      background-color: $rc-theme-primary-5;
+      &::after {
+        // right: 2px;
+        top: 2.5px;
+      }
+    }
+    &:active {
+      background-color: $rc-theme-primary-4;
     }
   }
 }

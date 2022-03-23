@@ -50,7 +50,7 @@
     .b3-form__space.config-account__center {
       border-right: 1px solid $rc-border-color;
       #agreeLogin + span + span {
-        line-height: 22px;
+        line-height: 20px;
       }
       .b3-button.b3-button--cancel {
         color: $rc-theme-primary-5;
@@ -164,7 +164,7 @@
     //弹窗输入框
     .b3-dialog__content,
     .b3-form__space {
-      padding: 16px 0;
+      padding: 16px 0 24px;
       font-size: 15px;
       margin: 0;
       min-height: 30px;
@@ -201,14 +201,15 @@
     .b3-text-field {
       background-color: $rc-theme-surface-control;
       border: 1px solid $rc-border-color;
-      height: 40px;
+      height: 32px;
       padding: 0px 10px;
-      border-radius: $rc-border-radius-medium;
+      border-radius: $rc-border-radius-small;
       font-size: 15px;
       font-weight: 400;
       //多行文本框
-      &[rows="1"] {
-        line-height: 38px;
+      &[rows="1"],
+      &[rows="2"] {
+        line-height: 30px;
       }
       &:focus {
         box-shadow: none;
@@ -217,7 +218,7 @@
     //弹窗中的搜索按钮
     .b3-form__icon {
       &-icon {
-        top: calc((42.25px + 16px) / 2);
+        top: calc((32px + 16px) / 2);
         left: 9px + 8px;
       }
     }
@@ -231,7 +232,7 @@
       }
       .b3-button {
         // font-weight: 600;
-        height: 40px;
+        height: 36px;
         letter-spacing: 0.3px;
         border: 1px solid transparent;
         width: 49%;
@@ -241,6 +242,9 @@
           &:hover {
             background-color: $rc-theme-primary-5;
           }
+          &:active {
+            background-color: $rc-theme-primary-4;
+          }
         }
         &.b3-button--cancel {
           color: $rc-theme-primary;
@@ -248,6 +252,9 @@
           background-color: $rc-theme-primary-1;
           &:hover {
             background-color: $rc-theme-primary-2;
+          }
+          &:active {
+            background-color: $rc-theme-primary-3;
           }
         }
       }

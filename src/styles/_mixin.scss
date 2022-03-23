@@ -10,6 +10,9 @@
   &:hover {
     background-color: $rc-theme-list-button;
   }
+  &:active {
+    background-color: $rc-theme-gray-5;
+  }
 }
 
 //界面上按钮
@@ -23,11 +26,18 @@
     color: $rc-theme-text-0 !important;
     background-color: $rc-theme-surface-button;
   }
+  &:active {
+    background-color: $rc-theme-gray-3;
+  }
   &.ft__primary {
     color: $rc-theme-primary;
+    background-color: $rc-theme-surface-button-focus;
     &:hover {
+      background-color: $rc-theme-primary-2;
       color: $rc-theme-primary !important;
-      background-color: $rc-theme-surface-button-focus;
+    }
+    &:active {
+      background-color: $rc-theme-primary-3;
     }
   }
   svg {

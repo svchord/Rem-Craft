@@ -2,8 +2,8 @@
 .b3-button:not(.b3-button--text):not(.b3-button--cancel):not(.b3-button--outline) {
   &:hover {
     background-color: rgba($rc-theme-primary, 0.9);
-    box-shadow: none;
   }
+  box-shadow: none;
 }
 .b3-button--outline:not([data-type="goBack"]) {
   background-color: $rc-theme-primary-1;
@@ -16,5 +16,7 @@
   &:hover {
     background-color: $rc-theme-primary-2;
   }
+  &:active {
+    background-color: $rc-theme-primary-3;
+  }
 }
-

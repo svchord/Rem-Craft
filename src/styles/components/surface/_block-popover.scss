@@ -35,8 +35,9 @@
           }
         }
         &[aria-label="取消钉住"] {
-          &:hover {
-            background-color: $rc-theme-surface-button-focus;
+          background-color: $rc-theme-surface-button-focus;
+          &:active {
+            background-color: $rc-theme-primary-3 !important;
           }
         }
       }
@@ -48,7 +49,7 @@
   .block__content {
     border-radius: 0 0 $rc-border-radius-large $rc-border-radius-large;
     min-height: 74px+45px;
-    &::-webkit-scrollbar{
+    &::-webkit-scrollbar {
       background-color: transparent !important;
     }
     .block__edit {

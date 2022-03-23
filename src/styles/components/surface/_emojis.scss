@@ -60,6 +60,12 @@
         }
       }
     }
+    .b3-list & {
+      max-height: 388px;
+      .emojis__title:first-child{
+        padding-top: 0;
+      }
+    }
   }
   > div:last-child {
     padding-top: 6px;

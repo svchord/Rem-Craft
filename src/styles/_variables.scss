@@ -4,25 +4,25 @@
 $asset-path: "./src/assets";
 
 //主色
-$rc-theme-primary: $color-primary; //#5c48ec; //$antd-6; //
-$rc-theme-primary-1: $color-primary-light-default; //#f0eefd; //$antd-1; //
-$rc-theme-primary-2: $color-primary-light-hover; //#d8d5fb; //$antd-2; //
-$rc-theme-primary-3: $color-primary-light-active; //#bebafa; //$antd-3; //
-$rc-theme-primary-4: $blue-3; //$antd-4; //#9580f3;
-$rc-theme-primary-5: $blue-4; //$antd-5; //#7963f0;
+$rc-theme-primary: rgb(0, 103, 192); //$color-primary; 
+$rc-theme-primary-1: rgba($rc-theme-primary, 0.05);//$color-primary-light-default; 
+$rc-theme-primary-2: rgba($rc-theme-primary, 0.1);// $color-primary-light-hover; 
+$rc-theme-primary-3:  rgba($rc-theme-primary, 0.15);//$color-primary-light-active; 
+$rc-theme-primary-4: rgb(49, 131, 202);//$blue-3;
+$rc-theme-primary-5: rgb(26, 118, 198);//$blue-4; 
 $rc-theme-primary-6: $blue-5;
 
 $rc-theme-primary-light: rgba($rc-theme-primary, 0.5);
 $rc-theme-primary-lighter: rgba($rc-theme-primary, 0.3);
 $rc-theme-primary-lightest: rgba($rc-theme-primary, 0.1);
 
-//中性色(Material Design)
-$rc-theme-gray-0: $color-tertiary-light-default; //#ffffff; //$grey-0; //#f8f9fd; //
-$rc-theme-gray-1: $color-tertiary-light-hover; //#fafafa; //$grey-1; //#f2f3f7; //
-$rc-theme-gray-2: $neutral-2;
-$rc-theme-gray-3: $neutral-3; //#f5f5f5; //$grey-2; //#e9eaee; //
-$rc-theme-gray-4: $neutral-4; //#f0f0f0; //$grey-3; //$color-tertiary-light-active; //#dadbdf; //
-$rc-theme-gray-5: $neutral-5; //$grey-4; //$color-tertiary-light-active; //#b6b7bb; //
+//中性色(Material Design) 
+$rc-theme-gray-0: rgb(243, 243, 243); //$color-tertiary-light-default;
+$rc-theme-gray-1: rgb(243, 243, 243); //$color-tertiary-light-hover;
+$rc-theme-gray-2: rgb(239, 239, 239); //$neutral-2;
+$rc-theme-gray-3: rgb(234, 234, 234); //$neutral-3;
+$rc-theme-gray-4: rgb(229, 229, 229); //$neutral-4; 
+$rc-theme-gray-5: rgb(224, 224, 224); //$neutral-5; 
 $rc-theme-gray-6: $neutral-6;
 $rc-theme-gray-7: $neutral-7;
 
@@ -73,13 +73,13 @@ $interval: "min(12px, max(6.5px, 0.520vw * 6.5 / 8))";
 //界面文字颜色
 $rc-theme-on-surface: $rc-theme-text-1; //rgb(53, 56, 59);
 //界面底色
-$rc-theme-surface-background: $color-white; //$rc-theme-gray-0;
+$rc-theme-surface-background: rgb(251, 251, 251); //$color-white;
 //界面上按钮正常悬浮
 $rc-theme-surface-button: $rc-theme-gray-1;
 //界面上按钮选中悬浮
 $rc-theme-surface-button-focus: $rc-theme-primary-1;
 //各控件的正常底色（开关，选择菜单、输入框等）
-$rc-theme-surface-control: $rc-theme-surface-button;
+$rc-theme-surface-control: $rc-theme-gray-1;
 //边栏边框
 $rc-theme-surface-border: rgb(238, 238, 238);
 $rc-surface-boder: none; //1px solid $rc-theme-surface-border;
@@ -181,27 +181,26 @@ $rc-tooltips-color: rgb(15, 15, 15);
 $rc-selection-color: $rc-theme-primary-3;
 //选择拖拽框底色
 $rc-selection-border-color: $rc-theme-primary-3;
+
 $rc-selection-background: rgba($rc-theme-primary, 0.1);
 
 //列表块线条
 $rc-list-border: $rc-theme-border-1; //rgb(213, 213, 213);
 
 //代码块底色
-$rc-code-background: $rc-fill-0; //rgb(247, 247, 247);
+$rc-code-background: $rc-theme-gray-1; //rgb(247, 247, 247);
 
 //通知栏阴影
-$rc-snackbar-shadow: fluent-shadow(
-  64
-); // "rgb(0 0 0 / 20%) 0px 0px 1px, rgb(0 0 0 / 10%) 0px 15px 30px";
+$rc-snackbar-shadow: fluent-shadow(64);
 
 //超链接样式
 //颜色
-$rc-inline-link-color: $rc-theme-text-2;//$purple-6; 
-$rc-inline-link-color-hover: $rc-theme-text-1;//$purple-6; 
+$rc-inline-link-color: $rc-theme-text-2; //$purple-6;
+$rc-inline-link-color-hover: $rc-theme-text-1; //$purple-6;
 
 //下划线
-$rc-inline-link-border-color: $rc-theme-border-2;//$purple-4; 
-$rc-inline-link-border-color-hover: $rc-theme-border-3;//$purple-4; 
+$rc-inline-link-border-color: $rc-theme-border-2; //$purple-4;
+$rc-inline-link-border-color-hover: $rc-theme-border-3; //$purple-4;
 $rc-inline-link-border: 1px solid $rc-inline-link-border-color;
 //提示条阴影
 $rc-inline-link-tooltip-shadow: fluent-shadow(16);

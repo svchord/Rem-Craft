@@ -110,6 +110,13 @@
   &__item--custom.b3-menu__item--current {
     background-color: $rc-menu-background;
   }
+  &.b3-list {
+    .b3-list-item {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
   .b3-list--background {
     padding: 0px 2px 2px;
     margin: 0;

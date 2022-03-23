@@ -4,6 +4,7 @@ span[data-type="tag"]:not(.dock__item) {
   border-radius: $rc-border-radius-max;
   color: $rc-inline-tag-color;
   border: 1px solid $rc-theme-border-2 !important;
+  box-shadow: #{fluent-shadow(2)};
   position: relative;
   padding: 0.1em 0.6em;
   font-size: 85%;

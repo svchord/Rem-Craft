@@ -3,19 +3,26 @@
   border: 1px solid transparent !important;
   border-radius: $rc-border-radius-small;
   box-shadow: none;
-  &:not(.b3-text-field--small):not(.b3-text-field--text) {
-    //:not(.b3-form__icon-input)
-    background-color: $rc-theme-surface-control;
-  }
   .b3-list-item > & {
     background-color: $rc-theme-surface-background !important;
   }
   &:hover,
   &:focus {
     box-shadow: none;
-    border: 1px solid $rc-theme-border-2 !important;
+    // border: 1px solid $rc-theme-border-2 !important;
   }
 
+  &:not(.b3-text-field--small):not(.b3-text-field--text) {
+    //:not(.b3-form__icon-input)
+    border: 1px solid $rc-theme-border-1 !important;
+    border-bottom: 1px solid $rc-theme-border-3 !important;
+    background-color: $rc-theme-surface-control;
+
+    &:focus {
+      box-shadow: 0 -3px 0 -2px inset $rc-theme-primary !important;
+      border-bottom: 1px solid $rc-theme-primary !important;
+    }
+  }
   &.b3-text-field--small {
     height: 24px;
     &:hover,

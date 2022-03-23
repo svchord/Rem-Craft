@@ -32,6 +32,8 @@
 @import "surface/snackbar";
 //按钮
 @import "surface/button";
+//滑条
+@import "surface/slider";
 
 //选择菜单
 .b3-select {
@@ -46,9 +48,13 @@
   &::before {
     border: none;
   }
-  // &::after{
-  //   z-index: 999 !important;
-  // }
+  &::after {
+    box-shadow: #{$rc-inline-link-tooltip-shadow};
+    background-color: $rc-theme-surface-background;
+    color: $rc-theme-on-background;
+    padding: 6px 8px;
+    // z-index: 999 !important;
+  }
 }
 
 //表单
@@ -78,40 +84,10 @@
   background-color: $rc-selection-color;
 }
 
-.b3-slider {
-  height: 44px;
-  &::-webkit-slider-thumb {
-    width: 14px;
-    height: 14px;
-    box-shadow: unset;
-    border: 2px solid $rc-theme-primary-4;
-    background-color: $rc-theme-surface-background;
-    margin-top: -6px;
-    transform: unset !important;
-  }
-  &::-webkit-slider-runnable-track {
-    height: 2px;
-    background-color: $rc-theme-primary-4;
-    border-radius: 2px;
-  }
-  &:focus,
-  &:hover {
-    &::-webkit-slider-thumb {
-      box-shadow: unset;
-      width: 14px;
-      height: 14px;
-      transform: unset;
-      border-color: $rc-theme-primary-6;
-    }
-    &:-webkit-slider-runnable-track {
-      background-color: $rc-theme-primary-6 !important;
-    }
-  }
-}
 
-.protyle-scroll{
+.protyle-scroll {
   opacity: 0;
-  &:hover{
+  &:hover {
     transition: opacity 0.3s ease-out;
     opacity: 1;
   }

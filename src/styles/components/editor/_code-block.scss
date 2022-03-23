@@ -15,8 +15,12 @@
 .code-block {
   // .protyle-wysiwyg--hl,
   background-color: $rc-code-background;
+  // background-color: transparent;
   border-radius: $rc-border-radius-small;
   font-family: "HarmonyOS Sans SC", "JetBrains Mono";
+  &:hover .protyle-icons{
+    opacity: 1 !important;
+  }
   .protyle-icons {
     left: 8px;
     top: 8px;
@@ -81,6 +85,7 @@
         position: unset;
         border-radius: unset;
         background-color: transparent;
+        box-shadow: none;
         color: $rc-theme-on-surface;
         padding: 0;
         margin: 0 auto;
@@ -92,7 +97,7 @@
         background-color: $rc-theme-gray-3;
       }
       &:active {
-        background-color: $rc-theme-gray-4;
+        background-color: $rc-theme-gray-5;
       }
     }
   }

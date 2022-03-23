@@ -127,6 +127,9 @@
         &:hover {
           background-color: $rc-theme-list-button;
         }
+        &:active {
+          background-color: $rc-theme-gray-5 !important;
+        }
         img,
         svg {
           @include graphic($list-text-height, 13px);
@@ -153,6 +156,9 @@
         }
         &:hover {
           background-color: $rc-theme-list-button;
+        }
+        &:active {
+          background-color: $rc-theme-gray-5 !important;
         }
         &::after {
           display: none;
@@ -211,6 +217,9 @@
       .b3-list-item__graphic.popover__block {
         &:hover {
           background-color: $rc-theme-list-focus-button !important;
+        }
+        &:active {
+          background-color: $rc-theme-primary-3 !important;
         }
       }
       .b3-list-item__meta {

@@ -30,8 +30,8 @@ $prop: calc(11 / 11);
     }
     &.dock__item--active {
       // border: 1px solid $rc-theme-primary-4;
-      color: $rc-theme-primary;
-      background-color: $rc-theme-surface-background;//$rc-theme-list-button;
+      // color: $rc-theme-primary;
+      background-color: $rc-theme-list-button;//$rc-theme-surface-background;
       position: relative;
       // &:hover {
       //   background-color: $rc-theme-list-focus-button;
@@ -47,7 +47,7 @@ $prop: calc(11 / 11);
         height: calc(100% - 10px * 2);
         transform: unset;
         opacity: 1;
-        background-color: $rc-theme-primary;
+        background-color: #0067c0; //$rc-theme-primary;
         margin: 0;
         border-radius: 20%;
       }

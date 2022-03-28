@@ -10,7 +10,7 @@
 
 ——的**草稿**。
 
-![预览图](https://github.com/zqhjl/Rem-Craft/blob/main/preview.png?raw=true)
+<img width="1280" alt="preview" src="https://user-images.githubusercontent.com/61345763/160426012-428fd4c9-ee68-4e45-8326-a0e21b92e42f.png">
 
 ## 参考样式
 

@@ -28,10 +28,10 @@ $heading-color: $rc-text-primary;
 .b3-typography,
 .protyle-wysiwyg {
   @for $i from 1 through 6 {
-    & > h#{$i}:first-child,
-    & > .h#{$i}:first-child {
-      margin-top: 0;
-    }
+    // & > h#{$i}:first-child,
+    // & > .h#{$i}:first-child {
+    //   margin-top: 0;
+    // }
     h#{$i},
     .h#{$i} {
       color: $heading-color;

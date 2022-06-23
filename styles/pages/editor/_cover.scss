@@ -359,7 +359,10 @@ $cover-title-bg: $rc-container-bg;
     font-size: 32px;
     font-weight: 700;
     color: $cover-title-color;
-    padding: 3px 2px;
+    padding: 3px 2px 3px 8px;
     background-color: $cover-title-bg;
+    &:empty:after{
+      color: $rc-text-disabled;
+    }
   }
 }

@@ -8,8 +8,8 @@
   "description": "My theme for siyuan",
   "name": "rem-craft",
   "scripts": {
-    "build": "sass --watch src/styles/index.scss:./theme.css -s compressed --no-source-map",
-    "changelog": "conventional-changelog -p angular -i src/docs/CHANGELOG.md -w",
+    "build": "sass --watch styles/index.scss:./theme.css -s compressed --no-source-map",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w",
     "release": "standard-version"
   },
   "config": {

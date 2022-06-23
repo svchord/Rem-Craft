@@ -6,13 +6,9 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/zqhjl/Rem-Craft)
 ![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hy/zqhjl/Rem-Craft?label=hits)
 
-一款思源笔记软件的自用主题
+一款现代化、平面化设计的思源笔记主题
 
-——的**草稿**。
-
-> 最后一天订阅了，我的推荐码是CpyERae
-
-<img width="1280" alt="preview" src="https://user-images.githubusercontent.com/61345763/160426012-428fd4c9-ee68-4e45-8326-a0e21b92e42f.png">
+![预览图](preview.png)
 
 ## 参考样式
 
@@ -43,8 +39,7 @@
 该主题是自用，因此有部分对其他用户来说可能过于**激进的变更**，如果你希望取消以下更改，需要了解[自定义步骤](#自定义步骤)后进行[取消更改操作](#取消更改操作)：
 
 1. 设置、搜索、笔记本设置等大宽度菜单的关闭键被隐藏（点击菜单四周的空白处即可关闭）
-2. 超链接的锚文本编辑功能被隐藏（可直接在编辑器内编辑）
-3. 编辑器输入区域的宽度写死了，目前为49vw
+2. 编辑器输入区域的宽度写死了，目前为47vw
 
 ## 自定义步骤
 
@@ -64,12 +59,6 @@
       display: none;
     }
     ```
-2. 相关代码在[_util.scss](./src/styles/components/editor/_util.scss)文件中，结构如下所示，注释后编译即可取消
-    ```css
-    &[style*="width"] {
-      ...
-    }
-    ```
-3. 可通过修改[_variables.scss](./src/styles/_variables.scss)文件中的`$rc-editor-width`变量调整
+2. 可通过修改[_variables.scss](./src/styles/_variables.scss)文件中的`$rc-editor-width`变量调整
 
 > 以上就是本菜鸡摸索出来的流程，也许之后我会开发一个主题自定义挂件，应该就不需要这么多复杂的步骤了…不过估计使用该主题的人不多，所以应该会鸽很久

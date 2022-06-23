@@ -1,7 +1,7 @@
-## 文件目录说明
+## 样式文件目录说明
 
 ```
-sass 
+styles 
 │ 
 ├── base 
 │   ├── _reset.scss       # Reset/normalize 
@@ -9,43 +9,43 @@ sass
 │   └──� ...              # Etc… 
 │ 
 ├── components 
-│   ├── _buttons.scss     # Buttons 
-│   ├── _carousel.scss    # Carousel 
-│   ├── _cover.scss       # Cover 
-│   ├── _dropdown.scss    # Dropdown 
-│   ├── _navigation.scss  # Navigation 
-│   └──� ...              # Etc… 
-│ 
-├── helpers 
-│   ├── _variables.scss   # Sass Variables 
-│   ├── _functions.scss   # Sass Functions 
-│   ├── _mixins.scss      # Sass Mixins 
-│   ├── _helpers.scss     # Class & placeholders helpers 
-│   └──� ...              # Etc… 
+│   ├── _block-icons.scss   # 面板顶栏 
+│   ├── _bread-crumb.scss   # 面包屑 
+│   ├── _button.scss        # 按钮 
+│   ├── _emojis.scss        # emoji面板 
+│   ├── _input.scss         # 输入文本框 
+│   └──� ...                # Etc… 
 │ 
 ├── layout 
-│   ├── _grid.scss        # Grid system 
-│   ├── _header.scss      # Header 
-│   ├── _footer.scss      # Footer 
-│   ├── _sidebar.scss     # Sidebar 
-│   ├── _forms.scss       # Forms 
-│   └──� ...              # Etc… 
+│   ├── _dock.scss          # 边栏 
+│   ├── _resize.scss        # 分隔线 
+│   ├── _top-bar.scss       # 顶栏 
+│   ├── _wnd.scss           # 边窗 
+│   └──� ...                # Etc… 
 │ 
 ├── pages 
-│   ├── _home.scss        # Home specific styles 
-│   ├── _contact.scss     # Contact specific styles 
-│   └──� ...              # Etc… 
+│   ├── _dialog.scss        # Dialog specific styles 
+│   ├── _editor.scss        # Editor specific styles 
+│   └──� ...                # Etc… 
 │ 
 ├── themes 
-│   ├── _theme.scss       # Default theme 
-│   ├── _admin.scss       # Admin theme 
-│   └──� ...              # Etc… 
+│   ├── _global.scss        # global theme 
+│   ├── _light.scss         # light theme 
+│   ├── _dark.scss          # dark theme 
+│   └──� ...                # Etc… 
 │ 
+├── utils 
+│   ├── _variables.scss     # Sass Variables 
+│   ├── _functions.scss     # Sass Functions 
+│   ├── _mixins.scss        # Sass Mixins 
+│   ├── _placeholders.scss  # Class & placeholders helpers 
+│   └──� ...                # Etc… 
+│
 ├── vendors 
-│   ├── _bootstrap.scss   # Bootstrap 
-│   ├── _jquery-ui.scss   # jQuery UI 
-│   └──� ...              # Etc… 
+│   ├── TDesign             # TDesign 
+│   ├── Semi Design         # Semi Design 
+│   └──� ...                # Etc… 
 │ 
 │ 
-`── main.scss             # primary Sass file 
+`── index.scss              # primary Sass file 
 ```

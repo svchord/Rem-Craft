@@ -105,10 +105,10 @@ $close-window-bg-hover: rgba(232, 17, 35, 0.9);
         content: "暗黑";
       }
 
-      // &::after {
-      //   // display: none;
-      //   // content: "Alt + 5";
-      // }
+      &::after {
+        // display: none;
+        content: "暗黑模式";
+      }
     }
 
     &#barSync {
@@ -181,6 +181,7 @@ $close-window-bg-hover: rgba(232, 17, 35, 0.9);
 
       svg {
         width: 10px;
+        height: $topbar-height !important;
       }
     }
 

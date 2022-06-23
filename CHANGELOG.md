@@ -1,3 +1,36 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## 0.5.0 (2022-06-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* 参考TDesign的文件目录组织结构，添加色板和全局Token，提高代码的延展性
+
+### ♻️ Code Refactoring | 代码重构
+
+* 代码重构 ([83c0e43](https://github.com/svchord/Rem-Craft/commit/83c0e437cf0330f824ad126c73834cbd7690dd22)), closes [#15](https://github.com/svchord/Rem-Craft/issues/15) [#18](https://github.com/svchord/Rem-Craft/issues/18) [#21](https://github.com/svchord/Rem-Craft/issues/21)
+
+
+### 📦‍ Build System | 构建/工程依赖/工具
+
+* **npm:** 更新 standard-version 和 sass 的依赖版本 ([be57e10](https://github.com/svchord/Rem-Craft/commit/be57e1074c679dfdf441d92692ae5aef97430f78))
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 调整超级块横排间距 ([505018a](https://github.com/svchord/Rem-Craft/commit/505018aed68282cca9a922dfae8d9945e6bb6cd4))
+* 修复顶栏最大化按钮样式问题 ([49982f4](https://github.com/svchord/Rem-Craft/commit/49982f4b2ef78a1d4b1397a6e944cc7e9145094d))
+* 修复github链接图标显示问题 ([ae285b5](https://github.com/svchord/Rem-Craft/commit/ae285b5c4d84e0a5d4b3ed976319648a9b5e46c4))
+* 修改块标按钮样式 ([2582286](https://github.com/svchord/Rem-Craft/commit/2582286274eb4a2709899a1eda42f6116d622266))
+
+
+### ✏️ Documentation | 文档
+
+* 更新Readme、preview.png、theme.json、package.json、样式文件目录说明 ([056e9b3](https://github.com/svchord/Rem-Craft/commit/056e9b34a4fd9861fb15be1c5346e2b3540df35c))
+
 ## 0.3.3(2022/4/16)
 
 - 修复新UI的不兼容问题

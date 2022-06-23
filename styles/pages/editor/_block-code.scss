@@ -161,7 +161,7 @@ $code-action-bg-active: $gray-4;
       &::before {
         // height: 22px;
         line-height: 24px;
-
+        color: $rc-text-placeholder;
       }
     }
   }

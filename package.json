@@ -9,7 +9,8 @@
   "name": "rem-craft",
   "scripts": {
     "build": "sass --watch styles/index.scss:./theme.css -s compressed --no-source-map",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w",
+    "commit": "git add . && git cz",
+    "merge": "git checkout main && git merge dev",
     "release": "standard-version"
   },
   "config": {

@@ -1,0 +1,13 @@
+//强调色
+$mark-bg: transparent; //rgb(212, 240, 255);
+// $mark-bg-img: linear-gradient(transparent, var( --rc-brand-light));
+
+:root {
+  // 编辑器搜索颜色
+  --b3-protyle-search-background: #{$mark-bg};
+  --b3-protyle-inline-mark-background: #{$mark-bg};
+}
+
+mark {
+  @extend %mark__model;
+}

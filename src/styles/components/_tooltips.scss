@@ -1,0 +1,32 @@
+//提示条阴影
+$tooltips-shadow: fluent-shadow(16);
+$tooltips-bg: $rc-container-bg;
+$tooltips-color: $rc-text-primary;
+:root {
+  // 提示
+  --b3-tooltips-color: #{$tooltips-bg};
+}
+
+%tooltips {
+  box-shadow: $tooltips-shadow;
+  background-color: $tooltips-bg;
+  color: $tooltips-color;
+  padding: 6px 8px;
+  border-radius: $rc-bradius-extra-small;
+}
+
+//tips
+.b3-tooltips {
+  &::before {
+    border: none;
+  }
+  &::after {
+    @extend %tooltips;
+    // z-index: 999 !important;
+  }
+}
+
+//悬浮提示条
+#tooltip {
+  @extend %tooltips;
+}

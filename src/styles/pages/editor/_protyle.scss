@@ -1,0 +1,139 @@
+$protyle-bg: $rc-container-bg;
+$block-border-radius: $rc-bradius-small;
+
+$pre-action-border-radius: $rc-bradius-small;
+$pre-action-bg-hover: $rc-component-bg;
+$pre-action-bg-focus: $rc-component-bg-select;
+
+.protyle {
+  background-color: $protyle-bg;
+
+  .b3-typography,
+  .protyle-wysiwyg {
+    box-sizing: content-box;
+    padding: 16px #{$content-margin} 235px !important;
+    max-width: #{$editor-width};
+    background-color: $protyle-bg;
+
+    >div:not(.sb) {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+
+    div[data-type] {
+      border-radius: $block-border-radius;
+    }
+
+  }
+
+  .protyle-preview {
+    background-color: $protyle-bg;
+
+    &__action {
+      padding: 0 0 8px;
+
+      button {
+        height: 24px;
+        border-radius: $pre-action-border-radius;
+        line-height: 24px;
+
+        &:hover {
+          color: unset;
+          background-color: $pre-action-bg-hover;
+        }
+
+        &.b3-tooltips {
+          padding: 0 6px;
+
+          svg {
+            width: 12px;
+            transform: translateY(-2px);
+          }
+        }
+      }
+
+      &--current {
+        background-color: $pre-action-bg-focus  !important;
+
+        &:hover {
+          color: $rc-brand  !important;
+        }
+      }
+    }
+
+    .b3-typography {
+      max-width: #{$editor-width} !important;
+
+
+      &[style*="360px"] {
+        padding: 8px 16px !important;
+        width: 405px !important;
+        
+        margin: 0 auto;
+      }
+
+      &[style*="1024px"] {
+        padding: 8px 16px !important;
+        width: 1024px + 16px * 2 !important;
+        max-width: unset !important;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &#searchPreview,
+  &.block__edit {
+
+    .b3-typography,
+    .protyle-wysiwyg {
+      padding: 16px #{$content-margin} !important;
+    }
+
+    .def--mark {
+      @extend %mark__model;
+    }
+  }
+
+  &:not(.block__edit) {
+    .b3-typography {
+      max-width: 100%;
+    }
+  }
+}
+
+.protyle-wysiwyg--select,
+.protyle-wysiwyg--hl {
+  background-color: $highlight-bg  !important;
+}
+
+//提示语
+// .protyle-title__input--untitled::after {
+//   -webkit-text-fill-color: $rc-text-disabled; //rgba($rc-text-secondary, 0.15);
+// }
+// div[data-tip="键入文字或 '/' 选择"]::after {
+//   -webkit-text-fill-color: $rc-text-disabled; //rgba($rc-text-secondary, 0.4);
+// }
+
+.protyle-scroll {
+  right: -50px;
+  // opacity: 0;
+  // &:hover {
+  //   transition: opacity 0.3s ease-out;
+  //   opacity: 1;
+  // }
+}
+
+//反链计数
+.protyle-attr--refcount {
+  @extend %counter__model;
+  height: 22px;
+  width: 22px;
+  padding: 0;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+//文本转语音按钮
+.protyle-speech {
+  border-color: $rc-border-2;
+}

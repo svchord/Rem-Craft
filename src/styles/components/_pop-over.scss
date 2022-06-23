@@ -1,0 +1,76 @@
+$pop-over-shadow: #{fluent-shadow(64)};
+$pop-over-border-radius: $rc-bradius-large;
+$pin-transition: transform 200ms ease;
+$pinned-color: $rc-brand;
+$pinned-bg-color: $rc-brand-light;
+$content-min-height: 74px;
+$bread-crumb-height: 32px;
+
+//块引用窗口
+.block__popover {
+  box-shadow: $pop-over-shadow;
+  opacity: 0;
+  margin-top: 25px;
+  border-radius: $pop-over-border-radius;
+  &--open {
+    opacity: 1;
+    margin-top: 0px;
+    transition: opacity, margin-top 0.3s ease-out;
+  }
+  // max-height: 671.5px + 36px - 28px !important;
+  // &.block__popover--top {
+  //   max-height: 214.8px + 36px - 28px;
+  // }
+  .block__icons--border {
+    min-height: 36px;
+    z-index: 9;
+    border-radius: $pop-over-border-radius $pop-over-border-radius 0 0;
+    .block__icon {
+      @include block__icon__model(24px, 12px);
+      // transform: translateY(37px) translateX(2px);
+      margin: 0 6px 0 0;
+      z-index: 99;
+      &[data-type="pin"] {
+        svg {
+          transform: rotate(45deg);
+          transition: $pin-transition;
+        }
+        &[aria-label="取消钉住"] {
+          // background-color: $pinned-bg-color;
+          svg {
+            // color: $pinned-color;
+            transform: rotate(0deg);
+            transition: $pin-transition;
+          }
+          // &:active {
+          //   background-color: $brand-3 !important;
+          // }
+        }
+      }
+      + .fn__space {
+        width: 0;
+      }
+      &[data-type="close"] {
+        svg {
+          @include graphic(24px, 10px);
+        }
+      }
+    }
+  }
+  .block__content {
+    border-radius: 0 0 $pop-over-border-radius $pop-over-border-radius;
+    min-height: $content-min-height + $bread-crumb-height;
+    &::-webkit-scrollbar {
+      background-color: transparent !important;
+    }
+    .block__edit {
+      min-height: $content-min-height + $bread-crumb-height;
+      // .protyle-breadcrumb {
+      //   padding-right: 74px;
+      // }
+      .protyle-content {
+        min-height: $content-min-height;
+      }
+    }
+  }
+}

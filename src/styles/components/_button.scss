@@ -1,0 +1,44 @@
+$button-bg-hover: $rc-brand-hover;
+$button-outline-bg: $rc-brand-light;
+$button-outline-bg-hover: $rc-brand-light-hover;
+
+//按钮
+.b3-button:not(.b3-button--text):not(.b3-button--cancel):not(.b3-button--outline) {
+  &:hover {
+    background-color: $button-bg-hover;
+  }
+
+  box-shadow: none;
+}
+
+.b3-button--small {
+  border-radius: $rc-bradius-extra-small;
+  background-color: $button-outline-bg;
+  color: $rc-brand;
+  padding: 4px 8px;
+
+  &:hover {
+    background-color: $button-outline-bg-hover  !important;
+  }
+
+}
+
+.b3-button--outline:not([data-type="goBack"]) {
+  background-color: $button-outline-bg;
+  border: none;
+  box-shadow: unset;
+  font-size: 13px;
+
+  svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  &:hover {
+    background-color: $button-outline-bg-hover;
+  }
+
+  // &:active {
+  //   background-color: $brand-3;
+  // }
+}

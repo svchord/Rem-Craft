@@ -1,0 +1,151 @@
+$code-bg: $rc-component-bg;
+$code-border-radius: $rc-bradius-small;
+$code-action-border-radius: $rc-bradius-extra-small;
+$code-action-color: $rc-text-secondary;
+$code-action-bg-hover: $rc-component-button;
+$code-action-bg-active: $gray-4;
+
+:root {
+  // 代码片段背景
+  --b3-protyle-code-background: #{$code-bg}; //rgba(27, 31, 35, 0.05);
+}
+
+//多行代码块
+.hljs {
+  background-color: $code-bg;
+  padding: 34px 16px 32px 22px !important;
+  font-size: 80%;
+  line-height: 1.625;
+  &.protyle-linenumber {
+    padding-left: 10px !important;
+    margin-left: 50px;
+  }
+  // &::-webkit-scrollbar-thumb {
+  //   box-shadow: inset 0 0 10px 10px $rc-scroll-hover;
+  // }
+}
+.code-block {
+  // .protyle-wysiwyg--hl,
+  background-color: $code-bg;
+  // background-color: transparent;
+  border-radius: $code-border-radius;
+  font-family: "HarmonyOS Sans SC", "JetBrains Mono";
+  &:hover .protyle-icons {
+    opacity: 1 !important;
+  }
+  .protyle-action {
+    right: 6px;
+    background-color: transparent;
+    transition: opacity 0.5s ease-out;
+    %code-action {
+      border-radius: $code-action-border-radius;
+      font-size: 12px !important;
+      display: flex;
+      color: $code-action-color !important;
+      &:hover {
+        background-color: $code-action-bg-hover;
+      }
+      &::after {
+        content: "";
+        display: flex;
+        flex-direction: column;
+        margin-left: 4px;
+      }
+    }
+    // display: block;
+    .protyle-action__language {
+      @extend %code-action;
+      text-transform: capitalize;
+      height: 20px;
+      padding: 0 5px;
+      margin: 4px 0 0 4px !important;
+      &::after {
+        content: "";
+        width: 8px;
+        height: 20px;
+        @include add_icon(
+          "expand_more",
+          $code-action-color,
+          18,
+          "no-repeat center"
+        );
+      }
+    }
+    .protyle-action__copy {
+      @extend %code-action;
+      padding: 4px 6px;
+      height: 25px;
+      border-radius:  $code-action-border-radius 0 0 $code-action-border-radius ;
+      background-color: $code-action-bg-hover;
+      margin-top: 3px;
+      margin-right: 1px;
+      svg {
+        display: flex;
+        width: 11px;
+        height: 11px;
+        margin-top: 3px;
+        margin-right: 4px;
+      }
+      //   &::before {
+      //     display: none;
+      //   }
+      &::after {
+        content: "Copy";
+        font-size: 11px;
+        line-height: 1.3;
+        height: 100%;
+        position: unset;
+        border-radius: unset;
+        background-color: transparent;
+        box-shadow: none;
+        color: $code-action-color;
+        padding: 0;
+        margin: 0 auto;
+        opacity: 1;
+        transition: unset;
+        transform: unset;
+      }
+      &:active {
+        background-color: $code-action-bg-active;
+      }
+    }
+    .protyle-action__menu {
+      height: 25px;
+      width: 24px;
+      margin-top: 3px;
+      padding: 0 6px;
+      background-color: $code-action-bg-hover;
+      border-radius: 0 $code-action-border-radius $code-action-border-radius 0;
+      svg {
+        color: $code-action-color;
+        width: 11px;
+        height: 25px;
+      }
+      &:active {
+        background-color: $code-action-bg-active;
+      }
+    }
+  }
+  .hljs {
+    background-color: transparent !important;
+  }
+  .protyle-linenumber__rows {
+    font-size: 80%;
+    // flex-direction: column;
+    background-color: transparent !important;
+    padding: 33px 0px 32px 0px !important;
+    line-height: 21px;
+    width: 40px;
+    margin-right: 10px;
+    span {
+      height: 21px;
+    }
+  }
+}
+
+//行内代码块
+.b3-typography code:not(.hljs),
+.protyle-wysiwyg code:not(.hljs) {
+  margin: 0 3px;
+  // white-space: nowrap;
+}

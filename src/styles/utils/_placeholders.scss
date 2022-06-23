@@ -1,0 +1,37 @@
+//数量按钮
+%counter__model {
+  height: 22px;
+  width: auto;
+  padding: 0 7px;
+  text-align: center;
+  justify-content: center;
+  line-height: 22px;
+  background-color: $rc-component-bg;
+  border-radius: $rc-bradius-extra-small;
+  &:hover {
+    background-color: $rc-component-button;
+  }
+  // &:active {
+  //   background-color: $gray-6;
+  // }
+}
+
+%mark__model {
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: 4%;
+    right: 4%;
+    height: 30%;
+    border-radius: $rc-bradius-max;
+    opacity: 0.8;
+    // background-color: $rc-brand;
+    background-image: linear-gradient(
+      transparent,
+      $brand-6
+    );
+  }
+}

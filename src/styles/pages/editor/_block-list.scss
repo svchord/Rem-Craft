@@ -1,0 +1,140 @@
+//列表块线条
+$list-border: $rc-border-3;
+
+$list-point-bg-fold: $gray-7;
+$list-point-bg-fold-hover: $gray-11;
+
+$list-done-opacity: 0.4;
+
+$list-done-color: $rc-text-placeholder;
+$list-done-border-color: $rc-border-4;
+
+$link-color: $rc-text-placeholder;
+$link-border-color: $rc-border-3;
+$link-done-color: $rc-text-placeholder;
+$link-done-border-color: $rc-border-4;
+$link-done-border-color-hover: $rc-border-4;
+
+//块引用样式
+$ref-color: $rc-brand;
+$ref-bg-hover: $rc-brand-light;
+
+$ref-done-color: $rc-brand-disabled;
+$ref-done-bg-hover: $rc-brand-light;
+
+$tag-done-color: $rc-text-disabled;
+
+.protyle-wysiwyg [data-node-id].li {
+  >[data-node-id]:before {
+    border-color: $list-border  !important;
+    left: -18px !important;
+  }
+
+  .list::before {
+    border-color: $list-border  !important;
+    left: -2px !important;
+    top: 2px;
+    bottom: -2px;
+  }
+
+  >.protyle-action:hover::after {
+    background-color: $list-point-bg-fold !important;
+    opacity: 0.2 !important;
+  }
+}
+
+.b3-typography>.li>.protyle-action,
+.protyle-wysiwyg>.li>.protyle-action {
+  transform: translateX(10px);
+}
+
+//折叠后样式
+.protyle-wysiwyg [data-node-id].li[fold="1"]>.protyle-action {
+  // color: $rc-text-primary;
+  &::after {
+    opacity: 0.2 !important;
+    background-color: $list-point-bg-fold  !important;
+    transform: translateX(0.5px);
+  }
+
+  &:hover::after {
+    background-color: $list-point-bg-fold-hover  !important;
+    opacity: 0.2 !important;
+  }
+
+  &.protyle-action--task::after {
+    border-radius: unset !important;
+  }
+}
+
+.protyle-task--done  * {
+  color: $list-done-color;
+  border-color: $list-done-border-color;
+
+  //完成后的超链接样式
+  &[data-type="a"] {
+    color: $link-done-color  !important;
+    border-color: $link-done-border-color  !important;
+
+    &::before {
+      opacity: $list-done-opacity;
+    }
+
+    &:hover {
+      border-color: $link-done-border-color-hover  !important;
+    }
+  }
+
+  //完成后的块引用
+  &[data-type="block-ref"] {
+    color: $ref-done-color  !important;
+
+    &:hover {
+      background-color: $ref-done-bg-hover  !important;
+    }
+  }
+
+  &[data-type="tag"] {
+    color: $tag-done-color  !important;
+  }
+
+  &[style*="color"] {
+    opacity: $list-done-opacity;
+  }
+}
+
+.b3-typography{
+  ul ol,
+  ol ol,
+  ul ul,
+  ol ul{
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      display: block;
+      left: -11px;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      border-right: 1px solid $rc-border-3;
+    }
+  }
+
+  ul ul,
+  ol ul{
+    &::before{
+      left: -12px;
+    }
+  }
+
+  ul li.protyle-task ul{
+    &::before{
+      left: -14px;
+    }
+  }
+  // .protyle-task--done p{
+  // color: $list-done-color;
+
+  // }
+}

@@ -1,0 +1,115 @@
+.b3-dialog__container {
+
+    div[style*="80vh"]>.fn__flex-column {
+        background-color: $rc-ui-bg;
+        border-radius: $rc-bradius-extra-large;
+        padding: 16px;
+
+        &>.layout-tab-bar {
+            margin-bottom: 8px;
+            border-radius: $rc-bradius-small  !important;
+        }
+
+    }
+
+    #historyContainer {
+        border-radius: 0 0 $rc-bradius-extra-large $rc-bradius-extra-large;
+
+        %list {
+            .b3-list {
+                background-color: $rc-container-bg;
+                border-radius: $rc-bradius-small;
+
+                .b3-list-item {
+                    margin-right: 0;
+                }
+            }
+
+            >.b3-list {
+                padding: 8px;
+                margin: 0 8px 0 0;
+                width: 300px !important;
+            }
+        }
+
+        [data-type="doc"] {
+            @extend %list;
+
+            .history__text {
+                border-radius: $rc-bradius-small;
+                background-color: $rc-container-bg  !important;
+            }
+        }
+
+        [data-type="assets"] {
+            @extend %list;
+
+            .history__asset {
+                background-color: $rc-container-bg  !important;
+                border-radius: $rc-bradius-small;
+            }
+        }
+
+        [data-type="notebook"] {
+            margin: 0;
+            background-color: $rc-container-bg  !important;
+            padding: 8px;
+
+            .b3-list-item {
+                &:hover {
+                    background-color: $rc-component-bg  !important;
+                }
+
+                .b3-list-item__action {
+                    width: auto !important;
+                    height: auto !important;
+                    font-size: 10px;
+                    padding: 0px 6px !important;
+                    svg{
+                        width: 8px;
+                        height: 8px;
+                    }
+                    .fn__space{
+                        width: 4px;
+                    }
+                }
+            }
+
+        }
+
+        .history__repo {
+            @extend %list;
+
+            .history__repoheader {
+                background-color: $rc-container-bg  !important;
+                border-radius: $rc-bradius-small;
+            }
+
+            >.history__repoheader {
+                margin-bottom: 8px;
+
+                .block__icon {
+                    padding: 9px;
+
+                    svg {
+                        width: 10px;
+                        height: 10px;
+                    }
+
+                    &[disabled="disabled"] {
+                        color: $rc-text-disabled;
+                    }
+                    &::after{
+                        display: none;
+                    }
+                }
+
+                +.fn__flex-1 {
+                    @extend %list;
+
+                }
+            }
+        }
+
+    }
+}

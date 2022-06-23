@@ -1,0 +1,47 @@
+$slider-thumb-box-shadow: fluent-shadow(8);
+$slider-thumb-border: 5px solid $rc-container-bg;
+$slider-thumb-border-radius: $rc-bradius-circle;
+$slider-thumb-border-width-hover: 3px;
+$slider-thumb-border-width-active: 5.5px;
+
+$slider-thumb-bg: $rc-brand;
+$slider-thumb-bg-hover: $rc-brand-hover;
+$slider-thumb-bg-active: $rc-brand-active;
+
+$slider-track-height: 4px;
+$slider-track-bg: $rc-brand;
+$slider-track-border-radius: $rc-bradius-max;
+
+//滑条
+.b3-slider {
+  height: 44px;
+  &::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+    box-shadow: $slider-thumb-box-shadow;
+    border: $slider-thumb-border;
+    border-radius: $slider-thumb-border-radius;
+    background-color: $slider-thumb-bg;
+    margin-top: -8px;
+    transform: unset !important;
+    transition: border 0.1s ease-out;
+
+    &:hover {
+      box-shadow: $slider-thumb-box-shadow;
+      transform: unset;
+      border-width: $slider-thumb-border-width-hover;
+      background-color: $slider-thumb-bg-hover;
+    }
+    &:active {
+      box-shadow: $slider-thumb-box-shadow;
+      transform: unset;
+      border-width: $slider-thumb-border-width-active;
+      background-color: $slider-thumb-bg-active;
+    }
+  }
+  &::-webkit-slider-runnable-track {
+    height: $slider-track-height;
+    background-color: $slider-track-bg;
+    border-radius: $slider-track-border-radius;
+  }
+}

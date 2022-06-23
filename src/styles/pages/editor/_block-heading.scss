@@ -1,0 +1,49 @@
+// Font
+$font-size-6: 10px;
+$font-size-5: $font-size-6 * 1.2; // 字号-五级字号
+$font-size-4: $font-size-6 * 1.4; // 字号-四级字号
+$font-size-3: $font-size-6 * 1.6; // 字号-三级字号
+$font-size-2: $font-size-6 * 2; // 字号-二级字号
+$font-size-1: $font-size-6 * 3.6; // 字号-一级字号
+
+// Line Height
+$text-line-height-6: 1.5; // 行高-常规
+$text-line-height-5: 20px; // 行高-对应五级文字
+$text-line-height-4: 22px; // 行高-对应四级文字
+$text-line-height-3: 24px; // 行高-对应三级文字
+$text-line-height-2: 28px; // 行高-对应二级文字
+$text-line-height-1: 44px; //行高-对应一级文字
+
+$heading-color: $rc-text-primary;
+
+@mixin heading($lv) {
+  $fz: 32px - $lv * 4px;
+  $lh: $fz + 10px;
+  font-size: $fz;
+  line-height: $lh !important;
+  margin-top: $lh;
+  margin-bottom: calc($lh / 2);
+}
+
+.b3-typography,
+.protyle-wysiwyg {
+  @for $i from 1 through 6 {
+    & > h#{$i}:first-child,
+    & > .h#{$i}:first-child {
+      margin-top: 0;
+    }
+    h#{$i},
+    .h#{$i} {
+      color: $heading-color;
+      white-space: pre-wrap;
+      word-break: break-word;
+      padding: 0;
+      @include heading($i);
+    }
+  }
+}
+
+.protyle-wysiwyg div[fold="1"][data-type="NodeHeading"]:before {
+  top: 15px;
+  left: -27px !important;
+}

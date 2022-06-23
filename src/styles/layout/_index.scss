@@ -1,0 +1,10 @@
+//界面间空白宽度
+$interval: "4.5px"; //min(12px, max(6.5px, 0.520vw * 6.5 / 8))
+//边栏
+@import "dock";
+//顶栏
+@import "top-bar";
+//边窗
+@import "wnd";
+//分割线
+@import "resize";

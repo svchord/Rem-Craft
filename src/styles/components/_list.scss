@@ -1,0 +1,366 @@
+$tab-bar-border-radius: $rc-bradius-small;
+$list-item-border-radius: $rc-bradius-small;
+$list-font-size: 13px;
+$list-text-height: 20px;
+$list-wnd-height: 30px;
+$list-item-color: $rc-text-primary;
+$list-item-bg-hover: $rc-component-bg;
+//折叠按钮宽度
+$list-arrow-width: 20px;
+$list-button-border-radius: $rc-bradius-extra-small;
+$list-button-bg-hover: $rc-component-button;
+
+//子列表缩进左边距
+$list-left: 22px;
+//子列表缩进最大深度
+$list-depth: 7;
+
+//列表项选中字体颜色
+$list-item-color-focus: $rc-brand;
+
+//列表项选中
+$list-item-bg-focus: $rc-component-bg-select;
+//列表项上按钮选中悬浮
+$list-button-bg-focus: $rc-component-button-select;
+
+$list-item-meta-color: $rc-text-placeholder;
+$list-item-meta-color-focus: $brand-4;
+
+:root {
+  // 列表
+  --b3-list-hover: #{$list-item-bg-hover};
+}
+
+%list__side {
+  content: '';
+  display: block;
+  position: absolute;
+  left: - calc($list-left /2);
+  border-right: 1px solid $rc-border-3;
+  height: calc(100% + 4px);
+  top: 0;
+}
+
+//列表UI
+// .sy__files,
+.b3-list,
+.b3-list--background {
+  margin: 0px 8px 8px;
+  // overflow: overlay !important;
+
+  &.b3-tab-bar {
+    border-radius: $tab-bar-border-radius;
+    padding-right: 4px;
+    margin-top: 8px;
+    width: 160px !important;
+    // padding: 0 8px;
+    // background-color: #fff;
+  }
+
+  &.b3-menu {
+    padding-top: 8px;
+    // width: 360px !important;
+  }
+
+  .b3-list-item {
+    height: auto;
+    border-radius: $list-item-border-radius;
+    line-height: $list-text-height;
+    font-size: $list-font-size;
+
+    * {
+      color: $list-item-color  !important;
+    }
+
+    &:hover {
+      background-color: $list-item-bg-hover;
+    }
+
+    &:not(.b3-list-item--big) {
+      padding: calc(($list-wnd-height - $list-text-height) / 2) !important;
+      margin: 4px 0;
+      // &+ul::before,
+
+      // &::before {
+      //   @extend %list__side;
+      // }
+
+      // &:last-child {
+      //   margin-bottom: 0;
+      // }
+      // border: 2px solid $gray-1;
+      // border-bottom: 2px solid $gray-1;
+      // &:hover,
+      // &.b3-list-item--action {
+      //   box-shadow: 0 0 16.4px 16.4px $gray-4 inset;
+      // }
+      // &.b3-list-item--action:hover{
+      //   box-shadow: 0 0 16.4px 16.4px $brand-1 inset;
+      // }
+      // margin: 4px 0 !important;
+      .b3-list-item__toggle {
+        height: $list-text-height;
+        padding: 0 !important;
+
+        &.fn__hidden {
+          width: 0 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        &.b3-list-item__toggle--hl:hover {
+          background-color: transparent;
+        }
+
+        .b3-list-item__arrow {
+          @include graphic($list-arrow-width, 8px);
+
+          &.fn__hidden {
+            width: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+        }
+
+        // + .b3-list-item__icon{
+        //   margin-left: 10px;
+        // }
+        // visibility: visible;
+        // &::before {
+        //   content: "·";
+        //   display: block;
+        //   line-height: 9px;
+        //   width: 9px;
+        //   height: 9px;
+        //   padding: 7.5px;
+        //   font-size: 24px;
+        // }
+        // svg {
+        //   display: none;
+        // }
+        // }
+      }
+
+      .b3-list-item__graphic {
+        opacity: 1 !important;
+        margin: 0;
+        @include graphic($list-text-height, 10px);
+        margin-right: 4px;
+
+        // &.fn__hidden {
+        //   display: none;
+        // }
+
+        &.popover__block {
+          border-radius: $list-button-border-radius;
+          margin-right: 4px;
+
+          // @include graphic($list-text-height, 14px);
+          &:first-child {
+            margin-left: $list-arrow-width;
+          }
+
+          &:hover {
+            background-color: $list-button-bg-hover;
+          }
+        }
+      }
+
+      .b3-list-item__icon {
+        padding: 0;
+        height: $list-text-height;
+        width: $list-text-height;
+        font-size: 14px;
+        line-height: $list-text-height;
+        text-align: center;
+        justify-content: center;
+        border-radius: $list-button-border-radius;
+
+        &:hover {
+          background-color: $list-button-bg-hover;
+        }
+
+        // &:active {
+        //   background-color: $gray-6 !important;
+        // }
+        img,
+        svg {
+          @include graphic($list-text-height, 12px);
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+
+      .b3-list-item__text {
+        // height: $list-text-height;
+        line-height: $list-text-height;
+        // margin-top: 1.5px;
+      }
+
+      .b3-list-item__action {
+        // padding: ($list-text-height - 18px)/2;
+        // width: 18px;
+        // height: 18px;
+        @include graphic($list-text-height, 12px);
+        justify-content: center;
+        margin-left: 4px;
+        border-radius: $list-button-border-radius;
+
+        svg {
+          display: block;
+        }
+
+        &:hover {
+          background-color: $list-button-bg-hover;
+        }
+
+        // &:active {
+        //   background-color: $gray-6 !important;
+        // }
+        &::after {
+          display: none;
+        }
+
+        +.fn__space {
+          display: none;
+        }
+      }
+
+      .counter:not(:empty) {
+        @extend %counter__model;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &+ul {
+        position: relative;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 2px;
+          width: 0px;
+          height: calc(100% - 2px);
+          border-left: 1px solid $rc-border-3;
+        }
+      }
+
+      @mixin recursive-item-margin($cur, $end) {
+        +ul {
+
+          &::before {
+            left: calc(#{$list-left} * #{$cur} - #{$list-left} / 2);
+          }
+
+          &>.b3-list-item {
+            margin-left: $list-left * $cur  !important;
+
+            @if $cur < $end {
+              @include recursive-item-margin($cur + 1, $end);
+            }
+          }
+        }
+      }
+
+      @include recursive-item-margin(1, $list-depth);
+    }
+
+    &.b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
+      color: $list-item-color-focus  !important;
+      background-color: $list-item-bg-focus  !important;
+
+      .counter:not(:empty) {
+        @extend %counter__model;
+        background-color: $list-item-bg-focus  !important;
+      }
+
+      *:not(.b3-menu__accelerator) {
+        color: $list-item-color-focus  !important;
+      }
+
+      .counter,
+      .b3-list-item__icon,
+      .b3-list-item__action,
+      .b3-list-item__graphic.popover__block {
+        &:hover {
+          background-color: $list-button-bg-focus  !important;
+        }
+
+        // &:active {
+        //   background-color: $brand-3 !important;
+        // }
+      }
+
+      .b3-list-item__meta {
+        color: $list-item-meta-color-focus  !important;
+      }
+    }
+
+    &--two {
+      .b3-list-item__first {
+        .b3-list-item__graphic.popover__block {
+          margin-left: 0 !important;
+        }
+      }
+
+      .b3-list-item__meta {
+        color: $list-item-meta-color  !important;
+      }
+    }
+
+    .b3-list-item__meta {
+      color: $list-item-meta-color  !important;
+    }
+
+    // &[data-type="toggle"] {
+    //   // margin-bottom: 0;
+    // }
+
+    &[data-type="navigation-root"] {
+      font-weight: 600;
+      // border-bottom: 1px solid $rc-border-2;
+    }
+  }
+
+  .b3-list--empty {
+    color: $rc-text-placeholder;
+    font-size: $list-font-size  !important;
+  }
+
+  // &:not(.b3-menu):not(.b3-tab-bar):not(.layout__empty):not(#foldList):not(#globalSearchList):not(#searchList) {
+}
+
+// .sy__tag .b3-list .b3-list-item__graphic {
+//   display: none;
+// }
+
+.sy__outline>.b3-list-item {
+  height: $list-wnd-height;
+  padding: 5px;
+  margin: 0 8px 4px;
+
+  .b3-list-item__graphic {
+    @include graphic($list-text-height, 12px);
+    margin-right: 4px;
+  }
+
+  .b3-list-item__text {
+    color: $list-item-color;
+    height: $list-text-height;
+    font-size: $list-font-size;
+    line-height: $list-text-height;
+  }
+
+  &:hover {
+    background-color: $rc-component-bg;
+  }
+
+  &+.fn__flex-1>.b3-list {
+    padding-left: $list-left;
+  }
+}

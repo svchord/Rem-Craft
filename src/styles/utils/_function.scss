@@ -1,0 +1,10 @@
+//Fluent Design
+@function fluent-shadow($dp) {
+  $y1: 0.4px;
+  $blur1: 0.9px;
+  $y2: 0.075px;
+  $blur2: 0.225px;
+  $shadow: 0 $y1 * $dp $blur1 * $dp 0 rgb(0 0 0 / 13%),
+    0 $y2 * $dp $blur2 * $dp 0 rgb(0 0 0 / 11%);
+  @return $shadow;
+}

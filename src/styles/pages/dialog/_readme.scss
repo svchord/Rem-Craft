@@ -1,0 +1,66 @@
+$dialog-readme-border-radius: $dialog-border-radius;
+$dialog-readme-side-bg: $rc-container-bg;
+$dialog-readme-side-border-radius: $rc-bradius-medium;
+$dialog-readme-return-color: $rc-text-secondary;
+$dialog-readme-return-bg-hover: $rc-component-bg;
+$dialog-readme-nav-border-radius: $rc-bradius-max;
+$dialog-readme-nav-shadow: fluent-shadow(2);
+$dialog-readme-nav-border: $rc-border-3;
+$dialog-readme-main-border-radius: $rc-bradius-medium;
+$dialog-readme-main-bg: $rc-container-bg;
+$dialog-readme-main-code-bg: $rc-component-bg;
+$dialog-readme-main-margin: 96px;
+
+//集市Readme
+.config-bazaar__readme {
+  border-radius: $dialog-readme-border-radius;
+  .item__side {
+    background-color: $dialog-readme-side-bg;
+    border-radius: $dialog-readme-side-border-radius;
+    .b3-button {
+      box-shadow: unset;
+      &[data-type="goBack"] {
+        border: none;
+        margin: 8px;
+        color: $dialog-readme-return-color;
+        padding: 8px;
+        &:hover {
+          background-color: $dialog-readme-return-bg-hover;
+        }
+        svg {
+          width: 12px;
+          height: 12px;
+          transform: translateX(1px);
+        }
+      }
+    }
+    .item__nav {
+      width: auto;
+      margin: 12px 70px;
+      height: 24px;
+      line-height: 24px;
+      border-radius: $dialog-readme-nav-border-radius;
+      box-shadow: $dialog-readme-nav-shadow;
+      border: 1px solid $dialog-readme-nav-border;
+      font-size: 12px;
+      transform: translateX(-24px) translateY(0px);
+    }
+  }
+  .item__main {
+    border-radius: $dialog-readme-main-border-radius;
+    background-color: $dialog-readme-main-bg;
+    .item__preview {
+      // border-radius: $rc-bradius-medium;
+      // border-bottom-left-radius: 0;
+      // border-bottom-right-radius: 0;
+      border-radius: unset;
+    }
+    .item__readme {
+      box-sizing: content-box;
+      padding: 16px $dialog-readme-main-margin 235px !important;
+      code {
+        background-color: $dialog-readme-main-code-bg;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+//鼠标拖拽选择
+$selection-border-color: $brand-3;
+//选中文字底色
+$selection-bg: $rc-brand-light-hover;//rgba($rc-brand, 0.1);
+
+.protyle-select {
+  // max-width: 100vw;
+  display: none;
+  background-color: $selection-bg !important;
+}
+
+::selection {
+  background-color: $selection-bg;
+}

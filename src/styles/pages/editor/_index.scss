@@ -1,0 +1,36 @@
+//高亮底色
+$highlight-bg: $brand-1;
+
+@import "block-code";
+@import "block-embed";
+@import "block-heading";
+@import "block-hr";
+@import "block-kbd";
+@import "block-link";
+@import "block-list";
+@import "block-mark";
+@import "block-math";
+@import "block-quote";
+@import "block-ref";
+@import "block-super";
+@import "block-table";
+@import "block-tag";
+
+@import "cover";
+@import "gutters";
+@import "protyle";
+@import "selection";
+@import "toolbar";
+@import "util";
+
+
+// p,
+// .p {
+//   text-align: justify;
+// }
+
+// .protyle-content{
+//   padding-top: 35px;
+// }
+
+

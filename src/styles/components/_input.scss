@@ -1,0 +1,63 @@
+$input-border-radius: $rc-bradius-small;
+$input-font-size: 13px;
+$input-border: 1px solid $rc-border-4;
+$input-border-bottom: 1px solid $rc-border-2;
+$input-bg: $rc-component-bg;
+$input-shadow-focus: 0 -3px 0 -2px inset $rc-brand;
+$input-border-bottom-focus: 1px solid $rc-brand;
+$input-small-shadow-focus: fluent-shadow(2);
+
+//输入框
+.b3-text-field {
+  border: 1px solid transparent !important;
+  border-radius: $input-border-radius;
+  box-shadow: none;
+
+  .b3-list-item>& {
+    background-color: $input-bg  !important;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: none;
+    // border: 1px solid $rc-border-3 !important;
+  }
+
+  &:not(.b3-text-field--small):not(.b3-text-field--text) {
+    //:not(.b3-form__icon-input)
+    border: $input-border  !important;
+    border-bottom: $input-border-bottom  !important;
+    background-color: $input-bg;
+    font-size: $input-font-size  !important;
+
+    &:focus {
+      box-shadow: $input-shadow-focus  !important;
+      border-bottom: $input-border-bottom-focus  !important;
+    }
+  }
+
+  &.b3-text-field--small {
+    height: 24px;
+
+    &:hover,
+    &:focus {
+      border: 1px solid transparent !important;
+      // box-shadow: $input-small-shadow-focus;
+    }
+  }
+
+  
+
+  // &:focus {
+  //   box-shadow: 0 0 0 2px $gray-2;
+  // }
+
+  //   &:not(.b3-form__icon-input):focus {
+  //     box-shadow: none;
+  //     border: 1px solid $brand-5 !important;
+  //   }
+  //   &.b3-form__icon-input:focus {
+  //     box-shadow: none;
+  //     border: 1px solid $rc-border-2 !important;
+  //   }
+}

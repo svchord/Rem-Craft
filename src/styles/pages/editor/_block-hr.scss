@@ -1,0 +1,6 @@
+$hr-border: 1px solid $rc-border-3;
+//分割线
+.b3-typography hr,
+.hr > div {
+  border-bottom: $hr-border !important;
+}

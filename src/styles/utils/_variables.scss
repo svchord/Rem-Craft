@@ -1,0 +1,121 @@
+// 公共前缀
+$prefix: rc;
+
+$asset-path: "./src/assets";
+
+// 基础颜色
+$rc-brand: $brand-8;
+$rc-success: $success-5;
+$rc-error: $error-6;
+$rc-warning: $warning-5;
+
+// 基础颜色的扩展 用于 hover / 聚焦 / 禁用 / 点击 等状态
+$rc-brand-hover: $brand-7; // hover态
+$rc-brand-focus: $brand-2; // focus态，包括鼠标和键盘
+$rc-brand-active: $brand-9; // 点击态
+$rc-brand-disabled: $brand-3; // 禁用态
+$rc-brand-light: $brand-1; // 浅色的选中态
+$rc-brand-light-hover: $brand-2; // 浅色的选中态
+
+// 警告色扩展
+$rc-warning-hover: $warning-4;
+$rc-warning-focus: $warning-2;
+$rc-warning-active: $warning-6;
+$rc-warning-disabled: $warning-3;
+$rc-warning-light: $warning-1;
+
+// 失败/错误色扩展
+$rc-error-hover: $error-5;
+$rc-error-focus: $error-2;
+$rc-error-active: $error-7;
+$rc-error-disabled: $error-3;
+$rc-error-light: $error-1;
+
+// 成功色扩展
+$rc-success-hover: $success-4;
+$rc-success-focus: $success-2;
+$rc-success-active: $success-6;
+$rc-success-disabled: $success-3;
+$rc-success-light: $success-1;
+
+// 遮罩
+$rc-mask-active: $mask-active; // 遮罩-弹出
+$rc-mask-disabled: $mask-disabled; // 遮罩-禁用
+
+// 全局Token
+$rc-ui-bg: $gray-1; //bg-color-page; //gray-2，色彩 - page
+$rc-container-bg: $bg-color-container; // 色彩 - 容器
+
+$rc-component-bg: $gray-1; // 色彩  - 组件
+$rc-component-button: $gray-3; // 色彩  - 组件按钮
+// $rc-component-button-hover: $gray-5; // 色彩  - 组件按钮 -hover
+$rc-component-bg-select: $rc-brand-light; // 色彩  - 组件 - select
+$rc-component-button-select: $rc-brand-light-hover; // 色彩  - 组件按钮 - select
+
+$rc-text-primary: $text-color-primary; //gray-1
+$rc-text-secondary: $text-color-secondary; //gray-2
+$rc-text-placeholder: $text-color-placeholder; //gray-3
+$rc-text-disabled: $text-color-disabled; //gray-4
+$rc-text-anti: $text-color-anti;
+$rc-text-brand: $text-color-brand; //brand-8
+$rc-text-link: $text-color-secondary; //brand-8
+
+//线条颜色
+$rc-border-1: $gray-7; //rgb(242, 243, 245);
+$rc-border-2: $gray-5; //rgb(239, 240, 241);
+$rc-border-3: $gray-3; //rgb(222, 224, 227);
+$rc-border-4: $gray-1; //rgb(143, 149, 158);
+
+// shadow
+
+// 基础/下层 投影 hover 使用的组件包括：表格 /
+$rc-shadow-1: $shadow-1;
+// 中层投影 下拉 使用的组件包括：下拉菜单 / 气泡确认框 / 选择器 /
+$rc-shadow-2: $shadow-2;
+// 上层投影（警示/弹窗）使用的组件包括：全局提示 / 消息通知
+$rc-shadow-3: $shadow-3;
+
+//边框圆角
+$rc-bradius-extra-small: 3px;
+$rc-bradius-small: 4px;
+$rc-bradius-medium: 6px;
+$rc-bradius-large: 8px;
+$rc-bradius-extra-large: 10px;
+$rc-bradius-max: 9999px;
+$rc-bradius-circle: 50%;
+
+// 动画
+$rc-ease-out: $anim-time-fn-ease-out;
+$rc-ease-in: $anim-time-fn-ease-in;
+$rc-duration-base: $anim-duration-base; //0.2s
+$rc-duration-moderate: $anim-duration-moderate; //0.24s
+$rc-duration-slow: $anim-duration-slow; //0.28s
+
+
+// $rc-brand-light: rgba($rc-brand, 0.5);
+// $rc-brand-lighter: rgba($rc-brand, 0.3);
+// $rc-brand-lightest: rgba($rc-brand, 0.1);
+
+:root {
+  // 主色
+  --b3-theme-primary: #{$rc-brand};
+  --b3-theme-primary-light: var(--rc-brand-light);
+  --b3-theme-primary-lighter: var(--rc-brand-light);
+  --b3-theme-primary-lightest: var(--rc-brand-light);
+  --b3-theme-secondary: #f3a92f;
+  --b3-theme-background: #{$rc-ui-bg};
+  --b3-theme-background-light: #{$rc-ui-bg};
+  --b3-theme-surface: #{$rc-container-bg};
+  --b3-theme-surface-light: #{$rc-container-bg}; //rgba(243, 243, 243, 0.86);
+  --b3-theme-error: #d23f31;
+
+  // 文字颜色
+  --b3-theme-on-primary: #fff;
+  --b3-theme-on-secondary: #fff;
+  --b3-theme-on-background: #{$rc-text-primary};
+  --b3-theme-on-surface: #{$rc-text-primary};
+  --b3-theme-on-error: #fff;
+
+  // 线条
+  --b3-border-color: #{$rc-border-3};
+}

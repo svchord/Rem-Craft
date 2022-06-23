@@ -1,0 +1,29 @@
+$embed-bg: $rc-component-bg;
+$embed-border-radius: $rc-bradius-small;
+$embed-shadow: fluent-shadow(4);
+$embed-shadow-hover: fluent-shadow(12);
+
+//块嵌入
+div[data-type="NodeBlockQueryEmbed"].render-node {
+  background-color: $embed-bg  !important;
+  padding: 16px 16px 6px !important; //8px 28px 8px
+  border-radius: $embed-border-radius;
+  border: none !important;
+
+  &.protyle-wysiwyg--hl {
+    background-color: $highlight-bg  !important;
+  }
+
+  .protyle-wysiwyg__embed {
+    border-radius: $embed-border-radius;
+    padding: 16px;
+    margin-bottom: 16px;
+    opacity: 1;
+    box-shadow: $embed-shadow  !important;
+    transition: box-shadow 0.3s ease-out;
+
+    &:hover {
+      box-shadow: $embed-shadow-hover  !important;
+    }
+  }
+}

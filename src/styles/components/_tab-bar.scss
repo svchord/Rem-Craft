@@ -1,0 +1,130 @@
+$tabs-bg: $rc-container-bg;
+$tabs-border-radius: $rc-bradius-extra-small;
+$tabs-hegiht: 24px;
+
+$tab-border-radius: $rc-bradius-extra-small;
+$tab-height: 24px;
+$tab-font-size: 13px;
+$tab-bg: $rc-container-bg;
+$tab-bg-hover: $rc-component-bg;
+$tab-bg-focus: $rc-component-bg-select;
+$tab-color: $rc-text-secondary;
+$tab-color-focus: $rc-text-brand;
+
+$tab-close-border-radius: $rc-bradius-extra-small;
+$tab-close-bg-hover: $rc-component-button;
+$tab-close-bg-hover-focus:  $rc-component-button-select;
+
+//页签栏
+.layout-tab-bar {
+  // opacity: 1 !important;
+  background-color: $tabs-bg;
+
+  .layout__center &:not(:empty) {
+    border-radius: $tabs-border-radius;
+    height: $tabs-hegiht;
+    margin: 8px 8px 4px;
+  }
+
+  .item {
+    flex: unset;
+    border-radius: $tab-border-radius  !important;
+    height: $tab-height;
+    min-height: $tab-height;
+    padding: 0px 0 0 6px;
+    background-color: $tab-bg;
+
+    box-shadow: unset !important;
+
+    &:not(:last-child) {
+      margin-right: 8px;
+      // box-shadow: 2px -26px 0px 0px $rc-border-1,
+      //   1px -4px 1px 0px $rc-ui-bg !important; // margin-right: 8px;
+    }
+
+    // max-width: 180px;
+    &:not(.item--focus) {
+      background-color: $tab-bg;
+
+      &:hover {
+        background-color: $tab-bg-hover;
+      }
+    }
+
+    .item__icon {
+      // @include graphic(16px, 12px);
+      width: 16px;
+      height: 16px;
+      padding: 0;
+      font-size: 12px;
+      line-height: 16px;
+      margin-right: 6px;
+
+      img {
+        @include graphic(16px, 12px);
+      }
+
+      .custom-icon {
+        @include graphic(16px, 12px);
+        margin: 0;
+      }
+    }
+
+    .item__graphic {
+      @include graphic(16px, 10px);
+      margin-right: 6px;
+    }
+
+    .item__text {
+      // margin-top: 0.5px;
+      padding: 0;
+      font-size: $tab-font-size;
+      color: $tab-color;
+      height: $tab-height;
+      line-height: $tab-height;
+      // min-width: 42px;
+      // opacity: 0.5;
+    }
+
+    .item__close {
+      border-radius: $tab-close-border-radius;
+      margin: 3px 3px 3px 3px;
+      padding: 0;
+
+      svg {
+        opacity: 0.35;
+        border-radius: $tab-close-border-radius;
+        @include graphic(18px, 8px);
+      }
+
+      &:hover svg {
+        opacity: 1;
+        background-color: $tab-close-bg-hover;
+      }
+    }
+
+    &.item--focus {
+      background-color: $tab-bg-focus;
+      box-shadow: unset !important;
+
+      * {
+        color: $tab-color-focus  !important;
+        opacity: 1 !important;
+      }
+
+      .item__close {
+        svg {
+          opacity: 0.5 !important;
+        }
+
+        &:hover {
+          svg {
+            opacity: 1 !important;
+            background-color: $tab-close-bg-hover-focus;
+          }
+        }
+      }
+
+    }
+  }
+}

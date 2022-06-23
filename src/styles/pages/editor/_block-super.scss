@@ -1,0 +1,27 @@
+//超级块横排
+.sb {
+  &[data-sb-layout="col"] {
+    margin: 20px 0;
+
+    >div:not(:first-child):not(.protyle-attr) {
+      margin-left: 60px !important;
+    }
+  }
+
+  >div:not(.sb):not(.protyle-attr) {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    // &:first-child:not([data-type="NodeHeading"]) {
+    //   padding-top: 12px;
+    // }
+    // &:nth-last-child(2):not([data-type="NodeHeading"]) {
+    //   padding-bottom: 12px;
+    // }
+  }
+
+  &[data-sb-layout="row"] {
+    &:not(:last-child) .protyle-attr {
+      right: 16px;
+    }
+  }
+}

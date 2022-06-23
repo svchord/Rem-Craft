@@ -1,0 +1,100 @@
+$blocks-icons-color: $rc-text-secondary;
+$block-icons-bg: $rc-container-bg;
+
+//面板上按钮
+.block__icons {
+  font-size: 11px;
+  height: 40px;
+  color: $blocks-icons-color;
+  position: relative;
+
+  // &::before {
+  //   @include focus_before(14px, 14px);
+  //   width: 2px;
+  //   background-color: $rc-text-disabled;
+  // }
+
+  &--active {
+    background-color: $block-icons-bg;
+    // &::before{
+    //   background-color: $rc-brand;
+    // }
+  }
+
+  // &::after {
+  //   display: block;
+  //   content: "";
+  //   position: absolute;
+  //   width: 94%;
+  //   height: 1px;
+  //   top: 36px;
+  //   left: 3%;
+  //   right: 3%;
+  //   background-image: linear-gradient(
+  //     to right,
+  //     $gray-2,
+  //     transparent
+  //   );
+  // }
+  :not(.block__popover)>& {
+    padding: 5px 8px 5px 5px;//8px+3px+8px;
+  }
+
+  .fn__space {
+    width: 3px;
+  }
+
+  .block__logo {
+    svg {
+      color: $blocks-icons-color;
+      @include graphic(24px, 10px);
+    }
+
+    margin-right: 8px;
+    margin-left: 0px;
+
+  }
+
+  .block__icon {
+    @include block__icon__model(24px, 10px);
+    // margin-left: 3px;
+    color: $blocks-icons-color;
+
+    &[data-type="close"] {
+      svg {
+        @include graphic(24px, 8px)
+      }
+    }
+  }
+
+  .listCount,
+  .listMCount {
+    @extend %counter__model;
+    // width: 24px;
+    height: 24px !important;
+    line-height: 24px !important;
+    padding: 0 8px;
+    margin: 0px;
+    margin-right: 3px;
+    &:hover{
+      background-color: $rc-component-bg;
+    }
+    +.fn__space {
+      display: none;
+    }
+  }
+
+  .b3-form__icon-icon {
+    @include graphic(16px, 10px);
+    left: 4px;
+  }
+
+  .b3-text-field {
+    border: transparent !important;
+    padding-left: 24px !important;
+    border-radius: $rc-bradius-extra-small;
+    // &:focus{
+    //   border: 1px solid $rc-border-2;
+    // }
+  }
+}

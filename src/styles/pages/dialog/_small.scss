@@ -1,0 +1,217 @@
+$dialog-small-width: 400px;
+$dialog-small-bg: $rc-container-bg;
+$dialog-small-header-color: $rc-text-primary;
+$dialog-small-header-border: $rc-border-3;
+
+$dialog-close-color: $rc-text-disabled;
+$dialog-close-bg: $rc-component-bg;
+$dialog-close-border-radius: $rc-bradius-circle;
+$dialog-close-color-hover: $rc-text-placeholder;
+$dialog-close-bg-hover: $rc-component-button;
+
+$dialog-divide-border: $rc-border-3;
+
+$dialog-text-field-font-size: 14px;
+$dialog-text-field-bg: $rc-component-bg;
+$dialog-text-field-border: $rc-border-3;
+$dialog-text-field-border-radius: $rc-bradius-small;
+
+$dialog-button-text-color: #fff;
+$dialog-button-text-bg: $rc-brand;
+$dialog-button-text-bg-hover: $rc-brand-hover;
+$dialog-button-text-bg-active: $rc-brand-active;
+
+$dialog-button-cancel-color: $rc-brand;
+$dialog-button-cancel-bg: $rc-brand-light;
+$dialog-button-cancel-bg-hover: $rc-brand-light-hover;
+$dialog-button-cancel-bg-active: $rc-brand-light-hover;
+
+//小弹窗
+.b3-dialog__container {
+
+  &[style*="50vw"],
+  &[style*="520px"] {
+    width: $dialog-small-width  !important;
+    background-color: $dialog-small-bg;
+    padding: 0 16px;
+
+    //弹窗标题
+    .b3-dialog__header {
+      font-size: 16px;
+      font-weight: 500;
+      color: $dialog-small-header-color;
+      padding: 19px 0 18px 4px;
+      border-bottom: 1px solid $dialog-small-header-border;
+
+      &.fn__none {
+        display: block !important;
+
+        &::before {
+          content: "新建日记";
+          display: block;
+        }
+
+        // + div[style*="height"] {
+        //   margin-top: 19px + 18px;
+        // }
+      }
+      .ft__smaller{
+        color: $rc-text-secondary;
+      }
+    }
+
+    //弹窗关闭按钮
+    .b3-dialog__close {
+      display: block;
+      color: $dialog-close-color;
+      background-color: $dialog-close-bg;
+      border: 1px solid transparent;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      padding: 5px;
+      box-sizing: border-box;
+      border-radius: $dialog-close-border-radius;
+      cursor: pointer;
+      user-select: none;
+      transform: translateX(-50px) translateY(9px);
+
+      &:hover {
+        color: $dialog-close-color-hover;
+        background-color: $dialog-close-bg-hover;
+      }
+    }
+
+    //弹窗输入框
+    .b3-dialog__content,
+    .b3-form__space {
+      padding: 16px 0 24px;
+      font-size: $dialog-text-field-font-size;
+      margin: 0;
+      min-height: 30px;
+      line-height: 30px;
+
+      .block__icon {
+        @include block__icon__model(28px, 10px);
+      }
+
+      .ft__on-surface,
+      .b3-text-field[placeholder="属性名"] {
+        font-size: $dialog-text-field-font-size;
+        width: 80px !important;
+        text-align: center !important;
+      }
+
+      .fn__space {
+        width: 15px;
+      }
+
+      div[style*="var(--b3-border-color)"] {
+        // background-color: $rc-dialog-border !important;
+        height: 0 !important;
+        background-color: transparent !important;
+        border-bottom: 1px solid $dialog-divide-border;
+      }
+
+      .custom-attr__add {
+        padding: 0;
+        height: 152px;
+      }
+
+      .b3-button {
+        width: 80px !important;
+
+        svg {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+
+    .b3-text-field {
+      background-color: $dialog-text-field-bg;
+      border: 1px solid $dialog-text-field-border;
+      height: 32px;
+      padding: 0px 10px;
+      border-radius: $dialog-text-field-border-radius;
+      font-size: $dialog-text-field-font-size;
+      font-weight: 400;
+
+      //多行文本框
+      &[rows="1"],
+      &[rows="2"] {
+        line-height: 30px;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    //弹窗中的搜索按钮
+    .b3-form__icon {
+      &-icon {
+        top: 28px !important;//calc(16px + (32px - 10px) / 2) !important;
+        left: 19px !important;//calc(8px + (32px - 10px) / 2) !important;
+        // width: 12px;
+        // height: 12px;
+      }
+
+      .b3-text-field {
+        padding-left: 28px !important;
+      }
+    }
+
+    //弹窗按钮
+    .b3-dialog__action {
+      padding: 0;
+      margin-bottom: 16px;
+      border: none;
+
+      .fn__space {
+        width: 2%;
+      }
+
+      .b3-button {
+        // font-weight: 600;
+        height: 36px;
+        letter-spacing: 0.3px;
+        border: 1px solid transparent;
+        width: 49%;
+
+        &.b3-button--text {
+          background-color: $dialog-button-text-bg;
+          color: $dialog-button-text-color;
+
+          &:hover {
+            background-color: $dialog-button-text-bg-hover;
+          }
+
+          &:active {
+            background-color: $dialog-button-text-bg-active;
+          }
+        }
+
+        &.b3-button--cancel {
+          color: $dialog-button-cancel-color;
+          border: none;
+          background-color: $dialog-button-cancel-bg;
+
+          &:hover {
+            background-color: $dialog-button-cancel-bg-hover;
+          }
+
+          &:active {
+            background-color: $dialog-button-cancel-bg-active;
+          }
+        }
+      }
+    }
+  }
+
+  &[style*="50vw"] {
+    .b3-form__space {
+      padding: 16px 8px;
+    }
+  }
+}

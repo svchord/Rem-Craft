@@ -4,9 +4,9 @@
 styles 
 │ 
 ├── base 
-│   ├── _reset.scss       # Reset/normalize 
-│   ├── _typography.scss  # Typography rules 
-│   └──� ...              # Etc… 
+│   ├── _reset.scss         # Reset/normalize 
+│   ├── _typography.scss    # Typography rules 
+│   └──� ...                # Etc… 
 │ 
 ├── components 
 │   ├── _block-icons.scss   # 面板顶栏 

@@ -12,7 +12,7 @@
     "commit": "git add . && git cz && git push",
     "merge to main": "git checkout main && git merge dev",
     "merge to dev": "git checkout dev && git merge main && git push",
-    "release": "standard-version"
+    "release": "standard-version && git push --follow-tags"
   },
   "config": {
     "commitizen": {

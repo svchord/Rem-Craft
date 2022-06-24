@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://github.com/svchord/Rem-Craft/compare/v0.5.0...v0.5.1) (2022-06-24)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 修复标题为空时的样式 ([b5e88fb](https://github.com/svchord/Rem-Craft/commit/b5e88fbadb2fa815524904cd661bc0af1be5b064))
+* 修复代码块行号和代码不对齐的问题 ([cdfcafe](https://github.com/svchord/Rem-Craft/commit/cdfcafea566b248360af50e2d88e8c4d8fb0f552))
+* 修复Readme预览图不全屏时的圆角 ([2a70a86](https://github.com/svchord/Rem-Craft/commit/2a70a86be95cddb7fc4bfc21dc8e1e827971fd59))
+* 修复Readme预览图展示界面圆角 ([5663fa2](https://github.com/svchord/Rem-Craft/commit/5663fa2e403884fd26a20eac79c64c8574de7fb1))
+* 修改代码块字号问题 ([1c546b4](https://github.com/svchord/Rem-Craft/commit/1c546b4db3cf2b62fc98c8b4e8862482a01e0c72))
+* 修改代码行号颜色 ([5839b45](https://github.com/svchord/Rem-Craft/commit/5839b453e1f4d07564d14db7ad7fe0b23646a8bf))
+* 修改段落块的段间距和行高 ([8155d0b](https://github.com/svchord/Rem-Craft/commit/8155d0beb7ee07b545c873ffbeb46769132fae18))
+* 修改段落块的上下内边距 ([c1c6205](https://github.com/svchord/Rem-Craft/commit/c1c6205c0c97b5a6c1cced788f35ba14c9988a74))
+* 修改滚动条颜色，增加可见性 ([c814617](https://github.com/svchord/Rem-Craft/commit/c814617fa6345227b9779eacb4244fa25afe64cb))
+
+
+### ✏️ Documentation | 文档
+
+* 更新Readme ([9fda5b9](https://github.com/svchord/Rem-Craft/commit/9fda5b939d90d9d996c01cfdc4300abb21957597))
+
 ## 0.5.0 (2022-06-23)
 
 

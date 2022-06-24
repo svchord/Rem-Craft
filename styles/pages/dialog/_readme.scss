@@ -50,10 +50,10 @@ $dialog-readme-main-margin: 96px;
     border-radius: $dialog-readme-main-border-radius;
     background-color: $dialog-readme-main-bg;
     .item__preview {
-      // border-radius: $rc-bradius-medium;
+      border-radius: $rc-bradius-extra-large;
       // border-bottom-left-radius: 0;
       // border-bottom-right-radius: 0;
-      border-radius: unset;
+      // border-radius: unset;
     }
     .item__readme {
       box-sizing: content-box;

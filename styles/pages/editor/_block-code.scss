@@ -11,29 +11,12 @@ $code-action-bg-active: $gray-4;
 }
 
 //多行代码块
-.hljs {
-  background-color: $code-bg;
-  padding: 34px 16px 32px 22px !important;
-  font-size: 80%;
-  line-height: 1.625;
-
-  &.protyle-linenumber {
-    padding-left: 10px !important;
-    margin-left: 50px;
-  }
-
-  // &::-webkit-scrollbar-thumb {
-  //   box-shadow: inset 0 0 10px 10px $rc-scroll-hover;
-  // }
-}
-
 .code-block {
-  // .protyle-wysiwyg--hl,
   background-color: $code-bg;
-  // background-color: transparent;
   border-radius: $code-border-radius;
   font-family: "HarmonyOS Sans SC", "JetBrains Mono";
 
+  // 代码块按钮组
   &:hover .protyle-icons {
     opacity: 1 !important;
   }
@@ -61,7 +44,7 @@ $code-action-bg-active: $gray-4;
       }
     }
 
-    // display: block;
+    // 代码语言按钮
     .protyle-action__language {
       @extend %code-action;
       text-transform: capitalize;
@@ -69,6 +52,7 @@ $code-action-bg-active: $gray-4;
       padding: 0 5px;
       margin: 4px 0 0 4px !important;
 
+      // 向下图标
       &::after {
         content: "";
         width: 8px;
@@ -81,6 +65,7 @@ $code-action-bg-active: $gray-4;
       }
     }
 
+    // 代码复制按钮
     .protyle-action__copy {
       @extend %code-action;
       padding: 4px 6px;
@@ -90,6 +75,7 @@ $code-action-bg-active: $gray-4;
       margin-top: 3px;
       margin-right: 1px;
 
+      // 复制图标
       svg {
         display: flex;
         width: 11px;
@@ -98,9 +84,7 @@ $code-action-bg-active: $gray-4;
         margin-right: 4px;
       }
 
-      //   &::before {
-      //     display: none;
-      //   }
+      // 复制文字
       &::after {
         content: "Copy";
         font-size: 11px;
@@ -123,6 +107,7 @@ $code-action-bg-active: $gray-4;
       }
     }
 
+    // 代码菜单按钮
     .protyle-action__menu {
       height: 25px;
       width: 24px;
@@ -131,6 +116,7 @@ $code-action-bg-active: $gray-4;
       background-color: $code-action-bg-hover;
       border-radius: 0 $code-action-border-radius $code-action-border-radius 0;
 
+      // 代码菜单图标
       svg {
         color: $code-action-color;
         width: 11px;
@@ -143,13 +129,23 @@ $code-action-bg-active: $gray-4;
     }
   }
 
+  // 代码区
   .hljs {
     background-color: transparent !important;
+    padding: 34px 16px 32px 22px !important;
+    // font-size: 85% !important;
+    line-height: 1.625;
+
+    // 有行号的特殊情况
+    &.protyle-linenumber {
+      padding-left: 10px !important;
+      margin-left: 50px;
+    }
   }
 
+  // 代码行号
   .protyle-linenumber__rows {
-    font-size: 80%;
-    // flex-direction: column;
+    font-size: 85%;
     background-color: transparent !important;
     padding: 34px 0px 32px 0px !important;
     line-height: 27px;
@@ -157,10 +153,11 @@ $code-action-bg-active: $gray-4;
     margin-right: 10px;
 
     span {
-      height: 22px;
+      height: 1.625;
+
       &::before {
         // height: 22px;
-        line-height: 24px;
+        line-height: 1.625;
         color: $rc-text-placeholder;
       }
     }
@@ -171,5 +168,4 @@ $code-action-bg-active: $gray-4;
 .b3-typography code:not(.hljs),
 .protyle-wysiwyg code:not(.hljs) {
   margin: 0 3px;
-  // white-space: nowrap;
 }

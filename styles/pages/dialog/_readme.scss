@@ -14,19 +14,28 @@ $dialog-readme-main-margin: 96px;
 //集市Readme
 .config-bazaar__readme {
   border-radius: $dialog-readme-border-radius;
+
+  // 侧栏
   .item__side {
     background-color: $dialog-readme-side-bg;
     border-radius: $dialog-readme-side-border-radius;
+
+    // 按钮
     .b3-button {
       box-shadow: unset;
+
+      // 返回按钮
       &[data-type="goBack"] {
         border: none;
         margin: 8px;
         color: $dialog-readme-return-color;
         padding: 8px;
+
         &:hover {
           background-color: $dialog-readme-return-bg-hover;
         }
+
+        // 返回图标
         svg {
           width: 12px;
           height: 12px;
@@ -34,6 +43,8 @@ $dialog-readme-main-margin: 96px;
         }
       }
     }
+
+    // 侧栏顶部标签
     .item__nav {
       width: auto;
       margin: 12px 70px;
@@ -46,18 +57,31 @@ $dialog-readme-main-margin: 96px;
       transform: translateX(-24px) translateY(0px);
     }
   }
+
+  // Readme主页
   .item__main {
     border-radius: $dialog-readme-main-border-radius;
     background-color: $dialog-readme-main-bg;
+
+    // 预览图
     .item__preview {
-      border-radius: $rc-bradius-extra-large;
+      // border-radius: $dialog-readme-main-border-radius;
       // border-bottom-left-radius: 0;
       // border-bottom-right-radius: 0;
-      // border-radius: unset;
+      border-radius: unset;
+
+      // 预览图全屏时
+      &--fullscreen {
+        border-radius: $rc-bradius-extra-large;
+      }
     }
+
+    // Readme正文
     .item__readme {
       box-sizing: content-box;
       padding: 16px $dialog-readme-main-margin 235px !important;
+
+      // 代码块
       code {
         background-color: $dialog-readme-main-code-bg;
       }

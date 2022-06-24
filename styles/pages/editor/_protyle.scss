@@ -15,7 +15,7 @@ $pre-action-bg-focus: $rc-component-bg-select;
     max-width: #{$editor-width};
     background-color: $protyle-bg;
 
-    >div:not(.sb) {
+    >div:not(.sb):not(.list) {
       padding-left: 10px !important;
       padding-right: 10px !important;
     }

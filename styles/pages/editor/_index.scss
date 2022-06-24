@@ -1,6 +1,8 @@
 // 高亮底色
 $highlight-bg: $brand-1;
 
+// 编辑器
+@import "protyle";
 // 代码块
 @import "block-code";
 // 嵌入块
@@ -36,8 +38,6 @@ $highlight-bg: $brand-1;
 @import "cover";
 // 块标识按钮
 @import "gutters";
-// 编辑器
-@import "protyle";
 // 选中块
 @import "selection";
 // 工具条

@@ -9,7 +9,7 @@ $link-color-hover: $rc-text-primary; //$purple-6;
 
 //下划线
 $link-border-color: $rc-border-3;
-$link-border-color-hover: $rc-border-1; //$purple-4;
+$link-border-color-hover: $rc-border-2; //$purple-4;
 $link-border: 1px solid $rc-border-3;
 
 :root {
@@ -29,22 +29,13 @@ $link-border: 1px solid $rc-border-3;
 
   &:hover {
     color: $link-color-hover  !important;
-    border-color: $link-border-color-hover;
+    border-color: $link-border-color-hover !important;
 
     * {
       color: $link-color-hover  !important;
     }
   }
 
-  // &::after {
-  //   display: inline-block;
-  //
-  //   width: 12px;
-  //   height: 12px;
-  //   margin: 0 3px 0 3px;
-  //   fill: $rc-inline-link-color;
-  //   @include add_icon("launch", $rc-inline-link-color, 18, "round"");
-  // }
   &::before {
     content: "";
     display: inline-block;
@@ -59,39 +50,23 @@ $link-border: 1px solid $rc-border-3;
   }
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type="a"]:not(:empty) {
-  @extend %link-model;
-}
 
-// .b3-typography,
+// .b3-typography *:not(sup)>, 
 .protyle-wysiwyg [data-node-id] {
-  a {
+
+  // a,
+  span[data-type="a"]:not(:empty) {
     @extend %link-model;
   }
 }
 
-/* 超链接图标 */
 
-// @import url("/appearance/themes/Dark+/style/module/config.css");
-// @import url("/widgets/custom.css");
-
+// 未知链接
 /* 超链接前标志 */
 .protyle-wysiwyg [data-node-id] span[data-type='file-annotation-ref']:not(:empty)::before,
 .protyle-wysiwyg [data-node-id] span[data-type='a']:not(:empty)::before,
 .b3-typography a::before {
-  // content: "";
-  // display: inline-block;
-  // position: relative;
-
   background-image: url("#{$icon-path}/unknown.svg");
-  // background-size: 0.875em auto;
-  // background-repeat: no-repeat;
-  // background-position: center;
-
-  // width: 0.875em;
-  // height: 1em;
-  // margin: 0.125em 0.125em -0.125em 0;
-  // padding: 0;
 }
 
 
@@ -1225,6 +1200,7 @@ $link-border: 1px solid $rc-border-3;
 }
 
 [theme-mode="light"] {
+
   .protyle-wysiwyg [data-node-id] span[data-type="a"][data-href*="github.com"]:not(:empty)::before,
   .b3-typography a[href*="github.com"]::before {
     background-image: url("#{$icon-path}/github_icon.svg");
@@ -1232,6 +1208,7 @@ $link-border: 1px solid $rc-border-3;
 }
 
 [theme-mode="dark"] {
+
   .protyle-wysiwyg [data-node-id] span[data-type="a"][data-href*="github.com"]:not(:empty)::before,
   .b3-typography a[href*="github.com"]::before {
     background-image: url("#{$icon-path}/github_icon.png");

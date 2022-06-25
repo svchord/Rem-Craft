@@ -9,11 +9,10 @@ $list-done-opacity: 0.4;
 $list-done-color: $rc-text-placeholder;
 $list-done-border-color: $rc-border-2;
 
-$link-color: $rc-text-placeholder;
-$link-border-color: $rc-border-3;
-$link-done-color: $rc-text-placeholder;
+$link-done-color: $rc-text-disabled;
+$link-done-color-hover: $rc-text-secondary;
 $link-done-border-color: $rc-border-4;
-$link-done-border-color-hover: $rc-border-4;
+$link-done-border-color-hover: $rc-border-2;
 
 //完成后的块引用样式
 $ref-done-color: $rc-brand-disabled;
@@ -91,52 +90,55 @@ $tag-done-color: $rc-text-disabled;
 
 
 // 待办列表项完成后各子块的特殊样式
-.protyle-task--done * {
-  color: $list-done-color !important;
-  border-color: $list-done-border-color !important;
+.protyle-wysiwyg {
+  .protyle-task--done * {
+    color: $list-done-color  !important;
+    border-color: $list-done-border-color  !important;
 
-  //完成后的超链接样式
-  &[data-type="a"] {
-    color: $link-done-color  !important;
-    border-color: $link-done-border-color  !important;
+    //完成后的超链接样式
+    &[data-node-id]  span[data-type="a"]:not(:empty) {
+      color: $link-done-color  !important;
+      border-color: $link-done-border-color  !important;
 
-    &::before {
+      &::before {
+        opacity: $list-done-opacity  !important;
+      }
+
+      &:hover {
+        color: $link-done-color-hover !important;
+        border-color: $link-done-border-color-hover  !important;
+      }
+    }
+
+    // 完成后的块引用
+    &[data-type="block-ref"] {
+      color: $ref-done-color  !important;
+
+      &:hover {
+        background-color: $ref-done-bg-hover  !important;
+      }
+    }
+
+    // 完成后的标签块
+    &[data-type="tag"] {
+      color: $tag-done-color  !important;
+    }
+
+    // 完成后的有样式子块
+    &[style*="color"] {
       opacity: $list-done-opacity;
     }
 
-    &:hover {
-      border-color: $link-done-border-color-hover  !important;
+    // 完成后的键盘块
+    kbd {
+      border-color: $rc-border-4  !important;
     }
-  }
 
-  // 完成后的块引用
-  &[data-type="block-ref"] {
-    color: $ref-done-color  !important;
-
-    &:hover {
-      background-color: $ref-done-bg-hover  !important;
-    }
-  }
-
-  // 完成后的标签块
-  &[data-type="tag"] {
-    color: $tag-done-color  !important;
-  }
-
-  // 完成后的有样式子块
-  &[style*="color"] {
-    opacity: $list-done-opacity;
-  }
-
-  // 完成后的键盘块
-  kbd{
-    border-color: $rc-border-4 !important;
-  }
-
-  // 完成后的标记块
-  mark{
-    &::after{
-      opacity: 0.5;
+    // 完成后的标记块
+    mark {
+      &::after {
+        opacity: 0.5;
+      }
     }
   }
 }
@@ -168,7 +170,7 @@ $tag-done-color: $rc-text-disabled;
     }
   }
 
-  ol li::marker{
+  ol li::marker {
     display: block;
     transform: translateX(-20px);
   }
@@ -179,8 +181,8 @@ $tag-done-color: $rc-text-disabled;
   }
 
   // 子列表为无序列表或待办列表
-  ol > li>ul,
-  ol >li>ol {
+  ol>li>ul,
+  ol>li>ol {
     &::before {
       left: -12px;
     }

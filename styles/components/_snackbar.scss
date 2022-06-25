@@ -14,26 +14,20 @@ $snackbar-danger-color: $rc-error;
   }
 
   .b3-snackbar {
-    // display: flex;
-    // width: auto;
-    // align-self: baseline;
-    // height: 46px+16px;
-    // margin: 0;
-    // border-bottom: 16px solid transparent;
 
-    // margin: 0;
     .b3-snackbar__content {
       position: relative;
       color: $snackbar-color; //$rc-brand;
       box-shadow: $snackbar-shadow  !important;
       background-color: $snackbar-bg; //$brand-2;
       border-radius: $snackbar-border-radius  !important;
-      // border: 1px solid $rc-brand;
       padding: 13px 16px 13px 16px+18px+12px;
-      font-size: 13px;
-      // padding-left: 15px;
+      font-size: 14px;
       max-width: 30vw;
+      line-height: 22px;
+      height: 22px + 13px * 2;
 
+      // 提示种类图标
       &::before {
         content: "";
         margin-top: 2px;
@@ -53,27 +47,12 @@ $snackbar-danger-color: $rc-error;
       }
     }
 
+    // 提示关闭按钮
     .b3-snackbar__close {
       display: none;
-      // display: inline-flex;
-      // position: unset;
-      width: 20px;
-      height: 20px;
-      right: 16px;
-      top: 13px;
-      padding: 4px;
-      color: $rc-text-placeholder;
-
-      &:hover {
-        color: $rc-text-secondary;
-        background-color: $snackbar-bg;
-      }
-      
     }
-    
-    // &:last-child{
-    //   margin-bottom: 0;
-    // }
+
+    // 危险提示
     &--error {
       .b3-snackbar__content {
 
@@ -84,13 +63,26 @@ $snackbar-danger-color: $rc-error;
     }
   }
 
+  // 提示内按钮
   .b3-button {
+    background-color: $rc-brand-light;
+    padding: 2px 6px;
+    font-size: 11px;
+    line-height: 18px;
+    transform: translateY(-2px);
+
+    // height: 22px;
+    &:hover {
+      background-color: $rc-brand-light-hover  !important;
+    }
+  }
+
+  // 全部已读按钮
+  >.b3-button {
     margin: 0;
     padding: 8px 16px 16px;
     background-color: transparent;
     width: auto;
-    // height: 46px;
-    // transform: translateX(-16px-40px);
 
     svg,
     &::before {
@@ -104,21 +96,18 @@ $snackbar-danger-color: $rc-error;
       width: auto;
       margin: 0;
       content: '全部已读';
-      // padding: 0;
-      // line-height: 1;
       box-shadow: fluent-shadow(16);
       position: unset;
       transform: unset;
       color: $rc-text-anti;
       background-color: $rc-brand;
-      
     }
 
     &:hover {
-      background-color: transparent  !important;
+      background-color: transparent !important;
 
       &::after {
-        background-color:$rc-brand-hover;
+        background-color: $rc-brand-hover;
         color: $rc-text-anti;
       }
     }

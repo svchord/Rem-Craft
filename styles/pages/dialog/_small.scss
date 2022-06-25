@@ -11,10 +11,7 @@ $dialog-close-bg-hover: $rc-component-button;
 
 $dialog-divide-border: $rc-border-3;
 
-$dialog-text-field-font-size: 14px;
-$dialog-text-field-bg: $rc-component-bg;
-$dialog-text-field-border: $rc-border-3;
-$dialog-text-field-border-radius: $rc-bradius-small;
+$dialog-text-field-font-size: 13px;
 
 $dialog-button-text-color: #fff;
 $dialog-button-text-bg: $rc-brand;
@@ -55,7 +52,8 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
         //   margin-top: 19px + 18px;
         // }
       }
-      .ft__smaller{
+
+      .ft__smaller {
         color: $rc-text-secondary;
       }
     }
@@ -82,19 +80,16 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
       }
     }
 
-    //弹窗输入框
-    .b3-dialog__content,
-    .b3-form__space {
+    // 属性弹窗
+    .b3-dialog__content{
       padding: 16px 0 24px;
-      font-size: $dialog-text-field-font-size;
-      margin: 0;
-      min-height: 30px;
-      line-height: 30px;
 
+      // 书签右侧按钮 && 自定义属性删除按钮
       .block__icon {
         @include block__icon__model(28px, 10px);
       }
 
+      // 属性名
       .ft__on-surface,
       .b3-text-field[placeholder="属性名"] {
         font-size: $dialog-text-field-font-size;
@@ -102,10 +97,12 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
         text-align: center !important;
       }
 
+      // 属性名和输入框的间隔
       .fn__space {
         width: 15px;
       }
 
+      // 属性弹窗第二条分割线
       div[style*="var(--b3-border-color)"] {
         // background-color: $rc-dialog-border !important;
         height: 0 !important;
@@ -113,56 +110,60 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
         border-bottom: 1px solid $dialog-divide-border;
       }
 
+      // 自定义属性区域
       .custom-attr__add {
         padding: 0;
         height: 152px;
-      }
 
-      .b3-button {
-        width: 80px !important;
+        // 自定义属性添加按钮
+        .b3-button {
+          width: 80px !important;
 
-        svg {
-          width: 10px;
-          height: 10px;
+          svg {
+            width: 10px;
+            height: 10px;
+          }
         }
       }
     }
 
+    // 输入框
     .b3-text-field {
-      background-color: $dialog-text-field-bg;
-      border: 1px solid $dialog-text-field-border;
-      height: 32px;
-      padding: 0px 10px;
-      border-radius: $dialog-text-field-border-radius;
-      font-size: $dialog-text-field-font-size;
-      font-weight: 400;
-
-      //多行文本框
+      //多行文本输入框
       &[rows="1"],
       &[rows="2"] {
         line-height: 30px;
-      }
-
-      &:focus {
-        box-shadow: none;
+        height: 32px;
       }
     }
 
-    //弹窗中的搜索按钮
+    // 移动弹窗中的搜索框
     .b3-form__icon {
+      margin: 0;
+      padding: 16px 8px;
+
+      // 搜索图标
       &-icon {
-        top: 28px !important;//calc(16px + (32px - 10px) / 2) !important;
-        left: 19px !important;//calc(8px + (32px - 10px) / 2) !important;
-        // width: 12px;
-        // height: 12px;
+        top: 27px !important;
+        left: 19px !important;
       }
 
+      // 搜索框
       .b3-text-field {
         padding-left: 28px !important;
       }
     }
 
-    //弹窗按钮
+    // 移动弹窗的搜索结果列表
+    #foldList{
+      .b3-list-item{
+        &__showall{
+          line-height: 20px;
+        }
+      }
+    }
+
+    // 弹窗底部按钮
     .b3-dialog__action {
       padding: 0;
       margin-bottom: 16px;
@@ -179,6 +180,7 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
         border: 1px solid transparent;
         width: 49%;
 
+        // 确认按钮
         &.b3-button--text {
           background-color: $dialog-button-text-bg;
           color: $dialog-button-text-color;
@@ -192,6 +194,7 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
           }
         }
 
+        // 取消按钮
         &.b3-button--cancel {
           color: $dialog-button-cancel-color;
           border: none;
@@ -209,9 +212,4 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
     }
   }
 
-  &[style*="50vw"] {
-    .b3-form__space {
-      padding: 16px 8px;
-    }
-  }
 }

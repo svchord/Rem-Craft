@@ -7,7 +7,7 @@ $list-point-bg-fold-hover: $gray-11;
 $list-done-opacity: 0.4;
 
 $list-done-color: $rc-text-placeholder;
-$list-done-border-color: $rc-border-4;
+$list-done-border-color: $rc-border-2;
 
 $link-color: $rc-text-placeholder;
 $link-border-color: $rc-border-3;
@@ -92,8 +92,8 @@ $tag-done-color: $rc-text-disabled;
 
 // 待办列表项完成后各子块的特殊样式
 .protyle-task--done * {
-  color: $list-done-color;
-  border-color: $list-done-border-color;
+  color: $list-done-color !important;
+  border-color: $list-done-border-color !important;
 
   //完成后的超链接样式
   &[data-type="a"] {
@@ -126,6 +126,18 @@ $tag-done-color: $rc-text-disabled;
   // 完成后的有样式子块
   &[style*="color"] {
     opacity: $list-done-opacity;
+  }
+
+  // 完成后的键盘块
+  kbd{
+    border-color: $rc-border-4 !important;
+  }
+
+  // 完成后的标记块
+  mark{
+    &::after{
+      opacity: 0.5;
+    }
   }
 }
 

@@ -29,8 +29,8 @@ $input-small-shadow-focus: fluent-shadow(2);
     border-bottom: $input-border-bottom  !important;
     background-color: $input-bg;
     font-size: $input-font-size  !important;
-    padding: 0 10px;
-    line-height: 30px;
+    padding: 4px 10px;
+    line-height: 22px;
 
     &:focus {
       box-shadow: $input-shadow-focus  !important;

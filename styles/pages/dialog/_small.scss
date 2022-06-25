@@ -81,7 +81,7 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
     }
 
     // 属性弹窗
-    .b3-dialog__content{
+    .b3-dialog__content {
       padding: 16px 0 24px;
 
       // 书签右侧按钮 && 自定义属性删除按钮
@@ -129,6 +129,7 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
 
     // 输入框
     .b3-text-field {
+
       //多行文本输入框
       &[rows="1"],
       &[rows="2"] {
@@ -154,10 +155,42 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
       }
     }
 
+    // PDF导出弹窗
+    .b3-label {
+
+      // 第一行特殊情况
+      &:first-child {
+        padding-top: 0;
+      }
+
+      // 选项名
+      .fn__flex-1:first-child {
+        font-size: 13px;
+      }
+
+      // 第一、二行选项
+      &:nth-child(1),
+      &:nth-child(2) {
+        .fn__flex-1:first-child {
+          line-height: 30px;
+        }
+      }
+
+      // 第三行选项
+      &:nth-child(3) {
+        .fn__flex-1:first-child {
+          line-height: 44px;
+        }
+        #scaleFactor{
+          width: 200px;
+        }
+      }
+    }
+
     // 移动弹窗的搜索结果列表
-    #foldList{
-      .b3-list-item{
-        &__showall{
+    #foldList {
+      .b3-list-item {
+        &__showall {
           line-height: 20px;
         }
       }

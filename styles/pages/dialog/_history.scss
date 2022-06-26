@@ -1,21 +1,32 @@
+$history-bradius: $rc-bradius-medium;
+$history-interval: 16px;
+
 .b3-dialog__container {
 
+    // 底层元素
     div[style*="80vh"]>.fn__flex-column {
         background-color: $rc-ui-bg;
         border-radius: $rc-bradius-extra-large;
-        padding: 16px;
+        // padding: 16px;
 
+        // 顶部导航栏
         &>.layout-tab-bar {
-            margin-bottom: 8px;
-            border-radius: $rc-bradius-small  !important;
+            // margin-bottom: $history-interval;
+            // padding: 16px;
+            border-radius: $history-bradius  !important;
         }
 
     }
 
+    // 主界面
     #historyContainer {
-        border-radius: 0 0 $rc-bradius-extra-large $rc-bradius-extra-large;
+        // border-radius: 0 0 $rc-bradius-extra-large $rc-bradius-extra-large;
+        border-radius: $history-bradius  !important;
+        padding: $history-interval;
 
+        // 侧栏列表
         %list {
+
             .b3-list {
                 background-color: $rc-container-bg;
                 border-radius: $rc-bradius-small;
@@ -25,51 +36,62 @@
                 }
             }
 
+            // 一级列表
             >.b3-list {
                 padding: 8px;
-                margin: 0 8px 0 0;
+                margin: 0 $history-interval 0 0;
                 width: 300px !important;
+                border-radius: $history-bradius ;
             }
         }
 
+        // 文档历史界面
         [data-type="doc"] {
             @extend %list;
 
+            // 文档展示
             .history__text {
-                border-radius: $rc-bradius-small;
+                border-radius: $history-bradius ;
                 background-color: $rc-container-bg  !important;
             }
         }
 
+        // 资源历史界面
         [data-type="assets"] {
             @extend %list;
 
             .history__asset {
                 background-color: $rc-container-bg  !important;
-                border-radius: $rc-bradius-small;
+                border-radius: $history-bradius;
             }
         }
 
+        // 笔记本历史界面
         [data-type="notebook"] {
             margin: 0;
             background-color: $rc-container-bg  !important;
             padding: 8px;
+            border-radius: $history-bradius  !important;
+
 
             .b3-list-item {
                 &:hover {
                     background-color: $rc-component-bg  !important;
                 }
 
+                // 回退按钮
                 .b3-list-item__action {
                     width: auto !important;
                     height: auto !important;
                     font-size: 10px;
                     padding: 0px 6px !important;
-                    svg{
+
+                    svg {
                         width: 8px;
                         height: 8px;
                     }
-                    .fn__space{
+
+                    .fn__space {
                         width: 4px;
                     }
                 }
@@ -77,17 +99,20 @@
 
         }
 
+        // 数据快照界面
         .history__repo {
             @extend %list;
 
             .history__repoheader {
                 background-color: $rc-container-bg  !important;
-                border-radius: $rc-bradius-small;
+                border-radius: $history-bradius ;
             }
 
+            // 第二行操作栏
             >.history__repoheader {
-                margin-bottom: 8px;
+                margin-bottom: $history-interval;
 
+                // 前进后退按钮
                 .block__icon {
                     padding: 9px;
 
@@ -96,14 +121,17 @@
                         height: 10px;
                     }
 
+                    // 无法点击
                     &[disabled="disabled"] {
                         color: $rc-text-disabled;
                     }
-                    &::after{
+
+                    &::after {
                         display: none;
                     }
                 }
 
+                // 侧栏列表
                 +.fn__flex-1 {
                     @extend %list;
 

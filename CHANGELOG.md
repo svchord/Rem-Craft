@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.3](https://github.com/svchord/Rem-Craft/compare/v0.5.2...v0.5.3) (2022-06-26)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 修复列表块线条的位置问题 ([676a159](https://github.com/svchord/Rem-Craft/commit/676a159200f5191c1c7549bd784990024b8c176b))
+
 ### [0.5.2](https://github.com/svchord/Rem-Craft/compare/v0.5.1...v0.5.2) (2022-06-26)
 
 

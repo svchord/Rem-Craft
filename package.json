@@ -4,7 +4,7 @@
     "sass": "^1.53.0",
     "standard-version": "^9.5.0"
   },
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "My theme for siyuan",
   "name": "rem-craft",
   "scripts": {

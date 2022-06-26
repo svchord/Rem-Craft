@@ -30,7 +30,7 @@ $input-small-shadow-focus: fluent-shadow(2);
     background-color: $input-bg;
     font-size: $input-font-size  !important;
     padding: 4px 10px;
-    line-height: 22px;
+    line-height: 20px;
 
     &:focus {
       box-shadow: $input-shadow-focus  !important;

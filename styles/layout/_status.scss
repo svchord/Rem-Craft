@@ -1,0 +1,54 @@
+#status {
+    background-color: $rc-ui-bg;
+
+    // 右下角按钮
+    .toolbar__item {
+        color: $rc-text-secondary;
+        padding: 5px 10px;
+        margin: 0;
+        border-radius: unset;
+
+        svg {
+            width: 10px;
+            height: 10px;
+        }
+
+        &:hover {
+            background-color: $rc-component-button;
+        }
+
+    }
+
+    // 边栏设置按钮
+    #barDock {
+        transform: translateX(calc(100vw - 30px * 5 - 2px));
+
+        .b3-menu {
+            bottom: 30px !important;
+            left: unset !important;
+            right: 0;
+
+            &.fn__none {
+                display: none !important;
+            }
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    // 状态栏
+    .status__msg {
+        display: flex;
+        margin-left: 45px - 30px;
+        &::before {
+            content: '';
+            display: flex;
+            width: 12px;
+            height: 12px;
+            margin: 5px;
+            @include add_icon("notifications", $rc-text-secondary, 24, round);
+        }
+    }
+}

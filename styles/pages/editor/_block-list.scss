@@ -46,7 +46,7 @@ $tag-done-color: $rc-text-disabled;
       // 列表块子元素左侧线条
       .list::before {
         border-color: $list-border  !important;
-        left: -2px !important;
+        left: -7px !important;
         top: 2px;
         bottom: -2px;
       }
@@ -54,7 +54,12 @@ $tag-done-color: $rc-text-disabled;
       // 非列表块子元素左侧线条
       >[data-node-id]:before {
         border-color: $list-border  !important;
-        left: -18px !important;
+        left: -17px !important;
+      }
+
+      // 有序列表按钮位置调整
+      .protyle-action--order{
+        transform: translateX(1px);
       }
 
       // 列表按钮悬浮底色

@@ -39,7 +39,7 @@ $close-window-bg-hover: rgba(232, 17, 35, 0.9);
       background-color: $topbar-item-bg-hover;
     }
 
-    &:not(#barMore):not(#barBack):not(#barForward):not(#closeWindow):not(.toolbar__item--win) {
+    &:not(#barBack):not(#barForward):not(#closeWindow):not(.toolbar__item--win) {
       width: 24px + 8px *2;
       margin: calc(($topbar-height - $topbar-text-height)/2) 0;
       border-radius: $rc-bradius-small;
@@ -58,9 +58,10 @@ $close-window-bg-hover: rgba(232, 17, 35, 0.9);
 
     @each $id in DailyNote,
     Search,
-    Dock,
     ThemeMode,
-    Sync {
+    History,
+    Setting,
+    Feedback {
       &#bar#{$id} {
         &::before {
           @extend %toolbar_before;
@@ -88,18 +89,6 @@ $close-window-bg-hover: rgba(232, 17, 35, 0.9);
       }
     }
 
-    &#barDock {
-      &::before {
-        content: "边栏";
-      }
-
-      &::after {
-        left: unset;
-        // display: none;
-        // content: "Alt + 5";
-      }
-    }
-
     &#barThemeMode {
       &::before {
         content: "暗黑";
@@ -111,26 +100,33 @@ $close-window-bg-hover: rgba(232, 17, 35, 0.9);
       }
     }
 
-    &#barSync {
+    &#barHistory {
       &::before {
-        content: "同步";
+        content: "历史";
       }
 
       &::after {
-        // display: block;
-        left: unset;
+        content: 'Alt + H';
       }
     }
 
-    &#barMore {
-      width: 14px + 8px*2;
-      padding: 0 8px;
-      margin: calc(($topbar-height - $topbar-text-height)/2) 0;
-      border-radius: $rc-bradius-small;
-      height: $topbar-text-height;
+    &#barSetting {
+      &::before {
+        content: "设置";
+      }
 
-      svg {
-        height: $topbar-text-height;
+      &::after {
+        content: 'Alt + P';
+      }
+    }
+
+    &#barFeedback {
+      &::before {
+        content: "反馈";
+      }
+
+      &::after {
+        display: none;
       }
     }
 
@@ -181,7 +177,7 @@ $close-window-bg-hover: rgba(232, 17, 35, 0.9);
 
       svg {
         width: 10px;
-        height: $topbar-height !important;
+        height: $topbar-height  !important;
       }
     }
 
@@ -219,7 +215,7 @@ $close-window-bg-hover: rgba(232, 17, 35, 0.9);
     &:empty {
       padding: calc(($topbar-height - 14px)/2) #{$interval};
       width: calc(36px + #{$interval} * 2) !important;
-      height: $topbar-height !important;
+      height: $topbar-height  !important;
 
       &::before {
         content: "";
@@ -240,7 +236,7 @@ $close-window-bg-hover: rgba(232, 17, 35, 0.9);
       .toolbar__item {
         padding: calc(($topbar-height - 14px)/2) #{$interval};
         width: calc(36px + #{$interval} * 2) !important;
-        height: $topbar-height !important;
+        height: $topbar-height  !important;
         margin: 0 !important;
 
         &:hover {

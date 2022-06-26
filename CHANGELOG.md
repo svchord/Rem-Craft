@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.2](https://github.com/svchord/Rem-Craft/compare/v0.5.1...v0.5.2) (2022-06-26)
+
+
+### ✏️ Documentation | 文档
+
+* 修改style目录下的文件说明 ([031b5da](https://github.com/svchord/Rem-Craft/commit/031b5dabb231e7a1e9ae59234866becc23cf3fdb))
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 解决列表块标使用的问题 ([948d035](https://github.com/svchord/Rem-Craft/commit/948d035cf7788139d65214f437eeac2a6349c88e))
+* 修复待办列表完成后各子元素的样式问题 ([71b9334](https://github.com/svchord/Rem-Craft/commit/71b9334c91caf9ba31b8e8d5297b39de22f27175))
+* 修复待办列表完成时的超链接子块样式 ([d4260f1](https://github.com/svchord/Rem-Craft/commit/d4260f178b9a944f6b5e1dd836703956eb2ffa9f))
+* 修复导出预览页的列表线条位置问题 ([458a21a](https://github.com/svchord/Rem-Craft/commit/458a21adc2b5be38ea8cb2f79a5ae1d520e8c5d4))
+* 修复全局提示上按钮样式问题 ([112b5b8](https://github.com/svchord/Rem-Craft/commit/112b5b8687d47d4194be88526e9c5ad1419ee213))
+* 修复移动弹窗搜索结果列表样式问题 ([32385c8](https://github.com/svchord/Rem-Craft/commit/32385c8fe71b6ec9d2a9192d7c3a1d172c634f65))
+
+
+### ✨ Features | 新功能
+
+* 修改数据历史界面样式 ([505d94d](https://github.com/svchord/Rem-Craft/commit/505d94d67de249418c53c797e98c9dbc482b0b7e))
+* pDF导出弹窗样式更新 ([a7d0a6e](https://github.com/svchord/Rem-Craft/commit/a7d0a6e4ea30d57d5da8b07f070fc41d1e3f1f49))
+
 ### [0.5.1](https://github.com/svchord/Rem-Craft/compare/v0.5.0...v0.5.1) (2022-06-24)
 
 

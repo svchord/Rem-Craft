@@ -4,7 +4,7 @@
     "sass": "^1.53.0",
     "standard-version": "^9.5.0"
   },
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "My theme for siyuan",
   "name": "rem-craft",
   "scripts": {
@@ -13,7 +13,7 @@
     "merge to main": "git checkout main && git merge dev",
     "merge to dev": "git checkout dev && git merge main && git push",
     "release": "standard-version && git push --follow-tags",
-    "amend":"git add . && git commit --amend --no-edit && git push --force"
+    "amend": "git add . && git commit --amend --no-edit && git push --force"
   },
   "config": {
     "commitizen": {

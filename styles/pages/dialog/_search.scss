@@ -4,16 +4,38 @@ $dialog-text-field-bg: $rc-container-bg;
 
 .b3-dialog__container {
   &[style*="80vw"] {
+
+    // 顶部搜索框
     .search__header {
+      width: $dialog-large-width;
       border-radius: $dialog-border-radius $dialog-border-radius 0 0 !important;
       background-color: $dialog-search-header-bg;
       border-color: $dialog-search-header-border;
 
-      .b3-text-field.b3-text-field--text {
-        border: none !important;
+      // 搜索图标
+      .b3-form__icon-icon {
+        @include graphic(49px, 17px);
+      }
+
+      // 向下图标
+      .search__arrowdown{
+        color: $rc-text-secondary;
+        height: 8px;
+        width: 8px;
+        left: calc(49px - (49px - 16px) / 2 );
+      }
+
+      // 搜索文本框
+      .b3-text-field {
         border-top-left-radius: $dialog-border-radius;
         border-top-right-radius: $dialog-border-radius;
         background-color: $dialog-text-field-bg;
+        padding-left: 49px !important;
+        border: none !important;
+
+        &:focus {
+          box-shadow: unset;
+        }
 
         &:hover,
         &:focus {
@@ -21,34 +43,27 @@ $dialog-text-field-bg: $rc-container-bg;
         }
       }
 
+      // 替换筛选按钮
       .b3-button {
         font-size: 12px;
       }
 
-      .b3-form__icon-icon {
-        top: calc((48px - 16px)/2);
-        left: calc((48px - 16px)/2) !important;
-      }
     }
 
+    // 搜索结果横排
     >div>.fn__flex>.fn__flex-column {
       /*先把容器改成左右排列并自动换行*/
       flex-direction: row !important;
       flex-wrap: wrap;
 
-      .search__header {
-        width: 70vw;
-        border-radius: $dialog-border-radius;
-        background-color: $dialog-search-header-bg;
-        border-color: $dialog-search-header-border;
-      }
-
+      // 搜索结果筛选行
       .b3-form__space--small {
-        width: 70vw;
+        width: $dialog-large-width;
         margin: 0;
         height: 44px;
         padding: 8px 8px 8px 16px;
 
+        // 筛选项
         .b3-button {
           line-height: 20px;
           height: 28px;
@@ -64,11 +79,13 @@ $dialog-text-field-bg: $rc-container-bg;
           }
         }
 
+        // 搜索路径
         #searchPathInput {
           height: 28px;
           line-height: 28px;
         }
 
+        // 块类型筛选按钮
         .svg.ft__on-surface {
           @include graphic(28px, 12px);
           border-radius: $rc-bradius-extra-small;
@@ -87,10 +104,11 @@ $dialog-text-field-bg: $rc-container-bg;
         }
       }
 
+      // 搜索结果列表
       #searchList {
         @media screen and (min-width: 960px) {
           float: left;
-          width: 45% ;
+          width: 45%;
           height: calc(100% - 94px) !important;
           padding: 8px 8px 8px 16px;
           margin: 0;
@@ -120,12 +138,14 @@ $dialog-text-field-bg: $rc-container-bg;
         }
       }
 
+      // 搜索预览
       #searchPreview {
         width: 60%;
         height: calc(80%) !important;
         border-bottom-left-radius: $dialog-border-radius;
         border-bottom-right-radius: $dialog-border-radius;
 
+        // 面包屑
         .protyle-breadcrumb {
           // height: 40px;
           padding: 8px !important;
@@ -145,9 +165,11 @@ $dialog-text-field-bg: $rc-container-bg;
       }
     }
 
+    // 块类型筛选界面
     .spread-search__filter {
       padding-top: 0px;
 
+      // 标题
       &::before {
         content: "块类型筛选";
         display: block;
@@ -163,6 +185,7 @@ $dialog-text-field-bg: $rc-container-bg;
         line-height: 60px;
       }
 
+      // 块类型筛选项
       label {
         .b3-label__text {
           font-size: 13px !important;

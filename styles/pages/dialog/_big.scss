@@ -28,41 +28,38 @@ $dialog-label-text: $rc-text-secondary;
   box-shadow: $dialog-shadow;
   border-radius: $dialog-border-radius;
 
-  .search__header {
-
-    width: $dialog-large-width;
-  }
-
   div[style="height:auto"]>div {
     border-radius: 0 0 $dialog-border-radius $dialog-border-radius  !important;
-  }
-
-  .b3-dialog__close {
-    display: none;
   }
 
   &[style*="80vw"] {
     width: $dialog-large-width  !important;
 
+    // 弹窗关闭按钮
+    .b3-dialog__close {
+      display: none;
+    }
+
+    // 笔记本设置界面标题
     .b3-dialog__header {
       border-color: $dialog-header-border;
     }
 
+    // 侧边导航栏
     .b3-tab-bar.b3-list.b3-list--background,
     .b3-tab-container {
       height: #{$dialog-tabs-height} !important;
       background-color: $dialog-tabs-bg;
 
+      // 导航按钮
       .b3-list-item--big {
         margin-top: 8px !important;
 
-        // .b3-list-item__graphic{
-        //   margin-right: 32px;
-        // }
         &:first-child {
           margin-top: 0px !important;
         }
 
+        // 导航图标
         .b3-list-item__graphic {
           width: 16px;
           height: 16px;
@@ -76,15 +73,14 @@ $dialog-label-text: $rc-text-secondary;
       background-color: $dialog-label-bg;
       border-color: $dialog-label-border;
 
-      // color: $rc-text-secondary !important;
       .b3-label__text {
         color: $dialog-label-text  !important;
       }
 
+      // 搜索筛选设置
       .config-query {
         label {
           margin-top: 8px;
-          // margin-bottom: 4px;
         }
       }
     }

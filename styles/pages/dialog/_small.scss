@@ -127,17 +127,6 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
       }
     }
 
-    // 输入框
-    .b3-text-field {
-
-      //多行文本输入框
-      &[rows="1"],
-      &[rows="2"] {
-        line-height: 30px;
-        height: 32px;
-      }
-    }
-
     // 移动弹窗中的搜索框
     .b3-form__icon {
       margin: 0;
@@ -145,13 +134,8 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
 
       // 搜索图标
       &-icon {
-        top: 27px !important;
-        left: 19px !important;
-      }
-
-      // 搜索框
-      .b3-text-field {
-        padding-left: 28px !important;
+        top: 16px + 0.5px!important;
+        left: 8px + 0.5px!important;
       }
     }
 

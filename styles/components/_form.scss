@@ -5,13 +5,41 @@
   }
 }
 
-.b3-form__icon:not(.b3-form__icon--small):not(.search__header) {
+// 搜索框
+.b3-form__icon {
+
+  // 搜索图标
   .b3-form__icon-icon {
-    width: 10px;
-    height: 10px;
-    top: 10px;
+    @include graphic(30px, 10px);
+    left: 0;
+    top: 0;
+    color: $rc-text-secondary;
   }
+
+  // 搜索文本框
   .b3-form__icon-input {
-    padding-left: 26px !important;
+    padding-left: 28px !important;
+  }
+
+  // 边窗顶栏小搜索框
+  &--small {
+
+    // 搜索图标
+    .b3-form__icon-icon {
+      @include graphic(24px, 10px);
+    }
+
+    // 搜索文本框
+    .b3-form__icon-input {
+      border: none !important;
+      height: 24px;
+      padding-left: 24px !important;
+      font-size: 11px;
+
+      &:focus {
+        box-shadow: unset;
+        border: none;
+      }
+    }
   }
 }

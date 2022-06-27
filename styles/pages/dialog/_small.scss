@@ -1,4 +1,4 @@
-$dialog-small-width: 400px;
+$dialog-small-width: 420px;
 $dialog-small-bg: $rc-container-bg;
 $dialog-small-header-color: $rc-text-primary;
 $dialog-small-header-border: $rc-border-3;
@@ -82,8 +82,8 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
 
     // 属性弹窗
     .b3-dialog__content {
-      padding: 16px 0 24px;
-
+      padding: 16px 4px 24px;
+      line-height: 1.625;
       // 书签右侧按钮 && 自定义属性删除按钮
       .block__icon {
         @include block__icon__model(28px, 10px);
@@ -204,20 +204,6 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
           }
         }
 
-        // 取消按钮
-        // &.b3-button--cancel {
-        //   color: $dialog-button-cancel-color;
-        //   border: none;
-        //   background-color: $dialog-button-cancel-bg;
-
-        //   &:hover {
-        //     background-color: $dialog-button-cancel-bg-hover;
-        //   }
-
-        //   &:active {
-        //     background-color: $dialog-button-cancel-bg-active;
-        //   }
-        // }
       }
     }
   }

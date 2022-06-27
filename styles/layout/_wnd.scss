@@ -135,16 +135,18 @@ $wnd-transition: all $wnd-width-time ease-out 0s;
 
       #searchHistoryBtn {
         // @include graphic(30px, 20px);
-        width: 46px;
+        width: 36px;
         height: 30px;
         padding: 5px 8px;
-        // svg {
-        //   &:first-child {
-        //   }
-        //   &:last-child {
-        //     // @include graphic(10px, 10px);
-        //   }
-        // }
+        svg {
+          &:first-child {
+            width: 12px;
+            height: 12px;
+          }
+          &:last-child {
+            width: 8px;
+          }
+        }
       }
 
       #globalSearchReload {

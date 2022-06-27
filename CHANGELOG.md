@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/svchord/Rem-Craft/compare/v0.5.2...v1.0.0) (2022-06-27)
+
+
+### ⚡ Performance Improvements | 性能优化
+
+* 重新构建文本框样式的依赖关系，减少编译后的代码量，增加代码可读性 ([18fa89e](https://github.com/svchord/Rem-Craft/commit/18fa89e5876c2051883eb7598da3db1acc9bb61e))
+* 重新构建button样式的依赖关系，减少编译后的代码量，增加代码可读性 ([eb8beba](https://github.com/svchord/Rem-Craft/commit/eb8beba1ba68c8567233d00555268ae3ab70990f))
+
+
+### ✏️ Documentation | 文档
+
+* 更新预览图 ([a5f45a9](https://github.com/svchord/Rem-Craft/commit/a5f45a9022ff2edf4e574f4673e888330f09e3ce))
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 兼容最新版本顶栏 ([2937248](https://github.com/svchord/Rem-Craft/commit/29372486b897db73e45f4633b40fedb55749cff5))
+* 修复列表块线条的位置问题 ([676a159](https://github.com/svchord/Rem-Craft/commit/676a159200f5191c1c7549bd784990024b8c176b))
+* 修复全局提示按钮样式问题 ([3d554a3](https://github.com/svchord/Rem-Craft/commit/3d554a379e876f3e23c774b61b88a1fe223f170d))
+* 修复全局提示高度问题 ([52e34f4](https://github.com/svchord/Rem-Craft/commit/52e34f4394cf6894fdbff06819abf206ec30c607))
+
+
+### ✨ Features | 新功能
+
+* 调整标签搜索界面搜索按钮的样式 ([dc9fd11](https://github.com/svchord/Rem-Craft/commit/dc9fd110923adf2ac54c473b7dec0d878fba76fe))
+* 调整数据历史界面样式 ([9b1f951](https://github.com/svchord/Rem-Craft/commit/9b1f951c4f4311f97041cf2f1ce6b6e4a7fde6ad))
+* 更新计数块样式 ([a8db2cf](https://github.com/svchord/Rem-Craft/commit/a8db2cfaf16e6a7eb85d4ab3a59921145b764600))
+* 更新数据历史界面样式 ([0208658](https://github.com/svchord/Rem-Craft/commit/02086586a6c245ae4ca0b1b2814e7991a01b06c3))
+* 添加最新版本底栏样式 ([16aeffd](https://github.com/svchord/Rem-Craft/commit/16aeffd14b9b5c181d10c271af280e1ca22cb136))
+* 完善小弹窗的内容样式 ([c698ac3](https://github.com/svchord/Rem-Craft/commit/c698ac39b5bdd147301950b7c2e4264e44ddf420))
+
 ### [0.5.2](https://github.com/svchord/Rem-Craft/compare/v0.5.1...v0.5.2) (2022-06-26)
 
 

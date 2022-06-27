@@ -118,11 +118,6 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
         // 自定义属性添加按钮
         .b3-button {
           width: 80px !important;
-
-          svg {
-            width: 10px;
-            height: 10px;
-          }
         }
       }
     }
@@ -191,10 +186,8 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
       }
 
       .b3-button {
-        // font-weight: 600;
         height: 36px;
         letter-spacing: 0.3px;
-        border: 1px solid transparent;
         width: 49%;
 
         // 确认按钮
@@ -212,19 +205,19 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
         }
 
         // 取消按钮
-        &.b3-button--cancel {
-          color: $dialog-button-cancel-color;
-          border: none;
-          background-color: $dialog-button-cancel-bg;
+        // &.b3-button--cancel {
+        //   color: $dialog-button-cancel-color;
+        //   border: none;
+        //   background-color: $dialog-button-cancel-bg;
 
-          &:hover {
-            background-color: $dialog-button-cancel-bg-hover;
-          }
+        //   &:hover {
+        //     background-color: $dialog-button-cancel-bg-hover;
+        //   }
 
-          &:active {
-            background-color: $dialog-button-cancel-bg-active;
-          }
-        }
+        //   &:active {
+        //     background-color: $dialog-button-cancel-bg-active;
+        //   }
+        // }
       }
     }
   }

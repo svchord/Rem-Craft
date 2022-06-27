@@ -21,15 +21,14 @@ $dialog-readme-main-margin: 96px;
     border-radius: $dialog-readme-side-border-radius;
 
     // 按钮
-    .b3-button {
-      box-shadow: unset;
-
+    .b3-button--outline {
       // 返回按钮
       &[data-type="goBack"] {
-        border: none;
+        
         margin: 8px;
         color: $dialog-readme-return-color;
         padding: 8px;
+        background-color: transparent;
 
         &:hover {
           background-color: $dialog-readme-return-bg-hover;

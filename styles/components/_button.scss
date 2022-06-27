@@ -1,44 +1,58 @@
 $button-bg-hover: $rc-brand-hover;
 $button-outline-bg: $rc-brand-light;
 $button-outline-bg-hover: $rc-brand-light-hover;
+// $button-outline-bg-active: $brand-light-active;
 
 //按钮
-.b3-button:not(.b3-button--text):not(.b3-button--cancel):not(.b3-button--outline) {
+.b3-button {
+  border: none;
+  box-shadow: unset;
+  height: 30px;
+  font-size: 13px;
+
   &:hover {
     background-color: $button-bg-hover;
   }
 
-  box-shadow: none;
-}
+  &:hover,
+  &:focus {
+    box-shadow: unset;
 
-.b3-button--small {
-  border-radius: $rc-bradius-extra-small;
-  background-color: $button-outline-bg;
-  color: $rc-brand;
-  padding: 4px 8px;
-
-  &:hover {
-    background-color: $button-outline-bg-hover  !important;
   }
 
-}
+  &--small,
+  &--cancel,
+  &--outline {
 
-.b3-button--outline:not([data-type="goBack"]) {
-  background-color: $button-outline-bg;
-  border: none;
-  box-shadow: unset;
-  font-size: 13px;
+    background-color: $button-outline-bg;
+    color: $rc-brand;
 
-  svg {
-    width: 10px;
-    height: 10px;
+    &:hover {
+      background-color: $button-outline-bg-hover ;
+    }
   }
 
-  &:hover {
-    background-color: $button-outline-bg-hover;
+  &--text {
+    background-color: transparent;
+
+    &:hover {
+      background-color: $button-outline-bg;
+    }
   }
 
-  // &:active {
-  //   background-color: $brand-3;
-  // }
+
+  &--small {
+    padding: 4px 8px;
+    height: 24px;
+    font-size: 12px;
+    border-radius: $rc-bradius-extra-small;
+  }
+
+  &--outline {
+
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
 }

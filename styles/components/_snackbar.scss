@@ -83,6 +83,7 @@ $snackbar-danger-color: $rc-error;
     padding: 8px 16px 16px;
     background-color: transparent;
     width: auto;
+    height: 28px + 8px + 16px;
 
     svg,
     &::before {

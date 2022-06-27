@@ -43,11 +43,6 @@ $dialog-text-field-bg: $rc-container-bg;
         }
       }
 
-      // 替换筛选按钮
-      .b3-button {
-        font-size: 12px;
-      }
-
     }
 
     // 搜索结果横排
@@ -64,10 +59,10 @@ $dialog-text-field-bg: $rc-container-bg;
         padding: 8px 8px 8px 16px;
 
         // 筛选项
-        .b3-button {
+        .b3-button--small {
           line-height: 20px;
           height: 28px;
-          font-size: 12px;
+          // font-size: 12px;
 
           &.b3-button--cancel {
             background-color: transparent;

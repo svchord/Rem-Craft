@@ -8,7 +8,7 @@
 
 一款现代化、平面化设计的思源笔记主题
 
-<img width="1280" alt="preview" src="https://user-images.githubusercontent.com/61345763/175478393-389f717a-2887-4890-b0bf-f29e6ebe653f.png">
+<img width="1280" alt="preview" src="https://user-images.githubusercontent.com/61345763/175880281-4874f851-8aff-4677-8d54-f90f711f4892.png">
 
 ## 参考样式
 

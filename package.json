@@ -12,7 +12,7 @@
     "commit": "git add . && git cz && git push",
     "merge to main": "git checkout main && git merge dev",
     "merge to dev": "git checkout dev && git merge main && git push",
-    "release": "standard-version -r 1.0.0",
+    "release": "standard-version && git push --follow-tags origin main",
     "amend": "git add . && git commit --amend --no-edit && git push --force"
   },
   "config": {

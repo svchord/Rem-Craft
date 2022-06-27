@@ -42,7 +42,7 @@
     .status__msg {
         display: flex;
         margin-left: 45px - 30px;
-        &::before {
+        &:not(:empty):before {
             content: '';
             display: flex;
             width: 12px;

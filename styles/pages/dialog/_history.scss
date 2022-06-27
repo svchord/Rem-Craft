@@ -1,28 +1,22 @@
-$history-bradius: $rc-bradius-medium;
-$history-interval: 12px;
 
 .b3-dialog__container {
 
     // 底层元素
     div[style*="80vh"]>.fn__flex-column {
-        background-color: $rc-ui-bg;
+        background-color: $rc-container-bg;
         border-radius: $rc-bradius-extra-large;
-        // padding: 16px;
 
         // 顶部导航栏
         &>.layout-tab-bar {
-            // margin-bottom: $history-interval;
-            // padding: 16px;
-            border-radius: $history-bradius  !important;
+            margin: 0 8px;
+            border-bottom: 1px solid $rc-border-3;
+            padding: 16px 8px;
         }
 
     }
 
     // 主界面
     #historyContainer {
-        // border-radius: 0 0 $rc-bradius-extra-large $rc-bradius-extra-large;
-        border-radius: $history-bradius  !important;
-        padding: $history-interval;
 
         // 侧栏列表
         %list {
@@ -38,10 +32,10 @@ $history-interval: 12px;
 
             // 一级列表
             >.b3-list {
-                padding: 8px;
-                margin: 0 $history-interval 0 0;
+                padding: 8px 16px ;
+                margin: 8px 0;
                 width: 300px !important;
-                border-radius: $history-bradius ;
+                border-right: 1px solid $rc-border-3;
             }
         }
 
@@ -51,7 +45,6 @@ $history-interval: 12px;
 
             // 文档展示
             .history__text {
-                border-radius: $history-bradius ;
                 background-color: $rc-container-bg  !important;
             }
         }
@@ -62,7 +55,6 @@ $history-interval: 12px;
 
             .history__asset {
                 background-color: $rc-container-bg  !important;
-                border-radius: $history-bradius;
             }
         }
 
@@ -70,8 +62,7 @@ $history-interval: 12px;
         [data-type="notebook"] {
             margin: 0;
             background-color: $rc-container-bg  !important;
-            padding: 8px;
-            border-radius: $history-bradius  !important;
+            padding: 16px;
 
 
             .b3-list-item {
@@ -102,15 +93,18 @@ $history-interval: 12px;
         // 数据快照界面
         .history__repo {
             @extend %list;
+            background-color: $rc-container-bg;
 
             .history__repoheader {
+                padding: 16px;
                 background-color: $rc-container-bg  !important;
-                border-radius: $history-bradius ;
             }
 
             // 第二行操作栏
             >.history__repoheader {
-                margin-bottom: $history-interval;
+                border-bottom: 1px solid $rc-border-3;
+                padding: 16px 8px;
+                margin: 0  8px;
 
                 // 前进后退按钮
                 .block__icon {

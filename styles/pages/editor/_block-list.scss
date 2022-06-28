@@ -58,14 +58,19 @@ $tag-done-color: $rc-text-disabled;
       }
 
       // 有序列表按钮位置调整
-      .protyle-action--order{
+      .protyle-action--order {
         transform: translateX(1px);
       }
 
       // 列表按钮悬浮底色
-      >.protyle-action:hover::after {
-        background-color: $list-point-bg-fold  !important;
-        opacity: 0.2 !important;
+      >.protyle-action {
+        &:hover::after {
+          background-color: $list-point-bg-fold  !important;
+          opacity: 0.2 !important;
+        }
+        svg{
+          width: 14px;
+        }
       }
     }
   }
@@ -101,7 +106,7 @@ $tag-done-color: $rc-text-disabled;
     border-color: $list-done-border-color  !important;
 
     //完成后的超链接样式
-    &[data-node-id]  span[data-type="a"]:not(:empty) {
+    &[data-node-id] span[data-type="a"]:not(:empty) {
       color: $link-done-color  !important;
       border-color: $link-done-border-color  !important;
 
@@ -110,7 +115,7 @@ $tag-done-color: $rc-text-disabled;
       }
 
       &:hover {
-        color: $link-done-color-hover !important;
+        color: $link-done-color-hover  !important;
         border-color: $link-done-border-color-hover  !important;
       }
     }

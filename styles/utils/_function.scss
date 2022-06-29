@@ -10,6 +10,6 @@
 }
 
 @function rc-shadow($dp) {
-  @return 0 0 0 1px rgb(0 0 0 / 13%),
+  @return 0 0 0 1px rgb(0 0 0 / 2%),
   fluent-shadow($dp);
 }

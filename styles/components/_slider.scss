@@ -1,4 +1,3 @@
-$slider-thumb-box-shadow: rc-shadow(2);
 $slider-thumb-border: 5px solid #fff;
 $slider-thumb-border-radius: $rc-bradius-circle;
 $slider-thumb-border-width-hover: 3px;
@@ -15,10 +14,11 @@ $slider-track-border-radius: $rc-bradius-max;
 //滑条
 .b3-slider {
   height: 44px;
+
   &::-webkit-slider-thumb {
     width: 20px;
     height: 20px;
-    box-shadow: $slider-thumb-box-shadow;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 12%), fluent-shadow(2);
     border: $slider-thumb-border;
     border-radius: $slider-thumb-border-radius;
     background-color: $slider-thumb-bg;
@@ -27,18 +27,18 @@ $slider-track-border-radius: $rc-bradius-max;
     transition: border 0.1s ease-out;
 
     &:hover {
-      box-shadow: $slider-thumb-box-shadow;
       transform: unset;
       border-width: $slider-thumb-border-width-hover;
       background-color: $slider-thumb-bg-hover;
     }
+
     &:active {
-      box-shadow: $slider-thumb-box-shadow;
       transform: unset;
       border-width: $slider-thumb-border-width-active;
       background-color: $slider-thumb-bg-active;
     }
   }
+
   &::-webkit-slider-runnable-track {
     height: $slider-track-height;
     background-color: $slider-track-bg;

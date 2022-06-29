@@ -1,7 +1,7 @@
 $embed-bg: $rc-component-bg;
 $embed-border-radius: $rc-bradius-small;
-$embed-shadow: fluent-shadow(4);
-$embed-shadow-hover: fluent-shadow(12);
+$embed-shadow: rc-shadow(4);
+$embed-shadow-hover: rc-shadow(8);
 
 //块嵌入
 div[data-type="NodeBlockQueryEmbed"].render-node {

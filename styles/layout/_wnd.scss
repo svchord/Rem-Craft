@@ -2,7 +2,7 @@ $wnd-scale: scale(0.9);
 $wnd-border: none;
 $wnd-bradius: $rc-bradius-medium;
 $wnd-bg: $rc-container-bg;
-$wnd-shadow: none;
+$wnd-shadow: none;//rc-shadow(1);
 //边窗动画
 $wnd-width-time: 0.2s;
 $wnd-transition: all $wnd-width-time ease-out 0s;

@@ -51,4 +51,13 @@
             @include add_icon("notifications", $rc-text-secondary, 24, round);
         }
     }
+
+    > .fn__flex-1{
+        margin-right: 30px + 2px;
+    }
+
+    // 文档统计
+    .status__counter{
+        transform: translateX(- 30px - 2px);
+    }
 }

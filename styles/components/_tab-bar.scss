@@ -13,11 +13,12 @@ $tab-color-focus: $rc-text-brand;
 
 $tab-close-border-radius: $rc-bradius-extra-small;
 $tab-close-bg-hover: $rc-component-button;
-$tab-close-bg-hover-focus:  $rc-component-button-select;
+$tab-close-bg-hover-focus: $rc-component-button-select;
+
+$tab-pin-bg: $rc-component-bg;
 
 //页签栏
 .layout-tab-bar {
-  // opacity: 1 !important;
   background-color: $tabs-bg;
 
   .layout__center &:not(:empty) {
@@ -38,21 +39,13 @@ $tab-close-bg-hover-focus:  $rc-component-button-select;
 
     &:not(:last-child) {
       margin-right: 8px;
-      // box-shadow: 2px -26px 0px 0px $rc-border-1,
-      //   1px -4px 1px 0px $rc-ui-bg !important; // margin-right: 8px;
     }
 
-    // max-width: 180px;
-    &:not(.item--focus) {
-      background-color: $tab-bg;
-
-      &:hover {
-        background-color: $tab-bg-hover;
-      }
+    &:hover {
+      background-color: $tab-bg-hover;
     }
 
-    .item__icon {
-      // @include graphic(16px, 12px);
+    &__icon {
       width: 16px;
       height: 16px;
       padding: 0;
@@ -70,23 +63,20 @@ $tab-close-bg-hover-focus:  $rc-component-button-select;
       }
     }
 
-    .item__graphic {
+    &__graphic {
       @include graphic(16px, 10px);
       margin-right: 6px;
     }
 
-    .item__text {
-      // margin-top: 0.5px;
+    &__text {
       padding: 0;
       font-size: $tab-font-size;
       color: $tab-color;
       height: $tab-height;
       line-height: $tab-height;
-      // min-width: 42px;
-      // opacity: 0.5;
     }
 
-    .item__close {
+    &__close {
       border-radius: $tab-close-border-radius;
       margin: 3px 3px 3px 3px;
       padding: 0;
@@ -102,29 +92,36 @@ $tab-close-bg-hover-focus:  $rc-component-button-select;
         background-color: $tab-close-bg-hover;
       }
     }
+    
+    &--pin {
+      background-color: $tab-pin-bg;
+      .item__text{
+        padding-right: 6px;
+      }
+    }
 
-    &.item--focus {
+    &--focus {
       background-color: $tab-bg-focus;
       box-shadow: unset !important;
 
       * {
         color: $tab-color-focus  !important;
-        opacity: 1 !important;
+      }
+
+      &:hover {
+        background-color: $tab-bg-focus;
       }
 
       .item__close {
-        svg {
-          opacity: 0.5 !important;
-        }
 
         &:hover {
           svg {
-            opacity: 1 !important;
             background-color: $tab-close-bg-hover-focus;
           }
         }
       }
 
     }
+    
   }
 }

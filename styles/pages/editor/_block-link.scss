@@ -29,7 +29,7 @@ $link-border: 1px solid $rc-border-3;
 
   &:hover {
     color: $link-color-hover  !important;
-    border-color: $link-border-color-hover !important;
+    border-color: $link-border-color-hover  !important;
 
     * {
       color: $link-color-hover  !important;
@@ -1260,9 +1260,20 @@ $link-border: 1px solid $rc-border-3;
   background-image: url("#{$icon-path}/logo_youtube_play_video_icon.svg");
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type="a"][data-href*="wolai.com"]:not(:empty)::before,
-.b3-typography a[href*="wolai.com"]::before {
-  background-image: url("#{$icon-path}/wolai_dark.svg");
+[theme-mode="dark"] {
+
+  .protyle-wysiwyg [data-node-id] span[data-type="a"][data-href*="wolai.com"]:not(:empty)::before,
+  .b3-typography a[href*="wolai.com"]::before {
+    background-image: url("#{$icon-path}/wolai_dark.svg");
+  }
+}
+
+[theme-mode="light"] {
+
+  .protyle-wysiwyg [data-node-id] span[data-type="a"][data-href*="wolai.com"]:not(:empty)::before,
+  .b3-typography a[href*="wolai.com"]::before {
+    background-image: url("#{$icon-path}/logo_wolai_logo.svg");
+  }
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type="a"][data-href*="notion."]:not(:empty)::before,

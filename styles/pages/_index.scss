@@ -14,3 +14,7 @@ $content-margin: "max(calc((100% - #{$editor-width}) / 2), 64px)";
 
 //加载笔记页面
 @import "loading";
+
+//全屏界面
+@import "fullscreen";
+

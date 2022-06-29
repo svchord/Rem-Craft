@@ -91,11 +91,6 @@ $rc-duration-base: $anim-duration-base; //0.2s
 $rc-duration-moderate: $anim-duration-moderate; //0.24s
 $rc-duration-slow: $anim-duration-slow; //0.28s
 
-
-// $rc-brand-light: rgba($rc-brand, 0.5);
-// $rc-brand-lighter: rgba($rc-brand, 0.3);
-// $rc-brand-lightest: rgba($rc-brand, 0.1);
-
 :root {
   // 主色
   --b3-theme-primary: #{$rc-brand};

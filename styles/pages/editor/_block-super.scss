@@ -15,14 +15,14 @@
     }
   }
 
-  >div:not(.sb):not(.protyle-attr) {
+  >div:not(.sb):not(.protyle-attr):not(.list){
     padding-left: 10px !important;
     padding-right: 10px !important;
-    // &:first-child:not([data-type="NodeHeading"]) {
-    //   padding-top: 12px;
-    // }
-    // &:nth-last-child(2):not([data-type="NodeHeading"]) {
-    //   padding-bottom: 12px;
-    // }
   }
+
+  // 第一级列表缩进
+  >.list {
+    margin: 0 12px;
+  }
+
 }

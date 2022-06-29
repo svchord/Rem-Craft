@@ -41,26 +41,15 @@ $list-item-meta-color-focus: $brand-4;
   top: 0;
 }
 
-//列表UI
-// .sy__files,
 .b3-list,
 .b3-list--background {
   margin: 0px 8px 8px;
   // overflow: overlay !important;
 
-  &.b3-tab-bar {
-    border-radius: $tab-bar-border-radius;
-    padding-right: 4px;
-    margin-top: 8px;
-    width: 160px !important;
-    // padding: 0 8px;
-    // background-color: #fff;
-  }
-
-  &.b3-menu {
-    padding-top: 8px;
-    // width: 360px !important;
-  }
+  // &.b3-menu {
+  //   padding-top: 8px;
+  //   // width: 360px !important;
+  // }
 
   .b3-list-item {
     height: auto;

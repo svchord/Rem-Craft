@@ -30,28 +30,12 @@ $sub-menu-vertical: 10px;
 //菜单
 %menu__model {
   border-radius: $menu-border-radius;
-  padding: 7px 6px 6px;
+  padding: 6px 6px 6px;
   min-width: 200px;
   font-size: $menu-font-size;
 
-  // opacity: 1;
-  // transition: opacity 150ms ease;
-  // &.fn__none{
-  //   display: block !important;
-  //   opacity: 0;
-  // }
-  .b3-menu__item {
-    .b3-menu__icon {
-      transition: all 0.3s ease 0s;
-      color: $menu-icon-color;
-    }
-
-    &:hover {
-      .b3-menu__icon {
-        color: $menu-icon-color-hover;
-      }
-    }
-  }
+  transform: scale(1);
+  transition: $menu-transition;
 
   &.fn__none {
     display: block !important;
@@ -61,8 +45,36 @@ $sub-menu-vertical: 10px;
     z-index: -99 !important;
   }
 
-  transform: scale(1);
-  transition: $menu-transition;
+  >.b3-menu__item {
+    >.b3-menu__icon {
+      transition: all 0.3s ease 0s;
+      color: $menu-icon-color;
+    }
+
+    &:hover {
+      >.b3-menu__icon {
+        color: $menu-icon-color-hover;
+      }
+    }
+
+    // 自定义菜单项（文本框或滑条）
+    &--custom {
+
+      padding: 0 2px;
+
+      .fn__hr,
+      .fn__hr--small,
+      >.b3-menu__icon {
+        display: none;
+      }
+
+      &:hover,
+      &.b3-menu__item--current {
+        background-color: transparent !important;
+      }
+    }
+  }
+
 }
 
 //菜单
@@ -70,25 +82,22 @@ $sub-menu-vertical: 10px;
   @extend %menu__model;
 
   .b3-list-item,
-  &__item:not(.b3-menu__item--readonly) {
-    //}:not(.b3-menu__item--custom) {
+  &__item {
     color: $menu-item-color;
-    // height: $menu-item-height;
     min-width: 0px;
+    margin: 2px 0;
     padding: 0 8px;
-    font-weight: normal !important;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
-    margin: 2px 0;
-    // border: 1px solid transparent;
-    border-radius: $menu-item-border-radius  !important;
+    border-radius: $menu-item-border-radius;
     transition: all 0.3s ease 0s;
 
+    // 图标
     .b3-menu__icon {
       width: 10px;
       height: 10px;
 
+      // 向右箭头
       &--arrow {
         width: 10px;
         height: 10px;
@@ -100,53 +109,18 @@ $sub-menu-vertical: 10px;
     }
   }
 
-  &__item--custom {
-    padding: 0 8px;
-
-    // .b3-menu__icon,
-    .fn__hr {
-      display: none;
-    }
-
-    // &:first-child .b3-menu__label {
-    //   padding: 6px 0;
-    // }
-    // &:not(:first-child) .b3-menu__label {
-    //   padding: 0 0 6px 0;
-    // }
-  }
-
   & &__submenu {
     @extend %menu__model;
-    top: -9px;
-
-    .b3-menu__item {
-      .b3-menu__icon {
-        transition: all 0.3s ease 0s;
-        color: $menu-icon-color;
-      }
-
-      &:hover {
-        .b3-menu__icon {
-          color: $menu-icon-color-hover;
-        }
-      }
-
-      &.b3-menu__item--custom {
-        .b3-menu__icon {
-          display: none;
-        }
-
-        &.b3-menu__item--current {
-          background-color: transparent !important;
-        }
-      }
-    }
+    top: -8px;
+    border: none;
+    margin-left: $sub-menu-vertical;
+    margin-right: $sub-menu-vertical;
 
     //【外观】二级菜单
-    &.b3-menu__submenu--row {
+    &--row {
       width: 410px;
 
+      // 每个样式选项
       .b3-menu__item {
         margin: 4px 0;
 
@@ -160,8 +134,8 @@ $sub-menu-vertical: 10px;
           }
         }
 
-        &.b3-menu__item--current {
-
+        // 鼠标选项
+        &--current {
           background-color: $menu-bg  !important;
 
           .b3-menu__label {
@@ -174,6 +148,7 @@ $sub-menu-vertical: 10px;
     }
   }
 
+  // 分割线
   &__separator {
     margin-left: -2px;
     margin-right: -2px;
@@ -181,9 +156,9 @@ $sub-menu-vertical: 10px;
     border-bottom: $menu-separator;
     height: 0;
     background-color: transparent;
-    // background-color: $rc-border-4;
   }
 
+  // 其他信息
   &__item--readonly {
     font-size: 12px;
     line-height: 16px;
@@ -191,33 +166,16 @@ $sub-menu-vertical: 10px;
     margin-bottom: 4px;
   }
 
-  // &__item--custom.b3-menu__item--current {
-  //   background-color: $menu-bg;
-  // }
+  // 菜单项快捷键
   &__accelerator {
     color: $menu-accelerator-color;
   }
 
-  &.b3-list {
-    .b3-list-item {
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
+  // 块引用菜单
+  &.b3-list ,
   &.b3-list--background {
     padding: 8px;
 
-    input {
-      margin: 0 0 8px !important;
-    }
-  }
-
-  .b3-list--background {
-    padding: 0px 2px 2px;
-    margin: 0;
-
     .b3-list-item {
       &:last-child {
         margin-bottom: 0;
@@ -225,43 +183,30 @@ $sub-menu-vertical: 10px;
     }
   }
 
-  >.fn__flex-column>input {
-    margin: 1px 2px 8px !important;
-  }
 
-  // button .fn__hr--small{
-  //   display: none;
-  // }
-
-  &__item--show &__submenu {
-    transform: scale(1);
-    opacity: 1;
-    margin-left: $sub-menu-vertical;
-    margin-right: $sub-menu-vertical;
-  }
-
-  //图片右键菜单 & 链接右键菜单
   &#commonMenu {
-    >.b3-menu__item--custom {
 
-      // margin: 0 0 12px ;
-      // padding: 0;
-      .b3-menu__icon {
-        display: none;
-      }
-
-      &:hover,
-      &.b3-menu__item--current {
-        background-color: $menu-bg;
-      }
-
-      // .fn__hr--small {
-      //   display: none;
-      // }
-      // &:first-child{
-      //   margin-top: 8px;
-      // }
+    .b3-text-field{
+      margin-bottom: 6px;
     }
+
+    // 添加文档标签菜单 输入框
+    >.fn__flex-column>input {
+      margin: 2px 2px 8px !important;
+    }
+
+    // 添加文档标签菜单 列表
+    .b3-list--background {
+      padding: 0px 2px 2px;
+      margin: 0;
+  
+      .b3-list-item {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
   }
 
   //快捷命令菜单
@@ -273,7 +218,6 @@ $sub-menu-vertical: 10px;
     width: auto !important;
     min-width: 200px !important;
     margin: 0;
-    // max-width: 190px * 4 !important;
 
     >.emojis {
       column-span: all;

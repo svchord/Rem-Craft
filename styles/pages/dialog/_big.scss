@@ -46,10 +46,19 @@ $dialog-label-text: $rc-text-secondary;
     }
 
     // 侧边导航栏
-    .b3-tab-bar.b3-list.b3-list--background,
+    .b3-tab-bar,
+    // 设置项界面
     .b3-tab-container {
       height: #{$dialog-tabs-height} !important;
       background-color: $dialog-tabs-bg;
+    }
+
+    // 侧边导航栏
+    .b3-tab-bar {
+      // border-radius: $tab-bar-border-radius;
+      padding-right: 4px;
+      margin-top: 8px;
+      width: 160px !important;
 
       // 导航按钮
       .b3-list-item--big {
@@ -63,7 +72,7 @@ $dialog-label-text: $rc-text-secondary;
         .b3-list-item__graphic {
           width: 16px;
           height: 16px;
-          margin-right: 20px;
+          margin-right: 22px;
         }
       }
     }

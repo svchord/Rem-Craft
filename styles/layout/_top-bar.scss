@@ -61,7 +61,7 @@ $close-window-bg-hover: rgba(232, 17, 35, 0.9);
     ThemeMode,
     History,
     Setting,
-    Feedback {
+    Sync {
       &#bar#{$id} {
         &::before {
           @extend %toolbar_before;
@@ -120,13 +120,9 @@ $close-window-bg-hover: rgba(232, 17, 35, 0.9);
       }
     }
 
-    &#barFeedback {
+    &#barSync {
       &::before {
-        content: "反馈";
-      }
-
-      &::after {
-        display: none;
+        content: "同步";
       }
     }
 

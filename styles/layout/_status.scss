@@ -1,9 +1,10 @@
 #status {
+    color: $rc-text-secondary ;
     background-color: $rc-ui-bg;
 
     // 右下角按钮
     .toolbar__item {
-        color: $rc-text-secondary;
+        color: $rc-text-secondary ;
         padding: 5px 10px;
         margin: 0;
         border-radius: unset;
@@ -41,7 +42,9 @@
     // 状态栏
     .status__msg {
         display: flex;
+        color: $rc-text-secondary ;
         margin-left: 45px - 30px;
+
         &:not(:empty):before {
             content: '';
             display: flex;
@@ -52,12 +55,13 @@
         }
     }
 
-    > .fn__flex-1{
+    >.fn__flex-1 {
         margin-right: 30px + 2px;
     }
 
     // 文档统计
-    .status__counter{
+    .status__counter {
+        color: $rc-text-secondary ;
         transform: translateX(- 30px - 2px);
     }
 }

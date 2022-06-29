@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/svchord/Rem-Craft/compare/v1.0.0...v1.1.0) (2022-06-29)
+
+
+### 👷 Continuous Integration | CI 配置
+
+* **npm:** 更新standard-version命令 ([f8a2cde](https://github.com/svchord/Rem-Craft/commit/f8a2cde5ee29f13b04005cccf9cf7cca0d4a7aee))
+
+
+### ⚡ Performance Improvements | 性能优化
+
+* 重新构建menu样式的依赖关系，减少编译后的代码量，增加代码可读性 ([ae49b70](https://github.com/svchord/Rem-Craft/commit/ae49b70217501ec9adf5e1df8798db04976dab16))
+
+
+### ✏️ Documentation | 文档
+
+* 更新readme ([3abd270](https://github.com/svchord/Rem-Craft/commit/3abd270f8299da58a849d4fc7a729d7a8ad1f2af))
+
+
+### ✨ Features | 新功能
+
+* 更新底栏各项目颜色 ([6c5718c](https://github.com/svchord/Rem-Craft/commit/6c5718c4eab4b1ab0697cd7370863c983d3f4a3b))
+* 更新关系图设置面板样式 ([7d1dda8](https://github.com/svchord/Rem-Craft/commit/7d1dda8a00273243ed80906227e3d73ba6261df0))
+* 更新全屏后的顶栏样式 ([4150ffe](https://github.com/svchord/Rem-Craft/commit/4150ffe6cbe8784a68e410b51f15978c15da2b79))
+* 兼容最新版本底栏 ([3f26e0b](https://github.com/svchord/Rem-Craft/commit/3f26e0bb6f644b9fa1b5623adf675c510e94053c))
+* 兼容最新版本顶栏 ([0f4aadf](https://github.com/svchord/Rem-Craft/commit/0f4aadf661d7adf3806310585394460833e310c2))
+* 优化低层阴影样式 ([83dfbd3](https://github.com/svchord/Rem-Craft/commit/83dfbd3c51205582456e0b20287faba91ebc6f26))
+* 优化滑条样式 ([1fd2c9a](https://github.com/svchord/Rem-Craft/commit/1fd2c9aa085d5ca5b347743fc5e05dcba999e0a9))
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 完善列表块按钮 ([673f7a0](https://github.com/svchord/Rem-Craft/commit/673f7a097d990da97e836dbfd55062ce2b93f626))
+* 修复按钮图标宽高及文字行高问题 ([be1bf69](https://github.com/svchord/Rem-Craft/commit/be1bf694cc06eff6df84d69f3b13d3b2bbd80756))
+* 修复超级块下一级列表的样式问题 ([1a5c54e](https://github.com/svchord/Rem-Craft/commit/1a5c54e15456eb3e67c4651411c52aee01c1c4c9))
+* 修复页签钉住时的样式问题 ([b4d59c9](https://github.com/svchord/Rem-Craft/commit/b4d59c9fb2c00d919a4bc662d892fb94439b2672))
+* 修复wolai链接图标显示问题 ([0e9381a](https://github.com/svchord/Rem-Craft/commit/0e9381a05e63d4d85f9de7fd0f4ec80c7bad2c2a))
+
 ## [1.0.0](https://github.com/svchord/Rem-Craft/compare/v0.5.2...v1.0.0) (2022-06-27)
 
 

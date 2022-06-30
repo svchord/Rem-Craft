@@ -106,21 +106,9 @@ $pre-action-bg-focus: $rc-component-bg-select;
   background-color: $highlight-bg  !important;
 }
 
-//提示语
-// .protyle-title__input--untitled::after {
-//   -webkit-text-fill-color: $rc-text-disabled; //rgba($rc-text-secondary, 0.15);
-// }
-// div[data-tip="键入文字或 '/' 选择"]::after {
-//   -webkit-text-fill-color: $rc-text-disabled; //rgba($rc-text-secondary, 0.4);
-// }
 
 .protyle-scroll {
-  right: -50px;
-  // opacity: 0;
-  // &:hover {
-  //   transition: opacity 0.3s ease-out;
-  //   opacity: 1;
-  // }
+  right: -60px;
 }
 
 //反链计数

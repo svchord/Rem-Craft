@@ -15,9 +15,9 @@
 以下是主要样式设计来源：
 
 - 参考了[TDesign](https://tdesign.tencent.com/)的设计系统，统一了颜色、线条、圆角等变量
-  ![](https://static.tdesign.tencent.com/assets/starter.252d54e0.png)
+  ![starter 252d54e0](https://user-images.githubusercontent.com/61345763/176590115-93fa2d29-a975-4a89-904c-6ba94295d3ee.png)
 - 参考了Windows 11的设计，修改了边栏、滑条、开关、输入框的样式
-  ![](https://docs.microsoft.com/en-us/windows/apps/design/signature-experiences/images/color_light_controls_940.png)
+  ![windows 11](https://docs.microsoft.com/en-us/windows/apps/design/signature-experiences/images/color_light_controls_940.png)
 - Notion 的题头图、编辑器各类块
 - VS Code 的顶栏
 - Craft 的引述块

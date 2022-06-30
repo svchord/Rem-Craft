@@ -1,153 +1,131 @@
-# Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
 ## [1.1.0](https://github.com/svchord/Rem-Craft/compare/v1.0.0...v1.1.0) (2022-06-29)
-
 
 ### 👷 Continuous Integration | CI 配置
 
-* **npm:** 更新standard-version命令 ([f8a2cde](https://github.com/svchord/Rem-Craft/commit/f8a2cde5ee29f13b04005cccf9cf7cca0d4a7aee))
-
+- **npm:** 更新 standard-version 命令 ([f8a2cde](https://github.com/svchord/Rem-Craft/commit/f8a2cde5ee29f13b04005cccf9cf7cca0d4a7aee))
 
 ### ⚡ Performance Improvements | 性能优化
 
-* 重新构建menu样式的依赖关系，减少编译后的代码量，增加代码可读性 ([ae49b70](https://github.com/svchord/Rem-Craft/commit/ae49b70217501ec9adf5e1df8798db04976dab16))
-
+- 重新构建 menu 样式的依赖关系，减少编译后的代码量，增加代码可读性 ([ae49b70](https://github.com/svchord/Rem-Craft/commit/ae49b70217501ec9adf5e1df8798db04976dab16))
 
 ### ✏️ Documentation | 文档
 
-* 更新readme ([3abd270](https://github.com/svchord/Rem-Craft/commit/3abd270f8299da58a849d4fc7a729d7a8ad1f2af))
-
+- 更新 readme ([3abd270](https://github.com/svchord/Rem-Craft/commit/3abd270f8299da58a849d4fc7a729d7a8ad1f2af))
 
 ### ✨ Features | 新功能
 
-* 更新底栏各项目颜色 ([6c5718c](https://github.com/svchord/Rem-Craft/commit/6c5718c4eab4b1ab0697cd7370863c983d3f4a3b))
-* 更新关系图设置面板样式 ([7d1dda8](https://github.com/svchord/Rem-Craft/commit/7d1dda8a00273243ed80906227e3d73ba6261df0))
-* 更新全屏后的顶栏样式 ([4150ffe](https://github.com/svchord/Rem-Craft/commit/4150ffe6cbe8784a68e410b51f15978c15da2b79))
-* 兼容最新版本底栏 ([3f26e0b](https://github.com/svchord/Rem-Craft/commit/3f26e0bb6f644b9fa1b5623adf675c510e94053c))
-* 兼容最新版本顶栏 ([0f4aadf](https://github.com/svchord/Rem-Craft/commit/0f4aadf661d7adf3806310585394460833e310c2))
-* 优化低层阴影样式 ([83dfbd3](https://github.com/svchord/Rem-Craft/commit/83dfbd3c51205582456e0b20287faba91ebc6f26))
-* 优化滑条样式 ([1fd2c9a](https://github.com/svchord/Rem-Craft/commit/1fd2c9aa085d5ca5b347743fc5e05dcba999e0a9))
-
+- 更新底栏各项目颜色 ([6c5718c](https://github.com/svchord/Rem-Craft/commit/6c5718c4eab4b1ab0697cd7370863c983d3f4a3b))
+- 更新关系图设置面板样式 ([7d1dda8](https://github.com/svchord/Rem-Craft/commit/7d1dda8a00273243ed80906227e3d73ba6261df0))
+- 更新全屏后的顶栏样式 ([4150ffe](https://github.com/svchord/Rem-Craft/commit/4150ffe6cbe8784a68e410b51f15978c15da2b79))
+- 兼容最新版本底栏 ([3f26e0b](https://github.com/svchord/Rem-Craft/commit/3f26e0bb6f644b9fa1b5623adf675c510e94053c))
+- 兼容最新版本顶栏 ([0f4aadf](https://github.com/svchord/Rem-Craft/commit/0f4aadf661d7adf3806310585394460833e310c2))
+- 优化低层阴影样式 ([83dfbd3](https://github.com/svchord/Rem-Craft/commit/83dfbd3c51205582456e0b20287faba91ebc6f26))
+- 优化滑条样式 ([1fd2c9a](https://github.com/svchord/Rem-Craft/commit/1fd2c9aa085d5ca5b347743fc5e05dcba999e0a9))
 
 ### 🐛 Bug Fixes | Bug 修复
 
-* 完善列表块按钮 ([673f7a0](https://github.com/svchord/Rem-Craft/commit/673f7a097d990da97e836dbfd55062ce2b93f626))
-* 修复按钮图标宽高及文字行高问题 ([be1bf69](https://github.com/svchord/Rem-Craft/commit/be1bf694cc06eff6df84d69f3b13d3b2bbd80756))
-* 修复超级块下一级列表的样式问题 ([1a5c54e](https://github.com/svchord/Rem-Craft/commit/1a5c54e15456eb3e67c4651411c52aee01c1c4c9))
-* 修复页签钉住时的样式问题 ([b4d59c9](https://github.com/svchord/Rem-Craft/commit/b4d59c9fb2c00d919a4bc662d892fb94439b2672))
-* 修复wolai链接图标显示问题 ([0e9381a](https://github.com/svchord/Rem-Craft/commit/0e9381a05e63d4d85f9de7fd0f4ec80c7bad2c2a))
+- 完善列表块按钮 ([673f7a0](https://github.com/svchord/Rem-Craft/commit/673f7a097d990da97e836dbfd55062ce2b93f626))
+- 修复按钮图标宽高及文字行高问题 ([be1bf69](https://github.com/svchord/Rem-Craft/commit/be1bf694cc06eff6df84d69f3b13d3b2bbd80756))
+- 修复超级块下一级列表的样式问题 ([1a5c54e](https://github.com/svchord/Rem-Craft/commit/1a5c54e15456eb3e67c4651411c52aee01c1c4c9))
+- 修复页签钉住时的样式问题 ([b4d59c9](https://github.com/svchord/Rem-Craft/commit/b4d59c9fb2c00d919a4bc662d892fb94439b2672))
+- 修复 wolai 链接图标显示问题 ([0e9381a](https://github.com/svchord/Rem-Craft/commit/0e9381a05e63d4d85f9de7fd0f4ec80c7bad2c2a))
 
 ## [1.0.0](https://github.com/svchord/Rem-Craft/compare/v0.5.2...v1.0.0) (2022-06-27)
 
-
 ### ⚡ Performance Improvements | 性能优化
 
-* 重新构建文本框样式的依赖关系，减少编译后的代码量，增加代码可读性 ([18fa89e](https://github.com/svchord/Rem-Craft/commit/18fa89e5876c2051883eb7598da3db1acc9bb61e))
-* 重新构建button样式的依赖关系，减少编译后的代码量，增加代码可读性 ([eb8beba](https://github.com/svchord/Rem-Craft/commit/eb8beba1ba68c8567233d00555268ae3ab70990f))
-
+- 重新构建文本框样式的依赖关系，减少编译后的代码量，增加代码可读性 ([18fa89e](https://github.com/svchord/Rem-Craft/commit/18fa89e5876c2051883eb7598da3db1acc9bb61e))
+- 重新构建 button 样式的依赖关系，减少编译后的代码量，增加代码可读性 ([eb8beba](https://github.com/svchord/Rem-Craft/commit/eb8beba1ba68c8567233d00555268ae3ab70990f))
 
 ### ✏️ Documentation | 文档
 
-* 更新预览图 ([a5f45a9](https://github.com/svchord/Rem-Craft/commit/a5f45a9022ff2edf4e574f4673e888330f09e3ce))
-
+- 更新预览图 ([a5f45a9](https://github.com/svchord/Rem-Craft/commit/a5f45a9022ff2edf4e574f4673e888330f09e3ce))
 
 ### 🐛 Bug Fixes | Bug 修复
 
-* 兼容最新版本顶栏 ([2937248](https://github.com/svchord/Rem-Craft/commit/29372486b897db73e45f4633b40fedb55749cff5))
-* 修复列表块线条的位置问题 ([676a159](https://github.com/svchord/Rem-Craft/commit/676a159200f5191c1c7549bd784990024b8c176b))
-* 修复全局提示按钮样式问题 ([3d554a3](https://github.com/svchord/Rem-Craft/commit/3d554a379e876f3e23c774b61b88a1fe223f170d))
-* 修复全局提示高度问题 ([52e34f4](https://github.com/svchord/Rem-Craft/commit/52e34f4394cf6894fdbff06819abf206ec30c607))
-
+- 兼容最新版本顶栏 ([2937248](https://github.com/svchord/Rem-Craft/commit/29372486b897db73e45f4633b40fedb55749cff5))
+- 修复列表块线条的位置问题 ([676a159](https://github.com/svchord/Rem-Craft/commit/676a159200f5191c1c7549bd784990024b8c176b))
+- 修复全局提示按钮样式问题 ([3d554a3](https://github.com/svchord/Rem-Craft/commit/3d554a379e876f3e23c774b61b88a1fe223f170d))
+- 修复全局提示高度问题 ([52e34f4](https://github.com/svchord/Rem-Craft/commit/52e34f4394cf6894fdbff06819abf206ec30c607))
 
 ### ✨ Features | 新功能
 
-* 调整标签搜索界面搜索按钮的样式 ([dc9fd11](https://github.com/svchord/Rem-Craft/commit/dc9fd110923adf2ac54c473b7dec0d878fba76fe))
-* 调整数据历史界面样式 ([9b1f951](https://github.com/svchord/Rem-Craft/commit/9b1f951c4f4311f97041cf2f1ce6b6e4a7fde6ad))
-* 更新计数块样式 ([a8db2cf](https://github.com/svchord/Rem-Craft/commit/a8db2cfaf16e6a7eb85d4ab3a59921145b764600))
-* 更新数据历史界面样式 ([0208658](https://github.com/svchord/Rem-Craft/commit/02086586a6c245ae4ca0b1b2814e7991a01b06c3))
-* 添加最新版本底栏样式 ([16aeffd](https://github.com/svchord/Rem-Craft/commit/16aeffd14b9b5c181d10c271af280e1ca22cb136))
-* 完善小弹窗的内容样式 ([c698ac3](https://github.com/svchord/Rem-Craft/commit/c698ac39b5bdd147301950b7c2e4264e44ddf420))
+- 调整标签搜索界面搜索按钮的样式 ([dc9fd11](https://github.com/svchord/Rem-Craft/commit/dc9fd110923adf2ac54c473b7dec0d878fba76fe))
+- 调整数据历史界面样式 ([9b1f951](https://github.com/svchord/Rem-Craft/commit/9b1f951c4f4311f97041cf2f1ce6b6e4a7fde6ad))
+- 更新计数块样式 ([a8db2cf](https://github.com/svchord/Rem-Craft/commit/a8db2cfaf16e6a7eb85d4ab3a59921145b764600))
+- 更新数据历史界面样式 ([0208658](https://github.com/svchord/Rem-Craft/commit/02086586a6c245ae4ca0b1b2814e7991a01b06c3))
+- 添加最新版本底栏样式 ([16aeffd](https://github.com/svchord/Rem-Craft/commit/16aeffd14b9b5c181d10c271af280e1ca22cb136))
+- 完善小弹窗的内容样式 ([c698ac3](https://github.com/svchord/Rem-Craft/commit/c698ac39b5bdd147301950b7c2e4264e44ddf420))
 
 ### [0.5.2](https://github.com/svchord/Rem-Craft/compare/v0.5.1...v0.5.2) (2022-06-26)
 
-
 ### ✏️ Documentation | 文档
 
-* 修改style目录下的文件说明 ([031b5da](https://github.com/svchord/Rem-Craft/commit/031b5dabb231e7a1e9ae59234866becc23cf3fdb))
-
+- 修改 style 目录下的文件说明 ([031b5da](https://github.com/svchord/Rem-Craft/commit/031b5dabb231e7a1e9ae59234866becc23cf3fdb))
 
 ### 🐛 Bug Fixes | Bug 修复
 
-* 解决列表块标使用的问题 ([948d035](https://github.com/svchord/Rem-Craft/commit/948d035cf7788139d65214f437eeac2a6349c88e))
-* 修复待办列表完成后各子元素的样式问题 ([71b9334](https://github.com/svchord/Rem-Craft/commit/71b9334c91caf9ba31b8e8d5297b39de22f27175))
-* 修复待办列表完成时的超链接子块样式 ([d4260f1](https://github.com/svchord/Rem-Craft/commit/d4260f178b9a944f6b5e1dd836703956eb2ffa9f))
-* 修复导出预览页的列表线条位置问题 ([458a21a](https://github.com/svchord/Rem-Craft/commit/458a21adc2b5be38ea8cb2f79a5ae1d520e8c5d4))
-* 修复全局提示上按钮样式问题 ([112b5b8](https://github.com/svchord/Rem-Craft/commit/112b5b8687d47d4194be88526e9c5ad1419ee213))
-* 修复移动弹窗搜索结果列表样式问题 ([32385c8](https://github.com/svchord/Rem-Craft/commit/32385c8fe71b6ec9d2a9192d7c3a1d172c634f65))
-
+- 解决列表块标使用的问题 ([948d035](https://github.com/svchord/Rem-Craft/commit/948d035cf7788139d65214f437eeac2a6349c88e))
+- 修复待办列表完成后各子元素的样式问题 ([71b9334](https://github.com/svchord/Rem-Craft/commit/71b9334c91caf9ba31b8e8d5297b39de22f27175))
+- 修复待办列表完成时的超链接子块样式 ([d4260f1](https://github.com/svchord/Rem-Craft/commit/d4260f178b9a944f6b5e1dd836703956eb2ffa9f))
+- 修复导出预览页的列表线条位置问题 ([458a21a](https://github.com/svchord/Rem-Craft/commit/458a21adc2b5be38ea8cb2f79a5ae1d520e8c5d4))
+- 修复全局提示上按钮样式问题 ([112b5b8](https://github.com/svchord/Rem-Craft/commit/112b5b8687d47d4194be88526e9c5ad1419ee213))
+- 修复移动弹窗搜索结果列表样式问题 ([32385c8](https://github.com/svchord/Rem-Craft/commit/32385c8fe71b6ec9d2a9192d7c3a1d172c634f65))
 
 ### ✨ Features | 新功能
 
-* 修改数据历史界面样式 ([505d94d](https://github.com/svchord/Rem-Craft/commit/505d94d67de249418c53c797e98c9dbc482b0b7e))
-* pDF导出弹窗样式更新 ([a7d0a6e](https://github.com/svchord/Rem-Craft/commit/a7d0a6e4ea30d57d5da8b07f070fc41d1e3f1f49))
+- 修改数据历史界面样式 ([505d94d](https://github.com/svchord/Rem-Craft/commit/505d94d67de249418c53c797e98c9dbc482b0b7e))
+- pDF 导出弹窗样式更新 ([a7d0a6e](https://github.com/svchord/Rem-Craft/commit/a7d0a6e4ea30d57d5da8b07f070fc41d1e3f1f49))
 
 ### [0.5.1](https://github.com/svchord/Rem-Craft/compare/v0.5.0...v0.5.1) (2022-06-24)
 
-
 ### 🐛 Bug Fixes | Bug 修复
 
-* 修复标题为空时的样式 ([b5e88fb](https://github.com/svchord/Rem-Craft/commit/b5e88fbadb2fa815524904cd661bc0af1be5b064))
-* 修复代码块行号和代码不对齐的问题 ([cdfcafe](https://github.com/svchord/Rem-Craft/commit/cdfcafea566b248360af50e2d88e8c4d8fb0f552))
-* 修复Readme预览图不全屏时的圆角 ([2a70a86](https://github.com/svchord/Rem-Craft/commit/2a70a86be95cddb7fc4bfc21dc8e1e827971fd59))
-* 修复Readme预览图展示界面圆角 ([5663fa2](https://github.com/svchord/Rem-Craft/commit/5663fa2e403884fd26a20eac79c64c8574de7fb1))
-* 修改代码块字号问题 ([1c546b4](https://github.com/svchord/Rem-Craft/commit/1c546b4db3cf2b62fc98c8b4e8862482a01e0c72))
-* 修改代码行号颜色 ([5839b45](https://github.com/svchord/Rem-Craft/commit/5839b453e1f4d07564d14db7ad7fe0b23646a8bf))
-* 修改段落块的段间距和行高 ([8155d0b](https://github.com/svchord/Rem-Craft/commit/8155d0beb7ee07b545c873ffbeb46769132fae18))
-* 修改段落块的上下内边距 ([c1c6205](https://github.com/svchord/Rem-Craft/commit/c1c6205c0c97b5a6c1cced788f35ba14c9988a74))
-* 修改滚动条颜色，增加可见性 ([c814617](https://github.com/svchord/Rem-Craft/commit/c814617fa6345227b9779eacb4244fa25afe64cb))
-
+- 修复标题为空时的样式 ([b5e88fb](https://github.com/svchord/Rem-Craft/commit/b5e88fbadb2fa815524904cd661bc0af1be5b064))
+- 修复代码块行号和代码不对齐的问题 ([cdfcafe](https://github.com/svchord/Rem-Craft/commit/cdfcafea566b248360af50e2d88e8c4d8fb0f552))
+- 修复 Readme 预览图不全屏时的圆角 ([2a70a86](https://github.com/svchord/Rem-Craft/commit/2a70a86be95cddb7fc4bfc21dc8e1e827971fd59))
+- 修复 Readme 预览图展示界面圆角 ([5663fa2](https://github.com/svchord/Rem-Craft/commit/5663fa2e403884fd26a20eac79c64c8574de7fb1))
+- 修改代码块字号问题 ([1c546b4](https://github.com/svchord/Rem-Craft/commit/1c546b4db3cf2b62fc98c8b4e8862482a01e0c72))
+- 修改代码行号颜色 ([5839b45](https://github.com/svchord/Rem-Craft/commit/5839b453e1f4d07564d14db7ad7fe0b23646a8bf))
+- 修改段落块的段间距和行高 ([8155d0b](https://github.com/svchord/Rem-Craft/commit/8155d0beb7ee07b545c873ffbeb46769132fae18))
+- 修改段落块的上下内边距 ([c1c6205](https://github.com/svchord/Rem-Craft/commit/c1c6205c0c97b5a6c1cced788f35ba14c9988a74))
+- 修改滚动条颜色，增加可见性 ([c814617](https://github.com/svchord/Rem-Craft/commit/c814617fa6345227b9779eacb4244fa25afe64cb))
 
 ### ✏️ Documentation | 文档
 
-* 更新Readme ([9fda5b9](https://github.com/svchord/Rem-Craft/commit/9fda5b939d90d9d996c01cfdc4300abb21957597))
+- 更新 Readme ([9fda5b9](https://github.com/svchord/Rem-Craft/commit/9fda5b939d90d9d996c01cfdc4300abb21957597))
 
 ## 0.5.0 (2022-06-23)
 
-
 ### ⚠ BREAKING CHANGES
 
-* 参考TDesign的文件目录组织结构，添加色板和全局Token，提高代码的延展性
+- 参考 TDesign 的文件目录组织结构，添加色板和全局 Token，提高代码的延展性
 
 ### ♻️ Code Refactoring | 代码重构
 
-* 代码重构 ([83c0e43](https://github.com/svchord/Rem-Craft/commit/83c0e437cf0330f824ad126c73834cbd7690dd22)), closes [#15](https://github.com/svchord/Rem-Craft/issues/15) [#18](https://github.com/svchord/Rem-Craft/issues/18) [#21](https://github.com/svchord/Rem-Craft/issues/21)
-
+- 代码重构 ([83c0e43](https://github.com/svchord/Rem-Craft/commit/83c0e437cf0330f824ad126c73834cbd7690dd22)), closes [#15](https://github.com/svchord/Rem-Craft/issues/15) [#18](https://github.com/svchord/Rem-Craft/issues/18) [#21](https://github.com/svchord/Rem-Craft/issues/21)
 
 ### 📦‍ Build System | 构建/工程依赖/工具
 
-* **npm:** 更新 standard-version 和 sass 的依赖版本 ([be57e10](https://github.com/svchord/Rem-Craft/commit/be57e1074c679dfdf441d92692ae5aef97430f78))
-
+- **npm:** 更新 standard-version 和 sass 的依赖版本 ([be57e10](https://github.com/svchord/Rem-Craft/commit/be57e1074c679dfdf441d92692ae5aef97430f78))
 
 ### 🐛 Bug Fixes | Bug 修复
 
-* 调整超级块横排间距 ([505018a](https://github.com/svchord/Rem-Craft/commit/505018aed68282cca9a922dfae8d9945e6bb6cd4))
-* 修复顶栏最大化按钮样式问题 ([49982f4](https://github.com/svchord/Rem-Craft/commit/49982f4b2ef78a1d4b1397a6e944cc7e9145094d))
-* 修复github链接图标显示问题 ([ae285b5](https://github.com/svchord/Rem-Craft/commit/ae285b5c4d84e0a5d4b3ed976319648a9b5e46c4))
-* 修改块标按钮样式 ([2582286](https://github.com/svchord/Rem-Craft/commit/2582286274eb4a2709899a1eda42f6116d622266))
-
+- 调整超级块横排间距 ([505018a](https://github.com/svchord/Rem-Craft/commit/505018aed68282cca9a922dfae8d9945e6bb6cd4))
+- 修复顶栏最大化按钮样式问题 ([49982f4](https://github.com/svchord/Rem-Craft/commit/49982f4b2ef78a1d4b1397a6e944cc7e9145094d))
+- 修复 github 链接图标显示问题 ([ae285b5](https://github.com/svchord/Rem-Craft/commit/ae285b5c4d84e0a5d4b3ed976319648a9b5e46c4))
+- 修改块标按钮样式 ([2582286](https://github.com/svchord/Rem-Craft/commit/2582286274eb4a2709899a1eda42f6116d622266))
 
 ### ✏️ Documentation | 文档
 
-* 更新Readme、preview.png、theme.json、package.json、样式文件目录说明 ([056e9b3](https://github.com/svchord/Rem-Craft/commit/056e9b34a4fd9861fb15be1c5346e2b3540df35c))
+- 更新 Readme、preview.png、theme.json、package.json、样式文件目录说明 ([056e9b3](https://github.com/svchord/Rem-Craft/commit/056e9b34a4fd9861fb15be1c5346e2b3540df35c))
 
 ## 0.3.3(2022/4/16)
 
-- 修复新UI的不兼容问题
-- 修复顶栏VIP显示
-- 修复右侧dock样式
-- 修改mark样式
+- 修复新 UI 的不兼容问题
+- 修复顶栏 VIP 显示
+- 修复右侧 dock 样式
+- 修改 mark 样式
 - 修改编辑器最小边距
 
 ## 0.3.2(2022/3/28)
@@ -168,7 +146,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## 0.3.0(2022/3/23)
 
-- 参考了Windows 11的设计，修改了主色、边栏、滑条、开关、输入框
+- 参考了 Windows 11 的设计，修改了主色、边栏、滑条、开关、输入框
 
 ## 0.2.2(2022/1/17)
 
@@ -185,8 +163,8 @@ All notable changes to this project will be documented in this file. See [standa
 - 标签页栏样式调整
 - 修复列表块问题
 - 面包屑右侧按钮位置调整
-- 集市Tab调整
-- 设置菜单左侧Tab搜索后的样式调整
+- 集市 Tab 调整
+- 设置菜单左侧 Tab 搜索后的样式调整
 - 调整新版本的页签样式
 - 修改加载页面的底色
 
@@ -201,9 +179,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## 0.1.2-hotfix
 
- - 修复列表左侧竖线显示问题
- - 调整全屏状态下的<kbd>···</kbd>按钮位置
- - 去除`quote`字体
+- 修复列表左侧竖线显示问题
+- 调整全屏状态下的<kbd>···</kbd>按钮位置
+- 去除`quote`字体
 
 ## 0.1.2
 
@@ -211,8 +189,8 @@ All notable changes to this project will be documented in this file. See [standa
   - 强调块、标签块、块引用、超链接及悬浮提示条的样式修改
   - 块标识按钮透明度降低
   - 行内公式块、行内代码块增量两侧边距
-  - 集市tab、卡片、查看图片界面的样式修改
-  - 将新增icon的代码提取出来
+  - 集市 tab、卡片、查看图片界面的样式修改
+  - 将新增 icon 的代码提取出来
   - 待办列表完成后的样式
   - 增加块引用浮窗的显示动画
   - 调整菜单的高度
@@ -231,6 +209,6 @@ All notable changes to this project will be documented in this file. See [standa
 - 标题块样式修改
 - 设置菜单中，快捷键设置输入框的底色修改
 - 代码块上的按钮增加悬浮动画
-- 编辑器宽度自适应屏幕，目前为46.9vw
+- 编辑器宽度自适应屏幕，目前为 46.9vw
 - 代码块字号自适应和行距调整
 - 工具条上提示条的位置调整

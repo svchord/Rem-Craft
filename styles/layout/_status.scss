@@ -25,12 +25,12 @@
         transform: translateX(calc(100vw - 30px * 5 - 2px));
 
         .b3-menu {
-            bottom: 30px !important;
+            bottom: 20px !important;
             left: unset !important;
-            right: 0;
+            right: 0px;
 
             &.fn__none {
-                display: none !important;
+                display: block !important;
             }
         }
 

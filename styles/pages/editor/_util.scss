@@ -10,29 +10,49 @@ $util-textarea-bg: $rc-container-bg;
     .protyle-font {
         padding: 0px 16px 16px;
 
-        *[style*="margin"] {
+        // 小标题
+        >[style*="margin"] {
             color: $rc-text-secondary;
             margin: 16px 0 10px !important;
         }
-        .fn__flex{
-            .b3-color__square{
+
+        // 样式组
+        .fn__flex {
+
+            // 样式按钮
+            .b3-color__square {
                 width: 18px;
                 height: 18px;
                 box-shadow: unset;
                 padding: 0;
                 border: 1px solid $rc-border-3;
-                &:not(:last-child){
+
+                &:not(:last-child) {
                     margin-right: 8px;
                 }
-                &:hover{
+
+                &:hover {
                     border-color: $rc-border-1;
                 }
             }
-            .protyle-font__style{
+
+            // 字体效果按钮
+            .protyle-font__style {
                 padding: 0 12px;
-                &:hover{
+
+                &:hover {
                     border-color: $rc-border-3;
                 }
+            }
+
+        }
+
+        // 最近使用过的样式
+        >.fn__flex:nth-child(2) {
+
+            // 清除样式
+            button[style*="margin-right"] {
+                margin-right: 8px !important;
             }
         }
     }

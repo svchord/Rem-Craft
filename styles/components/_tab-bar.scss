@@ -92,17 +92,17 @@ $tab-pin-bg: $rc-component-bg;
         background-color: $tab-close-bg-hover;
       }
     }
-    
+
     &--pin {
       background-color: $tab-pin-bg;
-      .item__text{
+
+      .item__text {
         padding-right: 6px;
       }
     }
 
     &--focus {
       background-color: $tab-bg-focus;
-      box-shadow: unset !important;
 
       * {
         color: $tab-color-focus  !important;
@@ -121,7 +121,10 @@ $tab-pin-bg: $rc-component-bg;
         }
       }
 
+      .layout__wnd--active & {
+        box-shadow: unset !important;
+      }
     }
-    
+
   }
 }

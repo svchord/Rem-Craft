@@ -1,11 +1,12 @@
-$slider-thumb-border: 5px solid #fff;
+$slider-thumb-border: 4px solid #fff;
 $slider-thumb-border-radius: $rc-bradius-circle;
-$slider-thumb-border-width-hover: 3px;
-$slider-thumb-border-width-active: 5.5px;
+$slider-thumb-border-width-hover: 2px;
+$slider-thumb-border-width-active: 4.5px;
 
 $slider-thumb-bg: $rc-brand;
 $slider-thumb-bg-hover: $rc-brand-hover;
 $slider-thumb-bg-active: $rc-brand-active;
+$slider-thumb-transition: border 0.15s ease-in-out;
 
 $slider-track-height: 4px;
 $slider-track-bg: $rc-brand;
@@ -16,25 +17,27 @@ $slider-track-border-radius: $rc-bradius-max;
   height: 44px;
 
   &::-webkit-slider-thumb {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     box-shadow: 0 0 0 1px rgb(0 0 0 / 12%), fluent-shadow(2);
     border: $slider-thumb-border;
     border-radius: $slider-thumb-border-radius;
     background-color: $slider-thumb-bg;
-    margin-top: -8px;
+    margin-top: -7px;
     transform: unset !important;
-    transition: border 0.1s ease-out;
+    transition: $slider-thumb-transition;
 
     &:hover {
       transform: unset;
       border-width: $slider-thumb-border-width-hover;
+      transition: $slider-thumb-transition;
       background-color: $slider-thumb-bg-hover;
     }
 
     &:active {
       transform: unset;
       border-width: $slider-thumb-border-width-active;
+      transition: $slider-thumb-transition;
       background-color: $slider-thumb-bg-active;
     }
   }

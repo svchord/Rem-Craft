@@ -117,5 +117,4 @@ $rc-duration-slow: $anim-duration-slow; //0.28s
 
   /* 动画效果 */
   --b3-transition:all #{$rc-duration-base} #{$rc-easing};
-  --b3-width-transition: width #{$rc-duration-base} #{$rc-easing};
 }

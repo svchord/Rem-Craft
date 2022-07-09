@@ -46,21 +46,8 @@ $tab-pin-bg: $rc-component-bg;
     }
 
     &__icon {
-      width: 16px;
-      height: 16px;
-      padding: 0;
-      font-size: 12px;
-      line-height: 16px;
+      @include emoji_icon(16px, 12px ,12px);
       margin-right: 6px;
-
-      img {
-        @include graphic(16px, 12px);
-      }
-
-      .custom-icon {
-        @include graphic(16px, 12px);
-        margin: 0;
-      }
     }
 
     &__graphic {

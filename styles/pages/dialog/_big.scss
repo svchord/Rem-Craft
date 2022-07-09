@@ -62,7 +62,8 @@ $dialog-label-text: $rc-text-secondary;
 
       // 导航按钮
       .b3-list-item--big {
-        margin-top: 8px !important;
+        padding: 16px 24px;
+        margin: 8px 0 0 !important;
 
         &:first-child {
           margin-top: 0px !important;
@@ -70,8 +71,7 @@ $dialog-label-text: $rc-text-secondary;
 
         // 导航图标
         .b3-list-item__graphic {
-          width: 16px;
-          height: 16px;
+          @include graphic(20px, 12px);
           margin-right: 22px;
         }
       }

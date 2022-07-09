@@ -89,3 +89,20 @@
   margin: 0;
   border-radius: $rc-bradius-max;
 }
+
+@mixin emoji_icon($width, $fz, $icon-width) {
+  padding: 0 !important;
+  width: $width;
+  height: $width;
+  // 原生emoji
+  font-size: $fz;
+  line-height: $width;
+
+  // 自定义emoji
+  img,
+  // twitter-emoji
+  svg.custom-icon {
+    @include graphic($width, $icon-width);
+  }
+
+}

@@ -88,7 +88,7 @@ $rc-bradius-circle: 50%;
 $rc-easing: $anim-time-fn-easing;
 $rc-ease-out: $anim-time-fn-ease-out;
 $rc-ease-in: $anim-time-fn-ease-in;
-$rc-duration-base: $anim-duration-base; //0.2s
+$rc-duration-base: 0.15s;//$anim-duration-base; //0.2s
 $rc-duration-moderate: $anim-duration-moderate; //0.24s
 $rc-duration-slow: $anim-duration-slow; //0.28s
 

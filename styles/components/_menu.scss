@@ -149,9 +149,9 @@ $sub-menu-vertical: 10px;
 
   // 分割线
   &__separator {
-    margin-left: -2px;
-    margin-right: -2px;
-    width: calc(100% + 4px);
+    // margin-left: 0px;
+    // margin-right: 0px;
+    // width: calc(100%);
     border-bottom: $menu-separator;
     height: 0;
     background-color: transparent;

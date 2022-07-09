@@ -81,7 +81,6 @@ $sub-menu-vertical: 10px;
 .b3-menu {
   @extend %menu__model;
 
-  .b3-list-item,
   &__item {
     color: $menu-item-color;
     min-width: 0px;
@@ -171,7 +170,7 @@ $sub-menu-vertical: 10px;
     color: $menu-accelerator-color;
   }
 
-  // 块引用菜单
+  // 块引用菜单 && 搜索历史菜单
   &.b3-list ,
   &.b3-list--background {
     padding: 8px;

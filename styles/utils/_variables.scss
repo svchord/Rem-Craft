@@ -88,7 +88,7 @@ $rc-bradius-circle: 50%;
 $rc-easing: $anim-time-fn-easing;
 $rc-ease-out: $anim-time-fn-ease-out;
 $rc-ease-in: $anim-time-fn-ease-in;
-$rc-duration-base: 0.15s;//$anim-duration-base; //0.2s
+$rc-duration-base: 0.15s; //$anim-duration-base; //0.2s
 $rc-duration-moderate: $anim-duration-moderate; //0.24s
 $rc-duration-slow: $anim-duration-slow; //0.28s
 
@@ -98,23 +98,37 @@ $rc-duration-slow: $anim-duration-slow; //0.28s
   --b3-theme-primary-light: var(--rc-brand-light);
   --b3-theme-primary-lighter: var(--rc-brand-light);
   --b3-theme-primary-lightest: var(--rc-brand-light);
-  --b3-theme-secondary: #f3a92f;
+  --b3-theme-secondary: #{$rc-warning};
   --b3-theme-background: #{$rc-ui-bg};
   --b3-theme-background-light: #{$rc-ui-bg};
   --b3-theme-surface: #{$rc-container-bg};
   --b3-theme-surface-light: #{$rc-container-bg}; //rgba(243, 243, 243, 0.86);
-  --b3-theme-error: #d23f31;
+  --b3-theme-error: #{$rc-error};
 
   // 文字颜色
-  --b3-theme-on-primary: #fff;
-  --b3-theme-on-secondary: #fff;
+  --b3-theme-on-primary: #{$rc-text-anti};
+  --b3-theme-on-secondary: #{$rc-text-anti};
   --b3-theme-on-background: #{$rc-text-primary};
   --b3-theme-on-surface: #{$rc-text-primary};
-  --b3-theme-on-error: #fff;
+  --b3-theme-on-surface-light:#{$rc-text-secondary};
+  --b3-theme-on-error: #{$rc-text-anti};
 
   // 线条
   --b3-border-color: #{$rc-border-3};
 
   /* 动画效果 */
   --b3-transition:all #{$rc-duration-base} #{$rc-easing};
+
+  // 阴影
+  --b3-point-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  --b3-dialog-shadow: #{fluent-shadow(64)};
+
+  /* 编辑器搜索颜色 */
+  --b3-protyle-search-border-color: #f2e680;
+  --b3-protyle-search-current-background: #a5d3fe;
+
+  /* 所见即所得行内元素颜色 */
+  --b3-protyle-inline-strong-color: #{$rc-text-primary};
+  --b3-protyle-inline-em-color: #{$rc-text-primary};
+  --b3-protyle-inline-s-color: #{$rc-text-primary};
 }

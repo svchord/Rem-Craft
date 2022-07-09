@@ -8,6 +8,7 @@ $code-action-bg-active: $gray-4;
 :root {
   // 代码片段背景
   --b3-protyle-code-background: #{$code-bg}; //rgba(27, 31, 35, 0.05);
+  --b3-protyle-code-linenumber-hl: #{$highlight-bg};
 }
 
 //多行代码块

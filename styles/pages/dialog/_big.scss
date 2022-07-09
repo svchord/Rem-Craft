@@ -17,6 +17,12 @@ $dialog-label-bg: $rc-container-bg;
 $dialog-label-border: $rc-border-3;
 $dialog-label-text: $rc-text-secondary;
 
+:root{
+  /* 遮罩 */
+  --b3-mask-background: $dialog-scrim;
+}
+
+
 //弹窗
 //蒙版
 .b3-dialog__scrim {

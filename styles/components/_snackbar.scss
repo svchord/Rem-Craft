@@ -4,7 +4,7 @@ $snackbar-color: $rc-text-primary;
 $snackbar-bg: $rc-container-bg;
 $snackbar-info-color: $rc-brand;
 $snackbar-link-color: $rc-brand;
-$snackbar-danger-color: $rc-error;
+$snackbar-error-color: $rc-error;
 $snackbar-warning-color: $rc-warning;
 $snackbar-success-color: $rc-success;
 
@@ -60,7 +60,7 @@ $snackbar-success-color: $rc-success;
     &--error {
       .b3-snackbar__content {
         &::before {
-          @include add_icon("error", $snackbar-danger-color, 24, "round");
+          @include add_icon("error", $snackbar-error-color, 24, "round");
         }
       }
     }

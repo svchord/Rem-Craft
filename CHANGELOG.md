@@ -1,6 +1,45 @@
-# Changelog
+# Changelog | 更新历史 
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.2.0](https://github.com/svchord/Rem-Craft/compare/v1.1.0...v1.2.0) (2022-07-10)
+
+
+### ✏️ 文档更新 | Documentation
+
+* 更新readme ([97bdbe3](https://github.com/svchord/Rem-Craft/commit/97bdbe36bc03ed5cacff905b17192d59fb39bf2f))
+
+
+### 🎡 持续集成 | Continuous Integration
+
+* **deps:** :ferris_wheel: 更新commit工作流 ([5852556](https://github.com/svchord/Rem-Craft/commit/5852556cec16a226c08034f4a77bf467cf033bb1))
+
+
+### ⚡ 性能提升 | Performance Improvements
+
+* **components:** :zap: 重新构建list样式的依赖关系，减少编译后的代码量，增加代码可读性 ([908d10d](https://github.com/svchord/Rem-Craft/commit/908d10da64553e5dce1b512c3d7df4676f9bce54))
+* **layout:** :zap: 重新构建wnd样式的依赖关系，减少编译后的代码量，增加代码可读性 ([58fe087](https://github.com/svchord/Rem-Craft/commit/58fe087fcae8e32dcc34f3ae04896da9e042a93a))
+
+
+### ✨ 新增功能 | Features
+
+* **components:** :sparkles: 更新滑条动画，缩小滑块大小 ([8c02a02](https://github.com/svchord/Rem-Craft/commit/8c02a02763183c4fafd37b260af576686f19c202))
+* **components:** :sparkles: 修改文档树、书签的一级列表项和大纲标题的样式 ([5e34ccb](https://github.com/svchord/Rem-Craft/commit/5e34ccb117a43065cad146490aa16a392d2b931c))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容部分官方css变量 ([5388fe8](https://github.com/svchord/Rem-Craft/commit/5388fe8a8cc710e9ba75162dac8ca51ba0d1a814))
+* :bug: 修改边栏按钮聚焦条的圆角 ([3ca4a85](https://github.com/svchord/Rem-Craft/commit/3ca4a8588093f12f4f54d14ce05117f4996743b6))
+* 修复底栏的边栏设置按钮菜单的显示问题 ([a9342b7](https://github.com/svchord/Rem-Craft/commit/a9342b79eb9876bce901a91fdbde7ef1b4dea63f))
+* 修复文档右侧滑条位置偏移的问题 ([285252f](https://github.com/svchord/Rem-Craft/commit/285252f911ab7286f1b8aa0153aa9a6a045f4c13))
+* **components:** :bug: 修复通知栏警告、危险和成功样式 ([5f18afc](https://github.com/svchord/Rem-Craft/commit/5f18afcef081caae1a428ea04fc8425a00240de1))
+* **components:** :bug: 修复文档树定位问题 ([aa3dce5](https://github.com/svchord/Rem-Craft/commit/aa3dce57c60225be4f077c80c522914147ef6aec))
+* **components:** :bug: 修复menu的.b3-list-item样式 ([b3b24ab](https://github.com/svchord/Rem-Craft/commit/b3b24ab30241fa7b727831ae673f2c848ef84373))
+* **components:** :bug: 修改菜单分割线样式 ([33dc207](https://github.com/svchord/Rem-Craft/commit/33dc20712023a75fdbabec58daa028dc2100b0aa))
+* **components:** :bug: 页签阴影重置 ([3b3d38b](https://github.com/svchord/Rem-Craft/commit/3b3d38b3276e81922653da18c225c08db8b0201c))
+* **pages:** :bug: 修复历史界面的列表样式 ([634f704](https://github.com/svchord/Rem-Craft/commit/634f7048fe6601a8dd05346bdbeffd2c8af46073))
+* **pages:** :bug: 修复小弹窗按钮文本颜色样式 ([ace1d80](https://github.com/svchord/Rem-Craft/commit/ace1d80ff2ea86a61dd879940cd172e54db69b95))
+* **pages:** :bug: 修复样式工具窗按钮的样式 ([18c967e](https://github.com/svchord/Rem-Craft/commit/18c967e496c8d9c1b9e08fd338db22cb8693fe2d))
 
 ## [1.1.0](https://github.com/svchord/Rem-Craft/compare/v1.0.0...v1.1.0) (2022-06-29)
 

@@ -35,7 +35,7 @@ $list-item-meta-color-focus: $brand-4;
   border-radius: $list-item-border-radius;
   line-height: $list-text-height;
   font-size: $list-font-size;
-  padding: calc(($list-wnd-height - $list-text-height) / 2);
+  padding: calc(($list-wnd-height - $list-text-height) / 2) !important;
   margin: 4px 0;
 
   * {
@@ -264,7 +264,7 @@ $list-item-meta-color-focus: $brand-4;
   // 标题
   >.b3-list-item {
     margin: 0 8px 8px;
-    padding-left: 8px;
+    padding-left: 8px !important;
     @extend %first_list_item;
 
     &:hover {

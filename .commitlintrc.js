@@ -109,7 +109,7 @@ module.exports = {
     themeColorCode: "",
     scopes: [
       { value: "components", name: "components:    组件相关" },
-      { value: "layout", name: "layout:         layout 相关" },
+      { value: "layout", name: "layout:        layout 相关" },
       { value: "pages", name: "pages:         pages 相关" },
       { value: "utils", name: "utils:         utils 相关" },
       { value: "deps", name: "deps:          项目依赖" },

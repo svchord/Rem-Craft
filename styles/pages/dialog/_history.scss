@@ -1,4 +1,3 @@
-
 .b3-dialog__container {
 
     // 底层元素
@@ -32,7 +31,7 @@
 
             // 一级列表
             >.b3-list {
-                padding: 8px 16px ;
+                padding: 8px 16px;
                 margin: 8px 0;
                 width: 300px !important;
                 border-right: 1px solid $rc-border-3;
@@ -40,7 +39,7 @@
         }
 
         // 文档历史界面
-        [data-type="doc"] {
+        >[data-type="doc"] {
             @extend %list;
 
             // 文档展示
@@ -50,7 +49,7 @@
         }
 
         // 资源历史界面
-        [data-type="assets"] {
+        >[data-type="assets"] {
             @extend %list;
 
             .history__asset {
@@ -59,7 +58,7 @@
         }
 
         // 笔记本历史界面
-        [data-type="notebook"] {
+        >[data-type="notebook"] {
             margin: 0;
             background-color: $rc-container-bg  !important;
             padding: 16px;
@@ -104,7 +103,7 @@
             >.history__repoheader {
                 border-bottom: 1px solid $rc-border-3;
                 padding: 16px 8px;
-                margin: 0  8px;
+                margin: 0 8px;
 
                 // 前进后退按钮
                 .block__icon {

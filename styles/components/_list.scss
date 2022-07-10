@@ -10,7 +10,7 @@ $list-button-border-radius: $rc-bradius-extra-small;
 $list-button-bg-hover: $rc-component-button;
 
 //子列表缩进左边距
-$list-left: 22px;
+$list-left: 20px;
 //子列表缩进最大深度
 $list-depth: 7;
 
@@ -28,6 +28,16 @@ $list-item-meta-color-focus: $brand-4;
 :root {
   // 列表
   --b3-list-hover: #{$list-item-bg-hover};
+}
+
+%first_list_item {
+  position: relative;
+  background-color: $rc-component-bg;
+  padding-left: 8px;
+
+  &::before {
+    @include focus_before(8px, 0px);
+  }
 }
 
 .b3-list-item {
@@ -210,7 +220,7 @@ $list-item-meta-color-focus: $brand-4;
     }
   }
 
-  // 递进函数
+  // 递归函数
   @mixin recursive-item-margin($cur, $end) {
     +ul {
 
@@ -232,8 +242,8 @@ $list-item-meta-color-focus: $brand-4;
 
   // 文档树笔记本加粗
   &[data-type="navigation-root"] {
-    background-color: $rc-component-bg;
     margin-bottom: 8px;
+    @extend %first_list_item;
   }
 }
 
@@ -248,19 +258,32 @@ $list-item-meta-color-focus: $brand-4;
   }
 }
 
-// 大纲 - 标题
-.sy__outline>.b3-list-item {
-  margin: 0 8px 8px;
-  background-color: $rc-component-bg;
+// 大纲
+.sy__outline {
 
-  &:hover {
-    background-color: $rc-component-button;
+  // 标题
+  >.b3-list-item {
+    margin: 0 8px 8px;
+    @extend %first_list_item;
+
+    &:hover {
+      background-color: $rc-component-button;
+    }
+
+    .b3-list-item__graphic {
+      @include emoji_icon($list-text-height, 12px, 12px);
+    }
+
+    &:empty{
+      margin: 0;
+      padding: 0;
+    }
   }
 
-  .b3-list-item__graphic {
-    @include emoji_icon($list-text-height, 12px, 12px);
+  // 大纲列表
+  >.fn__flex-1>.b3-list {
+    margin: 0 11px 8px;
   }
-
 }
 
 // 文档树拖拽样式
@@ -268,14 +291,30 @@ $list-item-meta-color-focus: $brand-4;
   .dragover {
     background-color: $rc-component-bg-select;
 
+    // 当前文档的上方
     &__top {
       background-color: $rc-component-bg-select;
       box-shadow: 0 -2px $rc-brand;
     }
 
+    // 当前文档的下方
     &__bottom {
       background-color: $rc-component-bg-select;
       box-shadow: 0 2px $rc-brand;
+    }
+  }
+}
+
+// 书签界面
+.sy__bookmark {
+
+  // 书签项
+  >.fn__flex-1>.b3-list>.b3-list-item {
+    @extend %first_list_item;
+
+    // 书签图标
+    .b3-list-item__graphic{
+      display: none;
     }
   }
 }

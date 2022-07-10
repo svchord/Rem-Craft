@@ -68,7 +68,7 @@ $dialog-label-text: $rc-text-secondary;
 
       // 导航按钮
       .b3-list-item--big {
-        padding: 16px 24px;
+        padding: 16px 24px !important;
         margin: 8px 0 0 !important;
 
         &:first-child {

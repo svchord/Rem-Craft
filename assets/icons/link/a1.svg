@@ -14,7 +14,7 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28 28"
 	 style="enable-background:new 0 0 28 28;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#1d2833;}
+	.st0{fill:#f8f9fa;}
 </style>
 <metadata>
 	<sfw  xmlns="&ns_sfw;">
@@ -24,6 +24,6 @@
 </metadata>
 <desc>Created with Sketch.</desc>
 <desc>Created with Sketch.</desc>
-<path class="st0" d="M13.9,9.5l-2.3,5.9h4.7L13.9,9.5L13.9,9.5z M0,0v28h28V0H0z M18.4,21L17,17.3h-6L9.5,21H7l5.7-14h2.6L21,21
-	H18.4z"/>
+<path class="st0" d="M13.9,9.5l-2.3,5.9h4.7l-2.3-5.9H13.9z M0,0v28h28V0H0z M18.4,21L17,17.3h-6L9.5,21H7l5.7-14h2.6L21,21H18.4z"
+	/>
 </svg>

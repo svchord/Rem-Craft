@@ -1,6 +1,23 @@
 # Changelog | 更新历史 
 
 
+## [1.3.0](https://github.com/svchord/Rem-Craft/compare/v1.2.0...v1.3.0) (2022-07-10)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复设置界面边栏列表的样式 ([680fc29](https://github.com/svchord/Rem-Craft/commit/680fc29285502701ecf0a30be3852bbdb2949bd9))
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新readme和preview.png ([5612bab](https://github.com/svchord/Rem-Craft/commit/5612babd562207ff548f15bbc43a3f7d99d22054))
+
+
+### ✨ 新增功能 | Features
+
+* :sparkles: 增加新的超链接块图标 ([d5d6f1a](https://github.com/svchord/Rem-Craft/commit/d5d6f1a5c723b06061b427863f1f2f4cc6acb03a))
+
 ## [1.2.0](https://github.com/svchord/Rem-Craft/compare/v1.1.0...v1.2.0) (2022-07-10)
 
 

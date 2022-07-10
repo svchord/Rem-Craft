@@ -47,7 +47,7 @@ $list-item-meta-color-focus: $brand-4;
   }
 
   // 折叠按钮
-  .b3-list-item__toggle {
+  &__toggle {
     height: $list-text-height;
     padding: 0 !important;
     margin-right: 1px;
@@ -78,7 +78,7 @@ $list-item-meta-color-focus: $brand-4;
   }
 
   // 列表图标（大纲、标签等）
-  .b3-list-item__graphic {
+  &__graphic {
     @include graphic($list-text-height, 10px);
     margin-right: 4px;
 
@@ -90,11 +90,16 @@ $list-item-meta-color-focus: $brand-4;
       &:hover {
         background-color: $list-button-bg-hover;
       }
+
+      // 反链展开时的特殊情况
+      .backlink--more &{
+        margin-top: 1px
+      }
     }
   }
 
   //列表emoji
-  .b3-list-item__icon {
+  &__icon {
     @include emoji_icon($list-text-height, 12px, 12px);
     border-radius: $list-button-border-radius;
 
@@ -112,12 +117,12 @@ $list-item-meta-color-focus: $brand-4;
   }
 
   // 列表文本
-  .b3-list-item__text {
+  &__text {
     line-height: $list-text-height;
   }
 
   // 列表按钮
-  .b3-list-item__action {
+  &__action {
     @include graphic($list-text-height, 12px);
     border-radius: $list-button-border-radius;
     margin-left: 4px;

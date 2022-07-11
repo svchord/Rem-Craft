@@ -49,14 +49,26 @@ $list-item-meta-color-focus: $brand-4;
   // 折叠按钮
   &__toggle {
     height: $list-text-height;
+    width: $list-arrow-width;
     padding: 0 !important;
     margin-right: 1px;
 
-    // 无子元素
+    // 文档树无子元素
     &.fn__hidden {
-      width: 0 !important;
-      margin: 0 !important;
-      padding: 0 !important;
+      position: relative;
+
+      &::before {
+        content: '·';
+        visibility: visible !important;
+        display: block;
+        position: absolute;
+        width: $list-arrow-width;
+        height: $list-text-height;
+        font-size: 24px;
+        color: $rc-text-secondary;
+        line-height: $list-text-height;
+        text-align: center;
+      }
     }
 
     // 鼠标悬浮
@@ -68,18 +80,23 @@ $list-item-meta-color-focus: $brand-4;
     .b3-list-item__arrow {
       @include graphic($list-arrow-width, 8px);
 
-      // 无子元素
+      // 大纲、标签无子元素
       &.fn__hidden {
-        width: 0 !important;
-        margin: 0 !important;
+        visibility: visible !important;
+        width: 2.6px !important;
+        height: 2.6px !important;
         padding: 0 !important;
+        margin: auto ;
+        color: transparent !important;
+        border-radius: $rc-bradius-max;
+        background-color: $rc-text-secondary;
       }
     }
   }
 
   // 列表图标（大纲、标签等）
   &__graphic {
-    @include graphic($list-text-height, 10px);
+    @include graphic($list-text-height, 11px);
     margin-right: 4px;
 
     // 图标悬浮后有弹窗
@@ -92,7 +109,7 @@ $list-item-meta-color-focus: $brand-4;
       }
 
       // 反链展开时的特殊情况
-      .backlink--more &{
+      .backlink--more & {
         margin-top: 1px
       }
     }
@@ -177,8 +194,13 @@ $list-item-meta-color-focus: $brand-4;
       background-color: $list-item-bg-focus  !important;
     }
 
-    * {
+    *,
+    .b3-list-item__toggle.fn__hidden::before {
       color: $list-item-color-focus  !important;
+    }
+
+    .b3-list-item__arrow.fn__hidden{
+      background-color: $list-item-color-focus;
     }
 
     .counter,
@@ -251,6 +273,7 @@ $list-item-meta-color-focus: $brand-4;
 %first_list_item {
   position: relative;
   background-color: $rc-component-bg;
+  padding-left: 8px !important;
 
   &::before {
     @include focus_before(8px, 0px);
@@ -269,7 +292,6 @@ $list-item-meta-color-focus: $brand-4;
   // 标题
   >.b3-list-item {
     margin: 0 8px 8px;
-    padding-left: 8px !important;
     @extend %first_list_item;
 
     &:hover {
@@ -317,10 +339,5 @@ $list-item-meta-color-focus: $brand-4;
   // 书签项
   >.fn__flex-1>.b3-list>.b3-list-item {
     @extend %first_list_item;
-
-    // 书签图标
-    .b3-list-item__graphic {
-      display: none;
-    }
   }
 }

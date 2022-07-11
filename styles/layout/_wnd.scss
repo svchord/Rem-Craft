@@ -1,16 +1,16 @@
-$wnd-scale: scale(0.9);
+$wnd-scale: scale(0.75);
 $wnd-border: none;
 $wnd-bradius: $rc-bradius-large;
 $wnd-bg: $rc-container-bg;
 $wnd-shadow: none; //rc-shadow(1);
 //边窗动画
-$wnd-width-time: 0.2s;
-$wnd-transition: all $wnd-width-time ease-out 0s;
+$wnd-width-time: 0.3s;
+$wnd-transition: all $wnd-width-time $rc-ease-out 0s;
 
-:root {
-  // 动画效果
-  --b3-width-transition: width #{$rc-duration-base} #{$rc-easing};
-}
+// :root {
+//   // 动画效果
+//   // --b3-width-transition: width #{$rc-duration-base} #{$rc-ease-out};
+// }
 
 @keyframes wnd-close {
   from {
@@ -49,7 +49,6 @@ $wnd-transition: all $wnd-width-time ease-out 0s;
 
   //两侧边窗
   >.fn__flex-column {
-    transition: var(--b3-width-transition) !important;
 
     // 显示的边窗
     >.fn__flex {

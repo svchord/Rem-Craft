@@ -1,0 +1,27 @@
+.protyle-wysiwyg [data-node-id].iframe {
+    .iframe-content {
+        video {
+            cursor: pointer;
+        }
+
+
+    }
+
+    .protyle-action__drag {
+
+        &,
+        &::after {
+            background-color: $rc-border-1  !important;
+            box-shadow: unset !important;
+
+
+        }
+
+        height: 54px;
+        bottom: -4px;
+
+        &::after {
+            width: 54px;
+        }
+    }
+}

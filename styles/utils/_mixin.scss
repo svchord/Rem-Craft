@@ -87,7 +87,7 @@
   opacity: 1;
   background-color: $rc-brand;
   margin: 0;
-  border-radius: 25%;//$rc-bradius-max;
+  border-radius: $rc-bradius-max;
 }
 
 @mixin emoji_icon($width, $fz, $icon-width) {

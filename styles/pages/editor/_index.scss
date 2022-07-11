@@ -27,6 +27,8 @@ $highlight-bg: $brand-1;
 @import "block-quote";
 // 块引用
 @import "block-ref";
+// 渲染块
+@import "block-render";
 // 超级块
 @import "block-super";
 // 表格块

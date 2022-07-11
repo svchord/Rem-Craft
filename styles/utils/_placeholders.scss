@@ -23,16 +23,12 @@
     content: "";
     display: block;
     position: absolute;
-    top: 60%;
-    left: 4%;
-    right: 4%;
-    height: 30%;
+    top: 65%;
+    left: 0px;
+    right: 0px;
+    height: 35%;
     border-radius: $rc-bradius-max;
-    opacity: 0.8;
-    // background-color: $rc-brand;
-    background-image: linear-gradient(
-      transparent,
-      $brand-6
-    );
+    opacity: 0.4;
+    background-color: $brand-7;
   }
 }

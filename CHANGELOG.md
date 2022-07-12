@@ -1,6 +1,20 @@
 # Changelog | 更新历史 
 
 
+### [1.4.1](https://github.com/svchord/Rem-Craft/compare/v1.4.0...v1.4.1) (2022-07-12)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 去除新版readme界面中预览图的下外边距 ([040b92a](https://github.com/svchord/Rem-Craft/commit/040b92af0a8554618dcb4be847c766b00971e08d))
+* :bug: 修复数据快照界面显示问题 ([b7fe58c](https://github.com/svchord/Rem-Craft/commit/b7fe58ca3b54e0a3cd8b647bfffbdc5cfda5b54f))
+* :bug: 修复搜索界面结果展示的底部空白问题 ([5bdbb06](https://github.com/svchord/Rem-Craft/commit/5bdbb066d79e6c176208f2d709e1759f6d62dbe4))
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新readme和preview.png ([66db598](https://github.com/svchord/Rem-Craft/commit/66db5986d16804d330b9290433cdd6e8325b2942))
+
 ## [1.4.0](https://github.com/svchord/Rem-Craft/compare/v1.3.0...v1.4.0) (2022-07-12)
 
 

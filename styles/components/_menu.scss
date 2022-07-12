@@ -147,8 +147,8 @@ $sub-menu-vertical: 10px;
     }
   }
 
-  .b3-menu__label{
-    input{
+  .b3-menu__label {
+    input {
       width: 100%;
     }
   }
@@ -166,9 +166,9 @@ $sub-menu-vertical: 10px;
   // 其他信息
   &__item--readonly {
     font-size: 12px;
-    line-height: 16px;
+    line-height: 20px;
     color: $menu-readonly-color;
-    margin-bottom: 4px;
+    padding: 2px 6px;
   }
 
   // 菜单项快捷键

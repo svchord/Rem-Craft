@@ -21,7 +21,7 @@
         %list {
 
             .b3-list {
-                background-color: $rc-container-bg;
+                background-color: $rc-container-bg !important;
                 border-radius: $rc-bradius-small;
 
                 .b3-list-item {
@@ -129,6 +129,10 @@
                     @extend %list;
 
                 }
+            }
+
+            > .b3-list li{
+                list-style: none;
             }
         }
 

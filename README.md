@@ -8,7 +8,7 @@
 
 一款现代化、平面化设计的思源笔记主题
 
-<img width="1280" alt="preview" src="https://user-images.githubusercontent.com/61345763/178135577-5fb3deb2-21a5-41b4-9f3b-f798f375bcdc.png">
+<img width="1280" alt="preview" src="https://user-images.githubusercontent.com/61345763/178506216-b4873028-6d94-4c53-9aec-a2b5f58efa17.png">
 
 ## 参考样式
 
@@ -27,6 +27,11 @@
 - Craft 的引述块
 - Rem Note 的文档树
 - Logseq 的页签
+
+## ❗注意事项
+
+1. 设置、搜索等大弹窗的关闭按钮被隐藏了，点击周围空白处即可关闭
+2. 强烈建议关闭`设置` - `编辑器` - `自适应宽度`开关
 
 ## 参考项目
 

@@ -90,7 +90,7 @@ $pre-action-bg-focus: $rc-component-bg-select;
     }
 
     .def--mark {
-      @extend %mark__model;
+      @extend %search-mark__model;
     }
   }
 

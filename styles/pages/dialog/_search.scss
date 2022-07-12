@@ -18,11 +18,11 @@ $dialog-text-field-bg: $rc-container-bg;
       }
 
       // 向下图标
-      .search__arrowdown{
+      .search__arrowdown {
         color: $rc-text-secondary;
         height: 8px;
         width: 8px;
-        left: calc(49px - (49px - 16px) / 2 );
+        left: calc(49px - (49px - 16px) / 2);
       }
 
       // 搜索文本框
@@ -155,6 +155,10 @@ $dialog-text-field-bg: $rc-container-bg;
 
           .protyle-wysiwyg {
             padding: 16px 64px 90px !important;
+          }
+
+          [data-type="search-mark"] {
+            @extend %search-mark__model;
           }
         }
       }

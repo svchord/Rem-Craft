@@ -1,13 +1,30 @@
 //强调色
-$mark-bg: transparent;
+$search-mark-bg: $yellow-color-1;
 
 :root {
   // 编辑器搜索颜色
-  --b3-protyle-search-background: #{$mark-bg};
+  --b3-protyle-search-background: #{$search-mark-bg};
   --b3-protyle-inline-mark-color: #{$rc-text-primary};
-  --b3-protyle-inline-mark-background: #{$mark-bg};
+  --b3-protyle-inline-mark-background: #{$search-mark-bg};
 }
 
-mark {
-  @extend %mark__model;
+.b3-typography,
+.protyle-wysiwyg {
+  mark {
+    background-color: transparent;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 60%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 40%;
+      opacity: .4;
+      background-color: $brand-6;
+    }
+  }
 }

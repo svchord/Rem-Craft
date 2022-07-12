@@ -9,6 +9,7 @@
   --td-brand-color-8: #4582e6;
   --td-brand-color-9: #699ef5;
   --td-brand-color-10: #96bbf8;
+
   --td-warning-color-1: #4f2a1d;
   --td-warning-color-2: #582f21;
   --td-warning-color-3: #733c23;
@@ -19,6 +20,7 @@
   --td-warning-color-8: #ecbf91;
   --td-warning-color-9: #eed7bf;
   --td-warning-color-10: #f3e9dc;
+
   --td-error-color-1: #472324;
   --td-error-color-2: #5e2a2d;
   --td-error-color-3: #703439;
@@ -29,6 +31,7 @@
   --td-error-color-8: #ec888e;
   --td-error-color-9: #edb1b6;
   --td-error-color-10: #eeced0;
+
   --td-success-color-1: #193a2a;
   --td-success-color-2: #1a4230;
   --td-success-color-3: #17533d;
@@ -39,6 +42,51 @@
   --td-success-color-8: #80d2b6;
   --td-success-color-9: #b4e1d3;
   --td-success-color-10: #deede8;
+  
+  --td-cyan-color-1: #05437D;
+  --td-cyan-color-2: #06579E;
+  --td-cyan-color-3: #086CC0;
+  --td-cyan-color-4: #0B83DF;
+  --td-cyan-color-5: #0F98FA;
+  --td-cyan-color-6: #3CB1FB;
+  --td-cyan-color-7: #67C9FC;
+  --td-cyan-color-8: #8FDDFF;
+  --td-cyan-color-9: #BDEFFF;
+  --td-cyan-color-10: #E0F9FF;
+
+  --td-purple-color-1: #451981;
+  --td-purple-color-2: #5A2D96;
+  --td-purple-color-3: #7141AC;
+  --td-purple-color-4: #8755C2;
+  --td-purple-color-5: #9E6CD8;
+  --td-purple-color-6: #B382F0;
+  --td-purple-color-7: #CB96FF;
+  --td-purple-color-8: #DDB5FF;
+  --td-purple-color-9: #EACFFF;
+  --td-purple-color-10: #F7EBFF;
+
+  --td-yellow-color-1: #5E3B04;
+  --td-yellow-color-2: #754E05;
+  --td-yellow-color-3: #8C6106;
+  --td-yellow-color-4: #A37407;
+  --td-yellow-color-5: #BA8907;
+  --td-yellow-color-6: #D29E08;
+  --td-yellow-color-7: #EBB30E;
+  --td-yellow-color-8: #FBCC30;
+  --td-yellow-color-9: #FFE682;
+  --td-yellow-color-10: #FFF9C2;
+
+  --td-pink-color-1: #7B0554;
+  --td-pink-color-2: #9B066D;
+  --td-pink-color-3: #BC088A;
+  --td-pink-color-4: #D435A0;
+  --td-pink-color-5: #ED53B7;
+  --td-pink-color-6: #FF70CF;
+  --td-pink-color-7: #FF99E4;
+  --td-pink-color-8: #FFBDF4;
+  --td-pink-color-9: #FFDBFD;
+  --td-pink-color-10: #FFF2FF;
+
   --td-gray-color-1: #f3f3f3;
   --td-gray-color-2: #eee;
   --td-gray-color-3: #e7e7e7;
@@ -69,6 +117,10 @@
   --td-warning-color: var(--td-warning-color-5); // 色彩-功能-警告
   --td-error-color: var(--td-error-color-6); // 色彩-功能-失败
   --td-success-color: var(--td-success-color-5); // 色彩-功能-成功
+  --td-cyan-color: var(--td-cyan-color-6);
+  --td-purple-color: var(--td-purple-color-6);
+  --td-yellow-color: var(--td-yellow-color-6);
+  --td-pink-color: var(--td-pink-color-6);
 
   // 基础颜色的扩展 用于 hover / 聚焦 / 禁用 / 点击 等状态
   --td-brand-color-hover: var(--td-brand-color-7); // hover态

@@ -19,26 +19,15 @@
   // }
 }
 
-%mark__model {
-  position: relative;
+%search-mark__model {
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 65%;
-    left: 0px;
-    right: 0px;
-    height: 35%;
-    border-radius: $rc-bradius-max;
-    opacity: 0.4;
-    background-color: $brand-7;
-  }
+  border-radius: $rc-bradius-small;
+  border: 1px solid $yellow-color-2;
 }
 
 %protyle-icons__model {
   border-radius: $rc-bradius-extra-small;
-  margin: 3px 3px 0 0 ;
+  margin: 3px 3px 0 0;
 
   .protyle-icon {
     height: 25px;

@@ -50,6 +50,50 @@ $success-color-8: var(--td-success-color-8);
 $success-color-9: var(--td-success-color-9);
 $success-color-10: var(--td-success-color-10);
 
+$cyan-color-1: var(--td-cyan-color-1);
+$cyan-color-2: var(--td-cyan-color-2);
+$cyan-color-3: var(--td-cyan-color-3);
+$cyan-color-4: var(--td-cyan-color-4);
+$cyan-color-5: var(--td-cyan-color-5);
+$cyan-color-6: var(--td-cyan-color-6);
+$cyan-color-7: var(--td-cyan-color-7);
+$cyan-color-8: var(--td-cyan-color-8);
+$cyan-color-9: var(--td-cyan-color-9);
+$cyan-color-10: var(--td-cyan-color-10);
+
+$purple-color-1: var(--td-purple-color-1);
+$purple-color-2: var(--td-purple-color-2);
+$purple-color-3: var(--td-purple-color-3);
+$purple-color-4: var(--td-purple-color-4);
+$purple-color-5: var(--td-purple-color-5);
+$purple-color-6: var(--td-purple-color-6);
+$purple-color-7: var(--td-purple-color-7);
+$purple-color-8: var(--td-purple-color-8);
+$purple-color-9: var(--td-purple-color-9);
+$purple-color-10: var(--td-purple-color-10);
+
+$yellow-color-1: var(--td-yellow-color-1);
+$yellow-color-2: var(--td-yellow-color-2);
+$yellow-color-3: var(--td-yellow-color-3);
+$yellow-color-4: var(--td-yellow-color-4);
+$yellow-color-5: var(--td-yellow-color-5);
+$yellow-color-6: var(--td-yellow-color-6);
+$yellow-color-7: var(--td-yellow-color-7);
+$yellow-color-8: var(--td-yellow-color-8);
+$yellow-color-9: var(--td-yellow-color-9);
+$yellow-color-10: var(--td-yellow-color-10);
+
+$pink-color-1: var(--td-pink-color-1);
+$pink-color-2: var(--td-pink-color-2);
+$pink-color-3: var(--td-pink-color-3);
+$pink-color-4: var(--td-pink-color-4);
+$pink-color-5: var(--td-pink-color-5);
+$pink-color-6: var(--td-pink-color-6);
+$pink-color-7: var(--td-pink-color-7);
+$pink-color-8: var(--td-pink-color-8);
+$pink-color-9: var(--td-pink-color-9);
+$pink-color-10: var(--td-pink-color-10);
+
 $gray-color-1: var(--td-gray-color-1);
 $gray-color-2: var(--td-gray-color-2);
 $gray-color-3: var(--td-gray-color-3);
@@ -81,6 +125,10 @@ $brand-color: var(--td-brand-color); // 色彩-品牌-可操作
 $warning-color: var(--td-warning-color); // 色彩-功能-警告
 $error-color: var(--td-error-color); // 色彩-功能-失败
 $success-color: var(--td-success-color); // 色彩-功能-成功
+$cyan-color: var(--td-cyan-color); 
+$purple-color: var(--td-purple-color); 
+$yellow-color: var(--td-yellow-color); 
+$pink-color: var(--td-pink-color); 
 
 // 基础颜色的扩展 用于 hover / 聚焦 / 禁用 / 点击 等状态
 $brand-color-hover: var(--td-brand-color-hover); // hover态

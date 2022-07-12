@@ -1,6 +1,40 @@
 # Changelog | 更新历史 
 
 
+## [1.4.0](https://github.com/svchord/Rem-Craft/compare/v1.3.0...v1.4.0) (2022-07-12)
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新readme ([0ac3bdf](https://github.com/svchord/Rem-Craft/commit/0ac3bdfbb06ed73f8ad75174236cbafee96af5ea))
+
+
+### ✨ 新增功能 | Features
+
+* :sparkles: 更改渲染块操作菜单样式 ([5a6b3b3](https://github.com/svchord/Rem-Craft/commit/5a6b3b34133502d68a305112a711f02f6ca45e26))
+* :sparkles: 更改iframe块样式 ([8af8609](https://github.com/svchord/Rem-Craft/commit/8af86099a0b416c67961ebf0f2f1bb4b16ffef88))
+* :sparkles: 优化块嵌入样式，提高可读性 ([f8f7ff3](https://github.com/svchord/Rem-Craft/commit/f8f7ff3de44c1aa606718ba69000864fa8ab6ae8))
+* :sparkles: 优化行内图片的按钮样式 ([204bcb9](https://github.com/svchord/Rem-Craft/commit/204bcb9582a4f9c3a25117425ad42e504337155d))
+* :sparkles: 优化list的竖向滚动条显示 ([cd713c4](https://github.com/svchord/Rem-Craft/commit/cd713c4ab5da096a33b0777828da8c3a0f602574))
+* :sparkles: 在无子元素的列表项前增加圆点，增强可读性 ([738208a](https://github.com/svchord/Rem-Craft/commit/738208a0725cd314b19923176e95133546ef607e))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复边窗动画效果不匹配的问题 ([80ebca3](https://github.com/svchord/Rem-Craft/commit/80ebca304d04208a2ba437c4f38ec5e881ba59fe))
+* :bug: 修复编辑区域窄宽度显示横向滚动条的问题 ([564e945](https://github.com/svchord/Rem-Craft/commit/564e9453fedf43b66e56584e013e6e1423ac4da6))
+* :bug: 修复菜单read-only的样式 ([4614df9](https://github.com/svchord/Rem-Craft/commit/4614df9570ebcdc52f3a049a936e8b78e4251070))
+* :bug: 修复代码块菜单透明度的问题 ([210d1f5](https://github.com/svchord/Rem-Craft/commit/210d1f5818e1dafb2e61ba5c142912935bbb0e51))
+* :bug: 修复反链展开后图标位置错误的问题 ([a985d27](https://github.com/svchord/Rem-Craft/commit/a985d27d086df9c892b32c2447d6d3c8573b2702))
+* :bug: 修复列表块按钮和辅助线的显示问题 ([03a9b37](https://github.com/svchord/Rem-Craft/commit/03a9b3766bfc9e6bc3b84956b2588bdf2ce0af5c))
+* :bug: 修复视频菜单资源栏输入框的长度问题 ([570ed75](https://github.com/svchord/Rem-Craft/commit/570ed75759b670d5557e1ebc7c7ca15003c40937))
+* :bug: 修改辅助条圆角 ([c5183bc](https://github.com/svchord/Rem-Craft/commit/c5183bc112cbe878948e61e564d56cd4ba6d7390))
+* :bug: 修改块嵌入的样式 ([5f3dcba](https://github.com/svchord/Rem-Craft/commit/5f3dcbadf315c122da5ff5d088b206c6c004e13d))
+* :bug: 修改mark标记样式 ([1d58ce0](https://github.com/svchord/Rem-Craft/commit/1d58ce02e5f842ee2c6fe8178bfd519d862bb6ac))
+* :bug: 修改wnd圆角 ([9ea4339](https://github.com/svchord/Rem-Craft/commit/9ea43397bb5d181a9d36bb515ce2e5d1d4439c3c))
+* :bug: 优化渲染块输入界面util的样式 ([69d480d](https://github.com/svchord/Rem-Craft/commit/69d480dc43f3b0e25657b6d62e3817f4c9bd94ca))
+* :bug: 优化mark的样式，增加可读性 ([d3d8be9](https://github.com/svchord/Rem-Craft/commit/d3d8be90ff9f38293c386bf2e5666bf07355d8fb))
+
 ## [1.3.0](https://github.com/svchord/Rem-Craft/compare/v1.2.0...v1.3.0) (2022-07-10)
 
 

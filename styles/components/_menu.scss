@@ -171,11 +171,16 @@ $sub-menu-vertical: 10px;
   }
 
   // 块引用菜单 && 搜索历史菜单
-  &.b3-list ,
+  &.b3-list,
   &.b3-list--background {
-    padding: 8px;
+    padding: 8px 12px 8px 8px;
+    margin: 0;
+    overflow: overlay !important;
+
 
     .b3-list-item {
+      // margin-right: 4px;
+      // width: calc(100% - 4px);
       &:last-child {
         margin-bottom: 0;
       }
@@ -185,7 +190,7 @@ $sub-menu-vertical: 10px;
 
   &#commonMenu {
 
-    .b3-text-field{
+    .b3-text-field {
       margin-bottom: 6px;
     }
 
@@ -198,7 +203,7 @@ $sub-menu-vertical: 10px;
     .b3-list--background {
       padding: 0px 2px 2px;
       margin: 0;
-  
+
       .b3-list-item {
         &:last-child {
           margin-bottom: 0;

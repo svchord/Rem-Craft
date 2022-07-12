@@ -86,7 +86,7 @@ $list-item-meta-color-focus: $brand-4;
         width: 2.6px !important;
         height: 2.6px !important;
         padding: 0 !important;
-        margin: auto ;
+        margin: auto;
         color: transparent !important;
         border-radius: $rc-bradius-max;
         background-color: $rc-text-secondary;
@@ -199,7 +199,7 @@ $list-item-meta-color-focus: $brand-4;
       color: $list-item-color-focus  !important;
     }
 
-    .b3-list-item__arrow.fn__hidden{
+    .b3-list-item__arrow.fn__hidden {
       background-color: $list-item-color-focus;
     }
 
@@ -261,7 +261,7 @@ $list-item-meta-color-focus: $brand-4;
 
 .b3-list,
 .b3-list--background {
-  margin: 0px 8px 8px;
+  margin: 0px 4px 8px 8px;
 
   // 列表为空
   .b3-list--empty {
@@ -309,13 +309,21 @@ $list-item-meta-color-focus: $brand-4;
   }
 
   // 大纲列表
-  >.fn__flex-1>.b3-list {
-    margin: 0 11px 8px;
+  >.fn__flex-1 {
+    margin-right: 4px;
+
+    >.b3-list {
+      margin: 0 4px 8px 11px;
+    }
   }
 }
 
 // 文档树拖拽样式
 .file-tree {
+  [data-type="navigation"] {
+    margin-right: 4px;
+  }
+
   .dragover {
     background-color: $rc-component-bg-select;
 
@@ -334,10 +342,18 @@ $list-item-meta-color-focus: $brand-4;
 }
 
 // 书签界面
-.sy__bookmark {
+.sy__bookmark>.fn__flex-1>.b3-list {
 
   // 书签项
-  >.fn__flex-1>.b3-list>.b3-list-item {
+  >.b3-list-item {
     @extend %first_list_item;
   }
+}
+
+
+.sy__bookmark>.fn__flex-1,
+.sy__tag>.fn__flex-1,
+.backlinkList,
+.backlinkMList {
+  margin-right: 4px;
 }

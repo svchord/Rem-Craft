@@ -1,8 +1,8 @@
 //列表块线条
 $list-border: $rc-border-3;
 
-$list-point-bg-fold: $gray-7;
-$list-point-bg-fold-hover: $gray-11;
+$list-point-bg-fold: var(--rc-gray-light);
+$list-point-bg-fold-hover: var(--rc-gray-light-hover);
 
 $list-done-opacity: 0.4;
 
@@ -46,7 +46,7 @@ $tag-done-color: $rc-text-disabled;
       // 列表块子元素左侧线条
       .list::before {
         border-color: $list-border  !important;
-        left: -7px !important;
+        left: -7.5px !important;
         top: 2px;
         bottom: -2px;
       }
@@ -54,7 +54,7 @@ $tag-done-color: $rc-text-disabled;
       // 非列表块子元素左侧线条
       >[data-node-id]:before {
         border-color: $list-border  !important;
-        left: -17px !important;
+        left: -17.5px !important;
       }
 
       // 有序列表按钮位置调整
@@ -66,7 +66,7 @@ $tag-done-color: $rc-text-disabled;
       >.protyle-action {
         &:hover::after {
           background-color: $list-point-bg-fold  !important;
-          opacity: 0.2 !important;
+          // opacity: 0.2 !important;
         }
         svg{
           width: 14px;
@@ -82,14 +82,14 @@ $tag-done-color: $rc-text-disabled;
 
   // color: $rc-text-primary;
   &::after {
-    opacity: 0.2 !important;
+    // opacity: 0.2 !important;
     background-color: $list-point-bg-fold  !important;
     transform: translateX(0.5px);
   }
 
   &:hover::after {
     background-color: $list-point-bg-fold-hover  !important;
-    opacity: 0.2 !important;
+    // opacity: 0.2 !important;
   }
 
   // 待办列表特殊情况

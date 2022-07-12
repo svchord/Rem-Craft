@@ -9,9 +9,11 @@
   color: $rc-text-secondary;
   background-color: $rc-component-bg;
   border-radius: $rc-bradius-extra-small;
+
   &:hover {
     background-color: $rc-component-button;
   }
+
   // &:active {
   //   background-color: $gray-6;
   // }
@@ -19,6 +21,7 @@
 
 %mark__model {
   position: relative;
+
   &::after {
     content: "";
     display: block;
@@ -30,5 +33,43 @@
     border-radius: $rc-bradius-max;
     opacity: 0.4;
     background-color: $brand-7;
+  }
+}
+
+%protyle-icons__model {
+  border-radius: $rc-bradius-extra-small;
+  margin: 3px 3px 0 0 ;
+
+  .protyle-icon {
+    height: 25px;
+    width: 25px;
+    padding: 0 7px;
+    background-color: $rc-component-button;
+    color: $rc-text-secondary;
+
+    svg {
+      width: 11px;
+      height: 25px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 1px;
+    }
+
+    &:hover {
+      background-color: $gray-4;
+    }
+
+    &--first {
+      border-radius: $rc-bradius-extra-small 0 0 $rc-bradius-extra-small;
+    }
+
+    &--last {
+      border-radius: 0 $rc-bradius-extra-small $rc-bradius-extra-small 0;
+    }
+
+    &--only {
+      border-radius: $rc-bradius-extra-small;
+    }
   }
 }

@@ -1,0 +1,41 @@
+// .b3-typography,
+// .protyle-wysiwyg,
+.protyle-wysiwyg [data-node-id] {
+    .img {
+        border-radius: $rc-bradius-small;
+
+        &--select {
+            filter: unset;
+            background-color: $highlight-bg;
+        }
+
+        .protyle-icons {
+            top: 5px;
+            right: 0px;
+            @extend %protyle-icons__model;
+        }
+
+        img {
+            margin-top: 5px;
+        }
+
+        .protyle-action__drag {
+            right: 0;
+            top: calc(50% - 50px / 2);
+            height: 50px;
+            display: block;
+            opacity: 0;
+            box-shadow: unset !important;
+            transition: opacity 3s ease-out;
+            background-color: $rc-border-1  !important;
+
+        }
+
+        &:hover {
+            .protyle-icons,
+            .protyle-action__drag {
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -77,7 +77,7 @@ $cover-title-bg: $rc-container-bg;
   }
 
   // 按钮组
-  %protyle-icons__model {
+  %cover-icons__model {
     background-color: transparent;
     margin: 8px 0 4px;
     height: 28px;
@@ -134,7 +134,7 @@ $cover-title-bg: $rc-container-bg;
   .protyle-background__img {
     .protyle-icons {
       &:nth-child(2) {
-        @extend %protyle-icons__model;
+        @extend %cover-icons__model;
         background-color: $cover-buttons-bg;
         color: $cover-buttons-color;
         height: 26px;
@@ -215,7 +215,7 @@ $cover-title-bg: $rc-container-bg;
       }
 
       &[style*="opacity"]:not([style*="right"]) {
-        @extend %protyle-icons__model;
+        @extend %cover-icons__model;
         z-index: 1;
         background-color: $cover-buttons-bg;
         color: $cover-buttons-color;
@@ -268,7 +268,7 @@ $cover-title-bg: $rc-container-bg;
 
     //题头按钮组
     .protyle-icons {
-      @extend %protyle-icons__model;
+      @extend %cover-icons__model;
       width: 300px;
       // top: 72px;
       // left: #{$content-margin};

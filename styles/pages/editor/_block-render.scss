@@ -1,32 +1,11 @@
-.render-node {
+.protyle-wysiwyg[contenteditable=true] .render-node {
     .protyle-icons {
-        .protyle-icon {
-            background-color: $rc-component-button;
-            color: $rc-text-secondary;
-            height: 25px;
-            width: 25px;
-            padding: 0 7px;
+        @extend %protyle-icons__model;
+    }
 
-            &:hover {
-                background-color: $gray-4;
-            }
-
-            &:not(:last-child) {
-                margin-right: 1px;
-            }
-
-            svg {
-                width: 11px;
-                height: 25px;
-            }
-
-            &--first {
-                border-radius: $rc-bradius-extra-small 0 0 $rc-bradius-extra-small;
-            }
-
-            &--last {
-                border-radius: 0 $rc-bradius-extra-small $rc-bradius-extra-small 0;
-            }
+    &:hover {
+        .protyle-icons {
+            opacity: 1;
         }
     }
 }

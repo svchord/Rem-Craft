@@ -269,14 +269,10 @@ $cover-title-bg: $rc-container-bg;
     //题头按钮组
     .protyle-icons {
       @extend %cover-icons__model;
-      width: 300px;
-      // top: 72px;
-      // left: #{$content-margin};
     }
 
     //题头emoji
     .protyle-background__icon {
-      // left: #{$content-margin} !important;
       width: 78px;
       height: 78px;
       font-size: 54px;
@@ -334,6 +330,7 @@ $cover-title-bg: $rc-container-bg;
 .protyle-title {
   margin: 0 #{$content-margin} !important;
   max-width: #{$editor-width};
+  width: auto !important;
 
   &:hover .protyle-title__icon {
     opacity: 0.6;

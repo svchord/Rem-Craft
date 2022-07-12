@@ -13,6 +13,7 @@ $pre-action-bg-focus: $rc-component-bg-select;
     box-sizing: content-box;
     padding: 16px #{$content-margin} 235px !important;
     max-width: #{$editor-width};
+    width: auto !important;
     background-color: $protyle-bg;
 
     >div:not(.sb):not(.list):not([data-type="NodeBlockQueryEmbed"]) {

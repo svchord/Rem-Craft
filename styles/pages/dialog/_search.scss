@@ -105,9 +105,10 @@ $dialog-text-field-bg: $rc-container-bg;
           float: left;
           width: 45%;
           height: calc(100% - 94px) !important;
-          padding: 8px 8px 8px 16px;
+          padding: 16px 16px;
           margin: 0;
-          border-top: 1px solid var(--b3-border-color);
+          border-top: 1px solid $rc-border-3;
+          border-right: 1px solid $rc-border-3;
 
           .b3-list-item[data-type="search-item"] {
             padding-bottom: 22px + 5px !important;
@@ -136,7 +137,7 @@ $dialog-text-field-bg: $rc-container-bg;
       // 搜索预览
       #searchPreview {
         width: 60%;
-        height: calc(80%) !important;
+        height: calc(100% - 94px) !important;
         border-bottom-left-radius: $dialog-border-radius;
         border-bottom-right-radius: $dialog-border-radius;
 
@@ -151,8 +152,6 @@ $dialog-text-field-bg: $rc-container-bg;
         }
 
         .protyle-content {
-          padding-bottom: 30px;
-
           .protyle-wysiwyg {
             padding: 16px 64px 90px !important;
           }

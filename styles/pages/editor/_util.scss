@@ -61,19 +61,22 @@ $util-textarea-bg: $rc-container-bg;
     .block__popover--move {
         .block__icons {
             border-radius: $util-border-radius $util-border-radius 0 0;
-            padding: 0 8px;
-            height: 36px;
+            padding: 0 8px 0 20px;
+            // height: 40px;
+            font-size: 13px;
             border-bottom: $util-topbar-border;
         }
 
         textarea {
             border-radius: 0 0 $util-border-radius $util-border-radius;
             background-color: $util-textarea-bg;
+            padding: 20px;
 
             &,
             &:hover,
             &:focus {
                 border: none !important;
+                box-shadow: none;
             }
         }
     }

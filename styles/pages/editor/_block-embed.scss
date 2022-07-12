@@ -6,7 +6,7 @@ $embed-shadow-hover: rc-shadow(8);
 //块嵌入
 div[data-type="NodeBlockQueryEmbed"].render-node {
   background-color: $embed-bg  !important;
-  padding: 16px 16px 6px !important; //8px 28px 8px
+  padding: 34px 16px 16px !important; //8px 28px 8px
   border-radius: $embed-border-radius;
   border: none !important;
 
@@ -24,6 +24,7 @@ div[data-type="NodeBlockQueryEmbed"].render-node {
 
     &:hover {
       box-shadow: $embed-shadow-hover  !important;
+      transform: translateY(-1px);
     }
   }
 }

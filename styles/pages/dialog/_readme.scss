@@ -64,10 +64,8 @@ $dialog-readme-main-margin: 96px;
 
     // 预览图
     .item__preview {
-      // border-radius: $dialog-readme-main-border-radius;
-      // border-bottom-left-radius: 0;
-      // border-bottom-right-radius: 0;
       border-radius: unset;
+      margin-bottom: 0;
 
       // 预览图全屏时
       &--fullscreen {

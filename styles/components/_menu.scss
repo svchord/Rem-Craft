@@ -147,6 +147,12 @@ $sub-menu-vertical: 10px;
     }
   }
 
+  .b3-menu__label{
+    input{
+      width: 100%;
+    }
+  }
+
   // 分割线
   &__separator {
     // margin-left: 0px;

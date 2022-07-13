@@ -280,10 +280,49 @@ $list-item-meta-color-focus: $brand-4;
   }
 }
 
-// 文档树笔记本
-[data-type="navigation-root"] {
-  margin-bottom: 8px;
-  @extend %first_list_item;
+// 文档树
+.file-tree {
+
+  [data-type="navigation"] {
+    margin-right: 4px;
+  }
+
+  // 文档树笔记本
+  [data-type="navigation-root"] {
+    margin-bottom: 8px;
+    @extend %first_list_item;
+  }
+
+  // 拖拽样式
+  .dragover {
+    background-color: $rc-component-bg-select;
+
+    // 当前文档的上方
+    &__top {
+      background-color: $rc-component-bg-select;
+      box-shadow: 0 -2px $rc-brand;
+    }
+
+    // 当前文档的下方
+    &__bottom {
+      background-color: $rc-component-bg-select;
+      box-shadow: 0 2px $rc-brand;
+    }
+  }
+
+  // 已关闭的笔记本
+  >.b3-list {
+    margin: 8px 8px 0px;
+
+    >.b3-list-item {
+      // @extend %first_list_item;
+      margin-bottom: 8px;
+    }
+
+    >ul {
+      margin-bottom: 8px;
+    }
+  }
 }
 
 // 大纲
@@ -312,32 +351,6 @@ $list-item-meta-color-focus: $brand-4;
   >.fn__flex-1 {
     margin-right: 4px;
 
-    >.b3-list {
-      margin: 0 4px 8px 11px;
-    }
-  }
-}
-
-// 文档树拖拽样式
-.file-tree {
-  [data-type="navigation"] {
-    margin-right: 4px;
-  }
-
-  .dragover {
-    background-color: $rc-component-bg-select;
-
-    // 当前文档的上方
-    &__top {
-      background-color: $rc-component-bg-select;
-      box-shadow: 0 -2px $rc-brand;
-    }
-
-    // 当前文档的下方
-    &__bottom {
-      background-color: $rc-component-bg-select;
-      box-shadow: 0 2px $rc-brand;
-    }
   }
 }
 

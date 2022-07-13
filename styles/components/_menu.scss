@@ -185,11 +185,22 @@ $sub-menu-vertical: 10px;
 
 
     .b3-list-item {
+
       // margin-right: 4px;
       // width: calc(100% - 4px);
       &:last-child {
         margin-bottom: 0;
       }
+
+      &__meta:first-child {
+        height: 20px;
+        line-height: 20px !important;
+
+        .svg--small {
+          @include graphic(20px, 11px);
+        }
+      }
+
     }
   }
 
@@ -248,6 +259,7 @@ $sub-menu-vertical: 10px;
           color: $brand-4  !important;
         }
       }
+
     }
   }
 }

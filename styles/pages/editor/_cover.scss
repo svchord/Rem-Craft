@@ -263,12 +263,15 @@ $cover-title-bg: $rc-container-bg;
     left: #{$content-margin} !important;
     height: auto;
     width: auto;
-    // margin-left: 3px;
+    margin-left: -1px;
     display: block;
 
     //题头按钮组
     .protyle-icons {
       @extend %cover-icons__model;
+      .protyle-icon:nth-child(2)::after{
+        content: '随机图标';
+      }
     }
 
     //题头emoji
@@ -358,7 +361,7 @@ $cover-title-bg: $rc-container-bg;
     font-size: 32px;
     font-weight: 700;
     color: $cover-title-color;
-    padding: 3px 2px 3px 0px;
+    padding: 3px 2px 3px 2px;
     background-color: $cover-title-bg;
 
     &:empty:after {

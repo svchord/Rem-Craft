@@ -19,7 +19,7 @@ $cover-tip-border-radius: $rc-bradius-extra-small;
 
 $cover-emoji-height: 78px;
 $cover-emoji-border-radius: $rc-bradius-small;
-$cover-emoji-bg-hover: var(--rc-gray-light);//va$rc-component-bg;
+$cover-emoji-bg-hover: var(--rc-gray-light); //va$rc-component-bg;
 
 $cover-tag-border-radius: $rc-bradius-max;
 $cover-tag-shadow: fluent-shadow(4);
@@ -300,6 +300,7 @@ $cover-title-bg: $rc-container-bg;
       transition: padding 0.2s ease-in-out;
       box-shadow: $cover-tag-shadow;
       font-size: 13px;
+
       &:hover {
         padding-right: 20px;
         color: unset !important;
@@ -332,16 +333,17 @@ $cover-title-bg: $rc-container-bg;
   max-width: #{$editor-width};
   width: auto !important;
 
-  &:hover .protyle-title__icon {
-    opacity: 0.6;
+  &:hover .protyle-title__icon{
+    opacity: 1;
   }
 
   .protyle-title__icon {
-    transform: translateX(-6px);
-    border-right: 6px solid transparent;
+    transform: translateX(-7px);
+    border-right: 8px solid transparent;
+    color: $rc-text-placeholder;
 
     &:hover {
-      opacity: 1;
+      color: $rc-text-primary;
     }
 
     &::after {
@@ -358,7 +360,8 @@ $cover-title-bg: $rc-container-bg;
     color: $cover-title-color;
     padding: 3px 2px 3px 0px;
     background-color: $cover-title-bg;
-    &:empty:after{
+
+    &:empty:after {
       color: $rc-text-disabled;
     }
   }

@@ -20,23 +20,13 @@ span[data-type="tag"]:not(.dock__item):not(.b3-tooltips) {
   position: relative;
   padding: 0.1em 0.6em;
   font-size: 85%;
-  // padding-right: 12px;
-  // background-color: $rc-inline-tag-background;
-  // border-color: rgba($rc-inline-tag-color, 0.2) !important;
   &:hover {
     background-color: $tag-bg-hover !important;
   }
   &::before {
     content: "#";
     display: inline-block;
+    transform: translateY(-1px);
+    margin-right: 0.3em;
   }
-  // &::after {
-  //   content: "";
-  //   display: inline-block;
-  //   position: absolute;
-  //   top: 2px;
-  //   width: 12px;
-  //   height: 12px;
-  //   @include add_icon("search", $rc-inline-tag-color, 18, "round");
-  // }
 }

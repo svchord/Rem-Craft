@@ -263,7 +263,7 @@ $cover-title-bg: $rc-container-bg;
     left: #{$content-margin} !important;
     height: auto;
     width: auto;
-    margin-left: 3px;
+    // margin-left: 3px;
     display: block;
 
     //题头按钮组
@@ -356,7 +356,7 @@ $cover-title-bg: $rc-container-bg;
     font-size: 32px;
     font-weight: 700;
     color: $cover-title-color;
-    padding: 3px 2px 3px 8px;
+    padding: 3px 2px 3px 0px;
     background-color: $cover-title-bg;
     &:empty:after{
       color: $rc-text-disabled;

@@ -24,15 +24,9 @@ $tag-done-color: $rc-text-disabled;
 .protyle {
   .protyle-wysiwyg {
 
-    // 第一级列表缩进
+    // // 第一级列表缩进
     >.list {
       margin: 0 12px;
-    }
-
-    // .b3-typography>.li>.protyle-action,
-    // 第一级列表项按钮位置调整（仅限单行）
-    >.li>.protyle-action {
-      transform: translateX(10px);
     }
 
     [data-node-id].li {
@@ -40,36 +34,30 @@ $tag-done-color: $rc-text-disabled;
       // 解决单行子列表块表按钮显示问题
       >.list {
         padding-left: 0;
-        transform: translateX(16px);
+        margin-left: 34px !important;
+        // transform: translateX(16px);
       }
 
       // 列表块子元素左侧线条
       .list::before {
         border-color: $list-border  !important;
-        left: -7.5px !important;
-        top: 2px;
-        bottom: -2px;
+        left: -18px;
       }
 
       // 非列表块子元素左侧线条
       >[data-node-id]:before {
         border-color: $list-border  !important;
-        left: -17.5px !important;
       }
 
       // 有序列表按钮位置调整
-      .protyle-action--order {
-        transform: translateX(1px);
-      }
+      // .protyle-action--order {
+      //   // transform: translateX(1px);
+      // }
 
       // 列表按钮悬浮底色
       >.protyle-action {
         &:hover::after {
-          background-color: $list-point-bg-fold  !important;
-          // opacity: 0.2 !important;
-        }
-        svg{
-          width: 14px;
+          background-color: $list-point-bg-fold-hover  !important;
         }
       }
     }
@@ -82,14 +70,12 @@ $tag-done-color: $rc-text-disabled;
 
   // color: $rc-text-primary;
   &::after {
-    // opacity: 0.2 !important;
     background-color: $list-point-bg-fold  !important;
-    transform: translateX(0.5px);
+    // transform: translateX(0.5px);
   }
 
   &:hover::after {
     background-color: $list-point-bg-fold-hover  !important;
-    // opacity: 0.2 !important;
   }
 
   // 待办列表特殊情况
@@ -97,7 +83,6 @@ $tag-done-color: $rc-text-disabled;
     border-radius: unset !important;
   }
 }
-
 
 // 待办列表项完成后各子块的特殊样式
 .protyle-wysiwyg {

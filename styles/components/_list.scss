@@ -343,7 +343,7 @@ $list-item-meta-color-focus: $brand-4;
 
     &:empty {
       margin: 0;
-      padding: 0;
+      padding: 0 !important;
     }
   }
 

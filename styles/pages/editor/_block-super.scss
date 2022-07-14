@@ -1,28 +1,20 @@
 //超级块横排
-.sb {
+.protyle-wysiwyg [data-node-id].sb {
   &[data-sb-layout="col"] {
     margin: 20px 0;
-
-    // >div:not(:first-child):not(.protyle-attr) {
-    //   // margin-left: 12px !important;
-    // }
   }
 
   &[data-sb-layout="row"] {
-    margin: 0 6px !important;
+    margin-right: 6px !important;
+    padding: 3px 2px;
     &:not(:last-child) .protyle-attr {
       right: 16px;
     }
   }
-
-  >div:not(.sb):not(.protyle-attr):not(.list){
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-  }
-
+  
   // 第一级列表缩进
   >.list {
-    margin: 0 12px;
+    margin: 0 7px;
   }
 
 }

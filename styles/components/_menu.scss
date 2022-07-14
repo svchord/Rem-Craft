@@ -213,18 +213,21 @@ $sub-menu-vertical: 10px;
 
     // 添加文档标签菜单 输入框
     >.fn__flex-column>input {
-      margin: 2px 2px 8px !important;
+      margin: 2px !important;
     }
 
     // 添加文档标签菜单 列表
     .b3-list--background {
-      padding: 0px 2px 2px;
+      padding: 6px 2px 2px;
       margin: 0;
 
       .b3-list-item {
         &:last-child {
           margin-bottom: 0;
         }
+      }
+      &:empty{
+        padding: 0;
       }
     }
 

@@ -34,6 +34,14 @@ $dialog-card-button-hover: $rc-component-button-select;
       }
     }
 
+    .bazaarPanel {
+      >.fn__flex>.fn__space {
+        &:nth-child(1) {
+          width: 16px;
+        }
+      }
+    }
+
     //集市卡片
     .b3-card {
       display: flex;

@@ -1,6 +1,27 @@
 # Changelog | 更新历史 
 
 
+### [1.4.2](https://github.com/svchord/Rem-Craft/compare/v1.4.1...v1.4.2) (2022-07-14)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 减小编辑器内一级各类块的两侧内边距，优化阅读 ([d1d3b3a](https://github.com/svchord/Rem-Craft/commit/d1d3b3a8712464c78c2a2089f1d91f60a5c4b2d7))
+* :bug: 修复标题为空时大纲界面显示的bug ([5959505](https://github.com/svchord/Rem-Craft/commit/5959505a46dde2c18f7f3fb055ad17cf44c6e0b9))
+* :bug: 修复代码块菜单内的特殊开关样式 ([61b6a3c](https://github.com/svchord/Rem-Craft/commit/61b6a3c8f4c845082d63d5b422eedc0385c68809))
+* :bug: 修复列表块的宽度显示问题 ([4e044c2](https://github.com/svchord/Rem-Craft/commit/4e044c22d4b51a60dbe2a5618a6b8398ad8c4925))
+* :bug: 修复鼠标拖拽框的样式 ([8fa4f7f](https://github.com/svchord/Rem-Craft/commit/8fa4f7fc7e80b7c87e0371a42e484b4ec76d88bf))
+* :bug: 优化标签块的可读性 ([5b56cfd](https://github.com/svchord/Rem-Craft/commit/5b56cfde1a77ef9fc441e598abab723094bfb8e7))
+* :bug: 优化标题图标样式 ([0f904d4](https://github.com/svchord/Rem-Craft/commit/0f904d40d5e33257a92166fd7d7aea838483eab2))
+* :bug: 优化超级块的内外边距，与其他块统一 ([7294670](https://github.com/svchord/Rem-Craft/commit/7294670a2e0a97e4f527263b9f6f03e4854e0848))
+* :bug: 优化代码选择语言弹窗列表的样式 ([14d2eaf](https://github.com/svchord/Rem-Craft/commit/14d2eafcdda15fc294bfdc02a86af30924dfcab4))
+* :bug: 优化代码语言选择按钮的样式 ([d89c15b](https://github.com/svchord/Rem-Craft/commit/d89c15b30c75f4446fa58db55f39cc2ee0844be3))
+* :bug: 优化集市排序图标的位置 ([a20c60d](https://github.com/svchord/Rem-Craft/commit/a20c60d157e8b17a7cb722a9b4609dbd0a08ccfe))
+* :bug: 优化块引用菜单列表项内命名、别名等元信息的样式 ([b5d0bf1](https://github.com/svchord/Rem-Craft/commit/b5d0bf10130eec34fec1f24e968633560e5459f0))
+* :bug: 优化添加标签菜单无标签时的样式 ([cfdca70](https://github.com/svchord/Rem-Craft/commit/cfdca70b934488e627bc36ebc2ecdbb6ff511c5f))
+* :bug: 优化文档按钮组的样式 ([1606599](https://github.com/svchord/Rem-Craft/commit/16065990d0c2eed9c707c2727d61b50c7667887f))
+* :bug: 优化已关闭笔记本的样式 ([f285598](https://github.com/svchord/Rem-Craft/commit/f285598a2a379b78b9eb571bd091877b45a2cae6))
+
 ### [1.4.1](https://github.com/svchord/Rem-Craft/compare/v1.4.0...v1.4.1) (2022-07-12)
 
 

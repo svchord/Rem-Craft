@@ -1,5 +1,9 @@
 //选中文字底色
-$selection-bg:  var(--rc-brand-light);//rgba($rc-brand, 0.1);
+$selection-bg: var(--rc-brand-light); //rgba($rc-brand, 0.1);
+// 拖拽时阴影色
+$drag-color: $brand-5;
+$drag-width: 3px;
+
 
 .protyle-select {
   background-color: $selection-bg ;
@@ -7,4 +11,28 @@ $selection-bg:  var(--rc-brand-light);//rgba($rc-brand, 0.1);
 
 ::selection {
   background-color: $selection-bg;
+}
+
+// 拖拽选中
+.protyle-wysiwyg .dragover {
+
+  // 当前块的上方
+  &__top {
+    box-shadow: 0 0 - $drag-width $drag-color;
+  }
+
+  // 当前块的下方
+  &__bottom {
+    box-shadow: 0 $drag-width $drag-color;
+  }
+
+  // 当前块的左方
+  &__left {
+    box-shadow: -$drag-width 0 $drag-color;
+  }
+
+  // 当前块的右方
+  &__right {
+    box-shadow: $drag-width 0 $drag-color;
+  }
 }

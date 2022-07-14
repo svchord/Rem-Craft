@@ -300,13 +300,13 @@ $list-item-meta-color-focus: $brand-4;
     // 当前文档的上方
     &__top {
       background-color: $rc-component-bg-select;
-      box-shadow: 0 -2px $rc-brand;
+      box-shadow: 0 2px inset $rc-brand;
     }
 
     // 当前文档的下方
     &__bottom {
       background-color: $rc-component-bg-select;
-      box-shadow: 0 2px $rc-brand;
+      box-shadow: 0 -2px inset $rc-brand;
     }
   }
 

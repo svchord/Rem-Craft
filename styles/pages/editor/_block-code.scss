@@ -62,8 +62,9 @@ $code-action-bg-active: $gray-4;
         content: "";
         width: 8px;
         height: 20px;
+        margin-left: 5px;
         @include add_icon("expand_more",
-          $code-action-color,
+          $rc-text-placeholder,
           18,
           "no-repeat center"
         );

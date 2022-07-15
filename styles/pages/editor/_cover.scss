@@ -263,7 +263,7 @@ $cover-title-bg: $rc-container-bg;
     left: #{$content-margin} !important;
     height: auto;
     width: auto;
-    margin-left: -1px;
+    // margin-left: -1px;
     display: block;
 
     //题头按钮组
@@ -283,6 +283,7 @@ $cover-title-bg: $rc-container-bg;
       line-height: 78px;
       text-align: center;
       border-radius: $cover-emoji-border-radius;
+      margin-left: 4px;
 
       svg {
         width: 78px;

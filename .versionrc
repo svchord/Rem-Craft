@@ -1,5 +1,5 @@
 {
-  "header": "# Changelog | 更新历史 \n\n",
+  "header": "# 更新历史 | Changelog \n\n",
   "types": [
     {
       "type": "feat",
@@ -35,7 +35,8 @@
     },
     {
       "type": "ci",
-      "section": "🎡 持续集成 | Continuous Integration"
+      "section": "🎡 持续集成 | Continuous Integration",
+      "hidden": true
     },
     {
       "type": "chore",

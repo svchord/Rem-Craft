@@ -1,27 +1,13 @@
 $bq-before-border-radius: $rc-bradius-extra-small;
 $bq-color: $rc-text-secondary;
 $bq-before-bg: $rc-text-primary;
+
 //引述块
-.bq,
-blockquote {
+%bq-side {
+  position: relative;
   background-color: transparent !important;
   border: none !important;
-  // color: $rc-text-disabled !important;
-  &.protyle-wysiwyg--hl {
-    background-color: $highlight-bg !important;
-  }
-  > .p {
-    padding: 0 0 0 18px !important;
-    color: $bq-color;
-    height: auto;
-    line-height: 1.7;
-    // div[contenteditable="true"] {
-    //   display: inline-block !important;
-    // }
-  }
-  > [data-subtype]{
-    margin-left:18px;
-  }
+
   &::before {
     content: "";
     display: block;
@@ -30,21 +16,50 @@ blockquote {
     height: calc(100% - 8px * 2);
     top: 8px;
     bottom: 8px;
-    left: 10px;
+    left: 8px;
     z-index: 0;
     border-radius: $bq-before-border-radius;
     background-color: $bq-before-bg;
   }
 }
 
+
+.b3-typography,
+.protyle-wysiwyg {
+  .bq {
+    @extend %bq-side;
+
+
+    &.protyle-wysiwyg--hl {
+      background-color: $highlight-bg  !important;
+    }
+
+    // 一级子元素
+    >[data-node-id] {
+      margin-left: 10px !important;
+      padding-left: 12px;
+    }
+
+    // 所有子元素
+    [data-node-id] {
+      color: $bq-color  !important;
+    }
+
+    >.list {
+      margin-left: 18px;
+    }
+  }
+}
+
 blockquote {
-  position: relative;
-  > * {
-    margin: 0 0 0 18px !important;
-    color: $bq-color;
-    // border-left: 4px solid $rc-text-secondary !important;
-    height: auto;
-    line-height: 1.7;
+  @extend %bq-side;
+
+  >* {
+    margin-left: 20px !important;
     position: relative;
+  }
+
+  * {
+    color: $bq-color  !important;
   }
 }

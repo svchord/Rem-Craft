@@ -1,5 +1,14 @@
-# Changelog | 更新历史 
+# 更新历史 | Changelog 
 
+
+### [1.4.3](https://github.com/svchord/Rem-Craft/compare/v1.4.2...v1.4.3) (2022-07-18)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复引述块的样式问题 ([2ca2175](https://github.com/svchord/Rem-Craft/commit/2ca21751ba579079c3295727d4f4b60a5e14a18a)), closes [#26](https://github.com/svchord/Rem-Craft/issues/26)
+* :bug: 优化了编辑器内各拖拽时的阴影 ([1d7c086](https://github.com/svchord/Rem-Craft/commit/1d7c08648665e1b00f8a0c8101ae43f4414080d2))
+* :bug: 优化题头emoji和文档按钮的位置 ([f44a64a](https://github.com/svchord/Rem-Craft/commit/f44a64a1dd5ac9985c9209636bc974e57c8570a6))
 
 ### [1.4.2](https://github.com/svchord/Rem-Craft/compare/v1.4.1...v1.4.2) (2022-07-14)
 

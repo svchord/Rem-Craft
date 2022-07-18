@@ -5,9 +5,10 @@ $dock-bg: $rc-ui-bg;
 $dock-item-color: $rc-text-secondary;
 $dock-item-bg: $rc-ui-bg;
 $dock-item-width: 36px;
-$dock-item-border-radius: $rc-bradius-small;
+$dock-item-height: 36px;
+$dock-item-border-radius: $rc-bradius-medium;
 $dock-item-bg-hover: $rc-component-button;
-$dock-item-bg-focus: $rc-component-button;
+$dock-item-bg-dark: $gray-3;
 $dock-svg-width: 13px * $prop;
 
 //边栏
@@ -17,13 +18,12 @@ $dock-svg-width: 13px * $prop;
   background-color: $dock-bg;
   // border: $rc-surface-boder;
   // box-shadow: #{$rc-surface-shadow};
-  margin-bottom: #{$interval};
+  margin-bottom: $interval;
 
   span {
     width: $dock-item-width * $prop;
-    height: $dock-item-width * $prop;
+    height: $dock-item-height * $prop;
     margin: 0;
-    // border: 1px solid transparent;
     padding: 0 0 0 0px;
     justify-content: center;
     color: $dock-item-color;
@@ -36,33 +36,36 @@ $dock-svg-width: 13px * $prop;
     transition: all 0.2s ease 0s;
 
     &:not(:last-child) {
-      margin-bottom: #{$interval};
+      margin-bottom: $interval;
     }
 
     cursor: pointer;
 
     &:hover {
       background-color: $dock-item-bg-hover;
+      [theme-mode="dark"] & {
+        background-color: $dock-item-bg-dark;
+      }
     }
 
     &.dock__item--active {
-      // border: 1px solid $brand-4;
-      // color: $rc-text-primary;
-      background-color: $dock-item-bg-focus;
+      background-color: $dock-item-bg-hover;
       position: relative;
 
-      // &:hover {
-      //   background-color: $rc-list-focus-button;
-      // }
       &::before {
-        @include focus_before(10px, 0);
+        @include focus_before(10.35px, 0);
+      }
+      [theme-mode="dark"] & {
+        background-color: $dock-item-bg-dark;
       }
     }
 
     svg {
       width: $dock-svg-width;
-      height: $dock-item-width;
+      height: $dock-item-height;
     }
+
+    
   }
 }
 
@@ -73,11 +76,11 @@ $dock-svg-width: 13px * $prop;
   border: none !important;
 
   &#dockLeft {
-    margin-left: #{$interval};
+    margin-left: $interval;
   }
 
   &#dockRight {
-    margin-right: #{$interval};
+    margin-right: $interval;
 
     .dock__item--active::before {
       left: auto;
@@ -89,7 +92,7 @@ $dock-svg-width: 13px * $prop;
 
   div:first-child:not(:empty) {
     @extend %dock--vertical_model;
-    margin-top: #{$interval};
+    margin-top: $interval;
   }
 
   div:last-child:not(:empty) {

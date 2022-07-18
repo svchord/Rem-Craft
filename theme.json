@@ -4,6 +4,7 @@
   "url": "https://github.com/svchord/Rem-Craft",
   "version": "1.4.2",
   "modes": [
+    "dark",
     "light"
   ]
 }

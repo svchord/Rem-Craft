@@ -10,6 +10,7 @@
 }
 
 @function rc-shadow($dp) {
-  @return 0 0 0 1px rgb(0 0 0 / 5%),
+  $border: 0 0 calc(1px * $dp / 8) rgb(0 0 0 / 12%);
+  @return $border,
   fluent-shadow($dp);
 }

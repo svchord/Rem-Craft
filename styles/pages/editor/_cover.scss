@@ -22,7 +22,7 @@ $cover-emoji-border-radius: $rc-bradius-small;
 $cover-emoji-bg-hover: var(--rc-gray-light); //va$rc-component-bg;
 
 $cover-tag-border-radius: $rc-bradius-max;
-$cover-tag-shadow: fluent-shadow(4);
+$cover-tag-shadow: rc-shadow(4);
 
 $cover-title-color: $rc-text-primary;
 $cover-title-bg: $rc-container-bg;

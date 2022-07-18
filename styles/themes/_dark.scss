@@ -1,1 +1,6 @@
-@import "../vendors/TDesign/dark";
+:root[theme-mode="dark"] {
+
+    --rc-brand-light: #699ef550;
+    --rc-gray-light: #a6a6a630;
+    --rc-gray-light-hover: #a6a6a680;
+}

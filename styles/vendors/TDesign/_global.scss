@@ -120,15 +120,21 @@ $font-gray-2: var(--td-font-gray-2);
 $font-gray-3: var(--td-font-gray-3);
 $font-gray-4: var(--td-font-gray-4);
 
+// 线条
+$border-1: var(--rc-border-1);
+$border-2: var(--rc-border-2);
+$border-3: var(--rc-border-3);
+$border-4: var(--rc-border-4);
+
 // 基础颜色
 $brand-color: var(--td-brand-color); // 色彩-品牌-可操作
 $warning-color: var(--td-warning-color); // 色彩-功能-警告
 $error-color: var(--td-error-color); // 色彩-功能-失败
 $success-color: var(--td-success-color); // 色彩-功能-成功
-$cyan-color: var(--td-cyan-color); 
-$purple-color: var(--td-purple-color); 
-$yellow-color: var(--td-yellow-color); 
-$pink-color: var(--td-pink-color); 
+$cyan-color: var(--td-cyan-color);
+$purple-color: var(--td-purple-color);
+$yellow-color: var(--td-yellow-color);
+$pink-color: var(--td-pink-color);
 
 // 基础颜色的扩展 用于 hover / 聚焦 / 禁用 / 点击 等状态
 $brand-color-hover: var(--td-brand-color-hover); // hover态
@@ -136,6 +142,7 @@ $brand-color-focus: var(--td-brand-color-focus); // focus态，包括鼠标和�
 $brand-color-active: var(--td-brand-color-active); // 点击态
 $brand-color-disabled: var(--td-brand-color-disabled); // 禁用态
 $brand-color-light: var(--td-brand-color-light); // 浅色的选中态
+$brand-color-light-hover: var(--td-brand-color-light-hover); // 浅色的hover态
 
 // 警告色扩展
 $warning-color-hover: var(--td-warning-color-hover);

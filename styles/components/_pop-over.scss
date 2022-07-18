@@ -1,4 +1,4 @@
-$pop-over-shadow: #{fluent-shadow(64)};
+$pop-over-shadow: fluent-shadow(128);
 $pop-over-border-radius: $rc-bradius-large;
 $pin-transition: transform 200ms ease;
 $pinned-color: $rc-brand;
@@ -60,6 +60,7 @@ $bread-crumb-height: 32px;
   .block__content {
     border-radius: 0 0 $pop-over-border-radius $pop-over-border-radius;
     min-height: $content-min-height + $bread-crumb-height;
+    background-color: $rc-container-bg;
     &::-webkit-scrollbar {
       background-color: transparent !important;
     }

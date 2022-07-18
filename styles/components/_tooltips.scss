@@ -1,6 +1,6 @@
 //提示条阴影
-$tooltips-shadow: fluent-shadow(16);
-$tooltips-bg: $rc-container-bg;
+$tooltips-shadow: rc-shadow(16);
+$tooltips-bg: $rc-secontainer-bg;
 $tooltips-color: $rc-text-primary;
 :root {
   // 提示

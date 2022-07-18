@@ -87,20 +87,20 @@
   --td-pink-color-9: #FFDBFD;
   --td-pink-color-10: #FFF2FF;
 
-  --td-gray-color-1: #f3f3f3;
-  --td-gray-color-2: #eee;
-  --td-gray-color-3: #e7e7e7;
-  --td-gray-color-4: #dcdcdc;
-  --td-gray-color-5: #c5c5c5;
-  --td-gray-color-6: #a6a6a6;
-  --td-gray-color-7: #8b8b8b;
-  --td-gray-color-8: #777;
-  --td-gray-color-9: #5e5e5e;
-  --td-gray-color-10: #4b4b4b;
-  --td-gray-color-11: #383838;
-  --td-gray-color-12: #2c2c2c;
-  --td-gray-color-13: #242424;
-  --td-gray-color-14: #181818;
+  --td-gray-color-1: #181818;
+  --td-gray-color-2: #242424;
+  --td-gray-color-3: #2c2c2c;
+  --td-gray-color-4: #383838;
+  --td-gray-color-5: #4b4b4b;
+  --td-gray-color-6: #5e5e5e;
+  --td-gray-color-7: #777;
+  --td-gray-color-8: #a6a6a6;
+  --td-gray-color-9: #8b8b8b;
+  --td-gray-color-10: #c5c5c5;
+  --td-gray-color-11: #dcdcdc;
+  --td-gray-color-12: #e7e7e7;
+  --td-gray-color-13: #eee;
+  --td-gray-color-14: #f3f3f3;
 
   // 文字 & 图标 颜色
   --td-font-white-1: rgba(255, 255, 255, 90%);
@@ -112,9 +112,15 @@
   --td-font-gray-3: rgba(0, 0, 0, 40%);
   --td-font-gray-4: rgba(0, 0, 0, 26%);
 
+  // 线条
+  --rc-border-1: var(--td-gray-color-8);
+  --rc-border-2: var(--td-gray-color-6);
+  --rc-border-3: var(--td-gray-color-4);
+  --rc-border-4: var(--td-gray-color-2);
+
   // 基础颜色
   --td-brand-color: var(--td-brand-color-8); // 色彩-品牌-可操作
-  --td-warning-color: var(--td-warning-color-5); // 色彩-功能-警告
+  --td-warning-color: var(--td-warning-color-6); // 色彩-功能-警告
   --td-error-color: var(--td-error-color-6); // 色彩-功能-失败
   --td-success-color: var(--td-success-color-5); // 色彩-功能-成功
   --td-cyan-color: var(--td-cyan-color-6);
@@ -127,7 +133,8 @@
   --td-brand-color-focus: var(--td-brand-color-2); // focus态，包括鼠标和键盘
   --td-brand-color-active: var(--td-brand-color-9); // 点击态
   --td-brand-color-disabled: var(--td-brand-color-3); // 禁用态
-  --td-brand-color-light: var(--td-brand-color-1); // 浅色的选中态
+  --td-brand-color-light: var(--td-brand-color-2); // 浅色的选中态
+  --td-brand-color-light-hover: var(--td-brand-color-4); // 浅色的hover态
 
   // 警告色扩展
   --td-warning-color-hover: var(--td-warning-color-4);
@@ -155,18 +162,18 @@
   --td-mask-disabled: rgba(0, 0, 0, 60%); // 遮罩-禁用
 
   // 背景色
-  --td-bg-color-page: var(--td-gray-color-14); // 色彩 - page
-  --td-bg-color-container: var(--td-gray-color-13); // 色彩 - 容器
-  --td-bg-color-container-hover: var(--td-gray-color-12); // 色彩 - 容器 - hover
-  --td-bg-color-container-active: var(--td-gray-color-10); // 色彩 - 容器 - active
-  --td-bg-color-container-select: var(--td-gray-color-9); // 色彩 - 容器 - select
-  --td-bg-color-secondarycontainer: var(--td-gray-color-12); // 色彩 - 次级容器
-  --td-bg-color-secondarycontainer-hover: var(--td-gray-color-11); // 色彩 - 次级容器 - hover
-  --td-bg-color-secondarycontainer-active: var(--td-gray-color-9); // 色彩 - 次级容器 - active
-  --td-bg-color-component: var(--td-gray-color-11); // 色彩  - 组件
-  --td-bg-color-component-hover: var(--td-gray-color-10); // 色彩 - 组件 - hover
-  --td-bg-color-component-active: var(--td-gray-color-9); // 色彩 - 组件 - active
-  --td-bg-color-component-disabled: var(--td-gray-color-12); // 色彩 - 组件 - disabled
+  --td-bg-color-page: var(--td-gray-color-1); // 色彩 - page
+  --td-bg-color-container: var(--td-gray-color-2); // 色彩 - 容器
+  --td-bg-color-container-hover: var(--td-gray-color-3); // 色彩 - 容器 - hover
+  --td-bg-color-container-active: var(--td-gray-color-5); // 色彩 - 容器 - active
+  --td-bg-color-container-select: var(--td-gray-color-6); // 色彩 - 容器 - select
+  --td-bg-color-secondarycontainer: var(--td-gray-color-3); // 色彩 - 次级容器
+  --td-bg-color-secondarycontainer-hover: var(--td-gray-color-4); // 色彩 - 次级容器 - hover
+  --td-bg-color-secondarycontainer-active: var(--td-gray-color-6); // 色彩 - 次级容器 - active
+  --td-bg-color-component: var(--td-gray-color-3); // 色彩  - 组件
+  --td-bg-color-component-hover: var(--td-gray-color-4); // 色彩 - 组件 - hover
+  --td-bg-color-component-active: var(--td-gray-color-6); // 色彩 - 组件 - active
+  --td-bg-color-component-disabled: var(--td-gray-color-3); // 色彩 - 组件 - disabled
 
   // 特殊组件背景色，目前只用于 button、input 组件多主题场景，浅色主题下固定为白色，深色主题下为 transparent 适配背景颜色
   --td-bg-color-specialcomponent: transparent;
@@ -177,15 +184,15 @@
   --td-text-color-placeholder: var(--td-font-white-3); // 色彩-文字-占位符/说明
   --td-text-color-disabled: var(--td-font-white-4); // 色彩-文字-禁用
   --td-text-color-anti: #fff; // 色彩-文字-反色
-  --td-text-color-brand: var(--td-brand-color-8); // 色彩-文字-品牌
-  --td-text-color-link: var(--td-brand-color-8); // 色彩-文字-链接
+  --td-text-color-brand: var(--td-brand-color); // 色彩-文字-品牌
+  --td-text-color-link: var(--td-brand-color); // 色彩-文字-链接
 
   // 分割线
   --td-border-level-1-color: var(--td-gray-color-11);
   --td-component-stroke: var(--td-gray-color-11);
   // 边框
-  --td-border-level-2-color: var(--td-gray-color-9);
-  --td-component-border: var(--td-gray-color-9);
+  --td-border-level-2-color: var(--td-gray-color-8);
+  --td-component-border: var(--td-gray-color-8);
 
   // 基础/下层 投影 hover 使用的组件包括：表格 /
   --td-shadow-1: 0 4px 6px rgba(0, 0, 0, 6%), 0 1px 10px rgba(0, 0, 0, 8%),

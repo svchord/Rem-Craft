@@ -1,7 +1,8 @@
 $snackbar-shadow: fluent-shadow(16);
+$snackbar-shadow-dark: rc-shadow(16);
 $snackbar-border-radius: $rc-bradius-small;
 $snackbar-color: $rc-text-primary;
-$snackbar-bg: $rc-container-bg;
+$snackbar-bg: $rc-secontainer-bg;
 $snackbar-info-color: $rc-brand;
 $snackbar-link-color: $rc-brand;
 $snackbar-error-color: $rc-error;
@@ -27,6 +28,10 @@ $snackbar-success-color: $rc-success;
       font-size: 14px;
       max-width: 30vw;
       line-height: 22px;
+
+      [theme-mode="dark"] & {
+        box-shadow: $snackbar-shadow-dark  !important;
+      }
 
       // 提示种类图标
       &::before {

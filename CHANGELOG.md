@@ -1,6 +1,15 @@
 # 更新历史 | Changelog 
 
 
+### [1.5.2](https://github.com/svchord/Rem-Craft/compare/v1.5.1...v1.5.2) (2022-07-26)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复集市卡片的样式 ([dfb6564](https://github.com/svchord/Rem-Craft/commit/dfb65641a16edbc88e7bff94bb8c2fe320655e23))
+* :bug: 修复主题重载时的资源地址问题 ([8a3feac](https://github.com/svchord/Rem-Craft/commit/8a3feac5ddae469e5f56fc391951962b5709eebe))
+* :bug: 优化滚动条颜色 ([15264be](https://github.com/svchord/Rem-Craft/commit/15264beefb58697a6607e3edf3d747187f013249))
+
 ### [1.5.1](https://github.com/svchord/Rem-Craft/compare/v1.5.0...v1.5.1) (2022-07-26)
 
 

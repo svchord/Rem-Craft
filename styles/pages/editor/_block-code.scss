@@ -140,6 +140,7 @@ $code-action-bg-active: $gray-4;
     padding: 34px 16px 32px 22px !important;
     // font-size: 85% !important;
     line-height: 1.625;
+    height: 100%;
 
     // 有行号的特殊情况
     &.protyle-linenumber {

@@ -9,7 +9,7 @@
 }
 
 .layout__resize--lr {
-  margin: #{$interval} -3px; // calc((#{$interval} - 6px) / 2 - #{$interval});
+  margin: $interval -3px; // calc(($interval - 6px) / 2 - $interval);
 
   &::after {
     left: 2.5px;
@@ -17,6 +17,6 @@
 }
 
 .layout__resize:not(.layout__resize--lr) {
-  margin: -3px #{$interval}; // calc((#{$interval} - 6px) / 2 - #{$interval})
-  width: calc(100% - #{$interval}* 2);
+  margin: -3px $interval; // calc(($interval - 6px) / 2 - $interval)
+  width: calc(100% - $interval* 2);
 }

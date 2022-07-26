@@ -4,18 +4,18 @@ $prefix: rc;
 $asset-path: "./assets";
 
 // 基础颜色
-$rc-brand: $brand-8;
-$rc-success: $success-5;
-$rc-error: $error-6;
-$rc-warning: $warning-5;
+$rc-brand: $brand-color;
+$rc-success: $success-color;
+$rc-error: $error-color;
+$rc-warning: $warning-color;
 
 // 基础颜色的扩展 用于 hover / 聚焦 / 禁用 / 点击 等状态
-$rc-brand-hover: $brand-7; // hover态
-$rc-brand-focus: $brand-2; // focus态，包括鼠标和键盘
-$rc-brand-active: $brand-9; // 点击态
-$rc-brand-disabled: $brand-3; // 禁用态
-$rc-brand-light: $brand-1; // 浅色的选中态
-$rc-brand-light-hover: $brand-2; // 浅色的选中态
+$rc-brand-hover: $brand-color-hover; // hover态
+$rc-brand-focus: $brand-color-focus; // focus态，包括鼠标和键盘
+$rc-brand-active: $brand-color-active; // 点击态
+$rc-brand-disabled: $brand-color-disabled; // 禁用态
+$rc-brand-light: $brand-color-light; // 浅色的选中态
+$rc-brand-light-hover: $brand-color-light-hover; // 浅色的hover态
 
 // 警告色扩展
 $rc-warning-hover: $warning-4;
@@ -43,12 +43,12 @@ $rc-mask-active: $mask-active; // 遮罩-弹出
 $rc-mask-disabled: $mask-disabled; // 遮罩-禁用
 
 // 全局Token
-$rc-ui-bg: $gray-1; //bg-color-page; //gray-2，色彩 - page
+$rc-ui-bg: $bg-color-page; //gray-2，色彩 - page
 $rc-container-bg: $bg-color-container; // 色彩 - 容器
+$rc-secontainer-bg:$bg-color-secondarycontainer; // 色彩 - 次级容器
 
-$rc-component-bg: $gray-1; // 色彩  - 组件
-$rc-component-button: $gray-3; // 色彩  - 组件按钮
-// $rc-component-button-hover: $gray-5; // 色彩  - 组件按钮 -hover
+$rc-component-bg: $bg-color-component; // 色彩  - 组件
+$rc-component-button: $bg-color-component-hover; // 色彩  - 组件按钮
 $rc-component-bg-select: $rc-brand-light; // 色彩  - 组件 - select
 $rc-component-button-select: $rc-brand-light-hover; // 色彩  - 组件按钮 - select
 
@@ -61,10 +61,10 @@ $rc-text-brand: $text-color-brand; //brand-8
 $rc-text-link: $text-color-secondary; //brand-8
 
 //线条颜色
-$rc-border-1: $gray-7; //rgb(242, 243, 245);
-$rc-border-2: $gray-5; //rgb(239, 240, 241);
-$rc-border-3: $gray-3; //rgb(222, 224, 227);
-$rc-border-4: $gray-1; //rgb(143, 149, 158);
+$rc-border-1: $border-1;
+$rc-border-2: $border-2;
+$rc-border-3: $border-3;
+$rc-border-4: $border-4; 
 
 // shadow
 
@@ -121,7 +121,7 @@ $rc-duration-slow: $anim-duration-slow; //0.28s
 
   // 阴影
   --b3-point-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  --b3-dialog-shadow: #{fluent-shadow(64)};
+  --b3-dialog-shadow: #{rc-shadow(64)};
 
   /* 编辑器搜索颜色 */
   --b3-protyle-search-border-color: #f2e680;

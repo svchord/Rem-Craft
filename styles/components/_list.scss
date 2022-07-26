@@ -2,7 +2,7 @@ $list-item-border-radius: $rc-bradius-small;
 $list-font-size: 13px;
 $list-text-height: 20px;
 $list-wnd-height: 30px;
-$list-item-color: $rc-text-primary;
+$list-item-color: $rc-text-secondary;
 $list-item-bg-hover: $rc-component-bg;
 //折叠按钮宽度
 $list-arrow-width: 16px;
@@ -190,6 +190,10 @@ $list-item-meta-color-focus: $brand-4;
     color: $list-item-color-focus  !important;
     background-color: $list-item-bg-focus  !important;
 
+    // [theme-mode="dark"] & {
+    //   color: $rc-text-anti !important;
+    // }
+
     .counter:not(:empty) {
       background-color: $list-item-bg-focus  !important;
     }
@@ -197,6 +201,9 @@ $list-item-meta-color-focus: $brand-4;
     *,
     .b3-list-item__toggle.fn__hidden::before {
       color: $list-item-color-focus  !important;
+      // [theme-mode="dark"] & {
+      //   color: $rc-text-anti !important;
+      // }
     }
 
     .b3-list-item__arrow.fn__hidden {
@@ -271,12 +278,16 @@ $list-item-meta-color-focus: $brand-4;
 }
 
 %first_list_item {
-  position: relative;
-  background-color: $rc-component-bg;
-  padding-left: 8px !important;
+  // background-color: $rc-component-bg;
 
-  &::before {
-    @include focus_before(8px, 0px);
+  * {
+    color: $rc-text-primary  !important;
+  }
+
+  &.b3-list-item--focus {
+    * {
+      color: $list-item-color-focus  !important;
+    }
   }
 }
 
@@ -330,8 +341,15 @@ $list-item-meta-color-focus: $brand-4;
 
   // 标题
   >.b3-list-item {
-    margin: 0 8px 8px;
     @extend %first_list_item;
+    margin: 0 8px 8px;
+    position: relative;
+    background-color: $rc-component-bg;
+    padding-left: 8px !important;
+
+    &::before {
+      @include focus_before(8px, 0px);
+    }
 
     &:hover {
       background-color: $rc-component-button;

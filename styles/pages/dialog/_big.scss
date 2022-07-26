@@ -1,7 +1,7 @@
 //弹窗蒙版
-$dialog-scrim: rgba(36, 39, 41, 0.3);
+$dialog-scrim: $mask-active;//rgba(36, 39, 41, 0.3);
 //弹窗阴影
-$dialog-shadow: fluent-shadow(64);
+$dialog-shadow: rc-shadow(64);
 //弹窗边框弧度
 $dialog-border-radius: $rc-bradius-extra-large;
 

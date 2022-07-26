@@ -103,11 +103,6 @@
   --td-gray-color-13: #242424;
   --td-gray-color-14: #181818;
 
-
-  --rc-brand-light: #0052d920;
-  --rc-gray-light: #77777730;
-  --rc-gray-light-hover: #77777780;
-
   // 文字 & 图标 颜色
   --td-font-white-1: rgba(255, 255, 255, 100%);
   --td-font-white-2: rgba(255, 255, 255, 55%);
@@ -117,6 +112,12 @@
   --td-font-gray-2: rgba(0, 0, 0, 60%);
   --td-font-gray-3: rgba(0, 0, 0, 40%);
   --td-font-gray-4: rgba(0, 0, 0, 26%);
+  
+  // 线条
+  --rc-border-1: var(--td-gray-color-7);
+  --rc-border-2: var(--td-gray-color-5);
+  --rc-border-3: var(--td-gray-color-3);
+  --rc-border-4: var(--td-gray-color-1);
 
   // 基础颜色
   --td-brand-color: var(--td-brand-color-8); // 色彩-品牌-可操作
@@ -134,6 +135,7 @@
   --td-brand-color-active: var(--td-brand-color-9); // 点击态
   --td-brand-color-disabled: var(--td-brand-color-3); // 禁用态
   --td-brand-color-light: var(--td-brand-color-1); // 浅色的选中态
+  --td-brand-color-light-hover: var(--td-brand-color-2); // 浅色的hover态
 
   // 警告色扩展
   --td-warning-color-hover: var(--td-warning-color-4);
@@ -161,16 +163,16 @@
   --td-mask-disabled: rgba(255, 255, 255, 60%); // 遮罩-禁用
 
   // 背景色
-  --td-bg-color-page: var(--td-gray-color-2); // 色彩 - page
+  --td-bg-color-page: var(--td-gray-color-1); // 色彩 - page
   --td-bg-color-container: #fff; // 色彩 - 容器
   --td-bg-color-container-hover: var(--td-gray-color-1); // 色彩 - 容器 - hover
   --td-bg-color-container-active: var(--td-gray-color-3); // 色彩 - 容器 - active
   --td-bg-color-container-select: #fff; // 色彩 - 容器 - select
-  --td-bg-color-secondarycontainer: var(--td-gray-color-1); // 色彩 - 次级容器
+  --td-bg-color-secondarycontainer: #fff; // 色彩 - 次级容器
   --td-bg-color-secondarycontainer-hover: var(--td-gray-color-2); // 色彩 - 次级容器 - hover
   --td-bg-color-secondarycontainer-active: var(--td-gray-color-4); // 色彩 - 次级容器 - active
-  --td-bg-color-component: var(--td-gray-color-3); // 色彩 - 组件
-  --td-bg-color-component-hover: var(--td-gray-color-4); // 色彩 - 组件 - hover
+  --td-bg-color-component: var(--td-gray-color-1); // 色彩 - 组件
+  --td-bg-color-component-hover: var(--td-gray-color-3); // 色彩 - 组件 - hover
   --td-bg-color-component-active: var(--td-gray-color-6); // 色彩 - 组件 - active
   --td-bg-color-component-disabled: var(--td-gray-color-2); // 色彩 - 组件 - disabled
 

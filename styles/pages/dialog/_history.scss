@@ -21,7 +21,7 @@
         %list {
 
             .b3-list {
-                background-color: $rc-container-bg !important;
+                background-color: $rc-container-bg  !important;
                 border-radius: $rc-bradius-small;
 
                 .b3-list-item {
@@ -46,6 +46,12 @@
             .history__text {
                 background-color: $rc-container-bg  !important;
             }
+            
+            // 文档选择
+            .b3-list-item[data-type="switchNotebook"]{
+                background-color: $rc-component-bg !important;
+            }
+            
         }
 
         // 资源历史界面
@@ -91,7 +97,6 @@
 
         // 数据快照界面
         .history__repo {
-            @extend %list;
             background-color: $rc-container-bg;
 
             .history__repoheader {
@@ -131,8 +136,14 @@
                 }
             }
 
-            > .b3-list li{
-                list-style: none;
+            >.b3-list {
+                margin: 0;
+                padding: 16px;
+                background-color: $rc-container-bg !important;
+
+                li {
+                    list-style: none;
+                }
             }
         }
 

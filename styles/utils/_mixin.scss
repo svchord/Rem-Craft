@@ -8,7 +8,7 @@
 
   &:hover {
     color: $rc-text-primary  !important;
-    background-color: $rc-component-bg;
+    background-color: $rc-component-bg !important;
   }
 
   // &:active {

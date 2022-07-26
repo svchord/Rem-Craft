@@ -61,7 +61,7 @@ $dialog-card-button-hover: $rc-component-bg-select;
 
       .b3-card__img {
         // margin: 12px 16px 8px 16px;
-        margin: 16px 16px 16px 16px;
+        margin: 16px 16px 4px 16px;
         width: calc(100% - 16px * 2);
         border-radius: $dialog-card-img-border-radius;
         background-color: $dialog-card-img-bg;
@@ -74,10 +74,14 @@ $dialog-card-button-hover: $rc-component-bg-select;
       }
 
       .b3-card__info {
-        padding: 8px 16px 0;
+        padding: 12px 16px 0px;
 
         a:last-child>*:last-child {
           transform: translateY(1px);
+        }
+
+        &[style*="background-color"] {
+          background-color: $rc-brand-light  !important;
         }
       }
 
@@ -86,7 +90,6 @@ $dialog-card-button-hover: $rc-component-bg-select;
         height: 44px;
         padding: 8px;
 
-        // &[style*="lightest"] {
         button {
           height: 28px;
 
@@ -96,6 +99,13 @@ $dialog-card-button-hover: $rc-component-bg-select;
 
           &:first-child+.fn__space {
             display: none;
+          }
+        }
+
+        &[style*="background-color"] {
+          background-color: $rc-brand-light  !important;
+          button:hover{
+            background-color: $rc-brand-light-hover ;
           }
         }
 

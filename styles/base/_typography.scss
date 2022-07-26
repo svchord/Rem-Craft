@@ -4,17 +4,22 @@
 }
 
 @font-face {
+  font-family: "Noto Sans SC 01";
+  src: url("#{$asset-path}/fonts/NotoSansSC-Regular.otf");
+}
+
+@font-face {
   font-family: "JetBrains Mono 01";
   src: url("#{$asset-path}/fonts/JetBrainsMono-Regular.ttf");
 }
 
 :root {
   // 字体
-  --b3-font-family: "HarmonyOS Sans SC 01", "JetBrains Mono 01",
+  --b3-font-family: "HarmonyOS Sans SC 01", "Noto Sans SC 01", "JetBrains Mono 01",
     "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB",
     "Microsoft Yahei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
-  --b3-font-family-code: "JetBrains Mono 01", "HarmonyOS Sans SC 01", mononoki,
+  --b3-font-family-code: "JetBrains Mono 01", "HarmonyOS Sans SC 01", "Noto Sans SC 01", mononoki,
     Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji",
     "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
     "EmojiSymbols";
@@ -23,5 +28,3 @@
     "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji";
   --b3-font-family-math: KaTeX_Math;
 }
-
-

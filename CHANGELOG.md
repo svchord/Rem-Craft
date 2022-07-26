@@ -1,6 +1,13 @@
 # 更新历史 | Changelog 
 
 
+### [1.5.1](https://github.com/svchord/Rem-Craft/compare/v1.5.0...v1.5.1) (2022-07-26)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复引述块嵌套表格块的问题 ([9b26ed2](https://github.com/svchord/Rem-Craft/commit/9b26ed2acf0336275857b9e8d7efa48eb2f0ee49))
+
 ## [1.5.0](https://github.com/svchord/Rem-Craft/compare/v1.4.3...v1.5.0) (2022-07-26)
 
 

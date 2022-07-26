@@ -1,6 +1,13 @@
 # 更新历史 | Changelog 
 
 
+## [1.5.0](https://github.com/svchord/Rem-Craft/compare/v1.4.3...v1.5.0) (2022-07-26)
+
+
+### ✨ 新增功能 | Features
+
+* :sparkles: 明暗切换 ([b73e3be](https://github.com/svchord/Rem-Craft/commit/b73e3be3e205ba2da677d999cf812ed7c6c9d183))
+
 ### [1.4.3](https://github.com/svchord/Rem-Craft/compare/v1.4.2...v1.4.3) (2022-07-18)
 
 

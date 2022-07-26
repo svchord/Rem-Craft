@@ -3,7 +3,7 @@ span[data-type="inline-math"] {
   margin: 0 3px;
   .katex {
     font-size: 100% !important;
-    font-family: var(--b3-font-family-math), HarmonyOS Sans SC, Times New Roman,
+    font-family: KaTeX_Main,var(--b3-font-family-math), "HarmonyOS Sans SC 01", Times New Roman,
       serif !important;
   }
 }

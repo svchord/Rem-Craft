@@ -192,6 +192,7 @@ $list-item-meta-color-focus: $brand-4;
 
     // [theme-mode="dark"] & {
     //   color: $rc-text-anti !important;
+    //   background-color: $rc-brand !important;
     // }
 
     .counter:not(:empty) {
@@ -216,6 +217,9 @@ $list-item-meta-color-focus: $brand-4;
     .b3-list-item__graphic.popover__block {
       &:hover {
         background-color: $list-button-bg-focus  !important;
+        // [theme-mode="dark"] & {
+        //   background-color: $rc-brand-hover !important;
+        // }
       }
 
       // &:active {

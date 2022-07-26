@@ -20,5 +20,8 @@
     "commitizen": {
       "path": "node_modules/cz-git"
     }
+  },
+  "dependencies": {
+    "@semi-bot/semi-theme-universedesign": "^1.0.12"
   }
 }

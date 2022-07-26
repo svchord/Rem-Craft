@@ -37,7 +37,7 @@ $bq-before-bg: $rc-text-primary;
     // 一级子元素
     >[data-node-id] {
       margin-left: 10px !important;
-      padding-left: 12px;
+      padding-left: 12px !important;
     }
 
     // 所有子元素

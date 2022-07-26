@@ -2,7 +2,7 @@ theme = {};
 
 theme.updateStyle = (() => {
   let style = document.getElementById("themeStyle");
-  style.setAttribute("href", "/appearance/themes/Rem-Craft/theme.css");
+  style.setAttribute("href", "/appearance/themes/Rem Craft/theme.css");
 })();
 
 theme.mode = (() => {

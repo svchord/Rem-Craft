@@ -1,12 +1,17 @@
 //超级块横排
 .protyle-wysiwyg [data-node-id].sb {
+  padding: 0 !important;
+
   &[data-sb-layout="col"] {
     margin: 20px 0;
+    > [data-node-id]:not(:nth-last-child(2)){
+      margin-right: 1em;
+    }
   }
 
   &[data-sb-layout="row"] {
-    margin-right: 6px !important;
-    padding: 3px 2px;
+    margin-right: 1em !important;
+    // padding: 3px 2px;
     &:not(:last-child) .protyle-attr {
       right: 16px;
     }

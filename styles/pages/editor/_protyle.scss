@@ -16,9 +16,50 @@ $pre-action-bg-focus: $rc-component-bg-select;
     width: auto !important;
     background-color: $protyle-bg;
 
-    >div:not(.sb):not(.list):not([data-type="NodeBlockQueryEmbed"]) {
+    >div:not(.sb):not(.list):not(.table):not([data-type="NodeBlockQueryEmbed"]) {
       padding-left: 2px !important;
       padding-right: 2px !important;
+    }
+
+    [data-node-id][fold="1"]:not(.li):not([data-type=NodeHeading]) {
+
+      &.p {
+        height: auto !important;
+        line-height: 1.74 !important;
+      }
+
+      &.list {
+        height: 40px;
+      }
+
+      &.bq {
+        height: 48px;
+
+        .p {
+          opacity: .68;
+          line-height: 1.625 !important;
+        }
+      }
+
+      &.code-block {
+        height: 36px;
+
+        .protyle-action {
+          height: 28px;
+        }
+
+        .protyle-icon {
+          margin-top: 1px;
+        }
+
+        .hljs {
+          opacity: 0;
+        }
+      }
+
+      &.table{
+        height: 44px;
+      }
     }
 
     div[data-type] {
@@ -69,7 +110,7 @@ $pre-action-bg-focus: $rc-component-bg-select;
       &[style*="360px"] {
         padding: 8px 16px !important;
         width: 405px !important;
-        
+
         margin: 0 auto;
       }
 

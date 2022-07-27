@@ -1,7 +1,8 @@
 $table-bg: $rc-container-bg;
 $table-border-radius: $rc-bradius-small;
 $table-border: $rc-border-3;
-$td-bg:$rc-container-bg;
+$td-bg: $rc-container-bg;
+
 //表格块
 .b3-typography,
 .protyle-wysiwyg {
@@ -10,7 +11,7 @@ $td-bg:$rc-container-bg;
     width: 100%;
     background-color: $table-bg;
     border-radius: $table-border-radius;
-    border: 1.2px solid $table-border !important;
+    border: 1px solid $table-border  !important;
     border-collapse: separate;
     tr {
       border: none;
@@ -25,14 +26,18 @@ $td-bg:$rc-container-bg;
       &:not(:first-child) {
         border-left: 1px solid $table-border;
       }
-      // &:focus {
-      //   border: 1px solid $brand-3;
-      // }
     }
   }
   .table {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding: 2px 4px !important;
+
+    // padding-left: 0 !important;
+    // padding-right: 0 !important;
+    &__select {
+      border-radius: $table-border-radius;
+
+    }
+
     table {
       @extend %table__model;
     }

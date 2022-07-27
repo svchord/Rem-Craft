@@ -130,7 +130,7 @@
 
   // 基础颜色的扩展 用于 hover / 聚焦 / 禁用 / 点击 等状态
   --td-brand-color-hover: var(--td-brand-color-7); // hover态
-  --td-brand-color-focus: var(--td-brand-color-2); // focus态，包括鼠标和键盘
+  --td-brand-color-focus: var(--td-brand-color-7); // focus态，包括鼠标和键盘
   --td-brand-color-active: var(--td-brand-color-9); // 点击态
   --td-brand-color-disabled: var(--td-brand-color-3); // 禁用态
   --td-brand-color-light: var(--td-brand-color-2); // 浅色的选中态

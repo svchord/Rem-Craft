@@ -1,23 +1,26 @@
-$switch-bg: $rc-component-bg;
-$switch-bg-hover: $rc-component-button;
-$switch-bg-active: $rc-component-button;
+$switch-bg: $rc-container-bg;
+$switch-bg-hover: $rc-container-bg;
+$switch-bg-active: $rc-container-bg;
 $switch-bg-checked: $rc-brand;
 $switch-bg-checked-hover: $rc-brand-hover;
 $switch-bg-checked-active: $rc-brand-active;
 
-$switch-width: 40px;
-$switch-height: 20px;
+$switch-border-width: 1px;
+$switch-border-color: $rc-border-1;
+
+$switch-width: 40px + $switch-border-width * 2;
+$switch-height: 20px + $switch-border-width * 2;
 $switch-border-radius: $rc-bradius-max;
 
-$switch-button-bg: $rc-container-bg;
+$switch-button-bg: $rc-border-1;
 $switch-button-bg-checked: $rc-container-bg;
-$switch-button-width: 12px;
+$switch-button-width: 13px;
 $switch-button-width-hover: 15px;
 $switch-button-width-active: 20px;
-$switch-button-shadow: 0 2px 4px #00230b33;
+// $switch-button-shadow: 0 2px 4px #00230b33;
 
-$switch-interval: calc(($switch-height - $switch-button-width) / 2);
-$switch-interval-hover: calc(($switch-height - $switch-button-width-hover) / 2);
+$switch-interval: calc(($switch-height - $switch-button-width) / 2 - $switch-border-width);
+$switch-interval-hover: calc(($switch-height - $switch-button-width-hover) / 2 - $switch-border-width);
 
 //开关
 .b3-switch {
@@ -25,13 +28,15 @@ $switch-interval-hover: calc(($switch-height - $switch-button-width-hover) / 2);
   width: $switch-width;
   height: $switch-height;
   border-radius: $switch-border-radius;
-  border: none;
+  border: $switch-border-width solid $switch-border-color;
   transition: all 0.2s ease-in-out;
+
   &::before {
     display: none !important;
   }
+
   &::after {
-    background-color: $switch-button-bg !important;
+    background-color: $switch-button-bg  !important;
     border: none;
     width: $switch-button-width;
     height: $switch-button-width;
@@ -39,11 +44,13 @@ $switch-interval-hover: calc(($switch-height - $switch-button-width-hover) / 2);
     top: $switch-interval;
     bottom: unset;
     box-shadow: none;
-    box-shadow: $switch-button-shadow;
+    // box-shadow: $switch-button-shadow;
     border-radius: $rc-bradius-max;
   }
+
   &:hover {
     background-color: $switch-bg-hover;
+
     &::after {
       width: $switch-button-width-hover;
       height: $switch-button-width-hover;
@@ -51,16 +58,21 @@ $switch-interval-hover: calc(($switch-height - $switch-button-width-hover) / 2);
       top: $switch-interval-hover;
     }
   }
+
   &:active {
     background-color: $switch-bg-active;
+
     &::after {
       width: $switch-button-width-active;
     }
   }
+
   &:checked {
     background-color: $switch-bg-checked;
+    border-color: $switch-bg-checked;
+
     &::after {
-      background-color: $switch-button-bg-checked !important;
+      background-color: $switch-button-bg-checked  !important;
       right: 20px;
       left: unset;
       top: $switch-interval;
@@ -68,15 +80,21 @@ $switch-interval-hover: calc(($switch-height - $switch-button-width-hover) / 2);
       transform: translateX(17px);
       transition: all 0.2s ease-in-out;
     }
+
     &:hover {
       background-color: $switch-bg-checked-hover;
+      border-color: $switch-bg-checked-hover;
+
       &::after {
         // right: 2px;
         top: $switch-interval-hover;
       }
     }
+
     &:active {
       background-color: $switch-bg-checked-active;
+      border-color: $switch-bg-checked-active;
+
     }
   }
 }

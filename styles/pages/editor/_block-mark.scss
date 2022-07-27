@@ -12,19 +12,6 @@ $search-mark-bg: $yellow-color-1;
 .protyle-wysiwyg {
   mark {
     background-color: transparent;
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      display: block;
-      top: 60%;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 40%;
-      opacity: .4;
-      background-color: $brand-6;
-    }
+    background-image: linear-gradient(transparent, transparent 50%, var(--rc-brand-light) 75%, var(--rc-brand-light) 100%);
   }
 }

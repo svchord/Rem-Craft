@@ -38,6 +38,9 @@ $bq-before-bg: $rc-text-primary;
     >[data-node-id] {
       margin-left: 10px !important;
       padding-left: 12px !important;
+      &[data-type="NodeHeading"]:first-child{
+        margin-top: 15px !important;
+      }
     }
 
     // 所有子元素

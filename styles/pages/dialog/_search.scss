@@ -57,6 +57,7 @@ $dialog-text-field-bg: $rc-container-bg;
         margin: 0;
         height: 44px;
         padding: 8px 8px 8px 16px;
+        border-bottom: 1px solid $rc-border-3;
 
         // 筛选项
         .b3-button--small {
@@ -107,7 +108,7 @@ $dialog-text-field-bg: $rc-container-bg;
           height: calc(100% - 94px) !important;
           padding: 16px 16px;
           margin: 0;
-          border-top: 1px solid $rc-border-3;
+          // border-top: 1px solid $rc-border-3;
           border-right: 1px solid $rc-border-3;
 
           .b3-list-item[data-type="search-item"] {
@@ -138,6 +139,7 @@ $dialog-text-field-bg: $rc-container-bg;
       #searchPreview {
         width: 60%;
         height: calc(100% - 94px) !important;
+        border: none;
         border-bottom-left-radius: $dialog-border-radius;
         border-bottom-right-radius: $dialog-border-radius;
 

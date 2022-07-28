@@ -10,33 +10,13 @@ $td-bg: $rc-container-bg;
     display: table;
     width: 100%;
     background-color: $table-bg;
-    border-radius: $table-border-radius;
-    border: 1px solid $table-border  !important;
-    border-collapse: separate;
-    tr {
-      border: none;
-      td {
-        border-top: 1px solid $table-border;
-      }
-    }
     th,
     td {
       background-color: $td-bg;
-      border: none;
-      &:not(:first-child) {
-        border-left: 1px solid $table-border;
-      }
     }
   }
   .table {
     padding: 2px 4px !important;
-
-    // padding-left: 0 !important;
-    // padding-right: 0 !important;
-    &__select {
-      border-radius: $table-border-radius;
-
-    }
 
     table {
       @extend %table__model;

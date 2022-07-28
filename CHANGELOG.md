@@ -1,6 +1,25 @@
 # 更新历史 | Changelog 
 
 
+### [1.5.3](https://github.com/svchord/Rem-Craft/compare/v1.5.2...v1.5.3) (2022-07-28)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复暗黑模式下list-meta的颜色显示问题 ([f49a283](https://github.com/svchord/Rem-Craft/commit/f49a28360191240410073173c04d6cdcf3ce1fd3))
+* :bug: 修复表格块的线条显示问题 ([0c36ab4](https://github.com/svchord/Rem-Craft/commit/0c36ab48dd90753efe91fc9cc7c91f85699b100f))
+* :bug: 修复部分emoji显示错误的问题 ([7fc38b8](https://github.com/svchord/Rem-Craft/commit/7fc38b895dc47a1771e4972b66f14b7bb0882983))
+* :bug: 修复公式块的样式问题 ([0e5ede7](https://github.com/svchord/Rem-Craft/commit/0e5ede734c8da76ace1d193831dd819803063a36)), closes [#27](https://github.com/svchord/Rem-Craft/issues/27)
+* :bug: 修复账号界面的部分显示问题 ([b7aaa4a](https://github.com/svchord/Rem-Craft/commit/b7aaa4ac6f14cc21ba0fbb2f1fd87d9712860b03))
+* :bug: 修复mark标记块的样式 ([8832f5e](https://github.com/svchord/Rem-Craft/commit/8832f5edc606ffeb885fccd4c60b7f0933d99562))
+* :bug: 优化超级块的样式 ([db1ad3b](https://github.com/svchord/Rem-Craft/commit/db1ad3b1ce12e2385773221e8dd4cbca650dd528))
+* :bug: 优化代码块样式 ([ac3bcea](https://github.com/svchord/Rem-Craft/commit/ac3bcea063975131467b4cf5fb1e5870f7e862c1))
+* :bug: 优化各块折叠后的样式问题 ([eae51de](https://github.com/svchord/Rem-Craft/commit/eae51de93d59640f50d976b19a49c9fded056b1b))
+* :bug: 优化开关样式，更贴合win11风格 ([9630104](https://github.com/svchord/Rem-Craft/commit/9630104aafff694937cf536f05e83bc8ed53cc97))
+* :bug: 优化输入框和代码选择语言菜单的样式 ([9019abb](https://github.com/svchord/Rem-Craft/commit/9019abbd1a8a1d08c431a914630ad91218b97fc2))
+* :bug: 优化引述块内首个标题块的样式 ([28e0864](https://github.com/svchord/Rem-Craft/commit/28e08649f1563458b6b0c5dc1f3637266cf9d6b7))
+* :bug: 优化字体 ([b0fc6cf](https://github.com/svchord/Rem-Craft/commit/b0fc6cf32a78f8fd61e902da3a7d6f963ae264f8))
+
 ### [1.5.2](https://github.com/svchord/Rem-Craft/compare/v1.5.1...v1.5.2) (2022-07-26)
 
 

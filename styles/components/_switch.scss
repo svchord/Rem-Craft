@@ -8,19 +8,23 @@ $switch-bg-checked-active: $rc-brand-active;
 $switch-border-width: 1px;
 $switch-border-color: $rc-border-1;
 
-$switch-width: 40px + $switch-border-width * 2;
-$switch-height: 20px + $switch-border-width * 2;
+$switch-width: 38px + $switch-border-width * 2;
+$switch-height: 18px + $switch-border-width * 2;
 $switch-border-radius: $rc-bradius-max;
 
 $switch-button-bg: $rc-border-1;
 $switch-button-bg-checked: $rc-container-bg;
-$switch-button-width: 13px;
-$switch-button-width-hover: 15px;
+$switch-button-width: 12px;
+$switch-button-width-hover: 14px;
 $switch-button-width-active: 20px;
 // $switch-button-shadow: 0 2px 4px #00230b33;
 
-$switch-interval: calc(($switch-height - $switch-button-width) / 2 - $switch-border-width);
-$switch-interval-hover: calc(($switch-height - $switch-button-width-hover) / 2 - $switch-border-width);
+$switch-interval: calc(
+  ($switch-height - $switch-button-width) / 2 - $switch-border-width
+);
+$switch-interval-hover: calc(
+  ($switch-height - $switch-button-width-hover) / 2 - $switch-border-width
+);
 
 //开关
 .b3-switch {
@@ -36,7 +40,7 @@ $switch-interval-hover: calc(($switch-height - $switch-button-width-hover) / 2 -
   }
 
   &::after {
-    background-color: $switch-button-bg  !important;
+    background-color: $switch-button-bg !important;
     border: none;
     width: $switch-button-width;
     height: $switch-button-width;
@@ -72,12 +76,12 @@ $switch-interval-hover: calc(($switch-height - $switch-button-width-hover) / 2 -
     border-color: $switch-bg-checked;
 
     &::after {
-      background-color: $switch-button-bg-checked  !important;
-      right: 20px;
+      background-color: $switch-button-bg-checked !important;
+      right: $switch-interval + $switch-button-width;
       left: unset;
       top: $switch-interval;
       bottom: unset;
-      transform: translateX(17px);
+      transform: translateX($switch-button-width);
       transition: all 0.2s ease-in-out;
     }
 
@@ -88,13 +92,13 @@ $switch-interval-hover: calc(($switch-height - $switch-button-width-hover) / 2 -
       &::after {
         // right: 2px;
         top: $switch-interval-hover;
+        right: $switch-interval-hover + $switch-button-width;
       }
     }
 
     &:active {
       background-color: $switch-bg-checked-active;
       border-color: $switch-bg-checked-active;
-
     }
   }
 }

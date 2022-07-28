@@ -137,7 +137,7 @@ $code-action-bg-active: $gray-4;
   // 代码区
   .hljs {
     background-color: transparent !important;
-    padding: 34px 16px 32px 22px !important;
+    padding: 34px 16px 32px 32px !important;
     // font-size: 85% !important;
     line-height: 1.625;
     height: 100%;
@@ -159,7 +159,8 @@ $code-action-bg-active: $gray-4;
     margin-right: 10px;
 
     span {
-      height: 1.625;
+      // height:20.71875px !important;
+      line-height: 1.625;
 
       &::before {
         // height: 22px;

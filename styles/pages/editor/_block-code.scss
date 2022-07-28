@@ -109,6 +109,9 @@ $code-action-bg-active: $gray-4;
 
       &:hover {
         background-color: $code-action-bg-active;
+        [theme-mode="dark"] & {
+          background-color: $gray-6;
+        }
       }
     }
 
@@ -130,6 +133,9 @@ $code-action-bg-active: $gray-4;
 
       &:hover {
         background-color: $code-action-bg-active;
+        [theme-mode="dark"] & {
+          background-color: $gray-6;
+        }
       }
     }
   }

@@ -189,6 +189,9 @@ $dialog-text-field-bg: $rc-container-bg;
       label {
         .b3-label__text {
           font-size: 13px !important;
+          height: 20px;
+          line-height: 20px;
+          margin: 0;
         }
 
         margin-bottom: 16px;

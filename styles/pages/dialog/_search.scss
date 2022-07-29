@@ -163,6 +163,13 @@ $dialog-text-field-bg: $rc-container-bg;
           }
         }
       }
+
+      .search__header + .search__header:not(.fn__none) {
+        ~ #searchList,
+        ~ #searchPreview{
+          height: calc(100% - 49px - 49px - 44px) !important;
+        }
+      }
     }
 
     // 块类型筛选界面

@@ -23,18 +23,15 @@
           color: $rc-error !important;
           background-color: $error-2 !important;
         }
-        
-        .code-block{
+
+        .code-block {
           background-color: $error-2 !important;
           .protyle-icon,
-          .protyle-action__language:hover{
+          .protyle-action__language:hover {
             background-color: $error-3 !important;
-
           }
-          .protyle-icon:hover{
+          .protyle-icon:hover {
             background-color: $error-4 !important;
-            
-
           }
         }
       }
@@ -63,11 +60,9 @@
         }
       }
     }
-    .code-block{
+
+    .code-block {
       margin-top: 0;
-      &:nth-last-child(2){
-        margin-bottom: 0;
-      }
     }
 
     &[data-sb-layout="col"] {
@@ -82,6 +77,8 @@
       &:not(:last-child) .protyle-attr {
         right: 16px;
       }
+
+      
     }
 
     // 第一级列表缩进

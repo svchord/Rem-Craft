@@ -13,8 +13,8 @@
       padding: 12px 0;
       margin-bottom: 20px;
       > [data-node-id] {
-        padding-left: 20px;
-        padding-right: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
       }
       &[style*="error"] {
         background-color: $rc-error-light !important;

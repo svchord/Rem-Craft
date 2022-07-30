@@ -182,3 +182,7 @@ $code-action-bg-active: $gray-4;
 .protyle-wysiwyg code:not(.hljs) {
   margin: 0 3px;
 }
+
+[data-type="a"] code{
+  padding: 0 0.4em !important;
+}

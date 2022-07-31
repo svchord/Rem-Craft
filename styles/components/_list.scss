@@ -56,17 +56,20 @@ $list-item-meta-color-focus: $rc-brand-focus;
     // 文档树无子元素
     &.fn__hidden {
       position: relative;
+      .b3-list-item__arrow{
+        display: none;
+      }
 
       &::before {
         content: '·';
         visibility: visible !important;
         display: block;
-        position: absolute;
+        // position: absolute;
         width: $list-arrow-width;
         height: $list-text-height;
-        font-size: 24px;
+        font-size: 20px;
         color: $rc-text-secondary;
-        line-height: $list-text-height;
+        line-height: $list-arrow-width;//$list-text-height;
         text-align: center;
       }
     }
@@ -129,7 +132,7 @@ $list-item-meta-color-focus: $rc-brand-focus;
     // }
 
     &::after {
-      display: none;
+      display: none !important;
     }
   }
 

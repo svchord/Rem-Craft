@@ -38,6 +38,9 @@ $pre-action-bg-focus: $rc-component-bg-select;
           opacity: 0.68;
           line-height: 1.625 !important;
           font-size: 15px !important;
+          &:first-child{
+            height: calc(100% - 8px);
+          }
         }
       }
 

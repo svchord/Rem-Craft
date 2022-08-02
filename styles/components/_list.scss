@@ -39,7 +39,7 @@ $list-item-meta-color-focus: $rc-brand-focus;
   margin: 4px 0;
 
   * {
-    color: $list-item-color  !important;
+    color: $list-item-color !important;
   }
 
   &:hover {
@@ -56,12 +56,12 @@ $list-item-meta-color-focus: $rc-brand-focus;
     // 文档树无子元素
     &.fn__hidden {
       position: relative;
-      .b3-list-item__arrow{
+      .b3-list-item__arrow {
         display: none;
       }
 
       &::before {
-        content: '·';
+        content: "·";
         visibility: visible !important;
         display: block;
         // position: absolute;
@@ -69,7 +69,7 @@ $list-item-meta-color-focus: $rc-brand-focus;
         height: $list-text-height;
         font-size: 20px;
         color: $rc-text-secondary;
-        line-height: $list-arrow-width;//$list-text-height;
+        line-height: $list-arrow-width; //$list-text-height;
         text-align: center;
       }
     }
@@ -113,7 +113,7 @@ $list-item-meta-color-focus: $rc-brand-focus;
 
       // 反链展开时的特殊情况
       .backlink--more & {
-        margin-top: 1px
+        margin-top: 1px;
       }
     }
   }
@@ -159,7 +159,7 @@ $list-item-meta-color-focus: $rc-brand-focus;
       display: none;
     }
 
-    +.fn__space {
+    + .fn__space {
       display: none;
     }
   }
@@ -175,7 +175,7 @@ $list-item-meta-color-focus: $rc-brand-focus;
 
   // 次级信息
   &__meta {
-    color: $list-item-meta-color  !important;
+    color: $list-item-meta-color !important;
   }
 
   // 块引用菜单列表
@@ -185,13 +185,12 @@ $list-item-meta-color-focus: $rc-brand-focus;
         margin-left: 0 !important;
       }
     }
-
   }
 
   // 列表选中态
   &--focus {
-    color: $list-item-color-focus  !important;
-    background-color: $list-item-bg-focus  !important;
+    color: $list-item-color-focus !important;
+    background-color: $list-item-bg-focus !important;
 
     // [theme-mode="dark"] & {
     //   color: $rc-text-anti !important;
@@ -199,12 +198,12 @@ $list-item-meta-color-focus: $rc-brand-focus;
     // }
 
     .counter:not(:empty) {
-      background-color: $list-item-bg-focus  !important;
+      background-color: $list-item-bg-focus !important;
     }
 
     *,
     .b3-list-item__toggle.fn__hidden::before {
-      color: $list-item-color-focus  !important;
+      color: $list-item-color-focus !important;
       // [theme-mode="dark"] & {
       //   color: $rc-text-anti !important;
       // }
@@ -219,7 +218,7 @@ $list-item-meta-color-focus: $rc-brand-focus;
     .b3-list-item__action,
     .b3-list-item__graphic.popover__block {
       &:hover {
-        background-color: $list-button-bg-focus  !important;
+        background-color: $list-button-bg-focus !important;
         // [theme-mode="dark"] & {
         //   background-color: $rc-brand-hover !important;
         // }
@@ -232,35 +231,34 @@ $list-item-meta-color-focus: $rc-brand-focus;
 
     // 次级信息
     .b3-list-item__meta {
-      color: $list-item-meta-color-focus  !important;
+      color: $list-item-meta-color-focus !important;
     }
   }
 
   // 子元素向右缩进 && 左侧辅助线
   // 循环阴影辅助线
   @function cyclic($cur) {
-
     $side-margin: calc(6px + $list-arrow-width / 2);
     $temp: "#{$side-margin - 1px} 0 #{$rc-container-bg} inset, #{$side-margin} 0 #{$rc-border-3} inset";
 
     @if $cur >1 {
       @for $i from 1 to $cur {
         $side-margin: calc($list-left * $i + 6px + $list-arrow-width / 2);
-        $temp : $temp +", "+"#{$side-margin - 1px} 0 #{$rc-container-bg} inset, #{$side-margin} 0 #{$rc-border-3} inset";
+        $temp: $temp +
+          ", "+"#{$side-margin - 1px} 0 #{$rc-container-bg} inset, #{$side-margin} 0 #{$rc-border-3} inset";
       }
     }
 
     @return $temp;
-
   }
 
   // 递归函数
   @mixin recursive-item-margin($cur, $end) {
-    +ul {
+    + ul {
       box-shadow: #{cyclic($cur)};
 
-      &>.b3-list-item {
-        margin-left: $list-left * $cur  !important;
+      & > .b3-list-item {
+        margin-left: $list-left * $cur !important;
 
         @if $cur < $end {
           @include recursive-item-margin($cur + 1, $end);
@@ -270,7 +268,6 @@ $list-item-meta-color-focus: $rc-brand-focus;
   }
 
   @include recursive-item-margin(1, $list-depth);
-
 }
 
 .b3-list,
@@ -280,7 +277,7 @@ $list-item-meta-color-focus: $rc-brand-focus;
   // 列表为空
   .b3-list--empty {
     color: $rc-text-placeholder;
-    font-size: $list-font-size  !important;
+    font-size: $list-font-size !important;
   }
 }
 
@@ -300,7 +297,6 @@ $list-item-meta-color-focus: $rc-brand-focus;
 
 // 文档树
 .file-tree {
-
   [data-type="navigation"] {
     margin-right: 4px;
   }
@@ -329,15 +325,15 @@ $list-item-meta-color-focus: $rc-brand-focus;
   }
 
   // 已关闭的笔记本
-  >.b3-list {
+  > .b3-list {
     margin: 8px 8px 0px;
 
-    >.b3-list-item {
+    > .b3-list-item {
       // @extend %first_list_item;
       margin-bottom: 8px;
     }
 
-    >ul {
+    > ul {
       margin-bottom: 8px;
     }
   }
@@ -345,9 +341,8 @@ $list-item-meta-color-focus: $rc-brand-focus;
 
 // 大纲
 .sy__outline {
-
   // 标题
-  >.b3-list-item {
+  > .b3-list-item {
     @extend %first_list_item;
     margin: 0 8px 8px;
     position: relative;
@@ -373,24 +368,21 @@ $list-item-meta-color-focus: $rc-brand-focus;
   }
 
   // 大纲列表
-  >.fn__flex-1 {
+  > .fn__flex-1 {
     margin-right: 4px;
-
   }
 }
 
 // 书签界面
-.sy__bookmark>.fn__flex-1>.b3-list {
+// .sy__bookmark > .fn__flex-1 > .b3-list {
+//   // 书签项
+//   > .b3-list-item {
+//     // @extend %first_list_item;
+//   }
+// }
 
-  // 书签项
-  >.b3-list-item {
-    @extend %first_list_item;
-  }
-}
-
-
-.sy__bookmark>.fn__flex-1,
-.sy__tag>.fn__flex-1,
+.sy__bookmark > .fn__flex-1,
+.sy__tag > .fn__flex-1,
 .backlinkList,
 .backlinkMList {
   margin-right: 4px;

@@ -45,26 +45,25 @@ $sub-menu-vertical: 10px;
     z-index: -99 !important;
   }
 
-  >.b3-menu__item {
-    >.b3-menu__icon {
+  > .b3-menu__item {
+    > .b3-menu__icon {
       transition: all 0.3s ease 0s;
       color: $menu-icon-color;
     }
 
     &:hover {
-      >.b3-menu__icon {
+      > .b3-menu__icon {
         color: $menu-icon-color-hover;
       }
     }
 
     // 自定义菜单项（文本框或滑条）
     &--custom {
-
       padding: 0 2px;
 
       .fn__hr,
       .fn__hr--small,
-      >.b3-menu__icon {
+      > .b3-menu__icon {
         display: none;
       }
 
@@ -74,7 +73,6 @@ $sub-menu-vertical: 10px;
       }
     }
   }
-
 }
 
 //菜单
@@ -135,7 +133,7 @@ $sub-menu-vertical: 10px;
 
         // 鼠标选项
         &--current {
-          background-color: $menu-bg  !important;
+          background-color: $menu-bg !important;
 
           .b3-menu__label {
             span {
@@ -179,40 +177,54 @@ $sub-menu-vertical: 10px;
   // 块引用菜单 && 搜索历史菜单
   &.b3-list,
   &.b3-list--background {
-    padding: 8px 12px 8px 8px;
+    padding: 8px;
     margin: 0;
-    overflow: overlay !important;
-
+    // overflow: overlay !important;
+    width: 550px !important;
+    .b3-text-field {
+      margin: 0 0 8px !important;
+    }
 
     .b3-list-item {
-
-      // margin-right: 4px;
-      // width: calc(100% - 4px);
+      margin: 8px 0;
+      // margin: 0 0 8px 8px;
+      // width: calc(100% - 8px);
       &:last-child {
         margin-bottom: 0;
       }
 
-      &__meta:first-child {
-        height: 20px;
-        line-height: 20px !important;
+      &__meta {
+        &:first-child {
+          height: 20px;
+          line-height: 20px !important;
 
-        .svg--small {
-          @include graphic(20px, 11px);
+          .svg--small {
+            @include graphic(20px, 11px);
+          }
         }
       }
 
+      &__graphic,
+      &__text {
+        color: $menu-item-color !important;
+      }
+
+      &--focus {
+        .b3-list-item__graphic,
+        .b3-list-item__text {
+          color: $rc-brand !important;
+        }
+      }
     }
   }
 
-
   &#commonMenu {
-
     .b3-text-field {
       margin-bottom: 6px;
     }
 
     // 添加文档标签菜单 输入框
-    >.fn__flex-column>input {
+    > .fn__flex-column > input {
       margin: 2px !important;
     }
 
@@ -226,11 +238,10 @@ $sub-menu-vertical: 10px;
           margin-bottom: 0;
         }
       }
-      &:empty{
+      &:empty {
         padding: 0;
       }
     }
-
   }
 
   //快捷命令菜单
@@ -243,26 +254,23 @@ $sub-menu-vertical: 10px;
     min-width: 200px !important;
     margin: 0;
 
-    >.emojis {
+    > .emojis {
       column-span: all;
-      width: 658px - 8px*2;
+      width: 658px - 8px * 2;
     }
 
     .b3-list-item {
-
       .b3-list-item__meta,
       .b3-menu__accelerator {
-        color: $rc-text-placeholder  !important;
+        color: $rc-text-placeholder !important;
       }
 
       &.b3-list-item--focus {
-
         .b3-list-item__meta,
         .b3-menu__accelerator {
-          color: $brand-4  !important;
+          color: $brand-4 !important;
         }
       }
-
     }
   }
 }

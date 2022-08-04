@@ -19,7 +19,6 @@ $code-action-bg-active: $gray-4;
 
   // 代码块按钮组
   &:hover {
-
     .protyle-action__language,
     .protyle-icon {
       opacity: 1 !important;
@@ -35,7 +34,7 @@ $code-action-bg-active: $gray-4;
       border-radius: $code-action-border-radius;
       font-size: 12px !important;
       display: flex;
-      color: $code-action-color  !important;
+      color: $code-action-color !important;
 
       &:hover {
         background-color: $code-action-bg-hover;
@@ -63,7 +62,8 @@ $code-action-bg-active: $gray-4;
         width: 8px;
         height: 20px;
         margin-left: 5px;
-        @include add_icon("expand_more",
+        @include add_icon(
+          "expand_more",
           $rc-text-placeholder,
           18,
           "no-repeat center"
@@ -76,7 +76,7 @@ $code-action-bg-active: $gray-4;
       @extend %code-action;
       padding: 0px 6px;
       height: 25px;
-      border-radius: $code-action-border-radius 0 0 $code-action-border-radius ;
+      border-radius: $code-action-border-radius 0 0 $code-action-border-radius;
       background-color: $code-action-bg-hover;
       margin-top: 3px;
       margin-right: 1px;
@@ -178,11 +178,15 @@ $code-action-bg-active: $gray-4;
 }
 
 //行内代码块
-.b3-typography code:not(.hljs),
-.protyle-wysiwyg code:not(.hljs) {
-  margin: 0 3px;
+// .b3-typography code:not(.hljs),
+// .protyle-wysiwyg code:not(.hljs) {
+//   // margin: 0 3px;
+// }
+
+code{
+  font-family: var(--b3-font-family-code);
 }
 
-[data-type="a"] code{
+[data-type="a"] code {
   padding: 0 0.4em !important;
 }

@@ -1,0 +1,99 @@
+//超级块横排
+.protyle-wysiwyg {
+  > [data-node-id].sb {
+    padding: 2px 0;
+    margin: 20px 0;
+  }
+  [data-node-id].sb {
+    // > [data-type="NodeHeading"]:first-child {
+    //   margin-top: 20px;
+    // }
+
+    &[style*="background-color"] {
+      padding: 12px 0;
+      margin-bottom: 20px;
+      > [data-node-id] {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      &[style*="error"] {
+        background-color: $rc-error-light !important;
+        color: $rc-text-primary !important;
+        code {
+          color: $rc-error !important;
+          background-color: $error-2 !important;
+        }
+
+        .code-block {
+          background-color: $error-2 !important;
+          .protyle-icon,
+          .protyle-action__language:hover {
+            background-color: $error-3 !important;
+          }
+          .protyle-icon:hover {
+            background-color: $error-4 !important;
+          }
+        }
+      }
+      &[style*="info"] {
+        background-color: $rc-brand-light !important;
+        color: $rc-text-primary !important;
+        code {
+          color: $rc-brand !important;
+          background-color: $brand-2 !important;
+        }
+        .code-block {
+          background-color: $brand-2 !important;
+          .protyle-icon,
+          .protyle-action__language:hover {
+            background-color: $brand-3 !important;
+          }
+          .protyle-icon:hover {
+            background-color: $brand-4 !important;
+          }
+        }
+      }
+      &[style*="success"] {
+        background-color: $rc-success-light !important;
+        color: $rc-text-primary !important;
+        code {
+          color: $rc-success !important;
+          background-color: $success-2 !important;
+        }
+      }
+      &[style*="success"] {
+        background-color: $rc-success-light !important;
+        color: $rc-text-primary !important;
+        code {
+          color: $rc-success !important;
+          background-color: $success-2 !important;
+        }
+      }
+    }
+
+    .code-block {
+      margin-top: 0;
+    }
+
+    &[data-sb-layout="col"] {
+      > [data-node-id]:not(:nth-last-child(2)) {
+        margin-right: 1em;
+      }
+    }
+
+    &[data-sb-layout="row"] {
+      // margin-right: 1em !important;
+      // padding: 3px 2px;
+      &:not(:last-child) .protyle-attr {
+        right: 16px;
+      }
+
+      
+    }
+
+    // 第一级列表缩进
+    > .list {
+      margin: 0 7px;
+    }
+  }
+}

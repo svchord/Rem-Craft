@@ -1,0 +1,68 @@
+$bq-before-border-radius: $rc-bradius-extra-small;
+$bq-color: $rc-text-secondary;
+$bq-before-bg: $rc-text-primary;
+
+//引述块
+%bq-side {
+  position: relative;
+  background-color: transparent !important;
+  border: none !important;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 3px;
+    height: calc(100% - 8px * 2);
+    top: 8px;
+    bottom: 8px;
+    left: 8px;
+    z-index: 0;
+    border-radius: $bq-before-border-radius;
+    background-color: $bq-before-bg;
+  }
+}
+
+
+.b3-typography,
+.protyle-wysiwyg {
+  .bq {
+    @extend %bq-side;
+
+
+    &.protyle-wysiwyg--hl {
+      background-color: $highlight-bg  !important;
+    }
+
+    // 一级子元素
+    >[data-node-id] {
+      margin-left: 10px !important;
+      padding-left: 12px !important;
+      &[data-type="NodeHeading"]:first-child{
+        margin-top: 15px !important;
+      }
+    }
+
+    // 所有子元素
+    [data-node-id] {
+      color: $bq-color  !important;
+    }
+
+    >.list {
+      margin-left: 18px;
+    }
+  }
+}
+
+blockquote {
+  @extend %bq-side;
+
+  >* {
+    margin-left: 20px !important;
+    position: relative;
+  }
+
+  * {
+    color: $bq-color  !important;
+  }
+}

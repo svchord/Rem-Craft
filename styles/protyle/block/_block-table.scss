@@ -1,0 +1,28 @@
+$table-bg: $rc-container-bg;
+$table-border-radius: $rc-bradius-small;
+$table-border: $rc-border-3;
+$td-bg: $rc-container-bg;
+
+//表格块
+.b3-typography,
+.protyle-wysiwyg {
+  %table__model {
+    display: table;
+    width: 100%;
+    background-color: $table-bg;
+    th,
+    td {
+      background-color: $td-bg;
+    }
+  }
+  .table {
+    padding: 2px 4px !important;
+
+    table {
+      @extend %table__model;
+    }
+  }
+  table {
+    @extend %table__model;
+  }
+}

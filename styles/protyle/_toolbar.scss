@@ -1,0 +1,57 @@
+//行内工具栏阴影
+$toolbar-shadow: fluent-shadow(16);
+$toolbar-border-radius: $rc-bradius-large;
+$toolbar-bg: $rc-container-bg;
+$toolbar-item-border-radius: $rc-bradius-medium;
+$toolbar-item-bg-hover: $rc-component-bg;
+$toolbar-item-bg-select: $rc-component-bg-select;
+$toolbar-item-bg-select-hover: $rc-component-button-select;
+$toolbar-divider-color: $rc-border-3;
+
+.protyle-toolbar {
+  padding-left: 3px;
+  border-radius: $toolbar-border-radius;
+  box-shadow: $toolbar-shadow;
+  transform: translateY(-10px);
+  background-color: $toolbar-bg;
+
+  .protyle-toolbar__item {
+    height: 32px;
+    width: 34px;
+    margin: 3px 3px 3px 0px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: $toolbar-item-border-radius;
+    transition: transform 0.3s ease 0s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $toolbar-item-bg-hover;
+    }
+
+    &.protyle-toolbar__item--current {
+      background-color: $toolbar-item-bg-select;
+
+      &:hover {
+        background-color: $toolbar-item-bg-select-hover;
+      }
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    &::after {
+      bottom: 110%;
+    }
+  }
+
+  .protyle-toolbar__divider {
+    margin: 0 3px 0 0;
+    border-color: $toolbar-divider-color; //rgb(242,242,242); //rgb(247, 247, 247);//
+  }
+}

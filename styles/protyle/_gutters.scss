@@ -1,0 +1,30 @@
+//块标识按钮
+.protyle-gutters {
+  transform: translateX(-6px);
+  border-right: 6px solid transparent;
+
+  button {
+    // opacity: 0.5;
+    width: 24px;
+    height: 30px;
+    padding: 3px 0;
+    border-radius: $rc-bradius-extra-small;
+
+    svg {
+      @include graphic(24px, 12px);
+      color: $rc-text-disabled;
+
+      &[style*="width"] {
+        @include graphic(24px, 8px);
+      }
+    }
+
+    &:hover {
+      background-color: $rc-component-bg;
+
+      svg {
+        color: $rc-text-secondary;
+      }
+    }
+  }
+}

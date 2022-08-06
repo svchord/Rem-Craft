@@ -1,0 +1,34 @@
+#keymapList {
+
+    // 
+    .b3-form__icon-icon{
+        top: 0.5px;
+        left: 0.5px;
+    }
+
+    .b3-list {
+        margin: 0;
+
+        .b3-list-item {
+            .b3-text-field {
+                height: 26px;
+                line-height: 26px;
+                font-size: 12px !important;
+            }
+
+            &:hover {
+                .b3-text-field {
+                    background-color: $rc-container-bg  !important;
+                }
+            }
+            .b3-list-item__action{
+                width: 26px !important;
+                height: 26px !important;
+                svg{
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+    }
+}

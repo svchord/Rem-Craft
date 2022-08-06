@@ -1,0 +1,168 @@
+$protyle-bg: $rc-container-bg;
+$block-border-radius: $rc-bradius-small;
+
+$pre-action-border-radius: $rc-bradius-small;
+$pre-action-bg-hover: $rc-component-bg;
+$pre-action-bg-focus: $rc-component-bg-select;
+
+.protyle {
+  background-color: $protyle-bg;
+
+  .b3-typography,
+  .protyle-wysiwyg {
+    box-sizing: content-box;
+    padding: 16px #{$content-margin} 30vh !important;
+    max-width: #{$editor-width};
+    width: auto !important;
+    background-color: $protyle-bg;
+
+    > div:not(.sb):not(.list):not(.table):not([data-type="NodeBlockQueryEmbed"]) {
+      padding-left: 2px !important;
+      padding-right: 2px !important;
+    }
+
+    [data-node-id][fold="1"]:not(.li):not([data-type="NodeHeading"]) {
+      &.p {
+        height: auto !important;
+        line-height: 1.74 !important;
+      }
+
+      &.list {
+        height: 40px;
+      }
+
+      &.bq {
+        height: 48px;
+
+        .p {
+          opacity: 0.68;
+          line-height: 1.625 !important;
+          font-size: 15px !important;
+          &:first-child{
+            height: calc(100% - 8px);
+          }
+        }
+      }
+
+      &.code-block {
+        height: 36px;
+
+        .protyle-action {
+          height: 28px;
+        }
+
+        .protyle-icon {
+          margin-top: 1px;
+        }
+
+        .hljs {
+          opacity: 0;
+        }
+      }
+
+      &.table {
+        height: 44px;
+      }
+    }
+
+    div[data-type] {
+      border-radius: $block-border-radius;
+    }
+  }
+
+  .protyle-preview {
+    background-color: $protyle-bg;
+
+    &__action {
+      padding: 0 0 8px;
+
+      button {
+        height: 24px;
+        border-radius: $pre-action-border-radius;
+        line-height: 24px;
+
+        &:hover {
+          color: unset;
+          background-color: $pre-action-bg-hover;
+        }
+
+        &.b3-tooltips {
+          padding: 0 6px;
+
+          svg {
+            width: 12px;
+            transform: translateY(-2px);
+          }
+        }
+      }
+
+      &--current {
+        background-color: $pre-action-bg-focus !important;
+
+        &:hover {
+          color: $rc-brand !important;
+        }
+      }
+    }
+
+    .b3-typography {
+      max-width: #{$editor-width} !important;
+
+      &[style*="360px"] {
+        padding: 8px 16px !important;
+        width: 405px !important;
+
+        margin: 0 auto;
+      }
+
+      &[style*="1024px"] {
+        padding: 8px 16px !important;
+        width: 1024px + 16px * 2 !important;
+        max-width: unset !important;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &#searchPreview,
+  &.block__edit {
+    .b3-typography,
+    .protyle-wysiwyg {
+      padding: 16px #{$content-margin} !important;
+    }
+
+    .def--mark {
+      @extend %search-mark__model;
+    }
+  }
+
+  &:not(.block__edit) {
+    .b3-typography {
+      max-width: 100%;
+    }
+  }
+}
+
+.protyle-wysiwyg--select,
+.protyle-wysiwyg--hl {
+  background-color: $highlight-bg !important;
+}
+
+.protyle-scroll {
+  right: -60px;
+}
+
+//反链计数
+.protyle-attr--refcount {
+  @extend %counter__model;
+  height: 22px;
+  width: 22px;
+  padding: 0;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+//文本转语音按钮
+.protyle-speech {
+  border-color: $rc-border-2;
+}

@@ -1,34 +1,34 @@
 //界面顶栏
-@import "block-icons";
+@use "block-icons";
 //面包屑
-@import "bread-crumb";
+@use "bread-crumb";
 //按钮
-@import "button";
+@use "button";
 //图标面板
-@import "emojis";
+@use "emojis";
 //表单
-@import "form";
+@use "form";
 //关系图设置界面
-@import "graph-panel";
+@use "graph-panel";
 //输入框
-@import "input";
+@use "input";
 //列表
-@import "list";
+@use "list";
 //菜单
-@import "menu";
+@use "menu";
 //块引用窗口
-@import "pop-over";
+@use "pop-over";
 //滚动条
-@import "scroller";
+@use "scroller";
 //选择菜单
-@import "select";
+@use "select";
 //滑条
-@import "slider";
+@use "slider";
 //通知弹窗
-@import "snackbar";
+@use "snackbar";
 //开关
-@import "switch";
+@use "switch";
 //页签
-@import "tab-bar";
+@use "tab-bar";
 //提示条
-@import "tooltips";
+@use "tooltips";

@@ -1,0 +1,12 @@
+$hr-border: 1px solid $rc-border-2;
+//分割线
+.hr{
+  padding: 1px 2px !important;
+  margin: 20px 0 !important;
+  > div {
+  border-bottom: $hr-border !important;
+  margin: 13px 0 14px;
+}}
+.b3-typography hr{
+  border-bottom: $hr-border !important;
+}

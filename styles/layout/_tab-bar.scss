@@ -1,0 +1,117 @@
+$tabs-bg: $rc-container-bg;
+$tabs-border-radius: $rc-bradius-extra-small;
+$tabs-hegiht: 24px;
+
+$tab-border-radius: $rc-bradius-extra-small;
+$tab-height: 24px;
+$tab-font-size: 13px;
+$tab-bg: $rc-container-bg;
+$tab-bg-hover: $rc-component-bg;
+$tab-bg-focus: $rc-component-bg-select;
+$tab-color: $rc-text-secondary;
+$tab-color-focus: $rc-text-brand;
+
+$tab-close-border-radius: $rc-bradius-extra-small;
+$tab-close-bg-hover: $rc-component-button;
+$tab-close-bg-hover-focus: $rc-component-button-select;
+
+$tab-pin-bg: $rc-component-bg;
+
+//页签栏
+.layout-tab-bar {
+  background-color: $tabs-bg;
+
+  .layout__center &:not(:empty) {
+    border-radius: $tabs-border-radius;
+    height: $tabs-hegiht;
+    margin: 8px 8px 4px;
+  }
+
+  .item {
+    flex: unset;
+    border-radius: $tab-border-radius  !important;
+    height: $tab-height;
+    min-height: $tab-height;
+    padding: 0px 0 0 6px;
+    background-color: $tab-bg;
+
+    box-shadow: unset !important;
+
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    &:hover {
+      background-color: $tab-bg-hover;
+    }
+
+    &__icon {
+      @include emoji_icon(16px, 12px ,12px);
+      margin-right: 6px;
+    }
+
+    &__graphic {
+      @include graphic(16px, 10px);
+      margin-right: 6px;
+    }
+
+    &__text {
+      padding: 0;
+      font-size: $tab-font-size;
+      color: $tab-color;
+      height: $tab-height;
+      line-height: $tab-height;
+    }
+
+    &__close {
+      border-radius: $tab-close-border-radius;
+      margin: 3px 3px 3px 3px;
+      padding: 0;
+
+      svg {
+        opacity: 0.35;
+        border-radius: $tab-close-border-radius;
+        @include graphic(18px, 8px);
+      }
+
+      &:hover svg {
+        opacity: 1;
+        background-color: $tab-close-bg-hover;
+      }
+    }
+
+    &--pin {
+      background-color: $tab-pin-bg;
+
+      .item__text {
+        padding-right: 6px;
+      }
+    }
+
+    &--focus {
+      background-color: $tab-bg-focus;
+
+      * {
+        color: $tab-color-focus  !important;
+      }
+
+      &:hover {
+        background-color: $tab-bg-focus;
+      }
+
+      .item__close {
+
+        &:hover {
+          svg {
+            background-color: $tab-close-bg-hover-focus;
+          }
+        }
+      }
+
+      .layout__wnd--active & {
+        box-shadow: unset !important;
+      }
+    }
+
+  }
+}

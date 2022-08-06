@@ -1,0 +1,73 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:list";
+
+// join var name
+// joinVarName(('button', 'text-color')) => '--button-text-color'
+@function joinVarName($list) {
+  $name: "-";
+  @each $item in $list {
+    @if $item != "" {
+      $name: $name + "-" + $item;
+    }
+  }
+  @return $name;
+}
+
+// getCssVarName('button', 'text-color') => '--button-text-color'
+@function getCssVarName($args...) {
+  @return joinVarName($args);
+}
+
+// getCssVar('button', 'text-color') => var(--ebutton-text-color)
+@function getCssVar($args...) {
+  @return var(#{joinVarName($args)});
+}
+
+@function getRgba($string, $a: 1) {
+  @return rgba($string, $a);
+}
+
+@function numToList($num) {
+  @if meta.type-of($num) == number {
+    $temp: () !default;
+    @for $i from 1 through $num {
+      $temp: list.append($temp, $i);
+    }
+    $num: $temp;
+  }
+  @return $num;
+}
+
+@function add($map, $types, $modifiers) {
+  $modifiers: numToList($modifiers);
+
+  @each $type in $types {
+    @each $modifier in $modifiers {
+      $args: if(
+        list.length($types) == 1,
+        ($modifier, getCssVar($type, $modifier)),
+        ($type, $modifier, getCssVar($type, $modifier))
+      );
+      $map: map.set($map, $args...);
+    }
+  }
+
+  @return $map;
+}
+
+//Fluent Design
+@function fluent-shadow($dp) {
+  $y1: 0.4px;
+  $blur1: 0.9px;
+  $y2: 0.075px;
+  $blur2: 0.225px;
+  $shadow: 0 $y1 * $dp $blur1 * $dp 0 rgb(0 0 0 / 13%),
+    0 $y2 * $dp $blur2 * $dp 0 rgb(0 0 0 / 11%);
+  @return $shadow;
+}
+
+@function rc-shadow($dp) {
+  $border: 0 0 calc(1px * $dp / 8) rgb(0 0 0 / 12%);
+  @return $border, fluent-shadow($dp);
+}

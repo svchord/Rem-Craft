@@ -1,0 +1,33 @@
+.graph__panel {
+    top: 50px;
+    bottom: 10px;
+    box-shadow: rc-shadow(12);
+    border-radius: $rc-bradius-medium;
+    background-color: $rc-container-bg;
+    padding: 8px 16px 16px;
+    width: max(20%, 240px);
+    right: min(calc(-20% - 10px), -250px);
+
+    &[style*="right"] {
+        right: 10px !important;
+    }
+
+    label {
+        margin: 0;
+        padding: 8px 4px;
+        border-bottom: 1px solid $rc-border-3;
+
+        span {
+            font-size: 13px;
+            line-height: 20px;
+        }
+
+        .b3-slider {
+            width: max(60%, 80px);
+        }
+    }
+
+    .fn__hr {
+        height: 16px;
+    }
+}

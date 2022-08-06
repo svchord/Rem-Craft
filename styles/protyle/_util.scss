@@ -1,0 +1,98 @@
+$util-border-radius: $rc-bradius-medium;
+// $util-button-bg-hover: $gray-2;
+$util-topbar-border: 1px solid $rc-border-3;
+$util-textarea-bg: $rc-secontainer-bg;
+
+//工具窗
+.protyle-util {
+    border-radius: $util-border-radius;
+
+    .protyle-font {
+        padding: 0px 16px 16px;
+
+        // 小标题
+        >[style*="margin"] {
+            color: $rc-text-secondary;
+            margin: 16px 0 10px !important;
+        }
+
+        // 样式组
+        .fn__flex {
+
+            // 样式按钮
+            .b3-color__square {
+                width: 18px;
+                height: 18px;
+                box-shadow: unset;
+                padding: 0;
+                border: 1px solid $rc-border-3;
+
+                &:not(:last-child) {
+                    margin-right: 8px;
+                }
+
+                &:hover {
+                    border-color: $rc-border-1;
+                }
+            }
+
+            // 字体效果按钮
+            .protyle-font__style {
+                padding: 0 12px;
+
+                &:hover {
+                    border-color: $rc-border-3;
+                }
+            }
+
+        }
+
+        // 最近使用过的样式
+        >.fn__flex:nth-child(2) {
+
+            // 清除样式
+            button[style*="margin-right"] {
+                margin-right: 8px !important;
+            }
+        }
+    }
+
+    // 特殊语言弹窗
+    .block__popover--move {
+        .block__icons {
+            border-radius: $util-border-radius $util-border-radius 0 0;
+            padding: 0 8px 0 20px;
+            // height: 40px;
+            font-size: 13px;
+            border-bottom: $util-topbar-border;
+        }
+
+        textarea {
+            border-radius: 0 0 $util-border-radius $util-border-radius;
+            background-color: $util-textarea-bg;
+            padding: 20px;
+
+            &,
+            &:hover,
+            &:focus {
+                border: none !important;
+                box-shadow: none;
+            }
+        }
+    }
+
+    //代码块选择语言
+    .b3-list {
+        min-width: 240px;
+        margin-bottom: 4px !important;
+
+        .b3-list-item {
+            &:last-child {
+                margin-bottom: 0;
+            }
+            margin-right: 4px;
+            padding-left: 9px !important;
+            // text-transform: capitalize;
+        }
+    }
+}

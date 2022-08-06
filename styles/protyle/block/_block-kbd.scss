@@ -1,0 +1,8 @@
+$kbd-border: $rc-border-3;
+$kbd-bg: $rc-component-bg;
+
+kbd {
+  font-family: var(--b3-font-family-code) !important;
+  border-color: $kbd-border !important;
+  background-color: $kbd-bg !important;
+}

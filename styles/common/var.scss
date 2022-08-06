@@ -1,0 +1,207 @@
+@use "sass:map";
+@use "sass:color";
+@use "function" as *;
+
+// 色板
+$color: () !default;
+$color-types: "blue", "orange", "red", "green", "cyan", "purple", "yellow",
+  "pink", "gray";
+$color: add($color, $color-types, 10);
+@for $i from 11 through 14 {
+  $color: map.set($color, "gray", $i, getCssVar("gray", $i));
+}
+
+// 文字颜色
+$text: () !default;
+$text-types: "primary", "secondary", "placeholder", "disabled", "anti", "brand";
+$text: add($text, "text", $text-types);
+
+// 线条
+$border: () !default;
+$border: add($border, "border", 4);
+
+// 功能色
+$feat-types: "brand", "warning", "error", "success", "info";
+$states: "base", "hover", "focus", "active", "disabled", "light";
+$color: add($color, $feat-types, $states);
+
+// 背景色
+$bg: () !default;
+$bg-types: "base", "page", "component", "popper", "brand";
+$color: add($color, "bg", $bg-types);
+
+// fill
+$fill: () !default;
+$fill-types: "base", "page", "component", "popper", "brand";
+$fill: add($fill, "fill", $fill-types);
+
+//圆角
+$radius: () !default;
+$radius: map.merge(
+  (
+    "small": 3px,
+    "base": 4px,
+    "medium": 6px,
+    "large": 8px,
+    "exlarge": 10px,
+    "max": 9999px,
+    "circle": 100%,
+  ),
+  $radius
+);
+
+// Box-shadow
+$shadow: () !default;
+$shadow: add($shadow, "shadow", 3);
+
+// Typography
+$font-size: () !default;
+$font-size: map.merge(
+  (
+    "exlarge": 20px,
+    "large": 18px,
+    "medium": 16px,
+    "base": 14px,
+    "small": 13px,
+    "exsmall": 12px,
+  ),
+  $font-size
+);
+
+// zIndex
+$z-index: () !default;
+$z-index: map.merge(
+  (
+    "normal": 1,
+    "top": 1000,
+    "popper": 2000,
+  ),
+  $z-index
+);
+
+$component-size: () !default;
+$component-size: map.merge(
+  (
+    "large": 40px,
+    "default": 32px,
+    "small": 24px,
+  ),
+  $component-size
+);
+
+// 滚动条
+$scroll: () !default;
+$scroll-states: "base", "hover";
+$scroll: add($scroll, "scroll", $scroll-states);
+
+// mask
+$mask: () !default;
+$mask-states: "active", "disabled";
+$mask: add($mask, "mask", $mask-states);
+
+// transition
+$transition-duration: () !default;
+$transition-duration: map.merge(
+  (
+    "base": 0.2s,
+    "moderate": 0.24s,
+    "slow": 0.28s,
+  ),
+  $transition-duration
+);
+
+$transition-function: () !default;
+$transition-function: map.merge(
+  (
+    "ease-in": cubic-bezier(0.82, 0, 1, 0.9),
+    "ease-out": cubic-bezier(0, 0, 0.15, 1),
+    "ease-in-out": cubic-bezier(0.645, 0.045, 0.355, 1),
+    "easing": cubic-bezier(0.38, 0, 0.24, 1),
+    "fast": cubic-bezier(0.23, 1, 0.32, 1),
+  ),
+  $transition-function
+);
+
+$transition: () !default;
+$transition: map.merge(
+  (
+    "all": all map.get($transition-duration, "base")
+      map.get($transition-function, "ease-in-out"),
+    "fade": opacity map.get($transition-duration, "base")
+      map.get($transition-function, "fast"),
+    "md-fade": (
+      transform map.get($transition-duration, "base")
+        map.get($transition-function, "fast"),
+      opacity map.get($transition-duration, "base")
+        map.get($transition-function, "fast"),
+    ),
+    "fade-linear": opacity map.get($transition-duration, "base") linear,
+    "border": border-color map.get($transition-duration, "base")
+      map.get($transition-function, "ease-in-out"),
+    "box-shadow": box-shadow map.get($transition-duration, "base")
+      map.get($transition-function, "ease-in-out"),
+    "color": color map.get($transition-duration, "base")
+      map.get($transition-function, "ease-in-out"),
+  ),
+  $transition
+);
+
+$spacer: () !default;
+$spacer: map.merge(
+  (
+    "base": 8px,
+  ),
+  $spacer
+);
+
+$spacer: map.merge(
+  (
+    "small": map.get($spacer, "base") * 0.5,
+    "medium": map.get($spacer, "base") * 0.75,
+    "large": map.get($spacer, "base") * 1.5,
+  ),
+  $spacer
+);
+
+@for $i from 1 through 10 {
+  $spacer: map.set($spacer, $i, map.get($spacer, "base") * $i);
+}
+
+
+// icon
+$icon: () !default;
+$icon: map.merge(
+  (
+    "default": 16px,
+    "large": 24px,
+  ),
+  $icon
+);
+
+// Break-point
+$sm: 768px !default;
+$md: 992px !default;
+$lg: 1200px !default;
+$xl: 1920px !default;
+
+$breakpoints: (
+  "xs": "(max-width: #{$sm})",
+  "sm": "(min-width: #{$sm})",
+  "md": "(min-width: #{$md})",
+  "lg": "(min-width: #{$lg})",
+  "xl": "(min-width: #{$xl})",
+) !default;
+
+$breakpoints-spec: (
+  "xs-only": "(max-width: #{$sm - 1})",
+  "sm-and-up": "(min-width: #{$sm})",
+  "sm-only": "(min-width: #{$sm}) and (max-width: #{$md - 1})",
+  "sm-and-down": "(max-width: #{$md - 1})",
+  "md-and-up": "(min-width: #{$md})",
+  "md-only": "(min-width: #{$md}) and (max-width: #{$lg - 1})",
+  "md-and-down": "(max-width: #{$lg - 1})",
+  "lg-and-up": "(min-width: #{$lg})",
+  "lg-only": "(min-width: #{$lg}) and (max-width: #{$xl - 1})",
+  "lg-and-down": "(max-width: #{$xl - 1})",
+  "xl-only": "(min-width: #{$xl})",
+) !default;

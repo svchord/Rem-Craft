@@ -1,11 +1,11 @@
-@import "themes/index";
+// @use "base";
 
-@import "utils/index";
+@use "themes/tdesign";
 
-@import "base/index";
+@use "common";
 
-@import "components/index";
+// @use "components";
 
-@import "layout/index";
+// @use "layout";
 
-@import "pages/index";
+// @use "pages";

@@ -5,12 +5,12 @@ body.body--win32{
     border: none;
 }
 // 边栏
-@import "dock";
+@use "dock";
 // 顶栏
-@import "top-bar";
+@use "top-bar";
 // 边窗
-@import "wnd";
+@use "wnd";
 // 分割线
-@import "resize";
+@use "resize";
 // 底栏
-@import "status";
+@use "status";

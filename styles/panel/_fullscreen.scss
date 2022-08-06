@@ -1,0 +1,16 @@
+body.body--win32 {
+    .fullscreen {
+        >.protyle-breadcrumb {
+            .fn__space {
+                -webkit-app-region: drag;
+            }
+
+            padding: 3px 42px * 3 3px 8px ;
+        }
+
+        >.block__icons {
+            padding: 3px 42px * 3 3px 8px ;
+            height: 30px;
+        }
+    }
+}

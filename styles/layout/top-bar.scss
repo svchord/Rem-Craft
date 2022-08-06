@@ -1,0 +1,183 @@
+@use "sass:map";
+@use "sass:math";
+@use "sass:list";
+
+@use "../common" as *;
+
+$interval: map.get($spacer, "small");
+
+$bar-bg: map.get($bg, "base");
+$bar-h: 30px;
+
+$item-h: 22px;
+$item-z: map.get($z-index, "normal");
+$item-fz: map.get($font-size, "small");
+$item-color: map.get($text, "secondary");
+$item-radius: map.get($radius, "small");
+$item-hover: map.get($fill, "base");
+
+$close-color: #fff;
+$close-bg: rgba(232, 17, 35, 0.9);
+
+$map: (
+  "DailyNote": (
+    "日记",
+    "Alt + 5",
+  ),
+  "Search": (
+    "搜索",
+    "Ctrl + P",
+  ),
+  "ThemeMode": (
+    var(--mode-btn),
+    var(--mode-after),
+  ),
+  "History": (
+    "历史",
+    "Alt + H",
+  ),
+  "Setting": (
+    "设置",
+    "Alt + P",
+  ),
+  "Sync": (
+    "同步",
+    null,
+  ),
+);
+
+@mixin item {
+  width: 28px + 8px * 2;
+  margin: auto 0;
+  border-radius: $item-radius;
+  height: $item-h;
+}
+
+@mixin item-before($content) {
+  @include reset-position;
+  @include reset-style;
+  @include vertical-center($item-h);
+  @include center;
+  content: $content;
+  font-size: $item-fz;
+  color: $item-color;
+  z-index: $item-z;
+  width: 100%;
+}
+
+@mixin win-control($svg-w) {
+  @include svg-model(46px, $bar-h, $svg-w);
+  &::after {
+    display: none;
+  }
+}
+
+//顶部工具栏
+.toolbar {
+  height: $bar-h;
+
+  #toolbarVIP {
+    -webkit-app-region: drag;
+    $icon-w: 14px; //map.get($icon, "default");
+    $width: 36px + $interval * 2;
+    @include svg-model($width, $bar-h, $icon-w);
+
+    &:empty {
+      &::before {
+        content: "";
+        display: block;
+        width: $icon-w;
+        height: $icon-w;
+        background-image: url("#{$asset-path}/icons/siyuan.svg");
+        background-repeat: round;
+      }
+    }
+
+    &:not(:empty) {
+      .toolbar__item {
+        margin: 0;
+        height: $icon-w;
+      }
+    }
+  }
+
+  &__item {
+    color: $item-color;
+    padding: 0;
+    height: $item-h;
+    cursor: unset;
+
+    &:hover {
+      background-color: $item-hover;
+    }
+
+    &::after {
+      top: 26px !important;
+      left: 35%;
+    }
+
+    @each $id, $contents in $map {
+      &#bar#{$id} {
+        @include item;
+        &::before {
+          @include item-before(list.nth($contents, 1));
+        }
+        &::after {
+          @if list.nth($contents, 2) {
+            content: list.nth($contents, 2);
+          }
+        }
+        svg:not(.ft__secondary) {
+          display: none;
+        }
+      }
+    }
+
+    &#barBack,
+    &#barForward {
+      @include item;
+      padding: 0 12px;
+      width: 10px + 12px * 2;
+
+      svg {
+        width: 10px;
+        height: $item-h;
+      }
+
+      &.toolbar__item--disabled {
+        color: map.get($text, "disabled");
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: transparent;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    &.toolbar__item--win {
+      @include win-control(12px);
+    }
+
+    &#maxWindow {
+      @include win-control(10px);
+    }
+
+    &#closeWindow {
+      @include win-control(10px);
+
+      &:hover {
+        color: $close-color;
+        background-color: $close-bg;
+      }
+    }
+  }
+
+  .fn__ellipsis {
+    @include vertical-center($bar-h);
+    // color: $item-color ;
+  }
+}

@@ -8,34 +8,34 @@ $asset-path: "assets";
 $color: () !default;
 $color-types: "blue", "orange", "red", "green", "cyan", "purple", "yellow",
   "pink", "gray";
-$color: add($color, $color-types, 10);
+$color: add-color($color, $color-types, 10);
 @for $i from 11 through 14 {
-  $color: map.set($color, "gray", $i, getCssVar("gray", $i));
+  $color: map.set($color, "gray", $i, getRgb("gray", $i));
 }
 
 // 文字颜色
 $text: () !default;
 $text-types: "primary", "secondary", "placeholder", "disabled", "anti", "brand";
-$text: add($text, "text", $text-types);
+$text: add-style($text, "text", $text-types);
 
 // 线条
 $border: () !default;
-$border: add($border, "border", 4);
+$border: add-color($border, "border", 4);
 
 // 功能色
 $feat-types: "brand", "warning", "error", "success", "info";
 $states: "base", "hover", "focus", "active", "disabled", "light";
-$color: add($color, $feat-types, $states);
+$color: add-color($color, $feat-types, $states);
 
 // 背景色
 $bg: () !default;
 $bg-types: "base", "page", "component", "popper", "brand";
-$color: add($color, "bg", $bg-types);
+$color: add-color($color, "bg", $bg-types);
 
 // fill
 $fill: () !default;
 $fill-types: "base", "page", "component", "popper", "brand";
-$fill: add($fill, "fill", $fill-types);
+$fill: add-color($fill, "fill", $fill-types);
 
 //圆角
 $radius: () !default;
@@ -54,7 +54,9 @@ $radius: map.merge(
 
 // Box-shadow
 $shadow: () !default;
-$shadow: add($shadow, "shadow", 3);
+@for $i from 1 through 3 {
+  $shadow: map.set($shadow, $i, var(--shadow-#{$i}));
+}
 
 // Typography
 $font-size: () !default;
@@ -65,7 +67,7 @@ $font-size: map.merge(
     "medium": 16px,
     "base": 14px,
     "small": 13px,
-    "exsmall": 12px,
+    "exsmall": 11px,
   ),
   $font-size
 );
@@ -94,12 +96,12 @@ $component-size: map.merge(
 // 滚动条
 $scroll: () !default;
 $scroll-states: "base", "hover";
-$scroll: add($scroll, "scroll", $scroll-states);
+$scroll: add-style($scroll, "scroll", $scroll-states);
 
 // mask
 $mask: () !default;
 $mask-states: "active", "disabled";
-$mask: add($mask, "mask", $mask-states);
+$mask: add-style($mask, "mask", $mask-states);
 
 // transition
 $transition-duration: () !default;

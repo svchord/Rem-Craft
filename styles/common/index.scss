@@ -1,5 +1,5 @@
-@use "var";
-@use "css-var";
-// @use "function";
-// @use "mixin";
-// @use "placeholders";
+@forward "var";
+
+@forward "utils";
+
+@forward "function";

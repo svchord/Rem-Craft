@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "../common" as *;
+
+// 顶栏
+@use "top-bar";
+// // 边栏
+// @use "dock";
+// // 底栏
+// @use "status";
+// // 边窗
+// @use "wnd";
+// // 分割线
+// @use "resize";
+
+body.body--win32 {
+  border: none;
+}

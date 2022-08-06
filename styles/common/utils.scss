@@ -1,0 +1,40 @@
+@use "sass:math";
+
+@mixin reset-style {
+  opacity: 1;
+  transform: unset;
+  margin: 0 auto;
+  padding: 0;
+  border: unset;
+  box-shadow: unset;
+  outline: unset;
+}
+
+@mixin reset-position {
+  top: unset;
+  bottom: unset;
+  right: unset;
+  left: unset;
+}
+
+@mixin vertical-center($h) {
+  height: $h;
+  line-height: $h;
+  vertical-align: middle;
+}
+
+@mixin center {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin svg-model($w, $h, $svg-w) {
+  width: $w;
+  height: $h;
+  padding: math.div($h - $svg-w, 2) math.div($w - $svg-w, 2);
+  svg {
+    width: $svg-w;
+    height: $svg-w !important;
+  }
+}

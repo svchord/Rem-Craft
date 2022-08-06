@@ -24,8 +24,8 @@
   @return var(#{joinVarName($args)});
 }
 
-@function getRgba($string, $a: 1) {
-  @return rgba($string, $a);
+@function getRgb($args...) {
+  @return rgb(getCssVar($args...));
 }
 
 @function numToList($num) {
@@ -39,16 +39,28 @@
   @return $num;
 }
 
-@function add($map, $types, $modifiers) {
+@function add-color($map, $types, $modifiers) {
   $modifiers: numToList($modifiers);
 
   @each $type in $types {
     @each $modifier in $modifiers {
       $args: if(
         list.length($types) == 1,
-        ($modifier, getCssVar($type, $modifier)),
-        ($type, $modifier, getCssVar($type, $modifier))
+        ($modifier, getRgb($type, $modifier)),
+        ($type, $modifier, getRgb($type, $modifier))
       );
+      $map: map.set($map, $args...);
+    }
+  }
+
+  @return $map;
+}
+
+@function add-style($map, $types, $modifiers) {
+  $modifiers: numToList($modifiers);
+  @each $type in $types {
+    @each $modifier in $modifiers {
+      $args: ($modifier, getCssVar($type, $modifier));
       $map: map.set($map, $args...);
     }
   }

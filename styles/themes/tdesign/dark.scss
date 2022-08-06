@@ -1,7 +1,9 @@
-
 // (?<=rgb\(.*)\);
 
 :root[theme-mode="dark"] {
+  --mode-btn: "明亮";
+  --mode-after: "明亮模式";
+
   --blue-1: 27, 47, 81;
   --blue-2: 23, 52, 99;
   --blue-3: 20, 57, 117;

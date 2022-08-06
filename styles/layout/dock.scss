@@ -14,19 +14,6 @@ $item-bg: map.get($fill, "base");
 $item-svg-w: 13px;
 
 //边栏
-%dock--vertical_model {
-  span {
-    // padding: 0 0 0 0px;
-    // background-color: $dock-item-bg;
-    // // transform: translateZ(0px) scale(1);
-    // line-height: 0;
-    // flex-grow: 1;
-    // position: relative;
-
-    cursor: pointer;
-  }
-}
-
 @mixin dock {
   border-radius: $item-radius;
   padding: 0px;

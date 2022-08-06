@@ -1,0 +1,36 @@
+//提示条阴影
+@use "sass:map";
+@use "../common" as *;
+
+$bg: map.get($bg, "popper");
+$color: map.get($text, "primary");
+$shadow: map.get($shadow, 1);
+$radius: map.get($radius, "exsmall");
+
+:root {
+  // 提示
+  --b3-tooltips-color: #{$bg};
+}
+
+@mixin tooltips {
+  box-shadow: $shadow;
+  background-color: $bg;
+  color: $color;
+  padding: 6px 8px;
+  border-radius: $radius;
+}
+
+//tips
+.b3-tooltips {
+  &::before {
+    border: none;
+  }
+  &::after {
+    @include tooltips;
+  }
+}
+
+//悬浮提示条
+#tooltip {
+  @include tooltips;
+}

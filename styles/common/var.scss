@@ -34,8 +34,7 @@ $bg: add-color($bg, "bg", $bg-types);
 
 // fill
 $fill: () !default;
-$fill-types: "base", "page", "component", "popper", "brand";
-$fill: add-color($fill, "fill", $fill-types);
+$fill: add-color($fill, "fill", $bg-types);
 
 //圆角
 $radius: () !default;

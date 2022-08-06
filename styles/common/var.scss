@@ -30,7 +30,7 @@ $color: add-color($color, $feat-types, $states);
 // 背景色
 $bg: () !default;
 $bg-types: "base", "page", "component", "popper", "brand";
-$color: add-color($color, "bg", $bg-types);
+$bg: add-color($bg, "bg", $bg-types);
 
 // fill
 $fill: () !default;

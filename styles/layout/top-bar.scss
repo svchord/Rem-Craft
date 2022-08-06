@@ -54,10 +54,10 @@ $map: (
 }
 
 @mixin item-before($content) {
-  @include reset-position;
-  @include reset-style;
+  @include reset-position();
+  @include reset-style();
   @include vertical-center($item-h);
-  @include center;
+  @include center();
   content: $content;
   font-size: $item-fz;
   color: $item-color;
@@ -118,7 +118,7 @@ $map: (
 
     @each $id, $contents in $map {
       &#bar#{$id} {
-        @include item;
+        @include item();
         &::before {
           @include item-before(list.nth($contents, 1));
         }
@@ -135,7 +135,7 @@ $map: (
 
     &#barBack,
     &#barForward {
-      @include item;
+      @include item();
       padding: 0 12px;
       width: 10px + 12px * 2;
 

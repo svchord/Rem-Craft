@@ -1,4 +1,6 @@
+@use "sass:map";
 @use "sass:math";
+@use "var" as *;
 
 @mixin reset-style {
   opacity: 1;
@@ -36,5 +38,24 @@
   svg {
     width: $svg-w;
     height: $svg-w !important;
+  }
+}
+
+@mixin focus_before($top, $left: 0) {
+  position: relative;
+
+  &::before {
+    @include reset-style();
+    @include reset-position();
+    content: "";
+    display: block;
+    position: absolute;
+    top: $top;
+    bottom: $top;
+    left: $left;
+    width: 3px;
+    height: calc(100% - $top * 2);
+    background-color: map.get($color, "brand", "base");
+    border-radius: map.get($radius, "max");
   }
 }

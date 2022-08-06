@@ -1,0 +1,85 @@
+@use "sass:map";
+@use "../common" as *;
+
+$interval: map.get($spacer, "small");
+
+$dock-bg: map.get($bg, "base");
+
+$item-w: 36px;
+$item-h: 36px;
+$item-color: map.get($text, "secondary");
+$item-radius: map.get($radius, "medium");
+
+$item-bg: map.get($fill, "base");
+$item-svg-w: 13px;
+
+//边栏
+%dock--vertical_model {
+  span {
+    // padding: 0 0 0 0px;
+    // background-color: $dock-item-bg;
+    // // transform: translateZ(0px) scale(1);
+    // line-height: 0;
+    // flex-grow: 1;
+    // position: relative;
+
+    cursor: pointer;
+  }
+}
+
+@mixin dock {
+  border-radius: $item-radius;
+  padding: 0px;
+  background-color: $dock-bg;
+  margin-bottom: $interval;
+  span {
+    margin: 0;
+    color: $item-color;
+    border-radius: $item-radius;
+    transition: map.get($transition, "all");
+    @include svg-model($item-w, $item-h, $item-svg-w);
+    &:not(:last-child) {
+      margin-bottom: $interval;
+    }
+    &:hover {
+      background-color: $item-bg;
+    }
+    &.dock__item--active {
+      background-color: $item-bg;
+      @include focus_before(10.35px, 0);
+    }
+  }
+}
+
+//边栏
+.dock--vertical {
+  width: $item-w;
+  border: none !important;
+
+  &#dockLeft {
+    margin-left: $interval;
+  }
+
+  &#dockRight {
+    margin-right: $interval;
+
+    .dock__item--active::before {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  div:first-child:not(:empty) {
+    @include dock();
+    margin-top: $interval;
+  }
+
+  div:last-child:not(:empty) {
+    @include dock();
+  }
+
+  .dock__item[data-index="0"]::after,
+  .dock__item[data-index="1"]::after {
+    display: none;
+  }
+}

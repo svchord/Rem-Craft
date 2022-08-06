@@ -2,6 +2,8 @@
 @use "sass:color";
 @use "function" as *;
 
+$asset-path: "assets";
+
 // 色板
 $color: () !default;
 $color-types: "blue", "orange", "red", "green", "cyan", "purple", "yellow",
@@ -166,7 +168,6 @@ $spacer: map.merge(
 @for $i from 1 through 10 {
   $spacer: map.set($spacer, $i, map.get($spacer, "base") * $i);
 }
-
 
 // icon
 $icon: () !default;

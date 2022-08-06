@@ -1,34 +1,37 @@
+@use "sass:map";
+@use "var" as *;
+
 :root {
   // 主色
   --b3-theme-primary: rgb(var(--brand-base));
-  --b3-theme-primary-light: rgba(var(--brand-base), 0.2);
-  --b3-theme-primary-lighter: rgba(var(--brand-base), 0.2);
-  --b3-theme-primary-lightest: rgba(var(--brand-base), 0.2);
+  --b3-theme-primary-light: rgba(var(--brand-base), 0.54);
+  --b3-theme-primary-lighter: rgba(var(--brand-base), 0.38);
+  --b3-theme-primary-lightest: rgba(var(--brand-base), 0.12);
   --b3-theme-secondary: rgb(var(--warning-base));
-  --b3-theme-background: rgb(var(--bg-base));
-  --b3-theme-background-light: rgb(var(--bg-base));
-  --b3-theme-surface: rgb(var(--page-base));
-  --b3-theme-surface-light: rgb(var(--page-base));
+  --b3-theme-background: rgb(var(--bg-page));
+  --b3-theme-background-light: rgb(var(--fill-base));
+  --b3-theme-surface: rgb(var(--bg-base));
+  --b3-theme-surface-light: rgb(var(--bg-base));
   --b3-theme-error: rgb(var(--error-base));
 
   // 文字颜色
   --b3-theme-on-primary: rgb(var(--text-anti));
-  --b3-theme-on-secondary: rgb(var(--text-secondary));
+  --b3-theme-on-secondary: rgb(var(--text-anti));
   --b3-theme-on-background: rgb(var(--text-primary));
-  --b3-theme-on-surface: rgb(var(--text-secondary));
-  --b3-theme-on-surface-light: rgb(var(--text-secondary));
+  --b3-theme-on-surface: rgb(var(--text-placeholder));
+  --b3-theme-on-surface-light: rgb(var(--text-placeholder));
   --b3-theme-on-error: rgb(var(--text-anti));
 
   // 线条
   --b3-border-color: rgb(var(--border-3));
 
-  //   /* 动画效果 */
-  //   --b3-transition: all #{$rc-duration-base} #{$rc-easing};
+  /* 动画效果 */
+  --b3-transition: #{map.get($transition, "all")};
 
-  //   // 阴影
-  //   --b3-point-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-  //     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  //   --b3-dialog-shadow: #{rc-shadow(64)};
+  // 阴影
+  --b3-point-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  --b3-dialog-shadow: #{map.get($shadow, 3)};
 
   /* 编辑器搜索颜色 */
   //   --b3-protyle-search-border-color: #f2e680;

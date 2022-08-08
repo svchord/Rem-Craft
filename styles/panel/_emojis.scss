@@ -15,7 +15,7 @@ $emoji-tab-border-radius: $rc-bradius-small;
     //   display: none;
     // }
     input {
-      margin: 0 !important;
+      margin: 0 ;
     }
     .block__icon {
       @include block__icon__model(30px, 11px);
@@ -47,7 +47,7 @@ $emoji-tab-border-radius: $rc-bradius-small;
         height: 28px;
         line-height: 28px;
         width: 100%;
-        margin: 0 !important;
+        margin: 0 ;
       }
       .emojis__item {
         display: flex;

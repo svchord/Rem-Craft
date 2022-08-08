@@ -28,7 +28,7 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
 
   &[style*="50vw"],
   &[style*="520px"] {
-    width: $dialog-small-width  !important;
+    width: $dialog-small-width  ;
     background-color: $dialog-small-bg;
     padding: 0 16px;
 
@@ -41,7 +41,7 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
       border-bottom: 1px solid $dialog-small-header-border;
 
       &.fn__none {
-        display: block !important;
+        display: block ;
 
         &::before {
           content: "新建日记";
@@ -93,8 +93,8 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
       .ft__on-surface,
       .b3-text-field[placeholder="属性名"] {
         font-size: $dialog-text-field-font-size;
-        width: 80px !important;
-        text-align: center !important;
+        width: 80px ;
+        text-align: center ;
       }
 
       // 属性名和输入框的间隔
@@ -104,9 +104,9 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
 
       // 属性弹窗第二条分割线
       div[style*="var(--b3-border-color)"] {
-        // background-color: $rc-dialog-border !important;
-        height: 0 !important;
-        background-color: transparent !important;
+        // background-color: $rc-dialog-border ;
+        height: 0 ;
+        background-color: transparent ;
         border-bottom: 1px solid $dialog-divide-border;
       }
 
@@ -117,7 +117,7 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
 
         // 自定义属性添加按钮
         .b3-button {
-          width: 80px !important;
+          width: 80px ;
         }
       }
     }
@@ -129,8 +129,8 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
 
       // 搜索图标
       &-icon {
-        top: 16px + 0.5px!important;
-        left: 8px + 0.5px!important;
+        top: 16px + 0.5px;
+        left: 8px + 0.5px;
       }
     }
 

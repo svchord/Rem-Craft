@@ -16,7 +16,7 @@ $td-bg: $rc-container-bg;
     }
   }
   .table {
-    padding: 2px 4px !important;
+    padding: 2px 4px ;
 
     table {
       @extend %table__model;

@@ -1,0 +1,60 @@
+@use "sass:map";
+@use "../common" as *;
+
+$s-h: 22px;
+$text-color: map.get($text, "secondary");
+
+#status {
+  // 右下角按钮
+  .toolbar__item {
+    @include btn-on-base();
+    @include svg-div(30px, $s-h, 10px);
+    border-radius: unset;
+  }
+
+  // 边栏设置按钮
+  #barDock {
+    transform: translateX(calc(100vw - 30px * 5));
+
+    .b3-menu {
+      bottom: $s-h !important;
+      left: unset !important;
+      right: 0px;
+      // z-index: 0;
+
+      // &.fn__none {
+      //   display: block ;
+      // }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  // 状态栏
+  .status__msg {
+    display: flex;
+    color: $text-color;
+    margin-left: 45px - 30px;
+
+    &:not(:empty):before {
+      content: "";
+      display: flex;
+      width: 12px;
+      height: 12px;
+      margin: 5px;
+      @include add_icon("notifications", $text-color, 24, round);
+    }
+  }
+
+  > .fn__flex-1 {
+    margin-right: 30px;
+  }
+
+  // 文档统计
+  .status__counter {
+    color: $text-color;
+    transform: translateX(-30px - 2px);
+  }
+}

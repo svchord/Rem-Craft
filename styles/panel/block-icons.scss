@@ -1,0 +1,71 @@
+@use "sass:map";
+@use "../common" as *;
+
+$b-bg: map.get($bg, "page");
+$b-text: map.get($text, "secondary");
+
+$icon-w: map.get($component-size, "small");
+$icon-bg: map.get($fill, "page");
+$icon-svg-w: map.get($icon, "small");
+
+$padding: $fn-space;
+
+//窗口顶栏
+.block__icons {
+  color: $b-text;
+  padding: $padding;
+  height: $icon-w + $padding * 2;
+  font-size: map.get($font-size, "exsmall");
+  background-color: $b-bg;
+
+  &--active {
+    background-color: $b-bg;
+  }
+
+  // 间隔
+  .fn__space {
+    width: $interval;
+  }
+
+  // 边窗顶栏logo
+  .block__logo {
+    svg {
+      @include svg(map.get($icon, "small"));
+      margin: 0 $padding;
+    }
+    margin-right: $interval;
+  }
+
+  //窗口顶栏按钮
+  .block__icon {
+    @include svg-div($icon-w, $icon-w, $icon-svg-w);
+    @include btn-on-page();
+
+    border-radius: map.get($radius, "small");
+
+    &.ft__primary,
+    &--active {
+      @include item-brand();
+    }
+    &[data-type="close"] {
+      @include item-close();
+    }
+    &[disabled="disabled"] {
+      @include item-disabled();
+    }
+    &[type="checkbox"] {
+      width: $icon-svg-w;
+      margin: 0 calc(($icon-w - $icon-svg-w) / 2);
+    }
+  }
+
+  // 计数块
+  .listCount,
+  .listMCount {
+    @include counter(24px);
+    margin-right: $interval;
+    + .fn__space {
+      display: none;
+    }
+  }
+}

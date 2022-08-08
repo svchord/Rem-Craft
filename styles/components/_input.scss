@@ -10,8 +10,8 @@ $input-border-bottom-focus: 1px solid $rc-brand;
 .b3-text-field {
   border-radius: $input-border-radius;
   box-shadow: none;
-  border: $input-border !important;
-  border-bottom: $input-border-bottom !important;
+  border: $input-border ;
+  border-bottom: $input-border-bottom ;
   background-color: $input-bg;
   font-size: $input-font-size ;
   padding: 4px 8px;

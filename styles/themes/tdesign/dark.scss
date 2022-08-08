@@ -117,8 +117,8 @@
   --text-placeholder: rgba(255, 255, 255, 35%); // 色彩-文字-占位符/说明
   --text-disabled: rgba(255, 255, 255, 22%); // 色彩-文字-禁用
   --text-anti: #000; // 色彩-文字-反色
-  --text-brand: var(--brand-8); // 色彩-文字-品牌
-  --text-link: var(--brand-8); // 色彩-文字-链接
+  --text-brand: rgb(var(--brand-8)); // 色彩-文字-品牌
+  --text-link: rgb(var(--brand-8)); // 色彩-文字-链接
 
   // 线条
   --border-1: var(--gray-8);
@@ -178,14 +178,14 @@
   --bg-base: var(--gray-1); // 色彩 - page
   --bg-page: var(--gray-1); // 色彩 - page
   --bg-component: var(--gray-4); // 色彩  - 组件
-  --bg-popper: var(--gray-2); // 色彩 - 容器
+  --bg-pop: var(--gray-2); // 色彩 - 容器
   --bg-brand: var(--brand-1);
 
   // 填充色
   --fill-base: var(--gray-1); // 色彩 - page
   --fill-page: var(--gray-1); // 色彩 - page
   --fill-component: var(--gray-4); // 色彩  - 组件
-  --fill-popper: var(--gray-2); // 色彩 - 容器
+  --fill-pop: var(--gray-2); // 色彩 - 容器
   --fill-brand: var(--brand-1);
 
   // 基础/下层 投影 hover 使用的组件包括：表格 /

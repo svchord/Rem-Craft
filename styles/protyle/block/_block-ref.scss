@@ -10,6 +10,6 @@ $ref-border-radius: $rc-bradius-small;
 span[data-type="block-ref"] {
   border-radius: $ref-border-radius;
   &:hover {
-    background-color: $ref-bg-hover !important;
+    background-color: $ref-bg-hover ;
   }
 }

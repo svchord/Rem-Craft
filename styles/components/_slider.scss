@@ -24,7 +24,7 @@ $slider-track-border-radius: $rc-bradius-max;
     border-radius: $slider-thumb-border-radius;
     background-color: $slider-thumb-bg;
     margin-top: -7px;
-    transform: unset !important;
+    transform: unset ;
     transition: $slider-thumb-transition;
 
     &:hover {

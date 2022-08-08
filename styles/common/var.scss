@@ -29,7 +29,7 @@ $color: add-color($color, $feat-types, $states);
 
 // 背景色
 $bg: () !default;
-$bg-types: "base", "page", "component", "popper", "brand";
+$bg-types: "base", "page", "component", "pop", "brand";
 $bg: add-color($bg, "bg", $bg-types);
 
 // fill
@@ -40,8 +40,8 @@ $fill: add-color($fill, "fill", $bg-types);
 $radius: () !default;
 $radius: map.merge(
   (
-    "small": 3px,
-    "base": 4px,
+    "exsmall": 3px,
+    "small": 4px,
     "medium": 6px,
     "large": 8px,
     "exlarge": 10px,
@@ -77,7 +77,7 @@ $z-index: map.merge(
   (
     "normal": 1,
     "top": 1000,
-    "popper": 2000,
+    "pop": 2000,
   ),
   $z-index
 );
@@ -86,15 +86,16 @@ $component-size: () !default;
 $component-size: map.merge(
   (
     "large": 40px,
-    "default": 32px,
+    "default": 30px,
     "small": 24px,
+    "exsmall": 16px,
   ),
   $component-size
 );
 
 // 滚动条
 $scroll: () !default;
-$scroll-states: "base", "hover";
+$scroll-states: "base", "hover", "track";
 $scroll: add-style($scroll, "scroll", $scroll-states);
 
 // mask
@@ -170,12 +171,19 @@ $spacer: map.merge(
   $spacer: map.set($spacer, $i, map.get($spacer, "base") * $i);
 }
 
+$fn-space: map.get($spacer, "base");
+$interval: map.get($spacer, "small");
+
 // icon
 $icon: () !default;
 $icon: map.merge(
   (
-    "default": 16px,
-    "large": 24px,
+    "exsmall": 8px,
+    "small": 10px,
+    "medium": 12px,
+    "default": 14px,
+    "large": 16px,
+    "exlarge": 24px,
   ),
   $icon
 );

@@ -6,13 +6,13 @@ $embed-shadow-hover: rc-shadow(8);
 
 //块嵌入
 div[data-type="NodeBlockQueryEmbed"].render-node {
-  background-color: $embeds-bg  !important;
-  padding: 40px 16px 16px !important; //8px 28px 8px
+  background-color: $embeds-bg  ;
+  padding: 40px 16px 16px ; //8px 28px 8px
   border-radius: $embed-border-radius;
-  border: none !important;
+  border: none ;
 
   &.protyle-wysiwyg--hl {
-    background-color: $highlight-bg  !important;
+    background-color: $highlight-bg  ;
   }
 
   .protyle-wysiwyg__embed {
@@ -21,11 +21,11 @@ div[data-type="NodeBlockQueryEmbed"].render-node {
     padding: 16px;
     margin-bottom: 16px;
     opacity: 1;
-    box-shadow: $embed-shadow  !important;
+    box-shadow: $embed-shadow  ;
     transition: all 0.3s ease-out;
 
     &:hover {
-      box-shadow: $embed-shadow-hover  !important;
+      box-shadow: $embed-shadow-hover  ;
       transform: translateY(-2px);
     }
   }

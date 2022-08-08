@@ -1,70 +1,59 @@
+@use "sass:map";
+@use "sass:math";
+@use "var" as *;
+@use "utils" as *;
 
-//界面上按钮
-@mixin block__icon__model($width, $svg-width) {
-  width: $width;
-  height: $width;
-  padding: 0;
-  border-radius: $rc-bradius-small;
-  color: $rc-text-primary;
+@mixin focus_before($top, $left: 0) {
+  position: relative;
 
-  &:hover {
-    color: $rc-text-primary !important;
-    background-color: $rc-component-bg !important;
-  }
-
-  // &:active {
-  //   background-color: $gray-4;
-  // }
-
-  &.ft__primary,
-  &--active {
-    color: $rc-brand;
-    background-color: $rc-component-bg-select;
-
-    &:hover {
-      background-color: $rc-component-bg-select !important;
-      color: $rc-brand !important;
-    }
-
-    // &:active {
-    //   background-color: $brand-3;
-    // }
-  }
-
-  &[disabled="disabled"] {
-    color: $rc-text-disabled;
-
-    &:hover {
-      background-color: transparent;
-      color: $rc-text-disabled !important;
-    }
-
-    &::after {
-      display: none;
-    }
-  }
-
-  &[type="checkbox"] {
-    width: $svg-width !important;
-    margin: 0 calc(($width - $svg-width) / 2);
-  }
-
-  svg {
-    width: $width;
-    height: $width;
-    padding: calc(($width - $svg-width) / 2);
+  &::before {
+    @include reset-style();
+    @include reset-position();
+    content: "";
+    display: block;
+    position: absolute;
+    top: $top;
+    bottom: $top;
+    left: $left;
+    width: 3px;
+    height: calc(100% - $top * 2);
+    background-color: map.get($color, "brand", "base");
+    border-radius: map.get($radius, "max");
   }
 }
 
-@mixin graphic($width, $img-width) {
-  width: $width !important;
-  height: $width !important;
-  margin: 0;
-  padding: calc((#{$width} - #{$img-width}) / 2) !important;
+@mixin history-btn {
+  width: 36px;
+  height: 30px;
+  padding: 5px 8px;
+  border-radius: map.get($radius, "base");
 
   svg {
-    width: $img-width;
-    height: $img-width;
+    &:first-child {
+      width: 12px;
+      height: 12px;
+    }
+
+    &:last-child {
+      width: 8px;
+    }
+  }
+}
+
+@mixin search-item {
+  $text-h: 20px;
+  $padding: $interval;
+  padding-bottom: $text-h + $padding;
+  height: $text-h * 2 + $padding * 3;
+
+  .b3-list-item__meta {
+    top: $text-h + $padding * 2;
+    right: 8px;
+    max-width: 100%;
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -75,10 +64,41 @@
   mask: url($icon_url) #{$position};
 }
 
+@mixin list-btn {
+  @include btn-on-component();
+  border-radius: map.get($radius, "exsmall");
+  &::after {
+    display: none !important;
+  }
+}
 
+@mixin list-item {
+  @include item-component();
+  font-size: map.get($font-size, "small");
+  border-radius: map.get($radius, "small");
+}
+
+@mixin list-focus {
+  color: map.get($text, "brand");
+  background-color: map.get($bg, "brand");
+  &:hover {
+    color: map.get($text, "brand");
+    background-color: map.get($bg, "brand") !important;
+  }
+}
+
+@mixin counter($h: 20px) {
+  @include center();
+  @include v-center($h);
+  @include list-btn();
+  width: auto;
+  margin: 0;
+  background-color: map.get($bg, "component");
+  padding: 0 math.div($h - 8px, 2);
+}
 
 @mixin emoji_icon($width, $fz, $icon-width) {
-  padding: 0 !important;
+  padding: 0;
   width: $width;
   height: $width;
   // 原生emoji
@@ -89,6 +109,6 @@
   img,
   // twitter-emoji
   svg.custom-icon {
-    @include graphic($width, $icon-width);
+    @include svg($width, $icon-width);
   }
 }

@@ -20,7 +20,7 @@ $heading-color: $rc-text-primary;
   $fz: 32px - $lv * 4px;
   $lh: $fz + 10px;
   font-size: $fz;
-  line-height: $lh !important;
+  line-height: $lh ;
   margin-top: $lh;
   margin-bottom: calc($lh / 2);
 }
@@ -45,5 +45,5 @@ $heading-color: $rc-text-primary;
 
 .protyle-wysiwyg div[fold="1"][data-type="NodeHeading"]:before {
   top: 15px;
-  left: -27px !important;
+  left: -27px ;
 }

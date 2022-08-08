@@ -13,7 +13,7 @@ $util-textarea-bg: $rc-secontainer-bg;
         // 小标题
         >[style*="margin"] {
             color: $rc-text-secondary;
-            margin: 16px 0 10px !important;
+            margin: 16px 0 10px ;
         }
 
         // 样式组
@@ -52,7 +52,7 @@ $util-textarea-bg: $rc-secontainer-bg;
 
             // 清除样式
             button[style*="margin-right"] {
-                margin-right: 8px !important;
+                margin-right: 8px ;
             }
         }
     }
@@ -75,7 +75,7 @@ $util-textarea-bg: $rc-secontainer-bg;
             &,
             &:hover,
             &:focus {
-                border: none !important;
+                border: none ;
                 box-shadow: none;
             }
         }
@@ -84,14 +84,14 @@ $util-textarea-bg: $rc-secontainer-bg;
     //代码块选择语言
     .b3-list {
         min-width: 240px;
-        margin-bottom: 4px !important;
+        margin-bottom: 4px ;
 
         .b3-list-item {
             &:last-child {
                 margin-bottom: 0;
             }
             margin-right: 4px;
-            padding-left: 9px !important;
+            padding-left: 9px ;
             // text-transform: capitalize;
         }
     }

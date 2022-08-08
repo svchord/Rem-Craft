@@ -1,0 +1,84 @@
+@use "sass:map";
+@use "../common" as *;
+
+$item-h: map.get($component-size, "small");
+
+//页签栏
+.layout-tab-bar {
+  background-color: map.get($bg, "page");
+
+  .layout__center &:not(:empty) {
+    border-radius: map.get($radius, "exsmall");
+    height: map.get($component-size, "small");
+    margin: 8px 8px 4px;
+  }
+
+  .item {
+    flex: unset;
+    height: $item-h;
+    min-height: $item-h;
+    padding: 0px 0 0 6px;
+    box-shadow: unset;
+    @include list-item();
+
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    &__icon {
+      @include emoji_icon(16px, 12px, map.get($icon, "medium"));
+      margin: 4px 6px 4px 0;
+    }
+
+    &__graphic {
+      @include svg(16px, map.get($icon, "small"));
+      margin: 4px 6px 4px 0;
+    }
+
+    &__text {
+      padding: 0;
+      transition: unset;
+      @include v-center($item-h);
+    }
+
+    &__close {
+      @include list-btn();
+      margin: 4px;
+      padding: 0;
+
+      svg {
+        opacity: 0.35;
+        border-radius: map.get($radius, "exsmall");
+        transition: unset;
+        @include svg(16px, 8px);
+      }
+
+      &:hover svg {
+        opacity: 1;
+      }
+    }
+
+    &--pin {
+      background-color: map.get($bg, "component");
+
+      .item__text {
+        padding-right: 6px;
+      }
+    }
+
+    &--focus {
+      @include list-focus();
+
+      .item__close {
+        @include item-brand();
+        &:hover svg {
+          background-color: map.get($fill, "brand");
+        }
+      }
+
+      .layout__wnd--active & {
+        box-shadow: unset !important;
+      }
+    }
+  }
+}

@@ -21,20 +21,20 @@ $link-border: 1px solid $rc-border-3;
 %link-model {
   border-bottom: $link-border;
   text-decoration: none;
-  color: $link-color  !important;
+  color: $link-color  ;
   font-weight: 500;
   padding: 0 0.2em;
 
   * {
-    color: $link-color  !important;
+    color: $link-color  ;
   }
 
   &:hover {
-    color: $link-color-hover  !important;
-    border-color: $link-border-color-hover  !important;
+    color: $link-color-hover  ;
+    border-color: $link-border-color-hover  ;
 
     * {
-      color: $link-color-hover  !important;
+      color: $link-color-hover  ;
     }
   }
 
@@ -244,7 +244,7 @@ $link-border: 1px solid $rc-border-3;
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="note"],
 .protyle-wysiwyg [data-node-id] a[href ^="note"],
 .b3-typography [href ^="note"] {
-  border-bottom: 2px solid #f3a92f !important;
+  border-bottom: 2px solid #f3a92f ;
   background-color: #f6ddb5d1;
   color: inherit;
 }
@@ -1304,7 +1304,7 @@ $link-border: 1px solid $rc-border-3;
   .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="note"],
   .protyle-wysiwyg [data-node-id] a[href ^="note"],
   .b3-typography [href ^="note"] {
-    border-bottom: 2px solid #f3a92f !important;
+    border-bottom: 2px solid #f3a92f ;
     background-color: #583f16d1;
     color: inherit;
   }

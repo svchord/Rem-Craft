@@ -17,7 +17,7 @@ $bread-crumb-height: 32px;
     margin-top: 0px;
     transition: opacity, margin-top 0.3s ease-out;
   }
-  // max-height: 671.5px + 36px - 28px !important;
+  // max-height: 671.5px + 36px - 28px ;
   // &.block__popover--top {
   //   max-height: 214.8px + 36px - 28px;
   // }
@@ -43,7 +43,7 @@ $bread-crumb-height: 32px;
             transition: $pin-transition;
           }
           // &:active {
-          //   background-color: $brand-3 !important;
+          //   background-color: $brand-3 ;
           // }
         }
       }
@@ -62,7 +62,7 @@ $bread-crumb-height: 32px;
     min-height: $content-min-height + $bread-crumb-height;
     background-color: $rc-container-bg;
     &::-webkit-scrollbar {
-      background-color: transparent !important;
+      background-color: transparent ;
     }
     .block__edit {
       min-height: $content-min-height + $bread-crumb-height;

@@ -1,14 +1,17 @@
 @use "sass:map";
 @use "sass:math";
+@use "sass:list";
 @use "var" as *;
 
 @mixin reset-style {
   opacity: 1;
   transform: unset;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   border: unset;
+  border-radius: unset;
   box-shadow: unset;
+  background-color: transparent;
   outline: unset;
 }
 
@@ -19,43 +22,101 @@
   left: unset;
 }
 
-@mixin vertical-center($h) {
+@mixin v-center($h) {
   height: $h;
   line-height: $h;
   vertical-align: middle;
 }
 
 @mixin center {
-  display: inline-flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
 }
 
-@mixin svg-model($w, $h, $svg-w) {
+@mixin text-overflow-hidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin svg($args...) {
+  $w: list.nth($args, 1);
   width: $w;
-  height: $h;
-  padding: math.div($h - $svg-w, 2) math.div($w - $svg-w, 2);
-  svg {
-    width: $svg-w;
-    height: $svg-w !important;
+  height: $w;
+  margin: 0;
+  @if list.length($args) == 1 {
+    padding: 0;
+  } @else {
+    $svg-w: list.nth($args, 2);
+    padding: math.div($w - $svg-w, 2);
   }
 }
 
-@mixin focus_before($top, $left: 0) {
-  position: relative;
+@mixin svg-div($w, $h, $svg-w) {
+  width: $w;
+  height: $h;
+  margin: 0;
+  padding: math.div($h - $svg-w, 2) math.div($w - $svg-w, 2) !important;
+  svg {
+    @include svg($svg-w);
+  }
+}
 
-  &::before {
-    @include reset-style();
-    @include reset-position();
-    content: "";
-    display: block;
-    position: absolute;
-    top: $top;
-    bottom: $top;
-    left: $left;
-    width: 3px;
-    height: calc(100% - $top * 2);
-    background-color: map.get($color, "brand", "base");
-    border-radius: map.get($radius, "max");
+@mixin item-brand {
+  color: map.get($text, "brand");
+  background-color: map.get($bg, "brand");
+
+  &:hover {
+    color: map.get($text, "brand");
+    background-color: map.get($fill, "brand");
+  }
+}
+
+@mixin item-component {
+  color: map.get($text, "secondary");
+  background-color: map.get($bg, "page");
+  &:hover {
+    color: map.get($text, "secondary");
+    background-color: map.get($bg, "component");
+  }
+}
+
+@mixin item-disabled {
+  cursor: not-allowed;
+  color: map.get($text, "disabled");
+  &:hover {
+    background-color: transparent !important;
+  }
+  &::after {
+    display: none;
+  }
+}
+
+@mixin item-close {
+  svg {
+    @include svg(map.get($icon, "exsmall"));
+  }
+}
+
+@mixin btn-on-base {
+  color: map.get($text, "secondary");
+  &:hover {
+    background-color: map.get($fill, "base");
+  }
+}
+
+@mixin btn-on-page {
+  color: map.get($text, "secondary");
+  &:hover {
+    color: map.get($text, "primary");
+    background-color: map.get($fill, "page") !important;
+  }
+}
+
+@mixin btn-on-component {
+  color: map.get($text, "secondary");
+  &:hover {
+    background-color: map.get($fill, "component");
   }
 }

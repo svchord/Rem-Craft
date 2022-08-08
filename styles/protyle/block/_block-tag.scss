@@ -15,13 +15,13 @@ span[data-type="tag"]:not(.dock__item):not(.b3-tooltips) {
   //   font-weight: bold;
   border-radius: $tag-border-radius;
   color: $tag-color;
-  border: $tag-border !important;
+  border: $tag-border ;
   box-shadow: $tag-shadow;
   position: relative;
   padding: 0.1em 0.6em;
   font-size: 85%;
   &:hover {
-    background-color: $tag-bg-hover !important;
+    background-color: $tag-bg-hover ;
   }
   &::before {
     content: "#";

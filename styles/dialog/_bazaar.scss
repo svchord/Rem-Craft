@@ -20,9 +20,9 @@ $dialog-card-button-hover: $rc-component-bg-select;
 
       .item {
         height: 30px;
-        padding: 6px 8px !important;
+        padding: 6px 8px ;
         margin-right: 8px;
-        font-weight: normal !important;
+        font-weight: normal ;
 
         &:not(.item--focus) {
           background-color: transparent;
@@ -68,7 +68,7 @@ $dialog-card-button-hover: $rc-component-bg-select;
 
         // transform: translateY(45.4px);
         img {
-          object-fit: cover !important;
+          object-fit: cover ;
           border-radius: $dialog-card-img-border-radius;
         }
       }
@@ -81,7 +81,7 @@ $dialog-card-button-hover: $rc-component-bg-select;
         }
 
         &[style*="background-color"] {
-          background-color: $rc-brand-light  !important;
+          background-color: $rc-brand-light  ;
         }
       }
 
@@ -103,7 +103,7 @@ $dialog-card-button-hover: $rc-component-bg-select;
         }
 
         &[style*="background-color"] {
-          background-color: $rc-brand-light  !important;
+          background-color: $rc-brand-light  ;
           button:hover{
             background-color: $rc-brand-light-hover ;
           }

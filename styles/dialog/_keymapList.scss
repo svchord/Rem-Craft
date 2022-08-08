@@ -13,17 +13,17 @@
             .b3-text-field {
                 height: 26px;
                 line-height: 26px;
-                font-size: 12px !important;
+                font-size: 12px ;
             }
 
             &:hover {
                 .b3-text-field {
-                    background-color: $rc-container-bg  !important;
+                    background-color: $rc-container-bg  ;
                 }
             }
             .b3-list-item__action{
-                width: 26px !important;
-                height: 26px !important;
+                width: 26px ;
+                height: 26px ;
                 svg{
                     width: 10px;
                     height: 10px;

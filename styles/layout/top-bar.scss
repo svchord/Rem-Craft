@@ -3,18 +3,10 @@
 @use "sass:list";
 
 @use "../common" as *;
+@use "dock";
 
-$interval: map.get($spacer, "small");
-
-$bar-bg: map.get($bg, "base");
 $bar-h: 30px;
-
 $item-h: 22px;
-$item-z: map.get($z-index, "normal");
-$item-fz: map.get($font-size, "small");
-$item-color: map.get($text, "secondary");
-$item-radius: map.get($radius, "small");
-$item-hover: map.get($fill, "base");
 
 $close-color: #fff;
 $close-bg: rgba(232, 17, 35, 0.9);
@@ -48,25 +40,29 @@ $map: (
 
 @mixin item {
   width: 28px + 8px * 2;
-  margin: auto 0;
-  border-radius: $item-radius;
   height: $item-h;
+  margin: auto 0;
+  padding: 0;
+  cursor: unset;
+  border-radius: map.get($radius, "base");
 }
 
 @mixin item-before($content) {
-  @include reset-position();
-  @include reset-style();
-  @include vertical-center($item-h);
-  @include center();
-  content: $content;
-  font-size: $item-fz;
-  color: $item-color;
-  z-index: $item-z;
-  width: 100%;
+  &::before {
+    @include reset-position();
+    @include reset-style();
+    @include v-center($item-h);
+    @include center();
+    content: $content;
+    font-size: map.get($font-size, "small");
+    color: map.get($text, "secondary");
+    z-index: map.get($z-index, "normal");
+    width: 100%;
+  }
 }
 
 @mixin win-control($svg-w) {
-  @include svg-model(46px, $bar-h, $svg-w);
+  @include svg-div(46px, $bar-h, $svg-w);
   &::after {
     display: none;
   }
@@ -75,12 +71,13 @@ $map: (
 //顶部工具栏
 .toolbar {
   height: $bar-h;
+  margin-top: $interval;
 
   #toolbarVIP {
     -webkit-app-region: drag;
     $icon-w: 14px; //map.get($icon, "default");
-    $width: 36px + $interval * 2;
-    @include svg-model($width, $bar-h, $icon-w);
+    $width: dock.$item-w + $interval * 2;
+    @include svg-div($width, $bar-h, $icon-w);
 
     &:empty {
       &::before {
@@ -102,14 +99,7 @@ $map: (
   }
 
   &__item {
-    color: $item-color;
-    padding: 0;
-    height: $item-h;
-    cursor: unset;
-
-    &:hover {
-      background-color: $item-hover;
-    }
+    @include btn-on-base();
 
     &::after {
       top: $item-h !important;
@@ -119,9 +109,7 @@ $map: (
     @each $id, $contents in $map {
       &#bar#{$id} {
         @include item();
-        &::before {
-          @include item-before(list.nth($contents, 1));
-        }
+        @include item-before(list.nth($contents, 1));
         &::after {
           @if list.nth($contents, 2) {
             content: list.nth($contents, 2);
@@ -136,25 +124,9 @@ $map: (
     &#barBack,
     &#barForward {
       @include item();
-      padding: 0 12px;
-      width: 10px + 12px * 2;
-
-      svg {
-        width: 10px;
-        height: $item-h;
-      }
-
+      @include svg-div(10px + 12px * 2, $item-h, 10px);
       &.toolbar__item--disabled {
-        color: map.get($text, "disabled");
-        cursor: not-allowed;
-
-        &:hover {
-          background-color: transparent;
-        }
-
-        &::after {
-          display: none;
-        }
+        @include item-disabled();
       }
     }
 
@@ -177,7 +149,10 @@ $map: (
   }
 
   .fn__ellipsis {
-    @include vertical-center($bar-h);
-    // color: $item-color ;
+    @include v-center($bar-h);
+  }
+
+  #windowControls {
+    top: 0px - $interval !important;
   }
 }

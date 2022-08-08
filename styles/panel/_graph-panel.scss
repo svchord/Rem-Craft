@@ -9,7 +9,7 @@
     right: min(calc(-20% - 10px), -250px);
 
     &[style*="right"] {
-        right: 10px !important;
+        right: 10px ;
     }
 
     label {

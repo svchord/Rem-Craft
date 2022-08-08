@@ -17,56 +17,56 @@
         margin-right: 20px;
       }
       &[style*="error"] {
-        background-color: $rc-error-light !important;
-        color: $rc-text-primary !important;
+        background-color: $rc-error-light ;
+        color: $rc-text-primary ;
         code {
-          color: $rc-error !important;
-          background-color: $error-2 !important;
+          color: $rc-error ;
+          background-color: $error-2 ;
         }
 
         .code-block {
-          background-color: $error-2 !important;
+          background-color: $error-2 ;
           .protyle-icon,
           .protyle-action__language:hover {
-            background-color: $error-3 !important;
+            background-color: $error-3 ;
           }
           .protyle-icon:hover {
-            background-color: $error-4 !important;
+            background-color: $error-4 ;
           }
         }
       }
       &[style*="info"] {
-        background-color: $rc-brand-light !important;
-        color: $rc-text-primary !important;
+        background-color: $rc-brand-light ;
+        color: $rc-text-primary ;
         code {
-          color: $rc-brand !important;
-          background-color: $brand-2 !important;
+          color: $rc-brand ;
+          background-color: $brand-2 ;
         }
         .code-block {
-          background-color: $brand-2 !important;
+          background-color: $brand-2 ;
           .protyle-icon,
           .protyle-action__language:hover {
-            background-color: $brand-3 !important;
+            background-color: $brand-3 ;
           }
           .protyle-icon:hover {
-            background-color: $brand-4 !important;
+            background-color: $brand-4 ;
           }
         }
       }
       &[style*="success"] {
-        background-color: $rc-success-light !important;
-        color: $rc-text-primary !important;
+        background-color: $rc-success-light ;
+        color: $rc-text-primary ;
         code {
-          color: $rc-success !important;
-          background-color: $success-2 !important;
+          color: $rc-success ;
+          background-color: $success-2 ;
         }
       }
       &[style*="success"] {
-        background-color: $rc-success-light !important;
-        color: $rc-text-primary !important;
+        background-color: $rc-success-light ;
+        color: $rc-text-primary ;
         code {
-          color: $rc-success !important;
-          background-color: $success-2 !important;
+          color: $rc-success ;
+          background-color: $success-2 ;
         }
       }
     }
@@ -82,7 +82,7 @@
     }
 
     &[data-sb-layout="row"] {
-      // margin-right: 1em !important;
+      // margin-right: 1em ;
       // padding: 3px 2px;
       &:not(:last-child) .protyle-attr {
         right: 16px;

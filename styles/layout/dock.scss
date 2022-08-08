@@ -1,38 +1,26 @@
 @use "sass:map";
 @use "../common" as *;
 
-$interval: map.get($spacer, "small");
-
-$dock-bg: map.get($bg, "base");
-
 $item-w: 36px;
 $item-h: 36px;
-$item-color: map.get($text, "secondary");
 $item-radius: map.get($radius, "medium");
-
-$item-bg: map.get($fill, "base");
-$item-svg-w: 13px;
 
 //边栏
 @mixin dock {
   border-radius: $item-radius;
   padding: 0px;
-  background-color: $dock-bg;
+  background-color: map.get($bg, "base");
   margin-bottom: $interval;
   span {
-    margin: 0;
-    color: $item-color;
     border-radius: $item-radius;
     transition: map.get($transition, "all");
-    @include svg-model($item-w, $item-h, $item-svg-w);
+    @include btn-on-base();
+    @include svg-div($item-w, $item-h, 13px);
     &:not(:last-child) {
       margin-bottom: $interval;
     }
-    &:hover {
-      background-color: $item-bg;
-    }
     &.dock__item--active {
-      background-color: $item-bg;
+      background-color: map.get($fill, "base");
       @include focus_before(10.35px, 0);
     }
   }
@@ -41,14 +29,15 @@ $item-svg-w: 13px;
 //边栏
 .dock--vertical {
   width: $item-w;
-  border: none !important;
 
   &#dockLeft {
     margin-left: $interval;
+    border: none;
   }
 
   &#dockRight {
     margin-right: $interval;
+    border: none;
 
     .dock__item--active::before {
       left: auto;

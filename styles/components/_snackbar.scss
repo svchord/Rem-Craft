@@ -21,16 +21,16 @@ $snackbar-success-color: $rc-success;
     .b3-snackbar__content {
       position: relative;
       color: $snackbar-color; //$rc-brand;
-      box-shadow: $snackbar-shadow  !important;
+      box-shadow: $snackbar-shadow  ;
       background-color: $snackbar-bg; //$brand-2;
-      border-radius: $snackbar-border-radius  !important;
+      border-radius: $snackbar-border-radius  ;
       padding: 13px 16px 13px 16px+18px+12px;
       font-size: 14px;
       max-width: 30vw;
       line-height: 22px;
 
       [theme-mode="dark"] & {
-        box-shadow: $snackbar-shadow-dark  !important;
+        box-shadow: $snackbar-shadow-dark  ;
       }
 
       // 提示种类图标
@@ -41,7 +41,7 @@ $snackbar-success-color: $rc-success;
         position: absolute;
         left: 16px;
         top: calc(50% - 18px / 2);
-        width: 18px !important;
+        width: 18px ;
         height: 18px;
         margin: 0;
         @include add_icon("info", $snackbar-info-color, 24, "round");
@@ -92,7 +92,7 @@ $snackbar-success-color: $rc-success;
   // 提示内按钮
   .b3-button {
     background-color: $rc-brand-light;
-    padding: 2px 6px !important;
+    padding: 2px 6px ;
     font-size: 11px;
     line-height: 18px;
     transform: translateY(-2px);
@@ -100,21 +100,21 @@ $snackbar-success-color: $rc-success;
 
     // height: 22px;
     &:hover {
-      background-color: $rc-brand-light-hover  !important;
+      background-color: $rc-brand-light-hover  ;
     }
   }
 
   // 全部已读按钮
   >.b3-button {
     margin: 0;
-    padding: 8px 16px 16px !important;
+    padding: 8px 16px 16px ;
     background-color: transparent;
     width: auto;
     height: 28px + 8px + 16px;
 
     svg,
     &::before {
-      display: none !important;
+      display: none ;
     }
 
     &::after {
@@ -132,7 +132,7 @@ $snackbar-success-color: $rc-success;
     }
 
     &:hover {
-      background-color: transparent !important;
+      background-color: transparent ;
 
       &::after {
         background-color: $rc-brand-hover;

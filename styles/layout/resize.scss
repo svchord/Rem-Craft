@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "../common" as *;
+
+.layout__resize {
+  &::after {
+    background-color: map.get($bg, "base");
+  }
+
+  &:hover::after {
+    background-color: map.get($color, "hover");
+  }
+
+  &--lr {
+    margin: $interval -3px;
+  
+    &::after {
+      left: 2.5px;
+    }
+  }
+  
+  &:not(.layout__resize--lr) {
+    margin: -3px $interval;
+    width: calc(100% - $interval * 2);
+  }
+}
+

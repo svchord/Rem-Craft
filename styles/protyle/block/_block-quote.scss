@@ -5,8 +5,8 @@ $bq-before-bg: $rc-text-primary;
 //引述块
 %bq-side {
   position: relative;
-  background-color: transparent !important;
-  border: none !important;
+  background-color: transparent ;
+  border: none ;
 
   &::before {
     content: "";
@@ -31,21 +31,21 @@ $bq-before-bg: $rc-text-primary;
 
 
     &.protyle-wysiwyg--hl {
-      background-color: $highlight-bg  !important;
+      background-color: $highlight-bg  ;
     }
 
     // 一级子元素
     >[data-node-id] {
-      margin-left: 10px !important;
-      padding-left: 12px !important;
+      margin-left: 10px ;
+      padding-left: 12px ;
       &[data-type="NodeHeading"]:first-child{
-        margin-top: 15px !important;
+        margin-top: 15px ;
       }
     }
 
     // 所有子元素
     [data-node-id] {
-      color: $bq-color  !important;
+      color: $bq-color  ;
     }
 
     >.list {
@@ -58,11 +58,11 @@ blockquote {
   @extend %bq-side;
 
   >* {
-    margin-left: 20px !important;
+    margin-left: 20px ;
     position: relative;
   }
 
   * {
-    color: $bq-color  !important;
+    color: $bq-color  ;
   }
 }

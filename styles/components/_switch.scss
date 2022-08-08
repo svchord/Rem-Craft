@@ -36,11 +36,11 @@ $switch-interval-hover: calc(
   transition: all 0.2s ease-in-out;
 
   &::before {
-    display: none !important;
+    display: none ;
   }
 
   &::after {
-    background-color: $switch-button-bg !important;
+    background-color: $switch-button-bg ;
     border: none;
     width: $switch-button-width;
     height: $switch-button-width;
@@ -76,7 +76,7 @@ $switch-interval-hover: calc(
     border-color: $switch-bg-checked;
 
     &::after {
-      background-color: $switch-button-bg-checked !important;
+      background-color: $switch-button-bg-checked ;
       right: $switch-interval + $switch-button-width;
       left: unset;
       top: $switch-interval;

@@ -29,8 +29,8 @@ $cover-title-bg: $rc-container-bg;
 
 .protyle-background {
   //无题头图，无emoji
-  min-height: 108px !important;
-  margin: 0 !important;
+  min-height: 108px ;
+  margin: 0 ;
   padding: 0;
   box-sizing: content-box;
 
@@ -39,8 +39,8 @@ $cover-title-bg: $rc-container-bg;
   &[style*="92px"],
   &[style*="96px"],
   &[style*="64px"] {
-    min-height: 96px+78px+36px !important; //+36px
-    margin: 0px !important;
+    min-height: 96px+78px+36px ; //+36px
+    margin: 0px ;
 
     .protyle-background__iconw {
       top: 96px;
@@ -59,12 +59,12 @@ $cover-title-bg: $rc-container-bg;
 
   //有题头图
   &[style*="30vh"] {
-    min-height: 30vh !important;
-    border-bottom: calc($cover-emoji-height / 2 + 8px + $cover-tooltips-height + 4px) solid transparent !important;
+    min-height: 30vh ;
+    border-bottom: calc($cover-emoji-height / 2 + 8px + $cover-tooltips-height + 4px) solid transparent ;
 
     //有题头图，无emoji
     .protyle-background__iconw {
-      top: calc(30vh - 39px) !important;
+      top: calc(30vh - 39px) ;
 
       // 有题头图，有emoji
       // .protyle-icons {
@@ -90,7 +90,7 @@ $cover-title-bg: $rc-container-bg;
       display: inline-flex;
       height: 28px;
       border-radius: $cover-tooltips-border-radius;
-      border: none !important;
+      border: none ;
       box-shadow: none;
       padding: 0 8px 0 0px;
       // color: $rc-text-placeholder;
@@ -124,7 +124,7 @@ $cover-title-bg: $rc-container-bg;
       }
 
       input {
-        width: 100% !important;
+        width: 100% ;
         font-size: 0;
       }
     }
@@ -174,7 +174,7 @@ $cover-title-bg: $rc-container-bg;
           }
 
           &:not(:last-child) {
-            border-right: $cover-buttons-divide  !important;
+            border-right: $cover-buttons-divide  ;
           }
 
           &:nth-child(4) {
@@ -196,9 +196,9 @@ $cover-title-bg: $rc-container-bg;
         width: auto;
         height: 25.2px;
         text-align: center;
-        top: calc(50% - 25.2px / 2) !important;
-        left: calc(50% - 90px) !important;
-        margin: 0 !important;
+        top: calc(50% - 25.2px / 2) ;
+        left: calc(50% - 90px) ;
+        margin: 0 ;
 
         span {
           background-color: transparent;
@@ -220,7 +220,7 @@ $cover-title-bg: $rc-container-bg;
         background-color: $cover-buttons-bg;
         color: $cover-buttons-color;
         height: 26px;
-        opacity: 1 !important;
+        opacity: 1 ;
         // margin: 0 8px;
         right: #{$content-margin};
         box-shadow: $cover-buttons-shadow;
@@ -260,7 +260,7 @@ $cover-title-bg: $rc-container-bg;
 
   //文档icon组
   .protyle-background__iconw {
-    left: #{$content-margin} !important;
+    left: #{$content-margin} ;
     height: auto;
     width: auto;
     // margin-left: -1px;
@@ -307,7 +307,7 @@ $cover-title-bg: $rc-container-bg;
 
       &:hover {
         padding-right: 20px;
-        color: unset !important;
+        color: unset ;
       }
 
       svg {
@@ -333,9 +333,9 @@ $cover-title-bg: $rc-container-bg;
 
 //文档标题
 .protyle-title {
-  margin: 0 #{$content-margin} !important;
+  margin: 0 #{$content-margin} ;
   max-width: #{$editor-width};
-  width: auto !important;
+  width: auto ;
 
   &:hover .protyle-title__icon{
     opacity: 1;

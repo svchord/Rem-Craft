@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "../common" as *;
+@use "../components/list" as *;
+
+.layout__empty {
+  margin: 0 !important;
+  // transform: translateY(-30px);
+  h1 {
+    margin: 0;
+    color: map.get($text, "primary");
+  }
+  .fn__hr {
+    height: 12px;
+  }
+  .b3-list-item {
+    width: 196px;
+    margin: $interval 0;
+    &__graphic {
+      @include svg($text-h, map.get($icon, "small"));
+    }
+    span {
+      font-size: map.get($font-size, "small");
+      margin-left: 5px;
+    }
+  }
+}

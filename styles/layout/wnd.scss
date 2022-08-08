@@ -1,0 +1,136 @@
+@use "sass:map";
+@use "../common" as *;
+
+$wnd-base: map.get($bg, "base");
+$wnd-bg: map.get($bg, "page");
+
+//边窗动画
+$time: map.get($transition-duration, "slow");
+$scale: scale(0.75);
+$wnd-transition: all $time map.get($transition-function, "easing") 0s;
+
+:root {
+  // 动画效果
+  --b3-width-transition: width #{$time} #{map.get($transition-function, "fast")};
+}
+
+@keyframes close {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    max-height: 100%;
+  }
+
+  50% {
+    opacity: 0;
+    transform: $scale;
+    max-height: 100%;
+  }
+
+  to {
+    opacity: 0;
+    transform: $scale;
+    max-height: 0;
+  }
+}
+
+@mixin wnd {
+  min-height: 10% !important;
+  margin: $interval;
+  border-radius: map.get($radius, "medium");
+  transition: all $time map.get($transition-function, "easing") 0s;
+  background-color: $wnd-bg;
+}
+
+//边窗
+#layouts > .fn__flex {
+  overflow: hidden;
+
+  //两侧边窗
+  > .fn__flex-column {
+    background-color: $wnd-base;
+    // 显示的边窗
+    > .fn__flex {
+      overflow-x: hidden;
+
+      > div[data-type="wnd"] {
+        @include wnd;
+
+        .layout-tab-container {
+          overflow-y: hidden;
+          background-color: $wnd-bg;
+
+          // 边窗容器
+          > .fn__flex-1 {
+            overflow: hidden;
+            min-width: 0;
+
+            //.navigation && ...
+            > .fn__flex-1 {
+              min-height: 0 !important;
+            }
+
+            // 列表
+            .b3-list {
+              min-width: 200px;
+            }
+          }
+        }
+      }
+    }
+
+    // 隐藏的边窗
+    > .fn__none:not(.layout__resize) {
+      display: flex !important;
+      animation: close $time * 2 forwards ease-in-out;
+
+      > div[data-type="wnd"] {
+        @include wnd;
+        opacity: 0;
+        transform: $scale; //translateX(50%);
+      }
+    }
+  }
+
+  //左侧边窗特殊处理
+  > .fn__flex-shrink:not(.layout__center) {
+    > .fn__none:not(.layout__resize) {
+      animation: close $time * 2 forwards ease-in-out;
+
+      > div[data-type="wnd"] {
+        transform: $scale;
+      }
+    }
+  }
+}
+
+// 居中窗口
+.layout__center {
+  background-color: $wnd-base;
+  div[data-type="wnd"] {
+    position: relative;
+    @include wnd;
+
+    // 标签搜索页面
+    // 搜索历史按钮
+    #searchHistoryBtn {
+      @include history-btn();
+    }
+
+    // 刷新按钮
+    #globalSearchReload {
+      border-radius: map.get($radius, "base");
+      @include svg-div(30px, 30px, 12px);
+    }
+
+    // 搜索结果列表
+    #globalSearchList {
+      margin-top: $interval;
+    }
+
+    // 搜索结果列表项
+    .b3-list-item[data-type="search-item"] {
+      @include search-item();
+    }
+  }
+}

@@ -1,0 +1,324 @@
+@use "sass:map";
+@use "sass:math";
+@use "../common" as *;
+
+$list-bg: map.get($bg, "page");
+
+$text-h: 20px;
+$item-h: map.get($component-size, "default");
+$item-fz: map.get($font-size, "small");
+$item-bg: map.get($bg, "component");
+$item-color: map.get($text, "secondary");
+
+$btn-bg: map.get($fill, "component");
+$btn-radius: map.get($radius, "exsmall");
+
+//折叠按钮宽度
+$arrow-w: 16px;
+$arrow-svg-w: 8px;
+
+//子列表缩进左边距
+$list-left: 22px;
+//子列表缩进最大深度
+$list-depth: 7;
+
+//列表项选中
+$item-bg-f: map.get($bg, "brand");
+$item-color-f: map.get($text, "brand");
+
+$btn-bg-f: map.get($fill, "brand");
+
+$meta-color: map.get($text, "placeholder");
+$meta-color-f: map.get($color, "brand", "focus");
+
+:root {
+  // 列表
+  --b3-list-hover: #{$item-bg};
+}
+
+.b3-list,
+.b3-list--background {
+  margin: 0px 8px 8px;
+
+  // 列表为空
+  .b3-list--empty {
+    color: $meta-color;
+    font-size: $item-fz;
+  }
+}
+
+.b3-list-item {
+  height: auto;
+  line-height: $text-h;
+  padding: math.div($item-h - $text-h, 2);
+  margin: $interval 0;
+  @include list-item();
+
+  // 折叠按钮
+  &__toggle {
+    @include svg-div($arrow-w, $text-h, $arrow-svg-w);
+    color: $item-color !important;
+
+    // 文档树无子元素
+    @mixin hidden-arrow {
+      display: flex;
+      visibility: visible;
+      width: 2px;
+      height: 2px;
+      padding: 0;
+      margin: auto;
+      color: transparent;
+      border-radius: map.get($radius, "circle");
+      background-color: $item-color;
+    }
+
+    &.fn__hidden {
+      .b3-list-item__arrow {
+        @include hidden-arrow();
+      }
+    }
+
+    // 鼠标悬浮
+    &.b3-list-item__toggle--hl:hover {
+      background-color: transparent;
+    }
+
+    // 折叠图标
+    .b3-list-item__arrow {
+      // 大纲、标签无子元素
+      &.fn__hidden {
+        @include hidden-arrow();
+      }
+    }
+
+    .backlink--more & {
+      align-self: flex-start;
+    }
+  }
+
+  // 列表图标（大纲、标签等）
+  &__graphic {
+    @include svg($text-h, map.get($icon, "small"));
+    color: $item-color;
+    margin-right: $interval;
+
+    // 图标悬浮后有弹窗
+    &.popover__block {
+      display: flex;
+      @include list-btn();
+
+      // 反链展开时的特殊情况
+      .backlink--more & {
+        margin-top: 0px;
+      }
+    }
+  }
+
+  //列表emoji
+  &__icon {
+    @include emoji_icon($text-h, 12px, map.get($icon, "medium"));
+    @include list-btn();
+    margin-left: $interval;
+  }
+
+  // 列表文本
+  &__text {
+    color: $item-color;
+    line-height: $text-h;
+  }
+
+  // 列表按钮
+  &__action {
+    @include svg($text-h, map.get($icon, "medium"));
+    @include list-btn();
+    margin-left: $interval;
+  }
+
+  // 列表计数块
+  .counter:not(:empty) {
+    @include counter();
+    margin-left: $interval;
+  }
+
+  // 次级信息
+  &__meta {
+    color: $meta-color;
+  }
+
+  // 块引用菜单列表
+  // &--two {
+  //   .b3-list-item__first {
+  //     .b3-list-item__graphic.popover__block {
+  //       margin-left: 0 ;
+  //     }
+  //   }
+  // }
+
+  // 列表选中态
+  &--focus {
+    background-color: $item-bg-f !important;
+
+    .b3-list-item__toggle,
+    .b3-list-item__text {
+      color: $item-color-f !important;
+    }
+
+    .b3-list-item__arrow.fn__hidden {
+      background-color: $item-color-f;
+    }
+
+    .counter:not(:empty),
+    .b3-list-item__icon,
+    .b3-list-item__action,
+    .b3-list-item__graphic.popover__block {
+      @include item-brand();
+    }
+
+    // 次级信息
+    .b3-list-item__meta {
+      color: $meta-color-f;
+    }
+  }
+
+  // 子元素向右缩进 && 左侧辅助线
+  // 循环阴影辅助线
+  @function cyclic($cur) {
+    $margin: calc(6px + $arrow-w / 2);
+    $border: map.get($border, 3);
+    $temp: "#{$margin - 1px} 0 #{$list-bg} inset, #{$margin} 0 #{$border} inset";
+
+    @if $cur >1 {
+      @for $i from 1 to $cur {
+        $margin: calc($list-left * $i + 6px + $arrow-w / 2);
+        $temp: $temp +
+          ", "+"#{$margin - 1px} 0 #{$list-bg} inset, #{$margin} 0 #{$border} inset";
+      }
+    }
+
+    @return $temp;
+  }
+
+  // 递归函数
+  @mixin recursive-item-margin($cur, $end) {
+    + ul {
+      box-shadow: #{cyclic($cur)};
+
+      & > .b3-list-item {
+        margin-left: $list-left * $cur;
+
+        @if $cur < $end {
+          @include recursive-item-margin($cur + 1, $end);
+        }
+      }
+    }
+  }
+
+  @include recursive-item-margin(1, $list-depth);
+}
+
+// %first_list_item {
+//   // background-color: $rc-component-bg;
+
+//   * {
+//     color: $rc-text-primary ;
+//   }
+
+//   &.b3-list-item--focus {
+//     * {
+//       color: $list-item-color-focus ;
+//     }
+//   }
+// }
+
+// // 文档树
+// .file-tree {
+//   [data-type="navigation"] {
+//     margin-right: 4px;
+//   }
+
+//   // 文档树笔记本
+//   [data-type="navigation-root"] {
+//     margin-bottom: 8px;
+//     @extend %first_list_item;
+//   }
+
+//   // 拖拽样式
+//   .dragover {
+//     background-color: $rc-component-bg-select;
+
+//     // 当前文档的上方
+//     &__top {
+//       background-color: $rc-component-bg-select;
+//       box-shadow: 0 2px inset $rc-brand;
+//     }
+
+//     // 当前文档的下方
+//     &__bottom {
+//       background-color: $rc-component-bg-select;
+//       box-shadow: 0 -2px inset $rc-brand;
+//     }
+//   }
+
+//   // 已关闭的笔记本
+//   > .b3-list {
+//     margin: 8px 8px 0px;
+
+//     > .b3-list-item {
+//       // @extend %first_list_item;
+//       margin-bottom: 8px;
+//     }
+
+//     > ul {
+//       margin-bottom: 8px;
+//     }
+//   }
+// }
+
+// // 大纲
+// .sy__outline {
+//   // 标题
+//   > .b3-list-item {
+//     @extend %first_list_item;
+//     margin: 0 8px 8px;
+//     position: relative;
+//     background-color: $rc-component-bg;
+//     padding-left: 8px ;
+
+//     &::before {
+//       @include focus_before(8px, 0px);
+//     }
+
+//     &:hover {
+//       background-color: $rc-component-button;
+//     }
+
+//     .b3-list-item__graphic {
+//       @include emoji_icon($list-text-height, 12px, 12px);
+//     }
+
+//     &:empty {
+//       margin: 0;
+//       padding: 0 ;
+//     }
+//   }
+
+//   // 大纲列表
+//   > .fn__flex-1 {
+//     margin-right: 4px;
+//   }
+// }
+
+// 书签界面
+// .sy__bookmark > .fn__flex-1 > .b3-list {
+//   // 书签项
+//   > .b3-list-item {
+//     // @extend %first_list_item;
+//   }
+// }
+
+// .sy__bookmark > .fn__flex-1,
+// .sy__tag > .fn__flex-1,
+// .backlinkList,
+// .backlinkMList {
+//   margin-right: 4px;
+// }

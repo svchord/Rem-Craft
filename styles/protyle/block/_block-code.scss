@@ -21,7 +21,7 @@ $code-action-bg-active: $gray-4;
   &:hover {
     .protyle-action__language,
     .protyle-icon {
-      opacity: 1 !important;
+      opacity: 1 ;
     }
   }
 
@@ -32,9 +32,9 @@ $code-action-bg-active: $gray-4;
 
     %code-action {
       border-radius: $code-action-border-radius;
-      font-size: 12px !important;
+      font-size: 12px ;
       display: flex;
-      color: $code-action-color !important;
+      color: $code-action-color ;
 
       &:hover {
         background-color: $code-action-bg-hover;
@@ -54,7 +54,7 @@ $code-action-bg-active: $gray-4;
       text-transform: capitalize;
       height: 20px;
       padding: 0 5px;
-      margin: 4px 0 0 4px !important;
+      margin: 4px 0 0 4px ;
 
       // 向下图标
       &::after {
@@ -142,15 +142,15 @@ $code-action-bg-active: $gray-4;
 
   // 代码区
   .hljs {
-    background-color: transparent !important;
-    padding: 34px 16px 32px 32px !important;
-    // font-size: 85% !important;
+    background-color: transparent ;
+    padding: 34px 16px 32px 32px ;
+    // font-size: 85% ;
     line-height: 1.625;
     height: 100%;
 
     // 有行号的特殊情况
     &.protyle-linenumber {
-      padding-left: 10px !important;
+      padding-left: 10px ;
       margin-left: 50px;
     }
   }
@@ -158,14 +158,14 @@ $code-action-bg-active: $gray-4;
   // 代码行号
   .protyle-linenumber__rows {
     font-size: 85%;
-    background-color: transparent !important;
-    padding: 34px 0px 32px 0px !important;
+    background-color: transparent ;
+    padding: 34px 0px 32px 0px ;
     line-height: 27px;
     width: 40px;
     margin-right: 10px;
 
     span {
-      // height:20.71875px !important;
+      // height:20.71875px ;
       line-height: 1.625;
 
       &::before {
@@ -188,5 +188,5 @@ code{
 }
 
 [data-type="a"] code {
-  padding: 0 0.4em !important;
+  padding: 0 0.4em ;
 }

@@ -8,7 +8,7 @@ $dialog-text-field-bg: $rc-container-bg;
     // 顶部搜索框
     .search__header {
       width: $dialog-large-width;
-      border-radius: $dialog-border-radius $dialog-border-radius 0 0 !important;
+      border-radius: $dialog-border-radius $dialog-border-radius 0 0 ;
       background-color: $dialog-search-header-bg;
       border-color: $dialog-search-header-border;
 
@@ -30,8 +30,8 @@ $dialog-text-field-bg: $rc-container-bg;
         border-top-left-radius: $dialog-border-radius;
         border-top-right-radius: $dialog-border-radius;
         background-color: $dialog-text-field-bg;
-        padding-left: 49px !important;
-        border: none !important;
+        padding-left: 49px ;
+        border: none ;
 
         &:focus {
           box-shadow: unset;
@@ -39,7 +39,7 @@ $dialog-text-field-bg: $rc-container-bg;
 
         &:hover,
         &:focus {
-          border: none !important;
+          border: none ;
         }
       }
 
@@ -48,7 +48,7 @@ $dialog-text-field-bg: $rc-container-bg;
     // 搜索结果横排
     >div>.fn__flex>.fn__flex-column {
       /*先把容器改成左右排列并自动换行*/
-      flex-direction: row !important;
+      flex-direction: row ;
       flex-wrap: wrap;
 
       // 搜索结果筛选行
@@ -70,7 +70,7 @@ $dialog-text-field-bg: $rc-container-bg;
             color: $rc-text-secondary;
 
             &:hover {
-              background-color: $rc-component-bg  !important;
+              background-color: $rc-component-bg  ;
             }
           }
         }
@@ -105,14 +105,14 @@ $dialog-text-field-bg: $rc-container-bg;
         @media screen and (min-width: 960px) {
           float: left;
           width: 45%;
-          height: calc(100% - 94px) !important;
+          height: calc(100% - 94px) ;
           padding: 16px 16px;
           margin: 0;
           // border-top: 1px solid $rc-border-3;
           border-right: 1px solid $rc-border-3;
 
           .b3-list-item[data-type="search-item"] {
-            padding-bottom: 22px + 5px !important;
+            padding-bottom: 22px + 5px ;
             height: 22px * 2 + 5px * 3;
 
             .b3-list-item__meta {
@@ -121,7 +121,7 @@ $dialog-text-field-bg: $rc-container-bg;
               max-width: 100%;
               position: absolute;
               white-space: nowrap;
-              overflow: hidden !important;
+              overflow: hidden ;
               text-overflow: ellipsis;
             }
           }
@@ -131,14 +131,14 @@ $dialog-text-field-bg: $rc-container-bg;
           float: left;
           /*width:45vw;*/
           width: calc(100%);
-          height: calc(50% - 85px) !important;
+          height: calc(50% - 85px) ;
         }
       }
 
       // 搜索预览
       #searchPreview {
         width: 60%;
-        height: calc(100% - 94px) !important;
+        height: calc(100% - 94px) ;
         border: none;
         border-bottom-left-radius: $dialog-border-radius;
         border-bottom-right-radius: $dialog-border-radius;
@@ -146,7 +146,7 @@ $dialog-text-field-bg: $rc-container-bg;
         // 面包屑
         .protyle-breadcrumb {
           // height: 40px;
-          padding: 8px !important;
+          padding: 8px ;
 
           &__item .fn__ellipsis {
             display: -webkit-box;
@@ -155,7 +155,7 @@ $dialog-text-field-bg: $rc-container-bg;
 
         .protyle-content {
           .protyle-wysiwyg {
-            padding: 16px 64px 90px !important;
+            padding: 16px 64px 90px ;
           }
 
           [data-type="search-mark"] {
@@ -167,7 +167,7 @@ $dialog-text-field-bg: $rc-container-bg;
       .search__header + .search__header:not(.fn__none) {
         ~ #searchList,
         ~ #searchPreview{
-          height: calc(100% - 49px - 49px - 44px) !important;
+          height: calc(100% - 49px - 49px - 44px) ;
         }
       }
     }
@@ -195,7 +195,7 @@ $dialog-text-field-bg: $rc-container-bg;
       // 块类型筛选项
       label {
         .b3-label__text {
-          font-size: 13px !important;
+          font-size: 13px ;
           height: 20px;
           line-height: 20px;
           margin: 0;

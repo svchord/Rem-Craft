@@ -21,7 +21,7 @@
         %list {
 
             .b3-list {
-                background-color: $rc-container-bg  !important;
+                background-color: $rc-container-bg  ;
                 border-radius: $rc-bradius-small;
 
                 .b3-list-item {
@@ -33,7 +33,7 @@
             >.b3-list {
                 padding: 8px 16px;
                 margin: 8px 0;
-                width: 300px !important;
+                width: 300px ;
                 border-right: 1px solid $rc-border-3;
             }
         }
@@ -44,12 +44,12 @@
 
             // 文档展示
             .history__text {
-                background-color: $rc-container-bg  !important;
+                background-color: $rc-container-bg  ;
             }
             
             // 文档选择
             .b3-list-item[data-type="switchNotebook"]{
-                background-color: $rc-component-bg !important;
+                background-color: $rc-component-bg ;
             }
             
         }
@@ -59,28 +59,28 @@
             @extend %list;
 
             .history__asset {
-                background-color: $rc-container-bg  !important;
+                background-color: $rc-container-bg  ;
             }
         }
 
         // 笔记本历史界面
         >[data-type="notebook"] {
             margin: 0;
-            background-color: $rc-container-bg  !important;
+            background-color: $rc-container-bg  ;
             padding: 16px;
 
 
             .b3-list-item {
                 &:hover {
-                    background-color: $rc-component-bg  !important;
+                    background-color: $rc-component-bg  ;
                 }
 
                 // 回退按钮
                 .b3-list-item__action {
-                    width: auto !important;
-                    height: auto !important;
+                    width: auto ;
+                    height: auto ;
                     font-size: 10px;
-                    padding: 0px 6px !important;
+                    padding: 0px 6px ;
 
                     svg {
                         width: 8px;
@@ -101,7 +101,7 @@
 
             .history__repoheader {
                 padding: 16px;
-                background-color: $rc-container-bg  !important;
+                background-color: $rc-container-bg  ;
             }
 
             // 第二行操作栏
@@ -139,7 +139,7 @@
             >.b3-list {
                 margin: 0;
                 padding: 16px;
-                background-color: $rc-container-bg !important;
+                background-color: $rc-container-bg ;
 
                 li {
                     list-style: none;

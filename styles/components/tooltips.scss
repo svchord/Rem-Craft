@@ -1,23 +1,20 @@
-//提示条阴影
 @use "sass:map";
 @use "../common" as *;
 
-$bg: map.get($bg, "popper");
-$color: map.get($text, "primary");
-$shadow: map.get($shadow, 1);
-$radius: map.get($radius, "exsmall");
+$t-bg: map.get($bg, "pop");
 
 :root {
   // 提示
-  --b3-tooltips-color: #{$bg};
+  --b3-tooltips-color: #{$t-bg};
 }
 
 @mixin tooltips {
-  box-shadow: $shadow;
-  background-color: $bg;
-  color: $color;
+  box-shadow: map.get($shadow, 1);
+  background-color: $t-bg;
+  color: map.get($text, "primary");
   padding: 6px 8px;
-  border-radius: $radius;
+  border-radius: map.get($radius, "small");
+  z-index: map.get($z-index,"top");
 }
 
 //tips

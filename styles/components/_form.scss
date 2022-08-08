@@ -18,7 +18,7 @@
 
   // 搜索文本框
   .b3-form__icon-input {
-    padding-left: 28px !important;
+    padding-left: 28px ;
   }
 
   // 边窗顶栏小搜索框
@@ -31,9 +31,9 @@
 
     // 搜索文本框
     .b3-form__icon-input {
-      border: none !important;
+      border: none ;
       height: 24px;
-      padding-left: 24px !important;
+      padding-left: 24px ;
       font-size: 11px;
 
       &:focus {

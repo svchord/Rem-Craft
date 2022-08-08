@@ -35,11 +35,11 @@ $dialog-label-text: $rc-text-secondary;
   border-radius: $dialog-border-radius;
 
   div[style="height:auto"]>div {
-    border-radius: 0 0 $dialog-border-radius $dialog-border-radius  !important;
+    border-radius: 0 0 $dialog-border-radius $dialog-border-radius  ;
   }
 
   &[style*="80vw"] {
-    width: $dialog-large-width  !important;
+    width: $dialog-large-width  ;
 
     // 弹窗关闭按钮
     .b3-dialog__close {
@@ -55,7 +55,7 @@ $dialog-label-text: $rc-text-secondary;
     .b3-tab-bar,
     // 设置项界面
     .b3-tab-container {
-      height: #{$dialog-tabs-height} !important;
+      height: #{$dialog-tabs-height} ;
       background-color: $dialog-tabs-bg;
     }
 
@@ -64,15 +64,15 @@ $dialog-label-text: $rc-text-secondary;
       // border-radius: $tab-bar-border-radius;
       padding-right: 4px;
       margin-top: 8px;
-      width: 160px !important;
+      width: 160px ;
 
       // 导航按钮
       .b3-list-item--big {
-        padding: 16px 24px !important;
-        margin: 8px 0 0 !important;
+        padding: 16px 24px ;
+        margin: 8px 0 0 ;
 
         &:first-child {
-          margin-top: 0px !important;
+          margin-top: 0px ;
         }
 
         // 导航图标
@@ -89,7 +89,7 @@ $dialog-label-text: $rc-text-secondary;
       border-color: $dialog-label-border;
 
       .b3-label__text {
-        color: $dialog-label-text  !important;
+        color: $dialog-label-text  ;
       }
 
       // 搜索筛选设置

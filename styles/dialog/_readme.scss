@@ -76,7 +76,7 @@ $dialog-readme-main-margin: 96px;
     // Readme正文
     .item__readme {
       box-sizing: content-box;
-      padding: 16px $dialog-readme-main-margin 30vh !important;
+      padding: 16px $dialog-readme-main-margin 30vh ;
 
       // 代码块
       code {

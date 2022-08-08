@@ -1,0 +1,69 @@
+@use "sass:map";
+@use "../common" as *;
+
+$thumb-bg: map.get($scroll, "base");
+$track-bg: transparent; //map.get($scroll, "track");
+
+:root {
+  // 滚动条
+  --b3-scroll-color: #{$thumb-bg};
+}
+
+@mixin no-scrollbar {
+  & {
+    overflow: overlay;
+  }
+
+  &::-webkit-scrollbar {
+    // display: none;
+    opacity: 0;
+    &-thumb {
+      background-color: transparent;
+    }
+    &-track {
+      opacity: 0;
+      background-color: rgba(0, 0, 0, 0.05);
+      background-color: transparent;
+    }
+  }
+
+  &:hover {
+    &::-webkit-scrollbar {
+      opacity: 1;
+    }
+  }
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  z-index: 1;
+  width: 12px;
+
+  &:horizontal {
+    height: 6px;
+  }
+
+  &-thumb {
+    border-radius: map.get($radius, "max");
+    box-sizing: content-box;
+    box-shadow: inset 0 0 6px 6px $thumb-bg;
+    background: unset;
+    border: solid 4px transparent;
+    &:hover {
+      border: solid 2px transparent;
+    }
+  }
+
+  &-corner {
+    background: $track-bg;
+  }
+
+  &-track {
+    background: $track-bg;
+
+    &-piece {
+      background: $track-bg;
+      // width: 6px;
+    }
+  }
+}

@@ -3,7 +3,7 @@
 @use "var" as *;
 @use "utils" as *;
 
-@mixin focus_before($top, $left: 0) {
+@mixin focus-before($top, $left: 0) {
   position: relative;
 
   &::before {
@@ -16,6 +16,7 @@
     bottom: $top;
     left: $left;
     width: 3px;
+    z-index: 0;
     height: calc(100% - $top * 2);
     background-color: map.get($color, "brand", "base");
     border-radius: map.get($radius, "max");
@@ -57,58 +58,63 @@
   }
 }
 
-@mixin add_icon($icon_name, $color, $size, $position) {
+@mixin add-icon($icon_name, $color, $size, $position) {
   background-color: $color;
   $icon_url: "#{$asset-path}/icons/#{$icon_name}_black_#{$size}dp.svg";
   -webkit-mask: url($icon_url) #{$position};
   mask: url($icon_url) #{$position};
 }
 
-@mixin list-btn {
-  @include btn-on-component();
+@mixin counter($h: 20px) {
+  @include center();
+  @include v-center($h);
+  @include item("component");
+  width: auto;
+  margin: 0;
   border-radius: map.get($radius, "exsmall");
+  padding: 0 math.div($h - 8px, 2);
   &::after {
     display: none !important;
   }
 }
 
-@mixin list-item {
-  @include item-component();
-  font-size: map.get($font-size, "small");
-  border-radius: map.get($radius, "small");
-}
-
-@mixin list-focus {
-  color: map.get($text, "brand");
-  background-color: map.get($bg, "brand");
-  &:hover {
-    color: map.get($text, "brand");
-    background-color: map.get($bg, "brand") !important;
-  }
-}
-
-@mixin counter($h: 20px) {
-  @include center();
-  @include v-center($h);
-  @include list-btn();
-  width: auto;
-  margin: 0;
-  background-color: map.get($bg, "component");
-  padding: 0 math.div($h - 8px, 2);
-}
-
-@mixin emoji_icon($width, $fz, $icon-width) {
+@mixin emoji-icon($width, $fz, $icon-width) {
+  @include v-center($width);
   padding: 0;
   width: $width;
-  height: $width;
   // 原生emoji
   font-size: $fz;
-  line-height: $width;
 
   // 自定义emoji
   img,
   // twitter-emoji
   svg.custom-icon {
     @include svg($width, $icon-width);
+  }
+}
+
+@mixin drag {
+  $drag-width: 2px;
+  $drag-color: map.get($color, "brand", 5);
+
+  background-color: map.get($bg, "brand");
+  // 当前块的上方
+  &__top {
+    box-shadow: 0 0 - $drag-width $drag-color;
+  }
+
+  // 当前块的下方
+  &__bottom {
+    box-shadow: 0 $drag-width $drag-color;
+  }
+
+  // 当前块的左方
+  &__left {
+    box-shadow: -$drag-width 0 $drag-color;
+  }
+
+  // 当前块的右方
+  &__right {
+    box-shadow: $drag-width 0 $drag-color;
   }
 }

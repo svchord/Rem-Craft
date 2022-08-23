@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "../common" as *;
+@use "../components/list" as *;
+// 文档树
+.file-tree {
+  // 拖拽样式
+  .dragover {
+    @include drag();
+  }
+
+  // 已关闭的笔记本
+  > .b3-list {
+    margin: 8px 8px 0px;
+
+    > .b3-list-item {
+      margin-bottom: 8px;
+    }
+
+    > ul {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+// 文档树笔记本
+[data-type="navigation-root"].b3-list-item {
+  @include list-content("primary");
+}

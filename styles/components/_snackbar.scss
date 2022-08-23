@@ -44,7 +44,7 @@ $snackbar-success-color: $rc-success;
         width: 18px ;
         height: 18px;
         margin: 0;
-        @include add_icon("info", $snackbar-info-color, 24, "round");
+        @include add-icon("info", $snackbar-info-color, 24, "round");
       }
 
       a {
@@ -65,7 +65,7 @@ $snackbar-success-color: $rc-success;
     &--error {
       .b3-snackbar__content {
         &::before {
-          @include add_icon("error", $snackbar-error-color, 24, "round");
+          @include add-icon("error", $snackbar-error-color, 24, "round");
         }
       }
     }
@@ -74,7 +74,7 @@ $snackbar-success-color: $rc-success;
     &--warning {
       .b3-snackbar__content {
         &::before {
-          @include add_icon("warning", $snackbar-warning-color, 24, "round");
+          @include add-icon("warning", $snackbar-warning-color, 24, "round");
         }
       }
     }
@@ -83,7 +83,7 @@ $snackbar-success-color: $rc-success;
     &--success {
       .b3-snackbar__content {
         &::before {
-          @include add_icon("success", $snackbar-success-color, 24, "round");
+          @include add-icon("success", $snackbar-success-color, 24, "round");
         }
       }
     }

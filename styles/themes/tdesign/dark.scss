@@ -176,17 +176,27 @@
 
   // 背景色
   --bg-base: var(--gray-1); // 色彩 - page
-  --bg-page: var(--gray-1); // 色彩 - page
-  --bg-component: var(--gray-4); // 色彩  - 组件
-  --bg-pop: var(--gray-2); // 色彩 - 容器
-  --bg-brand: var(--brand-1);
+  --bg-page: var(--gray-2); // 色彩 - page
+  --bg-component: var(--gray-3); // 色彩  - 组件
+  --bg-pop: var(--gray-3); // 色彩 - 容器
+  --bg-brand: var(--brand-base);
+  --bg-light: var(--brand-1);
 
   // 填充色
-  --fill-base: var(--gray-1); // 色彩 - page
-  --fill-page: var(--gray-1); // 色彩 - page
-  --fill-component: var(--gray-4); // 色彩  - 组件
-  --fill-pop: var(--gray-2); // 色彩 - 容器
-  --fill-brand: var(--brand-1);
+  --hover-base: var(--gray-2); // 色彩 - page
+  --hover-page: var(--gray-3); // 色彩 - page
+  --hover-component: var(--gray-4); // 色彩  - 组件
+  --hover-pop: var(--gray-4); // 色彩 - 容器
+  --hover-brand: var(--brand-hover);
+  --hover-light: var(--brand-3);
+
+  // 点击色
+  --active-base: var(--gray-3); // 色彩 - page
+  --active-page: var(--gray-4); // 色彩 - page
+  --active-component: var(--gray-5); // 色彩  - 组件
+  --active-pop: var(--gray-5); // 色彩 - 容器
+  --active-brand: var(--brand-active);
+  --active-light: var(--brand-4);
 
   // 基础/下层 投影 hover 使用的组件包括：表格 /
   --shadow-1: 0 4px 6px rgba(0, 0, 0, 6%), 0 1px 10px rgba(0, 0, 0, 8%),

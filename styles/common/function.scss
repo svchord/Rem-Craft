@@ -68,6 +68,10 @@
   @return $map;
 }
 
+@function is-important($important){
+  @return #{if($important, '!important', '')};
+}
+
 //Fluent Design
 @function fluent-shadow($dp) {
   $y1: 0.4px;

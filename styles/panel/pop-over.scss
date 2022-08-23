@@ -1,0 +1,80 @@
+@use "sass:map";
+@use "../common" as *;
+@use "block-icons" as *;
+
+$pop-radius: map.get($radius, "large");
+$pop-bg: map.get($bg, "pop");
+$content-min-height: 74px;
+$bread-crumb-height: 32px;
+
+//块引用窗口
+.block__popover {
+  box-shadow: map.get($shadow, 3);
+  border-radius: $pop-radius;
+
+  opacity: 0;
+  margin-top: 30px;
+  &--open {
+    opacity: 1;
+    margin-top: 0px;
+    transition: opacity,
+      margin-top map.get($transition-duration, "base")
+        map.get($transition-function, "ease-in-out");
+  }
+
+  // max-height: 671.5px + 36px - 28px ;
+  // &.block__popover--top {
+  //   max-height: 214.8px + 36px - 28px;
+  // }
+  .block__icons--border {
+    // min-height: 36px;
+    // z-index: 9;
+    border-radius: $pop-radius $pop-radius 0 0;
+    background-color: $pop-bg;
+    .block__icon {
+      @include block-icon($type: "pop", $important: true);
+      &[data-type="pin"] {
+        svg {
+          transform: rotate(45deg);
+          transition: transform map.get($transition-duration, "base")
+            map.get($transition-function, "ease-in-out");
+        }
+        &[aria-label="取消钉住"] {
+          svg {
+            transform: rotate(0deg);
+          }
+        }
+      }
+      + .fn__space {
+        width: $fn-space;
+      }
+    }
+  }
+  .block__content {
+    border-radius: 0 0 $pop-radius $pop-radius;
+    background-color: $pop-bg;
+    //   min-height: $content-min-height + $bread-crumb-height;
+    .block__edit {
+      border: none;
+      //     min-height: $content-min-height + $bread-crumb-height;
+      .protyle-breadcrumb {
+        background-color: $pop-bg;
+        .block__icon {
+          @include block-icon($type: "pop", $important: true);
+        }
+        &__item--active {
+          .protyle-breadcrumb__text:not(:empty) {
+            color: map.get($text, "placeholder");
+            &:hover {
+              color: map.get($text, "primary");
+            }
+          }
+        }
+      }
+      .protyle-content {
+        background-color: $pop-bg;
+        // min-height: $content-min-height;
+      }
+    }
+  }
+}

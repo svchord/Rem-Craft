@@ -1,0 +1,49 @@
+@use "sass:map";
+@use "../common" as *;
+
+.graph {
+  &__panel {
+    top: 50px;
+    bottom: 10px;
+    box-shadow: map.get($shadow, 2);
+    border-radius: map.get($radius, "medium");
+    padding: 8px 16px 16px;
+    width: max(20%, 240px);
+    right: min(calc(-20% - 10px), -250px);
+
+    &[style*="right"] {
+      right: 10px;
+    }
+
+    label {
+      margin: 0;
+      padding: 8px 4px;
+      border-bottom: 1px solid map.get($border, 3);
+
+      span {
+        font-size: 13px;
+        line-height: 20px;
+      }
+
+      .b3-slider {
+        width: max(60%, 80px);
+      }
+    }
+
+    .fn__hr {
+      height: 16px;
+    }
+  }
+
+  &__svg {
+    background-color: map.get($bg, "page");
+  }
+
+  &__loading {
+    background-color: map.get($bg, "component");
+    border-radius: map.get($radius, "small");
+    > div {
+      border-radius: map.get($radius, "small");
+    }
+  }
+}

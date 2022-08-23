@@ -3,25 +3,25 @@
 
 $item-w: 36px;
 $item-h: 36px;
-$item-radius: map.get($radius, "medium");
 
 //边栏
 @mixin dock {
-  border-radius: $item-radius;
   padding: 0px;
   background-color: map.get($bg, "base");
   margin-bottom: $interval;
   span {
-    border-radius: $item-radius;
-    transition: map.get($transition, "all");
-    @include btn-on-base();
+    @include item("base");
     @include svg-div($item-w, $item-h, 13px);
+
+    color: map.get($text, "secondary");
+    border-radius: map.get($radius, "medium");
+
     &:not(:last-child) {
       margin-bottom: $interval;
     }
     &.dock__item--active {
-      background-color: map.get($fill, "base");
-      @include focus_before(10.35px, 0);
+      background-color: map.get($hover, "base");
+      @include focus-before(10.35px, 0);
     }
   }
 }

@@ -1,0 +1,45 @@
+@use "sass:map";
+@use "../common" as *;
+//表单
+// .b3-form__space--small {
+//   .block__icon {
+//     @include block__icon__model(28px, 14px);
+//   }
+// }
+
+@mixin search-input($h, $border-w) {
+  // 搜索图标
+  .b3-form__icon-icon {
+    @include svg($h, 10px);
+    left: 0;
+    top: 0;
+  }
+
+  // 搜索文本框
+  .b3-form__icon-input {
+    border-width: $border-w;
+    padding-left: $h - 2 * $border-w !important;
+  }
+}
+
+// 搜索框
+.b3-form__icon {
+  @include search-input(map.get($component-size, "default"), 1px);
+
+  // 边窗顶栏小搜索框
+  &--small {
+    @include search-input(map.get($component-size, "small"), 0);
+    // 搜索文本框
+    .b3-form__icon-input {
+      height: 24px;
+      border-radius: map.get($radius, "exsmall");
+      font-size: map.get($font-size, "exsmall");
+
+      &:hover,
+      &:focus {
+        box-shadow: unset;
+        border: none;
+      }
+    }
+  }
+}

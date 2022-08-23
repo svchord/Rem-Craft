@@ -1,25 +1,13 @@
-//界面顶栏
-// @use "block-icons";
-// //面包屑
-// @use "bread-crumb";
 // //按钮
 // @use "button";
-// //图标面板
-// @use "emojis";
-// //表单
-// @use "form";
-// //关系图设置界面
-// @use "graph-panel";
-// //输入框
-// @use "input";
+//表单
+@use "form";
+//输入框
+@use "input";
 //列表
 @use "list";
-// //菜单
-// @use "menu";
-// //块引用窗口
-// @use "pop-over";
-// //滚动条
-// @use "scroller";
+//菜单
+@use "menu";
 // //选择菜单
 // @use "select";
 // //滑条
@@ -28,7 +16,5 @@
 // @use "snackbar";
 // //开关
 // @use "switch";
-// //页签
-// @use "tab-bar";
 //提示条
 @use "tooltips";

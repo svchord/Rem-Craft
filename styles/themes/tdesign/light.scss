@@ -141,8 +141,7 @@
   --brand-focus: var(--brand-5); // focus态，包括鼠标和键盘
   --brand-active: var(--brand-9); // 点击态
   --brand-disabled: var(--brand-3); // 禁用态
-  --brand-light: var(--brand-1); // 浅色的选中态
-  --brand-light-hover: var(--brand-2); // 浅色的hover态
+  --brand-light: var(--brand-1); // 
 
   // 警告色扩展
   --warning-hover: var(--orange-4);
@@ -178,14 +177,24 @@
   --bg-page: 255, 255, 255; // 色彩 - page
   --bg-component: var(--gray-1); // 色彩  - 组件
   --bg-pop: 255, 255, 255; // 色彩 - 容器
-  --bg-brand: var(--brand-1);
+  --bg-brand: var(--brand-base);
+  --bg-light: var(--brand-1);
 
-  // 填充色
-  --fill-base: var(--gray-3); // 色彩 - page
-  --fill-page: var(--gray-1); // 色彩 - page
-  --fill-component: var(--gray-3); // 色彩  - 组件
-  --fill-pop: var(--gray-1); // 色彩 - 容器
-  --fill-brand: var(--brand-2);
+  // 按钮色
+  --hover-base: var(--gray-3); // 色彩 - page
+  --hover-page: var(--gray-1); // 色彩 - page
+  --hover-component: var(--gray-3); // 色彩  - 组件
+  --hover-pop: var(--gray-1); // 色彩 - 容器
+  --hover-brand: var(--brand-hover);
+  --hover-light: var(--brand-2);
+
+  // 点击色
+  --active-base: var(--gray-4); // 色彩 - page
+  --active-page: var(--gray-2); // 色彩 - page
+  --active-component: var(--gray-4); // 色彩  - 组件
+  --active-pop: var(--gray-2); // 色彩 - 容器
+  --active-brand: var(--brand-active);
+  --active-light: var(--brand-3);
 
   // 基础/下层 投影 hover 使用的组件包括：表格 /
   --shadow-1: 0 1px 10px rgba(0, 0, 0, 5%), 0 4px 5px rgba(0, 0, 0, 8%),

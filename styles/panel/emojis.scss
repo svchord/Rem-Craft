@@ -1,0 +1,56 @@
+@use "sass:map";
+@use "../common" as *;
+
+$type-radius: map.get($radius, "small");
+//表情面板
+.emojis {
+  padding: 2px;
+  background-color: map.get($bg, "pop");
+
+  // 顶部工具栏
+  > .fn__flex:first-child {
+    padding-bottom: $fn-space;
+    .fn__space {
+      &:first-child,
+      &:last-child {
+        display: none;
+      }
+    }
+    .block__icon {
+      @include icon-btn("pop", 30px, 12px);
+    }
+  }
+
+  &__panel {
+    padding-right: 0;
+  }
+
+  &__title {
+    padding: 18px 0 8px;
+    font-size: 11px;
+    &:first-child {
+      padding-top: 10px;
+    }
+  }
+
+  &__item {
+    @include item("pop");
+    @include emoji-icon(30px, 14px, map.get($icon, "large"));
+    margin: 0 4px 4px 0;
+
+    &--current {
+      background-color: map.get($hover, "pop");
+    }
+  }
+
+  > .fn__flex:last-child {
+    padding-top: $fn-space;
+    .emojis__type {
+      @include item("pop");
+      border-radius: $type-radius;
+      svg {
+        @include svg(14px);
+      }
+    }
+  }
+}

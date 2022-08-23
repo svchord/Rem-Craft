@@ -7,7 +7,7 @@ $wnd-bg: map.get($bg, "page");
 //边窗动画
 $time: map.get($transition-duration, "slow");
 $scale: scale(0.75);
-$wnd-transition: all $time map.get($transition-function, "easing") 0s;
+$wnd-transition: all $time map.get($transition-function, "fast") 0s;
 
 :root {
   // 动画效果
@@ -119,8 +119,7 @@ $wnd-transition: all $time map.get($transition-function, "easing") 0s;
 
     // 刷新按钮
     #globalSearchReload {
-      border-radius: map.get($radius, "base");
-      @include svg-div(30px, 30px, 12px);
+      @include icon-btn("page", 30px, 12px);
     }
 
     // 搜索结果列表

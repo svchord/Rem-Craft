@@ -2,38 +2,75 @@
 @use "sass:math";
 @use "../common" as *;
 
-$list-bg: map.get($bg, "page");
+$padding: 5px;
 
-$text-h: 20px;
+$text-h: map.get($component-size, "default") - $padding * 2;
 $item-h: map.get($component-size, "default");
-$item-fz: map.get($font-size, "small");
-$item-bg: map.get($bg, "component");
-$item-color: map.get($text, "secondary");
-
-$btn-bg: map.get($fill, "component");
-$btn-radius: map.get($radius, "exsmall");
 
 //折叠按钮宽度
 $arrow-w: 16px;
-$arrow-svg-w: 8px;
-
 //子列表缩进左边距
 $list-left: 22px;
 //子列表缩进最大深度
 $list-depth: 7;
 
-//列表项选中
-$item-bg-f: map.get($bg, "brand");
-$item-color-f: map.get($text, "brand");
-
-$btn-bg-f: map.get($fill, "brand");
-
-$meta-color: map.get($text, "placeholder");
-$meta-color-f: map.get($color, "brand", "focus");
-
 :root {
   // 列表
-  --b3-list-hover: #{$item-bg};
+  --b3-list-hover: #{map.get($bg, "component")};
+}
+
+@mixin list-item($type: "page") {
+  @include item($type);
+  @include component();
+}
+
+@mixin list-content($color: "secondary") {
+  .b3-list-item {
+    &__text {
+      color: map.get($text, $color);
+    }
+    // 次级信息
+    &__meta {
+      @include meta();
+    }
+  }
+
+  // 列表选中态
+  &--focus {
+    @include focus();
+    @include item-focus($important: true);
+
+    .b3-list-item {
+      &__text,
+      &__graphic {
+        @include focus();
+      }
+
+      // 次级信息
+      &__meta {
+        @include meta-focus();
+      }
+    }
+  }
+}
+
+@mixin list-btn {
+  @include item-tran("component");
+  border-radius: map.get($radius, "exsmall");
+  transition: map.get($transition, "all");
+  &::after {
+    display: none !important;
+  }
+}
+
+@mixin meta {
+  font-size: map.get($font-size, "exsmall");
+  color: map.get($text, "placeholder");
+  @include v-center($text-h);
+}
+
+@mixin meta-focus {
+  color: map.get($color, "brand", "focus");
 }
 
 .b3-list,
@@ -42,22 +79,22 @@ $meta-color-f: map.get($color, "brand", "focus");
 
   // 列表为空
   .b3-list--empty {
-    color: $meta-color;
-    font-size: $item-fz;
+    @include meta();
+    font-size: map.get($font-size, "small");
   }
 }
 
 .b3-list-item {
-  height: auto;
-  line-height: $text-h;
-  padding: math.div($item-h - $text-h, 2);
+  padding: $padding;
   margin: $interval 0;
-  @include list-item();
+  line-height: $text-h;
 
+  @include list-item();
+  @include list-content();
   // 折叠按钮
   &__toggle {
-    @include svg-div($arrow-w, $text-h, $arrow-svg-w);
-    color: $item-color !important;
+    @include svg-div($arrow-w, $text-h, 8px);
+    margin-right: $interval;
 
     // 文档树无子元素
     @mixin hidden-arrow {
@@ -69,7 +106,7 @@ $meta-color-f: map.get($color, "brand", "focus");
       margin: auto;
       color: transparent;
       border-radius: map.get($radius, "circle");
-      background-color: $item-color;
+      background-color: map.get($text, "secondary");
     }
 
     &.fn__hidden {
@@ -99,8 +136,7 @@ $meta-color-f: map.get($color, "brand", "focus");
   // 列表图标（大纲、标签等）
   &__graphic {
     @include svg($text-h, map.get($icon, "small"));
-    color: $item-color;
-    margin-right: $interval;
+    // margin-left: $interval;
 
     // 图标悬浮后有弹窗
     &.popover__block {
@@ -116,15 +152,15 @@ $meta-color-f: map.get($color, "brand", "focus");
 
   //列表emoji
   &__icon {
-    @include emoji_icon($text-h, 12px, map.get($icon, "medium"));
+    @include emoji-icon($text-h, 12px, map.get($icon, "medium"));
     @include list-btn();
-    margin-left: $interval;
+    margin: 0;
   }
 
   // 列表文本
   &__text {
-    color: $item-color;
     line-height: $text-h;
+    margin-left: $interval;
   }
 
   // 列表按钮
@@ -132,64 +168,50 @@ $meta-color-f: map.get($color, "brand", "focus");
     @include svg($text-h, map.get($icon, "medium"));
     @include list-btn();
     margin-left: $interval;
+    .backlink--more & {
+      align-self: flex-start;
+    }
   }
 
   // 列表计数块
   .counter:not(:empty) {
-    @include counter();
+    @include counter($text-h);
     margin-left: $interval;
   }
 
-  // 次级信息
-  &__meta {
-    color: $meta-color;
-  }
-
-  // 块引用菜单列表
-  // &--two {
-  //   .b3-list-item__first {
-  //     .b3-list-item__graphic.popover__block {
-  //       margin-left: 0 ;
-  //     }
-  //   }
-  // }
-
   // 列表选中态
   &--focus {
-    background-color: $item-bg-f !important;
-
-    .b3-list-item__toggle,
-    .b3-list-item__text {
-      color: $item-color-f !important;
+    .b3-list-item {
+      &__toggle {
+        @include focus();
+      }
     }
 
+    .b3-list-item__toggle.fn__hidden .b3-list-item__arrow,
     .b3-list-item__arrow.fn__hidden {
-      background-color: $item-color-f;
+      background-color: map.get($text, "brand") !important;
     }
 
     .counter:not(:empty),
     .b3-list-item__icon,
     .b3-list-item__action,
     .b3-list-item__graphic.popover__block {
-      @include item-brand();
-    }
-
-    // 次级信息
-    .b3-list-item__meta {
-      color: $meta-color-f;
+      @include focus();
+      @include item("light");
     }
   }
 
   // 子元素向右缩进 && 左侧辅助线
   // 循环阴影辅助线
   @function cyclic($cur) {
-    $margin: calc(6px + $arrow-w / 2);
+    $margin: 6px + math.div($arrow-w, 2);
     $border: map.get($border, 3);
+    $list-bg: map.get($bg, "page");
     $temp: "#{$margin - 1px} 0 #{$list-bg} inset, #{$margin} 0 #{$border} inset";
 
     @if $cur >1 {
       @for $i from 1 to $cur {
-        $margin: calc($list-left * $i + 6px + $arrow-w / 2);
+        $margin: $list-left * $i + 6px + math.div($arrow-w, 2);
         $temp: $temp +
           ", "+"#{$margin - 1px} 0 #{$list-bg} inset, #{$margin} 0 #{$border} inset";
       }
@@ -215,110 +237,3 @@ $meta-color-f: map.get($color, "brand", "focus");
 
   @include recursive-item-margin(1, $list-depth);
 }
-
-// %first_list_item {
-//   // background-color: $rc-component-bg;
-
-//   * {
-//     color: $rc-text-primary ;
-//   }
-
-//   &.b3-list-item--focus {
-//     * {
-//       color: $list-item-color-focus ;
-//     }
-//   }
-// }
-
-// // 文档树
-// .file-tree {
-//   [data-type="navigation"] {
-//     margin-right: 4px;
-//   }
-
-//   // 文档树笔记本
-//   [data-type="navigation-root"] {
-//     margin-bottom: 8px;
-//     @extend %first_list_item;
-//   }
-
-//   // 拖拽样式
-//   .dragover {
-//     background-color: $rc-component-bg-select;
-
-//     // 当前文档的上方
-//     &__top {
-//       background-color: $rc-component-bg-select;
-//       box-shadow: 0 2px inset $rc-brand;
-//     }
-
-//     // 当前文档的下方
-//     &__bottom {
-//       background-color: $rc-component-bg-select;
-//       box-shadow: 0 -2px inset $rc-brand;
-//     }
-//   }
-
-//   // 已关闭的笔记本
-//   > .b3-list {
-//     margin: 8px 8px 0px;
-
-//     > .b3-list-item {
-//       // @extend %first_list_item;
-//       margin-bottom: 8px;
-//     }
-
-//     > ul {
-//       margin-bottom: 8px;
-//     }
-//   }
-// }
-
-// // 大纲
-// .sy__outline {
-//   // 标题
-//   > .b3-list-item {
-//     @extend %first_list_item;
-//     margin: 0 8px 8px;
-//     position: relative;
-//     background-color: $rc-component-bg;
-//     padding-left: 8px ;
-
-//     &::before {
-//       @include focus_before(8px, 0px);
-//     }
-
-//     &:hover {
-//       background-color: $rc-component-button;
-//     }
-
-//     .b3-list-item__graphic {
-//       @include emoji_icon($list-text-height, 12px, 12px);
-//     }
-
-//     &:empty {
-//       margin: 0;
-//       padding: 0 ;
-//     }
-//   }
-
-//   // 大纲列表
-//   > .fn__flex-1 {
-//     margin-right: 4px;
-//   }
-// }
-
-// 书签界面
-// .sy__bookmark > .fn__flex-1 > .b3-list {
-//   // 书签项
-//   > .b3-list-item {
-//     // @extend %first_list_item;
-//   }
-// }
-
-// .sy__bookmark > .fn__flex-1,
-// .sy__tag > .fn__flex-1,
-// .backlinkList,
-// .backlinkMList {
-//   margin-right: 4px;
-// }

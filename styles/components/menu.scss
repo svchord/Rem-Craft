@@ -1,0 +1,218 @@
+@use "sass:map";
+@use "../common" as *;
+@use "../components/list" as *;
+
+//菜单底色
+$menu-bg: map.get($bg, "pop");
+
+$padding: 6px;
+
+:root {
+  // 菜单
+  --b3-menu-background: #{$menu-bg};
+  // 阴影
+  --b3-dialog-shadow: #{map.get($shadow, 2)};
+}
+
+//菜单
+@mixin menu {
+  margin: 0;
+  min-width: 200px;
+  padding: $padding;
+  border-radius: map.get($radius, "medium");
+}
+
+@mixin menu-item {
+  min-width: 0px;
+  margin-bottom: 4px;
+  @include list-item("pop");
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin menu-li {
+  @include menu-item();
+  @include list-content("primary");
+}
+
+@mixin no-icon {
+  padding: 0;
+
+  .fn__hr,
+  .fn__hr--small,
+  & > .b3-menu__icon {
+    display: none;
+  }
+
+  &:hover,
+  &.b3-menu__item--current {
+    background-color: transparent !important;
+  }
+}
+
+//菜单
+.b3-menu {
+  @include menu();
+
+  &__item {
+    @include menu-item();
+    padding: 0px 8px;
+
+    > .b3-menu__icon {
+      @include svg(10px);
+      color: map.get($text, "secondary");
+      margin-right: 8px;
+      // 向右箭头
+      &--arrow {
+        @include svg(8px);
+      }
+    }
+
+    // 自定义菜单项（文本框或滑条）
+    &--custom {
+      @include no-icon();
+    }
+  }
+
+  & &__submenu {
+    @include menu();
+    top: -6px;
+    border: none;
+
+    $sub-interval: 10px;
+    margin-left: $sub-interval;
+    margin-right: $sub-interval;
+
+    //【外观】二级菜单
+    // &--row {
+    //   width: 410px;
+
+    //   // 每个样式选项
+    //   .b3-menu__item {
+    //     margin: 4px 0;
+
+    //     .b3-menu__label {
+    //       span {
+    //         box-shadow: unset;
+    //         width: 22px;
+    //         height: 22px;
+    //         border: 1px solid map.get($border, 3);
+    //         // font-size: 0px;
+    //       }
+    //     }
+
+    //     // 鼠标选项
+    //     &--current {
+    //       background-color: $menu-bg;
+
+    //       .b3-menu__label {
+    //         span {
+    //           border-color: map.get($border, 1);
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+  }
+
+  // 分割线
+  &__separator {
+    border-bottom: 1px solid map.get($border, 3);
+    height: 0;
+    background-color: transparent;
+  }
+
+  // 其他信息
+  &__item--readonly {
+    @include meta();
+    @include no-icon();
+    line-height: 20px;
+    padding: 2px 8px;
+    div[style*="margin"] {
+      margin: 0 !important;
+    }
+  }
+
+  // 菜单项快捷键
+  &__accelerator {
+    @include meta();
+  }
+
+  // 块引用菜单 && 搜索历史菜单
+  &.b3-list,
+  &.b3-list--background {
+    @include menu();
+
+    .b3-list-item {
+      @include menu-li();
+
+      // 命名、别名、备注
+      &__showall {
+        @include v-center($text-h);
+        &:first-child {
+          color: map.get($text, "primary");
+        }
+        &:last-child {
+          padding-left: $interval;
+        }
+      }
+
+      &__hinticon {
+        @include svg($text-h, 11px);
+        margin-right: $interval;
+      }
+
+      &--focus {
+        .b3-list-item {
+          &__showall:first-child,
+          &__hinticon {
+            @include focus();
+          }
+        }
+        .b3-menu__accelerator {
+          @include meta-focus();
+        }
+      }
+    }
+    > div[style*="flex"] {
+      margin-top: $padding;
+    }
+  }
+
+  &#commonMenu {
+    @include menu();
+
+    // 添加文档标签菜单 列表
+    .b3-list--background {
+      padding: 0;
+      margin: 0;
+      &:not(:empty) {
+        margin-top: $padding;
+      }
+      .b3-list-item {
+        @include menu-li();
+      }
+    }
+  }
+
+  // 菜单输入框
+  .b3-text-field {
+    width: 100%;
+    margin: 0 !important;
+  }
+
+  //快捷命令菜单
+  &.hint--menu {
+    column-count: 4;
+    column-gap: $padding * 2;
+    column-rule: 1px solid map.get($border, 3);
+    max-height: none !important;
+    width: auto !important;
+
+    > .emojis {
+      column-span: all;
+      // width: 658px - 8px * 2;
+    }
+  }
+}

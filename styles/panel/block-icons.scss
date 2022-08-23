@@ -1,18 +1,31 @@
 @use "sass:map";
+@use "sass:math";
 @use "../common" as *;
 
 $b-bg: map.get($bg, "page");
-$b-text: map.get($text, "secondary");
 
 $icon-w: map.get($component-size, "small");
-$icon-bg: map.get($fill, "page");
 $icon-svg-w: map.get($icon, "small");
 
 $padding: $fn-space;
 
+@mixin block-icon($type: "page", $important: false) {
+  @include icon-btn($type, $icon-w, $icon-svg-w, true);
+
+  &.ft__primary,
+  &--active {
+    @include focus($important);
+    @include item("light", $important);
+  }
+
+  &[data-type="close"] {
+    @include item-close();
+  }
+}
+
 //窗口顶栏
 .block__icons {
-  color: $b-text;
+  color: map.get($text, "secondary");
   padding: $padding;
   height: $icon-w + $padding * 2;
   font-size: map.get($font-size, "exsmall");
@@ -33,29 +46,18 @@ $padding: $fn-space;
       @include svg(map.get($icon, "small"));
       margin: 0 $padding;
     }
-    margin-right: $interval;
+    // margin-right: $padding * 2;
   }
 
   //窗口顶栏按钮
   .block__icon {
-    @include svg-div($icon-w, $icon-w, $icon-svg-w);
-    @include btn-on-page();
-
-    border-radius: map.get($radius, "small");
-
-    &.ft__primary,
-    &--active {
-      @include item-brand();
-    }
-    &[data-type="close"] {
-      @include item-close();
-    }
+    @include block-icon();
     &[disabled="disabled"] {
-      @include item-disabled();
+      @include item-disabled(true);
     }
     &[type="checkbox"] {
       width: $icon-svg-w;
-      margin: 0 calc(($icon-w - $icon-svg-w) / 2);
+      margin: 0 math.div($icon-w - $icon-svg-w, 2);
     }
   }
 

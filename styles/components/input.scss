@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "../common" as *;
+
+//输入框
+.b3-text-field {
+  @include reset-style();
+  @include component();
+  border: 1px solid map.get($border, 4);
+  border-bottom: 1px solid map.get($border, 2);
+  background-color: map.get($bg, "component");
+  padding: 4px 6px;
+  line-height: 20px;
+  flex-shrink: 0;
+  height: map.get($component-size, "default");
+
+  &:hover,
+  &:focus {
+    border: 1px solid map.get($border, 4);
+    border-bottom: 1px solid map.get($border, 2);
+    box-shadow: unset;
+  }
+
+  &:focus {
+    box-shadow: 0 -3px 0 -2px inset map.get($color, "brand", "base");
+    border-bottom: 1px solid map.get($color, "brand", "base");
+  }
+}

@@ -1,0 +1,60 @@
+@use "sass:map";
+@use "sass:math";
+@use "../common" as *;
+@use "../panel/block-icons" as *;
+
+$item-h: map.get($component-size, "small");
+$item-color: map.get($text, "placeholder");
+
+//面包屑
+.protyle-breadcrumb {
+  padding: 0px 8px 2px;
+  min-height: $item-h;
+
+  &__bar {
+    min-height: $item-h;
+    margin: 0;
+  }
+
+  &__item {
+    @include v-center($item-h);
+    padding: 0;
+    margin: 0;
+    transition: map.get($transition, "all");
+
+    svg {
+      @include svg(20px, 10px);
+      color: $item-color;
+      margin: math.div($item-h - 20px, 2) 0;
+    }
+
+    .protyle-breadcrumb__text:not(:empty) {
+      color: $item-color;
+      margin: 0;
+      font-size: map.get($font-size, "exsmall");
+      transition: map.get($transition, "all");
+    }
+
+    &:hover,
+    &--active {
+      background-color: transparent;
+
+      .protyle-breadcrumb__text:not(:empty) {
+        color: map.get($text, "primary");
+      }
+    }
+  }
+
+  &__arrow {
+    @include svg(8px);
+    color: map.get($text, "disabled");
+    margin: math.div($item-h - 8px, 2) 4px;
+  }
+
+  .block__icon {
+    @include block-icon($important: true);
+    &::after {
+      display: none;
+    }
+  }
+}

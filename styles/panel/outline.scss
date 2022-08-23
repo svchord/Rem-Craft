@@ -1,0 +1,33 @@
+// 大纲
+@use "sass:map";
+@use "../common" as *;
+@use "../components/list" as *;
+
+.sy__outline {
+  // 标题
+  > .b3-list-item {
+    @include item("component");
+    @include focus-before(8px, 0px);
+    margin: 0 8px 8px;
+    padding-left: 8px;
+    .b3-list-item {
+      &__text {
+        color: map.get($text, "primary");
+      }
+      &__graphic {
+        @include emoji-icon($text-h, 12px, 12px);
+      }
+    }
+
+    &:empty {
+      @include reset-style();
+    }
+    + .fn__flex-1 {
+      margin-right: 6px;
+      > .b3-list {
+        margin-right: 2px;
+      }
+      // overflow: overlay;
+    }
+  }
+}

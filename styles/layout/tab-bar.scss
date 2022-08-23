@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "../common" as *;
+@use "../components/list" as *;
 
 $item-h: map.get($component-size, "small");
 
@@ -10,23 +11,24 @@ $item-h: map.get($component-size, "small");
   .layout__center &:not(:empty) {
     border-radius: map.get($radius, "exsmall");
     height: map.get($component-size, "small");
-    margin: 8px 8px 4px;
+    margin: 8px 8px 2px;
   }
 
   .item {
+    @include item("page");
+    @include component();
     flex: unset;
     height: $item-h;
     min-height: $item-h;
     padding: 0px 0 0 6px;
-    box-shadow: unset;
-    @include list-item();
+    box-shadow: unset !important;
 
     &:not(:last-child) {
       margin-right: 8px;
     }
 
     &__icon {
-      @include emoji_icon(16px, 12px, map.get($icon, "medium"));
+      @include emoji-icon(16px, 12px, map.get($icon, "medium"));
       margin: 4px 6px 4px 0;
     }
 
@@ -49,7 +51,7 @@ $item-h: map.get($component-size, "small");
       svg {
         opacity: 0.35;
         border-radius: map.get($radius, "exsmall");
-        transition: unset;
+        background-color: transparent !important;
         @include svg(16px, 8px);
       }
 
@@ -67,12 +69,17 @@ $item-h: map.get($component-size, "small");
     }
 
     &--focus {
-      @include list-focus();
-
+      @include item-focus();
+      > .item__text {
+        @include focus();
+        .layout__wnd--active & {
+          @include focus();
+        }
+      }
       .item__close {
-        @include item-brand();
-        &:hover svg {
-          background-color: map.get($fill, "brand");
+        @include item("light");
+        svg {
+          @include focus();
         }
       }
 

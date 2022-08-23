@@ -2,6 +2,7 @@
 @use "sass:math";
 @use "sass:list";
 @use "var" as *;
+@use "function" as *;
 
 @mixin reset-style {
   opacity: 1;
@@ -63,30 +64,43 @@
   }
 }
 
-@mixin item-brand {
-  color: map.get($text, "brand");
-  background-color: map.get($bg, "brand");
-
+@mixin item($type, $important: false) {
+  background-color: map.get($bg, $type);
+  transition: map.get($transition, "all");
   &:hover {
-    color: map.get($text, "brand");
-    background-color: map.get($fill, "brand");
+    background-color: map.get($hover, $type) is-important($important);
+  }
+  &:active {
+    background-color: map.get($active, $type) is-important($important);
   }
 }
 
-@mixin item-component {
-  color: map.get($text, "secondary");
-  background-color: map.get($bg, "page");
+@mixin item-tran($type) {
+  background-color: transparent;
   &:hover {
-    color: map.get($text, "secondary");
-    background-color: map.get($bg, "component");
+    background-color: map.get($hover, $type);
+  }
+  &:active {
+    background-color: map.get($active, $type);
   }
 }
 
-@mixin item-disabled {
+@mixin item-focus($important: false) {
+  background-color: map.get($bg, "light") is-important($important);
+  &:hover {
+    background-color: map.get($bg, "light") is-important($important);
+  }
+  &:active {
+    background-color: map.get($bg, "light") is-important($important);
+  }
+}
+
+@mixin item-disabled($important: false) {
   cursor: not-allowed;
   color: map.get($text, "disabled");
-  &:hover {
-    background-color: transparent !important;
+  &:hover,
+  &:active {
+    background-color: transparent is-important($important);
   }
   &::after {
     display: none;
@@ -99,24 +113,20 @@
   }
 }
 
-@mixin btn-on-base {
-  color: map.get($text, "secondary");
-  &:hover {
-    background-color: map.get($fill, "base");
-  }
+@mixin icon-btn($type: "page", $w, $svg-w, $important: false) {
+  @include svg-div($w, $w, $svg-w);
+  @include item($type, $important);
+
+  border-radius: map.get($radius, "exsmall");
 }
 
-@mixin btn-on-page {
-  color: map.get($text, "secondary");
-  &:hover {
-    color: map.get($text, "primary");
-    background-color: map.get($fill, "page") !important;
-  }
+@mixin component {
+  font-size: map.get($font-size, "small");
+  border-radius: map.get($radius, "small");
+  transition: map.get($transition, "all");
 }
 
-@mixin btn-on-component {
-  color: map.get($text, "secondary");
-  &:hover {
-    background-color: map.get($fill, "component");
-  }
+
+@mixin focus($important: false) {
+  color: map.get($text, "brand") is-important($important);
 }

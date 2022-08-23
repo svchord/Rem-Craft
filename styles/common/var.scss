@@ -7,7 +7,7 @@ $asset-path: "assets";
 // 色板
 $color: () !default;
 $color-types: "blue", "orange", "red", "green", "cyan", "purple", "yellow",
-  "pink", "gray";
+  "pink", "gray", "brand";
 $color: add-color($color, $color-types, 10);
 @for $i from 11 through 14 {
   $color: map.set($color, "gray", $i, getRgb("gray", $i));
@@ -29,12 +29,16 @@ $color: add-color($color, $feat-types, $states);
 
 // 背景色
 $bg: () !default;
-$bg-types: "base", "page", "component", "pop", "brand";
+$bg-types: "base", "page", "component", "pop", "brand", "light";
 $bg: add-color($bg, "bg", $bg-types);
 
-// fill
-$fill: () !default;
-$fill: add-color($fill, "fill", $bg-types);
+// btn
+$hover: () !default;
+$hover: add-color($hover, "hover", $bg-types);
+
+// active
+$active: () !default;
+$active: add-color($active, "active", $bg-types);
 
 //圆角
 $radius: () !default;

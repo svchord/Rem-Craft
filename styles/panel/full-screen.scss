@@ -2,6 +2,8 @@
 
 body.body--win32 {
   .fullscreen {
+
+    // 编辑器全屏
     > .protyle-breadcrumb {
       .fn__space {
         -webkit-app-region: drag;
@@ -10,9 +12,10 @@ body.body--win32 {
       padding: 3px $win-control-w * 3 3px 8px;
     }
 
-    // >.block__icons {
-    //     padding: 3px 42px * 3 3px 8px ;
-    //     height: 30px;
-    // }
+    // 关系图全屏
+    >.block__icons {
+        padding: 3px $win-control-w * 3 3px 8px ;
+        height: 30px;
+    }
   }
 }

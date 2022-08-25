@@ -9,14 +9,14 @@ $item-h: map.get($component-size, "small");
   background-color: map.get($bg, "page");
 
   .layout__center &:not(:empty) {
-    border-radius: map.get($radius, "exsmall");
+    border-radius: map.get($radius, "small");
     height: map.get($component-size, "small");
     margin: 8px 8px 2px;
   }
 
   .item {
     @include item("page");
-    @include component();
+    @include component-base();
     flex: unset;
     height: $item-h;
     min-height: $item-h;
@@ -50,7 +50,7 @@ $item-h: map.get($component-size, "small");
 
       svg {
         opacity: 0.35;
-        border-radius: map.get($radius, "exsmall");
+        border-radius: map.get($radius, "small");
         background-color: transparent !important;
         @include svg(16px, 8px);
       }

@@ -55,27 +55,6 @@ $wnd-transition: all $time map.get($transition-function, "fast") 0s;
 
       > div[data-type="wnd"] {
         @include wnd;
-
-        .layout-tab-container {
-          overflow-y: hidden;
-          background-color: $wnd-bg;
-
-          // 边窗容器
-          > .fn__flex-1 {
-            overflow: hidden;
-            min-width: 0;
-
-            //.navigation && ...
-            > .fn__flex-1 {
-              min-height: 0 !important;
-            }
-
-            // 列表
-            .b3-list {
-              min-width: 200px;
-            }
-          }
-        }
       }
     }
 
@@ -99,6 +78,30 @@ $wnd-transition: all $time map.get($transition-function, "fast") 0s;
 
       > div[data-type="wnd"] {
         transform: $scale;
+      }
+    }
+  }
+}
+
+.layout-tab-container {
+  overflow-y: hidden;
+  background-color: $wnd-bg;
+
+  // 边窗容器
+  > .fn__flex-1 {
+    overflow: hidden;
+    min-width: 0;
+
+    //.navigation && ...
+    > .fn__flex-1 {
+      min-height: 0 !important;
+      // 列表
+      > .b3-list {
+        min-width: 200px;
+        margin: 0px 8px 8px;
+        &:last-child{
+          margin-bottom: 0;
+        }
       }
     }
   }

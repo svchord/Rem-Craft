@@ -5,45 +5,13 @@ $dialog-text-field-bg: $rc-container-bg;
 .b3-dialog__container {
   &[style*="80vw"] {
 
-    // 顶部搜索框
-    .search__header {
-      width: $dialog-large-width;
-      border-radius: $dialog-border-radius $dialog-border-radius 0 0 ;
-      background-color: $dialog-search-header-bg;
-      border-color: $dialog-search-header-border;
-
-      // 搜索图标
-      .b3-form__icon-icon {
-        @include graphic(49px, 17px);
-      }
-
+     
       // 向下图标
-      .search__arrowdown {
-        color: $rc-text-secondary;
-        height: 8px;
-        width: 8px;
-        left: calc(49px - (49px - 16px) / 2);
-      }
-
-      // 搜索文本框
-      .b3-text-field {
-        border-top-left-radius: $dialog-border-radius;
-        border-top-right-radius: $dialog-border-radius;
-        background-color: $dialog-text-field-bg;
-        padding-left: 49px ;
-        border: none ;
-
-        &:focus {
-          box-shadow: unset;
-        }
-
-        &:hover,
-        &:focus {
-          border: none ;
-        }
-      }
-
-    }
+      // .search__arrowdown {
+      //   // height: 8px;
+      //   // width: 8px;
+      //   // left: calc(49px - (49px - 16px) / 2);
+      // }
 
     // 搜索结果横排
     >div>.fn__flex>.fn__flex-column {

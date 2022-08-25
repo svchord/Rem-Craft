@@ -7,6 +7,7 @@
 @mixin reset-style {
   opacity: 1;
   transform: unset;
+  position: unset;
   margin: 0;
   padding: 0;
   border: unset;
@@ -76,13 +77,8 @@
 }
 
 @mixin item-tran($type) {
+  @include item($type);
   background-color: transparent;
-  &:hover {
-    background-color: map.get($hover, $type);
-  }
-  &:active {
-    background-color: map.get($active, $type);
-  }
 }
 
 @mixin item-focus($important: false) {
@@ -117,15 +113,25 @@
   @include svg-div($w, $w, $svg-w);
   @include item($type, $important);
 
-  border-radius: map.get($radius, "exsmall");
-}
-
-@mixin component {
-  font-size: map.get($font-size, "small");
   border-radius: map.get($radius, "small");
-  transition: map.get($transition, "all");
 }
 
+@mixin component-base($type: "base") {
+  font-size: map.get($font-size, $type);
+  border-radius: map.get($radius, $type);
+  height: map.get($component-size, $type);
+}
+
+@mixin component($type: "base") {
+  @include component-base($type);
+  transition: map.get($transition, "all");
+  line-height: map.get($component-size, $type) - 8px;
+  $padding: (
+    "base": 8px,
+    "small": 6px,
+  );
+  padding: 4px map.get($padding, $type);
+}
 
 @mixin focus($important: false) {
   color: map.get($text, "brand") is-important($important);

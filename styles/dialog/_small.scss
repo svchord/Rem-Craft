@@ -25,12 +25,12 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
 
 //小弹窗
 .b3-dialog__container {
-
   &[style*="50vw"],
   &[style*="520px"] {
-    width: $dialog-small-width  ;
+    width: $dialog-small-width;
     background-color: $dialog-small-bg;
     padding: 0 16px;
+
 
     //弹窗标题
     .b3-dialog__header {
@@ -41,7 +41,7 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
       border-bottom: 1px solid $dialog-small-header-border;
 
       &.fn__none {
-        display: block ;
+        display: block;
 
         &::before {
           content: "新建日记";
@@ -93,8 +93,8 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
       .ft__on-surface,
       .b3-text-field[placeholder="属性名"] {
         font-size: $dialog-text-field-font-size;
-        width: 80px ;
-        text-align: center ;
+        width: 80px;
+        text-align: center;
       }
 
       // 属性名和输入框的间隔
@@ -105,8 +105,8 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
       // 属性弹窗第二条分割线
       div[style*="var(--b3-border-color)"] {
         // background-color: $rc-dialog-border ;
-        height: 0 ;
-        background-color: transparent ;
+        height: 0;
+        background-color: transparent;
         border-bottom: 1px solid $dialog-divide-border;
       }
 
@@ -117,7 +117,7 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
 
         // 自定义属性添加按钮
         .b3-button {
-          width: 80px ;
+          width: 80px;
         }
       }
     }
@@ -136,7 +136,6 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
 
     // PDF导出弹窗
     .b3-label {
-
       // 第一行特殊情况
       &:first-child {
         padding-top: 0;
@@ -160,7 +159,7 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
         .fn__flex-1:first-child {
           line-height: 44px;
         }
-        #scaleFactor{
+        #scaleFactor {
           width: 200px;
         }
       }
@@ -203,9 +202,7 @@ $dialog-button-cancel-bg-active: $rc-brand-light-hover;
             background-color: $dialog-button-text-bg-active;
           }
         }
-
       }
     }
   }
-
 }

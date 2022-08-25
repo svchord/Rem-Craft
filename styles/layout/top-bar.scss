@@ -39,7 +39,9 @@ $map: (
 
 @mixin top-item {
   @include item("base");
-  @include component();
+  @include component-base();
+
+  z-index: map.get($z-index, "pop");
   width: 28px + 8px * 2;
   height: $item-h;
   margin: auto 0;
@@ -53,15 +55,15 @@ $map: (
     @include reset-style();
     @include v-center($item-h);
     @include center();
+    @include component-base();
     content: $content;
-    font-size: map.get($font-size, "small");
     color: map.get($text, "secondary");
-    z-index: map.get($z-index, "normal");
     width: 100%;
   }
 }
 
 @mixin win-control($svg-w) {
+  @include item-tran("base");
   @include svg-div($win-control-w, $bar-h, $svg-w);
   &::after {
     display: none;
@@ -138,6 +140,9 @@ $map: (
 
     &#closeWindow {
       @include win-control(10px);
+      &:hover {
+        background-color: map.get($color, "error", "base");
+      }
     }
   }
 

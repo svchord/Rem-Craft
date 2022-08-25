@@ -19,7 +19,7 @@
       @include svg($text-h, map.get($icon, "small"));
     }
     span {
-      font-size: map.get($font-size, "small");
+      font-size: map.get($font-size, "base");
       margin-left: 5px;
     }
   }

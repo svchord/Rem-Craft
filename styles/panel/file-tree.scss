@@ -2,7 +2,7 @@
 @use "../common" as *;
 @use "../components/list" as *;
 // 文档树
-.file-tree {
+.sy__file {
   // 拖拽样式
   .dragover {
     @include drag();

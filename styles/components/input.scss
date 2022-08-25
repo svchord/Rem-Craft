@@ -5,18 +5,12 @@
 .b3-text-field {
   @include reset-style();
   @include component();
-  border: 1px solid map.get($border, 4);
-  border-bottom: 1px solid map.get($border, 2);
+  border: 1px solid map.get($border, 4) !important;
+  border-bottom: 1px solid map.get($border, 2) !important;
   background-color: map.get($bg, "component");
-  padding: 4px 6px;
-  line-height: 20px;
   flex-shrink: 0;
-  height: map.get($component-size, "default");
 
-  &:hover,
-  &:focus {
-    border: 1px solid map.get($border, 4);
-    border-bottom: 1px solid map.get($border, 2);
+  &:hover {
     box-shadow: unset;
   }
 

@@ -4,8 +4,8 @@
 
 $padding: 5px;
 
-$text-h: map.get($component-size, "default") - $padding * 2;
-$item-h: map.get($component-size, "default");
+$text-h: map.get($component-size, "base") - $padding * 2;
+$item-h: map.get($component-size, "base");
 
 //折叠按钮宽度
 $arrow-w: 16px;
@@ -21,7 +21,8 @@ $list-depth: 7;
 
 @mixin list-item($type: "page") {
   @include item($type);
-  @include component();
+  @include component-base();
+  height: auto;
 }
 
 @mixin list-content($color: "secondary") {
@@ -56,8 +57,7 @@ $list-depth: 7;
 
 @mixin list-btn {
   @include item-tran("component");
-  border-radius: map.get($radius, "exsmall");
-  transition: map.get($transition, "all");
+  border-radius: map.get($radius, "small");
   &::after {
     display: none !important;
   }
@@ -73,15 +73,10 @@ $list-depth: 7;
   color: map.get($color, "brand", "focus");
 }
 
-.b3-list,
-.b3-list--background {
-  margin: 0px 8px 8px;
-
-  // 列表为空
-  .b3-list--empty {
-    @include meta();
-    font-size: map.get($font-size, "small");
-  }
+// 列表为空
+.b3-list--empty {
+  @include meta();
+  font-size: map.get($font-size, "base");
 }
 
 .b3-list-item {

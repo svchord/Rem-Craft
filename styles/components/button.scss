@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "../common" as *;
+
+//按钮
+.b3-button {
+  @include reset-style();
+  @include component();
+  @include item("brand");
+
+  svg {
+    @include svg(10px);
+    margin: auto 0;
+  }
+
+  &--small,
+  &--cancel,
+  &--outline {
+    color: map.get($text, "brand");
+    @include item("light");
+  }
+
+  &--outline svg {
+    margin-right: $fn-space;
+  }
+
+  &--text {
+    @include item-tran("light");
+  }
+
+  &--small {
+    @include component("small");
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: unset;
+  }
+}

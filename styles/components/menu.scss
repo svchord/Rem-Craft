@@ -16,7 +16,6 @@ $padding: 6px;
 
 //菜单
 @mixin menu {
-  margin: 0;
   min-width: 200px;
   padding: $padding;
   border-radius: map.get($radius, "medium");
@@ -77,7 +76,7 @@ $padding: 6px;
 
   & &__submenu {
     @include menu();
-    top: -6px;
+    top: 0 - $padding;
     border: none;
 
     $sub-interval: 10px;
@@ -154,7 +153,8 @@ $padding: 6px;
           color: map.get($text, "primary");
         }
         &:last-child {
-          padding-left: $interval;
+          // padding-left: $interval;
+          margin: 0 !important;
         }
       }
 
@@ -177,6 +177,10 @@ $padding: 6px;
     }
     > div[style*="flex"] {
       margin-top: $padding;
+    }
+
+    > .emojis {
+      max-height: 360px;
     }
   }
 
@@ -209,10 +213,5 @@ $padding: 6px;
     column-rule: 1px solid map.get($border, 3);
     max-height: none !important;
     width: auto !important;
-
-    > .emojis {
-      column-span: all;
-      // width: 658px - 8px * 2;
-    }
   }
 }

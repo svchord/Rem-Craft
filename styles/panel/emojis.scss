@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "../common" as *;
 
-$type-radius: map.get($radius, "small");
+$type-radius: map.get($radius, "base");
 //表情面板
 .emojis {
   padding: 2px;

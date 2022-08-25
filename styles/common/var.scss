@@ -40,26 +40,27 @@ $hover: add-color($hover, "hover", $bg-types);
 $active: () !default;
 $active: add-color($active, "active", $bg-types);
 
-//圆角
-$radius: () !default;
-$radius: map.merge(
-  (
-    "exsmall": 3px,
-    "small": 4px,
-    "medium": 6px,
-    "large": 8px,
-    "exlarge": 10px,
-    "max": 9999px,
-    "circle": 100%,
-  ),
-  $radius
-);
-
 // Box-shadow
 $shadow: () !default;
 @for $i from 1 through 3 {
   $shadow: map.set($shadow, $i, var(--shadow-#{$i}));
 }
+
+//圆角
+$radius: () !default;
+$radius: map.merge(
+  (
+    "circle": 100%,
+    "max": 9999px,
+    "exlarge": 10px,
+    "large": 8px,
+    "medium": 6px,
+    "base": 4px,
+    "small": 3px,
+    "exsmall": 2px,
+  ),
+  $radius
+);
 
 // Typography
 $font-size: () !default;
@@ -68,33 +69,34 @@ $font-size: map.merge(
     "exlarge": 20px,
     "large": 18px,
     "medium": 16px,
-    "base": 14px,
-    "small": 13px,
+    "base": 13px,
+    "small": 12px,
     "exsmall": 11px,
   ),
   $font-size
-);
-
-// zIndex
-$z-index: () !default;
-$z-index: map.merge(
-  (
-    "normal": 1,
-    "top": 1000,
-    "pop": 2000,
-  ),
-  $z-index
 );
 
 $component-size: () !default;
 $component-size: map.merge(
   (
     "large": 40px,
-    "default": 30px,
+    "base": 30px,
     "small": 24px,
     "exsmall": 16px,
   ),
   $component-size
+);
+
+// zIndex
+$z-index: () !default;
+$z-index: map.merge(
+  (
+    "normal": 0,
+    "svg":1,
+    "top": 10,
+    "pop": 20,
+  ),
+  $z-index
 );
 
 // 滚动条

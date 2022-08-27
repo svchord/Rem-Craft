@@ -1,8 +1,8 @@
 @use "sass:map";
 @use "../common" as *;
-@use "block-icons" as *;
+@use "block-icons";
 
-$pop-radius: map.get($radius, "large");
+$pop-radius: map.get($radius, "exlarge");
 $pop-bg: map.get($bg, "pop");
 $content-min-height: 74px;
 $bread-crumb-height: 32px;
@@ -13,7 +13,7 @@ $bread-crumb-height: 32px;
   border-radius: $pop-radius;
 
   opacity: 0;
-  margin-top: 30px;
+  margin-top: 25px;
   &--open {
     opacity: 1;
     margin-top: 0px;
@@ -22,17 +22,11 @@ $bread-crumb-height: 32px;
         map.get($transition-function, "ease-in-out");
   }
 
-  // max-height: 671.5px + 36px - 28px ;
-  // &.block__popover--top {
-  //   max-height: 214.8px + 36px - 28px;
-  // }
   .block__icons--border {
-    // min-height: 36px;
-    // z-index: 9;
     border-radius: $pop-radius $pop-radius 0 0;
     background-color: $pop-bg;
     .block__icon {
-      @include block-icon($type: "pop", $important: true);
+      @include block-icons.btn($type: "pop", $important: true);
       &[data-type="pin"] {
         svg {
           transform: rotate(45deg);
@@ -53,14 +47,14 @@ $bread-crumb-height: 32px;
   .block__content {
     border-radius: 0 0 $pop-radius $pop-radius;
     background-color: $pop-bg;
-    //   min-height: $content-min-height + $bread-crumb-height;
+
     .block__edit {
       border: none;
-      //     min-height: $content-min-height + $bread-crumb-height;
+      
       .protyle-breadcrumb {
         background-color: $pop-bg;
         .block__icon {
-          @include block-icon($type: "pop", $important: true);
+          @include block-icons.btn($type: "pop", $important: true);
         }
         &__item--active {
           .protyle-breadcrumb__text:not(:empty) {
@@ -73,7 +67,6 @@ $bread-crumb-height: 32px;
       }
       .protyle-content {
         background-color: $pop-bg;
-        // min-height: $content-min-height;
       }
     }
   }

@@ -14,7 +14,6 @@ $t-bg: map.get($bg, "pop");
   color: map.get($text, "primary");
   padding: 6px 8px;
   border-radius: map.get($radius, "base");
-  z-index: map.get($z-index, "top");
 }
 
 //tips

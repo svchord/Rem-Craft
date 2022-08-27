@@ -1,0 +1,119 @@
+@use "sass:map";
+@use "../common" as *;
+@use "../components/list";
+
+$padding: 16px;
+
+.b3-dialog__container {
+  // 底层元素
+  div[style*="80vh"] {
+    & > .fn__flex-column {
+      border-radius: map.get($radius, "exlarge");
+    }
+
+    // 顶部导航栏
+    .layout-tab-bar {
+      margin: 0 $padding;
+      padding: $padding 0;
+      border-bottom: $fn-border;
+      .item {
+        padding: map.get($component-padding, "base");
+      }
+    }
+  }
+}
+
+// 主界面
+#historyContainer {
+  .b3-list-item {
+    padding: list.$padding !important;
+  }
+}
+
+// 侧栏列表
+@mixin side-list {
+  > .b3-list {
+    padding: 0 $padding;
+    margin: $padding 0;
+    width: 300px !important;
+    border-right: $fn-border;
+  }
+}
+
+// 文档历史界面
+[data-type="doc"] {
+  @include side-list();
+  // 文档选择
+  .b3-list-item[data-type="switchNotebook"] {
+    background-color: map.get($bg, "component") !important;
+  }
+  // 文档展示
+  .history__text {
+    padding: $padding * 2;
+  }
+}
+
+// 资源历史界面
+[data-type="assets"] {
+  @include side-list();
+}
+
+// 笔记本历史界面
+[data-type="notebook"] {
+  padding: $padding;
+
+  // 回退按钮
+  .b3-list-item__action {
+    width: auto;
+    height: auto;
+    @include component("exsmall");
+
+    svg {
+      @include svg(8px);
+    }
+    .fn__space {
+      width: $interval;
+    }
+  }
+}
+
+// 数据快照界面
+.history__repo {
+  .history__repoheader {
+    padding: $padding 0;
+    margin: 0 $padding;
+    border-bottom: $fn-border;
+
+    .block__icon {
+      @include icon-btn(
+        "page",
+        map.get($component-size, "base"),
+        map.get($icon, "small")
+      );
+      &[disabled] {
+        opacity: 1 !important;
+        @include item-disabled();
+      }
+    }
+  }
+
+  > .b3-list {
+    padding: 16px;
+    li {
+      list-style: none;
+    }
+  }
+
+  .b3-list-item {
+    &__text {
+      margin-left: 0;
+    }
+    &__action {
+      @include icon-btn(
+        "component",
+        map.get($component-size, "base"),
+        map.get($icon, "small")
+      );
+    }
+  }
+}

@@ -6,7 +6,7 @@
     top: 50px;
     bottom: 10px;
     box-shadow: map.get($shadow, 2);
-    border-radius: map.get($radius, "medium");
+    border-radius: map.get($radius, "large");
     padding: 8px 16px 16px;
     width: max(20%, 240px);
     right: min(calc(-20% - 10px), -250px);
@@ -18,7 +18,7 @@
     label {
       margin: 0;
       padding: 8px 4px;
-      border-bottom: 1px solid map.get($border, 3);
+      border-bottom: $fn-border;
 
       span {
         font-size: 13px;

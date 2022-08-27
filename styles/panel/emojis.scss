@@ -17,7 +17,7 @@ $type-radius: map.get($radius, "base");
       }
     }
     .block__icon {
-      @include icon-btn("pop", 30px, 12px);
+      @include icon-btn("pop", map.get($component-size, "base"), 12px);
     }
   }
 
@@ -29,7 +29,7 @@ $type-radius: map.get($radius, "base");
     padding: 18px 0 8px;
     font-size: 11px;
     &:first-child {
-      padding-top: 10px;
+      padding-top: 8px;
     }
   }
 

@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "../common" as *;
-@use "../components/list" as *;
+@use "../components/list";
 
 .layout__empty {
   margin: 0 !important;
@@ -16,7 +16,7 @@
     width: 196px;
     margin: $interval 0;
     &__graphic {
-      @include svg($text-h, map.get($icon, "small"));
+      @include svg(list.$text-h, map.get($icon, "small"));
     }
     span {
       font-size: map.get($font-size, "base");

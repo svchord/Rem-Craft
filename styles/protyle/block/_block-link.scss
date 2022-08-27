@@ -10,9 +10,9 @@ $link-color: $rc-text-secondary; //$purple-6;
 $link-color-hover: $rc-text-primary; //$purple-6;
 
 //下划线
-$link-border-color: $rc-border-3;
-$link-border-color-hover: $rc-border-2; //$purple-4;
-$link-border: 1px solid $rc-border-3;
+$link-border-color: $fn-border-3;
+$link-border-color-hover: $fn-border-2; //$purple-4;
+$link-border: 1px solid $fn-border-3;
 
 :root {
   --b3-protyle-inline-link-color: #{$link-color};

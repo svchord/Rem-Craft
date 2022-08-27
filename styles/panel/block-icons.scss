@@ -9,17 +9,17 @@ $icon-svg-w: map.get($icon, "small");
 
 $padding: $fn-space;
 
-@mixin block-icon($type: "page", $important: false) {
+@mixin btn($type: "page", $important: false) {
   @include icon-btn($type, $icon-w, $icon-svg-w, true);
 
   &.ft__primary,
   &--active {
     @include focus($important);
-    @include item("light", $important);
+    @include item("light", true);
   }
 
   &[data-type="close"] {
-    @include item-close();
+    @include item-close(true);
   }
 }
 
@@ -51,7 +51,7 @@ $padding: $fn-space;
 
   //窗口顶栏按钮
   .block__icon {
-    @include block-icon();
+    @include btn();
     &[disabled="disabled"] {
       @include item-disabled(true);
     }

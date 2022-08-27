@@ -68,8 +68,8 @@
   @return $map;
 }
 
-@function is-important($important){
-  @return #{if($important, '!important', '')};
+@function is-important($important) {
+  @return #{if($important == true, "!important", "")};
 }
 
 //Fluent Design

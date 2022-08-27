@@ -8,8 +8,7 @@
   @include item("brand");
 
   svg {
-    @include svg(10px);
-    margin: auto 0;
+    @include svg(map.get($icon, "small"));
   }
 
   &--small,
@@ -20,15 +19,30 @@
   }
 
   &--outline svg {
-    margin-right: $fn-space;
+    margin-right: $interval;
   }
 
   &--text {
-    @include item-tran("light");
+    background-color: transparent;
+    &:hover {
+      background-color: map.get($bg, "light");
+    }
+    &:active {
+      background-color: map.get($hover, "light");
+    }
   }
 
   &--small {
     @include component("small");
+  }
+
+  &--progress {
+    box-shadow: unset;
+    color: transparent;
+    background-color: map.get($bg, "component") !important;
+    > span {
+      background-color: map.get($bg, "brand");
+    }
   }
 
   &:hover,

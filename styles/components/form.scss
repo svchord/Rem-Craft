@@ -2,7 +2,9 @@
 @use "../common" as *;
 //表单
 
-@mixin search-input($h, $border-w, $svg-w: 10px) {
+$svg-width: map.get($icon, "small");
+
+@mixin search-input($h, $border-w, $svg-w: $svg-width) {
   .b3-form__icon {
     // 搜索图标
     &-icon {

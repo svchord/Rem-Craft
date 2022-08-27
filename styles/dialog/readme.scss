@@ -1,0 +1,73 @@
+@use "sass:map";
+@use "sass:math";
+@use "../common" as *;
+@use "big";
+
+$com-bg: map.get($bg, "page");
+$com-radius: map.get($radius, "large");
+
+//集市Readme
+.config-bazaar__readme {
+  background-color: map.get($bg, "base");
+  border-radius: big.$dialog-radius;
+
+  .item {
+    // 侧栏
+    &__side {
+      background-color: $com-bg;
+      border-radius: $com-radius;
+      width: 280px;
+
+      // 按钮
+      .b3-button {
+        // 返回按钮
+        &--outline[data-type="goBack"] {
+          $w: map.get($component-size, "base");
+          @include svg-div($w, 11px);
+          @include item("page");
+          margin: $fn-space;
+          color: map.get($text, "secondary");
+        }
+      }
+      .svg {
+        @include svg(12px);
+        margin-top: 3px;
+      }
+    }
+
+    // 侧栏顶部标签
+    &__nav {
+      $h: map.get($component-size, "small");
+      $margin: $fn-space + math.div(map.get($component-size, "base") - $h, 2);
+
+      @include v-center($h);
+      width: auto;
+      margin: $margin 30%;
+      border-radius: map.get($radius, "max");
+      box-shadow: map.get($shadow, 0);
+      font-size: map.get($font-size, "small");
+      transform: translateX(
+          0 - math.div(map.get($component-size, "base") + 2 * $fn-space, 2)
+        )
+        translateY(0px);
+    }
+
+    // Readme主页
+    &__main {
+      background-color: $com-bg;
+      border-radius: $com-radius;
+    }
+
+    // 预览图
+    &__preview {
+      border-radius: unset;
+      margin-bottom: 0;
+    }
+
+    // Readme正文
+    &__readme {
+      box-sizing: content-box;
+      padding: 16px 96px 30vh;
+    }
+  }
+}

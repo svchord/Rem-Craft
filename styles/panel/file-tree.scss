@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "../common" as *;
-@use "../components/list" as *;
+@use "../components/list";
 // 文档树
 .sy__file {
   // 拖拽样式
@@ -24,5 +24,5 @@
 
 // 文档树笔记本
 [data-type="navigation-root"].b3-list-item {
-  @include list-content("primary");
+  @include list.content("primary");
 }

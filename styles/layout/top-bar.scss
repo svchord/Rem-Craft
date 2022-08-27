@@ -41,7 +41,6 @@ $map: (
   @include item("base");
   @include component-base();
 
-  z-index: map.get($z-index, "pop");
   width: 28px + 8px * 2;
   height: $item-h;
   margin: auto 0;
@@ -95,6 +94,7 @@ $map: (
     &:not(:empty) {
       .toolbar__item {
         margin: 0;
+        padding: 0;
         height: $icon-w;
       }
     }

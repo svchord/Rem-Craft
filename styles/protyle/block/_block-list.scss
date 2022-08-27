@@ -1,5 +1,5 @@
 //列表块线条
-$list-border: $rc-border-3;
+$list-border: $fn-border-3;
 
 $list-point-bg-fold: var(--rc-gray-light);
 $list-point-bg-fold-hover: var(--rc-gray-light-hover);
@@ -7,12 +7,12 @@ $list-point-bg-fold-hover: var(--rc-gray-light-hover);
 $list-done-opacity: 0.4;
 
 $list-done-color: $rc-text-placeholder;
-$list-done-border-color: $rc-border-2;
+$list-done-border-color: $fn-border-2;
 
 $link-done-color: $rc-text-disabled;
 $link-done-color-hover: $rc-text-secondary;
-$link-done-border-color: $rc-border-4;
-$link-done-border-color-hover: $rc-border-2;
+$link-done-border-color: $fn-border-4;
+$link-done-border-color-hover: $fn-border-2;
 
 //完成后的块引用样式
 $ref-done-color: $rc-brand-disabled;
@@ -126,7 +126,7 @@ $tag-done-color: $rc-text-disabled;
 
     // 完成后的键盘块
     kbd {
-      border-color: $rc-border-4  ;
+      border-color: $fn-border-4  ;
     }
 
     // 完成后的标记块
@@ -161,7 +161,7 @@ $tag-done-color: $rc-text-disabled;
       top: 0;
       bottom: 0;
       height: 100%;
-      border-right: 1px solid $rc-border-3;
+      border-right: 1px solid $fn-border-3;
     }
   }
 

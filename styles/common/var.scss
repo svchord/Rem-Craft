@@ -21,6 +21,7 @@ $text: add-style($text, "text", $text-types);
 // 线条
 $border: () !default;
 $border: add-color($border, "border", 4);
+$fn-border: 1px solid map.get($border, 3);
 
 // 功能色
 $feat-types: "brand", "warning", "error", "success", "info";
@@ -42,7 +43,7 @@ $active: add-color($active, "active", $bg-types);
 
 // Box-shadow
 $shadow: () !default;
-@for $i from 1 through 3 {
+@for $i from 0 through 3 {
   $shadow: map.set($shadow, $i, var(--shadow-#{$i}));
 }
 
@@ -52,12 +53,12 @@ $radius: map.merge(
   (
     "circle": 100%,
     "max": 9999px,
-    "exlarge": 10px,
-    "large": 8px,
-    "medium": 6px,
-    "base": 4px,
-    "small": 3px,
-    "exsmall": 2px,
+    "exlarge": 8px,
+    "large": 6px,
+    "medium": 4px,
+    "base": 3px,
+    "small": 2px,
+    "exsmall": 1px,
   ),
   $radius
 );
@@ -68,7 +69,7 @@ $font-size: map.merge(
   (
     "exlarge": 20px,
     "large": 18px,
-    "medium": 16px,
+    "medium": 14px,
     "base": 13px,
     "small": 12px,
     "exsmall": 11px,
@@ -80,11 +81,34 @@ $component-size: () !default;
 $component-size: map.merge(
   (
     "large": 40px,
-    "base": 30px,
+    "medium": 32px,
+    "base": 28px,
     "small": 24px,
-    "exsmall": 16px,
+    "exsmall": 20px,
   ),
   $component-size
+);
+
+$component-padding: () !default;
+$component-padding: (
+  "medium": 4px 8px,
+  "base": 4px 8px,
+  "small": 4px 6px,
+  "exsmall": 2px 6px,
+);
+
+// icon
+$icon: () !default;
+$icon: map.merge(
+  (
+    "exlarge": 24px,
+    "large": 16px,
+    "medium": 14px,
+    "base": 12px,
+    "small": 10px,
+    "exsmall": 8px,
+  ),
+  $icon
 );
 
 // zIndex
@@ -92,7 +116,7 @@ $z-index: () !default;
 $z-index: map.merge(
   (
     "normal": 0,
-    "svg":1,
+    "svg": 1,
     "top": 10,
     "pop": 20,
   ),
@@ -179,20 +203,6 @@ $spacer: map.merge(
 
 $fn-space: map.get($spacer, "base");
 $interval: map.get($spacer, "small");
-
-// icon
-$icon: () !default;
-$icon: map.merge(
-  (
-    "exsmall": 8px,
-    "small": 10px,
-    "medium": 12px,
-    "default": 14px,
-    "large": 16px,
-    "exlarge": 24px,
-  ),
-  $icon
-);
 
 // Break-point
 $sm: 768px !default;

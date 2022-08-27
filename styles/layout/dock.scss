@@ -2,23 +2,23 @@
 @use "../common" as *;
 
 $item-w: 36px;
-$item-h: 36px;
 
 //边栏
 @mixin dock {
   padding: 0px;
   background-color: map.get($bg, "base");
   margin-bottom: $interval;
+
   span {
     @include item("base");
-    @include svg-div($item-w, $item-h, 13px);
-
+    @include svg-div($item-w, 13px);
     color: map.get($text, "secondary");
     border-radius: map.get($radius, "medium");
 
     &:not(:last-child) {
       margin-bottom: $interval;
     }
+
     &.dock__item--active {
       background-color: map.get($hover, "base");
       @include focus-before(10.35px, 0);

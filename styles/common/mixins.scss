@@ -25,36 +25,15 @@
 
 @mixin history-btn {
   width: 36px;
-  height: 30px;
-  padding: 5px 8px;
-  border-radius: map.get($radius, "base");
 
   svg {
     &:first-child {
-      width: 12px;
-      height: 12px;
+      @include svg(12px);
     }
 
     &:last-child {
-      width: 8px;
+      @include svg(8px);
     }
-  }
-}
-
-@mixin search-item {
-  $text-h: 20px;
-  $padding: $interval;
-  padding-bottom: $text-h + $padding;
-  height: $text-h * 2 + $padding * 3;
-
-  .b3-list-item__meta {
-    top: $text-h + $padding * 2;
-    right: 8px;
-    max-width: 100%;
-    position: absolute;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 

@@ -1,10 +1,10 @@
 @use "sass:map";
+@use "sass:math";
 @use "../common" as *;
-@use "../components/list" as *;
+@use "../components/list";
 
 //菜单底色
 $menu-bg: map.get($bg, "pop");
-
 $padding: 6px;
 
 :root {
@@ -18,13 +18,14 @@ $padding: 6px;
 @mixin menu {
   min-width: 200px;
   padding: $padding;
-  border-radius: map.get($radius, "medium");
+  border-radius: map.get($radius, "large");
 }
 
 @mixin menu-item {
   min-width: 0px;
   margin-bottom: 4px;
-  @include list-item("pop");
+  @include item("pop");
+  @include component-base();
   &:last-child {
     margin-bottom: 0;
   }
@@ -32,11 +33,18 @@ $padding: 6px;
 
 @mixin menu-li {
   @include menu-item();
-  @include list-content("primary");
+  @include list.content("primary");
+  padding: math.div(map.get($component-size, "base") - list.$text-h, 2)
+    list.$padding;
+  &--two {
+    height: auto;
+    // padding: 5px;
+  }
 }
 
 @mixin no-icon {
   padding: 0;
+  margin-bottom: $padding;
 
   .fn__hr,
   .fn__hr--small,
@@ -50,6 +58,20 @@ $padding: 6px;
   }
 }
 
+@mixin color-square($w: 20px, $svg-w: 20px, $fz: 13px) {
+  @include svg($svg-w);
+  margin: math.div($w - $svg-w, 2);
+  box-shadow: unset;
+  border: $fn-border;
+  font-size: $fz;
+  &[style*="color13"] {
+    background-color: map.get($text, "primary");
+  }
+  &[style*="background13"] {
+    color: map.get($text, "anti");
+  }
+}
+
 //菜单
 .b3-menu {
   @include menu();
@@ -59,13 +81,23 @@ $padding: 6px;
     padding: 0px 8px;
 
     > .b3-menu__icon {
-      @include svg(10px);
+      @include svg(map.get($icon, "small"));
       color: map.get($text, "secondary");
       margin-right: 8px;
+
+      // 关闭icon
+      &[style*="height"] {
+        @include svg(8px);
+        margin-right: 8px;
+      }
       // 向右箭头
       &--arrow {
         @include svg(8px);
       }
+    }
+
+    .b3-menu__label {
+      @include v-center(map.get($component-size, "base"));
     }
 
     // 自定义菜单项（文本框或滑条）
@@ -84,47 +116,37 @@ $padding: 6px;
     margin-right: $sub-interval;
 
     //【外观】二级菜单
-    // &--row {
-    //   width: 410px;
+    &--row {
+      width: 380px;
 
-    //   // 每个样式选项
-    //   .b3-menu__item {
-    //     margin: 4px 0;
+      // 每个样式选项
+      .b3-menu__item {
+        margin: 8px 0;
+        // 鼠标选项
+        &--current {
+          background-color: transparent;
+        }
+      }
+      .b3-color__square {
+        @include color-square();
 
-    //     .b3-menu__label {
-    //       span {
-    //         box-shadow: unset;
-    //         width: 22px;
-    //         height: 22px;
-    //         border: 1px solid map.get($border, 3);
-    //         // font-size: 0px;
-    //       }
-    //     }
-
-    //     // 鼠标选项
-    //     &--current {
-    //       background-color: $menu-bg;
-
-    //       .b3-menu__label {
-    //         span {
-    //           border-color: map.get($border, 1);
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
+        &:hover {
+          border-color: map.get($border, 1);
+        }
+      }
+    }
   }
 
   // 分割线
   &__separator {
-    border-bottom: 1px solid map.get($border, 3);
+    border-bottom: $fn-border;
     height: 0;
     background-color: transparent;
   }
 
   // 其他信息
   &__item--readonly {
-    @include meta();
+    @include list.meta();
     @include no-icon();
     line-height: 20px;
     padding: 2px 8px;
@@ -135,7 +157,7 @@ $padding: 6px;
 
   // 菜单项快捷键
   &__accelerator {
-    @include meta();
+    @include list.meta();
   }
 
   // 块引用菜单 && 搜索历史菜单
@@ -148,7 +170,7 @@ $padding: 6px;
 
       // 命名、别名、备注
       &__showall {
-        @include v-center($text-h);
+        @include v-center(list.$text-h);
         &:first-child {
           color: map.get($text, "primary");
         }
@@ -159,7 +181,7 @@ $padding: 6px;
       }
 
       &__hinticon {
-        @include svg($text-h, 11px);
+        @include svg(list.$text-h, 11px);
         margin-right: $interval;
       }
 
@@ -171,7 +193,7 @@ $padding: 6px;
           }
         }
         .b3-menu__accelerator {
-          @include meta-focus();
+          @include list.meta-focus();
         }
       }
     }
@@ -210,8 +232,12 @@ $padding: 6px;
   &.hint--menu {
     column-count: 4;
     column-gap: $padding * 2;
-    column-rule: 1px solid map.get($border, 3);
+    column-rule: $fn-border;
     max-height: none !important;
     width: auto !important;
+
+    .b3-color__square {
+      @include color-square(list.$text-h, 16px, 11px);
+    }
   }
 }

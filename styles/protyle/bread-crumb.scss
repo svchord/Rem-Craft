@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "../common" as *;
-@use "../panel/block-icons" as *;
+@use "../panel/block-icons";
 
 $item-h: map.get($component-size, "small");
 $item-color: map.get($text, "placeholder");
@@ -52,7 +52,7 @@ $item-color: map.get($text, "placeholder");
   }
 
   .block__icon {
-    @include block-icon($important: true);
+    @include block-icons.btn($important: true);
     &::after {
       display: none;
     }

@@ -1,6 +1,6 @@
 $util-border-radius: $rc-bradius-medium;
 // $util-button-bg-hover: $gray-2;
-$util-topbar-border: 1px solid $rc-border-3;
+$util-topbar-border: 1px solid $fn-border-3;
 $util-textarea-bg: $rc-secontainer-bg;
 
 //工具窗
@@ -25,14 +25,14 @@ $util-textarea-bg: $rc-secontainer-bg;
                 height: 18px;
                 box-shadow: unset;
                 padding: 0;
-                border: 1px solid $rc-border-3;
+                border: 1px solid $fn-border-3;
 
                 &:not(:last-child) {
                     margin-right: 8px;
                 }
 
                 &:hover {
-                    border-color: $rc-border-1;
+                    border-color: $fn-border-1;
                 }
             }
 
@@ -41,7 +41,7 @@ $util-textarea-bg: $rc-secontainer-bg;
                 padding: 0 12px;
 
                 &:hover {
-                    border-color: $rc-border-3;
+                    border-color: $fn-border-3;
                 }
             }
 

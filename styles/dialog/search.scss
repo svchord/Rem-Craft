@@ -1,0 +1,203 @@
+@use "sass:map";
+@use "../common" as *;
+@use "../components/list";
+@use "big";
+
+$padding: $fn-space + $interval;
+$btn-h: map.get($component-size, "base");
+$form-h: $btn-h + $padding * 2 + 1px;
+
+@mixin search-item {
+  @include component();
+  @include list.content("primary");
+  $text-h: list.$text-h;
+  $padding: $interval;
+  padding: $padding;
+  padding-bottom: $text-h + $padding;
+  height: $text-h * 2 + $padding * 3;
+
+  .b3-list-item {
+    &__meta {
+      top: $text-h + $padding * 2;
+      right: $padding * 2;
+      max-width: 100%;
+      position: absolute;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.b3-dialog__container {
+  &[style*="80vw"] {
+    .fn__loading--top {
+      top: $form-h;
+      border-radius: big.$dialog-radius;
+    }
+
+    .search__arrowdown {
+      margin-left: $interval;
+    }
+
+    // 搜索结果筛选行
+    .b3-form__space--small {
+      margin: 0;
+      height: $form-h;
+      padding: $padding;
+      border-bottom: $fn-border;
+
+      // 筛选项
+      .b3-button--small {
+        @include component();
+        &.b3-button--cancel {
+          @include item("page");
+          color: map.get($text, "secondary");
+        }
+      }
+
+      // 块类型筛选按钮
+      .svg.ft__on-surface {
+        @include item("page");
+        @include svg($btn-h, map.get($icon, "small"));
+        border-radius: map.get($radius, "small");
+        height: $btn-h !important;
+
+        &.ft__primary {
+          @include item("light");
+        }
+      }
+
+      #searchResult {
+        @include v-center($btn-h);
+      }
+
+      #searchPathInput {
+        @include v-center($btn-h);
+        margin-right: $fn-space;
+      }
+    }
+  }
+}
+
+// 块类型筛选界面
+.spread-search__filter {
+  padding-top: 0px;
+  width: 210px;
+  // border-left: $fn-border;
+
+  // 标题
+  &::before {
+    content: "块类型筛选";
+    display: block;
+    width: 100%;
+    @include v-center(big.$search-h + $padding + 4px);
+    @include center();
+  }
+
+  // 块类型筛选项
+  label {
+    .b3-label__text {
+      @include v-center(20px);
+      margin: 0;
+    }
+
+    margin-bottom: $fn-space * 2;
+  }
+}
+
+// 搜索结果列表
+#searchList {
+  padding: $fn-space;
+
+  [data-type="search-item"].b3-list-item {
+    @include search-item();
+  }
+}
+
+// 搜索预览
+#searchPreview {
+  // 面包屑
+  .protyle {
+    &-breadcrumb {
+      &__bar {
+        margin-right: $fn-space;
+        // display: -webkit-box;
+      }
+      .block__icon {
+        @include icon-btn("page", map.get($component-size, "exsmall"), 10px);
+      }
+    }
+
+    // &-content {
+    //   [data-type="search-mark"] {
+    //     @extend %search-mark__model;
+    //   }
+    // }
+
+    &-wysiwyg {
+      padding: 16px 64px 90px !important;
+    }
+  }
+}
+
+/*ctrl+p改造成左右排列*/
+.b3-dialog__container[style*="80vw"] {
+  /*先把容器改成左右排列并自动换行*/
+  > div > .fn__flex > .fn__flex-column {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+  }
+
+  /*设置需要占满一行的项目*/
+  .search__header,
+  .b3-form__space--small {
+    width: 100%;
+  }
+
+  /*窗口宽度大于一定尺寸时候，左右排列*/
+  @media screen and (min-width: 960px) {
+    /*搜索结果列表占一半宽度，靠左排列*/
+    #searchList {
+      float: left;
+      width: 33vw;
+      border-right: $fn-border;
+    }
+
+    /*结果预览自动占满剩余宽度，高度和结果列表等高*/
+    #searchPreview {
+      border: none;
+    }
+
+    //替换界面高度
+    #searchList,
+    #searchPreview {
+      height: calc(100% - big.$search-h * 2 - $form-h) !important;
+    }
+
+    // 搜索界面
+    .search__header.fn__none {
+      ~ #searchList,
+      ~ #searchPreview {
+        height: calc(100% - big.$search-h - $form-h) !important;
+      }
+    }
+  }
+
+  /*窗口宽度小于一定尺寸时候，上下排列*/
+  @media screen and (max-width: 960px) {
+    #searchList {
+      width: 100%;
+    }
+  }
+}
+
+/* 修复搜索文章不能完整显示的问题 */
+// .protyle-content {
+//   .spread-search__preview & {
+//     padding-bottom: 56px;
+//   }
+//   div[data-key="⌘R"] #searchPreview & {
+//     padding-bottom: 90px;
+//   }
+// }

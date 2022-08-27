@@ -5,6 +5,7 @@
 $icon-w: 16px;
 $pad-tb: 12px;
 $pad-lr: 16px;
+$text-h: map.get($component-size, "base") - 4px * 2;
 $com-shadow: map.get($shadow, 2);
 
 //通知弹窗
@@ -16,6 +17,7 @@ $com-shadow: map.get($shadow, 2);
       height: auto;
       position: relative;
       color: map.get($text, "primary");
+      border-radius: map.get($radius,"medium");
       box-shadow: $com-shadow;
       background-color: map.get($bg, "pop");
       padding: $pad-tb $pad-lr;
@@ -27,7 +29,7 @@ $com-shadow: map.get($shadow, 2);
         display: block;
         position: absolute;
         left: $pad-lr;
-        top: math.div($pad-tb * 2 + 22px - $icon-w, 2);
+        top: math.div($pad-tb * 2 + $text-h - $icon-w, 2);
         width: $icon-w;
         height: $icon-w;
         @include add-icon("info", map.get($color, "info", "base"), 24, "round");
@@ -78,6 +80,7 @@ $com-shadow: map.get($shadow, 2);
 
     &::after {
       @include reset-style();
+      position: unset;
       display: block;
       content: "全部已读";
       color: map.get($text, "anti");

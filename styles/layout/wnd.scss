@@ -1,5 +1,7 @@
 @use "sass:map";
 @use "../common" as *;
+@use "../dialog/search";
+@use "../components/list";
 
 $wnd-base: map.get($bg, "base");
 $wnd-bg: map.get($bg, "page");
@@ -37,7 +39,7 @@ $wnd-transition: all $time map.get($transition-function, "fast") 0s;
 @mixin wnd {
   min-height: 10% !important;
   margin: $interval;
-  border-radius: map.get($radius, "medium");
+  border-radius: map.get($radius, "large");
   transition: all $time map.get($transition-function, "easing") 0s;
   background-color: $wnd-bg;
 }
@@ -99,7 +101,7 @@ $wnd-transition: all $time map.get($transition-function, "fast") 0s;
       > .b3-list {
         min-width: 200px;
         margin: 0px 8px 8px;
-        &:last-child{
+        &:last-child {
           margin-bottom: 0;
         }
       }
@@ -117,22 +119,32 @@ $wnd-transition: all $time map.get($transition-function, "fast") 0s;
     // 标签搜索页面
     // 搜索历史按钮
     #searchHistoryBtn {
+      @include component();
       @include history-btn();
     }
 
     // 刷新按钮
     #globalSearchReload {
-      @include icon-btn("page", 30px, 12px);
+      @include icon-btn("page", map.get($component-size, "base"), 12px);
+    }
+
+    //搜索结果统计
+    #globalSearchResult {
+      @include component();
+      margin: 0 $fn-space $interval !important;
+      cursor: unset;
+      background-color: transparent !important; //map.get($bg,"component");
     }
 
     // 搜索结果列表
     #globalSearchList {
-      margin-top: $interval;
+      padding: 0;
+      margin: 0 $fn-space;
     }
 
     // 搜索结果列表项
-    .b3-list-item[data-type="search-item"] {
-      @include search-item();
+    [data-type="search-item"].b3-list-item {
+      @include search.search-item();
     }
   }
 }

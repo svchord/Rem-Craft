@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "../common" as *;
-@use "../components/form" as *;
+@use "../components/form";
+@use "../components/list";
 
 //弹窗蒙版
 $dialog-scrim: map.get($mask, "active");
@@ -31,17 +32,6 @@ $search-h: 50px;
   &[style*="80vw"] {
     width: $large-width !important;
 
-    .fn__flex-column {
-      > div {
-        &:first-child {
-          border-radius: $dialog-radius $dialog-radius 0 0;
-        }
-        &:last-child {
-          border-radius: 0 0 $dialog-radius $dialog-radius;
-        }
-      }
-    }
-
     // 弹窗关闭按钮
     .b3-dialog__close {
       display: none;
@@ -56,8 +46,8 @@ $search-h: 50px;
     .search__header {
       width: $large-width;
       border-color: map.get($border, 3);
-
-      @include search-input($search-h - 1px, 0, 17px);
+      border-radius: $dialog-radius $dialog-radius 0 0;
+      @include form.search-input($search-h - 1px, 0, 17px);
 
       // 搜索文本框
       .b3-text-field {
@@ -78,7 +68,7 @@ $search-h: 50px;
     .b3-tab-container {
       height: min(
         66.1vh,
-        (20px + 16px * 2 + $fn-space) * 11 - $fn-space
+        (list.$text-h + 16px * 2 + $fn-space) * 11 - $fn-space
       ) !important;
     }
 

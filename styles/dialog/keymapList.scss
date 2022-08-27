@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "../common" as *;
+@use "../components/list";
+
+#keymapList {
+  .b3-list {
+    &-item {
+      padding: list.$padding !important;
+      .b3-text-field {
+        @include component("small");
+      }
+
+      &:hover {
+        .b3-text-field {
+          background-color: map.get($bg, "page");
+        }
+      }
+
+      .fn__space {
+        width: $interval;
+      }
+
+      &__action {
+        @include icon-btn("component", 24px, map.get($icon, "small"));
+      }
+    }
+  }
+}

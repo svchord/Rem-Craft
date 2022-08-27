@@ -7,7 +7,6 @@
 @mixin reset-style {
   opacity: 1;
   transform: unset;
-  position: unset;
   margin: 0;
   padding: 0;
   border: unset;
@@ -51,17 +50,53 @@
     padding: 0;
   } @else {
     $svg-w: list.nth($args, 2);
-    padding: math.div($w - $svg-w, 2);
+    padding: math.div($w - $svg-w, 2) is-important(list.nth($args, -1));
   }
 }
 
-@mixin svg-div($w, $h, $svg-w) {
+@mixin svg-div($args...) {
+  $w: list.nth($args, 1);
   width: $w;
-  height: $h;
   margin: 0;
-  padding: math.div($h - $svg-w, 2) math.div($w - $svg-w, 2) !important;
-  svg {
-    @include svg($svg-w);
+
+  @if list.length($args) == 2 {
+    $svg-w: list.nth($args, 2);
+    height: $w;
+    padding: math.div($w - $svg-w, 2);
+    svg {
+      @include svg($svg-w);
+    }
+  }
+
+  @if list.length($args) == 3 {
+    @if list.nth($args, 3) != true {
+      $svg-w: list.nth($args, 3);
+      $h: list.nth($args, 2);
+      height: $h;
+      padding: math.div($h - $svg-w, 2) math.div($w - $svg-w, 2);
+      svg {
+        @include svg($svg-w);
+      }
+    } @else {
+      $svg-w: list.nth($args, 2);
+      height: $w;
+      padding: math.div($w - $svg-w, 2) is-important(list.nth($args, -1));
+      svg {
+        @include svg($svg-w);
+      }
+    }
+  }
+
+  @if list.length($args) == 4 {
+    $svg-w: list.nth($args, 3);
+    $h: list.nth($args, 2);
+    height: $h;
+    padding: math.div($h - $svg-w, 2)
+      math.div($w - $svg-w, 2)
+      is-important(list.nth($args, -1));
+    svg {
+      @include svg($svg-w);
+    }
   }
 }
 
@@ -103,7 +138,12 @@
   }
 }
 
-@mixin item-close {
+@mixin item-close($important: false) {
+  transition: map.get($transition, "all");
+  &:hover {
+    color: map.get($text, "anti");
+    background-color: map.get($color, "error", "base") is-important($important);
+  }
   svg {
     @include svg(map.get($icon, "exsmall"));
   }
@@ -113,7 +153,7 @@
   @include svg-div($w, $w, $svg-w);
   @include item($type, $important);
 
-  border-radius: map.get($radius, "small");
+  border-radius: map.get($radius, "base");
 }
 
 @mixin component-base($type: "base") {
@@ -125,12 +165,10 @@
 @mixin component($type: "base") {
   @include component-base($type);
   transition: map.get($transition, "all");
-  line-height: map.get($component-size, $type) - 8px;
-  $padding: (
-    "base": 8px,
-    "small": 6px,
-  );
-  padding: 4px map.get($padding, $type);
+
+  padding: map.get($component-padding, $type);
+  line-height: map.get($component-size, $type) -
+    list.nth(map.get($component-padding, $type), 1) * 2;
 }
 
 @mixin focus($important: false) {

@@ -1,11 +1,12 @@
 @use "sass:map";
 @use "sass:math";
+@use "sass:list";
 @use "../common" as *;
 
-$padding: 5px;
-
-$text-h: map.get($component-size, "base") - $padding * 2;
-$item-h: map.get($component-size, "base");
+$list-type: "medium";
+$item-h: map.get($component-size, $list-type);
+$text-h: 22px;
+$padding: math.div($item-h - $text-h, 2);
 
 //折叠按钮宽度
 $arrow-w: 16px;
@@ -21,11 +22,11 @@ $list-depth: 7;
 
 @mixin list-item($type: "page") {
   @include item($type);
-  @include component-base();
+  @include component-base($list-type);
   height: auto;
 }
 
-@mixin list-content($color: "secondary") {
+@mixin content($color: "secondary") {
   .b3-list-item {
     &__text {
       color: map.get($text, $color);
@@ -57,7 +58,7 @@ $list-depth: 7;
 
 @mixin list-btn {
   @include item-tran("component");
-  border-radius: map.get($radius, "small");
+  border-radius: map.get($radius, "base");
   &::after {
     display: none !important;
   }
@@ -66,7 +67,6 @@ $list-depth: 7;
 @mixin meta {
   font-size: map.get($font-size, "exsmall");
   color: map.get($text, "placeholder");
-  @include v-center($text-h);
 }
 
 @mixin meta-focus {
@@ -75,7 +75,7 @@ $list-depth: 7;
 
 // 列表为空
 .b3-list--empty {
-  @include meta();
+  color: map.get($text, "disabled");
   font-size: map.get($font-size, "base");
 }
 
@@ -85,10 +85,10 @@ $list-depth: 7;
   line-height: $text-h;
 
   @include list-item();
-  @include list-content();
+  @include content();
   // 折叠按钮
   &__toggle {
-    @include svg-div($arrow-w, $text-h, 8px);
+    @include svg-div($arrow-w, $text-h, 8px, true);
     margin-right: $interval;
 
     // 文档树无子元素
@@ -147,7 +147,7 @@ $list-depth: 7;
 
   //列表emoji
   &__icon {
-    @include emoji-icon($text-h, 12px, map.get($icon, "medium"));
+    @include emoji-icon($text-h, 12px, map.get($icon, "base"));
     @include list-btn();
     margin: 0;
   }
@@ -160,7 +160,7 @@ $list-depth: 7;
 
   // 列表按钮
   &__action {
-    @include svg($text-h, map.get($icon, "medium"));
+    @include svg-div($text-h, map.get($icon, "base"));
     @include list-btn();
     margin-left: $interval;
     .backlink--more & {

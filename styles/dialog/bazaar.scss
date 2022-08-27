@@ -1,0 +1,76 @@
+@use "sass:map";
+@use "../common" as *;
+
+.b3-tab-container[data-name="bazaar"] {
+  //集市tab
+  .layout-tab-bar {
+    padding: 16px 16px 8px;
+
+    &[style*="border"] {
+      padding: 8px;
+    }
+  }
+}
+
+// 筛选图标
+.bazaarPanel > .fn__flex > .svg {
+  margin-left: 4px;
+}
+
+//集市卡片
+.b3-card {
+  box-shadow: map.get($shadow, 1);
+  background-color: map.get($bg, "pop");
+  transition: map.get($shadow, "all");
+  border-radius: map.get($radius, "large");
+
+  &:hover {
+    background-color: map.get($bg, "pop");
+    box-shadow: map.get($shadow, 2);
+    transform: translateY(-2px);
+  }
+
+  $mar-lr: 12px;
+  &__img {
+    margin: 16px $mar-lr 4px;
+    width: calc(100% - $mar-lr * 2);
+    border-radius: map.get($radius, "large");
+
+    img {
+      object-fit: cover;
+      border-radius: map.get($radius, "base");
+    }
+  }
+
+  &__info {
+    padding: 8px 16px 0px;
+
+    .svg {
+      @include svg(map.get($icon, "small"));
+      margin-top: 3.5px;
+    }
+
+    &[style*="background-color"] {
+      background-color: map.get($bg, "light") !important;
+    }
+  }
+
+  &__actions {
+    height: map.get($component-size, "base") + $fn-space * 2;
+    padding: $fn-space;
+
+    button {
+      @include component();
+      &:first-child + .fn__space {
+        display: none;
+      }
+    }
+
+    &[style*="background-color"] {
+      background-color: map.get($bg, "light") !important;
+      button {
+        @include item("light");
+      }
+    }
+  }
+}

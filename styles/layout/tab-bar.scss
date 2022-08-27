@@ -1,75 +1,80 @@
 @use "sass:map";
+@use "sass:math";
 @use "../common" as *;
-@use "../components/list" as *;
+@use "../components/list";
 
-$item-h: map.get($component-size, "small");
+$item-type: "base";
+$w: map.get($component-size, "exsmall");
 
 //页签栏
 .layout-tab-bar {
   background-color: map.get($bg, "page");
 
   .layout__center &:not(:empty) {
-    border-radius: map.get($radius, "small");
-    height: map.get($component-size, "small");
+    @include component-base($item-type);
     margin: 8px 8px 2px;
   }
 
   .item {
     @include item("page");
-    @include component-base();
+    @include component($item-type);
     flex: unset;
-    height: $item-h;
-    min-height: $item-h;
-    padding: 0px 0 0 6px;
+    min-height: 0;
+    padding: $interval;
     box-shadow: unset !important;
 
     &:not(:last-child) {
-      margin-right: 8px;
+      margin-right: $fn-space;
     }
 
     &__icon {
-      @include emoji-icon(16px, 12px, map.get($icon, "medium"));
-      margin: 4px 6px 4px 0;
+      @include emoji-icon($w, 12px, map.get($icon, "base"));
     }
 
     &__graphic {
-      @include svg(16px, map.get($icon, "small"));
-      margin: 4px 6px 4px 0;
+      @include svg($w, map.get($icon, "small"), true);
     }
 
     &__text {
       padding: 0;
       transition: unset;
-      @include v-center($item-h);
+      margin-left: $interval;
     }
 
     &__close {
-      @include list-btn();
-      margin: 4px;
-      padding: 0;
+      @include item-tran("component");
+      @include component-base("exsmall");
+      @include svg-div($w, 10px);
+      border-radius: map.get($radius, "small");
+      margin-left: $interval;
 
       svg {
-        opacity: 0.35;
-        border-radius: map.get($radius, "small");
+        opacity: 0.3;
         background-color: transparent !important;
-        @include svg(16px, 8px);
       }
 
       &:hover svg {
-        opacity: 1;
+        opacity: 0.6;
       }
     }
 
     &--pin {
       background-color: map.get($bg, "component");
-
-      .item__text {
-        padding-right: 6px;
+      .item {
+        &__text {
+          margin: 0;
+          padding: 0 $interval;
+        }
       }
     }
 
     &--focus {
       @include item-focus();
+
+      .item__graphic {
+        @include focus();
+      }
+
       > .item__text {
         @include focus();
         .layout__wnd--active & {

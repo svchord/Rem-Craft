@@ -1,0 +1,233 @@
+@use "sass:map";
+@use "sass:math";
+@use "sass:list";
+@use "../common" as *;
+
+$list-type: "medium";
+$item-h: map.get($component-size, $list-type);
+$text-h: 22px;
+$padding: math.div($item-h - $text-h, 2);
+
+//折叠按钮宽度
+$arrow-w: 16px;
+//子列表缩进左边距
+$list-left: 22px;
+//子列表缩进最大深度
+$list-depth: 7;
+
+:root {
+  // 列表
+  --b3-list-hover: #{map.get($bg, "component", 1)};
+}
+
+@mixin list-item($type: "page") {
+  @include item($type);
+  @include component-base($list-type);
+  height: auto;
+}
+
+@mixin content($color: "secondary") {
+  .b3-list-item {
+    &__text {
+      color: map.get($text, $color);
+    }
+    // 次级信息
+    &__meta {
+      @include meta();
+    }
+  }
+
+  // 列表选中态
+  &--focus {
+    @include color("focus");
+    @include item-unchange("focus", 1, true);
+
+    .b3-list-item {
+      &__text,
+      &__graphic {
+        @include color("focus");
+      }
+
+      // 次级信息
+      &__meta {
+        @include meta-focus();
+      }
+    }
+  }
+}
+
+@mixin list-btn {
+  @include item-tran("component");
+  border-radius: map.get($radius, "base");
+  &::after {
+    display: none !important;
+  }
+}
+
+@mixin meta {
+  font-size: map.get($font-size, "exsmall");
+  color: map.get($text, "placeholder");
+}
+
+@mixin meta-focus {
+  color: map.get($text, "meta-focus");
+}
+
+// 列表为空
+.b3-list--empty {
+  color: map.get($text, "disabled");
+  font-size: map.get($font-size, "base");
+}
+
+.b3-list-item {
+  padding: $padding;
+  margin: $interval 0;
+  line-height: $text-h;
+
+  @include list-item();
+  @include content();
+  // 折叠按钮
+  &__toggle {
+    @include svg-div($arrow-w, $text-h, 8px, true);
+    margin-right: $interval;
+
+    // 文档树无子元素
+    @mixin hidden-arrow {
+      display: flex;
+      visibility: visible;
+      width: 2px !important;
+      height: 2px !important;
+      padding: 0;
+      margin: auto;
+      color: transparent;
+      border-radius: map.get($radius, "circle");
+      background-color: map.get($text, "secondary");
+    }
+
+    &.fn__hidden {
+      .b3-list-item__arrow {
+        @include hidden-arrow();
+      }
+    }
+
+    // 鼠标悬浮
+    &.b3-list-item__toggle--hl:hover {
+      background-color: transparent;
+    }
+
+    // 折叠图标
+    .b3-list-item__arrow {
+      // 大纲、标签无子元素
+      &.fn__hidden {
+        @include hidden-arrow();
+      }
+    }
+
+    .backlink--more & {
+      align-self: flex-start;
+    }
+  }
+
+  // 列表图标（大纲、标签等）
+  &__graphic {
+    @include svg($text-h, map.get($icon, "small"));
+    // margin-left: $interval;
+
+    // 图标悬浮后有弹窗
+    &.popover__block {
+      display: flex;
+      @include list-btn();
+
+      // 反链展开时的特殊情况
+      .backlink--more & {
+        margin-top: 0px;
+      }
+    }
+  }
+
+  //列表emoji
+  &__icon {
+    @include emoji-icon($text-h, 12px, map.get($icon, "base"));
+    @include list-btn();
+    margin: 0;
+  }
+
+  // 列表文本
+  &__text {
+    line-height: $text-h;
+    margin-left: $interval;
+  }
+
+  // 列表按钮
+  &__action {
+    @include svg-div($text-h, map.get($icon, "base"));
+    @include list-btn();
+    margin-left: $interval;
+    .backlink--more & {
+      align-self: flex-start;
+    }
+  }
+
+  // 列表计数块
+  .counter:not(:empty) {
+    @include counter($text-h);
+    margin-left: $interval;
+  }
+
+  // 列表选中态
+  &--focus {
+    .b3-list-item {
+      &__toggle {
+        @include color("focus");
+      }
+    }
+
+    .b3-list-item__toggle.fn__hidden .b3-list-item__arrow,
+    .b3-list-item__arrow.fn__hidden {
+      background-color: map.get($text, "focus") !important;
+    }
+
+    .counter:not(:empty),
+    .b3-list-item__icon,
+    .b3-list-item__action,
+    .b3-list-item__graphic.popover__block {
+      @include item-focus();
+    }
+  }
+
+  // 子元素向右缩进 && 左侧辅助线
+  // 循环阴影辅助线
+  @function cyclic($cur) {
+    $margin: 6px + math.div($arrow-w, 2);
+    $border: map.get($border, 3);
+    $list-bg: map.get($bg, "page", 1);
+    $temp: "#{$margin - 1px} 0 #{$list-bg} inset, #{$margin} 0 #{$border} inset";
+
+    @if $cur >1 {
+      @for $i from 1 to $cur {
+        $margin: $list-left * $i + 6px + math.div($arrow-w, 2);
+        $temp: $temp +
+          ", "+"#{$margin - 1px} 0 #{$list-bg} inset, #{$margin} 0 #{$border} inset";
+      }
+    }
+
+    @return $temp;
+  }
+
+  // 递归函数
+  @mixin recursive-item-margin($cur, $end) {
+    + ul {
+      box-shadow: #{cyclic($cur)};
+
+      & > .b3-list-item {
+        margin-left: $list-left * $cur;
+
+        @if $cur < $end {
+          @include recursive-item-margin($cur + 1, $end);
+        }
+      }
+    }
+  }
+
+  @include recursive-item-margin(1, $list-depth);
+}

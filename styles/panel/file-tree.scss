@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "../common" as *;
-@use "../components/list";
+@use "../component/list";
 // 文档树
 .sy__file {
   // 拖拽样式

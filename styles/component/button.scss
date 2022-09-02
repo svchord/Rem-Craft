@@ -1,0 +1,48 @@
+@use "sass:map";
+@use "../common" as *;
+
+//按钮
+.b3-button {
+  @include reset-style();
+  @include component();
+  @include item("primary");
+
+  svg {
+    @include svg(map.get($icon, "small"));
+  }
+
+  &--small,
+  &--cancel,
+  &--outline {
+    @include item-focus();
+  }
+
+  &--outline svg {
+    margin-right: $interval;
+  }
+
+  &--text {
+    @include item("focus", 0);
+    @include color-change("focus");
+  }
+
+  &--small {
+    @include component("small");
+  }
+
+  &--progress {
+    box-shadow: unset;
+    color: transparent;
+    background-color: map.get($bg, "component", 1) !important;
+    > span {
+      background-color: map.get($bg, "primary", 1);
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: unset;
+  }
+}

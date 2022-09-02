@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "../common" as *;
+
+::selection {
+  background-color: rgba(var(--brand-6), 0.3);
+}
+
+
+// 拖拽选中
+.protyle-wysiwyg .dragover {
+  @include drag();
+}

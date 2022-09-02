@@ -1,12 +1,14 @@
 @use "sass:map";
-@use "sass:math";
 @use "sass:list";
 
 @use "../common" as *;
 @use "dock";
 
-$bar-h: 30px;
-$item-h: 22px;
+$bar-h: 28px;
+$item-h: 24px;
+$padding: 8px;
+
+$item-w: 28px + $padding * 2;
 
 $win-control-w: 46px;
 
@@ -40,8 +42,7 @@ $map: (
 @mixin top-item {
   @include item("base");
   @include component-base();
-
-  width: 28px + 8px * 2;
+  width: $item-w;
   height: $item-h;
   margin: auto 0;
   padding: 0;
@@ -50,13 +51,13 @@ $map: (
 
 @mixin item-before($content) {
   &::before {
-    @include reset-position();
     @include reset-style();
     @include v-center($item-h);
     @include center();
     @include component-base();
     content: $content;
     color: map.get($text, "secondary");
+    z-index: 0;
     width: 100%;
   }
 }
@@ -76,16 +77,18 @@ $map: (
 
   #toolbarVIP {
     -webkit-app-region: drag;
-    $icon-w: 14px; //map.get($icon, "default");
+    $icon-w: 13px; //map.get($icon, "default");
     $width: dock.$item-w + $interval * 2;
-    @include svg-div($width, $bar-h, $icon-w);
 
     &:empty {
+      width: $width;
+      height: $bar-h;
       &::before {
         content: "";
         display: block;
         width: $icon-w;
         height: $icon-w;
+        margin: auto;
         background-image: url("#{$asset-path}/icons/siyuan.svg");
         background-repeat: round;
       }
@@ -93,9 +96,46 @@ $map: (
 
     &:not(:empty) {
       .toolbar__item {
-        margin: 0;
-        padding: 0;
-        height: $icon-w;
+        &:first-child {
+          @include svg-div($width, $item-h, $icon-w);
+        }
+
+        // 头衔
+        &:nth-child(2) {
+          margin: 0;
+          width: auto;
+          height: $item-h;
+          padding: 0 $padding;
+          border-radius: map.get($radius, "max");
+          background-color: map.get($bg, "base", 2);
+          margin-right: 8px;
+          display: inline-flex;
+
+          svg {
+            @include svg(10px);
+            margin: auto 0;
+          }
+          &::after {
+            @include reset-style();
+            @include v-center($item-h);
+            @include center();
+            content: "";
+            width: auto;
+            font-size: 11px;
+            z-index: 0;
+            color: map.get($text, "secondary");
+          }
+
+          $types: "捐赠者", "支持者", "赞助者";
+          @each $type in $types {
+            &[aria-label*="#{$type}"] {
+              &::after {
+                content: $type;
+                margin-left: 6px;
+              }
+            }
+          }
+        }
       }
     }
   }

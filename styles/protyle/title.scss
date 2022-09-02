@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "sass:math";
+@use "../common" as *;
+@use "wysiwyg";
+
+//文档标题
+.protyle-title {
+  margin: 0 wysiwyg.$padding !important;
+
+  &__icon {
+    top: math.div(42px + 3px * 2 - 32px, 2);
+    left: -32px;
+
+    @include svg-div(32px, 14px);
+    border-radius: map.get($radius, "small");
+    color: map.get($text, "placeholder");
+
+    &:hover {
+      color: map.get($text, "primary");
+    }
+
+    &::after {
+      right: 100%;
+      left: auto;
+    }
+  }
+
+  &:hover .protyle-title__icon {
+    opacity: 1;
+  }
+
+  &__input {
+    font-weight: 700;
+    line-height: 42px;
+    font-size: 32px;
+    padding: wysiwyg.$item-pad;
+
+    &:empty:after {
+      color: map.get($text, "disabled");
+    }
+  }
+}

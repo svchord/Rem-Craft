@@ -13,7 +13,7 @@ theme.mode = (() => {
       break;
     case 1:
       let html = document.querySelector("html");
-      html.setAttribute("theme-mode", "dark");
+      html.className += "dark";
       theme.updateStyle;
       break;
     default:

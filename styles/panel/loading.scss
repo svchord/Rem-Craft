@@ -2,5 +2,5 @@
 @use "../common" as *;
 
 .fn__loading {
-  background-color: map.get($bg, "page");
+  background-color: map.get($bg, "page",1);
 }

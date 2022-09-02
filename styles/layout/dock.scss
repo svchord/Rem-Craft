@@ -6,7 +6,7 @@ $item-w: 36px;
 //边栏
 @mixin dock {
   padding: 0px;
-  background-color: map.get($bg, "base");
+  background-color: map.get($bg, "base", 1);
   margin-bottom: $interval;
 
   span {
@@ -20,7 +20,7 @@ $item-w: 36px;
     }
 
     &.dock__item--active {
-      background-color: map.get($hover, "base");
+      @include item("base", 2);
       @include focus-before(10.35px, 0);
     }
   }

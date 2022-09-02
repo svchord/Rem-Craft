@@ -14,6 +14,7 @@
   box-shadow: unset;
   background-color: transparent;
   outline: unset;
+  position: unset;
 }
 
 @mixin reset-position {
@@ -43,12 +44,23 @@
 
 @mixin svg($args...) {
   $w: list.nth($args, 1);
-  width: $w;
-  height: $w;
+  width: $w is-important(list.nth($args, -1));
+  height: $w is-important(list.nth($args, -1));
   margin: 0;
+  display: block;
+
   @if list.length($args) == 1 {
     padding: 0;
-  } @else {
+  }
+  @if list.length($args) == 2 {
+    @if list.nth($args, -1) != true {
+      $svg-w: list.nth($args, 2);
+      padding: math.div($w - $svg-w, 2);
+    } @else {
+      padding: 0 is-important(list.nth($args, -1));
+    }
+  }
+  @if list.length($args) == 3 {
     $svg-w: list.nth($args, 2);
     padding: math.div($w - $svg-w, 2) is-important(list.nth($args, -1));
   }
@@ -82,7 +94,7 @@
       height: $w;
       padding: math.div($w - $svg-w, 2) is-important(list.nth($args, -1));
       svg {
-        @include svg($svg-w);
+        @include svg($svg-w, true);
       }
     }
   }
@@ -95,19 +107,41 @@
       math.div($w - $svg-w, 2)
       is-important(list.nth($args, -1));
     svg {
-      @include svg($svg-w);
+      @include svg($svg-w, true);
     }
   }
 }
 
-@mixin item($type, $important: false) {
-  background-color: map.get($bg, $type);
+@mixin color($type, $important: false) {
+  color: map.get($text, $type) is-important($important);
+}
+
+@mixin color-change($type, $important: false) {
+  &:hover,
+  &:active {
+    color: map.get($text, $type) is-important($important);
+  }
+}
+
+@mixin item($type, $start: 1, $important: false) {
+  background-color: map.get($bg, $type, $start) is-important($important);
   transition: map.get($transition, "all");
   &:hover {
-    background-color: map.get($hover, $type) is-important($important);
+    background-color: map.get($bg, $type, $start + 1) is-important($important);
   }
   &:active {
-    background-color: map.get($active, $type) is-important($important);
+    background-color: map.get($bg, $type, $start + 2) is-important($important);
+  }
+}
+
+@mixin item-unchange($type, $start: 1, $important: fault) {
+  background-color: map.get($bg, $type, $start) is-important($important);
+  transition: map.get($transition, "all");
+  &:hover {
+    background-color: map.get($bg, $type, $start) is-important($important);
+  }
+  &:active {
+    background-color: map.get($bg, $type, $start) is-important($important);
   }
 }
 
@@ -117,17 +151,18 @@
 }
 
 @mixin item-focus($important: false) {
-  background-color: map.get($bg, "light") is-important($important);
-  &:hover {
-    background-color: map.get($bg, "light") is-important($important);
-  }
-  &:active {
-    background-color: map.get($bg, "light") is-important($important);
-  }
+  @include item("focus", 1, $important);
+  @include color("focus", $important);
+}
+
+@mixin item-primary($important: false) {
+  @include item("primary", 1, $important);
+  @include color("anti", $important);
 }
 
 @mixin item-disabled($important: false) {
-  cursor: not-allowed;
+  // cursor: not-allowed;
+  cursor: unset;
   color: map.get($text, "disabled");
   &:hover,
   &:active {
@@ -149,13 +184,6 @@
   }
 }
 
-@mixin icon-btn($type: "page", $w, $svg-w, $important: false) {
-  @include svg-div($w, $w, $svg-w);
-  @include item($type, $important);
-
-  border-radius: map.get($radius, "base");
-}
-
 @mixin component-base($type: "base") {
   font-size: map.get($font-size, $type);
   border-radius: map.get($radius, $type);
@@ -169,8 +197,4 @@
   padding: map.get($component-padding, $type);
   line-height: map.get($component-size, $type) -
     list.nth(map.get($component-padding, $type), 1) * 2;
-}
-
-@mixin focus($important: false) {
-  color: map.get($text, "brand") is-important($important);
 }

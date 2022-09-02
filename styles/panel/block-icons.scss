@@ -2,7 +2,7 @@
 @use "sass:math";
 @use "../common" as *;
 
-$b-bg: map.get($bg, "page");
+$b-bg: map.get($bg, "page", 1);
 
 $icon-w: map.get($component-size, "small");
 $icon-svg-w: map.get($icon, "small");
@@ -14,8 +14,8 @@ $padding: $fn-space;
 
   &.ft__primary,
   &--active {
-    @include focus($important);
-    @include item("light", true);
+    @include color("focus", $important);
+    @include item("focus", 1, true);
   }
 
   &[data-type="close"] {

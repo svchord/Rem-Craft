@@ -1,0 +1,81 @@
+@use "sass:map";
+@use "sass:math";
+@use "../common" as *;
+
+$border-w: 1px;
+$switch-h: 20px;
+
+$btn-w: 12px;
+$btn-w-hover: 14px;
+$btn-w-active: 20px;
+
+$spacing: math.div($switch-h - $btn-w, 2) - $border-w;
+$spacing-hover: math.div($switch-h - $btn-w-hover, 2) - $border-w;
+
+//开关
+.b3-switch {
+  background-color: map.get($bg, "page", 1);
+  width: 40px;
+  height: $switch-h;
+  border-radius: map.get($radius, "max");
+  border: $border-w solid map.get($border, 1);
+  transition: map.get($transition, "all");
+
+  &::before {
+    display: none !important;
+  }
+
+  &::after {
+    background-color: map.get($border, 1);
+    border: none;
+    width: $btn-w;
+    height: $btn-w;
+    left: $spacing;
+    top: $spacing;
+    bottom: unset;
+    box-shadow: none;
+    border-radius: map.get($radius, "max");
+  }
+
+  &:hover {
+    &::after {
+      width: $btn-w-hover;
+      height: $btn-w-hover;
+      left: $spacing-hover;
+      top: $spacing-hover;
+    }
+  }
+
+  &:active {
+    &::after {
+      width: $btn-w-active;
+    }
+  }
+
+  &:checked {
+    @include item("primary");
+    border-color: map.get($bg, "primary", 1);
+
+    &::after {
+      background-color: map.get($bg, "page", 1);
+      right: $spacing + $btn-w;
+      left: unset;
+      top: $spacing;
+      bottom: unset;
+      transform: translateX($btn-w);
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:hover {
+      border-color: map.get($bg, "primary", 2);
+      &::after {
+        top: $spacing-hover;
+        right: $spacing-hover + $btn-w;
+      }
+    }
+
+    &:active {
+      border-color: map.get($bg, "primary", 3);
+    }
+  }
+}

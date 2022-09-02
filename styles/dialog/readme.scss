@@ -3,12 +3,12 @@
 @use "../common" as *;
 @use "big";
 
-$com-bg: map.get($bg, "page");
+$com-bg: map.get($bg, "page", 1);
 $com-radius: map.get($radius, "large");
 
 //集市Readme
 .config-bazaar__readme {
-  background-color: map.get($bg, "base");
+  background-color: map.get($bg, "base", 1);
   border-radius: big.$dialog-radius;
 
   .item {

@@ -1,11 +1,11 @@
 @use "sass:map";
 @use "sass:math";
 @use "../common" as *;
-@use "../components/list";
+@use "../component/list";
 @use "big";
 
 $w: map.get($component-size, "small");
-$interval: math.div(16px * 2 + 24px - $w, 2);
+$spacing: math.div(16px * 2 + 24px - $w, 2);
 $padding: 24px;
 $meta-w: 80px;
 
@@ -37,8 +37,8 @@ $meta-w: 80px;
         @include component();
         @include svg($w, 8px);
 
-        top: $interval;
-        right: $interval;
+        top: $spacing;
+        right: $spacing;
       }
 
       // 属性弹窗
@@ -104,8 +104,7 @@ $meta-w: 80px;
 
           // 确认按钮
           &.b3-button--text {
-            @include item("brand");
-            color: map.get($text, "anti");
+            @include item-primary();
           }
         }
       }
@@ -115,11 +114,11 @@ $meta-w: 80px;
     .b3-label {
       padding: 20px 8px;
 
-      &:first-child{
+      &:first-child {
         padding-top: 0;
       }
 
-      &:last-child{
+      &:last-child {
         padding-bottom: 0;
       }
 
@@ -163,7 +162,6 @@ $meta-w: 80px;
         padding: 28px $padding;
         .b3-text-field {
           @include component("medium");
-          margin: 28px 0;
         }
       }
     }

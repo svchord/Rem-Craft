@@ -1,0 +1,40 @@
+@use "sass:map";
+@use "sass:math";
+@use "../../common" as *;
+
+// .b3-typography,
+.protyle-wysiwyg [data-node-id] {
+  .img {
+    border-radius: map.get($radius, "base");
+
+    &--select {
+      filter: unset;
+      background-color: var(--b3-theme-primary-lightest);
+    }
+
+    .protyle-icons {
+      top: 5px;
+      right: 0px;
+    }
+
+    img {
+      margin: 5px 0;
+    }
+
+    .protyle-action__drag {
+      $h: 50px;
+      height: $h;
+      right: 3px;
+      top: calc(50% - math.div($h, 2));
+      box-shadow: unset !important;
+      background-color: map.get($border, 2) !important;
+    }
+
+    &:hover {
+      .protyle-icons,
+      .protyle-action__drag {
+        opacity: 1;
+      }
+    }
+  }
+}

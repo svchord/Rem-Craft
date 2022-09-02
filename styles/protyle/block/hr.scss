@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "../../common" as *;
+
+$hr-border: 1px solid map.get($border, 2);
+//分割线
+.protyle-wysiwyg [data-type].hr {
+  margin: 20px 0;
+  > div {
+    border-bottom: $hr-border;
+    margin: 11px 0 12px;
+  }
+}
+
+.b3-typography hr {
+  border-bottom: $hr-border;
+  margin: 20px + 12px 0;
+}

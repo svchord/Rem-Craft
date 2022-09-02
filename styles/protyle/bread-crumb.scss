@@ -3,12 +3,13 @@
 @use "../common" as *;
 @use "../panel/block-icons";
 
-$item-h: map.get($component-size, "small");
+$item-h: map.get($component-size, "base");
 $item-color: map.get($text, "placeholder");
+$fz: map.get($font-size, "exsmall");
 
 //面包屑
 .protyle-breadcrumb {
-  padding: 0px 8px 2px;
+  padding: 0px 8px 0px;
   min-height: $item-h;
 
   &__bar {
@@ -43,12 +44,22 @@ $item-color: map.get($text, "placeholder");
         color: map.get($text, "primary");
       }
     }
+
+    margin: 0 8px;
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
   &__arrow {
-    @include svg(8px);
-    color: map.get($text, "disabled");
-    margin: math.div($item-h - 8px, 2) 4px;
+    // @include svg(8px);
+    // color: map.get($text, "disabled");
+    // margin: math.div($item-h - 8px, 2) 4px;
+    width: 0;
+    height: $fz;
+    border-right: 1px solid map.get($text, "disabled");
+    transform: rotate(23deg);
+    margin: 0;
   }
 
   .block__icon {

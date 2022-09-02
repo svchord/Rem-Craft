@@ -19,11 +19,12 @@ $s-h: 22px;
       bottom: $s-h !important;
       left: unset !important;
       right: 0px;
-      // z-index: 0;
+      z-index: 0;
 
-      // &.fn__none {
-      //   display: block ;
-      // }
+      &__icon{
+        margin-right: 8px;
+      }
+
     }
 
     &::after {

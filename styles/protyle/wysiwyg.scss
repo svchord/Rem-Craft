@@ -1,0 +1,58 @@
+@use "sass:map";
+@use "sass:math";
+@use "../common" as *;
+
+$width: 750px;
+$padding: max(64px, 50% - math.div($width, 2));
+$item-pad: 3px 2px;
+
+.protyle {
+  &-content {
+    overflow: overlay;
+  }
+
+  &-wysiwyg {
+    padding-top: 5px !important;
+    padding-bottom: 30vh !important;
+    padding-left: $padding !important;
+    padding-right: $padding !important;
+    transition: unset !important;
+    width: 100% !important;
+
+    [data-node-id][fold="1"]:not(.li):not([data-type="NodeHeading"]) {
+      font-size: 1em !important;
+    }
+  }
+
+  &-wysiwyg {
+    [data-type] {
+      border-radius: map.get($radius, "base");
+    }
+
+    > [data-type] {
+      padding: $item-pad;
+    }
+  }
+
+  &-scroll {
+    right: -60px;
+  }
+
+  //反链计数
+  &-attr {
+    top: 0;
+    width: auto;
+    height: auto;
+
+    &--refcount {
+      top: 0;
+      right: -50%;
+      @include counter(22px);
+    }
+  }
+
+  //文本转语音按钮
+  &-speech {
+    border-color: map.get($border, 2);
+  }
+}

@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "../common" as *;
-@use "../components/list";
+@use "../component/list";
 @use "big";
 
 $padding: $fn-space + $interval;
@@ -59,12 +59,12 @@ $form-h: $btn-h + $padding * 2 + 1px;
       // 块类型筛选按钮
       .svg.ft__on-surface {
         @include item("page");
-        @include svg($btn-h, map.get($icon, "small"));
+        @include svg($btn-h, map.get($icon, "base"));
         border-radius: map.get($radius, "small");
         height: $btn-h !important;
 
         &.ft__primary {
-          @include item("light");
+          @include item-focus();
         }
       }
 
@@ -129,14 +129,8 @@ $form-h: $btn-h + $padding * 2 + 1px;
       }
     }
 
-    // &-content {
-    //   [data-type="search-mark"] {
-    //     @extend %search-mark__model;
-    //   }
-    // }
-
     &-wysiwyg {
-      padding: 16px 64px 90px !important;
+      padding: 5px 64px 90px !important;
     }
   }
 }

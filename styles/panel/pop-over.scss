@@ -3,26 +3,28 @@
 @use "block-icons";
 
 $pop-radius: map.get($radius, "exlarge");
-$pop-bg: map.get($bg, "pop");
+$pop-bg: map.get($bg, "pop", 1);
 $content-min-height: 74px;
 $bread-crumb-height: 32px;
 
 //块引用窗口
-.block__popover {
-  box-shadow: map.get($shadow, 3);
-  border-radius: $pop-radius;
+.block {
+  &__popover {
+    box-shadow: map.get($shadow, 3);
+    border-radius: $pop-radius;
 
-  opacity: 0;
-  margin-top: 25px;
-  &--open {
-    opacity: 1;
-    margin-top: 0px;
-    transition: opacity,
-      margin-top map.get($transition-duration, "base")
-        map.get($transition-function, "ease-in-out");
+    opacity: 0;
+    margin-top: 25px;
+    &--open {
+      opacity: 1;
+      margin-top: 0px;
+      transition: opacity,
+        margin-top map.get($transition-duration, "base")
+          map.get($transition-function, "ease-in-out");
+    }
   }
 
-  .block__icons--border {
+  &__icons--border {
     border-radius: $pop-radius $pop-radius 0 0;
     background-color: $pop-bg;
     .block__icon {
@@ -44,18 +46,24 @@ $bread-crumb-height: 32px;
       }
     }
   }
-  .block__content {
+
+  &__content {
     border-radius: 0 0 $pop-radius $pop-radius;
     background-color: $pop-bg;
+  }
 
-    .block__edit {
-      border: none;
-      
-      .protyle-breadcrumb {
+  &__edit {
+    border: none;
+    min-height: 28px + 120px !important;
+
+    .protyle {
+      &-breadcrumb {
         background-color: $pop-bg;
+
         .block__icon {
           @include block-icons.btn($type: "pop", $important: true);
         }
+
         &__item--active {
           .protyle-breadcrumb__text:not(:empty) {
             color: map.get($text, "placeholder");
@@ -65,8 +73,13 @@ $bread-crumb-height: 32px;
           }
         }
       }
-      .protyle-content {
+
+      &-content {
         background-color: $pop-bg;
+      }
+
+      &-wysiwyg {
+        padding: 16px 132px !important;
       }
     }
   }

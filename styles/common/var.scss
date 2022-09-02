@@ -15,7 +15,8 @@ $color: add-color($color, $color-types, 10);
 
 // 文字颜色
 $text: () !default;
-$text-types: "primary", "secondary", "placeholder", "disabled", "anti", "brand";
+$text-types: "primary", "secondary", "placeholder", "disabled", "anti", "focus",
+  "meta-focus";
 $text: add-style($text, "text", $text-types);
 
 // 线条
@@ -30,16 +31,13 @@ $color: add-color($color, $feat-types, $states);
 
 // 背景色
 $bg: () !default;
-$bg-types: "base", "page", "component", "pop", "brand", "light";
-$bg: add-color($bg, "bg", $bg-types);
+$bg-types: "base", "page", "component", "pop", "primary", "focus";
+$bg: add-color($bg, $bg-types, 4);
 
-// btn
-$hover: () !default;
-$hover: add-color($hover, "hover", $bg-types);
+@each $type in $bg-types {
+  $bg: map.set($bg, $type, 0, transparent);
+}
 
-// active
-$active: () !default;
-$active: add-color($active, "active", $bg-types);
 
 // Box-shadow
 $shadow: () !default;
@@ -231,3 +229,19 @@ $breakpoints-spec: (
   "lg-and-down": "(max-width: #{$xl - 1})",
   "xl-only": "(min-width: #{$xl})",
 ) !default;
+
+// // Font
+// $font-size-6: 10px;
+// $font-size-5: $font-size-6 * 1.2; // 字号-五级字号
+// $font-size-4: $font-size-6 * 1.4; // 字号-四级字号
+// $font-size-3: $font-size-6 * 1.6; // 字号-三级字号
+// $font-size-2: $font-size-6 * 2; // 字号-二级字号
+// $font-size-1: $font-size-6 * 3.6; // 字号-一级字号
+
+// // Line Height
+// $text-line-height-6: 1.5; // 行高-常规
+// $text-line-height-5: 20px; // 行高-对应五级文字
+// $text-line-height-4: 22px; // 行高-对应四级文字
+// $text-line-height-3: 24px; // 行高-对应三级文字
+// $text-line-height-2: 28px; // 行高-对应二级文字
+// $text-line-height-1: 44px; //行高-对应一级文字

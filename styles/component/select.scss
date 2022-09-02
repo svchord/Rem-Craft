@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "../common" as *;
+//选择菜单
+
+.b3-select {
+  @include component();
+  background-color: map.get($bg, "component", 1);
+  &:hover,
+  &:focus {
+    box-shadow: unset;
+  }
+}

@@ -1,10 +1,10 @@
 @use "sass:map";
 @use "../common" as *;
 @use "../dialog/search";
-@use "../components/list";
+@use "../component/list";
 
-$wnd-base: map.get($bg, "base");
-$wnd-bg: map.get($bg, "page");
+$wnd-base: map.get($bg, "base", 1);
+$wnd-bg: map.get($bg, "page", 1);
 
 //边窗动画
 $time: map.get($transition-duration, "slow");

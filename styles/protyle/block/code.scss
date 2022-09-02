@@ -1,0 +1,120 @@
+@use "sass:map";
+@use "../../common" as *;
+@use "../icons";
+
+$top: 34px;
+$right: 16px;
+$bottom: 32px;
+
+$linum-w: 74px;
+
+:root {
+  // 代码片段背景
+  --b3-protyle-code-background: #{map.get($bg, "component", 1)};
+  --b3-protyle-code-linenumber-hl: transparent;
+}
+
+// 代码块按钮组
+.protyle-wysiwyg {
+  .code-block {
+    .protyle-action {
+      // 代码语言按钮
+      &__language {
+        @include item("base");
+        @include v-center(20px);
+        display: inline-flex;
+        text-transform: capitalize;
+        border-radius: map.get($radius, "base");
+        padding: 0 5px;
+        margin: 4px 0 0 4px !important;
+        font-size: 12px !important;
+
+        // 向下图标
+        &::after {
+          content: "";
+          display: inline-flex;
+          width: 10px;
+          height: 20px;
+          margin-left: 4px;
+          @include add-icon(
+            "expand_more",
+            map.get($text, "placeholder"),
+            18,
+            "no-repeat center"
+          );
+        }
+      }
+
+      // 代码复制按钮
+      &__copy {
+        @include icons.btn-text(25px, "secondary", 11px, 11px);
+        // 复制文字
+        &::after {
+          content: "Copy";
+        }
+      }
+
+      &__copy,
+      &__menu {
+        @include item("base", 2);
+      }
+    }
+
+    &:hover.protyle-action__language {
+      opacity: 1;
+    }
+
+    &[fold="1"] {
+      height: 36px !important;
+      .protyle-icon {
+        margin-top: 1.5px !important;
+      }
+      .hljs {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+// 代码块
+.b3-typography,
+.protyle-wysiwyg {
+  .code-block {
+    padding: 0;
+    background-color: map.get($bg, "base", 1);
+    border-radius: map.get($radius, "base");
+    font-family: "HarmonyOS Sans SC 01", "Noto Sans SC 01", "JetBrains Mono 01";
+  }
+
+  // 代码区
+  .hljs {
+    background-color: transparent !important;
+    padding: $top $right $bottom 32px;
+
+    // 有行号的特殊情况
+    &.protyle-linenumber {
+      padding-left: $linum-w;
+      margin: 0;
+    }
+  }
+
+  // 代码行号
+  .protyle-linenumber__rows {
+    padding: $top 0 $bottom;
+    width: $linum-w;
+    background-color: transparent;
+
+    span::before {
+      @include center();
+    }
+  }
+}
+
+//行内代码块
+code {
+  font-family: var(--b3-font-family-code);
+}
+
+[data-type="a"] code {
+  padding: 0 0.4em;
+}

@@ -1,0 +1,293 @@
+@use "sass:map";
+@use "../../common" as *;
+
+$text-color: map.get($text, "secondary");
+
+:root {
+  --b3-protyle-inline-link-color: #{$text-color};
+}
+
+.b3-typography,
+.protyle-wysiwyg [data-node-id] {
+  a,
+  span[data-type="a"]:not(:empty) {
+    border-bottom: 1px solid map.get($border, 2);
+    text-decoration: none;
+    color: $text-color;
+    font-weight: 500;
+    border-radius: unset;
+
+    &:hover {
+      color: map.get($text, "primary");
+      border-color: map.get($border, 1);
+    }
+  }
+}
+
+$icon-path: "#{$asset-path}/icons/link";
+$path-dark: "#{$icon-path}/dark";
+
+@mixin has-icon {
+  padding: 0 0.1em;
+  &::before {
+    content: "";
+    @include svg(1em);
+    display: inline-block;
+    position: relative;
+    background-repeat: round;
+    margin-right: 0.2em;
+    top: 0.1em;
+    opacity: 0.7;
+    transition: map.get($transition, "all");
+  }
+  &:hover::before {
+    opacity: 0.9;
+  }
+}
+
+$links: (
+  "es://": "everything.svg",
+  "zotero://": "zotero.ico",
+  "bookxnotepro://": "bookxnote.ico",
+  "http": "net2.svg",
+);
+
+@each $href, $file in $links {
+  .b3-typography a[href^="#{$href}"],
+  .protyle-wysiwyg a[href^="#{$href}"],
+  .protyle-wysiwyg span[data-type="a"][data-href^="#{$href}"]:not(:empty) {
+    @include has-icon();
+    &::before {
+      background-image: url("#{$icon-path}/#{$file}");
+    }
+  }
+}
+
+$domains: (
+  // siyuan
+  "b3log.org": "b3log.png",
+  "https://ld246.com": "ld246.ico",
+  "b3log.org/siyuan": "siyuan.svg",
+
+  // 电商
+  "taobao.com": "taobao.svg",
+  "jd.com": "jd.ico",
+  "pinduoduo.com": "pinduoduo.svg",
+  "alibaba.com": "alibaba.svg",
+  "tmall.com": "tianmao.png",
+  "amazon.com": "amazon.ico",
+
+  // 影音
+  "iq.com": "aiqiyi.svg",
+  "youku.com": "youku.ico",
+  "b23.tv": "bilibili.svg",
+  "bilibili.com": "bilibili.svg",
+  "youtube.com": "logo_youtube_play_video_icon.svg",
+
+  // 云服务
+  "lanzoui.com": "lanzouyun.ico",
+  "aliyundrive.com": "aliyundrive.png",
+  "cloud.189.cn": "tianyiyun.png",
+  "1drv.ms": "onedrive.svg",
+  "sharepoint.com": "sharepoint.svg",
+  "weiyun.com": "weiyun.svg",
+  "cloud.tencent.com": "tencentcloud.png",
+  "aliyun.com": "aliyun.ico",
+  "jianguoyun.com": "jianguoyun.ico",
+
+  // 大厂
+  "microsoft.com": "microsoft.svg",
+  "google.com": "logo_google_icon.svg",
+  "chrome.google.com": "chrome-web-store.svg",
+  //百度
+  "baidu.com": "baidu.svg",
+  "pan.baidu.com": "baiduwangpan.svg",
+  "tieba.baidu.com": "logo_baidu_tieba_logo.svg",
+  //QQ
+  "weixin.qq.com": "wechat.svg",
+  "y.qq.com": "qqmusic.ico",
+  "v.qq.com": "qqvideo.ico",
+  "news.qq.com": "newsqq.ico",
+  "weread.qq.com": "weread.ico",
+  "docs.qq.com": "qqdocs.svg",
+  "qun.qq.com": "QQ.svg",
+  // 163
+  "163.com": "news163.ico",
+  "music.163.com": "netease_music.svg",
+
+  // 工具
+  //笔记
+  "obsidian.md": "obsidian.ico",
+  "yuque.com": "yuque.svg",
+  "wolai.com": "logo_wolai_logo.svg",
+  "notion.": "logo_notion-logo.svg",
+  "flomoapp.com": "flomo.png",
+  "mubu.com": "mubu.ico",
+  "flowus.cn": "flowus.png",
+  "logseq.com": "logseq.png",
+  "dida365.com": "dida365.ico",
+  //代码托管
+  "gitee.com": "gitee.svg",
+  "github.com": "github_icon.svg",
+  "github.io": "blog.svg",
+  //搜索
+  "bing.com": "bing.svg",
+  "sogou.com": "sogou.ico",
+  "so.com": "so.ico",
+  //wiki文档
+  "wikipedia.org": "wikipedia.svg",
+  "runoob.com": "runoob.ico",
+  "w3school.com": "w3school.png",
+  "zh.javascript.info": "zhjavascript.png",
+  "developer.mozilla.org": "developermozilla.png",
+  "electronjs.org": "electronjs.ico",
+  "hub.docker.com": "hubdocker.ico",
+  "liaoxuefeng.com": "liaoxuefeng.png",
+  "uanyifeng.com": "uanyifeng.png",
+  "zhangxinxu.com": "zhangxinxu.ico",
+  "pythonav.com": "pythonav.png",
+  "iconfont.cn": "iconfont.svg",
+  "vue": "vue.ico",
+  //软件
+  "getquicker.net": "Quicker.svg",
+  "visualstudio.com": "vsvisual-studio-code.svg",
+  "mediatrack.cn": "mediatrack.ico",
+  "xinpianchang.com": "xinpianchang.ico",
+  "deepl.com": "deepl.png",
+  "qiime.org": "qiime.ico",
+  "pypi.org": "pypi.ico",
+  //其他
+  "leetcode.cn": "leetcode.ico",
+  "jianshu.com": "jianshu.svg",
+  "coursera.org": "coursera.svg",
+
+  // 社区
+  //学习
+  "zhihu.com": "zhihu.svg",
+  "juejin.cn": "juejin.png",
+  "sspai.com": "sspai.svg",
+  "blog.csdn.net": "csdn.svg",
+  "cnblogs.com": "cnblogs.ico",
+  "stackoverflow.com": "stack-overflow.svg",
+  "segmentfault.com": "segmentfault.ico",
+  "51cto.com": "51cto.ico",
+  "oschina.net": "oschina.svg",
+  "v2ex.com": "v2ex.ico",
+  "bbs.huaweicloud.com": "bbshuaweicloud.ico",
+  //综合
+  "ghxi.com": "ghxi.ico",
+  "52pojie.cn": "52pojie.ico",
+  //社交
+  "xiaohongshu.com": "xiaohongshu.ico",
+  "facebook.com": "facebook.png",
+  "weibo.com": "logo_weibo_icon.svg",
+  "twitter.com": "logo_twitter.svg",
+  "douban.com": "social-douban.svg",
+  "douyin.com": "douyin.png",
+  "tiktok.com": "douyin.png",
+  "discord.": "discord.svg",
+
+  // 新闻
+  "sohu.com": "souhu.svg",
+  "guancha.cn": "guancha.ico",
+  "thepaper.cn": "thepaper.ico",
+  "toutiao.com": "toutiao.ico",
+  "cctv.com": "cctv.ico",
+
+  // 网课
+  "icourse163.org": "mooc.png",
+  "imooc.com": "imooc.svg",
+
+  // 成人
+  "pornhub.com": "pornhub.ico",
+
+  // 科研
+  "ncbi.nlm.nih.gov": "ncbi.svg",
+  "pubmed.ncbi.nlm.nih.gov": "pubmed.ico",
+  "cell.com": "cell.ico",
+  "nature.com": "nature.png",
+  "rcsb.org": "pdb.ico",
+  "sciencenet.cn": "sciencenet.ico",
+  "biostars.org": "biostars.ico",
+  "cnki.net": "cnki.ico",
+
+  // 官网
+  "hust.edu.cn": "hust.jpg"
+);
+
+@each $href, $file in $domains {
+  .b3-typography a[href*="#{$href}"],
+  .protyle-wysiwyg a[href*="#{$href}"],
+  .protyle-wysiwyg span[data-type="a"][data-href*="#{$href}"]:not(:empty) {
+    @include has-icon();
+    &::before {
+      background-image: url("#{$icon-path}/#{$file}");
+    }
+  }
+}
+
+$dark: (
+  "github.com": "github_icon.png",
+  "wolai.com": "logo_wolai_logo.svg",
+);
+
+@each $href, $file in $dark {
+  .b3-typography a[href*="#{$href}"],
+  .protyle-wysiwyg a[href*="#{$href}"],
+  .protyle-wysiwyg span[data-type="a"][data-href*="#{$href}"]:not(:empty) {
+    @include has-icon();
+    &::before {
+      .dark & {
+        background-image: url("#{$path-dark}/#{$file}");
+      }
+    }
+  }
+}
+
+$assets: (
+  ".zip": "compress.svg",
+  ".tar": "compress.svg",
+  ".tar.gz": "compress.svg",
+  ".gz": "compress.svg",
+  ".pdf": "pdf.svg",
+  ".mp4": "videos.svg",
+  ".flv": "videos.svg",
+  ".mkv": "videos.svg",
+  ".xls": "excel_icon.svg",
+  ".xlsx": "excel_icon.svg",
+  ".ppt": "powerpoint_icon.svg",
+  ".pptx": "powerpoint_icon.svg",
+  ".doc": "word_icon.svg",
+  ".docx": "word_icon.svg",
+  ".txt": "txt.svg",
+  ".py": "python_icon.svg",
+  ".R": "r_lang.svg",
+  ".r": "r_lang.svg",
+  ".js": "js.svg",
+  ".html": "html.svg",
+  ".css": "css.svg",
+  ".md": "logo-markdown.svg",
+  ".ipynb": "jupyter.svg",
+);
+
+@each $href, $file in $assets {
+  .b3-typography a[href^="assets/"][href$="#{$href}"],
+  .protyle-wysiwyg span[data-type="a"][data-href$="#{$href}"]:not(:empty),
+  .protyle-wysiwyg a[href$="#{$href}"] {
+    @include has-icon();
+    &::before {
+      background-image: url("#{$icon-path}/#{$file}");
+    }
+  }
+}
+
+.protyle-wysiwyg span[data-type="a"][data-href*="cloud.189.cn"]:not(:empty),
+.protyle-wysiwyg a[href*="cloud.189.cn"],
+.b3-typography a[href*="cloud.189.cn"] {
+  &::before {
+    background-size: 1.6em 1em;
+    background-position: left -0.2em top 0.1em;
+    width: 1.1em;
+    height: 1.1em;
+  }
+}

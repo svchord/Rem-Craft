@@ -1,0 +1,32 @@
+@use "sass:map";
+@use "../common" as *;
+
+$t-bg: map.get($bg, "pop", 1);
+
+:root {
+  // 提示
+  --b3-tooltips-color: #{$t-bg};
+}
+
+@mixin tooltips {
+  box-shadow: map.get($shadow, 1);
+  background-color: $t-bg;
+  color: map.get($text, "primary");
+  padding: 6px 8px;
+  border-radius: map.get($radius, "base");
+}
+
+//tips
+.b3-tooltips {
+  &::before {
+    border: none;
+  }
+  &::after {
+    @include tooltips;
+  }
+}
+
+//悬浮提示条
+#tooltip {
+  @include tooltips;
+}

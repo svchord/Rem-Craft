@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "../common" as *;
-@use "../components/list";
+@use "../component/list";
 
 #keymapList {
   .b3-list {
@@ -12,7 +12,7 @@
 
       &:hover {
         .b3-text-field {
-          background-color: map.get($bg, "page");
+          background-color: map.get($bg, "page", 1);
         }
       }
 

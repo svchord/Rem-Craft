@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "../../common" as *;
+
+$search-bg: map.get($color, "yellow", 2);
+$mark: rgba(var(--brand-base), 0.3);
+
+:root {
+  // 编辑器搜索颜色
+  --b3-protyle-search-background: #{$search-bg};
+  --b3-protyle-inline-mark-color: #{map.get($text, "primary")};
+  --b3-protyle-inline-mark-background: #{$search-bg};
+}
+
+.b3-typography,
+.protyle-wysiwyg {
+  mark {
+    // background-color: transparent;
+    background-image: linear-gradient(
+      transparent,
+      transparent 50%,
+      $mark 90%,
+      $mark 100%
+    );
+  }
+}

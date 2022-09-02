@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "../../common" as *;
+
+.protyle-wysiwyg [data-node-id].iframe {
+  .iframe-content {
+    video {
+      cursor: pointer;
+    }
+  }
+
+  .protyle-action__drag {
+    &,
+    &::after {
+      background-color: map.get($border, 2) !important;
+      box-shadow: unset !important;
+    }
+
+    height: 54px;
+    bottom: -4px;
+
+    &::after {
+      width: 54px;
+    }
+  }
+}

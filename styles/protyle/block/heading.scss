@@ -1,0 +1,33 @@
+@use "sass:map";
+@use "sass:math";
+@use "../../common" as *;
+@use "../gutters";
+
+$left: -18px - gutters.$tran - 3px;
+
+@mixin heading($lv) {
+  $fz: 32px - $lv * 4px;
+  $lh: $fz + 10px;
+  font-size: $fz;
+  line-height: $lh;
+  margin-top: $lh;
+  margin-bottom: math.div($lh, 2);
+}
+
+.b3-typography,
+.protyle-wysiwyg {
+  @for $i from 1 through 6 {
+    h#{$i},
+    .h#{$i} {
+      white-space: pre-wrap;
+      word-break: break-word;
+      padding: 0 2px;
+      @include heading($i);
+    }
+  }
+}
+
+.protyle-wysiwyg div[fold="1"][data-type="NodeHeading"]:before {
+  // top: 15px;
+  left: $left !important;
+}

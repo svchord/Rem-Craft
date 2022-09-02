@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "../common" as *;
-@use "../components/list";
+@use "../component/list";
 
 $padding: 16px;
 
@@ -45,7 +45,7 @@ $padding: 16px;
   @include side-list();
   // 文档选择
   .b3-list-item[data-type="switchNotebook"] {
-    background-color: map.get($bg, "component") !important;
+    background-color: map.get($bg, "component", 1) !important;
   }
   // 文档展示
   .history__text {

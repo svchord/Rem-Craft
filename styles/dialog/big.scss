@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "../common" as *;
-@use "../components/form";
-@use "../components/list";
+@use "../component/form";
+@use "../component/list";
 
 //弹窗蒙版
 $dialog-scrim: map.get($mask, "active");
@@ -27,7 +27,7 @@ $search-h: 50px;
 .b3-dialog__container {
   box-shadow: map.get($shadow, 3);
   border-radius: $dialog-radius;
-  background-color: map.get($bg, "page");
+  background-color: map.get($bg, "page", 1);
 
   &[style*="80vw"] {
     width: $large-width !important;
@@ -52,7 +52,7 @@ $search-h: 50px;
       // 搜索文本框
       .b3-text-field {
         border-radius: $dialog-radius $dialog-radius 0 0;
-        background-color: map.get($bg, "page");
+        background-color: map.get($bg, "page", 1);
 
         &:hover,
         &:focus {
@@ -75,6 +75,8 @@ $search-h: 50px;
     // 侧边导航栏
     .b3-tab-bar {
       margin: $fn-space;
+      // padding: 0 $fn-space ;
+      // border-right: $fn-border;
       width: 150px !important;
 
       // 导航按钮

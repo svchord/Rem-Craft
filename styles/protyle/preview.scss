@@ -1,0 +1,33 @@
+@use "sass:map";
+@use "../common" as *;
+
+.protyle-preview {
+  // tab栏
+  &__action {
+    background-color: map.get($bg, "page", 1);
+    padding: 0 0 8px;
+
+    button {
+      @include item("page");
+      @include component();
+
+      &:hover {
+        color: unset;
+      }
+
+      &.b3-tooltips {
+        @include svg-div(map.get($component-size, "base"), 12px);
+        margin: 0 5px;
+      }
+    }
+
+    &--current {
+      @include item("focus", 1, true);
+      color: map.get($text, "focus") !important;
+    }
+  }
+
+  // >.b3-typography{
+  //   // width: 750px;
+  // }
+}

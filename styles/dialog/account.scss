@@ -9,7 +9,7 @@
     margin: 16px 0px;
   }
   &--text {
-    background-color: map.get($bg, "page");
+    background-color: map.get($bg, "page", 1);
   }
 }
 
@@ -20,7 +20,7 @@
   .b3-button {
     @include component();
     &--text {
-      @include item("light");
+      @include item-focus();
     }
   }
 

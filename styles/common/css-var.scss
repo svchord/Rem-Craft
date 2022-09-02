@@ -4,14 +4,14 @@
 :root {
   // 主色
   --b3-theme-primary: rgb(var(--brand-base));
-  --b3-theme-primary-light: rgba(var(--brand-base), 0.54);
-  --b3-theme-primary-lighter: rgba(var(--brand-base), 0.38);
-  --b3-theme-primary-lightest: rgba(var(--brand-base), 0.12);
+  --b3-theme-primary-light: rgba(var(--brand-6), 0.5);
+  --b3-theme-primary-lighter: rgba(var(--brand-6), 0.3);
+  --b3-theme-primary-lightest: rgba(var(--brand-6), 0.2);
   --b3-theme-secondary: rgb(var(--warning-base));
-  --b3-theme-background: rgb(var(--bg-page));
-  --b3-theme-background-light: rgb(var(--hover-page));
-  --b3-theme-surface: rgb(var(--bg-base));
-  --b3-theme-surface-light: rgb(var(--bg-base));
+  --b3-theme-background: rgb(var(--page-1));
+  --b3-theme-background-light: rgb(var(--page-2));
+  --b3-theme-surface: rgb(var(--base-1));
+  --b3-theme-surface-light: rgb(var(--base-1));
   --b3-theme-error: rgb(var(--error-base));
 
   // 文字颜色
@@ -38,7 +38,7 @@
   //   --b3-protyle-search-current-background: #a5d3fe;
 
   /* 所见即所得行内元素颜色 */
-  --b3-protyle-inline-strong-color: rgb(var(--text-primary));
-  --b3-protyle-inline-em-color: rgb(var(--text-primary));
-  --b3-protyle-inline-s-color: rgb(var(--text-primary));
+  --b3-protyle-inline-strong-color: var(--text-primary);
+  --b3-protyle-inline-em-color: var(--text-primary);
+  --b3-protyle-inline-s-color: var(--text-primary);
 }

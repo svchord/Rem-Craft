@@ -1,18 +1,18 @@
 @use "sass:map";
 @use "sass:math";
 @use "../common" as *;
-@use "../components/list";
+@use "../component/list";
 
 $item-type: "base";
 $w: map.get($component-size, "exsmall");
 
 //页签栏
 .layout-tab-bar {
-  background-color: map.get($bg, "page");
+  background-color: map.get($bg, "page", 1);
 
   .layout__center &:not(:empty) {
     @include component-base($item-type);
-    margin: 8px 8px 2px;
+    margin: 8px 8px 0px;
   }
 
   .item {
@@ -59,7 +59,7 @@ $w: map.get($component-size, "exsmall");
     }
 
     &--pin {
-      background-color: map.get($bg, "component");
+      background-color: map.get($bg, "component", 1);
       .item {
         &__text {
           margin: 0;
@@ -69,22 +69,24 @@ $w: map.get($component-size, "exsmall");
     }
 
     &--focus {
-      @include item-focus();
+      @include color("focus");
+      @include item-unchange("focus");
 
       .item__graphic {
-        @include focus();
+        @include color("focus");
       }
 
       > .item__text {
-        @include focus();
+        @include color("focus");
+
         .layout__wnd--active & {
-          @include focus();
+          @include color("focus");
         }
       }
       .item__close {
-        @include item("light");
+        @include item("focus");
         svg {
-          @include focus();
+          @include color("focus");
         }
       }
 

@@ -1,0 +1,88 @@
+@use "sass:map";
+@use "../common" as *;
+@use "../component/menu";
+
+$util-radius: map.get($radius, "medium");
+
+//工具窗
+.protyle-util {
+  border-radius: $util-radius;
+  padding: 0;
+
+  // 字体弹窗
+  .protyle-font {
+    padding: 4px 16px 16px;
+
+    // 小标题
+    > [style*="margin"] {
+      color: map.get($text, "secondary");
+      margin: 16px 0 10px !important;
+    }
+
+    // 样式组
+    .fn__flex {
+      // 样式按钮
+      .b3-color__square {
+        @include menu.color-square();
+        margin-right: $fn-space;
+        &:hover {
+          border-color: map.get($border, 1);
+        }
+      }
+    }
+
+    // 字体效果按钮
+    &__style {
+      padding: 0 12px;
+      &:hover {
+        border-color: map.get($border, 1);
+      }
+    }
+
+    // 最近使用过的样式
+    > .fn__flex:nth-child(2) {
+      // 清除样式
+      button[style*="margin-right"] {
+        margin-right: $fn-space !important;
+      }
+    }
+  }
+
+  // 特殊语言弹窗
+  .block__popover--move {
+    border-radius: $util-radius;
+
+    .block__icons {
+      padding-left: 16px;
+      border-radius: $util-radius $util-radius 0 0;
+      background-color: map.get($bg, "pop", 1);
+    }
+
+    textarea {
+      border-radius: 0 0 $util-radius $util-radius;
+      background-color: map.get($bg, "pop", 1);
+      padding: 16px;
+      min-height: 180px;
+
+      &,
+      &:hover,
+      &:focus {
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  //代码块选择语言
+  .b3-list {
+    min-width: 240px;
+    margin: 0 $fn-space $fn-space;
+
+    .b3-list-item {
+      padding-left: 8px;
+    }
+  }
+  > .fn__flex-column > .b3-text-field {
+    margin: $fn-space !important;
+  }
+}

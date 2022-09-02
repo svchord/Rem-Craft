@@ -1,0 +1,191 @@
+@use "sass:map";
+@use "sass:math";
+@use "../common" as *;
+@use "wysiwyg";
+@use "icons";
+
+$icon-top: 96px;
+$icon-minus-top: 42px;
+$icon-h: 78px;
+
+$btn-top: 8px;
+$btn-h: 28px;
+$btns-h: $btn-top + $btn-h;
+$btn-top-l: 80px;
+
+// 按钮组
+@mixin btns($h: $btn-h, $type: "placeholder", $fz: 14px) {
+  height: $h;
+  transition: map.get($transition, "fade");
+  .protyle-icon {
+    @include item("page");
+    @include component();
+    @include v-center($h);
+    @include icons.btn-text($h, $type, $fz, 12px);
+    color: map.get($text, $type);
+    font-size: $fz;
+    padding: 0 8px;
+  }
+}
+
+.protyle-background {
+  //无题头图，无emoji
+  min-height: $btn-top-l + $btns-h !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+
+  //文档icon + 题头按钮组
+  &__iconw {
+    left: wysiwyg.$padding !important;
+    height: 0;
+    top: $btn-top-l;
+    display: block;
+
+    //题头按钮组
+    .protyle-icons {
+      @include btns();
+      margin: $btn-top 0 0 -1px;
+      .protyle-icon:nth-child(2)::after {
+        content: "随机图标";
+      }
+    }
+  }
+
+  //无题头图，有emoji
+  &[style*="56px"],
+  &[style*="64px"],
+  &[style*="92px"],
+  &[style*="96px"],
+  &[style*="100px"] {
+    min-height: $icon-top + $icon-h + $btns-h !important;
+    margin: 0px;
+
+    .protyle-background__iconw {
+      top: $icon-top;
+    }
+  }
+
+  //有题头图
+  &[style*="30vh"] {
+    min-height: 30vh !important;
+    border-bottom: $icon-h - $icon-minus-top + $btns-h solid transparent;
+
+    // 有题头图，有emoji
+    .protyle-background__iconw {
+      top: calc(30vh - $icon-minus-top);
+
+      //有题头图，无emoji
+      .protyle-background__icon.fn__none + .protyle-icons {
+        margin-top: $icon-h + 8px;
+      }
+    }
+  }
+
+  //题头图
+  &__img {
+    .protyle-icons {
+      @include btns(26px, "secondary", 12px);
+      right: wysiwyg.$padding;
+      box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px,
+        rgb(15 15 15 / 10%) 0px 2px 4px;
+
+      // 题头图按钮
+      .protyle-icon {
+        border-radius: unset;
+        @include icons.action();
+
+        svg {
+          width: 10px;
+        }
+
+        &:first-child {
+          input {
+            width: 100% !important;
+          }
+        }
+
+        &:not(:last-child) {
+          border-right: $fn-border;
+        }
+
+        &:nth-child(4)::after {
+          content: "调整";
+        }
+      }
+
+      // 拖动图片按钮组
+      &[style*="opacity"] {
+        opacity: 1 !important;
+      }
+
+      // 拖动图片提示条
+      &:nth-child(3) {
+        $h: 25.2px;
+        height: $h;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 1 !important;
+
+        .protyle-icon {
+          @include v-center($h);
+          background-color: transparent;
+          color: map.get($text, "anti");
+          padding: 0em 18px;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    &:hover .protyle-icons {
+      opacity: 1 !important;
+    }
+  }
+
+  //题头emoji
+  &__icon {
+    @include svg-div($icon-h, $icon-h);
+    @include v-center($icon-h);
+    font-size: 54px;
+    border-radius: map.get($radius, "base");
+    margin-left: 3px;
+
+    &:hover {
+      background-color: rgba(var(--gray-5), 0.4);
+    }
+  }
+
+  // 文档标签
+  &__tags {
+    .item {
+      @include component("small");
+      padding: 4px 12px;
+      border-radius: map.get($radius, "max");
+      transition: padding opacity map.get($transition-duration, "base")
+        map.get($transition-function, "fast");
+      box-shadow: map.get($shadow, 1);
+
+      $w: map.get($component-size, "exsmall");
+      $spacing: math.div(map.get($component-size, "small") - $w, 2);
+      &:hover {
+        padding-right: $w + $spacing;
+        color: unset;
+      }
+
+      svg {
+        @include svg($w, 8px);
+        top: $spacing;
+        right: $spacing;
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  &:hover {
+    .protyle-background__iconw .protyle-icons {
+      opacity: 1;
+    }
+  }
+}

@@ -36,11 +36,11 @@
   }
 
   &__svg {
-    background-color: map.get($bg, "page");
+    background-color: map.get($bg, "page", 1);
   }
 
   &__loading {
-    background-color: map.get($bg, "component");
+    background-color: map.get($bg, "component", 1);
     border-radius: map.get($radius, "base");
     > div {
       border-radius: map.get($radius, "base");

@@ -1,0 +1,13 @@
+@use "sass:map";
+@use "../../common" as *;
+
+:root {
+  --b3-protyle-inline-blockref-color: #{map.get($color, "brand", "base")};
+}
+
+span[data-type="block-ref"] {
+  border-radius: map.get($radius,"small") !important;
+  &:hover {
+    background-color: var(--b3-theme-primary-lightest);
+  }
+}

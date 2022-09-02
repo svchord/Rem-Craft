@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "../common" as *;
-@use "../components/list";
+@use "../component/list";
 
 .layout__empty {
   margin: 0 !important;

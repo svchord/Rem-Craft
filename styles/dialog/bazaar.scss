@@ -1,6 +1,17 @@
 @use "sass:map";
 @use "../common" as *;
 
+@mixin card {
+  box-shadow: map.get($shadow, 1);
+  border-radius: map.get($radius, "large");
+  transition: map.get($transition, "all");
+
+  &:hover {
+    box-shadow: map.get($shadow, 2);
+    transform: translateY(-2px);
+  }
+}
+
 .b3-tab-container[data-name="bazaar"] {
   //集市tab
   .layout-tab-bar {
@@ -19,18 +30,10 @@
 
 //集市卡片
 .b3-card {
-  box-shadow: map.get($shadow, 1);
-  background-color: map.get($bg, "pop");
-  transition: map.get($shadow, "all");
-  border-radius: map.get($radius, "large");
-
-  &:hover {
-    background-color: map.get($bg, "pop");
-    box-shadow: map.get($shadow, 2);
-    transform: translateY(-2px);
-  }
-
   $mar-lr: 12px;
+  @include item-unchange("pop");
+  @include card();
+
   &__img {
     margin: 16px $mar-lr 4px;
     width: calc(100% - $mar-lr * 2);
@@ -51,7 +54,7 @@
     }
 
     &[style*="background-color"] {
-      background-color: map.get($bg, "light") !important;
+      background-color: map.get($bg, "focus", 1) !important;
     }
   }
 
@@ -67,9 +70,9 @@
     }
 
     &[style*="background-color"] {
-      background-color: map.get($bg, "light") !important;
+      background-color: map.get($bg, "focus", 1) !important;
       button {
-        @include item("light");
+        @include item-focus();
       }
     }
   }

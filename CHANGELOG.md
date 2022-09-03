@@ -1,6 +1,58 @@
 # 更新历史 | Changelog 
 
 
+## [2.0.0](https://github.com/svchord/Rem-Craft/compare/v1.5.3...v2.0.0) (2022-09-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* 使用了scss @use 特性，重构了所有文件
+
+### 📦‍ 构建相关 | Build System
+
+* :package: 更新依赖 ([5bf56ee](https://github.com/svchord/Rem-Craft/commit/5bf56ee2a36a52574bb15d44b33074a755c74412))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复暗黑模式下的代码块样式问题 ([a8b71c4](https://github.com/svchord/Rem-Craft/commit/a8b71c46f0a1659b81b78564bf0c3134d8b21cc4))
+* :bug: 修复菜单项的文本颜色 ([2bc2fcc](https://github.com/svchord/Rem-Craft/commit/2bc2fccc70bd68fb54f310eae01550c1efd2ac60))
+* :bug: 修复超级块内各类块的内边距问题 ([ce4f3d1](https://github.com/svchord/Rem-Craft/commit/ce4f3d121bca1cd8f9e0e75018cfc91b2ca03846))
+* :bug: 修复超链接中行内代码块的样式 ([c7bfd39](https://github.com/svchord/Rem-Craft/commit/c7bfd39868e9baeb8911c989dfecca271d9c5952))
+* :bug: 修复搜索结果为空时的样式问题 ([e3ce22c](https://github.com/svchord/Rem-Craft/commit/e3ce22c1761b96d726f80a498d29d91ee9e16201))
+* :bug: 修复特殊超级块内代码块的样式 ([7f3ea2c](https://github.com/svchord/Rem-Craft/commit/7f3ea2c1035b28da2437adc1fbf4aca56fe7369b))
+* :bug: 修复替换界面的高度显示问题 ([1d5929b](https://github.com/svchord/Rem-Craft/commit/1d5929b6e26ec42d13b0aeb3053afbffaa4430b0))
+* :bug: 修复引述块折叠后的样式 ([9d3e853](https://github.com/svchord/Rem-Craft/commit/9d3e853267a50536d3ee0815582b857d5f3bf58f))
+* :bug: 修复list的高度问题 ([98178bd](https://github.com/svchord/Rem-Craft/commit/98178bdb2b5d1ca822cb0da939419dd33e785abe))
+* :bug: 优化代码块样式 ([2189e42](https://github.com/svchord/Rem-Craft/commit/2189e4278fe3f5a0c4d296f94d3696610b5cf822))
+* :bug: 优化分割线的样式 ([8c3804f](https://github.com/svchord/Rem-Craft/commit/8c3804fd0df4fcf91de2d0e5002659d057533eb8))
+* :bug: 优化开关样式 ([ab8ec4c](https://github.com/svchord/Rem-Craft/commit/ab8ec4c34ba223df782b761f5594c29e24511fd1))
+* :bug: 优化搜索筛选菜单 ([91d5d48](https://github.com/svchord/Rem-Craft/commit/91d5d484775387e76c54b2d0557662f48ac0bff9))
+* :bug: 优化特殊超级块样式 ([a48f961](https://github.com/svchord/Rem-Craft/commit/a48f9619d07a5df4f22554f89da6f58d311b6d3a))
+* :bug: 优化文档区域底部空白面积 ([09416e4](https://github.com/svchord/Rem-Craft/commit/09416e4b4aa242a5a8d98495a6437dd170683e92))
+* :bug: 优化行内图片样式 ([7ddeea2](https://github.com/svchord/Rem-Craft/commit/7ddeea2c322b8649f6a80b5a0102392f743306b4))
+* :bug: 优化字体 ([4ce0f18](https://github.com/svchord/Rem-Craft/commit/4ce0f1881bed558a7d7d4cc8869baa4d9ec82418))
+
+
+### ♻️ 代码重构 | Code Refactoring
+
+* :recycle: 重构边栏代码 ([3e5c248](https://github.com/svchord/Rem-Craft/commit/3e5c248984ffdbd2595f3bd6c3a9ec31b37f8f22))
+* :recycle: 重构顶栏代码 ([a072872](https://github.com/svchord/Rem-Craft/commit/a07287225c5e7d339104149c8294a29537af3db5))
+* :recycle: 重构公共变量 ([fbfbbb6](https://github.com/svchord/Rem-Craft/commit/fbfbbb67639d20203b066968c544ff0f181d6792))
+* :recycle: 重构提示条代码 ([6de28e7](https://github.com/svchord/Rem-Craft/commit/6de28e70a1b813651762b930f9aedbfddc868bed))
+* :recycle: 重构base相关文件 ([8de2dea](https://github.com/svchord/Rem-Craft/commit/8de2deaf9d683fa2e2093ece763d160c8c4e699b))
+* :recycle: 重构component相关 ([ac174ce](https://github.com/svchord/Rem-Craft/commit/ac174cefc6e0c7518902a5598fc6c3bf4f759bc0))
+* :recycle: 重构css公共变量 ([a9ac479](https://github.com/svchord/Rem-Craft/commit/a9ac4793124719c944961ca9fc0ca4cfdf014592))
+* :recycle: 重构dialog相关 ([7459020](https://github.com/svchord/Rem-Craft/commit/7459020f69e42488194ee7fd424d2e9ebba247e6))
+* :recycle: 重构layout相关代码 ([9c916df](https://github.com/svchord/Rem-Craft/commit/9c916dfbd175c8f67c0cf95525084ade3d5b41f7))
+* :recycle: 重构panel相关 ([8a17e10](https://github.com/svchord/Rem-Craft/commit/8a17e10cb5291f8728117b2301aeced8a1aa3ebe))
+* :recycle: 重构protyle相关 ([32b89f6](https://github.com/svchord/Rem-Craft/commit/32b89f690c736a0d25a13f7cda821680702bafd5))
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新styles目录说明文档 ([021dd02](https://github.com/svchord/Rem-Craft/commit/021dd02bda26edf87d15a903d08b179012980e63))
+
 ### [1.5.3](https://github.com/svchord/Rem-Craft/compare/v1.5.2...v1.5.3) (2022-07-28)
 
 

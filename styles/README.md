@@ -4,48 +4,53 @@
 styles 
 │ 
 ├── base 
-│   ├── _reset.scss         # Reset/normalize 
-│   ├── _typography.scss    # Typography rules 
-│   └──� ...                # Etc… 
-│ 
-├── components 
-│   ├── _block-icons.scss   # 面板顶栏 
-│   ├── _bread-crumb.scss   # 面包屑 
-│   ├── _button.scss        # 按钮 
-│   ├── _emojis.scss        # emoji面板 
-│   ├── _input.scss         # 输入文本框 
-│   └──� ...                # Etc… 
-│ 
-├── layout 
-│   ├── _dock.scss          # 边栏 
-│   ├── _resize.scss        # 分隔线 
-│   ├── _top-bar.scss       # 顶栏 
-│   ├── _wnd.scss           # 边窗 
-│   └──� ...                # Etc… 
-│ 
-├── pages 
-│   ├── _dialog.scss        # Dialog specific styles 
-│   ├── _editor.scss        # Editor specific styles 
-│   └──� ...                # Etc… 
-│ 
-├── themes 
-│   ├── _global.scss        # global theme 
-│   ├── _light.scss         # light theme 
-│   ├── _dark.scss          # dark theme 
-│   └──� ...                # Etc… 
-│ 
-├── utils 
-│   ├── _variables.scss     # Sass Variables 
-│   ├── _functions.scss     # Sass Functions 
-│   ├── _mixins.scss        # Sass Mixins 
-│   ├── _placeholders.scss  # Class & placeholders helpers 
+│   ├── reset.scss          # Reset/normalize 
+│   └── typography.scss     # Typography rules 
+│
+├── common 
+│   ├── css-var.scss        # Siyuan caa-vars 
+│   ├── function.scss       # Sass Functions 
+│   ├── mixins.scss         # Sass Mixins 
+│   ├── utils.scss          # Base Mixins 
+│   └── var.scss            # Sass Variables
+│
+├── component
+│   ├── button.scss         # 按钮 
+│   ├── form.scss           # 搜索框 
+│   ├── list.scss           # 项目列表 
+│   ├── menu.scss           # 菜单
 │   └──� ...                # Etc… 
 │
-├── vendors 
-│   ├── TDesign             # TDesign 
-│   ├── Semi Design         # Semi Design 
+├── dialog 
+│   ├── account.scss        # 账号设置 
+│   ├── bazaar.scss         # 集市 
+│   ├── big.scss            # 大菜单 
+│   ├── history.scss        # 数据历史 
+│   └──� ...                # Etc… 
+│
+├── layout 
+│   ├── dock.scss           # 边栏 
+│   ├── resize.scss         # 分隔线 
+│   ├── top-bar.scss        # 顶栏 
+│   ├── wnd.scss            # 边窗 
 │   └──� ...                # Etc… 
 │ 
+├── panel 
+│   ├── emojis.scss         # emoji面板
+│   ├── file-tree.scss      # 文档树 
+│   ├── graph.scss          # 关系图 
+│   ├── outline.scss        # 大纲 
+│   └──� ...                # Etc… 
+│ 
+├── protyle 
+│   ├── block               # 编辑器内各块
+│   │   ├── code.scss       # 代码块
+│   │   └──� ...            # Etc…
+│   │
+│   ├── bread-crumb.scss    # 面包屑 
+│   ├── cover.scss          # 题头图 
+│   ├── gutters.scss        # 块按钮 
+│   └──� ...                # Etc… 
 │ 
 `── index.scss              # primary Sass file 
 ```

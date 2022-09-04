@@ -1,6 +1,22 @@
 # 更新历史 | Changelog 
 
 
+## [2.1.0](https://github.com/svchord/Rem-Craft/compare/v2.0.0...v2.1.0) (2022-09-04)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 删除不复用的mixin ([bc8a2bb](https://github.com/svchord/Rem-Craft/commit/bc8a2bb16d50f835a4903b392aa06c0a28358de9))
+* :bug: 修复按钮focus状态的底色 ([f720f34](https://github.com/svchord/Rem-Craft/commit/f720f34bb622923f24d50aaf2b65c251740cc51d))
+* :bug: 修复暗黑模式下的变量命名问题 ([2935f72](https://github.com/svchord/Rem-Craft/commit/2935f72c32e105146871575270a75834efda0816))
+* :bug: 修复list和tab-bar上按钮的颜色变化问题 ([90413c4](https://github.com/svchord/Rem-Craft/commit/90413c49ec0eb517f74d1eefb15c9e06046c1c06))
+
+
+### ✨ 新增功能 | Features
+
+* :sparkles: 将主题css变量与样式主文件解耦 ([91d68cc](https://github.com/svchord/Rem-Craft/commit/91d68cccc1a8e09e2ece63f881748adf53de2854))
+* :sparkles: 完善one-dark暗黑模式风格 ([3b7e8df](https://github.com/svchord/Rem-Craft/commit/3b7e8dfcdb8f29887003611b2cc58a749a8b9925))
+
 ## [2.0.0](https://github.com/svchord/Rem-Craft/compare/v1.5.3...v2.0.0) (2022-09-03)
 
 

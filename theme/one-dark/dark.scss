@@ -1,5 +1,4 @@
 // (?<=rgb\(.*)\);
-// (?<=rgb\(.*)\);
 
 :root {
   --mode-btn: "明亮";
@@ -113,13 +112,13 @@
   }
 
   // 文本颜色
-  --text-primary: rgba(255, 255, 255, 90%); // 色彩-文字-主要
-  --text-secondary: rgba(255, 255, 255, 55%); // 色彩-文字-次要
-  --text-placeholder: rgba(255, 255, 255, 35%); // 色彩-文字-占位符/说明
-  --text-disabled: rgba(255, 255, 255, 22%); // 色彩-文字-禁用
-  --text-anti: #000; // 色彩-文字-反色
-  --text-focus: var(--text-anti); // 色彩-文字-品牌
-  --text-meta-focus: #00000070; // 色彩-文字-链接
+  --text-primary: rgba(215, 218, 224); // 色彩-文字-主要
+  --text-secondary: rgb(171, 178, 191); // // 色彩-文字-次要
+  --text-placeholder: rgb(107, 113, 125); // 色彩-文字-占位符/说明
+  --text-disabled: rgba(215, 218, 224, 0.4); // 色彩-文字-禁用
+  --text-anti: rgb(248, 250, 253); // 色彩-文字-反色
+  --text-focus: rgb(248, 250, 253); // 色彩-文字-品牌
+  --text-meta-focus: rgba(248, 250, 253, 0.7); // 色彩-文字-链接
 
   // 线条
   --border-1: var(--gray-8);
@@ -128,7 +127,7 @@
   --border-4: var(--gray-2);
 
   // 基础颜色
-  --brand-base: var(--brand-9); // 色彩-品牌-可操作
+  --brand-base: 77, 120, 204; // 色彩-品牌-可操作
   --warning-base: var(--orange-6); // 色彩-功能-警告
   --error-base: var(--red-6); // 色彩-功能-失败
   --success-base: var(--green-5); // 色彩-功能-成功
@@ -139,9 +138,9 @@
   --pink-base: var(--pink-6);
 
   // 基础颜色的扩展 用于 hover / 聚焦 / 禁用 / 点击 等状态
-  --brand-hover: var(--brand-8); // hover态
-  --brand-focus: var(--brand-7); // focus态，包括鼠标和键盘
-  --brand-active: var(--brand-7); // 点击态
+  --brand-hover: 99, 136, 210; // hover态
+  --brand-focus: 99, 136, 210; // focus态，包括鼠标和键盘
+  --brand-active: 109, 144, 213; // 点击态
   --brand-disabled: var(--brand-3); // 禁用态
   --brand-light: var(--brand-2); // 浅色的选中态
 
@@ -173,35 +172,35 @@
   --info-disabled: var(--blue-3); // 禁用态
   --info-light: var(--blue-2); // 浅色的选中态
 
-  --base-1: 35, 39, 46;
-  --base-2: 52, 56, 61;
-  --base-3: 58, 61, 66;
-  --base-4: 63, 66, 71;
+  --base-1: 30, 34, 39;
+  --base-2: 90, 93, 94, 0.31;
+  --base-3: 99, 102, 103, 0.31;
+  --base-4: 108, 111, 112, 0.31;
 
-  --page-1: 30, 34, 39;
-  --page-2: 49, 52, 56;
-  --page-3: 51, 54, 58;
-  --page-4: 51, 54, 58;
+  --page-1: 35, 39, 46;
+  --page-2: 90, 93, 94, 0.51;
+  --page-3: 99, 102, 103, 0.51;
+  --page-4: 108, 111, 112, 0.51;
 
-  --component-1: var(--gray-3);
-  --component-2: var(--gray-4);
-  --component-3: var(--gray-5);
-  --component-4: var(--gray-6);
+  --component-1: 44, 49, 58; //90, 93, 94, 0.51;
+  --component-2: 50, 56, 66; //99, 102, 103, 0.51;
+  --component-3: 56, 63, 74; //108, 111, 112, 0.51;
+  --component-4: 117, 120, 121, 0.51;
 
-  --pop-1: var(--gray-3);
-  --pop-2: var(--gray-4);
-  --pop-3: var(--gray-5);
-  --pop-4: var(--gray-6);
+  --pop-1: 30, 34, 39;
+  --pop-2: 44, 49, 58;
+  --pop-3: 50, 56, 66;
+  --pop-4: 56, 63, 74;
 
-  --primary-1: var(--brand-base);
-  --primary-2: var(--brand-hover);
-  --primary-3: var(--brand-active);
-  --primary-4: var(--brand-active);
+  --primary-1: 77, 120, 204;
+  --primary-2: 99, 136, 210;
+  --primary-3: 109, 144, 213;
+  --primary-4: 109, 144, 213;
 
-  --focus-1: 50, 56, 67;
-  --focus-2: var(--brand-hover);
-  --focus-3: var(--brand-active);
-  --focus-4: var(--brand-active);
+  --focus-1: 77, 120, 204;
+  --focus-2: 99, 136, 210;
+  --focus-3: 109, 144, 213;
+  --focus-4: 109, 144, 213;
 
   // 基础/下层 投影 hover 使用的组件包括：表格 /
   --shadow-1: 0 4px 6px rgba(0, 0, 0, 6%), 0 1px 10px rgba(0, 0, 0, 8%),

@@ -67,7 +67,7 @@
 
 @mixin drag {
   $drag-width: 2px;
-  $drag-color: map.get($color, "brand", 5);
+  $drag-color: map.get($color, "brand", "hover");
 
   background-color: map.get($bg, "primary", 1);
   // 当前块的上方

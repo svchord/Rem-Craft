@@ -18,7 +18,7 @@ theme.brand = [
 
 theme.config = {
   light: theme.style[0],
-  dark: theme.style[0],
+  dark: theme.style[2],
   brand: theme.brand[0],
 };
 
@@ -60,6 +60,8 @@ theme.mode = (() => {
       theme.updateStyle("lightStyle", theme.light_path);
       break;
     case 1:
+      let html = document.querySelector("html");
+      html.setAttribute("class", "dark");
       theme.updateStyle("darkStyle", theme.dark_path);
       break;
     default:

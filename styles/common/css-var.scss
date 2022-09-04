@@ -4,9 +4,9 @@
 :root {
   // 主色
   --b3-theme-primary: rgb(var(--brand-base));
-  --b3-theme-primary-light: rgba(var(--brand-6), 0.5);
-  --b3-theme-primary-lighter: rgba(var(--brand-6), 0.3);
-  --b3-theme-primary-lightest: rgba(var(--brand-6), 0.2);
+  --b3-theme-primary-light: rgba(var(--brand-base), 0.5);
+  --b3-theme-primary-lighter: rgba(var(--brand-base), 0.3);
+  --b3-theme-primary-lightest: rgba(var(--brand-base), 0.2);
   --b3-theme-secondary: rgb(var(--warning-base));
   --b3-theme-background: rgb(var(--page-1));
   --b3-theme-background-light: rgb(var(--page-2));

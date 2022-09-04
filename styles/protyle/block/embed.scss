@@ -3,7 +3,7 @@
 @use "../../dialog/bazaar";
 
 //块嵌入
-[data-type="NodeBlockQueryEmbed"].render-node {
+.protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
   background-color: map.get($bg, "base", 1);
   padding: 36px 16px 16px;
   border: none;

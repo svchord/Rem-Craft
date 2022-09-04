@@ -195,7 +195,9 @@ $list-depth: 7;
       @include item-tran("focus");
     }
   }
+}
 
+.b3-list:not(.b3-list--border) .b3-list-item {
   // 子元素向右缩进 && 左侧辅助线
   // 循环阴影辅助线
   @function cyclic($cur) {

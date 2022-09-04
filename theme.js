@@ -1,6 +1,6 @@
 theme = {};
 
-theme.root = "/appearance/themes/Rem Craft/theme/";
+theme.root = "/appearance/themes/Rem Craft/themes/";
 
 theme.style = ["tdesign", "semi-design", "one-dark"];
 

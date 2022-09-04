@@ -46,5 +46,6 @@
   );
   top: $interval !important;
   right: $interval !important;
+  height: map.get($component-size, "exsmall") !important;
   color: map.get($text, "secondary");
 }

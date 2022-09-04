@@ -1,6 +1,4 @@
-// (?<=rgb\(.*)\);
-
-:root.dark {
+:root {
   --mode-btn: "明亮";
   --mode-after: "明亮模式";
 
@@ -178,14 +176,14 @@
   --base-4: var(--gray-4);
 
   --page-1: var(--gray-2);
-  --page-2: var(--gray-3);
-  --page-3: var(--gray-4);
-  --page-4: var(--gray-5);
+  --page-2: var(--gray-4);
+  --page-3: var(--gray-5);
+  --page-4: var(--gray-6);
 
-  --component-1: var(--gray-3);
-  --component-2: var(--gray-4);
-  --component-3: var(--gray-5);
-  --component-4: var(--gray-6);
+  --component-1: var(--gray-4);
+  --component-2: var(--gray-5);
+  --component-3: var(--gray-6);
+  --component-4: var(--gray-7);
 
   --pop-1: var(--gray-3);
   --pop-2: var(--gray-4);
@@ -196,7 +194,7 @@
   --brand-2: var(--brand-hover);
   --brand-3: var(--brand-active);
   --brand-4: var(--brand-active);
-  
+
   --focus-1: var(--brand-base);
   --focus-2: var(--brand-hover);
   --focus-3: var(--brand-active);

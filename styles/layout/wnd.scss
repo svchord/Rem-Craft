@@ -120,7 +120,17 @@ $wnd-transition: all $time map.get($transition-function, "fast") 0s;
     // 搜索历史按钮
     #searchHistoryBtn {
       @include component();
-      @include history-btn();
+      width: 36px;
+
+      svg {
+        &:first-child {
+          @include svg(12px);
+        }
+
+        &:last-child {
+          @include svg(8px);
+        }
+      }
     }
 
     // 刷新按钮

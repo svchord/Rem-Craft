@@ -23,20 +23,6 @@
   }
 }
 
-@mixin history-btn {
-  width: 36px;
-
-  svg {
-    &:first-child {
-      @include svg(12px);
-    }
-
-    &:last-child {
-      @include svg(8px);
-    }
-  }
-}
-
 @mixin add-icon($icon_name, $color, $size, $position) {
   background-color: $color;
   $icon_url: "#{$asset-path}/icons/#{$icon_name}_black_#{$size}dp.svg";

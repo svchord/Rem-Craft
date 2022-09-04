@@ -126,7 +126,8 @@
 @mixin item($type, $start: 1, $important: false) {
   background-color: map.get($bg, $type, $start) is-important($important);
   transition: map.get($transition, "all");
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: map.get($bg, $type, $start + 1) is-important($important);
   }
   &:active {

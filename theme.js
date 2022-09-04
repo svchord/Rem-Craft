@@ -57,10 +57,10 @@ theme.mode = (() => {
   /* 根据配置选项判断主题 */
   switch (window.siyuan.config.appearance.mode) {
     case 0:
-      theme.updateStyle("", theme.light_path);
+      theme.updateStyle("lightStyle", theme.light_path);
       break;
     case 1:
-      theme.updateStyle("", theme.dark_path);
+      theme.updateStyle("darkStyle", theme.dark_path);
       break;
     default:
       break;

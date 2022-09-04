@@ -17,7 +17,7 @@ $color: add-color($color, $color-types, 10);
 $text: () !default;
 $text-types: "primary", "secondary", "placeholder", "disabled", "anti", "focus",
   "meta-focus";
-$text: add-style($text, "text", $text-types);
+$text: add-css-var($text, "text", $text-types);
 
 // 线条
 $border: () !default;
@@ -37,7 +37,6 @@ $bg: add-color($bg, $bg-types, 4);
 @each $type in $bg-types {
   $bg: map.set($bg, $type, 0, transparent);
 }
-
 
 // Box-shadow
 $shadow: () !default;
@@ -124,12 +123,12 @@ $z-index: map.merge(
 // 滚动条
 $scroll: () !default;
 $scroll-states: "base", "hover", "track";
-$scroll: add-style($scroll, "scroll", $scroll-states);
+$scroll: add-css-var($scroll, "scroll", $scroll-states);
 
 // mask
 $mask: () !default;
 $mask-states: "active", "disabled";
-$mask: add-style($mask, "mask", $mask-states);
+$mask: add-css-var($mask, "mask", $mask-states);
 
 // transition
 $transition-duration: () !default;

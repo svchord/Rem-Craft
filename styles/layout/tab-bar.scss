@@ -84,7 +84,7 @@ $w: map.get($component-size, "exsmall");
         }
       }
       .item__close {
-        @include item("focus");
+        @include item-tran("focus");
         svg {
           @include color("focus");
         }

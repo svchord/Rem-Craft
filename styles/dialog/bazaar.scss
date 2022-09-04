@@ -23,9 +23,21 @@
   }
 }
 
-// 筛选图标
-.bazaarPanel > .fn__flex > .svg {
-  margin-left: 4px;
+.bazaarPanel {
+  // 筛选图标
+  > .fn__flex > .svg {
+    margin-left: 4px;
+  }
+  // 已下载
+  &[data-type="downloaded"] {
+    > .fn__flex .b3-button {
+      width: 68px;
+      @include item-focus();
+      &.b3-button--outline {
+        @include item("page");
+      }
+    }
+  }
 }
 
 //集市卡片
@@ -62,16 +74,14 @@
     height: map.get($component-size, "base") + $fn-space * 2;
     padding: $fn-space;
 
-    button {
-      @include component();
-      &:first-child + .fn__space {
-        display: none;
-      }
+    > .block__icon {
+      @include icon-btn("pop", map.get($component-size, "base"), 12px);
     }
 
     &[style*="background-color"] {
       background-color: map.get($bg, "focus", 1) !important;
-      button {
+      > .block__icon {
+        @include color-change("focus");
         @include item-focus();
       }
     }

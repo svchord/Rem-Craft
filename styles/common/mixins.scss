@@ -59,7 +59,7 @@
 }
 
 @mixin icon-btn($type: "page", $w, $svg-w, $important: false) {
-  @include svg-div($w, $w, $svg-w);
+  @include svg-div($w, $svg-w);
   @include item($type, 1, $important);
 
   border-radius: map.get($radius, "base");

@@ -1,6 +1,16 @@
 # 更新历史 | Changelog 
 
 
+### [2.1.1](https://github.com/svchord/Rem-Craft/compare/v2.1.0...v2.1.1) (2022-09-05)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容新版.b3-list--border类选择器 ([6bd64f4](https://github.com/svchord/Rem-Craft/commit/6bd64f4404907bfd55511943d4e317ce753fcb21))
+* :bug: 兼容新版集市已下载tab按钮 ([bcf11b8](https://github.com/svchord/Rem-Craft/commit/bcf11b8fd4041755f623ca4a2d6d0eeca5d56a65))
+* :bug: 修复大纲界面标题样式问题 ([46f7b00](https://github.com/svchord/Rem-Craft/commit/46f7b0083b59428bc90f83312687605a878de1be))
+* :bug: 优化one dark暗黑模式细节 ([ba76aa7](https://github.com/svchord/Rem-Craft/commit/ba76aa771169f54ed4cc33a5c838f053cf9a6e0f))
+
 ## [2.1.0](https://github.com/svchord/Rem-Craft/compare/v2.0.0...v2.1.0) (2022-09-04)
 
 

@@ -5,9 +5,13 @@
   --b3-protyle-inline-blockref-color: #{map.get($color, "brand", "base")};
 }
 
-span[data-type="block-ref"] {
-  border-radius: map.get($radius,"small") !important;
-  &:hover {
-    background-color: var(--b3-theme-primary-lightest);
+.protyle-wysiwyg [data-node-id] {
+  span[data-type="block-ref"],
+  span[data-type="file-annotation-ref"] {
+    opacity: 1;
+    border-radius: map.get($radius, "small") !important;
+    &:hover {
+      background-color: var(--b3-theme-primary-lightest);
+    }
   }
 }

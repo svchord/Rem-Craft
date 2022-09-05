@@ -22,15 +22,17 @@ $item-pad: 3px 2px;
     [data-node-id][fold="1"]:not(.li):not([data-type="NodeHeading"]) {
       font-size: 1em !important;
     }
-  }
 
-  &-wysiwyg {
     [data-type] {
       border-radius: map.get($radius, "base");
     }
 
     > [data-type] {
       padding: $item-pad;
+    }
+
+    .def--mark {
+      color: map.get($text, "primary") !important;
     }
   }
 

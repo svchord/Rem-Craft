@@ -11,7 +11,7 @@
     width: 18px;
     height: 18px;
     box-shadow: map.get($shadow, 0);
-    border: 4px solid map.get($bg, "pop", 1);
+    border: 4px solid map.get($text, "anti");
     border-radius: map.get($radius, "circle");
     margin-top: -6.5px;
     transform: unset !important;

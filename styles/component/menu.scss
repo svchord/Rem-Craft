@@ -109,7 +109,8 @@ $padding: 6px;
     &--selected {
       @include item("focus");
       .b3-menu {
-        &__icon {
+        &__icon,
+        &__label {
           @include color("focus");
         }
         &__accelerator {
@@ -140,7 +141,7 @@ $padding: 6px;
     top: 0 - $padding;
     border: none;
 
-    $sub-interval: 10px;
+    $sub-interval: 14px;
     margin-left: $sub-interval;
     margin-right: $sub-interval;
 

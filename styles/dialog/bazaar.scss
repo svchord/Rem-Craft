@@ -50,6 +50,7 @@
     margin: 16px $mar-lr 4px;
     width: calc(100% - $mar-lr * 2);
     border-radius: map.get($radius, "large");
+    opacity: 0.8;
 
     img {
       object-fit: cover;

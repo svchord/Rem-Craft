@@ -3,7 +3,7 @@
 @use "block-icons";
 
 $pop-radius: map.get($radius, "exlarge");
-$pop-bg: map.get($bg, "pop", 1);
+$pop-bg: map.get($bg, "page", 1);
 $content-min-height: 74px;
 $bread-crumb-height: 32px;
 
@@ -28,7 +28,6 @@ $bread-crumb-height: 32px;
     border-radius: $pop-radius $pop-radius 0 0;
     background-color: $pop-bg;
     .block__icon {
-      @include block-icons.btn($type: "pop", $important: true);
       &[data-type="pin"] {
         svg {
           transform: rotate(45deg);
@@ -59,10 +58,6 @@ $bread-crumb-height: 32px;
     .protyle {
       &-breadcrumb {
         background-color: $pop-bg;
-
-        .block__icon {
-          @include block-icons.btn($type: "pop", $important: true);
-        }
 
         &__item--active {
           .protyle-breadcrumb__text:not(:empty) {

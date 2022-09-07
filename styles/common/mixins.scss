@@ -45,6 +45,7 @@
 
 @mixin emoji-icon($width, $fz, $icon-width) {
   @include v-center($width);
+  @include center();
   padding: 0;
   width: $width;
   // 原生emoji
@@ -62,7 +63,7 @@
   @include svg-div($w, $svg-w);
   @include item($type, 1, $important);
 
-  border-radius: map.get($radius, "base");
+  border-radius: map.get($radius, "small");
 }
 
 @mixin drag {

@@ -74,10 +74,10 @@ $search-h: 50px;
 
     // 侧边导航栏
     .b3-tab-bar {
-      margin: $fn-space;
-      // padding: 0 $fn-space ;
+      margin: $fn-space 0;
+      padding: 0 $fn-space;
       // border-right: $fn-border;
-      width: 150px !important;
+      width: 160px !important;
 
       // 导航按钮
       .b3-list-item--big {

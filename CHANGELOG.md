@@ -1,6 +1,17 @@
 # 更新历史 | Changelog 
 
 
+### [2.1.2](https://github.com/svchord/Rem-Craft/compare/v2.1.1...v2.1.2) (2022-09-08)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容新版集市card样式 ([bfdf9b1](https://github.com/svchord/Rem-Craft/commit/bfdf9b1a99b199a43f3ebf9647eb83a43b56b355))
+* :bug: 兼容新版页签栏按钮 ([e6f3d49](https://github.com/svchord/Rem-Craft/commit/e6f3d497c88c30df6d3ad7fe23914f5ad16fa94e))
+* :bug: 修复emojis面板的几个问题 ([ae842fb](https://github.com/svchord/Rem-Craft/commit/ae842fb9cb3b6f6998d3f09ad0f9c1b604c21ed7))
+* :bug: 优化大弹窗左侧tab栏 ([0ea1bc6](https://github.com/svchord/Rem-Craft/commit/0ea1bc64b81076aef35f83e880a9548e7f718090))
+* :bug: 整理link-icon ([7af98cc](https://github.com/svchord/Rem-Craft/commit/7af98cc81f12971234659020966fe4ca1dd8195a))
+
 ### [2.1.1](https://github.com/svchord/Rem-Craft/compare/v2.1.0...v2.1.1) (2022-09-05)
 
 

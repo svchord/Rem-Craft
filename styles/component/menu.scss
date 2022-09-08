@@ -257,6 +257,10 @@ $padding: 6px;
     max-height: none !important;
     width: auto !important;
 
+    > .emojis {
+      column-span: all;
+      width: 360px;
+    }
     .b3-color__square {
       @include color-square(list.$text-h, 16px, 11px);
     }

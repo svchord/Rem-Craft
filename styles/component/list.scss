@@ -5,7 +5,7 @@
 
 $list-type: "medium";
 $item-h: map.get($component-size, $list-type);
-$text-h: 22px;
+$text-h: 20px;
 $padding: math.div($item-h - $text-h, 2);
 
 //折叠按钮宽度
@@ -23,6 +23,7 @@ $list-depth: 7;
 @mixin list-item($type: "page") {
   @include item($type);
   @include component-base($list-type);
+  font-size: 13px;
   height: auto;
 }
 

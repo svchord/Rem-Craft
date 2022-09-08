@@ -36,7 +36,7 @@ $type-radius: map.get($radius, "base");
 
   &__item {
     @include item("pop");
-    @include emoji-icon(30px, 14px, map.get($icon, "large"));
+    @include emoji-icon(32px, 18px, 18px);
     margin: 0 4px 4px 0;
 
     &--current {

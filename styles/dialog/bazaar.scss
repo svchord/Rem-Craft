@@ -65,10 +65,6 @@
       @include svg(map.get($icon, "small"));
       margin-top: 3.5px;
     }
-
-    &[style*="background-color"] {
-      background-color: map.get($bg, "focus", 1) !important;
-    }
   }
 
   &__actions {
@@ -78,12 +74,19 @@
     > .block__icon {
       @include icon-btn("pop", map.get($component-size, "base"), 12px);
     }
+  }
 
-    &[style*="background-color"] {
-      background-color: map.get($bg, "focus", 1) !important;
-      > .block__icon {
-        @include color-change("focus");
-        @include item-focus();
+  &--current {
+    .b3-card {
+      &__info {
+        background-color: map.get($bg, "focus", 1);
+      }
+      &__actions {
+        background-color: map.get($bg, "focus", 1);
+        > .block__icon {
+          @include color-change("focus");
+          @include item-focus();
+        }
       }
     }
   }

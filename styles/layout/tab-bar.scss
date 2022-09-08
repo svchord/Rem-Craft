@@ -94,5 +94,15 @@ $w: map.get($component-size, "exsmall");
         box-shadow: unset !important;
       }
     }
+
+    &--readonly {
+      // @include item-unchange("component");
+      .item__close {
+        &[data-type="new"] {
+          @include svg-div($w, 12px, true);
+          margin-left: 0;
+        }
+      }
+    }
   }
 }

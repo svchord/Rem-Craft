@@ -1,0 +1,29 @@
+@use "../common" as *;
+@use "../dialog/small";
+
+body > {
+  #preview {
+    padding-left: 64px !important;
+    padding-right: 64px !important;
+    background-color: get($bg, "page", 1);
+    font-family: var(--b3-font-family);
+  }
+
+  #action {
+    width: 240px;
+    background-color: get($bg, "page", 1);
+    margin: $fn-space * 2 0;
+    padding: 0 $fn-space * 2;
+    border-left: $fn-border;
+    font-family: var(--b3-font-family);
+
+    .b3-slider {
+      width: 100% !important;
+    }
+
+    > .fn__flex:last-child {
+      @include small.actions();
+      padding: $fn-space * 2 0;
+    }
+  }
+}

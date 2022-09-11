@@ -1,4 +1,3 @@
-
 @use "../../common" as *;
 
 //标签
@@ -9,11 +8,9 @@ $tag-color: get($text, "secondary");
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type="tag"] {
-  @include item("page");
+  @include item-focus();
   border-radius: get($radius, "max");
-  color: $tag-color;
-  border: none;//$fn-border;
-  box-shadow: get($shadow, 0);
+  border: none;
   position: relative;
   padding: 0.1em 0.6em;
   font-size: 85%;

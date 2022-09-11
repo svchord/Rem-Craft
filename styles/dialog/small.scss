@@ -1,4 +1,3 @@
-
 @use "sass:math";
 @use "../common" as *;
 @use "../component/list";
@@ -8,6 +7,27 @@ $w: get($component-size, "small");
 $spacing: math.div(16px * 2 + 24px - $w, 2);
 $padding: 24px;
 $meta-w: 80px;
+
+@mixin actions {
+  $space: 3%;
+
+  .fn__space {
+    width: $space;
+  }
+
+  .b3-button {
+    @include item("pop");
+    color: get($text, "primary");
+    box-shadow: get($shadow, 0);
+    letter-spacing: 0.3px;
+    width: math.div(100% - $space, 2);
+
+    // 确认按钮
+    &.b3-button--text {
+      @include item-primary();
+    }
+  }
+}
 
 //小弹窗
 .b3-dialog__container {
@@ -89,55 +109,7 @@ $meta-w: 80px;
       // 弹窗底部按钮
       &__action {
         padding: $padding;
-        $space: 3%;
-
-        .fn__space {
-          width: $space;
-        }
-
-        .b3-button {
-          @include item("pop");
-          color: get($text, "primary");
-          box-shadow: get($shadow, 0);
-          letter-spacing: 0.3px;
-          width: math.div(100% - $space, 2);
-
-          // 确认按钮
-          &.b3-button--text {
-            @include item-primary();
-          }
-        }
-      }
-    }
-
-    // PDF导出弹窗
-    .b3-label {
-      padding: 20px 8px;
-
-      &:first-child {
-        padding-top: 0;
-      }
-
-      &:last-child {
-        padding-bottom: 0;
-      }
-
-      // 选项名
-      .fn__flex-1:first-child {
-        font-size: get($font-size, "base");
-      }
-
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3) {
-        .fn__flex-1:first-child {
-          line-height: get($component-size, "base");
-        }
-      }
-
-      // 第三行选项
-      #scaleFactor {
-        width: 200px;
+        @include actions();
       }
     }
 

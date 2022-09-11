@@ -1,6 +1,5 @@
 // (?<=rgb\(.*)\);
 @use "./palette" as *;
-@use "./global" as *;
 
 :root {
   --mode-btn: "明亮";

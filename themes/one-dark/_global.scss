@@ -1,5 +1,0 @@
-@use "sass:color";
-
-@function hex2rgb($color) {
-  @return color.red($color), color.green($color), color.blue($color);
-}

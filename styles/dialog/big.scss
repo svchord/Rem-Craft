@@ -14,7 +14,7 @@ $search-h: 50px;
 
 :root {
   /* 遮罩 */
-  --b3-mask-background: $dialog-scrim;
+  --b3-mask-background: #{$dialog-scrim};
 }
 
 //弹窗

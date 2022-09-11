@@ -1,4 +1,3 @@
-
 @use "var" as *;
 @use "function" as *;
 
@@ -26,6 +25,32 @@
   // 线条
   --b3-border-color: rgb(var(--border-3));
 
+  /* 卡片背景 */
+  $types: "warning", "error", "success", "info";
+
+  @each $type in $types {
+    #{--b3-card-#{$type}-color}: get($color, $type, "base");
+    #{--b3-card-#{$type}-background}: get($color, $type, "light");
+  }
+
+  /* 自定义文字 */
+  --b3-font-color1: var(--b3-card-error-color);
+  --b3-font-color2: var(--b3-card-warning-color);
+  --b3-font-color3: var(--b3-card-info-color);
+  --b3-font-color4: var(--b3-card-success-color);
+  --b3-font-color5: var(--b3-theme-on-surface);
+  --b3-font-color6: var(--b3-theme-primary);
+  --b3-font-color7: var(--b3-theme-secondary);
+  --b3-font-color8: var(--b3-theme-error);
+  --b3-font-color13: var(--b3-theme-background);
+  --b3-font-background1: var(--b3-card-error-background);
+  --b3-font-background2: var(--b3-card-warning-background);
+  --b3-font-background3: var(--b3-card-info-background);
+  --b3-font-background4: var(--b3-card-success-background);
+  --b3-font-background5: var(--b3-theme-surface);
+  --b3-font-background6: var(--b3-theme-primary-light);
+  --b3-font-background13: var(--b3-theme-on-background);
+
   /* 动画效果 */
   --b3-transition: #{get($transition, "all")};
 
@@ -34,12 +59,112 @@
     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   --b3-dialog-shadow: #{get($shadow, 3)};
 
-  /* 编辑器搜索颜色 */
-  //   --b3-protyle-search-border-color: #f2e680;
-  //   --b3-protyle-search-current-background: #a5d3fe;
-
   /* 所见即所得行内元素颜色 */
   --b3-protyle-inline-strong-color: var(--text-primary);
   --b3-protyle-inline-em-color: var(--text-primary);
   --b3-protyle-inline-s-color: var(--text-primary);
+}
+
+:root {
+  --b3-card-info-color: rgb(13, 60, 97);
+
+  /* 自定义文字 */
+  --b3-font-color9: #f5539e;
+  --b3-font-color10: #944194;
+  --b3-font-color11: #65b84d;
+  --b3-font-color12: #f5822e;
+
+  --b3-font-background7: rgba(217, 211, 215, 0.5);
+  --b3-font-background8: rgba(255, 193, 153, 0.5);
+  --b3-font-background9: rgba(189, 201, 255, 0.5);
+  --b3-font-background10: rgba(239, 218, 251, 0.5);
+  --b3-font-background11: rgba(234, 202, 220, 0.5);
+  --b3-font-background12: rgba(253, 198, 200, 0.5);
+
+  /* 图表颜色 */
+  --b3-graph-p-point: #076f7e;
+  --b3-graph-heading-point: #660e7a;
+  --b3-graph-math-point: #80ffa5;
+  --b3-graph-code-point: #00ddff;
+  --b3-graph-table-point: #37a2ff;
+  --b3-graph-list-point: #ff0087;
+  --b3-graph-todo-point: #ffbf00;
+  --b3-graph-olist-point: #b3005f;
+  --b3-graph-listitem-point: #f65b00;
+  --b3-graph-bq-point: #8d48e3;
+  --b3-graph-super-point: #dd79ff;
+  --b3-graph-doc-point: #202124;
+  --b3-graph-tag-point: #dbf32f;
+  --b3-graph-asset-point: #05c091;
+  --b3-graph-line: #5f6368;
+  --b3-graph-ref-line: #d23f31;
+  --b3-graph-tag-line: #5f6b06;
+  --b3-graph-tag-tag-line: #dbf32f;
+  --b3-graph-asset-line: #037457;
+  --b3-graph-hl-point: #f3a92f;
+  --b3-graph-hl-line: #4285f4;
+
+  /* PDF */
+  --b3-pdf-selection: #d0e9c8;
+  --b3-pdf-sidebar-width: 200px;
+  --b3-pdf-offset: 0;
+  --b3-pdf-background1: var(--b3-theme-error);
+  --b3-pdf-background2: #f5822e;
+  --b3-pdf-background3: var(--b3-theme-secondary);
+  --b3-pdf-background4: #65b84d;
+  --b3-pdf-background5: #f5539e;
+  --b3-pdf-background6: var(--b3-theme-primary);
+  --b3-pdf-background7: #944194;
+}
+
+:root.dark {
+  --b3-card-info-color: rgb(166, 213, 250);
+
+  /* 自定义文字 */
+  --b3-font-color9: #f5539e;
+  --b3-font-color10: #944194;
+  --b3-font-color11: #65b84d;
+  --b3-font-color12: #f5822e;
+
+  --b3-font-background7: rgba(217, 211, 215, 0.5);
+  --b3-font-background8: rgba(255, 193, 153, 0.5);
+  --b3-font-background9: rgba(189, 201, 255, 0.5);
+  --b3-font-background10: rgba(239, 218, 251, 0.5);
+  --b3-font-background11: rgba(234, 202, 220, 0.5);
+  --b3-font-background12: rgba(253, 198, 200, 0.5);
+
+  /* 图表颜色 */
+  --b3-graph-p-point: #076f7e;
+  --b3-graph-heading-point: #9876aa;
+  --b3-graph-math-point: #80ffa5;
+  --b3-graph-code-point: #00ddff;
+  --b3-graph-table-point: #37a2ff;
+  --b3-graph-list-point: #ff0087;
+  --b3-graph-todo-point: #ffbf00;
+  --b3-graph-olist-point: #b3005f;
+  --b3-graph-listitem-point: #f65b00;
+  --b3-graph-bq-point: #8d48e3;
+  --b3-graph-super-point: #dd79ff;
+  --b3-graph-doc-point: #e8eaed;
+  --b3-graph-tag-point: #dbf32f;
+  --b3-graph-asset-point: #05c091;
+  --b3-graph-line: #9aa0a6;
+  --b3-graph-ref-line: #d23f31;
+  --b3-graph-tag-line: #5f6b06;
+  --b3-graph-tag-tag-line: #dbf32f;
+  --b3-graph-asset-line: #037457;
+  --b3-graph-hl-point: #f3a92f;
+  --b3-graph-hl-line: #4285f4;
+
+  /* PDF */
+  --b3-pdf-selection: #779170;
+  --b3-pdf-sidebar-width: 200px;
+  --b3-pdf-offset: 0;
+  --b3-pdf-background1: var(--b3-theme-error);
+  --b3-pdf-background2: #f5822e;
+  --b3-pdf-background3: var(--b3-theme-secondary);
+  --b3-pdf-background4: #65b84d;
+  --b3-pdf-background5: #f5539e;
+  --b3-pdf-background6: var(--b3-theme-primary);
+  --b3-pdf-background7: #944194;
 }

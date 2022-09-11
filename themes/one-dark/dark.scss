@@ -33,13 +33,13 @@
 
   // 基础颜色
   --brand-base: 77, 120, 204; // 色彩-品牌-可操作
-  --warning-base: var(--orange-6); // 色彩-功能-警告
-  --error-base: var(--red-6); // 色彩-功能-失败
-  --success-base: var(--green-5); // 色彩-功能-成功
+  --warning-base: #{hex2rgb(#d19a66)}; // 色彩-功能-警告
+  --error-base: #{hex2rgb(#f88070)}; // 色彩-功能-失败
+  --success-base: #{hex2rgb(#73c991)}; // 色彩-功能-成功
   --info-base: var(--blue-8);
   --cyan-base: var(--cyan-6);
   --purple-base: var(--purple-6);
-  --yellow-base: var(--yellow-6);
+  --yellow-base: #{hex2rgb(#e2c08d)};
   --pink-base: var(--pink-6);
 
   // 基础颜色的扩展 用于 hover / 聚焦 / 禁用 / 点击 等状态

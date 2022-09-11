@@ -63,7 +63,7 @@ $fz: get($font-size, "exsmall");
   }
 
   .block__icon {
-    @include block-icons.btn($important: true);
+    @include block-icons.btn();
     &::after {
       display: none;
     }

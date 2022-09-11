@@ -8,34 +8,9 @@ $track-bg: transparent; //get($bg, "page");
   --b3-scroll-color: #{$thumb-bg};
 }
 
-@mixin no-scrollbar {
-  & {
-    overflow: overlay;
-  }
-
-  &::-webkit-scrollbar {
-    // display: none;
-    opacity: 0;
-    &-thumb {
-      background-color: transparent;
-    }
-    &-track {
-      opacity: 0;
-      background-color: rgba(0, 0, 0, 0.05);
-      background-color: transparent;
-    }
-  }
-
-  &:hover {
-    &::-webkit-scrollbar {
-      opacity: 1;
-    }
-  }
-}
-
 // Scrollbar
 ::-webkit-scrollbar {
-  z-index: 1;
+  z-index: 0;
   width: 8px;
 
   &:horizontal {
@@ -48,7 +23,7 @@ $track-bg: transparent; //get($bg, "page");
     box-shadow: inset 0 0 6px 6px $thumb-bg;
     background: unset;
     border: solid 3px transparent;
-    z-index: 1;
+    z-index: 0;
     &:hover {
       border: solid 1.5px transparent;
     }

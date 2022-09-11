@@ -19,7 +19,7 @@ $com-shadow: get($shadow, 2);
       color: get($text, "primary");
       border-radius: get($radius, "medium");
       box-shadow: $com-shadow;
-      background-color: get($bg, "pop", 1);
+      background-color: get($bg, "page", 1);
       padding: $pad-tb $pad-lr;
       padding-left: $pad-lr + $icon-w + 12px;
 

@@ -1,4 +1,3 @@
-
 @use "sass:math";
 @use "../common" as *;
 
@@ -9,12 +8,12 @@ $icon-svg-w: get($icon, "small");
 
 $padding: $fn-space;
 
-@mixin btn($type: "page", $important: false) {
+@mixin btn($type: "page") {
   @include icon-btn($type, $icon-w, $icon-svg-w, true);
 
   &.ft__primary,
   &--active {
-    @include color("focus", $important);
+    @include color("focus", true);
     @include item("focus", 1, true);
   }
 

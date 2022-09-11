@@ -1,6 +1,19 @@
 # 更新历史 | Changelog 
 
 
+### [2.1.3](https://github.com/svchord/Rem-Craft/compare/v2.1.2...v2.1.3) (2022-09-11)
+
+
+### ♻️ 代码重构 | Code Refactoring
+
+* :recycle: 覆写map.get函数，增加警告提示 ([b30083a](https://github.com/svchord/Rem-Craft/commit/b30083a7cb126b0f563c61cd75c14eda67815965))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容最新版的pdf导出弹窗 ([b6368d8](https://github.com/svchord/Rem-Craft/commit/b6368d88fedef1ac1102f8a7ecc40ee59eae1d90))
+* :bug: 兼容最新版数据历史弹窗样式 ([7e35e1e](https://github.com/svchord/Rem-Craft/commit/7e35e1e1ff3487f17d555cded4e86d1ae6c69aa0))
+
 ### [2.1.2](https://github.com/svchord/Rem-Craft/compare/v2.1.1...v2.1.2) (2022-09-08)
 
 

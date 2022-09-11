@@ -1,4 +1,4 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../common" as *;
 @use "wysiwyg";
@@ -12,11 +12,11 @@
     left: -32px;
 
     @include svg-div(32px, 14px);
-    border-radius: map.get($radius, "small");
-    color: map.get($text, "placeholder");
+    border-radius: get($radius, "small");
+    color: get($text, "placeholder");
 
     &:hover {
-      color: map.get($text, "primary");
+      color: get($text, "primary");
     }
 
     &::after {
@@ -36,7 +36,7 @@
     padding: wysiwyg.$item-pad;
 
     &:empty:after {
-      color: map.get($text, "disabled");
+      color: get($text, "disabled");
     }
   }
 }

@@ -25,7 +25,7 @@
 }
 
 @function getRgba($args...) {
-  @return rgba(getCssVar($args...));
+  @return rgba(getCssVar($args...), 1);
 }
 
 @function numToList($num) {
@@ -86,4 +86,12 @@
 @function rc-shadow($dp) {
   $border: 0 0 calc(1px * $dp / 8) rgb(0 0 0 / 12%);
   @return $border, fluent-shadow($dp);
+}
+
+@function get($map, $args...) {
+  @if map.get($map, $args...) == null {
+    @warn "Key `#{$args}` not found.";
+
+  }
+  @return map.get($map, $args...);
 }

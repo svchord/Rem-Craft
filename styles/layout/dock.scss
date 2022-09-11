@@ -1,4 +1,4 @@
-@use "sass:map";
+
 @use "../common" as *;
 
 $item-w: 36px;
@@ -6,14 +6,14 @@ $item-w: 36px;
 //边栏
 @mixin dock {
   padding: 0px;
-  background-color: map.get($bg, "base", 1);
+  background-color: get($bg, "base", 1);
   margin-bottom: $interval;
 
   span {
     @include item("base");
     @include svg-div($item-w, 13px);
-    color: map.get($text, "secondary");
-    border-radius: map.get($radius, "medium");
+    color: get($text, "secondary");
+    border-radius: get($radius, "medium");
 
     &:not(:last-child) {
       margin-bottom: $interval;

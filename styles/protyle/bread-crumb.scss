@@ -1,11 +1,11 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../common" as *;
 @use "../panel/block-icons";
 
-$item-h: map.get($component-size, "base");
-$item-color: map.get($text, "placeholder");
-$fz: map.get($font-size, "exsmall");
+$item-h: get($component-size, "base");
+$item-color: get($text, "placeholder");
+$fz: get($font-size, "exsmall");
 
 //面包屑
 .protyle-breadcrumb {
@@ -21,7 +21,7 @@ $fz: map.get($font-size, "exsmall");
     @include v-center($item-h);
     padding: 0;
     margin: 0;
-    transition: map.get($transition, "all");
+    transition: get($transition, "all");
 
     svg {
       @include svg(20px, 10px);
@@ -32,8 +32,8 @@ $fz: map.get($font-size, "exsmall");
     .protyle-breadcrumb__text:not(:empty) {
       color: $item-color;
       margin: 0;
-      font-size: map.get($font-size, "exsmall");
-      transition: map.get($transition, "all");
+      font-size: get($font-size, "exsmall");
+      transition: get($transition, "all");
     }
 
     &:hover,
@@ -41,7 +41,7 @@ $fz: map.get($font-size, "exsmall");
       background-color: transparent;
 
       .protyle-breadcrumb__text:not(:empty) {
-        color: map.get($text, "primary");
+        color: get($text, "primary");
       }
     }
 
@@ -53,11 +53,11 @@ $fz: map.get($font-size, "exsmall");
 
   &__arrow {
     // @include svg(8px);
-    // color: map.get($text, "disabled");
+    // color: get($text, "disabled");
     // margin: math.div($item-h - 8px, 2) 4px;
     width: 0;
     height: $fz;
-    border-right: 1px solid map.get($text, "disabled");
+    border-right: 1px solid get($text, "disabled");
     transform: rotate(23deg);
     margin: 0;
   }

@@ -1,14 +1,14 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../common" as *;
 @use "big";
 
-$com-bg: map.get($bg, "page", 1);
-$com-radius: map.get($radius, "large");
+$com-bg: get($bg, "page", 1);
+$com-radius: get($radius, "large");
 
 //集市Readme
 .config-bazaar__readme {
-  background-color: map.get($bg, "base", 1);
+  background-color: get($bg, "base", 1);
   border-radius: big.$dialog-radius;
 
   .item {
@@ -22,11 +22,11 @@ $com-radius: map.get($radius, "large");
       .b3-button {
         // 返回按钮
         &--outline[data-type="goBack"] {
-          $w: map.get($component-size, "base");
+          $w: get($component-size, "base");
           @include svg-div($w, 11px);
           @include item("page");
           margin: $fn-space;
-          color: map.get($text, "secondary");
+          color: get($text, "secondary");
         }
       }
       .svg {
@@ -37,17 +37,17 @@ $com-radius: map.get($radius, "large");
 
     // 侧栏顶部标签
     &__nav {
-      $h: map.get($component-size, "small");
-      $margin: $fn-space + math.div(map.get($component-size, "base") - $h, 2);
+      $h: get($component-size, "small");
+      $margin: $fn-space + math.div(get($component-size, "base") - $h, 2);
 
       @include v-center($h);
       width: auto;
       margin: $margin 30%;
-      border-radius: map.get($radius, "max");
-      box-shadow: map.get($shadow, 0);
-      font-size: map.get($font-size, "small");
+      border-radius: get($radius, "max");
+      box-shadow: get($shadow, 0);
+      font-size: get($font-size, "small");
       transform: translateX(
-          0 - math.div(map.get($component-size, "base") + 2 * $fn-space, 2)
+          0 - math.div(get($component-size, "base") + 2 * $fn-space, 2)
         )
         translateY(0px);
     }

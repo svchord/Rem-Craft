@@ -1,4 +1,4 @@
-@use "sass:map";
+
 @use "../common" as *;
 @use "../component/list";
 
@@ -7,7 +7,7 @@
   // transform: translateY(-30px);
   h1 {
     margin: 0;
-    color: map.get($text, "primary");
+    color: get($text, "primary");
   }
   .fn__hr {
     height: 12px;
@@ -16,10 +16,10 @@
     width: 196px;
     margin: $interval 0;
     &__graphic {
-      @include svg(list.$text-h, map.get($icon, "small"));
+      @include svg(list.$text-h, get($icon, "small"));
     }
     span {
-      font-size: map.get($font-size, "base");
+      font-size: get($font-size, "base");
       margin-left: 5px;
     }
   }

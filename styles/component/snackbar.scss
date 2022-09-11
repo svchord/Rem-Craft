@@ -1,12 +1,12 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../common" as *;
 
 $icon-w: 16px;
 $pad-tb: 12px;
 $pad-lr: 16px;
-$text-h: map.get($component-size, "base") - 4px * 2;
-$com-shadow: map.get($shadow, 2);
+$text-h: get($component-size, "base") - 4px * 2;
+$com-shadow: get($shadow, 2);
 
 //通知弹窗
 .b3-snackbars {
@@ -16,10 +16,10 @@ $com-shadow: map.get($shadow, 2);
       @include component();
       height: auto;
       position: relative;
-      color: map.get($text, "primary");
-      border-radius: map.get($radius, "medium");
+      color: get($text, "primary");
+      border-radius: get($radius, "medium");
       box-shadow: $com-shadow;
-      background-color: map.get($bg, "pop", 1);
+      background-color: get($bg, "pop", 1);
       padding: $pad-tb $pad-lr;
       padding-left: $pad-lr + $icon-w + 12px;
 
@@ -32,11 +32,11 @@ $com-shadow: map.get($shadow, 2);
         top: math.div($pad-tb * 2 + $text-h - $icon-w, 2);
         width: $icon-w;
         height: $icon-w;
-        @include add-icon("info", map.get($color, "info", "base"), 24, "round");
+        @include add-icon("info", get($color, "info", "base"), 24, "round");
       }
 
       a {
-        color: map.get($text, "focus");
+        color: get($text, "focus");
         white-space: normal;
       }
 
@@ -54,7 +54,7 @@ $com-shadow: map.get($shadow, 2);
     @each $type in $feat-types {
       &--#{$type} {
         .b3-snackbar__content::before {
-          $type-color: map.get($color, $type, "base");
+          $type-color: get($color, $type, "base");
           @include add-icon($type, $type-color, 24, "round");
         }
       }
@@ -83,7 +83,7 @@ $com-shadow: map.get($shadow, 2);
       position: unset;
       display: block;
       content: "全部已读";
-      color: map.get($text, "anti");
+      color: get($text, "anti");
     }
   }
 }

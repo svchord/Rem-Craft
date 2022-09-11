@@ -1,13 +1,13 @@
-@use "sass:map";
+
 @use "../common" as *;
 
 @mixin card {
-  box-shadow: map.get($shadow, 1);
-  border-radius: map.get($radius, "large");
-  transition: map.get($transition, "all");
+  box-shadow: get($shadow, 1);
+  border-radius: get($radius, "large");
+  transition: get($transition, "all");
 
   &:hover {
-    box-shadow: map.get($shadow, 2);
+    box-shadow: get($shadow, 2);
     transform: translateY(-2px);
   }
 }
@@ -49,12 +49,12 @@
   &__img {
     margin: 16px $mar-lr 4px;
     width: calc(100% - $mar-lr * 2);
-    border-radius: map.get($radius, "large");
+    border-radius: get($radius, "large");
     opacity: 0.8;
 
     img {
       object-fit: cover;
-      border-radius: map.get($radius, "base");
+      border-radius: get($radius, "base");
     }
   }
 
@@ -62,27 +62,27 @@
     padding: 8px 16px 0px;
 
     .svg {
-      @include svg(map.get($icon, "small"));
+      @include svg(get($icon, "small"));
       margin-top: 3.5px;
     }
   }
 
   &__actions {
-    height: map.get($component-size, "base") + $fn-space * 2;
+    height: get($component-size, "base") + $fn-space * 2;
     padding: $fn-space;
 
     > .block__icon {
-      @include icon-btn("pop", map.get($component-size, "base"), 12px);
+      @include icon-btn("pop", get($component-size, "base"), 12px);
     }
   }
 
   &--current {
     .b3-card {
       &__info {
-        background-color: map.get($bg, "focus", 1);
+        background-color: get($bg, "focus", 1);
       }
       &__actions {
-        background-color: map.get($bg, "focus", 1);
+        background-color: get($bg, "focus", 1);
         > .block__icon {
           @include color-change("focus");
           @include item-focus();

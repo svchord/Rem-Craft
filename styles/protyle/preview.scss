@@ -1,10 +1,10 @@
-@use "sass:map";
+
 @use "../common" as *;
 
 .protyle-preview {
   // tab栏
   &__action {
-    background-color: map.get($bg, "page", 1);
+    background-color: get($bg, "page", 1);
     padding: 0 0 8px;
 
     button {
@@ -16,14 +16,14 @@
       }
 
       &.b3-tooltips {
-        @include svg-div(map.get($component-size, "base"), 12px);
+        @include svg-div(get($component-size, "base"), 12px);
         margin: 0 5px;
       }
     }
 
     &--current {
       @include item("focus", 1, true);
-      color: map.get($text, "focus") !important;
+      color: get($text, "focus") !important;
     }
   }
 

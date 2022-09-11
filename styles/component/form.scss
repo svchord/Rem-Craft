@@ -1,8 +1,8 @@
-@use "sass:map";
+
 @use "../common" as *;
 //表单
 
-$svg-width: map.get($icon, "small");
+$svg-width: get($icon, "small");
 
 @mixin search-input($h, $border-w, $svg-w: $svg-width) {
   .b3-form__icon {
@@ -23,11 +23,11 @@ $svg-width: map.get($icon, "small");
 
 // 搜索框
 .b3-form__icon {
-  @include search-input(map.get($component-size, "base"), 1px);
+  @include search-input(get($component-size, "base"), 1px);
 
   // 边窗顶栏小搜索框
   &--small {
-    @include search-input(map.get($component-size, "small"), 0);
+    @include search-input(get($component-size, "small"), 0);
     // 搜索文本框
     .b3-form__icon-input {
       @include component-base("small");

@@ -1,19 +1,19 @@
-@use "sass:map";
+
 @use "../common" as *;
 @use "../dialog/search";
 @use "../component/list";
 
-$wnd-base: map.get($bg, "base", 1);
-$wnd-bg: map.get($bg, "page", 1);
+$wnd-base: get($bg, "base", 1);
+$wnd-bg: get($bg, "page", 1);
 
 //边窗动画
-$time: map.get($transition-duration, "slow");
+$time: get($transition-duration, "slow");
 $scale: scale(0.75);
-$wnd-transition: all $time map.get($transition-function, "fast") 0s;
+$wnd-transition: all $time get($transition-function, "fast") 0s;
 
 :root {
   // 动画效果
-  --b3-width-transition: width #{$time} #{map.get($transition-function, "fast")};
+  --b3-width-transition: width #{$time} #{get($transition-function, "fast")};
 }
 
 @keyframes close {
@@ -39,8 +39,8 @@ $wnd-transition: all $time map.get($transition-function, "fast") 0s;
 @mixin wnd {
   min-height: 10% !important;
   margin: $interval;
-  border-radius: map.get($radius, "large");
-  transition: all $time map.get($transition-function, "easing") 0s;
+  border-radius: get($radius, "large");
+  transition: all $time get($transition-function, "easing") 0s;
   background-color: $wnd-bg;
 }
 
@@ -135,7 +135,7 @@ $wnd-transition: all $time map.get($transition-function, "fast") 0s;
 
     // 刷新按钮
     #globalSearchReload {
-      @include icon-btn("page", map.get($component-size, "base"), 12px);
+      @include icon-btn("page", get($component-size, "base"), 12px);
     }
 
     //搜索结果统计
@@ -143,7 +143,7 @@ $wnd-transition: all $time map.get($transition-function, "fast") 0s;
       @include component();
       margin: 0 $fn-space $interval !important;
       cursor: unset;
-      background-color: transparent !important; //map.get($bg,"component");
+      background-color: transparent !important; //get($bg,"component");
     }
 
     // 搜索结果列表

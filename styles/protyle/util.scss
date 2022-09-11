@@ -1,8 +1,8 @@
-@use "sass:map";
+
 @use "../common" as *;
 @use "../component/menu";
 
-$util-radius: map.get($radius, "medium");
+$util-radius: get($radius, "medium");
 
 //工具窗
 .protyle-util {
@@ -15,7 +15,7 @@ $util-radius: map.get($radius, "medium");
 
     // 小标题
     > [style*="margin"] {
-      color: map.get($text, "secondary");
+      color: get($text, "secondary");
       margin: 16px 0 10px !important;
     }
 
@@ -26,7 +26,7 @@ $util-radius: map.get($radius, "medium");
         @include menu.color-square();
         margin-right: $fn-space;
         &:hover {
-          border-color: map.get($border, 1);
+          border-color: get($border, 1);
         }
       }
     }
@@ -35,7 +35,7 @@ $util-radius: map.get($radius, "medium");
     &__style {
       padding: 0 12px;
       &:hover {
-        border-color: map.get($border, 1);
+        border-color: get($border, 1);
       }
     }
 
@@ -55,12 +55,12 @@ $util-radius: map.get($radius, "medium");
     .block__icons {
       padding-left: 16px;
       border-radius: $util-radius $util-radius 0 0;
-      background-color: map.get($bg, "pop", 1);
+      background-color: get($bg, "pop", 1);
     }
 
     textarea {
       border-radius: 0 0 $util-radius $util-radius;
-      background-color: map.get($bg, "pop", 1);
+      background-color: get($bg, "pop", 1);
       padding: 16px;
       min-height: 180px;
 

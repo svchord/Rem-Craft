@@ -1,6 +1,6 @@
-@use "sass:map";
+
 @use "../common" as *;
 body.body--win32 {
-  background-color: map.get($bg, "base", 1);
+  background-color: get($bg, "base", 1);
   border: none;
 }

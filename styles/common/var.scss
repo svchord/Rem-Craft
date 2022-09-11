@@ -4,7 +4,7 @@
 
 $asset-path: "assets";
 
-// 色板
+// 色板  
 $color: () !default;
 $color-types: "blue", "orange", "red", "green", "cyan", "purple", "yellow",
   "pink", "gray", "brand";
@@ -15,14 +15,14 @@ $color: add-color($color, $color-types, 10);
 
 // 文字颜色
 $text: () !default;
-$text-types: "primary", "secondary", "placeholder", "disabled", "anti", "focus",
-  "meta-focus";
+$text-types: "primary", "secondary", "placeholder", "disabled", "anti", "brand",
+  "focus", "meta-focus";
 $text: add-css-var($text, "text", $text-types);
 
 // 线条
 $border: () !default;
 $border: add-color($border, "border", 4);
-$fn-border: 1px solid map.get($border, 3);
+$fn-border: 1px solid get($border, 3);
 
 // 功能色
 $feat-types: "brand", "warning", "error", "success", "info";
@@ -156,23 +156,23 @@ $transition-function: map.merge(
 $transition: () !default;
 $transition: map.merge(
   (
-    "all": all map.get($transition-duration, "base")
-      map.get($transition-function, "ease-in-out"),
-    "fade": opacity map.get($transition-duration, "base")
-      map.get($transition-function, "fast"),
+    "all": all get($transition-duration, "base")
+      get($transition-function, "ease-in-out"),
+    "fade": opacity get($transition-duration, "base")
+      get($transition-function, "fast"),
     "md-fade": (
-      transform map.get($transition-duration, "base")
-        map.get($transition-function, "fast"),
-      opacity map.get($transition-duration, "base")
-        map.get($transition-function, "fast"),
+      transform get($transition-duration, "base")
+        get($transition-function, "fast"),
+      opacity get($transition-duration, "base")
+        get($transition-function, "fast"),
     ),
-    "fade-linear": opacity map.get($transition-duration, "base") linear,
-    "border": border-color map.get($transition-duration, "base")
-      map.get($transition-function, "ease-in-out"),
-    "box-shadow": box-shadow map.get($transition-duration, "base")
-      map.get($transition-function, "ease-in-out"),
-    "color": color map.get($transition-duration, "base")
-      map.get($transition-function, "ease-in-out"),
+    "fade-linear": opacity get($transition-duration, "base") linear,
+    "border": border-color get($transition-duration, "base")
+      get($transition-function, "ease-in-out"),
+    "box-shadow": box-shadow get($transition-duration, "base")
+      get($transition-function, "ease-in-out"),
+    "color": color get($transition-duration, "base")
+      get($transition-function, "ease-in-out"),
   ),
   $transition
 );
@@ -187,19 +187,19 @@ $spacer: map.merge(
 
 $spacer: map.merge(
   (
-    "small": map.get($spacer, "base") * 0.5,
-    "medium": map.get($spacer, "base") * 0.75,
-    "large": map.get($spacer, "base") * 1.5,
+    "small": get($spacer, "base") * 0.5,
+    "medium": get($spacer, "base") * 0.75,
+    "large": get($spacer, "base") * 1.5,
   ),
   $spacer
 );
 
 @for $i from 1 through 10 {
-  $spacer: map.set($spacer, $i, map.get($spacer, "base") * $i);
+  $spacer: map.set($spacer, $i, get($spacer, "base") * $i);
 }
 
-$fn-space: map.get($spacer, "base");
-$interval: map.get($spacer, "small");
+$fn-space: get($spacer, "base");
+$interval: get($spacer, "small");
 
 // Break-point
 $sm: 768px !default;

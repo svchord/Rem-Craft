@@ -1,6 +1,6 @@
-@use "sass:map";
+
 @use "../common" as *;
 
 .fn__loading {
-  background-color: map.get($bg, "page",1);
+  background-color: get($bg, "page",1);
 }

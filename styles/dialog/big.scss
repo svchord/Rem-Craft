@@ -1,12 +1,12 @@
-@use "sass:map";
+
 @use "../common" as *;
 @use "../component/form";
 @use "../component/list";
 
 //弹窗蒙版
-$dialog-scrim: map.get($mask, "active");
+$dialog-scrim: get($mask, "active");
 //弹窗边框弧度
-$dialog-radius: map.get($radius, "exlarge");
+$dialog-radius: get($radius, "exlarge");
 
 $large-width: 66vw;
 
@@ -25,9 +25,9 @@ $search-h: 50px;
 
 //大弹窗
 .b3-dialog__container {
-  box-shadow: map.get($shadow, 3);
+  box-shadow: get($shadow, 3);
   border-radius: $dialog-radius;
-  background-color: map.get($bg, "page", 1);
+  background-color: get($bg, "page", 1);
 
   &[style*="80vw"] {
     width: $large-width !important;
@@ -39,20 +39,20 @@ $search-h: 50px;
 
     // 笔记本设置界面标题
     .b3-dialog__header {
-      border-color: map.get($border, 3);
+      border-color: get($border, 3);
     }
 
     // 顶部搜索框
     .search__header {
       width: $large-width;
-      border-color: map.get($border, 3);
+      border-color: get($border, 3);
       border-radius: $dialog-radius $dialog-radius 0 0;
       @include form.search-input($search-h - 1px, 0, 17px);
 
       // 搜索文本框
       .b3-text-field {
         border-radius: $dialog-radius $dialog-radius 0 0;
-        background-color: map.get($bg, "page", 1);
+        background-color: get($bg, "page", 1);
 
         &:hover,
         &:focus {

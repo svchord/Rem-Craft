@@ -1,13 +1,13 @@
-@use "sass:map";
+
 @use "../common" as *;
 
 .layout__resize {
   &::after {
-    background-color: map.get($bg, "base", 1);
+    background-color: get($bg, "base", 1);
   }
 
   &:hover::after {
-    background-color: map.get($color, "brand", "hover");
+    background-color: get($color, "brand", "hover");
   }
 
   &--lr {

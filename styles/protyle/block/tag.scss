@@ -1,8 +1,8 @@
-@use "sass:map";
+
 @use "../../common" as *;
 
 //标签
-$tag-color: map.get($text, "secondary");
+$tag-color: get($text, "secondary");
 
 :root {
   --b3-protyle-inline-tag-color: #{$tag-color};
@@ -10,10 +10,10 @@ $tag-color: map.get($text, "secondary");
 
 .protyle-wysiwyg [data-node-id] span[data-type="tag"] {
   @include item("page");
-  border-radius: map.get($radius, "max");
+  border-radius: get($radius, "max");
   color: $tag-color;
   border: none;//$fn-border;
-  box-shadow: map.get($shadow, 0);
+  box-shadow: get($shadow, 0);
   position: relative;
   padding: 0.1em 0.6em;
   font-size: 85%;

@@ -1,14 +1,14 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../common" as *;
 @use "../component/list";
 
 $item-type: "base";
-$w: map.get($component-size, "exsmall");
+$w: get($component-size, "exsmall");
 
 //页签栏
 .layout-tab-bar {
-  background-color: map.get($bg, "page", 1);
+  background-color: get($bg, "page", 1);
 
   .layout__center &:not(:empty) {
     @include component-base($item-type);
@@ -28,11 +28,11 @@ $w: map.get($component-size, "exsmall");
     }
 
     &__icon {
-      @include emoji-icon($w, 12px, map.get($icon, "base"));
+      @include emoji-icon($w, 12px, get($icon, "base"));
     }
 
     &__graphic {
-      @include svg($w, map.get($icon, "small"), true);
+      @include svg($w, get($icon, "small"), true);
     }
 
     &__text {
@@ -45,7 +45,7 @@ $w: map.get($component-size, "exsmall");
       @include item-tran("component");
       @include component-base("exsmall");
       @include svg-div($w, 10px);
-      border-radius: map.get($radius, "small");
+      border-radius: get($radius, "small");
       margin-left: $interval;
 
       svg {
@@ -59,7 +59,7 @@ $w: map.get($component-size, "exsmall");
     }
 
     &--pin {
-      background-color: map.get($bg, "component", 1);
+      background-color: get($bg, "component", 1);
       .item {
         &__text {
           margin: 0;

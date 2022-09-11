@@ -1,7 +1,8 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "var" as *;
 @use "utils" as *;
+@use "function" as *;
 
 @mixin focus-before($top, $left: 0) {
   position: relative;
@@ -18,8 +19,8 @@
     width: 3px;
     z-index: 0;
     height: calc(100% - $top * 2);
-    background-color: map.get($color, "brand", "base");
-    border-radius: map.get($radius, "max");
+    background-color: get($color, "brand", "base");
+    border-radius: get($radius, "max");
   }
 }
 
@@ -36,7 +37,7 @@
   @include item("component");
   width: auto;
   margin: 0;
-  border-radius: map.get($radius, "small");
+  border-radius: get($radius, "small");
   padding: 0 math.div($h - 8px, 2);
   &::after {
     display: none !important;
@@ -63,14 +64,14 @@
   @include svg-div($w, $svg-w);
   @include item($type, 1, $important);
 
-  border-radius: map.get($radius, "small");
+  border-radius: get($radius, "small");
 }
 
 @mixin drag {
   $drag-width: 2px;
-  $drag-color: map.get($color, "brand", "hover");
+  $drag-color: get($color, "brand", "hover");
 
-  background-color: map.get($bg, "primary", 1);
+  background-color: get($bg, "primary", 1);
   // 当前块的上方
   &__top {
     box-shadow: 0 0 - $drag-width $drag-color;

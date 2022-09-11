@@ -1,5 +1,5 @@
 // 大纲
-@use "sass:map";
+
 @use "sass:math";
 @use "../common" as *;
 @use "../component/list";
@@ -12,10 +12,10 @@
     padding-left: 8px;
     .b3-list-item {
       &__text {
-        color: map.get($text, "primary");
+        color: get($text, "primary");
       }
       &__graphic {
-        @include emoji-icon(list.$text-h, 12px, map.get($icon, "base"));
+        @include emoji-icon(list.$text-h, 12px, get($icon, "base"));
       }
     }
 

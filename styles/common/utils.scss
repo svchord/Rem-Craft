@@ -1,4 +1,4 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "sass:list";
 @use "var" as *;
@@ -113,36 +113,36 @@
 }
 
 @mixin color($type, $important: false) {
-  color: map.get($text, $type) is-important($important);
+  color: get($text, $type) is-important($important);
 }
 
 @mixin color-change($type, $important: false) {
   &:hover,
   &:active {
-    color: map.get($text, $type) is-important($important);
+    color: get($text, $type) is-important($important);
   }
 }
 
 @mixin item($type, $start: 1, $important: false) {
-  background-color: map.get($bg, $type, $start) is-important($important);
-  transition: map.get($transition, "all");
+  background-color: get($bg, $type, $start) is-important($important);
+  transition: get($transition, "all");
   &:hover,
   &:focus {
-    background-color: map.get($bg, $type, $start + 1) is-important($important);
+    background-color: get($bg, $type, $start + 1) is-important($important);
   }
   &:active {
-    background-color: map.get($bg, $type, $start + 2) is-important($important);
+    background-color: get($bg, $type, $start + 2) is-important($important);
   }
 }
 
 @mixin item-unchange($type, $start: 1, $important: fault) {
-  background-color: map.get($bg, $type, $start) is-important($important);
-  transition: map.get($transition, "all");
+  background-color: get($bg, $type, $start) is-important($important);
+  transition: get($transition, "all");
   &:hover {
-    background-color: map.get($bg, $type, $start) is-important($important);
+    background-color: get($bg, $type, $start) is-important($important);
   }
   &:active {
-    background-color: map.get($bg, $type, $start) is-important($important);
+    background-color: get($bg, $type, $start) is-important($important);
   }
 }
 
@@ -164,7 +164,7 @@
 @mixin item-disabled($important: false) {
   // cursor: not-allowed;
   cursor: unset;
-  color: map.get($text, "disabled");
+  color: get($text, "disabled");
   &:hover,
   &:active {
     background-color: transparent is-important($important);
@@ -175,27 +175,27 @@
 }
 
 @mixin item-close($important: false) {
-  transition: map.get($transition, "all");
+  transition: get($transition, "all");
   &:hover {
-    color: map.get($text, "anti");
-    background-color: map.get($color, "error", "base") is-important($important);
+    color: get($text, "anti");
+    background-color: get($color, "error", "base") is-important($important);
   }
   svg {
-    @include svg(map.get($icon, "exsmall"));
+    @include svg(get($icon, "exsmall"));
   }
 }
 
 @mixin component-base($type: "base") {
-  font-size: map.get($font-size, $type);
-  border-radius: map.get($radius, $type);
-  height: map.get($component-size, $type);
+  font-size: get($font-size, $type);
+  border-radius: get($radius, $type);
+  height: get($component-size, $type);
 }
 
 @mixin component($type: "base") {
   @include component-base($type);
-  transition: map.get($transition, "all");
+  transition: get($transition, "all");
 
-  padding: map.get($component-padding, $type);
-  line-height: map.get($component-size, $type) -
-    list.nth(map.get($component-padding, $type), 1) * 2;
+  padding: get($component-padding, $type);
+  line-height: get($component-size, $type) -
+    list.nth(get($component-padding, $type), 1) * 2;
 }

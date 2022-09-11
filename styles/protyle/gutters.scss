@@ -1,4 +1,4 @@
-@use "sass:map";
+
 @use "../common" as *;
 
 $tran: 6px;
@@ -10,11 +10,11 @@ $tran: 6px;
   button {
     @include item-tran("page");
     @include svg-div(24px, 28px, 12px);
-    border-radius: map.get($radius, "small");
-    color: map.get($text, "disabled");
+    border-radius: get($radius, "small");
+    color: get($text, "disabled");
 
     &:hover {
-      color: map.get($text, "secondary");
+      color: get($text, "secondary");
     }
 
     &[data-type="fold"] {

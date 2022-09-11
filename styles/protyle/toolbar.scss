@@ -1,20 +1,20 @@
-@use "sass:map";
+
 @use "../common" as *;
 
 $spacing: 5px;
 
 .protyle-toolbar {
   padding: $spacing;
-  box-shadow: map.get($shadow, 1);
-  background-color: map.get($bg, "pop", 1);
+  box-shadow: get($shadow, 1);
+  background-color: get($bg, "pop", 1);
   transform: translateY(-12px);
-  border-radius: map.get($radius, "large");
+  border-radius: get($radius, "large");
 
   &__item {
     @include svg-div(32px, 12px);
     @include item("pop");
     margin-right: $spacing;
-    border-radius: map.get($radius, "base");
+    border-radius: get($radius, "base");
 
     &--current {
       @include item-focus();
@@ -31,6 +31,6 @@ $spacing: 5px;
 
   &__divider {
     margin: 0 $spacing 0 0;
-    border-color: map.get($border, 3);
+    border-color: get($border, 3);
   }
 }

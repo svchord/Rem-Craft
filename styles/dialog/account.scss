@@ -1,4 +1,4 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../common" as *;
 
@@ -9,7 +9,7 @@
     margin: 16px 0px;
   }
   &--text {
-    background-color: map.get($bg, "page", 1);
+    background-color: get($bg, "page", 1);
   }
 }
 
@@ -27,7 +27,7 @@
   // 开关前文字
   .fn__hr--b + .fn__flex label {
     line-height: 20px;
-    font-size: map.get($font-size, "base");
+    font-size: get($font-size, "base");
   }
 
   //开关
@@ -41,11 +41,11 @@
   @include component("exsmall");
   @include item("component");
   $interval: math.div(
-    map.get($component-size, "base") - map.get($component-size, "exsmall"),
+    get($component-size, "base") - get($component-size, "exsmall"),
     2
   );
   top: $interval !important;
   right: $interval !important;
-  height: map.get($component-size, "exsmall") !important;
-  color: map.get($text, "secondary");
+  height: get($component-size, "exsmall") !important;
+  color: get($text, "secondary");
 }

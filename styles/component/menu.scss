@@ -1,24 +1,24 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../common" as *;
 @use "../component/list";
 
 //菜单底色
-$menu-bg: map.get($bg, "pop", 1);
+$menu-bg: get($bg, "pop", 1);
 $padding: 6px;
 
 :root {
   // 菜单
   --b3-menu-background: #{$menu-bg};
   // 阴影
-  --b3-dialog-shadow: #{map.get($shadow, 2)};
+  --b3-dialog-shadow: #{get($shadow, 2)};
 }
 
 //菜单
 @mixin menu {
   min-width: 200px;
   padding: $padding;
-  border-radius: map.get($radius, "medium");
+  border-radius: get($radius, "medium");
 }
 
 @mixin menu-item {
@@ -34,7 +34,7 @@ $padding: 6px;
 @mixin menu-li {
   @include menu-item();
   @include list.content("primary");
-  padding: math.div(map.get($component-size, "base") - list.$text-h, 2)
+  padding: math.div(get($component-size, "base") - list.$text-h, 2)
     list.$padding;
   &--two {
     height: auto;
@@ -66,10 +66,10 @@ $padding: 6px;
   border: $fn-border;
   font-size: $fz;
   &[style*="color13"] {
-    background-color: map.get($text, "primary");
+    background-color: get($text, "primary");
   }
   &[style*="background13"] {
-    color: map.get($text, "anti");
+    color: get($text, "anti");
   }
 }
 
@@ -82,8 +82,8 @@ $padding: 6px;
     padding: 0px 8px;
 
     > .b3-menu__icon {
-      @include svg(map.get($icon, "small"));
-      color: map.get($text, "secondary");
+      @include svg(get($icon, "small"));
+      color: get($text, "secondary");
       margin-right: 8px;
 
       // 关闭icon
@@ -98,7 +98,7 @@ $padding: 6px;
     }
 
     .b3-menu__label {
-      @include v-center(map.get($component-size, "base"));
+      @include v-center(get($component-size, "base"));
     }
 
     // 自定义菜单项（文本框或滑条）
@@ -162,7 +162,7 @@ $padding: 6px;
         @include color-square();
 
         &:hover {
-          border-color: map.get($border, 1);
+          border-color: get($border, 1);
         }
       }
     }
@@ -192,7 +192,7 @@ $padding: 6px;
       &__showall {
         @include v-center(list.$text-h);
         &:first-child {
-          color: map.get($text, "primary");
+          color: get($text, "primary");
         }
         &:last-child {
           // padding-left: $interval;
@@ -246,7 +246,7 @@ $padding: 6px;
   .b3-text-field {
     width: 100%;
     margin: 0 !important;
-    background-color: map.get($bg, "pop", 2);
+    background-color: get($bg, "pop", 2);
   }
 
   //快捷命令菜单

@@ -1,17 +1,17 @@
-@use "sass:map";
+
 @use "../../common" as *;
 @use "../../dialog/bazaar";
 
 //块嵌入
 .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
-  background-color: map.get($bg, "base", 1);
+  background-color: get($bg, "base", 1);
   padding: 36px 16px 16px;
   border: none;
 
   .protyle-wysiwyg__embed {
     @include bazaar.card();
-    border-radius: map.get($radius, "base");
-    background-color: map.get($bg, "page", 1);
+    border-radius: get($radius, "base");
+    background-color: get($bg, "page", 1);
     padding: 16px;
     margin-bottom: 16px;
     opacity: 1;

@@ -1,13 +1,13 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../../common" as *;
 
-$list-border: map.get($border, 3);
+$list-border: get($border, 3);
 $left: 2px;
 $pad-l: 16px;
 
 $done-opacity: 0.45;
-$done-color: map.get($text, "placeholder");
+$done-color: get($text, "placeholder");
 
 .protyle-wysiwyg[contenteditable="true"] {
   // 第一级列表缩进
@@ -38,29 +38,30 @@ $done-color: map.get($text, "placeholder");
 
     // 列表按钮悬浮底色
     > .protyle-action {
+      // color: get($text, "primary");
       &:hover::after {
-        background-color: map.get($bg, "component", 3) !important;
+        background-color: get($bg, "component", 3) !important;
       }
 
       &--order::after {
-        border-radius: map.get($radius, "small");
-        opacity: 0.6;
+        border-radius: get($radius, "small");
+        opacity: 0.4;
       }
 
       // 待办列表特殊情况
       &--task::after {
-        border-radius: map.get($radius, "small");
+        border-radius: get($radius, "small");
       }
     }
 
     //折叠后列表按钮样式
     &[fold="1"] > .protyle-action {
       &::after {
-        background-color: map.get($bg, "component", 2) !important;
+        background-color: get($bg, "component", 2) !important;
       }
 
       &:hover::after {
-        background-color: map.get($bg, "component", 4) !important;
+        background-color: get($bg, "component", 4) !important;
       }
     }
   }
@@ -69,7 +70,7 @@ $done-color: map.get($text, "placeholder");
   .protyle-task--done {
     * {
       color: $done-color;
-      border-color: map.get($border, 2);
+      border-color: get($border, 2);
     }
 
     // 完成后的块引用
@@ -84,7 +85,7 @@ $done-color: map.get($text, "placeholder");
     }
 
     kbd {
-      border-color: map.get($border, 4);
+      border-color: get($border, 4);
     }
   }
 }
@@ -127,7 +128,7 @@ $done-color: map.get($text, "placeholder");
   .protyle-task--done {
     * {
       color: $done-color;
-      border-color: map.get($border, 2);
+      border-color: get($border, 2);
     }
     // 完成后的有样式子块
     [style*="color"] {

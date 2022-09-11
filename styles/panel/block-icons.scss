@@ -1,11 +1,11 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../common" as *;
 
-$b-bg: map.get($bg, "page", 1);
+$b-bg: get($bg, "page", 1);
 
-$icon-w: map.get($component-size, "small");
-$icon-svg-w: map.get($icon, "small");
+$icon-w: get($component-size, "small");
+$icon-svg-w: get($icon, "small");
 
 $padding: $fn-space;
 
@@ -25,10 +25,10 @@ $padding: $fn-space;
 
 //窗口顶栏
 .block__icons {
-  color: map.get($text, "secondary");
+  color: get($text, "secondary");
   padding: $padding;
   height: $icon-w + $padding * 2;
-  font-size: map.get($font-size, "exsmall");
+  font-size: get($font-size, "exsmall");
   background-color: $b-bg;
 
   &--active {
@@ -43,7 +43,7 @@ $padding: $fn-space;
   // 边窗顶栏logo
   .block__logo {
     svg {
-      @include svg(map.get($icon, "small"));
+      @include svg(get($icon, "small"));
       margin: 0 $padding;
     }
     // margin-right: $padding * 2;

@@ -1,4 +1,4 @@
-@use "sass:map";
+
 @use "../common" as *;
 
 $s-h: 22px;
@@ -46,7 +46,7 @@ $s-h: 22px;
       margin: 5px;
       @include add-icon(
         "notifications",
-        map.get($text, "secondary"),
+        get($text, "secondary"),
         24,
         round
       );

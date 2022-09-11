@@ -1,4 +1,4 @@
-@use "sass:map";
+
 @use "../common" as *;
 @use "../component/list";
 
@@ -11,7 +11,7 @@
 
       &:hover {
         .b3-text-field {
-          background-color: map.get($bg, "page", 1);
+          background-color: get($bg, "page", 1);
         }
       }
 
@@ -20,7 +20,7 @@
       }
 
       &__action {
-        @include icon-btn("component", 24px, map.get($icon, "small"));
+        @include icon-btn("component", 24px, get($icon, "small"));
       }
     }
     

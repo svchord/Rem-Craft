@@ -1,7 +1,7 @@
-@use "sass:map";
+
 @use "../common" as *;
 
-$t-bg: map.get($bg, "pop", 1);
+$t-bg: get($bg, "pop", 1);
 
 :root {
   // 提示
@@ -9,11 +9,11 @@ $t-bg: map.get($bg, "pop", 1);
 }
 
 @mixin tooltips {
-  box-shadow: map.get($shadow, 1);
+  box-shadow: get($shadow, 1);
   background-color: $t-bg;
-  color: map.get($text, "primary");
+  color: get($text, "primary");
   padding: 6px 8px;
-  border-radius: map.get($radius, "base");
+  border-radius: get($radius, "base");
 }
 
 //tips

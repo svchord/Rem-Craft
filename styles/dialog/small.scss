@@ -1,10 +1,10 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../common" as *;
 @use "../component/list";
 @use "big";
 
-$w: map.get($component-size, "small");
+$w: get($component-size, "small");
 $spacing: math.div(16px * 2 + 24px - $w, 2);
 $padding: 24px;
 $meta-w: 80px;
@@ -47,13 +47,13 @@ $meta-w: 80px;
 
         // 书签右侧按钮 && 自定义属性删除按钮
         .block__icon {
-          @include svg-div(map.get($component-size, "base"), 10px);
+          @include svg-div(get($component-size, "base"), 10px);
         }
 
         // 属性名
         .ft__on-surface,
         .b3-text-field[placeholder="属性名"] {
-          font-size: map.get($font-size, "base");
+          font-size: get($font-size, "base");
           width: $meta-w !important;
           text-align: center !important;
 
@@ -77,7 +77,7 @@ $meta-w: 80px;
         // 自定义属性区域
         .custom-attr__add {
           padding: 0;
-          height: map.get($component-size, "base") * 4 + 16px * 3;
+          height: get($component-size, "base") * 4 + 16px * 3;
 
           // 自定义属性添加按钮
           .b3-button {
@@ -97,8 +97,8 @@ $meta-w: 80px;
 
         .b3-button {
           @include item("pop");
-          color: map.get($text, "primary");
-          box-shadow: map.get($shadow, 0);
+          color: get($text, "primary");
+          box-shadow: get($shadow, 0);
           letter-spacing: 0.3px;
           width: math.div(100% - $space, 2);
 
@@ -124,14 +124,14 @@ $meta-w: 80px;
 
       // 选项名
       .fn__flex-1:first-child {
-        font-size: map.get($font-size, "base");
+        font-size: get($font-size, "base");
       }
 
       &:nth-child(1),
       &:nth-child(2),
       &:nth-child(3) {
         .fn__flex-1:first-child {
-          line-height: map.get($component-size, "base");
+          line-height: get($component-size, "base");
         }
       }
 

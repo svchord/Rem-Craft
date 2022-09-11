@@ -1,4 +1,4 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../common" as *;
 
@@ -14,19 +14,19 @@ $spacing-hover: math.div($switch-h - $btn-w-hover, 2) - $border-w;
 
 //开关
 .b3-switch {
-  background-color: map.get($bg, "page", 1);
+  background-color: get($bg, "page", 1);
   width: 40px;
   height: $switch-h;
-  border-radius: map.get($radius, "max");
-  border: $border-w solid map.get($border, 1);
-  transition: map.get($transition, "all");
+  border-radius: get($radius, "max");
+  border: $border-w solid get($border, 1);
+  transition: get($transition, "all");
 
   &::before {
     display: none !important;
   }
 
   &::after {
-    background-color: map.get($border, 1);
+    background-color: get($border, 1);
     border: none;
     width: $btn-w;
     height: $btn-w;
@@ -34,7 +34,7 @@ $spacing-hover: math.div($switch-h - $btn-w-hover, 2) - $border-w;
     top: $spacing;
     bottom: unset;
     box-shadow: none;
-    border-radius: map.get($radius, "max");
+    border-radius: get($radius, "max");
   }
 
   &:hover {
@@ -54,10 +54,10 @@ $spacing-hover: math.div($switch-h - $btn-w-hover, 2) - $border-w;
 
   &:checked {
     @include item("primary");
-    border-color: map.get($bg, "primary", 1);
+    border-color: get($bg, "primary", 1);
 
     &::after {
-      background-color: map.get($bg, "page", 1);
+      background-color: get($bg, "page", 1);
       right: $spacing + $btn-w;
       left: unset;
       top: $spacing;
@@ -67,7 +67,7 @@ $spacing-hover: math.div($switch-h - $btn-w-hover, 2) - $border-w;
     }
 
     &:hover {
-      border-color: map.get($bg, "primary", 2);
+      border-color: get($bg, "primary", 2);
       &::after {
         top: $spacing-hover;
         right: $spacing-hover + $btn-w;
@@ -75,7 +75,7 @@ $spacing-hover: math.div($switch-h - $btn-w-hover, 2) - $border-w;
     }
 
     &:active {
-      border-color: map.get($bg, "primary", 3);
+      border-color: get($bg, "primary", 3);
     }
   }
 }

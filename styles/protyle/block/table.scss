@@ -1,13 +1,13 @@
-@use "sass:map";
+
 @use "../../common" as *;
 
 @mixin table {
   display: table;
   width: 100%;
-  background-color: map.get($bg, "page", 1);
+  background-color: get($bg, "page", 1);
   th,
   td {
-    background-color: map.get($bg, "page", 1);
+    background-color: get($bg, "page", 1);
   }
 }
 

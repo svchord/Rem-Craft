@@ -1,11 +1,11 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../../common" as *;
 
 // .b3-typography,
 .protyle-wysiwyg [data-node-id] {
   .img {
-    border-radius: map.get($radius, "base");
+    border-radius: get($radius, "base");
 
     &--select {
       filter: unset;
@@ -27,7 +27,7 @@
       right: 3px;
       top: calc(50% - math.div($h, 2));
       box-shadow: unset !important;
-      background-color: map.get($border, 2) !important;
+      background-color: get($border, 2) !important;
     }
 
     &:hover {

@@ -1,22 +1,22 @@
-@use "sass:map";
+
 @use "../common" as *;
 
 //滑条
 .b3-slider {
-  height: map.get($component-size, "base");
+  height: get($component-size, "base");
   // padding: 0 1px;
 
   &::-webkit-slider-thumb {
     @include item("primary");
     width: 18px;
     height: 18px;
-    box-shadow: map.get($shadow, 0);
-    border: 4px solid map.get($text, "anti");
-    border-radius: map.get($radius, "circle");
+    box-shadow: get($shadow, 0);
+    border: 4px solid get($text, "anti");
+    border-radius: get($radius, "circle");
     margin-top: -6.5px;
     transform: unset !important;
-    transition: border map.get($transition-duration, "base")
-      map.get($transition-function, "fast");
+    transition: border get($transition-duration, "base")
+      get($transition-function, "fast");
 
     &:hover {
       border-width: 2px;
@@ -29,7 +29,7 @@
 
   &::-webkit-slider-runnable-track {
     height: 4px;
-    background-color: map.get($bg, "primary", 1);
-    border-radius: map.get($radius, "max");
+    background-color: get($bg, "primary", 1);
+    border-radius: get($radius, "max");
   }
 }

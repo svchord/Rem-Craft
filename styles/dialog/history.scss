@@ -1,4 +1,4 @@
-@use "sass:map";
+
 @use "../common" as *;
 @use "../component/list";
 
@@ -8,7 +8,7 @@ $padding: 16px;
   // 底层元素
   div[style*="80vh"] {
     & > .fn__flex-column {
-      border-radius: map.get($radius, "exlarge");
+      border-radius: get($radius, "exlarge");
     }
 
     // 顶部导航栏
@@ -17,7 +17,7 @@ $padding: 16px;
       padding: $padding 0;
       border-bottom: $fn-border;
       .item {
-        padding: map.get($component-padding, "base");
+        padding: get($component-padding, "base");
       }
     }
   }
@@ -45,7 +45,7 @@ $padding: 16px;
   @include side-list();
   // 文档选择
   .b3-list-item[data-type="switchNotebook"] {
-    background-color: map.get($bg, "component", 1) !important;
+    background-color: get($bg, "component", 1) !important;
   }
   // 文档展示
   .history__text {
@@ -87,8 +87,8 @@ $padding: 16px;
     .block__icon {
       @include icon-btn(
         "page",
-        map.get($component-size, "base"),
-        map.get($icon, "small")
+        get($component-size, "base"),
+        get($icon, "small")
       );
       &[disabled] {
         opacity: 1 !important;
@@ -111,8 +111,8 @@ $padding: 16px;
     &__action {
       @include icon-btn(
         "component",
-        map.get($component-size, "base"),
-        map.get($icon, "small")
+        get($component-size, "base"),
+        get($icon, "small")
       );
     }
   }

@@ -1,5 +1,6 @@
-@use "sass:map";
+
 @use "var" as *;
+@use "function" as *;
 
 :root {
   // 主色
@@ -26,12 +27,12 @@
   --b3-border-color: rgb(var(--border-3));
 
   /* 动画效果 */
-  --b3-transition: #{map.get($transition, "all")};
+  --b3-transition: #{get($transition, "all")};
 
   // 阴影
   --b3-point-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  --b3-dialog-shadow: #{map.get($shadow, 3)};
+  --b3-dialog-shadow: #{get($shadow, 3)};
 
   /* 编辑器搜索颜色 */
   //   --b3-protyle-search-border-color: #f2e680;

@@ -1,4 +1,4 @@
-@use "sass:map";
+
 @use "../common" as *;
 
 //按钮
@@ -8,7 +8,7 @@
   @include item("primary");
 
   svg {
-    @include svg(map.get($icon, "small"));
+    @include svg(get($icon, "small"));
   }
 
   &--small,
@@ -33,9 +33,9 @@
   &--progress {
     box-shadow: unset;
     color: transparent;
-    background-color: map.get($bg, "component", 1) !important;
+    background-color: get($bg, "component", 1) !important;
     > span {
-      background-color: map.get($bg, "primary", 1);
+      background-color: get($bg, "primary", 1);
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }

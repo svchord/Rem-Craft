@@ -1,10 +1,10 @@
-@use "sass:map";
+
 @use "../common" as *;
 @use "../component/list";
 @use "big";
 
 $padding: $fn-space + $interval;
-$btn-h: map.get($component-size, "base");
+$btn-h: get($component-size, "base");
 $form-h: $btn-h + $padding * 2 + 1px;
 
 @mixin search-item {
@@ -52,15 +52,15 @@ $form-h: $btn-h + $padding * 2 + 1px;
         @include component();
         &.b3-button--cancel {
           @include item("page");
-          color: map.get($text, "secondary");
+          color: get($text, "secondary");
         }
       }
 
       // 块类型筛选按钮
       .svg.ft__on-surface {
         @include item("page");
-        @include svg($btn-h, map.get($icon, "base"));
-        border-radius: map.get($radius, "small");
+        @include svg($btn-h, get($icon, "base"));
+        border-radius: get($radius, "small");
         height: $btn-h !important;
 
         &.ft__primary {
@@ -125,7 +125,7 @@ $form-h: $btn-h + $padding * 2 + 1px;
         // display: -webkit-box;
       }
       .block__icon {
-        @include icon-btn("page", map.get($component-size, "exsmall"), 10px);
+        @include icon-btn("page", get($component-size, "exsmall"), 10px);
       }
     }
 

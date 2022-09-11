@@ -1,7 +1,7 @@
-@use "sass:map";
+
 @use "../../common" as *;
 
-$text-color: map.get($text, "secondary");
+$text-color: get($text, "secondary");
 
 :root {
   --b3-protyle-inline-link-color: #{$text-color};
@@ -11,15 +11,15 @@ $text-color: map.get($text, "secondary");
 .protyle-wysiwyg [data-node-id] {
   a,
   span[data-type="a"]:not(:empty) {
-    border-bottom: 1px solid map.get($border, 2);
+    border-bottom: 1px solid get($border, 2);
     text-decoration: none;
     color: $text-color;
     font-weight: 500;
     border-radius: unset;
 
     &:hover {
-      color: map.get($text, "primary");
-      border-color: map.get($border, 1);
+      color: get($text, "primary");
+      border-color: get($border, 1);
     }
   }
 }
@@ -38,7 +38,7 @@ $path-dark: "#{$icon-path}/dark";
     margin-right: 0.2em;
     top: 0.1em;
     opacity: 0.7;
-    transition: map.get($transition, "all");
+    transition: get($transition, "all");
   }
   &:hover::before {
     opacity: 0.9;

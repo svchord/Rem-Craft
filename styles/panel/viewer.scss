@@ -1,14 +1,14 @@
-@use "sass:map";
+
 @use "../common" as *;
 
 .viewer {
   &-toolbar {
     > ul > li {
       svg {
-        color: map.get($text, "placeholder");
+        color: get($text, "placeholder");
       }
       &:hover svg {
-        color: map.get($text, "primary");
+        color: get($text, "primary");
       }
     }
   }

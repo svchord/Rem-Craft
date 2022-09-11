@@ -1,4 +1,3 @@
-@use "sass:map";
 @use "sass:math";
 @use "../common" as *;
 @use "wysiwyg";
@@ -16,13 +15,13 @@ $btn-top-l: 80px;
 // 按钮组
 @mixin btns($h: $btn-h, $type: "placeholder", $fz: 14px) {
   height: $h;
-  transition: map.get($transition, "fade");
+  transition: get($transition, "fade");
   .protyle-icon {
     @include item("page");
     @include component();
     @include v-center($h);
     @include icons.btn-text($h, $type, $fz, 12px);
-    color: map.get($text, $type);
+    color: get($text, $type);
     font-size: $fz;
     padding: 0 8px;
   }
@@ -129,7 +128,7 @@ $btn-top-l: 80px;
         .protyle-icon {
           @include v-center($h);
           background-color: transparent;
-          color: map.get($text, "anti");
+          color: get($text, "anti");
           padding: 0em 18px;
 
           &:hover {
@@ -149,7 +148,7 @@ $btn-top-l: 80px;
     @include svg-div($icon-h, $icon-h);
     @include v-center($icon-h);
     font-size: 54px;
-    border-radius: map.get($radius, "base");
+    border-radius: get($radius, "base");
     margin-left: 3px;
 
     &:hover {
@@ -162,13 +161,13 @@ $btn-top-l: 80px;
     .item {
       @include component("small");
       padding: 4px 12px;
-      border-radius: map.get($radius, "max");
-      transition: padding opacity map.get($transition-duration, "base")
-        map.get($transition-function, "fast");
-      box-shadow: map.get($shadow, 1);
+      border-radius: get($radius, "max");
+      transition: padding opacity get($transition-duration, "base")
+        get($transition-function, "fast");
+      box-shadow: get($shadow, 1);
 
-      $w: map.get($component-size, "exsmall");
-      $spacing: math.div(map.get($component-size, "small") - $w, 2);
+      $w: get($component-size, "exsmall");
+      $spacing: math.div(get($component-size, "small") - $w, 2);
       &:hover {
         padding-right: $w + $spacing;
         color: unset;

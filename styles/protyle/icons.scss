@@ -1,9 +1,9 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../common" as *;
 
 @mixin action($type: "base") {
-  $btns-radius: map.get($radius, $type);
+  $btns-radius: get($radius, $type);
 
   &--first {
     border-top-left-radius: $btns-radius;
@@ -34,7 +34,7 @@
     @include reset-style();
     @include v-center($h);
     display: inline-flex;
-    color: map.get($text, $type);
+    color: get($text, $type);
     font-size: $fz;
     position: unset;
     z-index: 0;

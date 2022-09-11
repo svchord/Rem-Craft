@@ -1,4 +1,4 @@
-@use "sass:map";
+
 @use "../../common" as *;
 @use "../icons";
 
@@ -10,7 +10,7 @@ $linum-w: 74px;
 
 :root {
   // 代码片段背景
-  --b3-protyle-code-background: #{map.get($bg, "component", 1)};
+  --b3-protyle-code-background: #{get($bg, "component", 1)};
   --b3-protyle-code-linenumber-hl: transparent;
 }
 
@@ -24,7 +24,7 @@ $linum-w: 74px;
         @include v-center(20px);
         display: inline-flex;
         text-transform: capitalize;
-        border-radius: map.get($radius, "base");
+        border-radius: get($radius, "base");
         padding: 0 5px;
         margin: 4px 0 0 4px !important;
         font-size: 12px !important;
@@ -38,7 +38,7 @@ $linum-w: 74px;
           margin-left: 4px;
           @include add-icon(
             "expand_more",
-            map.get($text, "placeholder"),
+            get($text, "placeholder"),
             18,
             "no-repeat center"
           );
@@ -81,8 +81,8 @@ $linum-w: 74px;
 .protyle-wysiwyg {
   .code-block {
     padding: 0;
-    background-color: map.get($bg, "base", 1);
-    border-radius: map.get($radius, "base");
+    background-color: get($bg, "base", 1);
+    border-radius: get($radius, "base");
     font-family: "HarmonyOS Sans SC 01", "Noto Sans SC 01", "JetBrains Mono 01";
   }
 
@@ -113,6 +113,8 @@ $linum-w: 74px;
 //行内代码块
 code {
   font-family: var(--b3-font-family-code);
+  color: get($color, "error", "base");
+  // background-color: get($color, "error", "light") !important;
 }
 
 [data-type="a"] code {

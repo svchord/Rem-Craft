@@ -1,8 +1,8 @@
-@use "sass:map";
+
 @use "../common" as *;
 
-$thumb-bg: map.get($scroll, "base");
-$track-bg: transparent; //map.get($bg, "page");
+$thumb-bg: get($scroll, "base");
+$track-bg: transparent; //get($bg, "page");
 
 :root {
   // 滚动条
@@ -44,7 +44,7 @@ $track-bg: transparent; //map.get($bg, "page");
   }
 
   &-thumb {
-    border-radius: map.get($radius, "max");
+    border-radius: get($radius, "max");
     box-sizing: content-box;
     box-shadow: inset 0 0 6px 6px $thumb-bg;
     background: unset;

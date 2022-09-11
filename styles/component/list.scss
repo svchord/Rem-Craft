@@ -1,10 +1,10 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "sass:list";
 @use "../common" as *;
 
 $list-type: "medium";
-$item-h: map.get($component-size, $list-type);
+$item-h: get($component-size, $list-type);
 $text-h: 20px;
 $padding: math.div($item-h - $text-h, 2);
 
@@ -17,7 +17,7 @@ $list-depth: 7;
 
 :root {
   // 列表
-  --b3-list-hover: #{map.get($bg, "component", 1)};
+  --b3-list-hover: #{get($bg, "component", 1)};
 }
 
 @mixin list-item($type: "page") {
@@ -30,7 +30,7 @@ $list-depth: 7;
 @mixin content($color: "secondary") {
   .b3-list-item {
     &__text {
-      color: map.get($text, $color);
+      color: get($text, $color);
     }
     // 次级信息
     &__meta {
@@ -59,25 +59,25 @@ $list-depth: 7;
 
 @mixin list-btn {
   @include item-tran("component");
-  border-radius: map.get($radius, "base");
+  border-radius: get($radius, "base");
   &::after {
     display: none !important;
   }
 }
 
 @mixin meta {
-  font-size: map.get($font-size, "exsmall");
-  color: map.get($text, "placeholder");
+  font-size: get($font-size, "exsmall");
+  color: get($text, "placeholder");
 }
 
 @mixin meta-focus {
-  color: map.get($text, "meta-focus");
+  color: get($text, "meta-focus");
 }
 
 // 列表为空
 .b3-list--empty {
-  color: map.get($text, "disabled");
-  font-size: map.get($font-size, "base");
+  color: get($text, "disabled");
+  font-size: get($font-size, "base");
 }
 
 .b3-list-item {
@@ -101,8 +101,8 @@ $list-depth: 7;
       padding: 0;
       margin: auto;
       color: transparent;
-      border-radius: map.get($radius, "circle");
-      background-color: map.get($text, "secondary");
+      border-radius: get($radius, "circle");
+      background-color: get($text, "secondary");
     }
 
     &.fn__hidden {
@@ -131,7 +131,7 @@ $list-depth: 7;
 
   // 列表图标（大纲、标签等）
   &__graphic {
-    @include svg($text-h, map.get($icon, "small"));
+    @include svg($text-h, get($icon, "small"));
     // margin-left: $interval;
 
     // 图标悬浮后有弹窗
@@ -148,7 +148,7 @@ $list-depth: 7;
 
   //列表emoji
   &__icon {
-    @include emoji-icon($text-h, 12px, map.get($icon, "base"));
+    @include emoji-icon($text-h, 12px, get($icon, "base"));
     @include list-btn();
     margin: 0;
   }
@@ -161,7 +161,7 @@ $list-depth: 7;
 
   // 列表按钮
   &__action {
-    @include svg-div($text-h, map.get($icon, "base"));
+    @include svg-div($text-h, get($icon, "base"));
     @include list-btn();
     margin-left: $interval;
     .backlink--more & {
@@ -185,7 +185,7 @@ $list-depth: 7;
 
     .b3-list-item__toggle.fn__hidden .b3-list-item__arrow,
     .b3-list-item__arrow.fn__hidden {
-      background-color: map.get($text, "focus") !important;
+      background-color: get($text, "focus") !important;
     }
 
     .counter:not(:empty),
@@ -203,8 +203,8 @@ $list-depth: 7;
   // 循环阴影辅助线
   @function cyclic($cur) {
     $margin: 6px + math.div($arrow-w, 2);
-    $border: map.get($border, 3);
-    $list-bg: map.get($bg, "page", 1);
+    $border: get($border, 3);
+    $list-bg: get($bg, "page", 1);
     $temp: "#{$margin - 1px} 0 #{$list-bg} inset, #{$margin} 0 #{$border} inset";
 
     @if $cur >1 {

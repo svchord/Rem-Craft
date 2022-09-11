@@ -1,4 +1,4 @@
-@use "sass:map";
+
 @use "sass:math";
 @use "../common" as *;
 
@@ -24,7 +24,7 @@ $item-pad: 3px 2px;
     }
 
     [data-type] {
-      border-radius: map.get($radius, "base");
+      border-radius: get($radius, "base");
     }
 
     > [data-type] {
@@ -32,7 +32,7 @@ $item-pad: 3px 2px;
     }
 
     .def--mark {
-      color: map.get($text, "primary") !important;
+      color: get($text, "primary") !important;
     }
   }
 
@@ -55,6 +55,6 @@ $item-pad: 3px 2px;
 
   //文本转语音按钮
   &-speech {
-    border-color: map.get($border, 2);
+    border-color: get($border, 2);
   }
 }

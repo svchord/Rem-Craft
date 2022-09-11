@@ -1,6 +1,5 @@
-
 @use "../common" as *;
-body.body--win32 {
+body {
   background-color: get($bg, "base", 1);
   border: none;
 }

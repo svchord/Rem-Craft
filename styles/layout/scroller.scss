@@ -1,4 +1,3 @@
-
 @use "../common" as *;
 
 $thumb-bg: get($scroll, "base");
@@ -49,6 +48,7 @@ $track-bg: transparent; //get($bg, "page");
     box-shadow: inset 0 0 6px 6px $thumb-bg;
     background: unset;
     border: solid 3px transparent;
+    z-index: 1;
     &:hover {
       border: solid 1.5px transparent;
     }

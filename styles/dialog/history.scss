@@ -1,4 +1,3 @@
-
 @use "../common" as *;
 @use "../component/list";
 
@@ -30,32 +29,39 @@ $padding: 16px;
   }
 }
 
-// 侧栏列表
-@mixin side-list {
-  > .b3-list {
+// 文档历史界面 && 数据快照界面公共样式
+.history__repo {
+  .history__repoheader {
+    padding: $padding 0;
+    margin: 0 $padding;
+    border-bottom: $fn-border;
+
+    .block__icon {
+      @include icon-btn(
+        "page",
+        get($component-size, "base"),
+        get($icon, "small")
+      );
+      &[disabled] {
+        opacity: 1 !important;
+        @include item-disabled();
+      }
+    }
+  }
+}
+
+[data-type="doc"] {
+  .b3-list {
     padding: 0 $padding;
     margin: $padding 0;
     width: 300px !important;
     border-right: $fn-border;
   }
-}
-
-// 文档历史界面
-[data-type="doc"] {
-  @include side-list();
-  // 文档选择
-  .b3-list-item[data-type="switchNotebook"] {
-    background-color: get($bg, "component", 1) !important;
+  .history__text{
+    .protyle-wysiwyg{
+      padding-top: 16px !important;
+    }
   }
-  // 文档展示
-  .history__text {
-    padding: $padding * 2;
-  }
-}
-
-// 资源历史界面
-[data-type="assets"] {
-  @include side-list();
 }
 
 // 笔记本历史界面
@@ -77,43 +83,24 @@ $padding: 16px;
   }
 }
 
-// 数据快照界面
-.history__repo {
-  .history__repoheader {
-    padding: $padding 0;
-    margin: 0 $padding;
-    border-bottom: $fn-border;
+[data-type="repo"] {
+  .b3-list {
+    padding: $padding ;
 
-    .block__icon {
-      @include icon-btn(
-        "page",
-        get($component-size, "base"),
-        get($icon, "small")
-      );
-      &[disabled] {
-        opacity: 1 !important;
-        @include item-disabled();
-      }
-    }
-  }
-
-  > .b3-list {
-    padding: 16px;
     li {
       list-style: none;
     }
-  }
-
-  .b3-list-item {
-    &__text {
-      margin-left: 0;
-    }
-    &__action {
-      @include icon-btn(
-        "component",
-        get($component-size, "base"),
-        get($icon, "small")
-      );
+    &-item {
+      &__text {
+        margin-left: 0;
+      }
+      &__action {
+        @include icon-btn(
+          "component",
+          get($component-size, "base"),
+          get($icon, "small")
+        );
+      }
     }
   }
 }

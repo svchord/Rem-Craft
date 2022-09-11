@@ -1,4 +1,3 @@
-
 @use "../common" as *;
 //表单
 
@@ -21,10 +20,10 @@ $svg-width: get($icon, "small");
   }
 }
 
+@include search-input(get($component-size, "base"), 1px);
+
 // 搜索框
 .b3-form__icon {
-  @include search-input(get($component-size, "base"), 1px);
-
   // 边窗顶栏小搜索框
   &--small {
     @include search-input(get($component-size, "small"), 0);

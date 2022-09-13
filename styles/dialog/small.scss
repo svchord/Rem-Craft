@@ -39,6 +39,8 @@ $meta-w: 80px;
     .b3-dialog {
       //弹窗标题
       &__header {
+        padding: 16px 12px;
+        margin: 0 12px;
         // 新建日记弹窗
         &.fn__none {
           display: block !important;
@@ -108,7 +110,8 @@ $meta-w: 80px;
 
       // 弹窗底部按钮
       &__action {
-        padding: $padding;
+        padding: $padding 12px;
+        margin: 0 12px;
         @include actions();
       }
     }

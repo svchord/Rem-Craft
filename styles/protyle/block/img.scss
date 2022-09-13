@@ -7,10 +7,10 @@
   .img {
     border-radius: get($radius, "base");
 
-    // &--select {
-    //   filter: unset;
-    //   background-color: var(--b3-theme-primary-lightest);
-    // }
+    &--select {
+      filter: unset;
+      background-color: var(--b3-theme-primary-lightest);
+    }
 
     .protyle-icons {
       top: 5px;

@@ -51,6 +51,12 @@ $btn-top-l: 80px;
     }
   }
 
+  &:hover {
+    .protyle-background__iconw .protyle-icons {
+      opacity: 1;
+    }
+  }
+
   //无题头图，有emoji
   &[style*="56px"],
   &[style*="64px"],
@@ -170,7 +176,6 @@ $btn-top-l: 80px;
       $spacing: math.div(get($component-size, "small") - $w, 2);
       &:hover {
         padding-right: $w + $spacing;
-        color: unset;
       }
 
       svg {
@@ -179,12 +184,22 @@ $btn-top-l: 80px;
         right: $spacing;
         background-color: transparent !important;
       }
-    }
-  }
 
-  &:hover {
-    .protyle-background__iconw .protyle-icons {
-      opacity: 1;
+      $types: (
+        0: "success",
+        1: "info",
+        2: "warning",
+        3: "error",
+      );
+
+      @each $i, $type in $types {
+        &--#{$i}:hover {
+          color: get($color, $type, "base");
+          svg {
+            color: get($color, $type, "base");
+          }
+        }
+      }
     }
   }
 }

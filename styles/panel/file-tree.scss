@@ -1,4 +1,3 @@
-
 @use "../common" as *;
 @use "../component/list";
 // 文档树
@@ -24,5 +23,5 @@
 
 // 文档树笔记本
 [data-type="navigation-root"].b3-list-item {
-  font-weight: 600;
+  background-color: get($bg, "page", 2);
 }

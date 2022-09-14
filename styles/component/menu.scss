@@ -86,7 +86,7 @@ $padding: 6px;
 
       // 关闭icon
       &[style*="height"] {
-        @include svg(8px);
+        @include svg(8px, true);
         margin-right: 8px;
       }
       // 向右箭头
@@ -226,6 +226,10 @@ $padding: 6px;
 
   &#commonMenu {
     @include menu();
+
+    .b3-menu__icon {
+      @include emoji-icon(10px, 10px, get($icon, "small"));
+    }
 
     // 添加文档标签菜单 列表
     .b3-list--background {

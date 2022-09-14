@@ -1,4 +1,3 @@
-
 @use "../common" as *;
 
 $s-h: 22px;
@@ -7,7 +6,7 @@ $s-h: 22px;
   // 右下角按钮
   .toolbar__item {
     @include item("base");
-    @include svg-div(30px, $s-h, 10px);
+    @include svg-div(30px, 10px, $s-h);
     border-radius: unset;
   }
 
@@ -21,10 +20,9 @@ $s-h: 22px;
       right: 0px;
       z-index: 0;
 
-      &__icon{
+      &__icon {
         margin-right: 8px;
       }
-
     }
 
     &::after {
@@ -44,12 +42,7 @@ $s-h: 22px;
       width: 12px;
       height: 12px;
       margin: 5px;
-      @include add-icon(
-        "notifications",
-        get($text, "secondary"),
-        24,
-        round
-      );
+      @include add-icon("notifications", get($text, "secondary"), 24, round);
     }
   }
 

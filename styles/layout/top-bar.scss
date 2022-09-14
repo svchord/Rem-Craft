@@ -1,4 +1,3 @@
-
 @use "sass:list";
 
 @use "../common" as *;
@@ -56,7 +55,7 @@ $map: (
     @include center();
     @include component-base();
     content: $content;
-    color: get($text, "primary");
+    color: get($text, "secondary");
     z-index: 0;
     width: 100%;
   }
@@ -64,7 +63,7 @@ $map: (
 
 @mixin win-control($svg-w) {
   @include item-tran("base");
-  @include svg-div($win-control-w, $bar-h, $svg-w);
+  @include svg-div($win-control-w, $svg-w, $bar-h);
   &::after {
     display: none;
   }
@@ -97,7 +96,7 @@ $map: (
     &:not(:empty) {
       .toolbar__item {
         &:first-child {
-          @include svg-div($width, $item-h, $icon-w);
+          @include svg-div($width, $icon-w, $item-h);
         }
 
         // 头衔
@@ -123,7 +122,7 @@ $map: (
             width: auto;
             font-size: 11px;
             z-index: 0;
-            color: get($text, "primary");
+            color: get($text, "secondary");
           }
 
           $types: "捐赠者", "支持者", "赞助者";
@@ -164,7 +163,7 @@ $map: (
     &#barBack,
     &#barForward {
       @include top-item();
-      @include svg-div(10px + 12px * 2, $item-h, 10px);
+      @include svg-div(10px + 12px * 2, 10px, $item-h);
       &.toolbar__item--disabled {
         @include item-disabled();
       }

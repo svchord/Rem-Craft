@@ -1,4 +1,3 @@
-
 @use "sass:math";
 @use "sass:list";
 @use "../common" as *;
@@ -89,7 +88,7 @@ $list-depth: 7;
   @include content();
   // 折叠按钮
   &__toggle {
-    @include svg-div($arrow-w, $text-h, 8px, true);
+    @include svg-div($arrow-w, 8px, $text-h, true);
     margin-right: $interval;
 
     // 文档树无子元素

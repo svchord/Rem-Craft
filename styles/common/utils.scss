@@ -1,4 +1,3 @@
-
 @use "sass:math";
 @use "sass:list";
 @use "var" as *;
@@ -42,70 +41,61 @@
   white-space: nowrap;
 }
 
-@mixin svg($args...) {
-  $w: list.nth($args, 1);
-  width: $w is-important(list.nth($args, -1));
-  height: $w is-important(list.nth($args, -1));
+@mixin svg($w, $args...) {
+  width: $w is-important(list.length($args) != 0);
+  height: $w is-important(list.length($args) != 0);
   margin: 0;
   display: block;
 
-  @if list.length($args) == 1 {
+  @if list.length($args) == 0 {
     padding: 0;
   }
-  @if list.length($args) == 2 {
-    @if list.nth($args, -1) != true {
-      $svg-w: list.nth($args, 2);
+
+  @if list.length($args) == 1 {
+    @if list.nth($args, 1) != true {
+      $svg-w: list.nth($args, 1);
       padding: math.div($w - $svg-w, 2);
     } @else {
-      padding: 0 is-important(list.nth($args, -1));
+      padding: 0 !important;
     }
   }
-  @if list.length($args) == 3 {
-    $svg-w: list.nth($args, 2);
+  @if list.length($args) == 2 {
+    $svg-w: list.nth($args, 1);
     padding: math.div($w - $svg-w, 2) is-important(list.nth($args, -1));
   }
 }
 
-@mixin svg-div($args...) {
-  $w: list.nth($args, 1);
+@mixin svg-div($w, $svg-w, $args...) {
   width: $w;
   margin: 0;
 
-  @if list.length($args) == 2 {
-    $svg-w: list.nth($args, 2);
-    height: $w;
-    padding: math.div($w - $svg-w, 2);
-    svg {
-      @include svg($svg-w);
-    }
+  svg {
+    @include svg($svg-w);
   }
 
-  @if list.length($args) == 3 {
-    @if list.nth($args, 3) != true {
-      $svg-w: list.nth($args, 3);
-      $h: list.nth($args, 2);
+  @if list.length($args) == 0 {
+    height: $w;
+    padding: math.div($w - $svg-w, 2);
+  }
+
+  @if list.length($args) == 1 {
+    @if list.nth($args, 1) != true {
+      $h: list.nth($args, 1);
       height: $h;
       padding: math.div($h - $svg-w, 2) math.div($w - $svg-w, 2);
-      svg {
-        @include svg($svg-w);
-      }
     } @else {
-      $svg-w: list.nth($args, 2);
       height: $w;
-      padding: math.div($w - $svg-w, 2) is-important(list.nth($args, -1));
+      padding: math.div($w - $svg-w, 2) !important;
       svg {
         @include svg($svg-w, true);
       }
     }
   }
 
-  @if list.length($args) == 4 {
-    $svg-w: list.nth($args, 3);
-    $h: list.nth($args, 2);
+  @if list.length($args) == 2 {
+    $h: list.nth($args, 1);
     height: $h;
-    padding: math.div($h - $svg-w, 2)
-      math.div($w - $svg-w, 2)
-      is-important(list.nth($args, -1));
+    padding: math.div($h - $svg-w, 2) math.div($w - $svg-w, 2) !important;
     svg {
       @include svg($svg-w, true);
     }

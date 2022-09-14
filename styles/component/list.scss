@@ -27,7 +27,7 @@ $list-depth: 7;
   height: auto;
 }
 
-@mixin content($color: "secondary") {
+@mixin content($color: "primary") {
   .b3-list-item {
     &__text {
       color: get($text, $color);

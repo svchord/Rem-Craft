@@ -9,7 +9,6 @@ $form-h: $btn-h + $padding * 2 + 1px;
 
 @mixin search-item {
   @include component();
-  @include list.content("primary");
   $text-h: list.$text-h;
   $padding: $interval;
   padding: $padding;

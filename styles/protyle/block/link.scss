@@ -1,4 +1,3 @@
-
 @use "../../common" as *;
 
 $text-color: get($text, "secondary");
@@ -25,7 +24,6 @@ $text-color: get($text, "secondary");
 }
 
 $icon-path: "#{$asset-path}/icons/link";
-$path-dark: "#{$icon-path}/dark";
 
 @mixin has-icon {
   padding: 0 0.1em;
@@ -507,7 +505,11 @@ $domains: (
 $dark: (
   "github.com": "github_icon.png",
   "wolai.com": "logo_wolai_logo.svg",
+  // "notion.": "notion.svg",
 );
+
+
+$path-dark: "#{$icon-path}/dark";
 
 @each $href, $file in $dark {
   .b3-typography a[href*="#{$href}"],

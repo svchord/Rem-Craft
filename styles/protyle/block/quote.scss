@@ -1,4 +1,3 @@
-
 @use "../../common" as *;
 @use "heading";
 @use "list";
@@ -13,12 +12,11 @@ $pad-l: 12px;
 @mixin bq {
   position: relative;
   background-color: transparent;
-  padding: 4px 0;
   border: none;
 
-  &::before {
+  &::after {
     content: "";
-    display: block;
+    display: block ;
     position: absolute;
     width: $side-w;
     height: calc(100% - 8px * 2);
@@ -26,7 +24,7 @@ $pad-l: 12px;
     bottom: $side-left;
     left: $side-left;
     z-index: 0;
-    border-radius: get($radius, "medium");
+    border-radius: get($radius, "max");
     background-color: get($text, "primary");
   }
 }
@@ -35,7 +33,7 @@ $pad-l: 12px;
 .protyle-wysiwyg {
   .bq {
     @include bq();
-
+    padding: 4px 0;
     // 一级子元素
     > [data-node-id] {
       margin-left: $side-left + $side-w;
@@ -57,19 +55,16 @@ $pad-l: 12px;
 
     > .list {
       margin-left: $side-left + $side-w + list.$left;
-      padding-left: 0;
+      padding: 0;
     }
 
     &[fold="1"] {
       height: 48px !important;
-      > div:first-child{
+      > div:first-child {
         font-size: 1em !important;
         line-height: 1.625 !important;
         height: auto !important;
         margin-top: 4px !important;
-        margin-bottom: 4px;
-        padding-top: 4px;
-        padding-bottom: 4px;
       }
     }
   }
@@ -81,6 +76,10 @@ $pad-l: 12px;
   > * {
     margin-left: $side-left + $side-w;
     padding-left: $pad-l;
+  }
+
+  > ul {
+    padding-left: list.$action-w;
   }
 
   * {

@@ -1,5 +1,5 @@
-
 @use "../common" as *;
+@use "wysiwyg";
 
 .protyle-preview {
   // tab栏
@@ -22,12 +22,14 @@
     }
 
     &--current {
-      @include item("focus", 1, true);
-      color: get($text, "focus") !important;
+      @include item-focus(true);
     }
   }
 
-  // >.b3-typography{
-  //   // width: 750px;
-  // }
+  > .b3-typography {
+    &:not([style*="width"]) {
+      padding-left: wysiwyg.$padding !important;
+      padding-right: wysiwyg.$padding !important;
+    }
+  }
 }

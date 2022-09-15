@@ -1,10 +1,11 @@
-
 @use "sass:math";
 @use "../../common" as *;
 
 $list-border: get($border, 3);
 $left: 2px;
 $pad-l: 16px;
+
+$action-w: 32px;
 
 $done-opacity: 0.45;
 $done-color: get($text, "placeholder");
@@ -32,13 +33,26 @@ $done-color: get($text, "placeholder");
     }
 
     // 非列表块子元素左侧线条
-    > [data-node-id]:before {
-      border-color: $list-border;
+    > [data-node-id] {
+      margin-left: $action-w !important;
+      &::before {
+        border-color: $list-border;
+      }
     }
 
     // 列表按钮悬浮底色
     > .protyle-action {
-      // color: get($text, "primary");
+      width: $action-w;
+      svg {
+        @include svg(10px);
+      }
+      &::after {
+        $w: 14px;
+        @include svg($w);
+        top: calc(50% - math.div($w, 2));
+        left: calc(50% - math.div($w, 2));
+      }
+
       &:hover::after {
         background-color: get($bg, "component", 3) !important;
       }
@@ -49,8 +63,13 @@ $done-color: get($text, "placeholder");
       }
 
       // 待办列表特殊情况
-      &--task::after {
-        border-radius: get($radius, "small");
+      &--task {
+        svg {
+          @include svg(14px);
+        }
+        &::after {
+          border-radius: get($radius, "small");
+        }
       }
     }
 

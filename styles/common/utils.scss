@@ -144,6 +144,9 @@
 @mixin item-focus($important: false) {
   @include item("focus", 1, $important);
   @include color("focus", $important);
+  &:focus {
+    background-color: get($bg, "focus", 1) is-important($important);
+  }
 }
 
 @mixin item-primary($important: false) {

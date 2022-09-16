@@ -8,7 +8,7 @@
 
 一款现代化、平面化设计的思源笔记主题
 
-<img width="1280" alt="preview" src="https://user-images.githubusercontent.com/61345763/180918033-f97016ce-1bcb-449e-929a-c863b5696e06.png">
+![preview](https://user-images.githubusercontent.com/61345763/190652183-501f01ca-93da-41d5-b5ee-ca35d3035be1.png)
 
 ## 参考样式
 
@@ -28,6 +28,19 @@
 - Rem Note 的文档树
 - Logseq 的页签
 
+## Roadmap
+
+### 短期计划
+
+1. mini-plugins：用户自定义使用css片段，完善css片段版本、作者及等功能描述信息，方便后期维护。
+2. themes：用户自定义主题风格和主题色，主题自带tdesign、semi-design及one-dark三种风格。
+3. Admonitions：也叫call-out，各类定义好的引述模板。[（参考链接）](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
+
+### 长期计划
+
+1. 列表转导图等额外辅助功能
+2. 图片、pdf浏览界面美化
+
 ## ❗注意事项
 
 1. 设置、搜索等大弹窗的关闭按钮被隐藏了，点击周围空白处即可关闭
@@ -38,6 +51,6 @@
 - 参考了[Achuan-2](https://github.com/Achuan-2)大佬的[Tsundoku Light](https://github.com/Achuan-2/siyuan-themes-tsundoku-light)主题中的超链接自动展示图标功能
 - 感谢[royc01](https://github.com/royc01)大佬提供的文档树辅助线思路
 
-## 更改日志
+## 版本日志
 
 [CHANGELOG](CHANGELOG.md)

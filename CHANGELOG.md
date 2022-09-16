@@ -1,6 +1,24 @@
 # 更新历史 | Changelog 
 
 
+### [2.1.4](https://github.com/svchord/Rem-Craft/compare/v2.1.3...v2.1.4) (2022-09-16)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 更换字体，提高小号字体的可读性 ([52d0c2f](https://github.com/svchord/Rem-Craft/commit/52d0c2f8fb2a5d129114ab13ed3b530308e5392e))
+* :bug: 删除.img-select选择器 ([1525f0f](https://github.com/svchord/Rem-Craft/commit/1525f0f023d3046506e757fa14048ed39d427b84))
+* :bug: 提高list文字可见度 ([2ad0b1e](https://github.com/svchord/Rem-Craft/commit/2ad0b1edc4babe06c0ddb503145215764126c267))
+* :bug: 修复列表嵌套引述块的样式问题 ([626a384](https://github.com/svchord/Rem-Craft/commit/626a384ad2e6fa645d5bad370059e678541c5b93))
+* :bug: 修复题头图标签的hover样式 ([2ed9be5](https://github.com/svchord/Rem-Craft/commit/2ed9be563150b9b32049fc05d66fcd6d60623638))
+* :bug: 修复block-icon、snackbar的样式问题 ([4d8514e](https://github.com/svchord/Rem-Craft/commit/4d8514e3b8525cd6e40a178ebea39d5e8b2ac58a))
+* :bug: 优化小弹窗样式 ([5cfd005](https://github.com/svchord/Rem-Craft/commit/5cfd00541fe5a87fc93e56342c7e751fcb1e2a1d))
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新readme及预览图 ([d14d0e2](https://github.com/svchord/Rem-Craft/commit/d14d0e2591dfac2bd14b5530a50345d00a2f3ca2))
+
 ### [2.1.3](https://github.com/svchord/Rem-Craft/compare/v2.1.2...v2.1.3) (2022-09-11)
 
 

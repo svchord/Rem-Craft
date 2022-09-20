@@ -32,9 +32,9 @@
 
 ### 短期计划
 
-1. mini-plugins：用户自定义使用css片段，完善css片段版本、作者及等功能描述信息，方便后期维护。
+1. mini-plugins：用户自定义使用css片段，完善css片段版本、作者及功能描述等信息，方便后期维护。
 2. themes：用户自定义主题风格和主题色，主题自带tdesign、semi-design及one-dark三种风格。
-3. Admonitions：也叫call-out，各类定义好的引述模板。[（参考链接）](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
+3. Admonitions：也叫call-out，及各类定义好的引述模板。[（参考链接）](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
 
 ### 长期计划
 
@@ -44,7 +44,7 @@
 ## ❗注意事项
 
 1. 设置、搜索等大弹窗的关闭按钮被隐藏了，点击周围空白处即可关闭
-2. 强烈建议关闭`设置` - `编辑器` - `自适应宽度`开关
+2. 强烈建议关闭 `设置` - `编辑器` - `自适应宽度` 开关
 
 ## 参考项目
 

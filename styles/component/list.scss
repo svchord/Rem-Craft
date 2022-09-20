@@ -9,10 +9,6 @@ $padding: math.div($item-h - $text-h, 2);
 
 //折叠按钮宽度
 $arrow-w: 16px;
-//子列表缩进左边距
-$list-left: 22px;
-//子列表缩进最大深度
-$list-depth: 7;
 
 :root {
   // 列表
@@ -197,18 +193,23 @@ $list-depth: 7;
   }
 }
 
-.b3-list:not(.b3-list--border) .b3-list-item {
+.b3-list:not(.b3-list--border) {
   // 子元素向右缩进 && 左侧辅助线
+  //子列表缩进左边距
+  $list-left: 22px;
+  //子列表缩进最大深度
+  $list-depth: 7;
   // 循环阴影辅助线
   @function cyclic($cur) {
-    $margin: 6px + math.div($arrow-w, 2);
+    $left: $padding + math.div($arrow-w, 2);
+    $margin: $left;
     $border: get($border, 3);
     $list-bg: get($bg, "page", 1);
     $temp: "#{$margin - 1px} 0 #{$list-bg} inset, #{$margin} 0 #{$border} inset";
 
-    @if $cur >1 {
+    @if $cur > 1 {
       @for $i from 1 to $cur {
-        $margin: $list-left * $i + 6px + math.div($arrow-w, 2);
+        $margin: $list-left * $i + $left;
         $temp: $temp +
           ", "+"#{$margin - 1px} 0 #{$list-bg} inset, #{$margin} 0 #{$border} inset";
       }
@@ -217,20 +218,20 @@ $list-depth: 7;
     @return $temp;
   }
 
-  // 递归函数
-  @mixin recursive-item-margin($cur, $end) {
-    + ul {
+  // 递归混合
+  @mixin recursive-item($cur, $end) {
+    > ul {
       box-shadow: #{cyclic($cur)};
 
-      & > .b3-list-item {
+      > .b3-list-item {
         margin-left: $list-left * $cur;
+      }
 
-        @if $cur < $end {
-          @include recursive-item-margin($cur + 1, $end);
-        }
+      @if $cur < $end {
+        @include recursive-item($cur + 1, $end);
       }
     }
   }
 
-  @include recursive-item-margin(1, $list-depth);
+  @include recursive-item(1, $list-depth);
 }

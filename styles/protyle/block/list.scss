@@ -5,7 +5,7 @@ $list-border: get($border, 3);
 $left: 2px;
 $pad-l: 16px;
 
-$action-w: 32px;
+$action-w: 34px;
 
 $done-opacity: 0.45;
 $done-color: get($text, "placeholder");
@@ -34,7 +34,7 @@ $done-color: get($text, "placeholder");
 
     // 非列表块子元素左侧线条
     > [data-node-id] {
-      margin-left: $action-w !important;
+      // margin-left: $action-w !important;
       &::before {
         border-color: $list-border;
       }
@@ -42,7 +42,7 @@ $done-color: get($text, "placeholder");
 
     // 列表按钮悬浮底色
     > .protyle-action {
-      width: $action-w;
+      // width: $action-w;
       svg {
         @include svg(10px);
       }

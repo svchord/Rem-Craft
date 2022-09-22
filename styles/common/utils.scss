@@ -116,8 +116,7 @@
 @mixin item($type, $start: 1, $important: false) {
   background-color: get($bg, $type, $start) is-important($important);
   transition: get($transition, "all");
-  &:hover,
-  &:focus {
+  &:hover{
     background-color: get($bg, $type, $start + 1) is-important($important);
   }
   &:active {
@@ -126,12 +125,10 @@
 }
 
 @mixin item-unchange($type, $start: 1, $important: fault) {
-  background-color: get($bg, $type, $start) is-important($important);
   transition: get($transition, "all");
+  &,
   &:hover,
-  &:focus {
-    background-color: get($bg, $type, $start) is-important($important);
-  }
+  &:focus,
   &:active {
     background-color: get($bg, $type, $start) is-important($important);
   }

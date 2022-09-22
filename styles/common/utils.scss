@@ -128,7 +128,8 @@
 @mixin item-unchange($type, $start: 1, $important: fault) {
   background-color: get($bg, $type, $start) is-important($important);
   transition: get($transition, "all");
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: get($bg, $type, $start) is-important($important);
   }
   &:active {
@@ -155,7 +156,7 @@
 }
 
 @mixin item-disabled($important: false) {
-  // cursor: not-allowed;
+  cursor: not-allowed;
   cursor: unset;
   color: get($text, "disabled");
   &:hover,

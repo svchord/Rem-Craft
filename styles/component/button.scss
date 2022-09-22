@@ -1,4 +1,3 @@
-
 @use "../common" as *;
 
 //按钮
@@ -9,6 +8,23 @@
 
   svg {
     @include svg(get($icon, "small"));
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: unset;
+  }
+
+  &--progress {
+    box-shadow: unset;
+    color: transparent;
+    position: relative;
+    background-color: get($bg, "component", 1) !important;
+    > span {
+      background-color: get($bg, "primary", 1);
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
   }
 
   &--small,
@@ -26,23 +42,11 @@
     @include color-change("focus");
   }
 
+  &--white {
+    @include item-unchange("page");
+  }
+
   &--small {
     @include component("small");
-  }
-
-  &--progress {
-    box-shadow: unset;
-    color: transparent;
-    background-color: get($bg, "component", 1) !important;
-    > span {
-      background-color: get($bg, "primary", 1);
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-  }
-
-  &:hover,
-  &:focus {
-    box-shadow: unset;
   }
 }

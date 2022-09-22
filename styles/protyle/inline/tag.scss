@@ -7,7 +7,7 @@ $tag-color: get($text, "secondary");
   --b3-protyle-inline-tag-color: #{$tag-color};
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type="tag"] {
+.protyle-wysiwyg [data-node-id] span[data-type~="tag"] {
   @include item-focus();
   border-radius: get($radius, "max");
   border: none;

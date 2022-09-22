@@ -6,8 +6,8 @@
 }
 
 .protyle-wysiwyg [data-node-id] {
-  span[data-type="block-ref"],
-  span[data-type="file-annotation-ref"] {
+  span[data-type~="block-ref"],
+  span[data-type~="file-annotation-ref"] {
     opacity: 1;
     border-radius: get($radius, "small") !important;
     &:hover {

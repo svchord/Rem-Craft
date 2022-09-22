@@ -1,0 +1,13 @@
+@use "../../common" as *;
+
+//行内代码块
+.fn__code,
+span[data-type~="code"] {
+  font-family: var(--b3-font-family-code);
+  color: get($color, "error", "base");
+  // background-color: get($color, "error", "light") !important;
+}
+
+span[data-type~="a"][data-type~="code"] {
+  padding: 0 0.4em;
+}

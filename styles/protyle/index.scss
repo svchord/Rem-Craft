@@ -10,14 +10,17 @@
 @use "gutters";
 // 选中块
 @use "selection";
-//预览界面
+// 预览界面
 @use "preview";
 // 工具条
 @use "toolbar";
 // 工具窗
 @use "util";
-
+// 按钮组
 @use "icons";
 
 // 各类块
 @use "block";
+
+//行内元素
+@use "inline";

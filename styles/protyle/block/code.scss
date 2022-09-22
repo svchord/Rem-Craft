@@ -110,13 +110,4 @@ $linum-w: 74px;
   }
 }
 
-//行内代码块
-code {
-  font-family: var(--b3-font-family-code);
-  color: get($color, "error", "base");
-  // background-color: get($color, "error", "light") !important;
-}
 
-[data-type="a"] code {
-  padding: 0 0.4em;
-}

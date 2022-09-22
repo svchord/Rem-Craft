@@ -4,7 +4,7 @@
 
 $asset-path: "assets";
 
-// 色板  
+// 色板
 $color: () !default;
 $color-types: "blue", "orange", "red", "green", "cyan", "purple", "yellow",
   "pink", "gray", "brand";
@@ -28,6 +28,7 @@ $fn-border: 1px solid get($border, 3);
 $feat-types: "brand", "warning", "error", "success", "info";
 $states: "base", "hover", "focus", "active", "disabled", "light";
 $color: add-color($color, $feat-types, $states);
+$color: add-color($color, ("cyan", "purple", "yellow", "pink"), "base");
 
 // 背景色
 $bg: () !default;

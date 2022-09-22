@@ -1,0 +1,13 @@
+@use "../../common" as *;
+
+.b3-typography,
+.protyle-wysiwyg {
+  span[data-type~="inline-memo"] {
+    border-radius: unset;
+    background-color: get($color, "warning", "light");
+    border-bottom: 2px solid get($color, "warning", "base");
+    &:hover {
+      background-color: get($color, "orange", 2);
+    }
+  }
+}

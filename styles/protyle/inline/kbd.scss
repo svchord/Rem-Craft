@@ -3,7 +3,7 @@
 
 .b3-typography,
 .protyle-wysiwyg {
-  kbd {
+  span[data-type~="kbd"] {
     font-family: var(--b3-font-family-code);
   }
 }

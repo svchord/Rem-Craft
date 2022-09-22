@@ -124,7 +124,7 @@ $form-h: $btn-h + $padding * 2 + 1px;
         // display: -webkit-box;
       }
       .block__icon {
-        @include icon-btn("page", get($component-size, "exsmall"), 10px);
+        @include svg-div(get($component-size, "exsmall"), 10px);
       }
     }
 

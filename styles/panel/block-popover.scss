@@ -1,4 +1,3 @@
-
 @use "../common" as *;
 @use "block-icons";
 
@@ -27,22 +26,8 @@ $bread-crumb-height: 32px;
   &__icons--border {
     border-radius: $pop-radius $pop-radius 0 0;
     background-color: $pop-bg;
-    .block__icon {
-      &[data-type="pin"] {
-        svg {
-          transform: rotate(45deg);
-          transition: transform get($transition-duration, "base")
-            get($transition-function, "ease-in-out");
-        }
-        &[aria-label="取消钉住"] {
-          svg {
-            transform: rotate(0deg);
-          }
-        }
-      }
-      + .fn__space {
-        width: $fn-space;
-      }
+    .block__icon + .fn__space {
+      width: $fn-space;
     }
   }
 

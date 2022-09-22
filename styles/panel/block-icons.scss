@@ -8,65 +8,78 @@ $icon-svg-w: get($icon, "small");
 
 $padding: $fn-space;
 
-@mixin btn($type: "page") {
-  @include icon-btn($type, $icon-w, $icon-svg-w, true);
-
-  &.ft__primary,
-  &--active {
-    @include color("focus", true);
-    @include item("focus", 1, true);
-  }
-
-  &[data-type="close"] {
-    @include item-close(true);
-  }
-}
-
 //窗口顶栏
-.block__icons {
-  color: get($text, "secondary");
-  padding: $padding;
-  height: $icon-w + $padding * 2;
-  font-size: get($font-size, "exsmall");
-  background-color: $b-bg;
-
-  &--active {
+.block {
+  &__icons {
+    color: get($text, "secondary");
+    padding: $padding;
+    height: $icon-w + $padding * 2;
+    font-size: get($font-size, "exsmall");
     background-color: $b-bg;
+
+    &--active {
+      background-color: $b-bg;
+    }
+
+    // 间隔
+    .fn__space {
+      width: $interval;
+    }
+
+    // 计数块
+    .listCount,
+    .listMCount {
+      @include counter(24px);
+      margin-right: $interval;
+      + .fn__space {
+        display: none;
+      }
+    }
   }
 
-  // 间隔
-  .fn__space {
-    width: $interval;
+  //窗口顶栏按钮
+  &__icon {
+    @include icon-btn("page", $icon-w, $icon-svg-w);
+
+    &.ft__primary,
+    &--active {
+      @include color("focus", true);
+      @include item("focus", 1, true);
+    }
+
+    &[disabled] {
+      @include item-disabled(true);
+    }
+
+    &[type="checkbox"] {
+      width: $icon-svg-w;
+      margin: 0 math.div($icon-w - $icon-svg-w, 2);
+    }
+
+    &[data-type="pin"] {
+      svg {
+        transform: rotate(45deg);
+        transition: transform get($transition-duration, "base")
+          get($transition-function, "ease-in-out");
+      }
+      &[aria-label="取消钉住"] {
+        svg {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    &[data-type="close"] {
+      @include item-close(true);
+    }
   }
 
   // 边窗顶栏logo
-  .block__logo {
+  &__logo {
     svg {
       @include svg(get($icon, "small"));
       margin: 0 $padding;
     }
     // margin-right: $padding * 2;
-  }
-
-  //窗口顶栏按钮
-  .block__icon {
-    @include btn();
-    &[disabled="disabled"] {
-      @include item-disabled(true);
-    }
-    &[type="checkbox"] {
-      width: $icon-svg-w;
-      margin: 0 math.div($icon-w - $icon-svg-w, 2);
-    }
-  }
-
-  // 计数块
-  .listCount,
-  .listMCount {
-    @include counter(24px);
-    margin-right: $interval;
-    + .fn__space {
-      display: none;
-    }
   }
 }

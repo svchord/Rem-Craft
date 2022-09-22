@@ -1,7 +1,6 @@
 
 @use "sass:math";
 @use "../common" as *;
-@use "../panel/block-icons";
 
 $item-h: get($component-size, "base");
 $item-color: get($text, "placeholder");
@@ -63,7 +62,6 @@ $fz: get($font-size, "exsmall");
   }
 
   .block__icon {
-    @include block-icons.btn();
     &::after {
       display: none;
     }

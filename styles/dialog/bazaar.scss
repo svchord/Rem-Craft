@@ -72,6 +72,9 @@
 
     > .block__icon {
       @include icon-btn("pop", get($component-size, "base"), 12px);
+      &[data-type="install-t"] {
+        @include item("focus", 0);
+      }
     }
   }
 

@@ -37,11 +37,7 @@ $padding: 16px;
     border-bottom: $fn-border;
 
     .block__icon {
-      @include icon-btn(
-        "page",
-        get($component-size, "base"),
-        get($icon, "small")
-      );
+      @include svg-div(get($component-size, "base"), get($icon, "small"));
       &[disabled] {
         opacity: 1 !important;
         @include item-disabled();

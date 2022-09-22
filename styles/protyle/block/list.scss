@@ -29,13 +29,14 @@ $done-color: get($text, "placeholder");
     // 列表块子元素左侧线条
     .list::before {
       border-color: $list-border;
-      left: -2px - $pad-l;
+      left: -1.5px - $pad-l;
     }
 
     // 非列表块子元素左侧线条
     > [data-node-id] {
       // margin-left: $action-w !important;
       &::before {
+        left: -17.5px;
         border-color: $list-border;
       }
     }

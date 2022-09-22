@@ -1,6 +1,22 @@
 # 更新历史 | Changelog 
 
 
+### [2.1.5](https://github.com/svchord/Rem-Craft/compare/v2.1.4...v2.1.5) (2022-09-22)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 调整dialog宽度 ([cea3b7c](https://github.com/svchord/Rem-Craft/commit/cea3b7cb7ba6364dcdf7565bb7e8fe4e9ccc3912))
+* :bug: 兼容思源2.2.0行内元素的更新 ([72e13e6](https://github.com/svchord/Rem-Craft/commit/72e13e6f8080cbb0ad0c91b344a42e64014dab33))
+* :bug: 简化list-border写法 ([eadd6e8](https://github.com/svchord/Rem-Craft/commit/eadd6e8ad6f3c270c69ad720729ef1ecd1379542))
+* :bug: 修复block-icon的样式问题 ([d27b4eb](https://github.com/svchord/Rem-Craft/commit/d27b4eb64e98eb3346701669eb92d3b6a66a7087))
+* :bug: 修复button样式问题 ([68288ef](https://github.com/svchord/Rem-Craft/commit/68288efd29b487f5a746d78371e45bfc6b4dbe6f))
+* :bug: 修复list-block样式 ([1b0891d](https://github.com/svchord/Rem-Craft/commit/1b0891dd9930fd748eff312f6e19c606d3703371))
+* :bug: 修复tab-bar的样式问题 ([60d420e](https://github.com/svchord/Rem-Craft/commit/60d420e478bb732c57c78bef4af2faff8b6e611c))
+* :bug: 修复utils问题 ([c6ee8ed](https://github.com/svchord/Rem-Craft/commit/c6ee8ed54a7d3248bb3a2dc3a2699b5db5804090))
+* :bug: 优化block，减少重复代码 ([c9855ec](https://github.com/svchord/Rem-Craft/commit/c9855ecbb839177031ae1351711be462d4af6e90))
+* :bug: 优化quote和gutter样式 ([5779060](https://github.com/svchord/Rem-Craft/commit/5779060a84cb7033bd5df5b416fba1588c976182))
+
 ### [2.1.4](https://github.com/svchord/Rem-Craft/compare/v2.1.3...v2.1.4) (2022-09-16)
 
 

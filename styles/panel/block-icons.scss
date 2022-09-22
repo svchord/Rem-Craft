@@ -39,7 +39,7 @@ $padding: $fn-space;
 
   //窗口顶栏按钮
   &__icon {
-    @include icon-btn("page", $icon-w, $icon-svg-w);
+    @include icon-btn("page", $icon-w, $icon-svg-w, true);
 
     &.ft__primary,
     &--active {

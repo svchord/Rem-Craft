@@ -74,9 +74,9 @@
     padding: $fn-space;
 
     > .block__icon {
-      @include icon-btn("pop", get($component-size, "base"), 12px);
+      @include icon-btn("pop", get($component-size, "base"), 12px, true);
       &[data-type="install-t"] {
-        @include item("focus", 0);
+        @include item("focus", 0, true);
       }
     }
   }
@@ -90,7 +90,7 @@
         background-color: get($bg, "focus", 1);
         > .block__icon {
           @include color-change("focus");
-          @include item-focus();
+          @include item-focus(true);
         }
       }
     }

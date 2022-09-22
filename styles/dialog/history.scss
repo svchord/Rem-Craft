@@ -17,6 +17,9 @@ $padding: 16px;
       border-bottom: $fn-border;
       .item {
         padding: get($component-padding, "base");
+        &__text {
+          margin-left: 0;
+        }
       }
     }
   }

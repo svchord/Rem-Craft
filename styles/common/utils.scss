@@ -154,7 +154,6 @@
 
 @mixin item-disabled($important: false) {
   cursor: not-allowed;
-  cursor: unset;
   color: get($text, "disabled");
   &:hover,
   &:active {

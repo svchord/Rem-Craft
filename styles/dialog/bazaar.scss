@@ -19,6 +19,9 @@
     &[style*="border"] {
       padding: 8px;
     }
+    .item__text {
+      margin-left: 0;
+    }
   }
 }
 
@@ -30,7 +33,7 @@
   // 已下载
   &[data-type="downloaded"] {
     > .fn__flex .b3-button {
-      width: 68px;
+      width: 64px;
       @include item-focus();
       &.b3-button--outline {
         @include item("page");

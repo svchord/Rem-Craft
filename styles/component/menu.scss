@@ -62,6 +62,7 @@ $padding: 6px;
   margin: math.div($w - $svg-w, 2);
   box-shadow: unset;
   border: $fn-border;
+  border-radius: get($radius, "base");
   font-size: $fz;
   &[style*="color13"] {
     background-color: get($text, "primary");
@@ -148,14 +149,24 @@ $padding: 6px;
 
     //【外观】二级菜单
     &--row {
-      width: 380px;
+      width: 390px;
+      padding: 12px;
 
       // 每个样式选项
-      .b3-menu__item {
-        // margin: 8px 0;
-        // 鼠标选项
-        &--current {
-          background-color: transparent;
+      .b3-menu {
+        &__item {
+          margin: 0px 8px 0 0;
+          padding: 0;
+          height: 20px;
+          // 鼠标选项
+          &--current {
+            background-color: transparent;
+          }
+        }
+        &__separator {
+          border-color: transparent;
+          margin: 6px 0;
+          // margin: 0;
         }
       }
 

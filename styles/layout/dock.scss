@@ -13,7 +13,7 @@ $item-w: 36px;
     @include item("base");
     @include svg-div($item-w, 13px);
     color: get($text, "secondary");
-    border-radius: get($radius, "medium");
+    border-radius: get($radius, "base");
 
     &:not(:last-child) {
       margin-bottom: $interval;

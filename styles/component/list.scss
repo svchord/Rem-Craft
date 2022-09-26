@@ -2,8 +2,8 @@
 @use "sass:list";
 @use "../common" as *;
 
-$list-type: "medium";
-$item-h: get($component-size, $list-type);
+$list-type: "base";
+$item-h: get($component-size, "medium");
 $text-h: 20px;
 $padding: math.div($item-h - $text-h, 2);
 
@@ -18,7 +18,6 @@ $arrow-w: 16px;
 @mixin list-item($type: "page") {
   @include item($type);
   @include component-base($list-type);
-  font-size: 13px;
   height: auto;
 }
 

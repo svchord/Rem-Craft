@@ -39,7 +39,7 @@ $wnd-transition: all $time get($transition-function, "fast") 0s;
 @mixin wnd {
   min-height: 10% !important;
   margin: $interval;
-  border-radius: get($radius, "large");
+  border-radius: get($radius, "medium");
   transition: all $time get($transition-function, "easing") 0s;
   background-color: $wnd-bg;
 }

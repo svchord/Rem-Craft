@@ -13,7 +13,7 @@
     box-shadow: get($shadow, 0);
     border: 4px solid get($text, "anti");
     border-radius: get($radius, "circle");
-    margin-top: -6.5px;
+    margin-top: -7px;
     transform: unset !important;
     transition: border get($transition-duration, "base")
       get($transition-function, "fast");

@@ -82,12 +82,12 @@ $padding: 6px;
     > .b3-menu__icon {
       @include svg(get($icon, "small"));
       color: get($text, "secondary");
-      margin-right: 8px;
+      margin-right: $fn-space;
 
       // 关闭icon
       &[style*="height"] {
         @include svg(8px, true);
-        margin-right: 8px;
+        margin-right: $fn-space;
       }
       // 向右箭头
       &--arrow {
@@ -106,6 +106,9 @@ $padding: 6px;
 
     &--selected {
       @include item("focus");
+      &.b3-menu__item--current {
+        @include item("focus", 1, true);
+      }
       .b3-menu {
         &__icon,
         &__label {
@@ -149,7 +152,7 @@ $padding: 6px;
 
       // 每个样式选项
       .b3-menu__item {
-        margin: 8px 0;
+        // margin: 8px 0;
         // 鼠标选项
         &--current {
           background-color: transparent;

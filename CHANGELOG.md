@@ -1,6 +1,19 @@
 # 更新历史 | Changelog 
 
 
+### [2.1.6](https://github.com/svchord/Rem-Craft/compare/v2.1.5...v2.1.6) (2022-09-27)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复标签页下拉菜单样式问题 ([5ec54a4](https://github.com/svchord/Rem-Craft/commit/5ec54a40f5b3ba5b106a3f873906a6bddc93d68d))
+* :bug: 修复导出预览界面脚注样式问题 ([d140973](https://github.com/svchord/Rem-Craft/commit/d14097317ded144dbdefc80a32587ce616c3003c))
+* :bug: 修复code-block的样式问题 ([9b5c843](https://github.com/svchord/Rem-Craft/commit/9b5c8433cda61bb18dfe37c85ed76c942bb7eeaa)), closes [#43](https://github.com/svchord/Rem-Craft/issues/43)
+* :bug: 修复color-square和font-style的样式问题 ([856c8e4](https://github.com/svchord/Rem-Craft/commit/856c8e45e5553fcf7b752101545c281230a8db6d))
+* :bug: 修复drag动画缓慢的问题 ([d65c672](https://github.com/svchord/Rem-Craft/commit/d65c6723000b69ef482064f1d0cd8a66d74321de))
+* :bug: 优化link样式，减少重复代码 ([3a1918c](https://github.com/svchord/Rem-Craft/commit/3a1918c523e1c402e6a737e62ad38d7137ec4b20))
+* :bug: 优化small-dialog代码 ([0b97c47](https://github.com/svchord/Rem-Craft/commit/0b97c4733ca4a38231f15c8b316085e046d6bc44))
+
 ### [2.1.5](https://github.com/svchord/Rem-Craft/compare/v2.1.4...v2.1.5) (2022-09-22)
 
 

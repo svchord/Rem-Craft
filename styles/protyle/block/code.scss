@@ -93,8 +93,8 @@ $linum-w: 74px;
 
     // 有行号的特殊情况
     &.protyle-linenumber {
-      padding-left: $linum-w;
-      margin: 0;
+      padding-left: 0;
+      margin-left: $linum-w;
     }
   }
 

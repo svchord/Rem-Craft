@@ -114,9 +114,9 @@ $done-color: get($text, "placeholder");
 .b3-typography {
   // 四种情况
   ul ol,
-  ol ol,
+  ol[updated] ol,
   ul ul,
-  ol ul {
+  ol[updated] ul {
     position: relative;
 
     &::before {
@@ -137,8 +137,8 @@ $done-color: get($text, "placeholder");
   }
 
   // 子列表为无序列表或待办列表
-  ol > li > ul,
-  ol > li > ol {
+  ol[updated] > li > ul,
+  ol[updated] > li > ol[updated] {
     &::before {
       left: -12px;
     }

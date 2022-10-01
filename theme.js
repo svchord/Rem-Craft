@@ -22,9 +22,6 @@ theme.config = {
   brand: theme.brand[0],
 };
 
-theme.light_path = theme.root + theme.config.light + "/light.css";
-theme.dark_path = theme.root + theme.config.dark + "/dark.css";
-
 /**
  * 加载样式文件
  * @params {string} href 样式地址
@@ -54,19 +51,23 @@ theme.updateStyle = function (id, href) {
 };
 
 theme.mode = (() => {
+  let href = null;
+  let light_path = theme.root + theme.config.light + "/light.css";
+  let dark_path = theme.root + theme.config.dark + "/dark.css";
+
   /* 根据配置选项判断主题 */
   switch (window.siyuan.config.appearance.mode) {
-    case 0:
-      theme.updateStyle("lightStyle", theme.light_path);
-      break;
     case 1:
+      href = dark_path;
       let html = document.querySelector("html");
       html.setAttribute("class", "dark");
-      theme.updateStyle("darkStyle", theme.dark_path);
       break;
+    case 0:
     default:
+      href = light_path;
       break;
   }
+  theme.updateStyle("colorStyle", href);
 })();
 
 theme.mode;

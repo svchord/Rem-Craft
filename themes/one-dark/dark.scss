@@ -2,8 +2,6 @@
 @use "./palette" as *;
 
 :root {
-  --mode-btn: "明亮";
-  --mode-after: "明亮模式";
 
   @each $type, $maps in $dark-colors {
     @each $i, $color in $maps {

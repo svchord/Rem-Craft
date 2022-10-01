@@ -36,7 +36,6 @@ $btn-top-l: 80px;
 
   //文档icon + 题头按钮组
   &__iconw {
-    left: wysiwyg.$padding !important;
     height: 0;
     top: $btn-top-l;
     display: block;
@@ -91,7 +90,6 @@ $btn-top-l: 80px;
   &__img {
     .protyle-icons {
       @include btns(26px, "secondary", 12px);
-      right: wysiwyg.$padding;
       box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px,
         rgb(15 15 15 / 10%) 0px 2px 4px;
 

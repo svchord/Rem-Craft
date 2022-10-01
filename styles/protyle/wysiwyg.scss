@@ -1,4 +1,3 @@
-
 @use "sass:math";
 @use "../common" as *;
 
@@ -9,15 +8,46 @@ $item-pad: 3px 2px;
 .protyle {
   &-content {
     overflow: overlay;
+
+    &[data-fullwidth="true"] {
+      .protyle {
+        &-background {
+          &__img .protyle-icons {
+            right: 96px;
+          }
+        }
+        &-title {
+          margin-top: 0 !important;
+        }
+      }
+    }
+
+    &:not([data-fullwidth="true"]) {
+      .protyle {
+        &-background {
+          &__iconw {
+            left: $padding !important;
+          }
+          &__img .protyle-icons {
+            right: $padding;
+          }
+        }
+        &-title {
+          margin: 0 $padding !important;
+        }
+        &-wysiwyg {
+          padding-left: $padding !important;
+          padding-right: $padding !important;
+          transition: unset !important;
+          width: 100% !important;
+        }
+      }
+    }
   }
 
   &-wysiwyg {
     padding-top: 5px !important;
     padding-bottom: 30vh !important;
-    padding-left: $padding !important;
-    padding-right: $padding !important;
-    transition: unset !important;
-    width: 100% !important;
 
     [data-node-id][fold="1"]:not(.li):not([data-type="NodeHeading"]) {
       font-size: 1em !important;

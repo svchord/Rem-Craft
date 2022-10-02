@@ -1,4 +1,3 @@
-
 @use "../common" as *;
 @use "../component/list";
 @use "big";
@@ -24,6 +23,7 @@ $form-h: $btn-h + $padding * 2 + 1px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      width: calc(100% - $padding * 4);
     }
   }
 }

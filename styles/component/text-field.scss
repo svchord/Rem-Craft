@@ -3,7 +3,7 @@
 //输入框
 .b3-text-field {
   @include reset-style();
-  @include component();
+  @include component($border: 1px);
   border: 1px solid get($border, 4) !important;
   border-bottom: 1px solid get($border, 2) !important;
   background-color: get($bg, "component", 1);

@@ -116,7 +116,7 @@
 @mixin item($type, $start: 1, $important: false) {
   background-color: get($bg, $type, $start) is-important($important);
   transition: get($transition, "all");
-  &:hover{
+  &:hover {
     background-color: get($bg, $type, $start + 1) is-important($important);
   }
   &:active {
@@ -181,11 +181,11 @@
   height: get($component-size, $type);
 }
 
-@mixin component($type: "base") {
+@mixin component($type: "base", $border: 0) {
   @include component-base($type);
   transition: get($transition, "all");
 
   padding: get($component-padding, $type);
   line-height: get($component-size, $type) -
-    list.nth(get($component-padding, $type), 1) * 2;
+    list.nth(get($component-padding, $type), 1) * 2 - $border * 2;
 }

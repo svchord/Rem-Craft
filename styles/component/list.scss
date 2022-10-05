@@ -83,7 +83,7 @@ $arrow-w: 16px;
   @include content();
   // 折叠按钮
   &__toggle {
-    @include svg-div($arrow-w, 8px, $text-h, true);
+    @include svg-div($arrow-w, 8px, $text-h, $important: true);
     margin-right: $interval;
 
     // 文档树无子元素

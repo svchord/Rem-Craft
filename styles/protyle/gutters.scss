@@ -18,7 +18,7 @@ $h: 28px;
     }
 
     &[data-type="fold"] {
-      @include svg-div(24px, 8px, $h, true);
+      @include svg-div(24px, 8px, $h, $important: true);
     }
   }
 }

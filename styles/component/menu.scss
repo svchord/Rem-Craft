@@ -87,7 +87,7 @@ $padding: 6px;
 
       // 关闭icon
       &[style*="height"] {
-        @include svg(8px, true);
+        @include svg(8px, $important: true);
         margin-right: $fn-space;
       }
       // 向右箭头

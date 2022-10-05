@@ -41,66 +41,24 @@
   white-space: nowrap;
 }
 
-@mixin svg($w, $args...) {
-  width: $w is-important(list.length($args) != 0);
-  height: $w is-important(list.length($args) != 0);
+@mixin svg($w, $svg-w: $w, $important: false) {
   margin: 0;
   display: block;
-
-  @if list.length($args) == 0 {
-    padding: 0;
-  }
-
-  @if list.length($args) == 1 {
-    @if list.nth($args, 1) != true {
-      $svg-w: list.nth($args, 1);
-      padding: math.div($w - $svg-w, 2);
-    } @else {
-      padding: 0 !important;
-    }
-  }
-  @if list.length($args) == 2 {
-    $svg-w: list.nth($args, 1);
-    padding: math.div($w - $svg-w, 2) is-important(list.nth($args, -1));
-  }
+  width: $w is-important($important);
+  height: $w is-important($important);
+  padding: math.div($w - $svg-w, 2) is-important($important);
 }
 
-@mixin svg-div($w, $svg-w, $args...) {
+@mixin svg-div($w, $svg-w, $h: $w, $important: false) {
   width: $w;
+  height: $h;
   margin: 0;
-
+  padding: math.div($h - $svg-w, 2) math.div($w - $svg-w, 2)
+    is-important($important);
   svg {
-    @include svg($svg-w);
+    @include svg($w: $svg-w, $important: $important);
   }
-
-  @if list.length($args) == 0 {
-    height: $w;
-    padding: math.div($w - $svg-w, 2);
-  }
-
-  @if list.length($args) == 1 {
-    @if list.nth($args, 1) != true {
-      $h: list.nth($args, 1);
-      height: $h;
-      padding: math.div($h - $svg-w, 2) math.div($w - $svg-w, 2);
-    } @else {
-      height: $w;
-      padding: math.div($w - $svg-w, 2) !important;
-      svg {
-        @include svg($svg-w, true);
-      }
-    }
-  }
-
-  @if list.length($args) == 2 {
-    $h: list.nth($args, 1);
-    height: $h;
-    padding: math.div($h - $svg-w, 2) math.div($w - $svg-w, 2) !important;
-    svg {
-      @include svg($svg-w, true);
-    }
-  }
-}
+} 
 
 @mixin color($type, $important: false) {
   color: get($text, $type) is-important($important);

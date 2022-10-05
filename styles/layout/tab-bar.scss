@@ -31,7 +31,7 @@ $w: get($component-size, "exsmall");
     }
 
     &__graphic {
-      @include svg($w, get($icon, "small"), true);
+      @include svg($w, get($icon, "small"), $important: true);
     }
 
     &__text {
@@ -95,10 +95,9 @@ $w: get($component-size, "exsmall");
     }
 
     &--readonly {
-      // @include item-unchange("component");
       .item__close {
         &[data-type="new"] {
-          @include svg-div($w, 12px, true);
+          @include svg-div($w, 12px, $important: true);
           margin-left: 0;
         }
       }

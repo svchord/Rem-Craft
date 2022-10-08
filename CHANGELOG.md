@@ -1,6 +1,25 @@
 # 更新历史 | Changelog 
 
 
+### [2.1.7](https://github.com/svchord/Rem-Craft/compare/v2.1.6...v2.1.7) (2022-10-08)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 大纲辅助线鼠标移入块高亮 ([cf190e7](https://github.com/svchord/Rem-Craft/commit/cf190e736fc918afc439771fead7b1a500b2a892)), closes [#33](https://github.com/svchord/Rem-Craft/issues/33)
+* :bug: 兼容新版反链面板 ([489aa3a](https://github.com/svchord/Rem-Craft/commit/489aa3a8da72de820159b4c7fbc6913856ad7f67))
+* :bug: 兼容新版明暗切换 ([60ce82f](https://github.com/svchord/Rem-Craft/commit/60ce82f39199a9be4ba0ed9ea4e632d57bbe4928))
+* :bug: 兼容自适应宽度功能 ([f4064db](https://github.com/svchord/Rem-Craft/commit/f4064db9367c352a1e2a4e21fa1fce1678b2d9b2)), closes [#20](https://github.com/svchord/Rem-Craft/issues/20)
+* :bug: 修复备注样式问题 ([37aad9f](https://github.com/svchord/Rem-Craft/commit/37aad9f190e9ff7ada8167540c1e810f7c933acf))
+* :bug: 修复超链接及上标导出样式 ([da4dd82](https://github.com/svchord/Rem-Craft/commit/da4dd82157780a1a7e4bfa7a8fd1dc3e361f430c))
+* :bug: 修复输入框行高 ([7826f52](https://github.com/svchord/Rem-Craft/commit/7826f526a29e7e8ee893252fe195a85037fb22b3))
+* :bug: 修复搜索结果列表样式问题 ([472612f](https://github.com/svchord/Rem-Craft/commit/472612fa99d3348c7bcce390bb53a0a6aa92a31a))
+* :bug: 修复menu-item--custom样式 ([4a46a8b](https://github.com/svchord/Rem-Craft/commit/4a46a8b86a3e92a5c4eb06d7f506a8b34a2c719f))
+* :bug: 优化各处编辑区域的左右padding ([f719b4c](https://github.com/svchord/Rem-Craft/commit/f719b4c592dec2bc194d881e828e630bc6fbd055))
+* :bug: 优化设置界面按钮样式 ([b77e0f8](https://github.com/svchord/Rem-Craft/commit/b77e0f8b71a65ca2339e09ee55b4098afd471696))
+* :bug: 优化页签样式 ([73a36ce](https://github.com/svchord/Rem-Craft/commit/73a36ce83cf78132c591244db44d43e9cfcdb991))
+* :bug: 优化svg-div ([272819a](https://github.com/svchord/Rem-Craft/commit/272819a59b754e20d77fec852729c4d15ad453e3))
+
 ### [2.1.6](https://github.com/svchord/Rem-Craft/compare/v2.1.5...v2.1.6) (2022-09-27)
 
 

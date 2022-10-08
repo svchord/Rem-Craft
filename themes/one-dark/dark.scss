@@ -2,7 +2,6 @@
 @use "./palette" as *;
 
 :root {
-
   @each $type, $maps in $dark-colors {
     @each $i, $color in $maps {
       #{--#{$type}-#{$i}}: #{hex2rgb($color)};
@@ -20,7 +19,7 @@
   --text-disabled: rgba(215, 218, 224, 0.4); // 色彩-文字-禁用
   --text-anti: rgb(248, 250, 253); // 色彩-文字-反色
   --text-brand: rgb(97, 175, 239); // 色彩-文字-品牌
-  --text-focus: rgb(248, 250, 253); // 色彩-文字-品牌
+  --text-focus: var(--text-anti); // 色彩-文字-品牌
   --text-meta-focus: rgba(248, 250, 253, 0.7); // 色彩-文字-链接
 
   // 线条

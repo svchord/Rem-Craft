@@ -27,7 +27,7 @@ $done-color: get($text, "placeholder");
     }
 
     // 列表块子元素左侧线条
-    .list::before {
+    > .list::before {
       border-color: $list-border;
       left: -1.5px - $pad-l;
     }
@@ -36,8 +36,16 @@ $done-color: get($text, "placeholder");
     > [data-node-id] {
       // margin-left: $action-w !important;
       &::before {
-        left: -17.5px;
         border-color: $list-border;
+        left: -17.5px;
+      }
+    }
+
+    &:hover {
+      > .list::before,
+      > [data-node-id]::before {
+        border-color: get($text, "brand");
+        transition: get($transition, "all");
       }
     }
 

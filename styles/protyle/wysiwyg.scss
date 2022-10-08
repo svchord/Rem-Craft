@@ -72,12 +72,9 @@ $item-pad: 3px 2px;
 
   //反链计数
   &-attr {
-    top: 0;
-    width: auto;
-    height: auto;
 
     &--refcount {
-      top: 0;
+      top: 50%;
       right: -50%;
       @include counter(22px);
     }

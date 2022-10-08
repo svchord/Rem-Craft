@@ -102,7 +102,10 @@ $padding: 6px;
 
     // 自定义菜单项（文本框或滑条）
     &--custom {
-      @include no-icon();
+      &:has(.b3-text-field),
+      &:has(.b3-slider) {
+        @include no-icon();
+      }
     }
 
     &--selected {

@@ -7,7 +7,8 @@ $text-color: get($text, "secondary");
 }
 
 .b3-typography a,
-.protyle-wysiwyg [data-node-id] span[data-type~="a"]:not(:empty) {
+.protyle-wysiwyg [data-node-id] a,
+  .protyle-wysiwyg [data-node-id] span[data-type~="a"]:not(:empty) {
   border-bottom: 1px solid get($border, 2);
   text-decoration: none;
   color: $text-color;
@@ -86,7 +87,7 @@ $schemes: (
 
 @each $href, $file in $schemes {
   .b3-typography a[href^="#{$href}"],
-  // .protyle-wysiwyg a[href^="#{$href}"],
+  .protyle-wysiwyg a[href^="#{$href}"],
   .protyle-wysiwyg span[data-type~="a"][data-href^="#{$href}"]:not(:empty) {
     @include has-icon("#{$icon-path}/schemes", $file);
   }
@@ -100,8 +101,8 @@ $folder-schemes: (
 @each $href, $file in $folder-schemes {
   .b3-typography a[href^="#{$href}"][data-href$="/"],
   .b3-typography a[href^="#{$href}"][data-href$="\\"],
-  // .protyle-wysiwyg a[href^="#{$href}"][data-href$="/"],
-  // .protyle-wysiwyg a[href^="#{$href}"][data-href$="\\"],
+  .protyle-wysiwyg a[href^="#{$href}"][data-href$="/"],
+  .protyle-wysiwyg a[href^="#{$href}"][data-href$="\\"],
   .protyle-wysiwyg
     span[data-type~="a"][data-href^="#{$href}"][data-href$="/"]:not(:empty),
   .protyle-wysiwyg
@@ -121,8 +122,8 @@ $static: (
 @each $href, $file in $static {
   .b3-typography a[href^="#{$href}/"][data-href$="/"],
   .b3-typography a[href^="/#{$href}"][data-href$="/"],
-  // .protyle-wysiwyg a[href^="#{$href}/"][data-href$="/"],
-  // .protyle-wysiwyg a[href^="/#{$href}"][data-href$="/"],
+  .protyle-wysiwyg a[href^="#{$href}/"][data-href$="/"],
+  .protyle-wysiwyg a[href^="/#{$href}"][data-href$="/"],
   .protyle-wysiwyg
     span[data-type~="a"][data-href^="#{$href}/"][data-href$="/"]:not(:empty),
   .protyle-wysiwyg
@@ -333,8 +334,8 @@ $assets: (
 @each $href, $file in $assets {
   .b3-typography a[href*="assets/"][href$="#{$href}"],
   .b3-typography a[href*="/assets/"][href$="#{$href}"],
-  // .protyle-wysiwyg a[href^="assets/"][href$="#{$href}"],
-  // .protyle-wysiwyg a[href^="/assets/"][href$="#{$href}"],
+  .protyle-wysiwyg a[href^="assets/"][href$="#{$href}"],
+  .protyle-wysiwyg a[href^="/assets/"][href$="#{$href}"],
   .protyle-wysiwyg
     span[data-type~="a"][href^="assets/"][data-href$="#{$href}"]:not(:empty),
   .protyle-wysiwyg
@@ -499,7 +500,7 @@ $domains: (
 @each $scope, $keys in $domains {
   @each $href, $file in $keys {
     .b3-typography a[href*="#{$href}"],
-    // .protyle-wysiwyg a[href*="#{$href}"],
+    .protyle-wysiwyg a[href*="#{$href}"],
     .protyle-wysiwyg span[data-type~="a"][data-href*="#{$href}"]:not(:empty) {
       @include has-icon("#{$icon-path}/domains/#{$scope}", $file);
     }
@@ -516,7 +517,7 @@ $path-dark: "#{$icon-path}/dark";
 
 @each $href, $file in $dark {
   .b3-typography a[href*="#{$href}"],
-  // .protyle-wysiwyg a[href*="#{$href}"],
+  .protyle-wysiwyg a[href*="#{$href}"],
   .protyle-wysiwyg span[data-type~="a"][data-href*="#{$href}"]:not(:empty) {
     .dark & {
       @include has-icon($path-dark, $file);
@@ -525,7 +526,7 @@ $path-dark: "#{$icon-path}/dark";
 }
 
 .protyle-wysiwyg span[data-type~="a"][data-href*="cloud.189.cn"]:not(:empty),
-// .protyle-wysiwyg a[href*="cloud.189.cn"],
+.protyle-wysiwyg a[href*="cloud.189.cn"],
 .b3-typography a[href*="cloud.189.cn"] {
   &::before {
     background-size: 1.6em 1em;

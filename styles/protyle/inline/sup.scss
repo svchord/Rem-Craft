@@ -3,12 +3,12 @@
 .footnotes-ref {
   a {
     color: get($text, "brand") !important;
-    border: none;
+    border: none !important;
     &::before {
       display: none !important;
     }
     &:hover {
-      border-bottom: 1px solid get($text, "brand") !important;
+      text-decoration: underline;
     }
   }
 }

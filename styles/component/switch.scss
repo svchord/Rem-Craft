@@ -1,4 +1,3 @@
-
 @use "sass:math";
 @use "../common" as *;
 
@@ -63,7 +62,7 @@ $spacing-hover: math.div($switch-h - $btn-w-hover, 2) - $border-w;
       top: $spacing;
       bottom: unset;
       transform: translateX($btn-w);
-      transition: all 0.2s ease-in-out;
+      transition: get($transition, "all");
     }
 
     &:hover {

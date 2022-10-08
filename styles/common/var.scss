@@ -159,6 +159,8 @@ $transition: map.merge(
   (
     "all": all get($transition-duration, "base")
       get($transition-function, "ease-in-out"),
+    "bg": background-color get($transition-duration, "base")
+      get($transition-function, "ease-in-out"),
     "fade": opacity get($transition-duration, "base")
       get($transition-function, "fast"),
     "md-fade": (

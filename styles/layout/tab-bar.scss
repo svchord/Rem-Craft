@@ -4,19 +4,21 @@
 
 $item-type: "base";
 $w: get($component-size, "exsmall");
+$btn-w: get($component-size, "small");
 
 //页签栏
 .layout-tab-bar {
+  flex: unset;
   background-color: get($bg, "page", 1);
 
-  .layout__center &:not(:empty) {
-    @include component-base($item-type);
-    margin: 8px 8px 0px;
+  &:nth-child(2) {
+    margin-left: 0 !important;
+    min-width: $btn-w * 2 + $interval;
   }
 
   .item {
-    @include item("page");
-    @include component($item-type);
+    @include item-tran("page");
+    @include component-base($item-type);
     flex: unset;
     min-height: 0;
     padding: $interval;
@@ -95,11 +97,43 @@ $w: get($component-size, "exsmall");
     }
 
     &--readonly {
+      @include item-unchange("page");
+      padding: 0;
+
       .item__close {
-        &[data-type="new"] {
-          @include svg-div($w, 12px, $important: true);
-          margin-left: 0;
+        @include icon-btn("page", $btn-w, 12px, true);
+
+        &[data-type="more"] {
+          @include svg-div($btn-w, 10px, $important: true);
+          margin-left: $interval;
         }
+      }
+    }
+  }
+
+  .layout__center & {
+    &:not(:empty) {
+      @include component-base($item-type);
+      margin: 8px 8px 0px;
+    }
+    .item {
+      border-radius: unset;
+      margin: 0;
+      box-shadow: 2px -22px 0px 0px get($bg, "page", 1),
+        1px -6px 0px 0px get($border, 2) !important;
+
+      &:hover {
+        border-radius: get($radius, $item-type);
+        box-shadow: unset !important;
+      }
+
+      &__text {
+        min-width: 86px;
+      }
+
+      &--focus {
+        border-radius: get($radius, $item-type);
+        box-shadow: unset !important;
       }
     }
   }

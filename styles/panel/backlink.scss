@@ -1,0 +1,11 @@
+@use "../common" as *;
+.sy__backlink {
+//   [data-treetype="backlink"].b3-list-item {
+//     // background-color: get($bg, "page", 2);
+//   }
+
+  [data-node-id] {
+    margin: 4px 0 !important;
+    font-size: 14px !important;
+  }
+}

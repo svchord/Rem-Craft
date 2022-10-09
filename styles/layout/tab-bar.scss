@@ -123,12 +123,13 @@ $btn-w: get($component-size, "small");
         1px -6px 0px 0px get($border, 2) !important;
 
       &:hover {
-        border-radius: get($radius, $item-type);
+        border-radius: get($radius, $item-type) !important;
         box-shadow: unset !important;
       }
 
       &__text {
         min-width: 86px;
+        max-width: 180px;
       }
 
       &--focus {

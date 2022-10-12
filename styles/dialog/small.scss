@@ -56,6 +56,11 @@ $small-radius: big.$dialog-radius;
             display: block;
           }
         }
+
+        .ft__smaller.ft__on-surface{
+          display: block;
+          margin-top: $interval;
+        }
       }
 
       //弹窗关闭按钮

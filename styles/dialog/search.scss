@@ -30,6 +30,18 @@ $form-h: $btn-h + $padding * 2 + 1px;
 
 .b3-dialog__container {
   &[style*="80vw"] {
+    &:has(#searchList) {
+      width: 80vw !important;
+      height: 80vh !important;
+      #searchInput,
+      #replaceInput {
+        padding-left: 59px !important;
+      }
+      .fn__flex-column[style*="70vh"] {
+        height: 80vh !important;
+      }
+    }
+
     .fn__loading--top {
       top: $form-h;
       border-radius: big.$dialog-radius;

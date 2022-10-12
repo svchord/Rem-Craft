@@ -7,7 +7,7 @@ $dialog-scrim: get($mask, "active");
 //弹窗边框弧度
 $dialog-radius: get($radius, "exlarge");
 
-$large-width: 70vw;
+$large-width: 66vw;
 
 $search-h: 50px;
 
@@ -36,7 +36,10 @@ $search-h: 50px;
       display: none;
     }
 
-    // 笔记本设置界面标题
+    // 笔记本设置界面
+    &:has(#dailyNoteSavePath){
+      width: 45vw !important;
+    }
     .b3-dialog__header {
       border-color: get($border, 3);
     }

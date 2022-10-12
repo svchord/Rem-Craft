@@ -32,6 +32,10 @@ $map: (
     "同步",
     null,
   ),
+  "Readonly": (
+    "编辑",
+    "点击更换至 只读模式",
+  ),
 );
 
 @mixin top-item {
@@ -152,6 +156,16 @@ $map: (
         }
         svg:not(.ft__secondary) {
           display: none;
+        }
+        @if $id == "Readonly" {
+          &[aria-label*="编辑"] {
+            &::before {
+              content: "只读";
+            }
+            &::after {
+              content: "点击更换至 编辑模式";
+            }
+          }
         }
       }
     }

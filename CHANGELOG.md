@@ -1,6 +1,15 @@
 # 更新历史 | Changelog 
 
 
+### [2.1.8](https://github.com/svchord/Rem-Craft/compare/v2.1.7...v2.1.8) (2022-10-13)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 利用:has优化搜索等弹窗宽度 ([f275172](https://github.com/svchord/Rem-Craft/commit/f275172d3c75b0f076734ccd0e8bacfd79aed586))
+* :bug: 利用:has优化题头图样式代码 ([4da6017](https://github.com/svchord/Rem-Craft/commit/4da601767ed86440dd233d7081f95f2efc81b03a))
+* :bug: 修复页签栏样式问题 ([2a1a4a1](https://github.com/svchord/Rem-Craft/commit/2a1a4a17d0b5e1a4f665d8319231445fafbe4a19))
+
 ### [2.1.7](https://github.com/svchord/Rem-Craft/compare/v2.1.6...v2.1.7) (2022-10-08)
 
 

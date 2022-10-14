@@ -1,7 +1,7 @@
 
 @use "../common" as *;
 
-$spacing: 5px;
+$spacing: 4px;
 
 .protyle-toolbar {
   padding: $spacing;
@@ -11,7 +11,7 @@ $spacing: 5px;
   border-radius: get($radius, "large");
 
   &__item {
-    @include svg-div(32px, 12px);
+    @include svg-div(28px, 10px);
     @include item("pop");
     margin-right: $spacing;
     border-radius: get($radius, "base");

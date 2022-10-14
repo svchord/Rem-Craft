@@ -58,7 +58,7 @@
   svg {
     @include svg($w: $svg-w, $important: $important);
   }
-} 
+}
 
 @mixin color($type, $important: false) {
   color: get($text, $type) is-important($important);
@@ -127,9 +127,6 @@
   &:hover {
     color: get($text, "anti") is-important($important);
     background-color: get($color, "error", "base") is-important($important);
-  }
-  svg {
-    @include svg(get($icon, "exsmall"));
   }
 }
 

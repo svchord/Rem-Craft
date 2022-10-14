@@ -189,9 +189,7 @@ $map: (
 
     &#closeWindow {
       @include win-control(10px);
-      &:hover {
-        background-color: get($color, "error", "base");
-      }
+      @include item-close();
     }
   }
 

@@ -71,6 +71,11 @@ $padding: $fn-space;
 
     &[data-type="close"] {
       @include item-close(true);
+      @include svg-div($icon-w, get($icon, "exsmall"), $important: true);
+    }
+
+    &.fn__none + .fn__space {
+      display: none;
     }
   }
 

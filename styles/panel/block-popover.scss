@@ -42,7 +42,22 @@ $bread-crumb-height: 32px;
 
     .protyle {
       &-breadcrumb {
-        background-color: $pop-bg;
+        // &__bar {
+        //   position: relative;
+        //   &::after {
+        //     content: "";
+        //     position: absolute;
+        //     display: inline-block;
+        //     width: -webkit-fill-available;
+        //     top: 50%;
+        //     margin-left: 8px;
+        //     height: 1px;
+        //     background-color: get($border, 3);
+            
+        //     // border-top: $fn-border;
+        //     // z-index: 0;
+        //   }
+        // }
 
         &__item--active {
           .protyle-breadcrumb__text:not(:empty) {
@@ -58,9 +73,9 @@ $bread-crumb-height: 32px;
         background-color: $pop-bg;
       }
 
-      // &-wysiwyg {
-      //   padding: 16px 132px !important;
-      // }
+      &-wysiwyg {
+        padding: 16px 132px !important;
+      }
     }
   }
 }

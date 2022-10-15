@@ -1,4 +1,3 @@
-
 @use "sass:math";
 @use "../common" as *;
 
@@ -19,8 +18,12 @@ $fz: get($font-size, "exsmall");
   &__item {
     @include v-center($item-h);
     padding: 0;
-    margin: 0;
+    margin: 0 8px;
     transition: get($transition, "all");
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     svg {
       @include svg(20px, 10px);
@@ -44,9 +47,15 @@ $fz: get($font-size, "exsmall");
       }
     }
 
-    margin: 0 8px;
-    &:first-child {
-      margin-left: 0;
+    &[style*="max-width"] {
+      @include item("page");
+      margin: 0;
+      svg {
+        color: get($text, "secondary");
+      }
+      &:hover svg {
+        color: get($text, "primary");
+      }
     }
   }
 

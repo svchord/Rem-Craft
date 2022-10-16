@@ -1,4 +1,5 @@
 @use "../common" as *;
+@use "status";
 
 $item-w: 36px;
 $dock-w: $item-w + $interval * 2;
@@ -34,6 +35,15 @@ $dock-w: $item-w + $interval * 2;
 .dock--vertical {
   width: $item-w;
 
+  div:first-child:not(:empty) {
+    @include dock();
+    margin-top: $interval;
+  }
+
+  div:last-child:not(:empty) {
+    @include dock();
+  }
+
   &#dockLeft {
     margin-left: $interval;
     border: none;
@@ -47,15 +57,10 @@ $dock-w: $item-w + $interval * 2;
       left: auto;
       right: 0;
     }
-  }
 
-  div:first-child:not(:empty) {
-    @include dock();
-    margin-top: $interval;
-  }
-
-  div:last-child:not(:empty) {
-    @include dock();
+    div:last-child {
+      margin-bottom: status.$s-h + $interval;
+    }
   }
 
   .dock__item[data-index="0"]::after,

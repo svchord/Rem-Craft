@@ -1,5 +1,6 @@
 @use "../common" as *;
 @use "../dialog/bazaar";
+@use "../layout/status";
 
 .sy__backlink {
   //   [data-treetype="backlink"].b3-list-item {
@@ -14,5 +15,8 @@
         // font-size: 14px !important;
       }
     }
+  }
+  .layout-tab-container > & > .backlinkMList {
+    min-height: status.$s-h - $interval !important;
   }
 }

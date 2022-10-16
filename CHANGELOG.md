@@ -1,6 +1,24 @@
 # 更新历史 | Changelog 
 
 
+### [2.1.9](https://github.com/svchord/Rem-Craft/compare/v2.1.8...v2.1.9) (2022-10-16)
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新Readme ([1a75134](https://github.com/svchord/Rem-Craft/commit/1a7513456c8b37c7c1896c4b5e21778b96c04e03))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容2.4.1的外观更新 ([0d4a816](https://github.com/svchord/Rem-Craft/commit/0d4a8161584a2c0b90e4cfb21448fba76e2583f2))
+* :bug: 修复编辑区域被标题影响宽度的问题 ([bce70a3](https://github.com/svchord/Rem-Craft/commit/bce70a3c43fbdd134c319a997f635cce7c8803a3))
+* :bug: 修复窗口失焦时页签文字颜色的问题 ([1622f57](https://github.com/svchord/Rem-Craft/commit/1622f57b549df35f0d5d3059ab0349b68a558253))
+* :bug: 修复新版状态栏引起的样式问题 ([84b3923](https://github.com/svchord/Rem-Craft/commit/84b3923617d150bcd4d27481b3df5348b29fd891))
+* :bug: 修复block-icon样式问题 ([24b3147](https://github.com/svchord/Rem-Craft/commit/24b31479d74d4a6550f21d4a7a2d062d1dd084b5))
+* :bug: 优化一部分反链面板问题 ([5a032a4](https://github.com/svchord/Rem-Craft/commit/5a032a4d285433f75d9a569bb265beea688d3b64))
+* :bug: 优化protyle-toolbar样式 ([b2fadae](https://github.com/svchord/Rem-Craft/commit/b2fadaea93a587c1706c5dc46ad9a13e0aeaec62))
+
 ### [2.1.8](https://github.com/svchord/Rem-Craft/compare/v2.1.7...v2.1.8) (2022-10-13)
 
 

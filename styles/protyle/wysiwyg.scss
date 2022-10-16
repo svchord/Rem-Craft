@@ -9,7 +9,7 @@ $item-pad: 3px 2px;
   &-content {
     overflow: overlay;
 
-    &[data-fullwidth="true"] {
+    .layout__center &[data-fullwidth="true"] {
       .protyle {
         &-background {
           &__img .protyle-icons {
@@ -22,7 +22,7 @@ $item-pad: 3px 2px;
       }
     }
 
-    &:not([data-fullwidth="true"]) {
+    .layout__center &:not([data-fullwidth="true"]) {
       .protyle {
         &-background {
           &__iconw {

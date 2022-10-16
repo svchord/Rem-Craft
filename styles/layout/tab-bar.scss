@@ -84,12 +84,9 @@ $btn-w: get($component-size, "small");
       }
 
       > .item__text {
-        @include color("focus");
-
-        .layout__wnd--active & {
-          @include color("focus");
-        }
+        @include color("focus", true);
       }
+      
       .item__close {
         @include item-tran("focus");
         svg {

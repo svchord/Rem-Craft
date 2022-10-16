@@ -3,67 +3,37 @@
 @use "../common" as *;
 @use "dock";
 
-$bar-h: 28px;
-$item-h: 24px;
+$bar-h: 40px;
+$item-w: 34px;
+$item-h: 25px;
 $padding: 8px;
 
-$item-w: 28px + $padding * 2;
+$icon-w: get($icon, "medium");
 
 $win-control-w: 46px;
 
-$map: (
-  "DailyNote": (
-    "日记",
-    "Alt + 5",
-  ),
-  "Search": (
-    "搜索",
-    "Ctrl + P",
-  ),
-  "History": (
-    "历史",
-    "Alt + H",
-  ),
-  "Setting": (
-    "设置",
-    "Alt + P",
-  ),
-  "Sync": (
-    "同步",
-    null,
-  ),
-  "Readonly": (
-    "编辑",
-    "点击更换至 只读模式",
-  ),
+$list: (
+  "Sync",
+  "History",
+  "DailyNote",
+  "Search",
+  "Readonly",
+  "Mode",
+  "Setting"
 );
 
 @mixin top-item {
   @include item("base");
   @include component-base();
-  width: $item-w;
-  height: $item-h;
-  margin: auto 0;
-  padding: 0;
-  cursor: unset;
-}
+  @include svg-div($item-w, $icon-w, $item-h);
+  margin-right: $interval;
 
-@mixin item-before($content) {
-  &::before {
-    @include reset-style();
-    @include v-center($item-h);
-    @include center();
-    @include component-base();
-    content: $content;
-    color: get($text, "secondary");
-    z-index: 0;
-    width: 100%;
-  }
+  cursor: unset;
 }
 
 @mixin win-control($svg-w) {
   @include item-tran("base");
-  @include svg-div($win-control-w, $svg-w, $bar-h);
+  @include svg-div($win-control-w, $svg-w, $bar-h - $interval);
   &::after {
     display: none;
   }
@@ -72,12 +42,13 @@ $map: (
 //顶部工具栏
 .toolbar {
   height: $bar-h;
-  margin-top: $interval;
+  background-color: get($bg, "base", 1) !important;
+  margin-bottom: -$interval;
+  border: none;
 
   #toolbarVIP {
     -webkit-app-region: drag;
-    $icon-w: 13px; //get($icon, "default");
-    $width: dock.$item-w + $interval * 2;
+    $width: dock.$dock-w;
 
     &:empty {
       width: $width;
@@ -140,64 +111,33 @@ $map: (
   }
 
   &__item {
-    &::after {
-      top: $item-h !important;
-      left: 35%;
-    }
-
-    @each $id, $contents in $map {
+    color: get($text, "secondary");
+    @each $id in $list {
       &#bar#{$id} {
         @include top-item();
-        @include item-before(list.nth($contents, 1));
-        &::after {
-          @if list.nth($contents, 2) {
-            content: list.nth($contents, 2);
-          }
-        }
-        svg:not(.ft__secondary) {
-          display: none;
-        }
-        @if $id == "Readonly" {
-          &[aria-label*="编辑"] {
-            &::before {
-              content: "只读";
-            }
-            &::after {
-              content: "点击更换至 编辑模式";
-            }
-          }
-        }
       }
-    }
-
-    &#barBack,
-    &#barForward {
-      @include top-item();
-      @include svg-div(10px + 12px * 2, 10px, $item-h);
-      &.toolbar__item--disabled {
-        @include item-disabled();
-      }
-    }
-
-    &.toolbar__item--win {
-      @include win-control(12px);
-    }
-
-    &#maxWindow {
-      @include win-control(10px);
-    }
-
-    &#closeWindow {
-      @include win-control(10px);
-      @include item-close();
     }
   }
 
   #drag {
-    @include v-center($bar-h);
+    color: get($text, "secondary");
+    //   // opacity: 0;
+    //   // -webkit-app-region: none;
   }
 
   #windowControls {
-    top: 0px - $interval !important;
+    height: $bar-h - $interval;
+    .toolbar__item {
+      @include win-control(12px);
+    }
+
+    #maxWindow {
+      @include win-control(10px);
+    }
+
+    #closeWindow {
+      @include win-control(10px);
+      @include item-close();
+    }
   }
 }

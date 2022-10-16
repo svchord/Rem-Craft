@@ -15,7 +15,7 @@ $padding: 6px;
 
 //菜单
 @mixin menu {
-  min-width: 200px;
+  min-width: 150px;
   padding: $padding;
   border-radius: get($radius, "medium");
 }
@@ -26,7 +26,7 @@ $padding: 6px;
   @include item("pop");
   @include component-base();
   &:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 }
 
@@ -34,10 +34,6 @@ $padding: 6px;
   @include menu-item();
   padding: math.div(get($component-size, "base") - list.$text-h, 2)
     list.$padding;
-  &--two {
-    height: auto;
-    // padding: 5px;
-  }
 }
 
 @mixin no-icon {
@@ -143,10 +139,11 @@ $padding: 6px;
 
   & &__submenu {
     @include menu();
+    min-width: 200px;
     top: 0 - $padding;
     border: none;
 
-    $sub-interval: 14px;
+    $sub-interval: 4px;
     margin-left: $sub-interval;
     margin-right: $sub-interval;
 
@@ -195,49 +192,13 @@ $padding: 6px;
     @include list.meta();
   }
 
-  // 块引用菜单 && 搜索历史菜单
+  // 搜索历史菜单
   &.b3-list,
   &.b3-list--background {
     @include menu();
 
     .b3-list-item {
       @include menu-li();
-
-      // 命名、别名、备注
-      &__showall {
-        @include v-center(list.$text-h);
-        &:first-child {
-          color: get($text, "primary");
-        }
-        &:last-child {
-          // padding-left: $interval;
-          margin: 0 !important;
-        }
-      }
-
-      &__hinticon {
-        @include svg(list.$text-h, 11px);
-        margin-right: $interval;
-      }
-
-      &--focus {
-        .b3-list-item {
-          &__showall:first-child,
-          &__hinticon {
-            @include color("focus");
-          }
-        }
-        .b3-menu__accelerator {
-          @include list.meta-focus();
-        }
-      }
-    }
-    > div[style*="flex"] {
-      margin-top: $padding;
-    }
-
-    > .emojis {
-      max-height: 360px;
     }
   }
 
@@ -266,22 +227,5 @@ $padding: 6px;
     width: 100%;
     margin: 0 !important;
     background-color: get($bg, "pop", 2);
-  }
-
-  //快捷命令菜单
-  &.hint--menu {
-    column-count: 4;
-    column-gap: $padding * 2;
-    column-rule: $fn-border;
-    max-height: none !important;
-    width: auto !important;
-
-    > .emojis {
-      column-span: all;
-      width: 360px;
-    }
-    .b3-color__square {
-      @include color-square(list.$text-h, 16px, 11px);
-    }
   }
 }

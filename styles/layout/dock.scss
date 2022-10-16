@@ -1,7 +1,7 @@
-
 @use "../common" as *;
 
 $item-w: 36px;
+$dock-w: $item-w + $interval * 2;
 
 //边栏
 @mixin dock {
@@ -9,9 +9,9 @@ $item-w: 36px;
   background-color: get($bg, "base", 1);
   margin-bottom: $interval;
 
-  span {
+  .dock__item {
     @include item("base");
-    @include svg-div($item-w, 13px);
+    @include svg-div($item-w, 14px);
     color: get($text, "secondary");
     border-radius: get($radius, "base");
 
@@ -19,9 +19,13 @@ $item-w: 36px;
       margin-bottom: $interval;
     }
 
-    &.dock__item--active {
-      @include item("base", 2);
+    &--active {
+      @include item("base", 2, $important: true);
       @include focus-before(10.35px, 0);
+      &focus {
+        color: get($text, "secondary") !important;
+        background-color: get($bg, "base", 2) !important;
+      }
     }
   }
 }

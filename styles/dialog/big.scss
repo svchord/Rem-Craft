@@ -70,17 +70,17 @@ $search-h: 50px;
     // 侧边导航栏
     .b3-tab-bar {
       margin: $fn-space 0;
-      padding: 0 $fn-space;
+      padding: 0 $fn-space !important;
       // border-right: $fn-border;
       width: 160px !important;
       height: $h !important;
       // 导航按钮
       .b3-list-item--big {
         padding: 16px 24px;
-        margin-bottom: $fn-space;
+        margin-bottom: $fn-space !important;
 
         &:last-child {
-          margin-bottom: 0px;
+          margin-bottom: 0px !important;
         }
 
         // 导航图标

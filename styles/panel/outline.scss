@@ -8,7 +8,7 @@
   // 标题
   > .b3-list-item {
     @include item("component");
-    margin: 0 8px 8px;
+    margin: 0 8px 4px !important;
     padding-left: 8px;
     .b3-list-item {
       &__text {

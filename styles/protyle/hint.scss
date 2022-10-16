@@ -1,0 +1,71 @@
+@use "../common" as *;
+@use "../component/menu";
+@use "../component/list";
+
+// 块引用菜单
+.protyle-hint {
+  @include menu.menu();
+
+  .b3-list-item {
+    width: 100% !important;
+
+    &--two {
+      height: auto;
+    }
+
+    // 命名、别名、备注
+    &__showall {
+      @include v-center(list.$text-h);
+      &:first-child {
+        color: get($text, "primary");
+      }
+      &:last-child {
+        // padding-left: $interval;
+        margin: 0 !important;
+      }
+    }
+
+    &__hinticon {
+      @include svg(list.$text-h, 11px);
+      margin-right: $interval;
+    }
+
+    &--focus {
+      .b3-list-item {
+        &__showall:first-child,
+        &__hinticon {
+          @include color("focus");
+        }
+      }
+      .b3-menu__accelerator {
+        @include list.meta-focus();
+      }
+    }
+  }
+
+  > div[style*="flex"] {
+    margin-top: menu.$padding;
+  }
+
+  > .emojis {
+    max-height: 360px;
+  }
+
+  //快捷命令菜单
+  &.hint--menu {
+    column-count: 4;
+    column-gap: menu.$padding * 2;
+    column-rule: $fn-border;
+    max-height: none !important;
+    width: auto !important;
+    height: 490px;
+
+    > .emojis {
+      column-span: all;
+      width: 360px;
+    }
+    .b3-color__square {
+      @include menu.color-square(list.$text-h, 16px, 11px);
+    }
+  }
+}

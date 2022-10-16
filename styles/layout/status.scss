@@ -1,23 +1,72 @@
+@use "sass:math";
 @use "../common" as *;
+@use "dock";
 
-$s-h: 22px;
+$s-h: 27px;
+$s-pad: 4px;
+
+$item-w: 28px;
+$item-h: 18px;
+
+$icon-w: 10px;
+
+$bardock-w: $item-w + $s-pad;
 
 #status {
+  position: fixed;
+  background-color: get($bg, "page", 1);
+  right: $bardock-w; //+ dock.$dock-w;
+  bottom: 0;
+  height: $s-h;
+  padding: $s-pad 0 $s-pad $s-pad;
+  transition: width get($transition-duration, "base")
+    get($transition-function, "ease-in-out");
+  border: {
+    width: 1px 0 0 1px;
+    style: solid;
+    color: get($border, 3);
+    radius: 8px 0 0 0;
+  }
+
   // 右下角按钮
   .toolbar__item {
-    @include item("base");
-    @include svg-div(30px, 10px, $s-h);
-    border-radius: unset;
+    @include item-tran("page");
+    @include svg-div($item-w, $icon-w, $item-h);
+
+    border-radius: 4px;
   }
 
   // 边栏设置按钮
   #barDock {
-    transform: translateX(calc(100vw - 30px * 5));
+    position: fixed;
+    right: 0; // dock.$dock-w;
+    bottom: 0;
+    width: $bardock-w;
+    height: $s-h;
+    padding: $s-pad $s-pad $s-pad 0;
+    @include item-unchange("page");
+
+    border: {
+      top: $fn-border;
+      right: $fn-border;
+      radius: unset; //0 8px 0 0;
+    }
+
+    > svg {
+      width: $item-w;
+      height: $item-h;
+      padding: math.div($item-h - $icon-w, 2) math.div($item-w - $icon-w, 2);
+      @include item("page");
+    }
+
+    &:hover > svg {
+      background-color: get($bg, "page", 2);
+    }
 
     .b3-menu {
       bottom: $s-h !important;
       left: unset !important;
-      right: 0px;
+      right: $s-pad; // + dock.$dock-w;
       z-index: 0;
 
       &__icon {
@@ -33,25 +82,34 @@ $s-h: 22px;
   // 状态栏
   .status__msg {
     display: flex;
-    margin-left: 45px - 30px;
-    @include v-center($s-h);
+    @include v-center($item-h);
 
-    &:not(:empty):before {
-      content: "";
-      display: flex;
-      width: 12px;
-      height: 12px;
-      margin: 5px;
-      @include add-icon("notifications", get($text, "secondary"), 24, round);
+    &:not(:empty) {
+      padding:0 $fn-space;
+      margin-right: $fn-space;
+      border-right: $fn-border;
+      // &::before {
+      //   content: "";
+      //   display: flex;
+      //   $w: 12px;
+      //   width: $w;
+      //   height: $w;
+      //   margin: 2.5px 3px;
+      //   @include add-icon("notifications", get($text, "secondary"), 24, round);
+      // }
     }
   }
 
   > .fn__flex-1 {
-    margin-right: 30px;
+    display: none;
   }
 
   // 文档统计
   .status__counter {
-    transform: translateX(-30px - 2px);
+    @include v-center($item-h);
+    &:not(:empty) {
+      border-right: $fn-border;
+      margin-right: $s-pad;
+    }
   }
 }

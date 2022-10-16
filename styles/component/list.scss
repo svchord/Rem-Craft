@@ -76,7 +76,7 @@ $arrow-w: 16px;
 
 .b3-list-item {
   padding: $padding;
-  margin: $interval 0;
+  margin: 0 0 $interval !important;
   line-height: $text-h;
 
   @include list-item();
@@ -223,7 +223,7 @@ $arrow-w: 16px;
       box-shadow: #{cyclic($cur)};
 
       > .b3-list-item {
-        margin-left: $list-left * $cur;
+        margin-left: $list-left * $cur !important;
       }
 
       @if $cur < $end {

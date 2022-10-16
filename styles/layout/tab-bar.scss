@@ -1,6 +1,7 @@
 @use "sass:math";
 @use "../common" as *;
 @use "../component/list";
+@use "top-bar";
 
 $item-type: "base";
 $w: get($component-size, "exsmall");
@@ -14,6 +15,7 @@ $btn-w: get($component-size, "small");
   &:nth-child(2) {
     margin-left: 0 !important;
     min-width: $btn-w * 2 + $interval;
+    flex: 1;
   }
 
   .item {
@@ -21,11 +23,16 @@ $btn-w: get($component-size, "small");
     @include component-base($item-type);
     flex: unset;
     min-height: 0;
-    padding: $interval;
+    padding: 0;
+    border: none;
     box-shadow: unset !important;
 
-    &:not(:last-child) {
-      margin-right: $fn-space;
+    .fn__flex-1 {
+      width: $interval;
+    }
+
+    &:not(:first-child) {
+      margin-left: $fn-space;
     }
 
     &__icon {
@@ -38,8 +45,7 @@ $btn-w: get($component-size, "small");
 
     &__text {
       padding: 0;
-      transition: unset;
-      margin-left: $interval;
+      min-width: 56px;
     }
 
     &__close {
@@ -47,7 +53,7 @@ $btn-w: get($component-size, "small");
       @include component-base("exsmall");
       @include svg-div($w, 10px);
       border-radius: get($radius, "small");
-      margin-left: $interval;
+      margin-right: $interval;
 
       svg {
         opacity: 0.3;
@@ -105,7 +111,8 @@ $btn-w: get($component-size, "small");
 
         &[data-type="more"] {
           @include svg-div($btn-w, 10px, $important: true);
-          margin-left: $interval;
+          position: absolute;
+          right: 0;
         }
       }
     }
@@ -116,26 +123,48 @@ $btn-w: get($component-size, "small");
       @include component-base($item-type);
       margin: 8px 8px 0px;
     }
-    .item {
-      border-radius: unset;
-      margin: 0;
-      box-shadow: 2px -22px 0px 0px get($bg, "page", 1),
-        1px -6px 0px 0px get($border, 2) !important;
-
-      &:hover {
-        border-radius: get($radius, $item-type) !important;
-        box-shadow: unset !important;
-      }
-
-      &__text {
-        min-width: 86px;
-        max-width: 180px;
-      }
-
-      &--focus {
-        border-radius: get($radius, $item-type);
-        box-shadow: unset !important;
-      }
-    }
+    // .item {
+    //   &__text {
+    //     min-width: 86px;
+    //     max-width: 180px;
+    //   }
+    // }
   }
 }
+
+// .layout__center {
+//   [data-type="wnd"] > .fn__flex:first-child {
+//     position: fixed;
+//     top: 0;
+//     left: 360px;
+//     right: 360px;
+//     height: top-bar.$bar-h;
+//   }
+//   .layout-tab-bar {
+//     height: top-bar.$bar-h;
+//     background-color: get($bg, "base", 1);
+
+//     .item {
+//       height: 34px;
+//       margin-top: 6px;
+
+//       //   box-shadow: 2px -22px 0px 0px get($bg, "page", 1),
+//       //     1px -6px 0px 0px get($border, 2) !important;
+
+//       //   &:hover {
+//       //     border-radius: get($radius, $item-type) !important;
+//       //     box-shadow: unset !important;
+//       //   }
+
+//       //   &__text {
+//       //     min-width: 86px;
+//       //     max-width: 180px;
+//       //   }
+
+//       //   &--focus {
+//       //     border-radius: get($radius, $item-type);
+//       //     box-shadow: unset !important;
+//       //   }
+//     }
+//   }
+// }

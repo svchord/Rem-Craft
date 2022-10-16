@@ -8,7 +8,8 @@
 
 一款现代化、平面化设计的思源笔记主题
 
-![preview](https://user-images.githubusercontent.com/61345763/190652183-501f01ca-93da-41d5-b5ee-ca35d3035be1.png)
+<img width="1280" alt="preview" src="https://user-images.githubusercontent.com/61345763/196049266-79244475-4e38-49a9-9f35-c7422c70f24d.png">
+
 
 ## 参考样式
 
@@ -23,9 +24,10 @@
   ![starter 252d54e0](https://user-images.githubusercontent.com/61345763/176590115-93fa2d29-a975-4a89-904c-6ba94295d3ee.png)
   
 - Notion 的题头图、编辑器各类块
-- VS Code 的顶栏
-- Craft 的引述块
+- Obsidian 的顶栏
 - Rem Note 的文档树
+- VS Code 的 One Dark Pro 配色
+- Craft 的引述块
 - Logseq 的页签
 
 ## Roadmap
@@ -34,17 +36,17 @@
 
 1. mini-plugins：用户自定义使用css片段，完善css片段版本、作者及功能描述等信息，方便后期维护。
 2. themes：用户自定义主题风格和主题色，主题自带tdesign、semi-design及one-dark三种风格。
-3. Admonitions：也叫call-out，及各类定义好的引述模板。[（参考链接）](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
+3. Admonitions：也叫call-out，即各类定义好的引述模板。[（参考链接）](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
 
 ### 长期计划
 
 1. 列表转导图等额外辅助功能
 2. 图片、pdf浏览界面美化
 
-## ❗注意事项
+<!-- ## ❗注意事项
 
 1. 设置、搜索等大弹窗的关闭按钮被隐藏了，点击周围空白处即可关闭
-2. 强烈建议关闭 `设置` - `编辑器` - `自适应宽度` 开关
+2. 强烈建议关闭 `设置` - `编辑器` - `自适应宽度` 开关 -->
 
 ## 参考项目
 

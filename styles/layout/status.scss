@@ -11,6 +11,15 @@ $icon-w: 10px;
 
 $bardock-w: $item-w + $s-pad;
 
+@keyframes msg-w {
+  from {
+    max-width: 0;
+  }
+  100% {
+    max-width: 500px;
+  }
+}
+
 #status {
   position: fixed;
   background-color: get($bg, "page", 1);
@@ -84,18 +93,19 @@ $bardock-w: $item-w + $s-pad;
     @include v-center($item-h);
 
     &:not(:empty) {
-      padding:0 $fn-space;
-      margin-right: $fn-space;
+      padding: 0 $fn-space 0 0;
+      margin-right: $interval;
       border-right: $fn-border;
-      // &::before {
-      //   content: "";
-      //   display: flex;
-      //   $w: 12px;
-      //   width: $w;
-      //   height: $w;
-      //   margin: 2.5px 3px;
-      //   @include add-icon("notifications", get($text, "secondary"), 24, round);
-      // }
+      animation: msg-w 0.2s ease-in-out;
+      &::before {
+        content: "";
+        display: flex;
+        $w: 12px;
+        width: $w;
+        height: $w;
+        margin: 2.5px 3px;
+        @include add-icon("notifications", get($text, "secondary"), 24, round);
+      }
     }
   }
 
@@ -106,9 +116,10 @@ $bardock-w: $item-w + $s-pad;
   // 文档统计
   .status__counter {
     @include v-center($item-h);
+    animation: msg-w 0.2s ease-in-out;
     &:not(:empty) {
       border-right: $fn-border;
-      margin-right: $s-pad;
+      margin: 0 $s-pad;
     }
   }
 }

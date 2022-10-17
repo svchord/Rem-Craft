@@ -16,6 +16,7 @@ $btn-w: get($component-size, "small");
     margin-left: 0 !important;
     min-width: $btn-w * 2 + $interval;
     flex: 1;
+    min-width: 24px * 2 + 8px * 3 + 4px * 2;
   }
 
   .item {
@@ -28,7 +29,7 @@ $btn-w: get($component-size, "small");
     box-shadow: unset !important;
 
     .fn__flex-1 {
-      width: $interval;
+      width: $fn-space;
     }
 
     &:not(:first-child) {
@@ -46,6 +47,7 @@ $btn-w: get($component-size, "small");
     &__text {
       padding: 0;
       min-width: 56px;
+      @include v-center(get($component-size, $item-type));
     }
 
     &__close {
@@ -86,7 +88,7 @@ $btn-w: get($component-size, "small");
       > .item__text {
         @include color("focus", true);
       }
-      
+
       .item__close {
         @include item-tran("focus");
         svg {
@@ -102,9 +104,11 @@ $btn-w: get($component-size, "small");
     &--readonly {
       @include item-unchange("page");
       padding: 0;
+      cursor: unset;
 
       .item__close {
         @include icon-btn("page", $btn-w, 12px, true);
+        cursor: pointer;
 
         &[data-type="more"] {
           @include svg-div($btn-w, 10px, $important: true);
@@ -120,48 +124,139 @@ $btn-w: get($component-size, "small");
       @include component-base($item-type);
       margin: 8px 8px 0px;
     }
-    // .item {
-    //   &__text {
-    //     min-width: 86px;
-    //     max-width: 180px;
-    //   }
-    // }
   }
 }
 
-// .layout__center {
-//   [data-type="wnd"] > .fn__flex:first-child {
-//     position: fixed;
-//     top: 0;
-//     left: 360px;
-//     right: 360px;
-//     height: top-bar.$bar-h;
-//   }
-//   .layout-tab-bar {
-//     height: top-bar.$bar-h;
-//     background-color: get($bg, "base", 1);
+@keyframes item-w {
+  from {
+    max-width: 0;
+  }
+  50% {
+    max-width: 65px;
+  }
+  100% {
+    max-width: 138px;
+  }
+}
 
-//     .item {
-//       height: 34px;
-//       margin-top: 6px;
+.layout__center {
+  $fn-border-2: 1px solid get($border, 2);
+  $item-h: 32px;
+  $item-pad: 8px;
 
-//       //   box-shadow: 2px -22px 0px 0px get($bg, "page", 1),
-//       //     1px -6px 0px 0px get($border, 2) !important;
+  @mixin divide($h, $left) {
+    $tmph: 24px;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: $left;
+      top: math.div($h - $tmph, 2);
+      height: $tmph;
+      border-left: $fn-border-2;
+    }
+  }
 
-//       //   &:hover {
-//       //     border-radius: get($radius, $item-type) !important;
-//       //     box-shadow: unset !important;
-//       //   }
+  [data-type="wnd"] > .fn__flex:first-child {
+    position: fixed;
+    top: 0;
+    left: 240px;
+    right: 300px;
+    height: top-bar.$bar-h;
+    @include divide(top-bar.$bar-h, -4px);
+    z-index: 1;
+  }
 
-//       //   &__text {
-//       //     min-width: 86px;
-//       //     max-width: 180px;
-//       //   }
+  [data-type="wnd"].layout__wnd--active {
+    > .fn__flex:first-child {
+      z-index: 2;
+    }
+  }
 
-//       //   &--focus {
-//       //     border-radius: get($radius, $item-type);
-//       //     box-shadow: unset !important;
-//       //   }
-//     }
-//   }
-// }
+  .layout-tab-bar {
+    height: top-bar.$bar-h !important;
+    background-color: get($bg, "base", 1);
+    margin: 0 !important;
+    padding: 0 4px;
+
+    .item {
+      @include item-tran("base", $important: true);
+      animation: item-w 0.2s ease-in-out;
+      height: $item-h;
+      position: relative;
+
+      &[style*="width"] {
+        animation: item-w 0.2s ease-in-out;
+      }
+
+      &:not(:first-child) {
+        margin-left: 8px;
+        @include divide($item-h, -4px);
+      }
+
+      .fn__flex-1 {
+        width: $item-pad;
+      }
+
+      &__text {
+        margin-left: $item-pad;
+        min-width: 86px;
+        max-width: 180px;
+      }
+
+      &__close {
+        @include item-tran("base", 2);
+        margin-right: $item-pad;
+      }
+
+      &--focus {
+        @include item-unchange("page", $important: true);
+        box-shadow: get($shadow, 0) !important;
+
+        .item__graphic {
+          @include color("primary");
+        }
+
+        > .item__text {
+          @include color("primary", true);
+        }
+
+        .item__close {
+          @include item-tran("page");
+          svg {
+            @include color("primary");
+          }
+        }
+
+        &::before {
+          display: none !important;
+        }
+        + .item {
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      &--readonly {
+        @include item-unchange("base", $important: true);
+        height: 24px;
+        margin: 8px 0;
+        padding: 0 8px;
+        border-left: $fn-border-2;
+        border-right: $fn-border-2;
+        border-radius: unset;
+
+        &::before {
+          display: none;
+        }
+        .item__close {
+          @include item("base", $important: true);
+          &[data-type="more"] {
+            right: 8px;
+          }
+        }
+      }
+    }
+  }
+}

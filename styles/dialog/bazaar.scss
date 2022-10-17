@@ -33,7 +33,7 @@
   // 已下载
   &[data-type="downloaded"] {
     > .fn__flex .b3-button {
-      width: 64px;
+      width: 72px;
       @include item-focus();
       &.b3-button--outline {
         @include item("page");

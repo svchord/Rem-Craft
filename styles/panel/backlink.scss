@@ -3,9 +3,12 @@
 @use "../layout/status";
 
 .sy__backlink {
-  //   [data-treetype="backlink"].b3-list-item {
-  //     // background-color: get($bg, "page", 2);
-  //   }
+  [data-treetype="backlink"].b3-list-item {
+    border: $fn-border;
+    &--focus {
+      border-color: get($bg, "focus", 1);
+    }
+  }
   .protyle {
     // box-shadow: get($shadow, 1);
     &-wysiwyg {

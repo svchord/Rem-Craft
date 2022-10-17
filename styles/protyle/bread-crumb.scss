@@ -34,7 +34,7 @@ $fz: get($font-size, "exsmall");
     .protyle-breadcrumb__text:not(:empty) {
       color: $item-color;
       margin: 0;
-      font-size: get($font-size, "exsmall");
+      font-size: $fz;
       transition: get($transition, "all");
     }
 
@@ -73,6 +73,34 @@ $fz: get($font-size, "exsmall");
   .block__icon {
     &::after {
       display: none;
+    }
+  }
+}
+
+$item-h-c: get($component-size, "large");
+$fz-c: get($font-size, "base");
+
+.layout__center .protyle > .protyle-breadcrumb {
+  min-height: $item-h-c;
+
+  .protyle-breadcrumb {
+    &__bar {
+      min-height: $item-h-c;
+    }
+    &__item {
+      @include v-center($item-h-c);
+
+      svg {
+        @include svg(20px, 11px);
+        margin: math.div($item-h-c - 20px, 2) 0;
+      }
+
+      .protyle-breadcrumb__text:not(:empty) {
+        font-size: $fz-c;
+      }
+    }
+    &__arrow {
+      height: $fz-c;
     }
   }
 }

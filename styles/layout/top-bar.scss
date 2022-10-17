@@ -121,8 +121,8 @@ $list: (
 
   #drag {
     color: get($text, "secondary");
-    //   // opacity: 0;
-    //   // -webkit-app-region: none;
+    opacity: 0;
+    transform: translateY(-22px);
   }
 
   #windowControls {

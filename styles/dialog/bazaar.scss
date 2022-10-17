@@ -49,10 +49,10 @@
   @include card();
 
   &__img {
-    margin: 16px $mar-lr 4px;
+    margin: 16px $mar-lr 8px;
     width: calc(100% - $mar-lr * 2);
     border-radius: get($radius, "large");
-    opacity: 0.8;
+    // opacity: 0.9;
 
     img {
       object-fit: cover;

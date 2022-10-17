@@ -20,15 +20,25 @@
 
       &__action {
         @include icon-btn("component", 24px, get($icon, "small"));
+        margin-left: $interval;
       }
     }
 
-    &--border > ul {
-      li {
-        margin: 0 !important;
+    &--border {
+      > ul {
+        li {
+          margin: 0 !important;
+        }
+        > ul::before {
+          left: -21px - 34px;
+        }
       }
-      > ul::before {
-        left: -21px - 34px;
+
+      ul,
+      li {
+        &::before {
+          border-color: get($border, 3);
+        }
       }
     }
   }

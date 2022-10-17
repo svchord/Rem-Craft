@@ -198,6 +198,14 @@ $btn-w: get($component-size, "small");
         width: $item-pad;
       }
 
+      &__icon {
+        @include emoji-icon($w, 13px, get($icon, "medium"));
+      }
+
+      &__graphic {
+        @include svg($w, get($icon, "base"), $important: true);
+      }
+
       &__text {
         margin-left: $item-pad;
         min-width: 86px;
@@ -207,6 +215,16 @@ $btn-w: get($component-size, "small");
       &__close {
         @include item-tran("base", 2);
         margin-right: $item-pad;
+      }
+
+      &--pin {
+        background-color: get($bg, "base", 1);
+        .item {
+          &__text {
+            margin: 0;
+            padding: 0;
+          }
+        }
       }
 
       &--focus {

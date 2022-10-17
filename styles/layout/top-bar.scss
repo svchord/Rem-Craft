@@ -37,7 +37,7 @@ $list: (
 
 @mixin win-control($svg-w) {
   @include item-tran("base");
-  @include svg-div($win-control-w, $svg-w, $bar-h - $interval);
+  @include svg-div($win-control-w, $svg-w, $bar-h);
   &::after {
     display: none;
   }
@@ -134,7 +134,7 @@ $list: (
   }
 
   #windowControls {
-    height: $bar-h - $interval;
+    height: $bar-h;
     .toolbar__item {
       @include win-control(12px);
     }

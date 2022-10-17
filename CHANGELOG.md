@@ -1,6 +1,24 @@
 # 更新历史 | Changelog 
 
 
+## [2.2.0](https://github.com/svchord/Rem-Craft/compare/v2.1.9...v2.2.0) (2022-10-17)
+
+
+### ✨ 新增功能 | Features
+
+* :sparkles: 将页签栏固定在顶栏，并修改相应布局样式 ([8bf2f1c](https://github.com/svchord/Rem-Craft/commit/8bf2f1c2e7e147c293691b8f120c6c39165d34d8))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容新的官方css变量 ([8305cc6](https://github.com/svchord/Rem-Craft/commit/8305cc6852d51666a309477ebf577adcfa2ae4c9))
+* :bug: 修复快捷键设置面板样式问题 ([fec4cd9](https://github.com/svchord/Rem-Craft/commit/fec4cd94d24ccac4f5e5a84043ccbeb7a0fb78c6))
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新Readme和preview.png ([35a109d](https://github.com/svchord/Rem-Craft/commit/35a109d0f4f1c3ef4148f4b4862cc2d41d70d2e9))
+
 ### [2.1.9](https://github.com/svchord/Rem-Craft/compare/v2.1.8...v2.1.9) (2022-10-16)
 
 

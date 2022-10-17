@@ -4,8 +4,12 @@
 @use "dock";
 
 $bar-h: 40px;
+$bar-bg: get($bg, "base", 1);
+
 $item-w: 34px;
 $item-h: 25px;
+$item-color: get($text, "secondary");
+
 $padding: 8px;
 
 $icon-w: get($icon, "medium");
@@ -39,10 +43,15 @@ $list: (
   }
 }
 
+:root {
+  --b3-toolbar-background: #{$bar-bg};
+  --b3-toolbar-blur-background: #{$bar-bg};
+  --b3-toolbar-color: #{$item-color};
+}
+
 //顶部工具栏
 .toolbar {
   height: $bar-h;
-  background-color: get($bg, "base", 1) !important;
   margin-bottom: -$interval;
   border: none;
 
@@ -93,7 +102,7 @@ $list: (
             width: auto;
             font-size: 11px;
             z-index: 0;
-            color: get($text, "secondary");
+            color: $item-color;
           }
 
           $types: "捐赠者", "支持者", "赞助者";
@@ -111,7 +120,6 @@ $list: (
   }
 
   &__item {
-    color: get($text, "secondary");
     @each $id in $list {
       &#bar#{$id} {
         @include top-item();
@@ -120,7 +128,7 @@ $list: (
   }
 
   #drag {
-    color: get($text, "secondary");
+    // color: get($text, "secondary");
     opacity: 0;
     transform: translateY(-22px);
   }

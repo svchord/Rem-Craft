@@ -1,17 +1,24 @@
 @use "../common" as *;
 
-$tran: 6px;
+$tran: 0px;
 $h: 28px;
+$mar: 4px;
+
 //块标识按钮
 .protyle-gutters {
   transform: translateX(0 - $tran);
   border-right: $tran solid transparent;
+
+  &[style*="width"] {
+    width: 24px + $mar + $tran !important;
+  }
 
   button {
     @include item-tran("page");
     @include svg-div(24px, 12px, $h);
     border-radius: get($radius, "small");
     color: get($text, "disabled");
+    margin-right: $mar;
 
     &:hover {
       color: get($text, "secondary");
@@ -19,6 +26,7 @@ $h: 28px;
 
     &[data-type="fold"] {
       @include svg-div(24px, 8px, $h, $important: true);
+      margin-right: $mar;
     }
   }
 }

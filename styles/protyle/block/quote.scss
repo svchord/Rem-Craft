@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "../../common" as *;
 @use "heading";
 @use "list";
@@ -5,8 +6,10 @@
 $bq-color: get($text, "secondary");
 
 $side-left: $fn-space;
-$side-w: 4px;
-$pad-l: 12px;
+$side-w: 2px;
+$pad-l: 16px;
+
+$left-interval: 10px;
 
 //引述块
 @mixin bq {
@@ -16,7 +19,7 @@ $pad-l: 12px;
 
   &::after {
     content: "";
-    display: block ;
+    display: block;
     position: absolute;
     width: $side-w;
     height: calc(100% - 8px * 2);
@@ -36,7 +39,7 @@ $pad-l: 12px;
     padding: 4px 0;
     // 一级子元素
     > [data-node-id] {
-      margin-left: $side-left + $side-w;
+      margin-left: $side-left + $side-w + $left-interval;
       padding-left: $pad-l;
       &[data-type="NodeHeading"] {
         &:first-child {
@@ -48,14 +51,14 @@ $pad-l: 12px;
       }
     }
 
+    > .list {
+      margin-left: $side-left + $side-w + list.$left + $left-interval + $pad-l;
+      padding: 0;
+    }
+
     // 所有子元素
     [data-node-id] {
       color: $bq-color;
-    }
-
-    > .list {
-      margin-left: $side-left + $side-w + list.$left;
-      padding: 0;
     }
 
     &[fold="1"] {

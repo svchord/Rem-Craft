@@ -19,8 +19,22 @@ $per: 0.9;
   }
   .protyle {
     // box-shadow: get($shadow, 1);
+
+    &-breadcrumb {
+      &__bar {
+        // border: $fn-border;
+        border-radius: 4px;
+        box-shadow: get($shadow, 0);
+        padding: 0 4px;
+      }
+      &__item[style*="max-width"][style*="100%"] {
+        margin-bottom: 8px;
+        margin-top: -18px;
+      }
+    }
     &-wysiwyg {
       padding-bottom: 5px !important;
+      padding-right: 5px !important;
       [data-node-id] {
         [contenteditable] {
           font-size: math.percentage($per);

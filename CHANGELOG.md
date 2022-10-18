@@ -1,6 +1,39 @@
 # 更新历史 | Changelog 
 
 
+### [2.2.1](https://github.com/svchord/Rem-Craft/compare/v2.2.0...v2.2.1) (2022-10-18)
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新 readme ([1608684](https://github.com/svchord/Rem-Craft/commit/16086846c7110102c43e84a6d5bebaedb4adc304))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 调整5，6级标题字号 ([c17406f](https://github.com/svchord/Rem-Craft/commit/c17406f1ecf6fe30434a51f80c08dad73f77ec09))
+* :bug: 将状态栏换到左下角 ([18f1a6e](https://github.com/svchord/Rem-Craft/commit/18f1a6ec79c18a0e0ea1c33619d5f94d3627fdd4))
+* :bug: 解决顶栏拖动问题 ([1191d76](https://github.com/svchord/Rem-Craft/commit/1191d76ceb59755514a02ec5f52d76ffc275519f))
+* :bug: 修复钉住页签的样式问题 ([53b90bd](https://github.com/svchord/Rem-Craft/commit/53b90bdb5f7e241dc46553fdeba885bc01a7d853))
+* :bug: 修复分屏时顶部页签栏的拖拽问题 ([bf1e99b](https://github.com/svchord/Rem-Craft/commit/bf1e99b8b407f6682355914e777aa54737337224))
+* :bug: 修复快捷键设置界面样式问题 ([8a9e69f](https://github.com/svchord/Rem-Craft/commit/8a9e69ff6e36fe2880b798624a0f9c7510c1b34a))
+* :bug: 修复列表嵌套标题块时辅助线的样式问题 ([e3906af](https://github.com/svchord/Rem-Craft/commit/e3906af280bc6862e92e82e18172d4fbaa431042))
+* :bug: 修复信息块中的行内标签样式 ([4d156a3](https://github.com/svchord/Rem-Craft/commit/4d156a30dd0c52a5576864c8423e65795a4236d9))
+* :bug: 优化笔记本和反链面板样式 ([8a0a41b](https://github.com/svchord/Rem-Craft/commit/8a0a41b5425340e15c88c69ab1b6c0a9cc147ba1))
+* :bug: 优化边栏动画 ([749c5bd](https://github.com/svchord/Rem-Craft/commit/749c5bdfe9c0b3311fdaabdca1a08ff63c7715d8))
+* :bug: 优化底部状态栏的样式 ([91b13ef](https://github.com/svchord/Rem-Craft/commit/91b13ef53f26c0426801beca1a513b7b06caf8ee))
+* :bug: 优化反链编辑器内块标按钮样式 ([1bfe457](https://github.com/svchord/Rem-Craft/commit/1bfe4572279a68aeb55b6defccf214e65c5b0473))
+* :bug: 优化反链界面字号 ([90f1c9c](https://github.com/svchord/Rem-Craft/commit/90f1c9cd44b920cde74d11164670dc38cf70599b))
+* :bug: 优化反链面板面包屑样式 ([0436218](https://github.com/svchord/Rem-Craft/commit/04362183216d6830a7af2463bd07e665182fdb3b))
+* :bug: 优化反链面板样式 ([439cd36](https://github.com/svchord/Rem-Craft/commit/439cd36c5ae002daffcb8cfcb69ddaacad98bbde))
+* :bug: 优化集市卡片样式 ([68d6376](https://github.com/svchord/Rem-Craft/commit/68d6376b3fa8921bde1a03cee9685de7dbc045d6))
+* :bug: 优化行级元素外观菜单的清除样式按钮 ([fa74f27](https://github.com/svchord/Rem-Craft/commit/fa74f27aad3943bb1e080f5d140fb20ae42386da))
+* :bug: 优化行内图片拖拽按钮的样式 ([6c96206](https://github.com/svchord/Rem-Craft/commit/6c96206462d91dd794af4bfea693dc17d289339c))
+* :bug: 优化页签钉住时的样式 ([f2068ed](https://github.com/svchord/Rem-Craft/commit/f2068ed72043a4d9a66e1c0343503445bca5aec4))
+* :bug: 优化已关闭的笔记本按钮样式 ([d40f8f6](https://github.com/svchord/Rem-Craft/commit/d40f8f6a8231056b44929d8fd9a3332918ece128))
+* :bug: 优化引述块和块标按钮的样式 ([93ebcec](https://github.com/svchord/Rem-Craft/commit/93ebcec09b472c9602e08392e56dcc012090b9fd))
+* :bug: 优化win-control按钮样式，去掉编辑区域的overlay ([e5948d4](https://github.com/svchord/Rem-Craft/commit/e5948d40d635848b8c76d061583d58e3405f298d))
+
 ## [2.2.0](https://github.com/svchord/Rem-Craft/compare/v2.1.9...v2.2.0) (2022-10-17)
 
 

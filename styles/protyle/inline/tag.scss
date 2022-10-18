@@ -7,17 +7,25 @@ $tag-color: get($text, "secondary");
   --b3-protyle-inline-tag-color: #{$tag-color};
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type~="tag"] {
-  @include item-focus();
-  border-radius: get($radius, "max");
-  border: none;
-  position: relative;
-  padding: 0.1em 0.6em;
-  font-size: 85%;
+.protyle-wysiwyg [data-node-id] {
+  span[data-type~="tag"] {
+    @include item-focus();
+    border-radius: get($radius, "max");
+    border: none;
+    position: relative;
+    padding: 0.1em 0.6em;
+    font-size: 85%;
 
-  &::before {
-    content: "#";
-    display: inline-block;
-    margin-right: 0.2em;
+    &::before {
+      content: "#";
+      display: inline-block;
+      margin-right: 0.2em;
+    }
+  }
+
+  &[style*="var(--b3-card-info-background)"] {
+    span[data-type~="tag"] {
+      @include item("focus", 2);
+    }
   }
 }

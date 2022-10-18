@@ -8,6 +8,21 @@ $icon-svg-w: get($icon, "small");
 
 $padding: $fn-space;
 
+@mixin btn($type: "page") {
+  @include icon-btn($type, $icon-w, $icon-svg-w, true);
+
+  &.ft__primary,
+  &--active {
+    @include color("focus", true);
+    @include item("focus", 1, true);
+  }
+
+  &[data-type="close"] {
+    @include item-close(true);
+    @include svg-div($icon-w, get($icon, "exsmall"), $important: true);
+  }
+}
+
 //窗口顶栏
 .block {
   &__icons {
@@ -39,13 +54,7 @@ $padding: $fn-space;
 
   //窗口顶栏按钮
   &__icon {
-    @include icon-btn("page", $icon-w, $icon-svg-w, true);
-
-    &.ft__primary,
-    &--active {
-      @include color("focus", true);
-      @include item("focus", 1, true);
-    }
+    @include btn();
 
     &[disabled] {
       @include item-disabled(true);
@@ -67,11 +76,6 @@ $padding: $fn-space;
           transform: rotate(0deg);
         }
       }
-    }
-
-    &[data-type="close"] {
-      @include item-close(true);
-      @include svg-div($icon-w, get($icon, "exsmall"), $important: true);
     }
 
     &.fn__none + .fn__space {

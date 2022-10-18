@@ -1,5 +1,6 @@
 @use "../common" as *;
 @use "../component/menu";
+@use "../panel/block-icons";
 
 $util-radius: get($radius, "medium");
 
@@ -35,7 +36,7 @@ $util-radius: get($radius, "medium");
       padding: 4px 12px;
       border-color: get($border, 3);
       margin-right: $fn-space;
-      
+
       &:hover {
         border-color: get($border, 1);
       }
@@ -54,10 +55,16 @@ $util-radius: get($radius, "medium");
   .block__popover--move {
     border-radius: $util-radius;
 
-    .block__icons {
-      padding-left: 16px;
-      border-radius: $util-radius $util-radius 0 0;
-      background-color: get($bg, "pop", 1);
+    .block {
+      &__icon {
+        @include block-icons.btn("pop");
+        &s {
+          padding-left: 16px;
+          border-radius: $util-radius $util-radius 0 0;
+          background-color: get($bg, "pop", 1);
+          border-bottom: $fn-border;
+        }
+      }
     }
 
     textarea {
@@ -69,8 +76,8 @@ $util-radius: get($radius, "medium");
       &,
       &:hover,
       &:focus {
-        border: none;
-        box-shadow: none;
+        border: none !important;
+        box-shadow: none !important;
       }
     }
   }
@@ -82,6 +89,7 @@ $util-radius: get($radius, "medium");
 
     .b3-list-item {
       padding-left: 8px;
+      @include item("pop");
     }
   }
   > .fn__flex-column > .b3-text-field {

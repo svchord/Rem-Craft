@@ -25,7 +25,7 @@
 }
 
 @function getRgba($args...) {
-  @return rgba(getCssVar($args...), 1);
+  @return rgba(getCssVar($args...));
 }
 
 @function numToList($num) {

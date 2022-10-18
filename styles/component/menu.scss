@@ -149,7 +149,7 @@ $padding: 6px;
 
     //【外观】二级菜单
     &--row {
-      width: 390px;
+      width: 389px;
       padding: 12px;
 
       // 每个样式选项
@@ -157,7 +157,7 @@ $padding: 6px;
         &__item {
           margin: 0px 8px 0 0;
           padding: 0;
-          height: 20px;
+          height: auto;
           // 鼠标选项
           &--current {
             background-color: transparent;
@@ -167,6 +167,27 @@ $padding: 6px;
           border-color: transparent;
           margin: 6px 0;
           // margin: 0;
+        }
+
+        &__label {
+          height: auto;
+        }
+
+        // 清除样式
+        &__item:last-child {
+          .b3-menu__label > .fn__flex {
+            @include item-focus();
+            @include component("small");
+            margin: $interval 0;
+            &::after {
+              content: attr(aria-label);
+              display: flex;
+            }
+          }
+
+          .b3-color__square {
+            display: none;
+          }
         }
       }
 

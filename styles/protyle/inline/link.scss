@@ -15,12 +15,12 @@ $text-color: get($text, "secondary");
   border-radius: unset;
   padding: 0 0.1em;
 
-  ~ span[data-type~="a"]:not(:empty) {
-    padding: 0;
-    &::before {
-      display: none !important;
-    }
-  }
+  //  span[data-type~="a"]:not(:empty) {
+  //   padding: 0;
+  //   &::before {
+  //     display: none !important;
+  //   }
+  // }
 
   &:hover {
     color: get($text, "primary");

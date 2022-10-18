@@ -196,6 +196,7 @@ $btn-w: get($component-size, "small");
 
       .fn__flex-1 {
         width: $item-pad;
+        min-width: $item-pad;
       }
 
       &__icon {
@@ -223,6 +224,7 @@ $btn-w: get($component-size, "small");
           &__text {
             margin: 0;
             padding: 0;
+            min-width: 0px;
           }
         }
       }

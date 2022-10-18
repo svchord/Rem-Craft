@@ -68,3 +68,7 @@ $dock-w: $item-w + $interval * 2;
     display: none;
   }
 }
+
+.dock--vertical#dockLeft div:last-child {
+  margin-bottom: status.$s-h + $interval;
+}

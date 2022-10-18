@@ -8,17 +8,9 @@ $item-w: 28px;
 $item-h: 18px;
 
 $icon-w: 10px;
+$msg-icon-w: 12px;
 
 $bardock-w: $item-w + $s-pad;
-
-@keyframes msg-w {
-  from {
-    max-width: 0;
-  }
-  100% {
-    max-width: 500px;
-  }
-}
 
 #status {
   position: fixed;
@@ -100,9 +92,8 @@ $bardock-w: $item-w + $s-pad;
       &::before {
         content: "";
         display: flex;
-        $w: 12px;
-        width: $w;
-        height: $w;
+        width: $msg-icon-w;
+        height: $msg-icon-w;
         margin: 2.5px 3px;
         @include add-icon("notifications", get($text, "secondary"), 24, round);
       }
@@ -120,6 +111,30 @@ $bardock-w: $item-w + $s-pad;
     &:not(:empty) {
       border-right: $fn-border;
       margin: 0 $s-pad;
+    }
+  }
+}
+
+// 状态栏
+#status .status__msg {
+  @include v-center($s-h);
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  background-color: get($bg, "page", 1);
+
+  &:not(:empty) {
+    margin: 0;
+    border: {
+      width: 1px 1px 0 0;
+      style: solid;
+      color: get($border, 3);
+      radius: 0 8px 0 0;
+    }
+    &::before {
+      margin: math.div($s-h - $msg-icon-w, 2) - 0.5px 3px;
     }
   }
 }

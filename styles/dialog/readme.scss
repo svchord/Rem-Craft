@@ -62,6 +62,9 @@ $com-radius: get($radius, "large");
     &__preview {
       border-radius: unset;
       margin-bottom: 0;
+      &--fullscreen{
+        border-radius: big.$dialog-radius;
+      }
     }
 
     // Readme正文

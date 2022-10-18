@@ -39,6 +39,11 @@ $done-color: get($text, "placeholder");
         border-color: $list-border;
         left: -17.5px;
       }
+      &[data-type="NodeHeading"]::before {
+        top: -100%;
+        bottom: -100%;
+        height: auto !important;
+      }
     }
 
     &:hover {

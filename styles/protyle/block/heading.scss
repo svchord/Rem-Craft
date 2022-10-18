@@ -1,4 +1,3 @@
-
 @use "sass:math";
 @use "../../common" as *;
 @use "../gutters";
@@ -6,6 +5,9 @@
 $left: -18px - gutters.$tran - 3px;
 
 @mixin heading($lv) {
+  @if $lv == 5 or $lv ==6 {
+    $lv: 4;
+  }
   $fz: 32px - $lv * 4px;
   $lh: $fz + 10px;
   font-size: $fz;

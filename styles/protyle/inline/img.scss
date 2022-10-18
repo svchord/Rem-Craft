@@ -21,7 +21,7 @@
     }
 
     .protyle-action__drag {
-      $h: 50px;
+      $h: 30%;
       height: $h;
       right: 3px;
       top: calc(50% - math.div($h, 2));

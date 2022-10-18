@@ -165,11 +165,22 @@ $btn-w: get($component-size, "small");
     height: top-bar.$bar-h;
     @include divide(top-bar.$bar-h, -4px);
     z-index: 1;
+    opacity: 0;
   }
 
   [data-type="wnd"].layout__wnd--active {
     > .fn__flex:first-child {
       z-index: 2;
+      opacity: 1;
+    }
+    .item {
+      -webkit-app-region: no-drag;
+      &--readonly {
+        -webkit-app-region: drag;
+        .item__close {
+          -webkit-app-region: no-drag;
+        }
+      }
     }
   }
 
@@ -184,7 +195,6 @@ $btn-w: get($component-size, "small");
       animation: item-w 0.2s ease-in-out;
       height: $item-h;
       position: relative;
-      -webkit-app-region: no-drag;
 
       &[style*="width"] {
         animation: item-w 0.2s ease-in-out;
@@ -267,14 +277,12 @@ $btn-w: get($component-size, "small");
         border-left: $fn-border-2;
         border-right: $fn-border-2;
         border-radius: unset;
-        -webkit-app-region: drag;
 
         &::before {
           display: none;
         }
         .item__close {
           @include item("base", $important: true);
-          -webkit-app-region: no-drag;
           &[data-type="more"] {
             right: 8px;
           }

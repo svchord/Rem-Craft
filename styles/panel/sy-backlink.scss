@@ -1,6 +1,10 @@
+@use "sass:math";
 @use "../common" as *;
 @use "../dialog/bazaar";
 @use "../layout/status";
+@use "../protyle/gutters";
+
+$per: 0.9;
 
 .sy__backlink {
   [data-treetype="backlink"].b3-list-item {
@@ -18,9 +22,28 @@
     &-wysiwyg {
       padding-bottom: 5px !important;
       [data-node-id] {
-        margin: 4px 0 !important;
         [contenteditable] {
-          font-size: 90%;
+          font-size: math.percentage($per);
+        }
+      }
+    }
+
+    &-gutters {
+      button {
+        @include svg-div(
+          gutters.$w * $per,
+          gutters.$svg-w * $per,
+          gutters.$h * $per
+        );
+        margin-right: gutters.$mar * $per;
+        &[data-type="fold"] {
+          @include svg-div(
+            gutters.$w * $per,
+            8px * $per,
+            gutters.$w * $per,
+            $important: true
+          );
+          margin-right: gutters.$mar * $per;
         }
       }
     }

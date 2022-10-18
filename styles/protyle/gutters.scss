@@ -1,6 +1,8 @@
 @use "../common" as *;
 
 $tran: 0px;
+$w: 24px;
+$svg-w: 12px;
 $h: 28px;
 $mar: 4px;
 
@@ -15,7 +17,7 @@ $mar: 4px;
 
   button {
     @include item-tran("page");
-    @include svg-div(24px, 12px, $h);
+    @include svg-div($w, $svg-w, $h);
     border-radius: get($radius, "small");
     color: get($text, "disabled");
     margin-right: $mar;
@@ -25,7 +27,7 @@ $mar: 4px;
     }
 
     &[data-type="fold"] {
-      @include svg-div(24px, 8px, $h, $important: true);
+      @include svg-div($w, 8px, $h, $important: true);
       margin-right: $mar;
     }
   }

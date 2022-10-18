@@ -4,9 +4,13 @@
 
 .sy__backlink {
   [data-treetype="backlink"].b3-list-item {
-    border: $fn-border;
-    &--focus {
-      border-color: get($bg, "focus", 1);
+    @include list-root();
+    + div {
+      box-shadow: 10px 0 rgba(var(--page-1), 1) inset,
+        11px 0 rgba(var(--border-3), 1) inset;
+    }
+    &:not(:first-child) {
+      margin-top: $interval !important;
     }
   }
   .protyle {

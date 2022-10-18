@@ -60,7 +60,7 @@
 }
 
 @mixin icon-btn($type: "page", $w, $svg-w, $important: false) {
-  @include svg-div($w, $svg-w, $important:$important);
+  @include svg-div($w, $svg-w, $important: $important);
   @include item($type, 1, $important);
 
   border-radius: get($radius, "small");
@@ -100,5 +100,13 @@
   &__right {
     @include drag-base();
     box-shadow: $drag-width 0 $drag-color;
+  }
+}
+
+@mixin list-root {
+  font-weight: 600;
+  border: $fn-border;
+    &--focus {
+    border-color: get($bg, "focus", 1);
   }
 }

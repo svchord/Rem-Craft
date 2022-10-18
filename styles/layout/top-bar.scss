@@ -54,9 +54,9 @@ $list: (
   height: $bar-h;
   margin-bottom: -$interval;
   border: none;
+  -webkit-app-region: drag;
 
   #toolbarVIP {
-    -webkit-app-region: drag;
     $width: dock.$dock-w;
 
     &:empty {
@@ -77,16 +77,18 @@ $list: (
       .toolbar__item {
         &:first-child {
           @include svg-div($width, $icon-w, $item-h);
+          -webkit-app-region: drag;
         }
 
         // 头衔
         &:nth-child(2) {
+          // @include top-item();
+          background-color: get($bg, "base", 2);
           margin: 0;
           width: auto;
           height: $item-h;
           padding: 0 $padding;
           border-radius: get($radius, "max");
-          background-color: get($bg, "base", 2);
           margin-right: 8px;
           display: inline-flex;
 
@@ -120,6 +122,7 @@ $list: (
   }
 
   &__item {
+    -webkit-app-region: no-drag;
     @each $id in $list {
       &#bar#{$id} {
         @include top-item();
@@ -127,11 +130,9 @@ $list: (
     }
   }
 
-  #drag {
-    // color: get($text, "secondary");
-    opacity: 0;
-    transform: translateY(-22px);
-  }
+  // #drag {
+  //   // color: get($text, "secondary");
+  // }
 
   #windowControls {
     height: $bar-h;

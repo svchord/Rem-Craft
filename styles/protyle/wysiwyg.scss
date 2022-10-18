@@ -32,6 +32,7 @@ $item-pad: 3px 2px;
           }
         }
         &-title {
+          // margin-top: 0 !important;
           margin: 0 $padding !important;
           width: auto !important;
         }

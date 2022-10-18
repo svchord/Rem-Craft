@@ -6,13 +6,13 @@ $wnd-base: get($bg, "base", 1);
 $wnd-bg: get($bg, "page", 1);
 
 //边窗动画
-$time: get($transition-duration, "slow");
+$time: get($transition-duration, "moderate");
 $scale: scale(0.75);
-$wnd-transition: all $time get($transition-function, "fast") 0s;
+$wnd-transition: all $time get($transition-function, "ease-in-out") 0s;
 
 :root {
   // 动画效果
-  --b3-width-transition: width #{$time} #{get($transition-function, "fast")};
+  --b3-width-transition: width #{$time} #{get($transition-function, "ease-in-out")};
 }
 
 @keyframes close {
@@ -39,7 +39,7 @@ $wnd-transition: all $time get($transition-function, "fast") 0s;
   min-height: 10% !important;
   margin: $interval;
   border-radius: get($radius, "medium");
-  transition: all $time get($transition-function, "fast") 0s;
+  transition: all $time get($transition-function, "ease-in-out") 0s;
   background-color: $wnd-bg;
   border: $fn-border;
 }
@@ -63,7 +63,7 @@ $wnd-transition: all $time get($transition-function, "fast") 0s;
     // 隐藏的边窗
     > .fn__none:not(.layout__resize) {
       display: flex !important;
-      animation: close $time * 2 forwards get($transition-function, "fast");
+      animation: close $time * 2 forwards get($transition-function, "ease-in-out");
 
       > div[data-type="wnd"] {
         @include wnd;
@@ -76,7 +76,7 @@ $wnd-transition: all $time get($transition-function, "fast") 0s;
   //左侧边窗特殊处理
   > .fn__flex-shrink:not(.layout__center) {
     > .fn__none:not(.layout__resize) {
-      animation: close $time * 2 forwards get($transition-function, "fast");
+      animation: close $time * 2 forwards get($transition-function, "ease-in-out");
 
       > div[data-type="wnd"] {
         transform: $scale;

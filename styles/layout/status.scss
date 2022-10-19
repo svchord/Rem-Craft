@@ -48,7 +48,7 @@ $bardock-w: $item-w + $s-pad;
   }
 
   #barHelp .b3-menu {
-    bottom: $s-h - $s-pad !important;
+    bottom: $s-h - $s-pad - 2px !important;
   }
 
   // 边栏设置按钮
@@ -81,6 +81,7 @@ $bardock-w: $item-w + $s-pad;
   // 状态栏
   .status__msg {
     display: flex;
+    padding: 0;
     @include v-center($item-h);
 
     &:not(:empty) {
@@ -133,7 +134,8 @@ $bardock-w: $item-w + $s-pad;
       radius: 0 8px 0 0;
     }
     &::before {
-      margin: math.div($s-h - $msg-icon-w, 2) - 0.5px 3px;
+      margin: math.div($s-h - $msg-icon-w, 2) - 0.5px
+        math.div($s-h - $msg-icon-w, 2);
     }
   }
 }

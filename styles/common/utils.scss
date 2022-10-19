@@ -95,7 +95,7 @@
 
 @mixin item-tran($type, $start: 1, $important: fault) {
   @include item($type, $start, $important);
-  background-color: transparent;
+  background-color: transparent is-important($important);;
 }
 
 @mixin item-focus($important: false) {
@@ -119,7 +119,7 @@
     background-color: transparent is-important($important);
   }
   &::after {
-    display: none;
+    display: none is-important($important);
   }
 }
 

@@ -160,7 +160,7 @@ $btn-w: get($component-size, "small");
   [data-type="wnd"] > .fn__flex:first-child {
     position: fixed;
     top: 0;
-    left: 240px;
+    left: 315px;
     right: 300px;
     height: top-bar.$bar-h;
     @include divide(top-bar.$bar-h, -4px);

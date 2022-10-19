@@ -27,17 +27,27 @@ $list: (
 );
 
 @mixin top-item {
-  @include item("base");
+  @include item("base", $important: true);
   @include component-base();
   @include svg-div($item-w, $icon-w, $item-h);
   margin-right: $interval;
+
+  &--active {
+    background-color: get($bg, "base", 2) !important;
+  }
+
+  &--disabled {
+    @include item-disabled(true);
+  }
 
   cursor: unset;
 }
 
 @mixin win-control($svg-w) {
-  @include item-tran("base");
+  @include item-tran("base", $important: true);
   @include svg-div($win-control-w, $svg-w, $bar-h);
+  border-radius: unset;
+  cursor: pointer;
   &::after {
     display: none;
   }
@@ -55,6 +65,28 @@ $list: (
   margin-bottom: -$interval;
   border: none;
   -webkit-app-region: drag;
+  padding: 0 3px 0 0;
+
+  body.body--win32 & {
+    padding: 0;
+  }
+
+  &__item {
+    -webkit-app-region: no-drag;
+    @include top-item();
+
+    &#bar {
+      &Back,
+      &Forward {
+        @include svg-div($item-w, $icon-w - 2px, $item-h);
+        margin-right: $interval;
+      }
+    }
+    // @each $id in $list {
+    //   &#bar#{$id} {
+    //   }
+    // }
+  }
 
   #toolbarVIP {
     $width: dock.$dock-w;
@@ -76,14 +108,14 @@ $list: (
     &:not(:empty) {
       .toolbar__item {
         &:first-child {
-          @include svg-div($width, $icon-w, $item-h);
+          @include svg-div($width, $icon-w, $item-h, true);
           -webkit-app-region: drag;
         }
 
         // 头衔
         &:nth-child(2) {
           // @include top-item();
-          background-color: get($bg, "base", 2);
+          background-color: get($bg, "base", 2) !important;
           margin: 0;
           width: auto;
           height: $item-h;
@@ -91,6 +123,7 @@ $list: (
           border-radius: get($radius, "max");
           margin-right: 8px;
           display: inline-flex;
+          cursor: pointer;
 
           svg {
             @include svg(10px);
@@ -121,17 +154,9 @@ $list: (
     }
   }
 
-  &__item {
-    -webkit-app-region: no-drag;
-    @each $id in $list {
-      &#bar#{$id} {
-        @include top-item();
-      }
-    }
-  }
-
   #drag {
     @include v-center(32px);
+    font-size: 14px;
     -webkit-app-region: no-drag;
     body:has(.layout__empty) & {
       -webkit-app-region: drag;
@@ -150,7 +175,7 @@ $list: (
 
     #closeWindow {
       @include win-control(10px);
-      @include item-close();
+      @include item-close(true);
     }
   }
 }

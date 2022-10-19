@@ -95,7 +95,7 @@
 
 @mixin item-tran($type, $start: 1, $important: fault) {
   @include item($type, $start, $important);
-  background-color: transparent is-important($important);;
+  background-color: transparent is-important($important);
 }
 
 @mixin item-focus($important: false) {
@@ -127,7 +127,7 @@
   transition: get($transition, "all");
   &:hover {
     color: get($text, "anti") is-important($important);
-    background-color: get($color, "error", "base") is-important($important);
+    background-color: rgba(232, 17, 35, 0.9) is-important($important);
   }
 }
 

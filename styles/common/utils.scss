@@ -41,12 +41,12 @@
   white-space: nowrap;
 }
 
-@mixin svg($w, $svg-w: $w, $important: false) {
+@mixin svg($w, $svg-w: $w, $h: $w, $important: false) {
   margin: 0;
-  display: block;
   width: $w is-important($important);
-  height: $w is-important($important);
-  padding: math.div($w - $svg-w, 2) is-important($important);
+  height: $h is-important($important);
+  padding: math.div($h - $svg-w, 2) math.div($w - $svg-w, 2)
+    is-important($important);
 }
 
 @mixin svg-div($w, $svg-w, $h: $w, $important: false) {
@@ -57,6 +57,7 @@
     is-important($important);
   svg {
     @include svg($w: $svg-w, $important: $important);
+    display: block;
   }
 }
 

@@ -17,18 +17,23 @@ $fz: get($font-size, "exsmall");
 
   &__item {
     @include v-center($item-h);
+    line-height: $item-h - 2px;
     padding: 0;
-    margin: 0 8px;
+    margin: 0;
     transition: get($transition, "all");
 
-    &:first-child {
-      margin-left: 0;
+    &:not(:last-child)::after {
+      content: "/";
+      display: flex;
+      margin: 0 8px;
+      color: $item-color;
+      @include v-center($item-h);
+      line-height: $item-h - 2px;
     }
 
     svg {
-      @include svg(20px, 10px);
+      @include svg(20px, 10px, $item-h);
       color: $item-color;
-      margin: math.div($item-h - 20px, 2) 0;
     }
 
     .protyle-breadcrumb__text:not(:empty) {
@@ -60,14 +65,7 @@ $fz: get($font-size, "exsmall");
   }
 
   &__arrow {
-    // @include svg(8px);
-    // color: get($text, "disabled");
-    // margin: math.div($item-h - 8px, 2) 4px;
-    width: 0;
-    height: $fz;
-    border-right: 1px solid get($text, "disabled");
-    transform: rotate(23deg);
-    margin: 0;
+    display: none;
   }
 
   .block__icon {
@@ -77,30 +75,31 @@ $fz: get($font-size, "exsmall");
   }
 }
 
-$item-h-c: get($component-size, "large");
-$fz-c: get($font-size, "base");
-
 .layout__center .protyle > .protyle-breadcrumb {
-  min-height: $item-h-c;
+  $item-h: get($component-size, "large");
+  $fz: get($font-size, "base");
+  min-height: $item-h;
 
   .protyle-breadcrumb {
     &__bar {
-      min-height: $item-h-c;
+      min-height: $item-h;
     }
     &__item {
-      @include v-center($item-h-c);
+      @include v-center($item-h);
+      line-height: $item-h - 2px;
+
+      &::after {
+        @include v-center($item-h);
+        line-height: $item-h - 2px;
+      }
 
       svg {
-        @include svg(20px, 11px);
-        margin: math.div($item-h-c - 20px, 2) 0;
+        @include svg(22px, 11px, $item-h);
       }
 
       .protyle-breadcrumb__text:not(:empty) {
-        font-size: $fz-c;
+        font-size: $fz;
       }
-    }
-    &__arrow {
-      height: $fz-c;
     }
   }
 }

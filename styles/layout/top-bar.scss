@@ -130,9 +130,13 @@ $list: (
     }
   }
 
-  // #drag {
-  //   // color: get($text, "secondary");
-  // }
+  #drag {
+    @include v-center(32px);
+    -webkit-app-region: no-drag;
+    body:has(.layout__empty) & {
+      -webkit-app-region: drag;
+    }
+  }
 
   #windowControls {
     height: $bar-h;

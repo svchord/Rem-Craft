@@ -1,6 +1,25 @@
 # 更新历史 | Changelog 
 
 
+### [2.2.2](https://github.com/svchord/Rem-Craft/compare/v2.2.1...v2.2.2) (2022-10-19)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容新版底部状态栏 ([6db6ee7](https://github.com/svchord/Rem-Craft/commit/6db6ee77bfbd5b7cf3314132405d460e1fe3cbdd))
+* :bug: 兼容新版顶栏 ([b263227](https://github.com/svchord/Rem-Craft/commit/b263227b7a6e7bbe6f832c32276b416d1f93f94c))
+* :bug: 兼容新版页签栏 ([52cce7e](https://github.com/svchord/Rem-Craft/commit/52cce7e6a8bc7f525628ce455a02463cfb9af900))
+* :bug: 修复暗黑模式的菜单项显示问题 ([78e8315](https://github.com/svchord/Rem-Craft/commit/78e8315f9298d39d78744f19b6147032cdf61d06))
+* :bug: 修复并优化底部状态栏 ([cb08730](https://github.com/svchord/Rem-Craft/commit/cb0873031ac6a27bc56e49270b7ca23483412e8d))
+* :bug: 修复面包屑和页签栏的几个小问题 ([d0d14f3](https://github.com/svchord/Rem-Craft/commit/d0d14f3dc62e738e621b5aef276d83da052fccb8))
+* :bug: 修复行内超链接的样式问题 ([49d42f3](https://github.com/svchord/Rem-Craft/commit/49d42f32a18a9bcfe35de3795bf72fece5ebc496))
+* :bug: 修复full-screen的样式问题 ([ce81691](https://github.com/svchord/Rem-Craft/commit/ce81691e8ccdfa28fe267bc00f0c81f9e0e460c4))
+* :bug: 修复readme预览图打开时的圆角 ([c922cb7](https://github.com/svchord/Rem-Craft/commit/c922cb76692e79c0bc65f0b05165832dcc117bba))
+* :bug: 优化暗黑模式下的关闭按钮样式 ([0553410](https://github.com/svchord/Rem-Craft/commit/0553410aaf92c5fab6ce86bac234525f89c2b98c))
+* :bug: 优化面包屑的间隔符号样式 ([a879445](https://github.com/svchord/Rem-Craft/commit/a87944541892a8f4ba8040c06f56eb67a6b23875))
+* :bug: 优化页签栏显示和拖拽的兼容逻辑 ([808131d](https://github.com/svchord/Rem-Craft/commit/808131d173b065381b37e5c9867086bdc04dfd73))
+* :bug: 优化账户未登录界面 ([6f0902d](https://github.com/svchord/Rem-Craft/commit/6f0902de614969dd03cfb817d327a2b8a0c4f0b9))
+
 ### [2.2.1](https://github.com/svchord/Rem-Craft/compare/v2.2.0...v2.2.1) (2022-10-18)
 
 

@@ -134,8 +134,7 @@ $bardock-w: $item-w + $s-pad;
       radius: 0 8px 0 0;
     }
     &::before {
-      margin: math.div($s-h - $msg-icon-w, 2) - 0.5px
-        math.div($s-h - $msg-icon-w, 2);
+      margin: math.div($s-h - $msg-icon-w - 1px, 2);
     }
   }
 }

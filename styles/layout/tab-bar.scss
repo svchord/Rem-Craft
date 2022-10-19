@@ -43,6 +43,7 @@ $btn-w: get($component-size, "small");
 
     &__graphic {
       @include svg($w, get($icon, "small"), $important: true);
+      min-width: $w;
     }
 
     &__text {

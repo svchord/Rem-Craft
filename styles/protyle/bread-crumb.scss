@@ -55,6 +55,11 @@ $fz: get($font-size, "exsmall");
     &[style*="max-width"] {
       @include item("page");
       margin: 0;
+
+      &::after {
+        display: none;
+      }
+      
       svg {
         color: get($text, "secondary");
       }

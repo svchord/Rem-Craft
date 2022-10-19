@@ -34,12 +34,27 @@ $bardock-w: $item-w + $s-pad;
     @include svg-div($item-w, $icon-w, $item-h);
 
     border-radius: 4px;
+
+    .b3-menu {
+      bottom: $s-h !important;
+      left: unset !important;
+      right: $s-pad; // + dock.$dock-w;
+      z-index: 0;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  #barHelp .b3-menu {
+    bottom: $s-h - $s-pad !important;
   }
 
   // 边栏设置按钮
   #barDock {
     position: fixed;
-    right: 0; // dock.$dock-w;
+    right: 0;
     bottom: 0;
     width: $bardock-w;
     height: $s-h;
@@ -48,8 +63,7 @@ $bardock-w: $item-w + $s-pad;
 
     border: {
       top: $fn-border;
-      right: $fn-border;
-      radius: unset; //0 8px 0 0;
+      radius: unset;
     }
 
     > svg {
@@ -61,21 +75,6 @@ $bardock-w: $item-w + $s-pad;
 
     &:hover > svg {
       background-color: get($bg, "page", 2);
-    }
-
-    .b3-menu {
-      bottom: $s-h !important;
-      left: unset !important;
-      right: $s-pad; // + dock.$dock-w;
-      z-index: 0;
-
-      &__icon {
-        margin-right: 8px;
-      }
-    }
-
-    &::after {
-      display: none;
     }
   }
 

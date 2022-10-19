@@ -55,7 +55,7 @@
   margin: 0;
   padding: math.div($h - $svg-w, 2) math.div($w - $svg-w, 2)
     is-important($important);
-  svg {
+  > svg {
     @include svg($w: $svg-w, $important: $important);
     display: block;
   }

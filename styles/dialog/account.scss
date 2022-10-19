@@ -1,38 +1,67 @@
-
 @use "sass:math";
 @use "../common" as *;
 
-//账号界面
-.config-account__center {
-  &:first-child {
-    border-right: $fn-border;
-    margin: 16px 0px;
-  }
-  &--text {
-    background-color: get($bg, "page", 1);
-  }
-}
-
-.config-account__info {
-  flex: 1;
-
-  // 账号相关按钮
-  .b3-button {
-    @include component();
+.config-account {
+  //账号界面
+  &__center {
+    &:first-child {
+      border-right: $fn-border;
+      margin: 16px 0px;
+    }
+    // 充值界面
     &--text {
-      @include item-focus();
+      background-color: get($bg, "page", 1);
+
+      .b3-button--outline {
+        height: auto;
+
+        ~ .fn__hr ~ div:not(.fn__pointer) {
+          @include v-center(24px);
+        }
+      }
     }
   }
 
-  // 开关前文字
-  .fn__hr--b + .fn__flex label {
-    line-height: 20px;
-    font-size: get($font-size, "base");
+  // 登陆表单
+  &__form {
+    label.ft__smaller.ft__on-surface.fn__flex > span:last-child {
+      @include v-center(28px);
+    }
+
+    .ft__center:last-child {
+      display: flex;
+      > .fn__space {
+        display: flex;
+        flex: 1;
+      }
+    }
+    .b3-button--cancel {
+      @include item("focus", 0);
+    }
   }
 
-  //开关
-  .b3-switch {
-    margin-left: $interval;
+  // 登录后
+  &__info {
+    flex: 1;
+
+    // 账号相关按钮
+    .b3-button {
+      @include component();
+      &--text {
+        @include item-focus();
+      }
+    }
+
+    // 开关前文字
+    .fn__hr--b + .fn__flex label {
+      line-height: 20px;
+      font-size: get($font-size, "base");
+    }
+
+    //开关
+    .b3-switch {
+      margin-left: $interval;
+    }
   }
 }
 

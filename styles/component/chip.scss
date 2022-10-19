@@ -1,0 +1,7 @@
+@use "../common" as *;
+
+.b3-chip {
+  > svg {
+    margin: 0 $fn-space 0 0;
+  }
+}

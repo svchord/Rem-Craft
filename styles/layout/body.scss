@@ -1,5 +1,5 @@
 @use "../common" as *;
-body.fn__flex-column {
+body {
   background-color: get($bg, "base", 1);
   border: none;
 }

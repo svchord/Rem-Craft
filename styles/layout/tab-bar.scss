@@ -9,27 +9,28 @@ $btn-w: get($component-size, "small");
 
 //页签栏
 .layout-tab-bar {
-  flex: unset;
   background-color: get($bg, "page", 1);
 
-  &:nth-child(2) {
+  .layout__center & {
+    &:not(:empty) {
+      @include component-base($item-type);
+      margin: 8px 8px 0px;
+    }
+  }
+
+  &--readonly {
     margin-left: 0 !important;
-    min-width: $btn-w * 2 + $interval;
-    flex: 1;
-    min-width: 24px * 2 + 8px * 3 + 4px * 2;
+    min-width: $btn-w * 2 + $fn-space;
   }
 
   .item {
     @include item-tran("page");
     @include component-base($item-type);
-    flex: unset;
     min-height: 0;
-    padding: 0;
-    border: none;
-    box-shadow: unset !important;
+    padding: 0 $interval;
 
-    .fn__flex-1 {
-      width: $fn-space;
+    &::after {
+      display: none;
     }
 
     &:not(:first-child) {
@@ -45,7 +46,6 @@ $btn-w: get($component-size, "small");
     }
 
     &__text {
-      padding: 0;
       min-width: 56px;
       @include v-center(get($component-size, $item-type));
     }
@@ -55,7 +55,6 @@ $btn-w: get($component-size, "small");
       @include component-base("exsmall");
       @include svg-div($w, 10px);
       border-radius: get($radius, "small");
-      margin-right: $interval;
 
       svg {
         opacity: 0.3;
@@ -69,12 +68,7 @@ $btn-w: get($component-size, "small");
 
     &--pin {
       background-color: get($bg, "component", 1);
-      .item {
-        &__text {
-          margin: 0;
-          padding: 0 $interval;
-        }
-      }
+      min-width: unset;
     }
 
     &--focus {
@@ -95,10 +89,6 @@ $btn-w: get($component-size, "small");
           @include color("focus");
         }
       }
-
-      .layout__wnd--active & {
-        box-shadow: unset !important;
-      }
     }
 
     &--readonly {
@@ -112,17 +102,8 @@ $btn-w: get($component-size, "small");
 
         &[data-type="more"] {
           @include svg-div($btn-w, 10px, $important: true);
-          position: absolute;
-          right: 0;
         }
       }
-    }
-  }
-
-  .layout__center & {
-    &:not(:empty) {
-      @include component-base($item-type);
-      margin: 8px 8px 0px;
     }
   }
 }
@@ -158,13 +139,19 @@ $btn-w: get($component-size, "small");
   }
 
   [data-type="wnd"] > .fn__flex:first-child {
-    position: fixed;
-    top: 0;
-    left: 315px;
-    right: 300px;
-    height: top-bar.$bar-h;
     @include divide(top-bar.$bar-h, -4px);
+    height: top-bar.$bar-h;
+    position: fixed;
     z-index: 1;
+    top: 0;
+
+    left: 380px;
+    right: 160px;
+
+    body.body--win32 & {
+      left: 290px;
+      right: 300px;
+    }
   }
 
   [data-type="wnd"].layout__wnd--active {
@@ -182,31 +169,25 @@ $btn-w: get($component-size, "small");
     }
   }
 
-
   .layout-tab-bar {
     height: top-bar.$bar-h !important;
     background-color: get($bg, "base", 1);
     margin: 0 !important;
     padding: 0 4px;
 
+    &--readonly {
+      min-width: $btn-w * 2 + $fn-space * 3 + $interval * 2 + 2px;
+    }
+
     .item {
       @include item-tran("base", $important: true);
       animation: item-w 0.2s ease-in-out;
       height: $item-h;
       position: relative;
-
-      &[style*="width"] {
-        animation: item-w 0.2s ease-in-out;
-      }
+      padding: 0 $item-pad;
 
       &:not(:first-child) {
-        margin-left: 8px;
         @include divide($item-h, -4px);
-      }
-
-      .fn__flex-1 {
-        width: $item-pad;
-        min-width: $item-pad;
       }
 
       &__icon {
@@ -218,25 +199,17 @@ $btn-w: get($component-size, "small");
       }
 
       &__text {
-        margin-left: $item-pad;
         min-width: 86px;
         max-width: 180px;
+        padding: 0 $item-pad;
       }
 
       &__close {
         @include item-tran("base", 2);
-        margin-right: $item-pad;
       }
 
       &--pin {
         background-color: get($bg, "base", 1);
-        .item {
-          &__text {
-            margin: 0;
-            padding: 0;
-            min-width: 0px;
-          }
-        }
       }
 
       &--focus {
@@ -280,11 +253,9 @@ $btn-w: get($component-size, "small");
         &::before {
           display: none;
         }
+
         .item__close {
           @include item("base", $important: true);
-          &[data-type="more"] {
-            right: 8px;
-          }
         }
       }
     }

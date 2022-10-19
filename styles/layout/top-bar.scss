@@ -60,7 +60,7 @@ $list: (
 }
 
 //顶部工具栏
-.toolbar {
+#toolbar {
   height: $bar-h;
   margin-bottom: -$interval;
   border: none;
@@ -71,7 +71,7 @@ $list: (
     padding: 0;
   }
 
-  &__item {
+  .toolbar__item {
     -webkit-app-region: no-drag;
     @include top-item();
 
@@ -113,43 +113,43 @@ $list: (
         }
 
         // 头衔
-        &:nth-child(2) {
-          // @include top-item();
-          background-color: get($bg, "base", 2) !important;
-          margin: 0;
-          width: auto;
-          height: $item-h;
-          padding: 0 $padding;
-          border-radius: get($radius, "max");
-          margin-right: 8px;
-          display: inline-flex;
-          cursor: pointer;
+        // &:nth-child(2) {
+        //   // @include top-item();
+        //   background-color: get($bg, "base", 2) !important;
+        //   margin: 0;
+        //   width: auto;
+        //   height: $item-h;
+        //   padding: 0 $padding;
+        //   border-radius: get($radius, "max");
+        //   margin-right: 8px;
+        //   display: inline-flex;
+        //   cursor: pointer;
 
-          svg {
-            @include svg(10px);
-            margin: auto 0;
-          }
-          &::after {
-            @include reset-style();
-            @include v-center($item-h);
-            @include center();
-            content: "";
-            width: auto;
-            font-size: 11px;
-            z-index: 0;
-            color: $item-color;
-          }
+        //   svg {
+        //     @include svg(10px);
+        //     margin: auto 0;
+        //   }
+        //   &::after {
+        //     @include reset-style();
+        //     @include v-center($item-h);
+        //     @include center();
+        //     content: "";
+        //     width: auto;
+        //     font-size: 11px;
+        //     z-index: 0;
+        //     color: $item-color;
+        //   }
 
-          $types: "捐赠者", "支持者", "赞助者";
-          @each $type in $types {
-            &[aria-label*="#{$type}"] {
-              &::after {
-                content: $type;
-                margin-left: 6px;
-              }
-            }
-          }
-        }
+        //   $types: "捐赠者", "支持者", "赞助者";
+        //   @each $type in $types {
+        //     &[aria-label*="#{$type}"] {
+        //       &::after {
+        //         content: $type;
+        //         margin-left: 6px;
+        //       }
+        //     }
+        //   }
+        // }
       }
     }
   }

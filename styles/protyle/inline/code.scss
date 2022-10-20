@@ -1,6 +1,7 @@
 @use "../../common" as *;
 
 //行内代码块
+code,
 .fn__code,
 span[data-type~="code"] {
   font-family: var(--b3-font-family-code);

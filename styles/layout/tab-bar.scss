@@ -99,6 +99,10 @@ $btn-w: get($component-size, "small");
       padding: 0;
       cursor: unset;
 
+      > .fn__flex-1 {
+        display: flex;
+      }
+
       .item__close {
         @include icon-btn("page", $btn-w, 12px, true);
         cursor: pointer;
@@ -144,8 +148,10 @@ $btn-w: get($component-size, "small");
     @include divide(top-bar.$bar-h, -4px);
     height: top-bar.$bar-h;
     position: fixed;
-    z-index: 1;
     top: 0;
+
+    z-index: 1;
+    // opacity: 0;
 
     left: 380px;
     right: 160px;
@@ -158,7 +164,9 @@ $btn-w: get($component-size, "small");
 
   [data-type="wnd"].layout__wnd--active {
     > .fn__flex:first-child {
+      // opacity: 1;
       z-index: 2;
+      -webkit-app-region: drag;
     }
     .item {
       -webkit-app-region: no-drag;

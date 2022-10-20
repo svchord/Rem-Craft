@@ -1,5 +1,16 @@
 @use "sass:math";
 @use "../common" as *;
+@use "big";
+
+.b3-dialog__container[style*="80vw"]
+  > [style*="height"][style*="auto"]
+  > .account {
+  height: 55vh;
+  border-radius: 0 0 big.$dialog-radius big.$dialog-radius;
+  .config-account__center--text {
+    border-radius: 0 0 big.$dialog-radius 0;
+  }
+}
 
 .config-account {
   //账号界面

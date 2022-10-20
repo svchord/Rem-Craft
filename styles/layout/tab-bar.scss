@@ -28,7 +28,9 @@ $btn-w: get($component-size, "small");
     @include component-base($item-type);
     min-height: 0;
     padding: 0 $interval;
+    flex: unset;
 
+    > .fn__flex-1,
     &::after {
       display: none;
     }
@@ -47,7 +49,7 @@ $btn-w: get($component-size, "small");
     }
 
     &__text {
-      min-width: 56px;
+      min-width: 64px;
       @include v-center(get($component-size, $item-type));
     }
 

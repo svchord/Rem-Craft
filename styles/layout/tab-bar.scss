@@ -122,7 +122,6 @@ $btn-w: get($component-size, "small");
 }
 
 .layout__center {
-  $fn-border-2: 1px solid get($border, 2);
   $item-h: 32px;
   $item-pad: 8px;
 
@@ -186,6 +185,7 @@ $btn-w: get($component-size, "small");
       height: $item-h;
       position: relative;
       padding: 0 $item-pad;
+      overflow: unset;
 
       &:not(:first-child) {
         @include divide($item-h, -4px);

@@ -1,7 +1,7 @@
 
 @use "../../common" as *;
 
-$hr-border: 1px solid get($border, 2);
+$hr-border: $fn-border-2;
 //分割线
 .protyle-wysiwyg [data-type].hr {
   margin: 20px 0;

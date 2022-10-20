@@ -5,7 +5,7 @@
   @include reset-style();
   @include component($border: 1px);
   border: 1px solid get($border, 4) !important;
-  border-bottom: 1px solid get($border, 2) !important;
+  border-bottom: $fn-border-2 !important;
   background-color: get($bg, "component", 1);
   flex-shrink: 0;
 

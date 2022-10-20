@@ -23,6 +23,7 @@ $text: add-css-var($text, "text", $text-types);
 $border: () !default;
 $border: add-color($border, "border", 4);
 $fn-border: 1px solid get($border, 3);
+$fn-border-2: 1px solid get($border, 2);
 
 // 功能色
 $feat-types: "brand", "warning", "error", "success", "info";

@@ -7,9 +7,10 @@ $bq-color: get($text, "secondary");
 
 $side-left: $fn-space;
 $side-w: 2px;
-$pad-l: 16px;
 
-$left-interval: 10px;
+$left-interval: 16px;
+
+$left-tmp: $side-left + $side-w + $left-interval;
 
 //引述块
 @mixin bq {
@@ -39,21 +40,20 @@ $left-interval: 10px;
     padding: 4px 0;
     // 一级子元素
     > [data-node-id] {
-      margin-left: $side-left + $side-w + $left-interval;
-      padding-left: $pad-l;
+      margin-left: $left-tmp;
       &[data-type="NodeHeading"] {
         &:first-child {
-          margin-top: $pad-l + $side-w;
+          margin-top: $left-interval + $side-w;
         }
         &::before {
-          left: heading.$left - $side-left !important;
+          left: heading.$left - $left-tmp !important;
         }
       }
     }
 
     > .list {
-      margin-left: $side-left + $side-w + list.$left + $left-interval + $pad-l;
-      padding: 0;
+      margin-left: $left-tmp + list.$left;
+      // padding: 0;
     }
 
     // 所有子元素
@@ -77,8 +77,7 @@ $left-interval: 10px;
   @include bq();
 
   > * {
-    margin-left: $side-left + $side-w;
-    padding-left: $pad-l;
+    margin-left: $left-tmp;
   }
 
   > ul {
@@ -87,5 +86,12 @@ $left-interval: 10px;
 
   * {
     color: $bq-color;
+  }
+}
+
+.protyle-gutters button[data-type="NodeBlockquote"] {
+  ~ button:last-child,
+  &:last-child {
+    margin-right: $left-tmp - 4px;
   }
 }

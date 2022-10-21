@@ -1,6 +1,5 @@
 @use "../common" as *;
 
-$tran: 0px;
 $w: 24px;
 $svg-w: 12px;
 $h: 28px;
@@ -8,11 +7,8 @@ $mar: 4px;
 
 //块标识按钮
 .protyle-gutters {
-  transform: translateX(0 - $tran);
-  border-right: $tran solid transparent;
-
   &[style*="width"] {
-    width: 24px + $mar + $tran !important;
+    width: 24px + $mar !important;
   }
 
   button {

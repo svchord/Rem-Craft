@@ -2,7 +2,7 @@
 @use "../../common" as *;
 @use "../gutters";
 
-$left: -18px - gutters.$tran - 3px;
+$left: -18px - gutters.$mar - 3px;
 
 @mixin heading($lv) {
   @if $lv == 5 or $lv ==6 {

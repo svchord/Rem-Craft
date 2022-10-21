@@ -120,6 +120,10 @@ $padding: 6px;
       }
     }
 
+    &[disabled="disabled"] {
+      @include item-disabled();
+    }
+
     // 其他信息
     &--readonly {
       @include list.meta();

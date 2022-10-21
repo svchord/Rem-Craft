@@ -6,10 +6,6 @@ body.body--win32 {
   .fullscreen {
     // 编辑器全屏
     > .protyle-breadcrumb {
-      .fn__space {
-        -webkit-app-region: drag;
-      }
-
       padding: 0 top-bar.$win-control-w * 3 + $fn-space 0 8px;
     }
 

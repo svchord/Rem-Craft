@@ -117,10 +117,6 @@ $arrow-w: 16px;
         @include hidden-arrow();
       }
     }
-
-    .backlink--more & {
-      align-self: flex-start;
-    }
   }
 
   // 列表图标（大纲、标签等）
@@ -151,6 +147,11 @@ $arrow-w: 16px;
   &__text {
     line-height: $text-h;
     margin-left: $interval;
+    // 自定义emoji
+    img,
+    svg.custom-icon {
+      @include svg($text-h, get($icon, "base"));
+    }
   }
 
   // 列表按钮
@@ -158,9 +159,6 @@ $arrow-w: 16px;
     @include svg-div($text-h, get($icon, "base"));
     @include list-btn();
     margin-left: $interval;
-    .backlink--more & {
-      align-self: flex-start;
-    }
   }
 
   // 列表计数块

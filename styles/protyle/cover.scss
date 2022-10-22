@@ -150,14 +150,15 @@ $btn-top-l: 80px;
 
   //题头emoji
   &__icon {
-    @include svg-div($icon-h, $icon-h);
-    @include v-center($icon-h);
-    font-size: 54px;
+    @include emoji-icon($icon-h, 54px, $icon-h);
     border-radius: get($radius, "base");
     margin-left: 3px;
 
     &:hover {
       background-color: rgba(var(--gray-5), 0.4);
+    }
+    &:active {
+      background-color: rgba(var(--gray-5), 0.8);
     }
   }
 

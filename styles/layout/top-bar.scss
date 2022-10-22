@@ -68,7 +68,7 @@ $list: (
   padding-right: 3px;
 
   body.body--win32 & {
-    padding-right: 0;
+    padding: 0;
   }
 
   .toolbar__item {
@@ -155,14 +155,10 @@ $list: (
   }
 
   #drag {
-    @include v-center(32px);
-    font-size: 14px;
-    -webkit-app-region: no-drag;
-    margin-left: 50px;
-    margin-right: 15px;
-    padding: 0;
+    height: 0;
     body:has(.layout__empty) & {
-      -webkit-app-region: drag;
+      @include v-center(40px);
+      font-size: 14px;
     }
   }
 

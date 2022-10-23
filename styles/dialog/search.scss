@@ -39,6 +39,7 @@ $form-h: $btn-h + $padding * 2 + 1px;
       }
       .fn__flex-column[style*="70vh"] {
         height: 80vh !important;
+        border-radius: big.$dialog-radius !important;
       }
     }
 

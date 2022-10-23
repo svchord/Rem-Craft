@@ -1,0 +1,37 @@
+@use "../common" as *;
+
+//块元信息
+.protyle-attr {
+  top: -10px;
+  &--bookmark,
+  &--name,
+  &--alias,
+  &--memo {
+    @include v-center(20px, true);
+    @include item("component");
+    border-radius: get($radius, "max");
+    > svg {
+      @include svg(20px, 10px, $important: true);
+      margin: 0 !important;
+    }
+  }
+
+  &--name,
+  &--alias {
+    padding: 0px 8px 0 3px;
+  }
+
+  &--bookmark {
+    padding: 0px 8px;
+  }
+
+  &--memo {
+    padding: 0px 4px;
+  }
+
+  &--refcount {
+    top: 11px;
+    right: -22px;
+    @include counter(22px);
+  }
+}

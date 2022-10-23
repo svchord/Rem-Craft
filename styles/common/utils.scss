@@ -23,10 +23,10 @@
   left: unset;
 }
 
-@mixin v-center($h) {
-  height: $h;
-  line-height: $h;
-  vertical-align: middle;
+@mixin v-center($h, $important: false) {
+  height: $h is-important($important);
+  line-height: $h is-important($important);
+  vertical-align: middle is-important($important);
 }
 
 @mixin center {

@@ -7,7 +7,6 @@ $item-pad: 3px 2px;
 
 .protyle {
   &-content {
-
     .layout__center &[data-fullwidth="true"] {
       .protyle {
         &-background {
@@ -69,15 +68,6 @@ $item-pad: 3px 2px;
 
   &-scroll {
     right: -60px;
-  }
-
-  //反链计数
-  &-attr {
-    &--refcount {
-      top: 50%;
-      right: -50%;
-      @include counter(22px);
-    }
   }
 
   //文本转语音按钮

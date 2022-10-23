@@ -162,6 +162,27 @@ $list: (
     }
   }
 
+  &::after {
+    content: "";
+    display: block;
+    position: fixed;
+    height: 32px;
+    top: 4px;
+    -webkit-app-region: no-drag;
+
+    left: 380px;
+    right: 160px;
+
+    body.body--win32 & {
+      left: 290px;
+      right: 300px;
+    }
+
+    body:has(.layout__empty) & {
+      height: 0;
+    }
+  }
+
   #windowControls {
     height: $bar-h;
     .toolbar__item {

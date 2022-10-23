@@ -1,4 +1,3 @@
-
 @use "../../common" as *;
 
 @mixin table {
@@ -20,7 +19,7 @@
     table {
       @include table();
     }
-    
+
     &[fold="1"] {
       height: 40px !important;
     }

@@ -10,31 +10,41 @@
 
 <img width="1280" alt="preview" src="https://user-images.githubusercontent.com/61345763/196183604-5b2e7706-feb9-4cd7-aa73-f35c3c4a484a.png">
 
+## 使用说明
+
+1. 分栏显示时，顶部页签栏会随着面板焦点的变化而改变
+   
+   ![页签变化](https://user-images.githubusercontent.com/61345763/197389330-2cede6ba-07d0-460f-b9f2-edb0e7ed1cc0.gif)
+
+2. 顶栏除了按钮以外的区域都可以拖拽窗口（有额外情况：但在所有编辑面板都失焦时，页签栏所在区域将无法拖拽窗口，即下图红框区域）
+   
+   ![image](https://user-images.githubusercontent.com/61345763/197389760-9d37df50-d135-4a0f-80d1-4ce56b49d1b2.png)
+
+3. 设置、搜索等大弹窗的关闭按钮被隐藏了，点击周围空白处即可关闭
 
 ## 参考样式
 
 以下是主要样式设计来源：
 
 - 参考了Windows 11的设计，修改了边栏、滑条、开关、输入框的样式
-
+  
   ![windows 11](https://docs.microsoft.com/en-us/windows/apps/design/signature-experiences/images/color_light_controls_940.png)
 
 - 参考了[TDesign](https://tdesign.tencent.com/)的设计系统，统一了颜色、线条、圆角等变量
-
-  ![starter 252d54e0](https://user-images.githubusercontent.com/61345763/176590115-93fa2d29-a975-4a89-904c-6ba94295d3ee.png)
   
+  ![starter 252d54e0](https://user-images.githubusercontent.com/61345763/176590115-93fa2d29-a975-4a89-904c-6ba94295d3ee.png)
+
 - Notion 的题头图、编辑器各类块
+
 - Obsidian 的顶栏和底部状态栏
+
 - Rem Note 的文档树
+
 - VS Code 的 One Dark Pro 配色
+
 - Microsoft Edge 的页签
+
 - Craft 的引述块
-
-## 注意事项
-
-1. 分栏显示时，顶部页签栏会随着面板焦点的变化而改变
-2. 顶栏除了按钮以外的区域都可以拖拽窗口
-3. 设置、搜索等大弹窗的关闭按钮被隐藏了，点击周围空白处即可关闭
 
 ## Roadmap
 
@@ -49,10 +59,21 @@
 1. 列表转导图等额外辅助功能
 2. 图片、pdf浏览界面美化
 
-## 参考项目
+## 参考与致谢
 
-- 参考了[Achuan-2](https://github.com/Achuan-2)大佬的[Tsundoku Light](https://github.com/Achuan-2/siyuan-themes-tsundoku-light)主题中的超链接自动展示图标功能
-- 感谢[royc01](https://github.com/royc01)大佬提供的文档树辅助线思路
+| 功能          | 作者                                                                                         | 项目                                                                                                                                          | 说明              |
+| ----------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| 行内超链接自动展示图标 | [Achuan-2](https://github.com/Achuan-2)、[Zuoqiu-Yingyi](https://github.com/Zuoqiu-Yingyi/) | [Tsundoku Light](https://github.com/Achuan-2/siyuan-themes-tsundoku-light)、[Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus) | 将两个主题的相同功能整合在一起 |
+| 明暗切换        | [Zuoqiu-Yingyi](https://github.com/Zuoqiu-Yingyi/)                                         | [Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus)                                                                            | 参考部分theme.js    |
+| 文档树辅助线      | [royc01](https://github.com/royc01)                                                        | [notion-theme](https://github.com/royc01/notion-theme)                                                                                      | 群聊中交流讨论提供思路     |
+
+## 依赖项目
+
+- [GitHub - sass/sass: Sass makes CSS fun!](https://github.com/sass/sass) `MIT license`
+
+- [GitHub - conventional-changelog/standard-version: Automate versioning and CHANGELOG generation, with semver.org and conventionalcommits.org](https://github.com/conventional-changelog/standard-version) `ISC license`
+
+- [GitHub - Zhengqbbb/cz-git: cz-git | czg 🔨 More engineered, lightweight, customizable, standard output format commitizen adapter and CLI](https://github.com/Zhengqbbb/cz-git) `MIT license`
 
 ## 版本日志
 

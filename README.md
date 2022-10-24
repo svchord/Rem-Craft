@@ -12,15 +12,10 @@
 
 ## 使用说明
 
-1. 分栏显示时，顶部页签栏会随着面板焦点的变化而改变
-   
-   ![页签变化](https://user-images.githubusercontent.com/61345763/197389330-2cede6ba-07d0-460f-b9f2-edb0e7ed1cc0.gif)
-
-2. 顶栏除了按钮以外的区域都可以拖拽窗口（有额外情况：但在所有编辑面板都失焦时，页签栏所在区域将无法拖拽窗口，即下图红框区域）
-   
-   ![image](https://user-images.githubusercontent.com/61345763/197389760-9d37df50-d135-4a0f-80d1-4ce56b49d1b2.png)
-
-3. 设置、搜索等大弹窗的关闭按钮被隐藏了，点击周围空白处即可关闭
+1. 顶部页签栏仅支持横向分屏
+2. 顶栏除了按钮以外的区域都可以拖拽窗口
+3. 横向分屏三栏及以上时，顶部右侧页签栏会随着面板焦点的变化而改变（仅包括从左往右数第二个面板及其右侧面板），同时右侧页签栏的空白区域拖拽会有问题，因此不建议横向分屏三栏及以上
+4. 设置、搜索等大弹窗的关闭按钮被隐藏了，点击周围空白处即可关闭
 
 ## 参考样式
 
@@ -65,9 +60,12 @@
 | ----------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
 | 行内超链接自动展示图标 | [Achuan-2](https://github.com/Achuan-2)、[Zuoqiu-Yingyi](https://github.com/Zuoqiu-Yingyi/) | [Tsundoku Light](https://github.com/Achuan-2/siyuan-themes-tsundoku-light)、[Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus) | 将两个主题的相同功能整合在一起 |
 | 明暗切换        | [Zuoqiu-Yingyi](https://github.com/Zuoqiu-Yingyi/)                                         | [Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus)                                                                            | 参考部分theme.js    |
+| 斜杠快捷菜单分列显示  | [Zuoqiu-Yingyi](https://github.com/Zuoqiu-Yingyi/)、[royc01](https://github.com/royc01)     | [Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus)、[notion-theme](https://github.com/royc01/notion-theme)                     | 将两个主题的相同功能整合在一起 |
 | 文档树辅助线      | [royc01](https://github.com/royc01)                                                        | [notion-theme](https://github.com/royc01/notion-theme)                                                                                      | 群聊中交流讨论提供思路     |
 
 ## 依赖项目
+
+- [GitHub - siyuan-note/siyuan: SiYuan is a local-first personal knowledge management system, supports fine-grained block-level reference, and Markdown WYSIWYG.](https://github.com/siyuan-note/siyuan)  `AGPL-3.0 license`
 
 - [GitHub - sass/sass: Sass makes CSS fun!](https://github.com/sass/sass) `MIT license`
 

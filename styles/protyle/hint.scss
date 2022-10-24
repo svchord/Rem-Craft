@@ -54,11 +54,12 @@
 
   //快捷命令菜单
   &.hint--menu {
-    column-count: 4;
+    columns: 170px 4;
     column-gap: menu.$padding * 2;
     column-rule: $fn-border;
     max-height: none !important;
     width: auto !important;
+    min-width: 730px;
 
     > .emojis {
       column-span: all;

@@ -1,6 +1,34 @@
 # 更新历史 | Changelog 
 
 
+### [2.2.3](https://github.com/svchord/Rem-Craft/compare/v2.2.2...v2.2.3) (2022-10-24)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容新版全屏拖拽，减少代码 ([f6f8a4a](https://github.com/svchord/Rem-Craft/commit/f6f8a4a645f30590e8e79535b2d2fe007e22dcd2))
+* :bug: 进一步解决顶栏拖拽问题 ([bc81b22](https://github.com/svchord/Rem-Craft/commit/bc81b22adba65376f7880f77723b225325d0d06e))
+* :bug: 目前分屏页签栏的最佳解决方案 ([cf98327](https://github.com/svchord/Rem-Craft/commit/cf983278fb08985d362af2f7d94610da3e81bb2a))
+* :bug: 修复顶栏拖拽，和兼容mac顶栏 ([b80c490](https://github.com/svchord/Rem-Craft/commit/b80c4901c9fbac6374bbb2bba5e100850ccf5ded))
+* :bug: 修复集市tab宽度问题 ([b0872d4](https://github.com/svchord/Rem-Craft/commit/b0872d4f0c7658791eeae0a6a7b1d7f73e708c57))
+* :bug: 修复快捷菜单出现在屏幕右侧时的宽度问题 ([8449b94](https://github.com/svchord/Rem-Craft/commit/8449b947a8c4b7660de55751e7e0f08cef0b928e))
+* :bug: 修复搜索界面右下角圆角 ([44522a4](https://github.com/svchord/Rem-Craft/commit/44522a4ce63f0776bae4cefdec2214367c869940))
+* :bug: 修复搜索列表emoji的问题 ([76ad2b4](https://github.com/svchord/Rem-Craft/commit/76ad2b4f047bd950aaa5a7dc1bafb91bd3a15f8d))
+* :bug: 修复页签间隔线未能正常显示的问题 ([d9601b1](https://github.com/svchord/Rem-Craft/commit/d9601b120d2b9bbd94396750bf5fc28b9d63a0a8))
+* :bug: 修复账号登陆弹窗的圆角问题 ([9e3783b](https://github.com/svchord/Rem-Craft/commit/9e3783b47a240b65fb001d6ef782608aadf5984c))
+* :bug: 修复readme页面中代码块和行内代码的样式 ([6b0717c](https://github.com/svchord/Rem-Craft/commit/6b0717c960cd4465e0c06e43b6c39de6eef3d9f9))
+* :bug: 修改菜单项样式 ([c0ccd4d](https://github.com/svchord/Rem-Craft/commit/c0ccd4dd6a088511eafff77676913f401ffa3d88))
+* :bug: 优化块元信息样式 ([e2f9664](https://github.com/svchord/Rem-Craft/commit/e2f96646be318c5a849418d92892647cf8a55276))
+* :bug: 优化题头emoji ([51b00b1](https://github.com/svchord/Rem-Craft/commit/51b00b1f13582bc1c221fa6900bb2dafd3463888))
+* :bug: 优化引述块样式 ([53662e2](https://github.com/svchord/Rem-Craft/commit/53662e255a6b35c59cc10e7ecf72f22c83e197e8))
+* :bug: 暂时搁置顶栏页签和拖拽兼容的方案 ([4301fa7](https://github.com/svchord/Rem-Craft/commit/4301fa7721c56a6ad92592ebb32a95125acc965c))
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新readme ([ca94fe1](https://github.com/svchord/Rem-Craft/commit/ca94fe17f3f81ee8e443a60a9f75cd026c2ca24c))
+* :memo: 更新Readme ([f6a42fe](https://github.com/svchord/Rem-Craft/commit/f6a42fe7efcfff1c1d7b9c1cd1d043470d7b5185))
+
 ### [2.2.2](https://github.com/svchord/Rem-Craft/compare/v2.2.1...v2.2.2) (2022-10-19)
 
 

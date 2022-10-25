@@ -57,7 +57,7 @@ $small-radius: big.$dialog-radius;
           }
         }
 
-        .ft__smaller.ft__on-surface{
+        .ft__smaller.ft__on-surface {
           display: block;
           margin-top: $interval;
         }
@@ -79,7 +79,11 @@ $small-radius: big.$dialog-radius;
 
         // 书签右侧按钮 && 自定义属性删除按钮
         .block__icon {
-          @include svg-div(get($component-size, "base"), 10px);
+          @include svg-div(
+            get($component-size, "base"),
+            10px,
+            $important: true
+          );
         }
 
         // 属性名

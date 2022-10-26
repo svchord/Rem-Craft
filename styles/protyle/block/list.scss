@@ -10,7 +10,7 @@ $action-w: 34px;
 $done-opacity: 0.45;
 $done-color: get($text, "placeholder");
 
-.protyle-wysiwyg[contenteditable="true"] {
+.protyle-wysiwyg {
   // 第一级列表缩进
   > .list {
     margin-left: $left;
@@ -26,32 +26,14 @@ $done-color: get($text, "placeholder");
       margin-left: 18px + $pad-l !important;
     }
 
-    // 列表块子元素左侧线条
-    > .list::before {
+    &::before {
       border-color: $list-border;
-      left: -1.5px - $pad-l;
+      // left: $pad-l + 0.5px;
     }
 
-    // 非列表块子元素左侧线条
-    > [data-node-id] {
-      // margin-left: $action-w !important;
-      &::before {
-        border-color: $list-border;
-        left: -17.5px;
-      }
-      &[data-type="NodeHeading"]::before {
-        top: -100%;
-        bottom: -100%;
-        height: auto !important;
-      }
-    }
-
-    &:hover {
-      > .list::before,
-      > [data-node-id]::before {
-        border-color: get($text, "brand");
-        transition: get($transition, "all");
-      }
+    &:hover::before {
+      border-color: get($text, "brand");
+      transition: get($transition, "all");
     }
 
     // 列表按钮悬浮底色

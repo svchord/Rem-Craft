@@ -4,6 +4,7 @@
 
 //菜单底色
 $menu-bg: get($bg, "pop", 1);
+$menu-radius: get($radius, "medium");
 $padding: 6px;
 
 :root {
@@ -17,7 +18,7 @@ $padding: 6px;
 @mixin menu {
   min-width: 150px;
   padding: $padding;
-  border-radius: get($radius, "medium");
+  border-radius: $menu-radius;
 }
 
 @mixin menu-item {

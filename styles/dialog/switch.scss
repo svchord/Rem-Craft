@@ -1,0 +1,27 @@
+@use "../common" as *;
+@use "../component/menu";
+@use "../component/list";
+
+.b3-dialog--switch {
+  background-color: get($bg, "pop", 1);
+  border-radius: menu.$menu-radius;
+  > .fn__hr {
+    height: menu.$padding;
+  }
+  .b3-list {
+    padding: 0 menu.$padding menu.$padding;
+    max-width: 360px;
+    min-width: 180px;
+    &-item {
+      @include menu.menu-li();
+    }
+
+    &:last-child {
+      .b3-list-item {
+        &__graphic {
+          @include emoji-icon(list.$text-h, 12px, get($icon, "base"));
+        }
+      }
+    }
+  }
+}

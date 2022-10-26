@@ -21,6 +21,8 @@ $item-pad: 3px 2px;
     }
 
     .layout__center &:not([data-fullwidth="true"]) {
+      overflow-y: scroll;
+      
       .protyle {
         &-background {
           &__iconw {

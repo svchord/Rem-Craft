@@ -25,17 +25,17 @@
     }
 
     &--border {
-      > ul {
-        li {
+      > .toggle + div {
+        .b3-list-item {
           margin: 0 !important;
         }
-        > ul::before {
+        > .toggle + div::before {
           left: -21px - 34px;
         }
       }
 
-      ul,
-      li {
+      .b3-list-item,
+      .toggle + div {
         &::before {
           border-color: get($border, 3);
         }

@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "../common" as *;
 
 //块元信息
@@ -11,8 +12,8 @@
     @include item("component");
     border-radius: get($radius, "max");
     > svg {
-      @include svg(20px, 10px, $important: true);
-      margin: 0 !important;
+      @include svg(10px, $important: true);
+      margin: math.div(20px - 10px, 2) math.div(20px - 10px, 2) 0 !important;
     }
   }
 

@@ -1,6 +1,19 @@
 # 更新历史 | Changelog 
 
 
+### [2.2.4](https://github.com/svchord/Rem-Craft/compare/v2.2.3...v2.2.4) (2022-10-27)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容新版列表块辅助线 ([dbf9303](https://github.com/svchord/Rem-Craft/commit/dbf930354af65b040e75b6b11aedc37afe593e5f))
+* :bug: 解决页签滚动带来的拖拽问题 ([5dff76f](https://github.com/svchord/Rem-Craft/commit/5dff76f0caf426dc87db6185236d5e5f5191c3e6))
+* :bug: 修复编辑区域页面抖动的问题 ([ea97f01](https://github.com/svchord/Rem-Craft/commit/ea97f01cbfbbc3bc50e0383bc762270d3e3556ff))
+* :bug: 修复块元信息导出显示样式 ([f24a302](https://github.com/svchord/Rem-Craft/commit/f24a3023a53f76696ae346418e5ab65965264336))
+* :bug: 修复快捷键设置菜单样式 ([0e4ce9e](https://github.com/svchord/Rem-Craft/commit/0e4ce9edf63a5a3432c905b73454bb9f38c3c693))
+* :bug: 修复属性弹窗书签按钮图标居中问题 ([5af5a6b](https://github.com/svchord/Rem-Craft/commit/5af5a6bc8708e1a84bdd6fd6f3efbdbcec3de661))
+* :bug: 优化ctrl + tab菜单 ([03d2d66](https://github.com/svchord/Rem-Craft/commit/03d2d6656f28e7c7d22b8ed97993390b8ffa69d7))
+
 ### [2.2.3](https://github.com/svchord/Rem-Craft/compare/v2.2.2...v2.2.3) (2022-10-24)
 
 

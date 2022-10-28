@@ -69,4 +69,11 @@
       @include menu.color-square(list.$text-h, 16px, 11px);
     }
   }
+
+  // 菜单输入框
+  .b3-text-field {
+    width: 100%;
+    margin: 0 !important;
+    background-color: get($bg, "pop", 2);
+  }
 }

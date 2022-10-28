@@ -11,7 +11,7 @@ $spacing: 4px;
   border-radius: get($radius, "large");
 
   &__item {
-    @include svg-div(28px, 10px);
+    @include svg-div(28px, 12px);
     @include item("pop");
     margin-right: $spacing;
     border-radius: get($radius, "base");

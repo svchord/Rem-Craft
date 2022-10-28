@@ -24,6 +24,8 @@ $padding: 6px;
 @mixin menu-item {
   min-width: 0px;
   margin-bottom: 4px;
+  -webkit-app-region: no-drag;
+
   @include item("pop");
   @include component-base();
   &:last-child {

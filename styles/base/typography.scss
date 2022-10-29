@@ -5,10 +5,6 @@
   src: url("#{$asset-path}/fonts/NotoSansSC-Regular.otf");
 }
 
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("#{$asset-path}/fonts/JetBrainsMono-Regular.ttf");
-}
 
 :root {
   // 字体
@@ -17,7 +13,7 @@
     "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
     "EmojiSymbols";
-  --b3-font-family-code: "JetBrains Mono", "Noto Sans SC", mononoki, Consolas,
+  --b3-font-family-code: "JetBrainsMono-Regular", "Noto Sans SC", mononoki, Consolas,
     "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji",
     "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
     "EmojiSymbols";

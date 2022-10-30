@@ -1,11 +1,13 @@
 @use "sass:math";
 @use "../../common" as *;
+@use "../gutters";
 
 $list-border: get($border, 3);
 $left: 2px;
 $pad-l: 16px;
 
-$action-w: 34px;
+$action-h: 34px;
+$action-w: $action-h;
 
 $done-opacity: 0.45;
 $done-color: get($text, "placeholder");
@@ -101,6 +103,16 @@ $done-color: get($text, "placeholder");
 
     kbd {
       border-color: get($border, 4);
+    }
+  }
+}
+
+.protyle-gutters button {
+  &[data-type="NodeList"],
+  &[data-type="NodeListItem"] {
+    &,
+    ~ button {
+      margin-top: math.div($action-h - gutters.$h, 2);
     }
   }
 }

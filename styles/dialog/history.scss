@@ -3,6 +3,21 @@
 
 $padding: 16px;
 
+@mixin bar {
+  margin: 0 $padding;
+  padding: $padding 24px - $padding;
+}
+
+@mixin dialog-tabs {
+  @include bar();
+  border-bottom: $fn-border;
+  .item {
+    &__text {
+      margin-left: 0;
+    }
+  }
+}
+
 .b3-dialog__container {
   // 底层元素
   div[style*="80vh"] {
@@ -12,14 +27,7 @@ $padding: 16px;
 
     // 顶部导航栏
     .layout-tab-bar {
-      margin: 0 $padding;
-      padding: $padding 0;
-      border-bottom: $fn-border;
-      .item {
-        &__text {
-          margin-left: 0;
-        }
-      }
+      @include dialog-tabs();
     }
   }
 }

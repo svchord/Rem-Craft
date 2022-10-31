@@ -1,0 +1,39 @@
+@use "sass:math";
+@use "../common" as *;
+@use "history";
+@use "small";
+
+.b3-dialog__container:has(#addCodeSnippetCSS) {
+  width: 50vw !important;
+  div[style*="60vh"] {
+    // 顶部导航栏
+    .layout-tab-bar {
+      @include history.dialog-tabs();
+    }
+
+    textarea.b3-text-field {
+      height: get($component-size, "base") * 3;
+    }
+  }
+  .block__icon {
+    margin-top: math.div(
+      get($component-size, "base") - get($component-size, "small"),
+      2
+    );
+  }
+
+  .b3-dialog__close {
+    display: none;
+  }
+  
+  .b3-dialog__action {
+    @include history.bar();
+    @include small.actions();
+    .fn__space {
+      width: 16px;
+    }
+    .b3-button {
+      width: 120px;
+    }
+  }
+}

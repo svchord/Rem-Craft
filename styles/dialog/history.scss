@@ -42,12 +42,16 @@ $padding: 16px;
 // 文档历史界面 && 数据快照界面公共样式
 .history__repo {
   .history__repoheader {
-    padding: $padding 0;
-    margin: 0 $padding;
+    @include bar();
     border-bottom: $fn-border;
 
     .block__icon {
-      @include svg-div(get($component-size, "base"), get($icon, "small"));
+      @include svg-div(
+        get($component-size, "medium"),
+        get($icon, "small"),
+        get($component-size, "base"),
+        $important: true
+      );
       &[disabled] {
         opacity: 1 !important;
         @include item-disabled();

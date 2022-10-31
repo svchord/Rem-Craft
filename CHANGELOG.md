@@ -1,6 +1,19 @@
 # 更新历史 | Changelog 
 
 
+### [2.2.5](https://github.com/svchord/Rem-Craft/compare/v2.2.4...v2.2.5) (2022-10-31)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 美化新版代码片段可视化界面 ([c88e388](https://github.com/svchord/Rem-Craft/commit/c88e388d0580913d889b7b153e17891bdc9108d5))
+* :bug: 修复菜单项位于顶栏位置时无法点击的问题 ([5c02a1e](https://github.com/svchord/Rem-Craft/commit/5c02a1e1f70afdfa7a723b17e5f290b6384c08ab))
+* :bug: 修复块引用菜单输入框的样式问题 ([8218bc7](https://github.com/svchord/Rem-Craft/commit/8218bc77905c45e8fefd6e9fdc89a29f3cedc62e))
+* :bug: 优化编辑区域行内工具栏样式 ([2f99d76](https://github.com/svchord/Rem-Craft/commit/2f99d76989713ab9f3585b7748f774ade92f7e88)), closes [#56](https://github.com/svchord/Rem-Craft/issues/56)
+* :bug: 优化列表块标按钮的样式 ([034b63e](https://github.com/svchord/Rem-Craft/commit/034b63e8e11dbb4d286622a4f49e07c20830f5f5))
+* :bug: 优化数据历史界面样式 ([b509cbc](https://github.com/svchord/Rem-Craft/commit/b509cbc92dfce8d8e60c8897fa90485025638dee))
+* :bug: 优化引述块样式 ([d3d11ed](https://github.com/svchord/Rem-Craft/commit/d3d11ede2e62ce9cebec896bc63ea8bcb33c5bc9)), closes [#58](https://github.com/svchord/Rem-Craft/issues/58)
+
 ### [2.2.4](https://github.com/svchord/Rem-Craft/compare/v2.2.3...v2.2.4) (2022-10-27)
 
 

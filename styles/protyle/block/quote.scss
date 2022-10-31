@@ -3,12 +3,12 @@
 @use "heading";
 @use "list";
 
-$bq-color: get($text, "secondary");
+$bq-color: get($text, "primary");
 
 $side-left: $fn-space;
 $side-w: 2px;
 
-$left-interval: 16px;
+$left-interval: 14px;
 
 $left-tmp: $side-left + $side-w + $left-interval;
 

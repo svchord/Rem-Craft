@@ -3,8 +3,6 @@
 
 body > {
   #preview {
-    padding-left: 64px !important;
-    padding-right: 64px !important;
     max-width: 780px;
     background-color: get($bg, "page", 1);
     font-family: var(--b3-font-family);

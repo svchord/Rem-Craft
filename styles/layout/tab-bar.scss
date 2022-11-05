@@ -2,76 +2,29 @@
 @use "../common" as *;
 @use "../component/list";
 @use "top-bar";
+@use "wnd";
 
-$item-type: "base";
-$w: get($component-size, "exsmall");
-$btn-w: get($component-size, "small");
+$item-type: "medium";
 
 //页签栏
 .layout-tab-bar {
   background-color: get($bg, "page", 1);
 
-  .layout__center & {
-    &:not(:empty) {
-      @include component-base($item-type);
-      margin: 8px 8px 0px;
-    }
-  }
-
-  &--readonly {
-    margin-left: 0 !important;
-    min-width: $btn-w * 2 + $fn-space;
-  }
-
   .item {
     @include item-tran("page");
     @include component-base($item-type);
+    border-radius: get($radius, "base");
     min-height: 0;
     padding: 0 $interval;
     flex: unset;
-
-    > .fn__flex-1,
-    &::after {
-      display: none;
-    }
 
     &:not(:first-child) {
       margin-left: $fn-space;
     }
 
-    &__icon {
-      @include emoji-icon($w, 12px, get($icon, "base"));
-    }
-
-    &__graphic {
-      @include svg($w, get($icon, "small"), $important: true);
-      min-width: $w;
-    }
-
     &__text {
       min-width: 64px;
       @include v-center(get($component-size, $item-type));
-    }
-
-    &__close {
-      @include item-tran("component");
-      @include component-base("exsmall");
-      @include svg-div($w, 10px);
-      border-radius: get($radius, "small");
-
-      svg {
-        opacity: 0.3;
-        background-color: transparent !important;
-      }
-
-      &:hover svg {
-        opacity: 0.6;
-      }
-    }
-
-    &--pin {
-      background-color: get($bg, "component", 1);
-      min-width: unset;
     }
 
     &--focus {
@@ -85,159 +38,168 @@ $btn-w: get($component-size, "small");
       > .item__text {
         @include color("focus", true);
       }
-
-      .item__close {
-        @include item-tran("focus");
-        svg {
-          @include color("focus");
-        }
-      }
-    }
-
-    &--readonly {
-      @include item-unchange("page");
-      padding: 0;
-      cursor: unset;
-
-      > .fn__flex-1 {
-        display: flex;
-      }
-
-      .item__close {
-        @include icon-btn("page", $btn-w, 12px, true);
-        cursor: pointer;
-
-        &[data-type="more"] {
-          @include svg-div($btn-w, 10px, $important: true);
-        }
-      }
     }
   }
 }
 
-@keyframes item-w {
-  from {
-    max-width: 0;
+$item-h: 34px;
+$item-pad: 8px;
+$bar-h: top-bar.$bar-h - $interval;
+$bar-left: 16px;
+$btn-w: get($component-size, "small") + 1px;
+$inner-btn-w: get($component-size, "exsmall");
+$item-radius: get($radius, $item-type);
+
+@mixin divide($h, $left: auto, $right: auto) {
+  $tmph: 24px;
+  content: "";
+  display: block;
+  position: absolute;
+  left: $left;
+  right: $right;
+  top: math.div($h - $tmph, 2); //- math.div($interval, 2) ;
+  height: $tmph;
+  border-left: $fn-border-2;
+}
+
+@mixin corner($z-index: 2) {
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: unset !important;
+    bottom: 0;
+    background-color: transparent;
+    width: $item-radius * 2;
+    height: $item-radius * 2 !important;
+    border-radius: 100%;
+    border: none !important;
+    z-index: $z-index;
+    box-shadow: inset 0 0 0 1px get($border, 3),
+      0 0 0 $item-radius * 4 get($bg, "page", 1);
   }
-  to {
-    max-width: 138px;
+
+  &::before {
+    left: -$item-radius * 2 !important;
+    clip-path: inset(50% 0 - $item-radius 0 50%);
+  }
+
+  &::after {
+    right: -$item-radius * 2 !important;
+    clip-path: inset(50% 50% 0 0 - $item-radius);
   }
 }
 
 .layout__center {
-  $item-h: 32px;
-  $item-pad: 8px;
-
-  @mixin divide($h, $left) {
-    $tmph: 24px;
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      left: $left;
-      top: math.div($h - $tmph, 2);
-      height: $tmph;
-      border-left: $fn-border-2;
+  [data-type="wnd"] {
+    background-color: transparent;
+    border: none;
+    > .fn__flex:first-child {
+      height: $bar-h;
+      margin-bottom: -1px;
+      z-index: 1;
     }
   }
-
-  [data-type="wnd"] > .fn__flex:first-child {
-    @include divide(top-bar.$bar-h, -4px);
-    height: top-bar.$bar-h;
-    position: fixed;
-    top: 0;
-
-    z-index: 1;
-
-    left: 380px;
-    right: 160px;
-
-    body.body--win32 & {
-      left: 290px;
-      right: 300px;
-    }
-  }
-
-  // 解决分屏
-  &:has(.layout__resize--lr) {
-    // 分屏后左侧页签栏
-    > .fn__flex:first-child > [data-type="wnd"] > .fn__flex:first-child {
-      right: 50vw;
-    }
-    > .layout__resize--lr + .fn__flex {
-      // 分屏后右侧页签栏
-      > [data-type="wnd"] > .fn__flex:first-child {
-        left: 50vw;
-      }
-      // 分屏后右侧聚焦窗口页签栏
-      > [data-type="wnd"].layout__wnd--active {
-        > .fn__flex:first-child {
-          z-index: 2;
-        }
-      }
-    }
-  }
-
-  // 解决拖拽
-  // .item {
-  //   -webkit-app-region: no-drag;
-  //   &--readonly {
-  //     -webkit-app-region: drag;
-  //     .item__close {
-  //       -webkit-app-region: no-drag;
-  //     }
-  //   }
-  // }
 
   .layout-tab-bar {
-    height: top-bar.$bar-h !important;
-    background-color: get($bg, "base", 1);
-    margin: 0 !important;
-    padding: 0 4px;
+    padding: $bar-h - $item-h $bar-left 0;
+    background-color: transparent;
+    height: $bar-h !important;
+    margin: 0;
 
     &--readonly {
-      min-width: $btn-w * 2 + $fn-space * 3 + $interval * 2 + 2px;
       -webkit-app-region: drag;
+      margin-left: 8px - $bar-left;
+      padding-left: 0;
+      padding-right: 0;
     }
 
     .item {
-      @include item-tran("base", $important: true);
-      animation: item-w get($transition-duration, "base")
-        get($transition-function, "ease-in-out");
+      @include item-tran("base");
+      transition: unset !important;
       height: $item-h;
-      position: relative;
-      padding: 0 $item-pad;
-      overflow: unset;
+      background-color: transparent;
+      padding: 0 math.div($item-h - $inner-btn-w, 2);
+      border-radius: $item-radius $item-radius 0 0;
+      -webkit-app-region: no-drag;
+      overflow: unset !important;
+
+      &::before {
+        @include divide($item-h, $left: 0px);
+      }
 
       &:not(:first-child) {
-        @include divide($item-h, -4px);
+        margin-left: 0;
+      }
+
+      &:last-child {
+        &::after {
+          @include divide($item-h, $right: 0px);
+        }
+      }
+
+      &:hover {
+        @include corner(0);
+        &::before,
+        &::after {
+          box-shadow: 0 0 0 $item-radius * 4 get($bg, "base", 2);
+        }
+        + .item {
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      &:active {
+        &::before,
+        &::after {
+          box-shadow: 0 0 0 $item-radius * 4 get($bg, "base", 3);
+        }
       }
 
       &__icon {
-        @include emoji-icon($w, 13px, get($icon, "medium"));
+        @include emoji-icon($inner-btn-w, 13px, get($icon, "medium"));
       }
 
       &__graphic {
-        @include svg($w, get($icon, "base"), $important: true);
+        @include svg($inner-btn-w, get($icon, "base"), $important: true);
+        min-width: $inner-btn-w;
       }
 
       &__text {
         min-width: 86px;
         max-width: 180px;
         padding: 0 $item-pad;
+        height: $item-h;
       }
 
       &__close {
         @include item-tran("base", 2);
+        @include component-base("exsmall");
+        @include svg-div($inner-btn-w, 10px);
+        border-radius: get($radius, "small");
+
+        svg {
+          opacity: 1;
+          background-color: transparent !important;
+        }
       }
 
       &--pin {
         background-color: get($bg, "base", 1);
+        min-width: unset;
       }
 
       &--focus {
         @include item-unchange("page", $important: true);
-        box-shadow: get($shadow, 0) !important;
+        box-shadow: 0 0 0 1px get($border, 3) !important;
+
+        &,
+        &:hover {
+          @include corner();
+        }
 
         .item__graphic {
           @include color("primary");
@@ -249,14 +211,8 @@ $btn-w: get($component-size, "small");
 
         .item__close {
           @include item-tran("page");
-          svg {
-            @include color("primary");
-          }
         }
 
-        &::before {
-          display: none !important;
-        }
         + .item {
           &::before {
             display: none;
@@ -265,23 +221,129 @@ $btn-w: get($component-size, "small");
       }
 
       &--readonly {
-        @include item-unchange("base", $important: true);
-        height: 24px;
-        margin: 8px 0;
-        padding: 0 8px;
-        border-left: $fn-border-2;
-        border-right: $fn-border-2;
-        border-radius: unset;
-
-        &::before {
-          display: none;
-        }
+        @include item-unchange("base");
+        cursor: unset;
+        height: $btn-w;
+        -webkit-app-region: drag;
+        margin: math.div($item-h - $btn-w - 1px, 2) 0px 0 0;
+        padding: 0 8px 0 0;
+        min-width: $btn-w * 2 + $fn-space * 2;
+        // border-right: $fn-border-2;
+        // border-radius: unset;
 
         .item__close {
-          @include item("base", $important: true);
+          @include icon-btn("base", $btn-w, 12px, true);
+          cursor: pointer;
           -webkit-app-region: no-drag;
+
+          &[data-type="more"] {
+            @include svg-div($btn-w, 10px, $important: true);
+          }
+        }
+
+        &::before,
+        &::after {
+          display: none !important;
         }
       }
+    }
+  }
+}
+
+@each $direction in "left", "right" {
+  @each $switch in "open", "close" {
+    @keyframes #{$direction}-#{$switch} {
+      $w: if(
+        $direction == "left",
+        top-bar.$icons-w-left,
+        top-bar.$icons-w-right
+      );
+      from {
+        margin-#{$direction}: if($switch == "open", $w, 0);
+      }
+      to {
+        margin-#{$direction}: if($switch == "open", 0, $w);
+      }
+    }
+  }
+}
+
+// 区分分屏场景的选择器列表
+@mixin split($direction) {
+  $tmp: if($direction == "left", "first", "last");
+  // 左上角第一个编辑页面
+  //无分屏
+  .fn__flex:only-child {
+    @content;
+  }
+  // 左右分屏
+  &,
+  .fn__flex {
+    &:has(> .layout__resize--lr) > .fn__flex:#{$tmp}-child {
+      @content;
+    }
+  }
+  // 上下分屏
+  &,
+  .fn__flex-column:#{$tmp}-child {
+    &:has(> .layout__resize:not(.layout__resize--lr)) > .fn__flex:first-child {
+      @content;
+    }
+  }
+}
+
+// 区分左右margin的选择器列表，防止动画冲突
+@mixin direc($direction) {
+  @if $direction == "left" {
+    > [data-type="wnd"] > .fn__flex:first-child {
+      @content;
+    }
+  } @else {
+    > [data-type="wnd"] > .fn__flex > .layout-tab-bar--readonly {
+      @content;
+    }
+  }
+}
+
+// 区分左右margin
+@mixin margin($direction, $switch) {
+  $w: if($direction == "left", top-bar.$icons-w-left, top-bar.$icons-w-right);
+  @include direc($direction) {
+    margin-#{$direction}: if($switch == "open", 0, $w);
+    animation: #{$direction}-#{$switch} wnd.$time wnd.$func;
+  }
+}
+
+#layouts > .fn__flex {
+  > .fn__flex-shrink {
+    $direction: "left";
+    // 关闭左侧边栏
+    &:has(> .fn__none:first-child) ~ .layout__center {
+      @include split($direction) {
+        @include margin($direction, "close");
+      }
+    }
+
+    // 打开左侧边栏
+    &:not(:has(> .fn__none:first-child)) ~ .layout__center {
+      @include split($direction) {
+        @include margin($direction, "open");
+      }
+    }
+  }
+
+  $direction: "right";
+  // 关闭右侧边栏
+  &:has(> .fn__flex-column[style~="0px;"]:last-child) > .layout__center {
+    @include split($direction) {
+      @include margin($direction, "close");
+    }
+  }
+
+  // 打开右侧边栏
+  &:has(> .fn__flex-column:not([style~="0px;"]):last-child) > .layout__center {
+    @include split($direction) {
+      @include margin($direction, "open");
     }
   }
 }

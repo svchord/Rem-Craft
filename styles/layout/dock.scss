@@ -3,6 +3,7 @@
 
 $item-w: 36px;
 $dock-w: $item-w + $interval * 2;
+$top-h: 40px;
 
 //边栏
 @mixin dock {
@@ -34,6 +35,8 @@ $dock-w: $item-w + $interval * 2;
 //边栏
 .dock--vertical {
   width: $item-w;
+  background-color: transparent;
+  padding-top: $top-h - $interval;
 
   div:first-child:not(:empty) {
     @include dock();

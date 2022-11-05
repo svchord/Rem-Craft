@@ -1,18 +1,25 @@
 @use "../common" as *;
 @use "../dialog/search";
 @use "../component/list";
+@use "top-bar";
+@use "dock";
 
 $wnd-base: get($bg, "base", 1);
 $wnd-bg: get($bg, "page", 1);
+$wnd-radius: get($radius, "medium");
 
 //边窗动画
 $time: get($transition-duration, "moderate");
+$func: get($transition-function, "ease-in-out");
 $scale: scale(0.75);
-$wnd-transition: all $time get($transition-function, "ease-in-out") 0s;
+$wnd-transition: all $time $func 0s;
 
 :root {
   // 动画效果
-  --b3-width-transition: width #{$time} #{get($transition-function, "ease-in-out")};
+  --b3-width-transition: width #{$time} #{get(
+      $transition-function,
+      "ease-in-out"
+    )};
 }
 
 @keyframes close {
@@ -38,8 +45,8 @@ $wnd-transition: all $time get($transition-function, "ease-in-out") 0s;
 @mixin wnd {
   min-height: 10% !important;
   margin: $interval;
-  border-radius: get($radius, "medium");
-  transition: all $time get($transition-function, "ease-in-out") 0s;
+  border-radius: $wnd-radius;
+  transition: all $time $func 0s;
   background-color: $wnd-bg;
   border: $fn-border;
 }
@@ -49,8 +56,8 @@ $wnd-transition: all $time get($transition-function, "ease-in-out") 0s;
   overflow: hidden;
 
   //两侧边窗
-  > .fn__flex-column {
-    background-color: $wnd-base;
+  > .fn__flex-column:not(.layout__center) {
+    padding-top: top-bar.$bar-h - $interval;
     // 显示的边窗
     > .fn__flex {
       overflow-x: hidden;
@@ -63,9 +70,9 @@ $wnd-transition: all $time get($transition-function, "ease-in-out") 0s;
     // 隐藏的边窗
     > .fn__none:not(.layout__resize) {
       display: flex !important;
-      animation: close $time * 2 forwards get($transition-function, "ease-in-out");
+      animation: close $time * 2 forwards $func;
 
-      > div[data-type="wnd"] {
+      > [data-type="wnd"] {
         @include wnd;
         opacity: 0;
         transform: $scale; //translateX(50%);
@@ -76,9 +83,9 @@ $wnd-transition: all $time get($transition-function, "ease-in-out") 0s;
   //左侧边窗特殊处理
   > .fn__flex-shrink:not(.layout__center) {
     > .fn__none:not(.layout__resize) {
-      animation: close $time * 2 forwards get($transition-function, "ease-in-out");
+      animation: close $time * 2 forwards $func;
 
-      > div[data-type="wnd"] {
+      > [data-type="wnd"] {
         transform: $scale;
       }
     }
@@ -111,13 +118,20 @@ $wnd-transition: all $time get($transition-function, "ease-in-out") 0s;
 
 // 居中窗口
 .layout__center {
-  background-color: $wnd-base;
-  div[data-type="wnd"] {
+  background-color: transparent; //$wnd-base;
+
+  .layout-tab-container {
+    border-radius: $wnd-radius;
+    border: $fn-border; 
+    // border-width: 0 1px 1px 1px;
+  }
+  [data-type="wnd"] {
     position: relative;
     @include wnd;
 
     // 标签搜索页面
-    .fn__flex-column[style*="min-height"][style*="50%"] > .fn__flex:first-child{
+    .fn__flex-column[style*="min-height"][style*="50%"]
+      > .fn__flex:first-child {
       padding: 8px !important;
     }
 

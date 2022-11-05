@@ -1,9 +1,8 @@
 @use "sass:list";
-
 @use "../common" as *;
 @use "dock";
 
-$bar-h: 40px;
+$bar-h: dock.$top-h;
 $bar-bg: get($bg, "base", 1);
 
 $item-w: 34px;
@@ -15,6 +14,10 @@ $padding: 8px;
 $icon-w: get($icon, "medium");
 
 $win-control-w: 46px;
+
+$icons-w-left: ($item-w + 4px) * 6;
+$icons-w-right: ($item-w + 4px) * 4 + $win-control-w * 3 - dock.$dock-w +
+  $fn-space;
 
 $list: (
   "Sync",
@@ -62,7 +65,7 @@ $list: (
 //顶部工具栏
 #toolbar {
   height: $bar-h;
-  margin-bottom: -$interval;
+  margin-bottom: -$bar-h;
   border: none;
   -webkit-app-region: drag;
   padding-right: 3px;
@@ -73,6 +76,7 @@ $list: (
 
   .toolbar__item {
     -webkit-app-region: no-drag;
+    z-index: 10;
     @include top-item();
 
     &#bar {
@@ -159,27 +163,6 @@ $list: (
     body:has(.layout__empty) & {
       @include v-center(40px);
       font-size: 14px;
-    }
-  }
-
-  &::after {
-    content: "";
-    display: block;
-    position: fixed;
-    height: 32px;
-    top: 4px;
-    -webkit-app-region: no-drag;
-
-    left: 380px;
-    right: 160px;
-
-    body.body--win32 & {
-      left: 290px;
-      right: 300px;
-    }
-
-    body:has(.layout__empty) & {
-      height: 0;
     }
   }
 

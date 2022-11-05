@@ -19,6 +19,8 @@ $icons-w-left: ($item-w + 4px) * 6;
 $icons-w-right: ($item-w + 4px) * 4 + $win-control-w * 3 - dock.$dock-w +
   $fn-space;
 
+$mac-pad-right: 3px;
+
 $list: (
   "Sync",
   "History",
@@ -68,7 +70,7 @@ $list: (
   margin-bottom: -$bar-h;
   border: none;
   -webkit-app-region: drag;
-  padding-right: 3px;
+  padding-right: $mac-pad-right;
 
   body.body--win32 & {
     padding: 0;

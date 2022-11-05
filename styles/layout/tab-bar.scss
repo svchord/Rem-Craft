@@ -312,8 +312,17 @@ $item-radius: get($radius, $item-type);
 // 区分左右margin
 @mixin margin($direction, $switch) {
   $w: if($direction == "left", top-bar.$icons-w-left, top-bar.$icons-w-right);
+  $mac-w: if(
+    $direction == "left",
+    top-bar.$icons-w-left + 69px,
+    top-bar.$icons-w-right - top-bar.$win-control-w * 3 + top-bar.$mac-pad-right
+  );
+
   @include direc($direction) {
-    margin-#{$direction}: if($switch == "open", 0, $w);
+    margin-#{$direction}: if($switch == "open", 0, $mac-w);
+    body.body--win32 & {
+      margin-#{$direction}: if($switch == "open", 0, $w);
+    }
     animation: #{$direction}-#{$switch} wnd.$time wnd.$func;
   }
 }

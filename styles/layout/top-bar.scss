@@ -16,8 +16,7 @@ $icon-w: get($icon, "medium");
 $win-control-w: 46px;
 
 $icons-w-left: ($item-w + 4px) * 6;
-$icons-w-right: ($item-w + 4px) * 4 + $win-control-w * 3 - dock.$dock-w +
-  $fn-space;
+$icons-w-right: ($item-w + 4px) * 4 + $win-control-w * 3 - dock.$dock-w + $interval;
 
 $mac-pad-right: 3px;
 
@@ -163,7 +162,7 @@ $list: (
   #drag {
     height: 0;
     body:has(.layout__empty) & {
-      @include v-center(40px);
+      @include v-center($bar-h);
       font-size: 14px;
     }
   }

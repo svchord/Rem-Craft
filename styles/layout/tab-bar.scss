@@ -51,7 +51,7 @@ $inner-btn-w: get($component-size, "exsmall");
 $item-radius: get($radius, $item-type);
 
 @mixin divide($h, $left: auto, $right: auto) {
-  $tmph: 24px;
+  $tmph: 20px;
   content: "";
   display: block;
   position: absolute;
@@ -62,7 +62,7 @@ $item-radius: get($radius, $item-type);
   border-left: $fn-border-2;
 }
 
-@mixin corner($z-index: 2) {
+@mixin corner($z-index: 1) {
   &::before,
   &::after {
     content: "";
@@ -97,22 +97,23 @@ $item-radius: get($radius, $item-type);
     border: none;
     > .fn__flex:first-child {
       height: $bar-h;
-      margin-bottom: -1px;
-      z-index: 1;
     }
   }
 
   .layout-tab-bar {
     padding: $bar-h - $item-h $bar-left 0;
-    background-color: transparent;
+    background-color: get($bg, "base", 1);
     height: $bar-h !important;
     margin: 0;
 
     &--readonly {
       -webkit-app-region: drag;
       margin-left: 8px - $bar-left;
-      padding-left: 0;
-      padding-right: 0;
+      margin-right: $item-radius;
+      border-bottom: $fn-border;
+      min-width: $btn-w * 2 + $fn-space * 2 -$item-radius;
+      padding: 0;
+      z-index: 1;
     }
 
     .item {
@@ -145,7 +146,7 @@ $item-radius: get($radius, $item-type);
         &::after {
           box-shadow: 0 0 0 $item-radius * 4 get($bg, "base", 2);
         }
-        + .item {
+        + .item:not(.item--focus) {
           &::before {
             display: none;
           }
@@ -195,6 +196,7 @@ $item-radius: get($radius, $item-type);
       &--focus {
         @include item-unchange("page", $important: true);
         box-shadow: 0 0 0 1px get($border, 3) !important;
+        z-index: 1;
 
         &,
         &:hover {
@@ -225,9 +227,9 @@ $item-radius: get($radius, $item-type);
         cursor: unset;
         height: $btn-w;
         -webkit-app-region: drag;
-        margin: math.div($item-h - $btn-w - 1px, 2) 0px 0 0;
-        padding: 0 8px 0 0;
-        min-width: $btn-w * 2 + $fn-space * 2;
+        margin: math.div($item-h - $btn-w, 2) 0px 0 0;
+        padding: 0 8px - $item-radius 0 0;
+        min-width: $btn-w * 2 + $fn-space * 2 -$item-radius;
         // border-right: $fn-border-2;
         // border-radius: unset;
 
@@ -268,14 +270,13 @@ $item-radius: get($radius, $item-type);
   }
 }
 
-// 区分分屏场景的选择器列表
+// 区分分屏场景的选择器列表，选中左右上角第一个编辑页面
 @mixin split($direction) {
   $tmp: if($direction == "left", "first", "last");
-  // 左上角第一个编辑页面
   //无分屏
   &,
-  .fn__flex:first-child:has(> .layout__resize--lr),
-  .fn__flex-column:#{$tmp}-child:has(> .layout__resize:not(.layout__resize--lr)) {
+  .fn__flex:first-child,
+  .fn__flex-column:#{$tmp}-child {
     > .fn__flex:only-child {
       @content;
     }

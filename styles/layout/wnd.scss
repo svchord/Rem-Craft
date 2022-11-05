@@ -122,8 +122,9 @@ $wnd-transition: all $time $func 0s;
 
   .layout-tab-container {
     border-radius: $wnd-radius;
-    border: $fn-border; 
-    // border-width: 0 1px 1px 1px;
+    border: $fn-border;
+    border-width: 0 1px 1px 1px;
+    box-shadow: 0 -1px 0 0 get($border, 3);
   }
   [data-type="wnd"] {
     position: relative;

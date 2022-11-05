@@ -10,6 +10,7 @@ $tag-color: get($text, "secondary");
 .protyle-wysiwyg [data-node-id] {
   span[data-type~="tag"] {
     @include item-focus();
+    white-space: nowrap;
     border-radius: get($radius, "max");
     border: none;
     position: relative;

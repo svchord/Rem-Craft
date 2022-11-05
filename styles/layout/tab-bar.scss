@@ -273,12 +273,16 @@ $item-radius: get($radius, $item-type);
   $tmp: if($direction == "left", "first", "last");
   // 左上角第一个编辑页面
   //无分屏
-  .fn__flex:only-child {
-    @content;
+  &,
+  .fn__flex:first-child:has(> .layout__resize--lr),
+  .fn__flex-column:#{$tmp}-child:has(> .layout__resize:not(.layout__resize--lr)) {
+    > .fn__flex:only-child {
+      @content;
+    }
   }
   // 左右分屏
   &,
-  .fn__flex {
+  .fn__flex:first-child {
     &:has(> .layout__resize--lr) > .fn__flex:#{$tmp}-child {
       @content;
     }

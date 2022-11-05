@@ -26,6 +26,7 @@ $bread-crumb-height: 32px;
   &__icons--border {
     border-radius: $pop-radius $pop-radius 0 0;
     background-color: $pop-bg;
+    -webkit-app-region: no-drag;
     .block__icon + .fn__space {
       width: $fn-space;
     }
@@ -53,7 +54,7 @@ $bread-crumb-height: 32px;
         //     margin-left: 8px;
         //     height: 1px;
         //     background-color: get($border, 3);
-            
+
         //     // border-top: $fn-border;
         //     // z-index: 0;
         //   }

@@ -1,6 +1,7 @@
 
 @use "../common" as *;
 @use "../component/list";
+@use "top-bar";
 
 .layout__empty {
   margin: 0 !important;
@@ -21,6 +22,13 @@
     span {
       font-size: get($font-size, "base");
       margin-left: 5px;
+    }
+  }
+
+  .layout__center:has(&){
+    padding-top: top-bar.$bar-h - $interval;
+    .layout-tab-container{
+      border-width: 1px;
     }
   }
 }

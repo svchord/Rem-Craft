@@ -109,9 +109,9 @@ $item-radius: get($radius, $item-type);
     &--readonly {
       -webkit-app-region: drag;
       margin-left: 8px - $bar-left;
-      margin-right: $item-radius;
       border-bottom: $fn-border;
-      min-width: $btn-w * 2 + $fn-space * 2 -$item-radius;
+      min-width: $btn-w * 2 + $fn-space * 2;
+      clip-path: inset(0 $item-radius 0 0);
       padding: 0;
       z-index: 1;
     }
@@ -191,6 +191,12 @@ $item-radius: get($radius, $item-type);
       &--pin {
         background-color: get($bg, "base", 1);
         min-width: unset;
+        &:has(.item__text.fn__none) {
+          padding: 0 12px;
+        }
+        &:hover::after {
+          z-index: 1;
+        }
       }
 
       &--focus {
@@ -228,7 +234,7 @@ $item-radius: get($radius, $item-type);
         height: $btn-w;
         -webkit-app-region: drag;
         margin: math.div($item-h - $btn-w, 2) 0px 0 0;
-        padding: 0 8px - $item-radius 0 0;
+        padding: 0 8px 0 0;
         min-width: $btn-w * 2 + $fn-space * 2 -$item-radius;
         // border-right: $fn-border-2;
         // border-radius: unset;

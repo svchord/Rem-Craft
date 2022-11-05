@@ -338,14 +338,14 @@ $item-radius: get($radius, $item-type);
   > .fn__flex-shrink {
     $direction: "left";
     // 关闭左侧边栏
-    &:has(> .fn__none:first-child) ~ .layout__center {
+    &[style~="0px;"] ~ .layout__center {
       @include split($direction) {
         @include margin($direction, "close");
       }
     }
 
     // 打开左侧边栏
-    &:not(:has(> .fn__none:first-child)) ~ .layout__center {
+    &:not([style~="0px;"]) ~ .layout__center {
       @include split($direction) {
         @include margin($direction, "open");
       }

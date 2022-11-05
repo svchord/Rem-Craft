@@ -7,8 +7,8 @@ $text-color: get($text, "secondary");
 }
 
 .b3-typography a,
-.protyle-wysiwyg [data-node-id] a,
-  .protyle-wysiwyg [data-node-id] span[data-type~="a"]:not(:empty) {
+.protyle-wysiwyg a,
+.protyle-wysiwyg span[data-type~="a"]:not(:empty) {
   border-bottom: $fn-border-2;
   text-decoration: none;
   color: $text-color;
@@ -61,6 +61,24 @@ $text-color: get($text, "secondary");
   }
 }
 
+@mixin a($wildcards, $typo: false) {
+  @if $typo == false {
+    @each $tmp in $wildcards {
+      .b3-typography a[href#{$tmp}],
+      .protyle-wysiwyg a[href#{$tmp}],
+      .protyle-wysiwyg span[data-type~="a"][data-href#{$tmp}]:not(:empty) {
+        @content;
+      }
+    }
+  } @else {
+    @each $tmp in $wildcards {
+      .b3-typography a[href#{$tmp}] {
+        @content;
+      }
+    }
+  }
+}
+
 $icon-path: "#{$asset-path}/link";
 
 $schemes: (
@@ -86,9 +104,8 @@ $schemes: (
 );
 
 @each $href, $file in $schemes {
-  .b3-typography a[href^="#{$href}"],
-  .protyle-wysiwyg a[href^="#{$href}"],
-  .protyle-wysiwyg span[data-type~="a"][data-href^="#{$href}"]:not(:empty) {
+  $wildcard: '^="#{$href}"';
+  @include a($wildcard) {
     @include has-icon("#{$icon-path}/schemes", $file);
   }
 }
@@ -99,15 +116,12 @@ $folder-schemes: (
 );
 
 @each $href, $file in $folder-schemes {
-  .b3-typography a[href^="#{$href}"][data-href$="/"],
-  .b3-typography a[href^="#{$href}"][data-href$="\\"],
-  .protyle-wysiwyg a[href^="#{$href}"][data-href$="/"],
-  .protyle-wysiwyg a[href^="#{$href}"][data-href$="\\"],
-  .protyle-wysiwyg
-    span[data-type~="a"][data-href^="#{$href}"][data-href$="/"]:not(:empty),
-  .protyle-wysiwyg
-    span[data-type~="a"][data-href^="#{$href}"][data-href$="\\"]:not(:empty) {
-    @include has-icon("#{$icon-path}/schemes", $file);
+  $wildcard: '^="#{$href}"';
+  @include a($wildcard) {
+    &[data-href$="/"],
+    &[data-href$="\\"] {
+      @include has-icon("#{$icon-path}/schemes", $file);
+    }
   }
 }
 
@@ -120,15 +134,11 @@ $static: (
 );
 
 @each $href, $file in $static {
-  .b3-typography a[href^="#{$href}/"][data-href$="/"],
-  .b3-typography a[href^="/#{$href}"][data-href$="/"],
-  .protyle-wysiwyg a[href^="#{$href}/"][data-href$="/"],
-  .protyle-wysiwyg a[href^="/#{$href}"][data-href$="/"],
-  .protyle-wysiwyg
-    span[data-type~="a"][data-href^="#{$href}/"][data-href$="/"]:not(:empty),
-  .protyle-wysiwyg
-    span[data-type~="a"][data-href^="/#{$href}"][data-href$="/"]:not(:empty) {
-    @include has-icon("#{$icon-path}/static", $file);
+  $wildcard: '^="#{$href}/"', '^="/#{$href}/"';
+  @include a($wildcard) {
+    &[data-href$="/"] {
+      @include has-icon("#{$icon-path}/static", $file);
+    }
   }
 }
 
@@ -332,15 +342,17 @@ $assets: (
 );
 
 @each $href, $file in $assets {
-  .b3-typography a[href*="assets/"][href$="#{$href}"],
-  .b3-typography a[href*="/assets/"][href$="#{$href}"],
-  .protyle-wysiwyg a[href^="assets/"][href$="#{$href}"],
-  .protyle-wysiwyg a[href^="/assets/"][href$="#{$href}"],
-  .protyle-wysiwyg
-    span[data-type~="a"][href^="assets/"][data-href$="#{$href}"]:not(:empty),
-  .protyle-wysiwyg
-    span[data-type~="a"][href^="/assets/"][data-href$="#{$href}"]:not(:empty) {
-    @include has-icon("#{$icon-path}/assets", $file);
+  $wildcard: '$="#{$href}"';
+  @include a($wildcard, true) {
+    &[href*="assets/"] {
+      @include has-icon("#{$icon-path}/assets", $file);
+    }
+  }
+  @include a($wildcard) {
+    &[href^="assets/"],
+    &[href^="/assets/"] {
+      @include has-icon("#{$icon-path}/assets", $file);
+    }
   }
 }
 
@@ -499,9 +511,8 @@ $domains: (
 
 @each $scope, $keys in $domains {
   @each $href, $file in $keys {
-    .b3-typography a[href*="#{$href}"],
-    .protyle-wysiwyg a[href*="#{$href}"],
-    .protyle-wysiwyg span[data-type~="a"][data-href*="#{$href}"]:not(:empty) {
+    $wildcard: '*="#{$href}"';
+    @include a($wildcard) {
       @include has-icon("#{$icon-path}/domains/#{$scope}", $file);
     }
   }
@@ -516,18 +527,16 @@ $dark: (
 $path-dark: "#{$icon-path}/dark";
 
 @each $href, $file in $dark {
-  .b3-typography a[href*="#{$href}"],
-  .protyle-wysiwyg a[href*="#{$href}"],
-  .protyle-wysiwyg span[data-type~="a"][data-href*="#{$href}"]:not(:empty) {
+  $wildcard: '*="#{$href}"';
+  @include a($wildcard) {
     .dark & {
       @include has-icon($path-dark, $file);
     }
   }
 }
 
-.protyle-wysiwyg span[data-type~="a"][data-href*="cloud.189.cn"]:not(:empty),
-.protyle-wysiwyg a[href*="cloud.189.cn"],
-.b3-typography a[href*="cloud.189.cn"] {
+$wildcard: '*="cloud.189.cn"';
+@include a($wildcard) {
   &::before {
     background-size: 1.6em 1em;
     background-position: left -0.2em top 0.1em;

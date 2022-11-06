@@ -77,7 +77,7 @@ $list: (
 
   .toolbar__item {
     -webkit-app-region: no-drag;
-    z-index: 10;
+    z-index: 1;
     @include top-item();
 
     &#bar {

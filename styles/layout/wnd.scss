@@ -10,7 +10,7 @@ $wnd-bg: get($bg, "page", 1);
 $wnd-radius: get($radius, "medium");
 
 //边窗动画
-$time: get($transition-duration, "moderate");
+$time: get($transition-duration, "base");
 $func: get($transition-function, "ease-in-out");
 $scale: scale(0.75);
 $wnd-transition: all $time $func 0s;

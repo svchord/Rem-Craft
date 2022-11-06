@@ -30,6 +30,9 @@ $item-type: "medium";
     &--focus {
       @include color("focus");
       @include item-unchange("focus");
+      &::after {
+        display: none;
+      }
 
       .item__graphic {
         @include color("focus");

@@ -76,7 +76,7 @@ $arrow-w: 16px;
 
 .b3-list-item {
   padding: $padding;
-  margin: 0 0 $interval !important;
+  margin: 0 0 2px !important;
   line-height: $text-h;
 
   @include list-item();

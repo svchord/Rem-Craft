@@ -1,5 +1,41 @@
-# 更新历史 | Changelog 
+# 版本日志 | Changelog 
 
+
+## [2.3.0](https://github.com/svchord/Rem-Craft/compare/v2.2.5...v2.3.0) (2022-11-06)
+
+
+### ✨ 新增功能 | Features
+
+* :sparkles: 参考obsidian改进页签 ([afa3053](https://github.com/svchord/Rem-Craft/commit/afa3053527d8aac86fe01a2e9b68d89a495a8899))
+
+
+### ⚡ 性能提升 | Performance Improvements
+
+* :zap: 修改行内超链接块写法，提高可维护性 ([fa4c050](https://github.com/svchord/Rem-Craft/commit/fa4c0505c12dc9650227faf2378b62b9769e0306))
+
+
+### ♻️ 代码重构 | Code Refactoring
+
+* :recycle: 重构theme.js，增加scripts文件目录，提高可维护性 ([c9d25ba](https://github.com/svchord/Rem-Craft/commit/c9d25baea4843b3372d87372c366ad4c88b96d9f))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 减少list-item的间距 ([a71e463](https://github.com/svchord/Rem-Craft/commit/a71e463e711a44f0db118b61d1c377fd9fdc07d9)), closes [#62](https://github.com/svchord/Rem-Craft/issues/62)
+* :bug: 适配mac顶栏 ([fe51ccc](https://github.com/svchord/Rem-Craft/commit/fe51cccb94b23dd46eb6442d5cb096d7e290f45b))
+* :bug: 修复钉住页签和未打开文档的空界面样式 ([4aeaa9a](https://github.com/svchord/Rem-Craft/commit/4aeaa9a3169b652a5cf884dc52c907fd8a2c9d25))
+* :bug: 修复分屏时的bug ([18d1ee7](https://github.com/svchord/Rem-Craft/commit/18d1ee7f2da752d27a60608d4e7f036eac5e68a0))
+* :bug: 修复行内标签块换行问题 ([9de8d64](https://github.com/svchord/Rem-Craft/commit/9de8d64dd1ae48600f23a65d41979f73c5f2c6e4)), closes [#60](https://github.com/svchord/Rem-Craft/issues/60)
+* :bug: 修复状态栏遮挡问题 ([937f9f3](https://github.com/svchord/Rem-Craft/commit/937f9f3964dcaa36d0bc40008a276cac6a1b0c4d)), closes [#59](https://github.com/svchord/Rem-Craft/issues/59)
+* :bug: 修复左侧边栏关闭时的样式缺陷 ([170f5ec](https://github.com/svchord/Rem-Craft/commit/170f5ec981c2cd2feeb999009729bf4aa717251b))
+* :bug: 修复pdf导出页边距的问题 ([a512a83](https://github.com/svchord/Rem-Craft/commit/a512a8366474179d5e2378674a95b121beacbfc2))
+* :bug: 优化顶栏、页签、边栏的样式 ([089a199](https://github.com/svchord/Rem-Craft/commit/089a199143293e6b7e7397a6a46ae57d8b611490))
+* :bug: 优化顶栏页签的一系列样式问题 ([52b58ee](https://github.com/svchord/Rem-Craft/commit/52b58ee8ee2dc48e30215f5eb2e5b8c202a8ea1b))
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新readme和preview.png，修改.versionrc ([7b252fd](https://github.com/svchord/Rem-Craft/commit/7b252fd9d8e717f11727aa36ea18232a236f2fe2))
 
 ### [2.2.5](https://github.com/svchord/Rem-Craft/compare/v2.2.4...v2.2.5) (2022-10-31)
 

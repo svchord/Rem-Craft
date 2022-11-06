@@ -235,7 +235,7 @@ $item-radius: get($radius, $item-type);
         -webkit-app-region: drag;
         margin: math.div($item-h - $btn-w, 2) 0px 0 0;
         padding: 0 8px 0 0;
-        min-width: $btn-w * 2 + $fn-space * 2 -$item-radius;
+        min-width: $btn-w * 2 + $fn-space * 2 - $item-radius;
         // border-right: $fn-border-2;
         // border-radius: unset;
 

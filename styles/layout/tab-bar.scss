@@ -100,6 +100,7 @@ $item-radius: get($radius, $item-type);
     border: none;
     > .fn__flex:first-child {
       height: $bar-h;
+      -webkit-app-region: no-drag;
     }
   }
 
@@ -126,7 +127,6 @@ $item-radius: get($radius, $item-type);
       background-color: transparent;
       padding: 0 math.div($item-h - $inner-btn-w, 2);
       border-radius: $item-radius $item-radius 0 0;
-      -webkit-app-region: no-drag;
       overflow: unset !important;
 
       &::before {

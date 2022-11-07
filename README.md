@@ -1,9 +1,9 @@
 # Rem Craft
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/release/svchord/Rem-Craft?include_prereleases)  
-![GitHub](https://img.shields.io/github/license/svchord/Rem-Craft)  
-![GitHub last commit](https://img.shields.io/github/last-commit/svchord/Rem-Craft)  
-![GitHub repo size](https://img.shields.io/github/repo-size/svchord/Rem-Craft)  
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/release/svchord/Rem-Craft?include_prereleases)
+![GitHub](https://img.shields.io/github/license/svchord/Rem-Craft)
+![GitHub last commit](https://img.shields.io/github/last-commit/svchord/Rem-Craft)
+![GitHub repo size](https://img.shields.io/github/repo-size/svchord/Rem-Craft)
 ![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hy/svchord/Rem-Craft?label=hits)
 
 一款现代化、平面化设计的思源笔记主题

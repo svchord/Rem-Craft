@@ -1,4 +1,5 @@
-let root = "/appearance/themes/Rem Craft/themes/";
+let root = "/appearance/themes/Rem Craft/";
+let themeRoot = root + "themes/";
 
 let style = ["tdesign", "semi-design", "one-dark"];
 
@@ -50,8 +51,8 @@ let updateStyle = function (id, href) {
 
 export const mode = () => {
   let href = null;
-  let light_path = root + config.light + "/light.css";
-  let dark_path = root + config.dark + "/dark.css";
+  let light_path = themeRoot + config.light + "/light.css";
+  let dark_path = themeRoot + config.dark + "/dark.css";
 
   /* 根据配置选项判断主题 */
   switch (window.siyuan.config.appearance.mode) {
@@ -67,3 +68,14 @@ export const mode = () => {
   }
   updateStyle("colorStyle", href);
 };
+
+function loadScript(url) {
+  let script = document.createElement('script');
+  script.setAttribute('type', 'module');
+  script.setAttribute('src', url);
+  document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+(() => {
+  loadScript(root + "scripts/modules/maximized.js");
+})();

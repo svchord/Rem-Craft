@@ -1,7 +1,7 @@
 (function () {
   import("./scripts/index.js")
     .then((module) => {
-      module.mode();
+      module.main();
     })
     .catch((e) => {
       console.error(e);

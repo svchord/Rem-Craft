@@ -16,7 +16,7 @@ $icon-w: get($icon, "medium");
 $win-control-w: 46px;
 
 $icons-w-left: ($item-w + 4px) * 6;
-$icons-w-right: ($item-w + 4px) * 4 + $win-control-w * 3 - dock.$dock-w;
+$icons-w-right: ($item-w + 4px) * 5 + $win-control-w * 3 - dock.$dock-w;
 
 $mac-pad-right: 3px;
 
@@ -35,6 +35,7 @@ $list: (
   @include component-base();
   @include svg-div($item-w, $icon-w, $item-h);
   margin-right: $interval;
+  z-index: 9;
 
   &--active {
     background-color: get($bg, "base", 2) !important;

@@ -1,8 +1,8 @@
 export function initCalendar() {
     // 把日历图标 放到  搜索图标前面
-    var barSearch = document.getElementById("barDailyNote");
+    var barSearch = document.getElementById("barSearch");
     barSearch.insertAdjacentHTML(
-      "afterend",
+      "beforebegin",
       '<div id="calendar"class="toolbar__item b3-tooltips b3-tooltips__se" aria-label="日历" ></div>'
     );
     let calendarIcon = document.getElementById("calendar");

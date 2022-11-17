@@ -2,7 +2,7 @@
 @use "../common" as *;
 @use "dock";
 
-$bar-h: dock.$top-h;
+$bar-h: 40px;
 $bar-bg: get($bg, "base", 1);
 
 $item-w: 34px;
@@ -14,10 +14,6 @@ $padding: 8px;
 $icon-w: get($icon, "medium");
 
 $win-control-w: 46px;
-
-$icons-w-left: ($item-w + 4px) * 6;
-$icons-w-right: ($item-w + 4px) * 4 + $win-control-w * 3 - dock.$dock-w;
-
 $mac-pad-right: 3px;
 
 $list: (
@@ -66,7 +62,7 @@ $list: (
 //顶部工具栏
 #toolbar {
   height: $bar-h;
-  margin-bottom: -$bar-h;
+  margin-bottom: -$interval;
   border: none;
   -webkit-app-region: drag;
   padding-right: $mac-pad-right;
@@ -159,11 +155,7 @@ $list: (
   }
 
   #drag {
-    height: 0;
-    body:has(.layout__empty) & {
-      @include v-center($bar-h);
-      font-size: 14px;
-    }
+    font-size: 14px;
   }
 
   #windowControls {

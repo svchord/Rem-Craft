@@ -1,7 +1,10 @@
+export const root = "/appearance/themes/Rem Craft/";
+
 /**
  * 加载样式文件
- * @params {string} href 样式地址
- * @params {string} id 样式 ID
+ * 
+ * @param {string} href - 样式地址
+ * @param {string} id - 样式 ID
  */
 export function loadStyle(href, id = null) {
   let style = document.createElement("link");
@@ -14,8 +17,9 @@ export function loadStyle(href, id = null) {
 
 /**
  * 更新样式文件
- * @params {string} id 样式文件 ID
- * @params {string} href 样式文件地址
+ * 
+ * @param {string} id - 样式文件 ID
+ * @param {string} href - 样式文件地址
  */
 export function updateStyle(id, href) {
   let style = document.getElementById(id);

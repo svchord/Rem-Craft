@@ -150,11 +150,11 @@ function autoSetTabBarMargin(direction) {
   let margin =
     direction === "left"
       ? "windows" === window.siyuan.config.system.os
-        ? btnWidth * 6
+        ? btnWidth * 7
         : btnWidth * 6 + macBtnsWidth
       : "windows" === window.siyuan.config.system.os
       ? btnWidth * 4 + winBtnsWidth - dockWidth
-      : btnWidth * 4 + 3;
+      : btnWidth * 5 + 3;
 
   setTabBarSelector(center, direction);
 

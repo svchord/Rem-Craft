@@ -1,0 +1,292 @@
+@use "sass:math";
+@use "../../../styles/common" as *;
+
+$top-h: 40px;
+
+// bread-crumb
+.layout__center .protyle > .protyle-breadcrumb {
+  $item-h: get($component-size, "large");
+  $fz: get($font-size, "base");
+  min-height: $item-h;
+
+  .protyle-breadcrumb {
+    &__bar {
+      min-height: $item-h;
+    }
+    &__item {
+      @include v-center($item-h);
+      line-height: $item-h - 2px;
+
+      &::after {
+        @include v-center($item-h);
+        line-height: $item-h - 2px;
+      }
+
+      svg {
+        @include svg(22px, 11px, $item-h);
+      }
+
+      .protyle-breadcrumb__text:not(:empty) {
+        font-size: $fz;
+      }
+    }
+  }
+}
+
+// wnd
+#layouts > .fn__flex > .fn__flex-column:not(.layout__center) {
+  padding-top: $top-h - $interval;
+}
+
+.layout__center {
+  .layout-tab-container {
+    border-radius: get($radius, "medium");
+    border: $fn-border;
+    border-width: 0 1px 1px 1px;
+    box-shadow: 0 -1px 0 0 get($border, 3);
+  }
+}
+// top-bar
+#toolbar {
+  margin-bottom: -$top-h;
+  .toolbar__item{
+    z-index: 2;
+  }
+}
+
+#drag {
+  height: 0;
+  body:has(.layout__empty) & {
+    @include v-center($top-h);
+  }
+}
+
+//  dock
+.dock--vertical {
+  padding-top: $top-h - $interval;
+}
+
+// tab-bar
+$item-type: "medium";
+$item-h: 34px;
+$item-pad: 8px;
+$bar-h: $top-h - $interval;
+$bar-left: 16px;
+$btn-w: get($component-size, "small") + 1px;
+$inner-btn-w: get($component-size, "exsmall");
+$item-radius: get($radius, $item-type);
+
+@mixin divide($h, $left: auto, $right: auto) {
+  $tmph: 20px;
+  content: "";
+  display: block;
+  position: absolute;
+  left: $left;
+  right: $right;
+  top: math.div($h - $tmph, 2); //- math.div($interval, 2) ;
+  height: $tmph;
+  border-left: $fn-border-2;
+}
+
+@mixin corner($z-index: 1) {
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: unset !important;
+    bottom: 0;
+    background-color: transparent;
+    width: $item-radius * 2;
+    height: $item-radius * 2 !important;
+    border-radius: 100%;
+    border: none !important;
+    z-index: $z-index;
+    box-shadow: inset 0 0 0 1px get($border, 3),
+      0 0 0 $item-radius * 4 get($bg, "page", 1);
+  }
+
+  &::before {
+    left: -$item-radius * 2 !important;
+    clip-path: inset(50% 0 - $item-radius 0 50%);
+  }
+
+  &::after {
+    right: -$item-radius * 2 !important;
+    clip-path: inset(50% 50% 0 0 - $item-radius);
+  }
+}
+
+.layout__center {
+  [data-type="wnd"] {
+    background-color: transparent;
+    border: none;
+    > .fn__flex:first-child {
+      height: $bar-h;
+      -webkit-app-region: no-drag;
+    }
+  }
+
+  .layout-tab-bar {
+    padding: $bar-h - $item-h $bar-left 0;
+    background-color: get($bg, "base", 1);
+    height: $bar-h !important;
+    margin: 0 !important;
+
+    &--readonly {
+      -webkit-app-region: drag;
+      margin-left: 8px - $bar-left !important;
+      border-bottom: $fn-border;
+      min-width: $btn-w * 2 + $fn-space * 2;
+      clip-path: inset(0 $item-radius 0 0);
+      padding: 0;
+      z-index: 1;
+    }
+
+    .item {
+      @include item-tran("base");
+      transition: unset !important;
+      height: $item-h;
+      background-color: transparent;
+      padding: 0 math.div($item-h - $inner-btn-w, 2);
+      border-radius: $item-radius $item-radius 0 0;
+      overflow: unset !important;
+
+      &::before {
+        @include divide($item-h, $left: 0px);
+      }
+
+      &:not(:first-child) {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        &::after {
+          @include divide($item-h, $right: 0px);
+        }
+      }
+
+      &:hover {
+        @include corner(0);
+        &::before,
+        &::after {
+          box-shadow: 0 0 0 $item-radius * 4 get($bg, "base", 2);
+        }
+        + .item:not(.item--focus) {
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      &:active {
+        &::before,
+        &::after {
+          box-shadow: 0 0 0 $item-radius * 4 get($bg, "base", 3);
+        }
+      }
+
+      &__icon {
+        @include emoji-icon($inner-btn-w, 13px, get($icon, "medium"));
+      }
+
+      &__graphic {
+        @include svg($inner-btn-w, get($icon, "base"), $important: true);
+        min-width: $inner-btn-w;
+      }
+
+      &__text {
+        min-width: 86px;
+        max-width: 180px;
+        padding: 0 $item-pad;
+        height: $item-h;
+        @include v-center($item-h);
+      }
+
+      &__close {
+        @include item-tran("base", 2);
+        @include component-base("exsmall");
+        @include svg-div($inner-btn-w, 10px);
+        border-radius: get($radius, "small");
+
+        svg {
+          opacity: 1;
+          background-color: transparent !important;
+        }
+      }
+
+      &--pin {
+        background-color: get($bg, "base", 1);
+        min-width: unset;
+        &:has(.item__text.fn__none) {
+          padding: 0 12px;
+        }
+        &:hover::after {
+          z-index: 1;
+        }
+      }
+
+      &--focus {
+        @include item-unchange("page", $important: true);
+        box-shadow: 0 0 0 1px get($border, 3) !important;
+        z-index: 1;
+
+        &,
+        &:hover {
+          @include corner();
+        }
+
+        .item__graphic {
+          @include color("primary");
+        }
+
+        > .item__text {
+          @include color("primary", true);
+        }
+
+        .item__close {
+          @include item-tran("page");
+          svg {
+            color: get($text, "secondary");
+          }
+          &:hover svg {
+            color: get($text, "primary");
+          }
+        }
+
+        + .item {
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      &--readonly {
+        @include item-unchange("base");
+        cursor: unset;
+        height: $btn-w;
+        -webkit-app-region: drag;
+        margin: math.div($item-h - $btn-w, 2) 0px 0 0;
+        padding: 0 8px 0 0;
+        min-width: $btn-w * 2 + $fn-space * 2 - $item-radius;
+        // border-right: $fn-border-2;
+        // border-radius: unset;
+
+        .item__close {
+          @include icon-btn("base", $btn-w, 12px, true);
+          cursor: pointer;
+          -webkit-app-region: no-drag;
+
+          &[data-type="more"] {
+            @include svg-div($btn-w, 10px, $important: true);
+          }
+        }
+
+        &::before,
+        &::after {
+          display: none !important;
+        }
+      }
+    }
+  }
+}

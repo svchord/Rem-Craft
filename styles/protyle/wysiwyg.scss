@@ -22,7 +22,7 @@ $item-pad: 3px 2px;
 
     .layout__center &:not([data-fullwidth="true"]) {
       overflow-y: scroll;
-      
+
       .protyle {
         &-background {
           &__iconw {
@@ -69,7 +69,16 @@ $item-pad: 3px 2px;
   }
 
   &-scroll {
-    right: -60px;
+    right: 25px;
+    &__up,
+    &__down {
+      @include icon-btn("page", 24px, 12px);
+      right: -1px;
+      color: get($text, "disabled");
+    }
+    &__down {
+      top: calc(50% + 120px);
+    }
   }
 
   //文本转语音按钮

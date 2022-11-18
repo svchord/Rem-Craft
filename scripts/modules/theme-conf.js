@@ -1,8 +1,6 @@
-import { updateStyle } from "../utils/resource.js";
+import { root, updateStyle } from "../utils/resource.js";
 
-let root = "/appearance/themes/Rem Craft/";
-let themeRoot = root + "themes/";
-
+const themeRoot = root + "themes/";
 let style = ["tdesign", "semi-design", "one-dark"];
 
 let brand = [
@@ -23,12 +21,12 @@ let config = {
   brand: brand[0],
 };
 
+/* 根据配置选项判断主题 */
 export function changeMode() {
   let href = null;
   let light_path = themeRoot + config.light + "/light.css";
   let dark_path = themeRoot + config.dark + "/dark.css";
 
-  /* 根据配置选项判断主题 */
   switch (window.siyuan.config.appearance.mode) {
     case 1:
       href = dark_path;

@@ -79,32 +79,3 @@ $fz: get($font-size, "exsmall");
     }
   }
 }
-
-.layout__center .protyle > .protyle-breadcrumb {
-  $item-h: get($component-size, "large");
-  $fz: get($font-size, "base");
-  min-height: $item-h;
-
-  .protyle-breadcrumb {
-    &__bar {
-      min-height: $item-h;
-    }
-    &__item {
-      @include v-center($item-h);
-      line-height: $item-h - 2px;
-
-      &::after {
-        @include v-center($item-h);
-        line-height: $item-h - 2px;
-      }
-
-      svg {
-        @include svg(22px, 11px, $item-h);
-      }
-
-      .protyle-breadcrumb__text:not(:empty) {
-        font-size: $fz;
-      }
-    }
-  }
-}

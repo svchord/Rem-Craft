@@ -1,8 +1,6 @@
 @use "../common" as *;
 @use "../dialog/search";
 @use "../component/list";
-@use "top-bar";
-@use "dock";
 @use "status";
 
 $wnd-base: get($bg, "base", 1);
@@ -58,7 +56,6 @@ $wnd-transition: all $time $func 0s;
 
   //两侧边窗
   > .fn__flex-column:not(.layout__center) {
-    padding-top: top-bar.$bar-h - $interval;
     // 显示的边窗
     > .fn__flex {
       overflow-x: hidden;
@@ -127,13 +124,7 @@ $wnd-transition: all $time $func 0s;
 // 居中窗口
 .layout__center {
   background-color: transparent; //$wnd-base;
-
-  .layout-tab-container {
-    border-radius: $wnd-radius;
-    border: $fn-border;
-    border-width: 0 1px 1px 1px;
-    box-shadow: 0 -1px 0 0 get($border, 3);
-  }
+  
   [data-type="wnd"] {
     position: relative;
     @include wnd;

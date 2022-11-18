@@ -1,4 +1,4 @@
-import { intToPx, fisrtToUpper } from "../../utils/style.js";
+import { intToPx, fisrtToUpper } from "../../util/style.js";
 
 // ParentNode.children 属性返回的是一个 HTMLCollection 实例
 // HTMLCollection 是类似数组的对象，需要通过slice强制转换为数组

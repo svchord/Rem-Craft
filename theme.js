@@ -1,6 +1,6 @@
-import("./scripts/index.js")
-  .then((scripts) => {
-    scripts.main();
+import("./index.js")
+  .then((index) => {
+    index.main();
   })
   .catch((e) => {
     console.error(e);

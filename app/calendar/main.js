@@ -15,7 +15,7 @@ function insertBtn(elementId) {
       data-subtype="widget"
     >
       <div class="iframe-content">
-        <iframe id="calendarPanel" style="visibility:hidden;position: fixed; z-index: 1000; top: 225px; width: 300px; height: 350px; background-color: var(--b3-theme-background);box-shadow: var(--b3-dialog-shadow); border:none; border-radius: 5px; transform: translate(-50%, -50%); overflow: auto;" src="/appearance/themes/Savor/calendar" data-src="/appearance/themes/Savor/calendar" data-subtype="widget" ></iframe>
+        <iframe id="calendarPanel" style="visibility:hidden;position: fixed; z-index: 1000; top: 225px; width: 300px; height: 350px; background-color: var(--b3-theme-background);box-shadow: var(--b3-dialog-shadow); border:none; border-radius: 5px; transform: translate(-50%, -50%); overflow: auto;" src="/appearance/themes/Rem Craft/app/calendar" data-src="/appearance/themes/Rem Craft/app/calendar" data-subtype="widget" ></iframe>
       </div>
     </div>`
   );

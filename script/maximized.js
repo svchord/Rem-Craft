@@ -1,4 +1,4 @@
-import { isFullScreen } from "../utils/winutil.js";
+import { isFullScreen } from "../util/winutil.js";
 
 export function autoSetBorders() {
   window.addEventListener("resize", () => {

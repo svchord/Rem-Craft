@@ -1,6 +1,6 @@
-import { root, updateStyle } from "../utils/resource.js";
+import { root, updateStyle } from "../util/resource.js";
 
-const themeRoot = root + "themes/";
+const themeRoot = root + "theme/";
 let style = ["tdesign", "semi-design", "one-dark"];
 
 let brand = [

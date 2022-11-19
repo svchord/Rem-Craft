@@ -15,13 +15,6 @@ $text-color: get($text, "secondary");
   border-radius: unset;
   padding: 0 0.1em;
 
-  //  span[data-type~="a"]:not(:empty) {
-  //   padding: 0;
-  //   &::before {
-  //     display: none !important;
-  //   }
-  // }
-
   &:hover {
     color: get($text, "primary");
     border-color: get($border, 1);
@@ -106,7 +99,7 @@ $schemes: (
 @each $href, $file in $schemes {
   $wildcard: '^="#{$href}"';
   @include a($wildcard) {
-    @include has-icon("#{$icon-path}/schemes", $file);
+    @include has-icon("#{$icon-path}/scheme", $file);
   }
 }
 
@@ -120,7 +113,7 @@ $folder-schemes: (
   @include a($wildcard) {
     &[data-href$="/"],
     &[data-href$="\\"] {
-      @include has-icon("#{$icon-path}/schemes", $file);
+      @include has-icon("#{$icon-path}/scheme", $file);
     }
   }
 }
@@ -345,13 +338,13 @@ $assets: (
   $wildcard: '$="#{$href}"';
   @include a($wildcard, true) {
     &[href*="assets/"] {
-      @include has-icon("#{$icon-path}/assets", $file);
+      @include has-icon("#{$icon-path}/asset", $file);
     }
   }
   @include a($wildcard) {
-    &[href^="assets/"],
-    &[href^="/assets/"] {
-      @include has-icon("#{$icon-path}/assets", $file);
+    &[data-href^="assets/"],
+    &[data-href^="/assets/"] {
+      @include has-icon("#{$icon-path}/asset", $file);
     }
   }
 }
@@ -513,7 +506,7 @@ $domains: (
   @each $href, $file in $keys {
     $wildcard: '*="#{$href}"';
     @include a($wildcard) {
-      @include has-icon("#{$icon-path}/domains/#{$scope}", $file);
+      @include has-icon("#{$icon-path}/domain/#{$scope}", $file);
     }
   }
 }

@@ -72,7 +72,7 @@ $text-color: get($text, "secondary");
   }
 }
 
-$icon-path: "#{$asset-path}/link";
+$icon-path: "../../asset/link";
 
 $schemes: (
   "bookxnotepro://": "bookxnote.ico",

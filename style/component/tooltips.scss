@@ -12,8 +12,9 @@ $t-bg: get($bg, "pop", 1);
   box-shadow: get($shadow, 1);
   background-color: $t-bg;
   color: get($text, "primary");
-  padding: 6px 8px;
+  padding: 4px 8px;
   border-radius: get($radius, "base");
+  line-height: 1.7;
 }
 
 //tips

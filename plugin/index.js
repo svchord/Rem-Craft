@@ -6,4 +6,5 @@ const pluginRoot = root + "plugin/";
 export function pluginMain() {
   autoSetTabBar();
   updateStyle("pluginTabBar", pluginRoot + "tab-bar" + "/main.css");
+  // updateStyle("pluginLinkIcon", pluginRoot + "link-icon" + "/main.css");
 }

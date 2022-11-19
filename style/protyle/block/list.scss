@@ -49,6 +49,7 @@ $done-color: get($text, "placeholder");
         @include svg($w);
         top: calc(50% - math.div($w, 2));
         left: calc(50% - math.div($w, 2));
+        transition: unset;
       }
 
       &:hover::after {
@@ -58,6 +59,16 @@ $done-color: get($text, "placeholder");
       &--order::after {
         border-radius: get($radius, "small");
         opacity: 0.4;
+      }
+
+      // 有序列表特殊情况
+      &--order {
+        &::after {
+          $w: 20px;
+          @include svg($w);
+          top: math.div($action-h - $w, 2);
+          left: math.div($action-w - $w, 2);
+        }
       }
 
       // 待办列表特殊情况
@@ -71,7 +82,7 @@ $done-color: get($text, "placeholder");
       }
     }
 
-    //折叠后列表按钮样式
+    // 折叠后列表按钮样式
     &[fold="1"] > .protyle-action {
       &::after {
         background-color: get($bg, "component", 2) !important;

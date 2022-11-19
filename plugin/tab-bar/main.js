@@ -1,4 +1,4 @@
-import { intToPx, fisrtToUpper } from "../../util/style.js";
+import { numToPx, fisrtToUpper } from "../../util/style.js";
 
 // ParentNode.children 属性返回的是一个 HTMLCollection 实例
 // HTMLCollection 是类似数组的对象，需要通过slice强制转换为数组
@@ -104,9 +104,9 @@ function setTabBarSelector(parent, direction) {
  */
 function setMargin(element, direction, value) {
   if (direction === "left") {
-    element.style.marginLeft = value;
+    element.style.marginLeft = numToPx(value);
   } else {
-    element.style.marginRight = value;
+    element.style.marginRight = numToPx(value);
   }
 }
 
@@ -129,7 +129,7 @@ function setTabBarMargin(direction, margin) {
       `${customPrefix}-${direction}`
     )[0];
     if (wndWidth >= 0 && wndWidth <= margin) {
-      let marginTmp = intToPx(margin - wndWidth);
+      let marginTmp = margin - wndWidth;
       setMargin(tabBar, direction, marginTmp);
     } else {
       setMargin(tabBar, direction, 0);
@@ -163,7 +163,7 @@ function autoSetTabBarMargin(direction) {
     let tabBar = document.getElementsByClassName(
       `${customPrefix}-${direction}`
     )[0];
-    let marginTmp = intToPx(margin + dockWidth);
+    let marginTmp = margin + dockWidth;
     setMargin(tabBar, direction, marginTmp);
     // setTabBarMargin(direction, margin + dockWidth);
   } else {

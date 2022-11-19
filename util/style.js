@@ -1,8 +1,8 @@
-export function pxToInt(str) {
+export function pxToNum(str) {
   return parseInt(str.replace("px", ""));
 }
 
-export function intToPx(num) {
+export function numToPx(num) {
   return num + "px";
 }
 

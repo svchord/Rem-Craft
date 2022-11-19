@@ -1,10 +1,12 @@
-
 @use "../common" as *;
 
 ::selection {
-  background-color: rgba(var(--brand-6), 0.3);
-}
+  background-color: get($bg, "focus", 1);
 
+  .dark & {
+    background-color: get($bg, "page", 4);
+  }
+}
 
 // 拖拽选中
 .protyle-wysiwyg .dragover {

@@ -77,6 +77,10 @@
       @include icon-btn("pop", get($component-size, "base"), 12px, true);
       &[data-type="install-t"] {
         @include item("focus", 0, true);
+        &:hover svg {
+          color: get($text, "focus");
+          transition: get($transition, "all");
+        }
       }
     }
   }

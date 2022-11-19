@@ -1,5 +1,3 @@
-@use "../theme/tdesign/light";
-
 @use "common/css-var";
 
 @use "base";
@@ -14,3 +12,5 @@
 
 @use "protyle";
 
+@import "/appearance/themes/Rem Craft/theme/tdesign/light.css";
+@import "/appearance/themes/Rem Craft/plugin/link-icon/main.css";

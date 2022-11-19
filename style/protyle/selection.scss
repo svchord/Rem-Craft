@@ -1,7 +1,7 @@
 @use "../common" as *;
 
 ::selection {
-  background-color: get($bg, "focus", 1);
+  background-color: rgba(var(--brand-6), 0.3);
 
   .dark & {
     background-color: get($bg, "page", 4);

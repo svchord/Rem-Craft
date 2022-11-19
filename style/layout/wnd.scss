@@ -74,8 +74,8 @@ $wnd-transition: all $time $func 0s;
 
     // 隐藏的边窗
     > .fn__none:not(.layout__resize) {
-      // display: flex !important;
-      // animation: close $time * 2 forwards $func;
+      display: flex !important;
+      animation: close $time * 2 forwards $func;
 
       > [data-type="wnd"] {
         @include wnd;
@@ -86,15 +86,15 @@ $wnd-transition: all $time $func 0s;
   }
 
   //左侧边窗特殊处理
-  // > .fn__flex-shrink:not(.layout__center) {
-  //   > .fn__none:not(.layout__resize) {
-  //     // animation: close $time * 2 forwards $func;
+  > .fn__flex-shrink:not(.layout__center) {
+    > .fn__none:not(.layout__resize) {
+      animation: close $time * 2 forwards $func;
 
-  //     // > [data-type="wnd"] {
-  //     //   // transform: $scale;
-  //     // }
-  //   }
-  // }
+      > [data-type="wnd"] {
+        transform: $scale;
+      }
+    }
+  }
 }
 
 .layout-tab-container {

@@ -14,7 +14,7 @@ $msg-icon-w: 14px;
   @include v-center($item-h);
   border: none;
   padding: 0 $fn-space;
-  background-color: get($bg, "page", 1);
+  background-color: get($bg, "pop", 1);
   border-radius: get($radius, "base");
   box-shadow: get($shadow, 1);
   margin: math.div($s-h - $item-h, 2) $fn-space 0 0;
@@ -33,7 +33,7 @@ $msg-icon-w: 14px;
 
   // 右下角按钮
   .toolbar__item {
-    @include item("page");
+    @include item("pop");
     @include svg-div($s-h, $icon-w);
 
     border-radius: get($radius, "circle");
@@ -55,7 +55,7 @@ $msg-icon-w: 14px;
     bottom: $s-h + $btn-interval + $fn-space * 2 !important;
     right: $fn-space !important;
 
-    .b3-menu {
+    .dock-menu {
       bottom: $s-h + $btn-interval + $fn-space * 2 !important;
       right: 180px + $fn-space * 2 !important;
     }

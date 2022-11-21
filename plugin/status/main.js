@@ -56,8 +56,7 @@ function addDockMenu() {
   let menuBtn = addButton("wndBtn", "iconLeft", "打开选中边窗");
   let dockBtn = document.getElementById("barDock");
   let menu = dockBtn.querySelector(".b3-menu");
-  // menu.classList.add("b3-menu__submenu");
-  // menu.classList.remove("b3-menu");
+  menu.classList.add("dock-menu");
   menuBtn.appendChild(menu);
 
   menuBtn.addEventListener("mouseover", () => {

@@ -1,10 +1,25 @@
-import { autoSetTabBar } from "./tab-bar/main.js";
+import { config } from "../script/config.js";
 import { root, updateStyle } from "../util/resource.js";
+import { fisrtToUpper } from "../util/convert.js";
+
+import { tabBarMain } from "./tabBar/main.js";
+import { stautsMain } from "./status/main.js";
 
 const pluginRoot = root + "plugin/";
+const pluginConfig = config.plugin;
 
 export function pluginMain() {
-  autoSetTabBar();
-  updateStyle("pluginTabBar", pluginRoot + "tab-bar" + "/main.css");
-  // updateStyle("pluginLinkIcon", pluginRoot + "link-icon" + "/main.css");
+  tabBarMain();
+  stautsMain();
+  
+  for (const key in pluginConfig) {
+    if (Object.hasOwnProperty.call(pluginConfig, key)) {
+      if (pluginConfig[key]) {
+        updateStyle(
+          `plugin${fisrtToUpper(key)}`,
+          pluginRoot + key + "/main.css"
+        );
+      }
+    }
+  }
 }

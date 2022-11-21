@@ -28,9 +28,14 @@ $btn-w: get($component-size, "small");
     @include item-tran("page");
     @include component-base($item-type);
     min-height: 0;
+    width: auto;
     padding: 0 $interval;
     flex: unset;
     box-shadow: unset !important;
+
+    .layout__center & {
+      flex-shrink: 0;
+    }
 
     > .fn__flex-1,
     &::after {

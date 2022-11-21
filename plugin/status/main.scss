@@ -1,0 +1,125 @@
+@use "sass:math";
+@use "../../style/common" as *;
+
+$s-h: 36px;
+$btn-interval: 12px;
+$dock-w: 44px;
+
+$item-h: 28px;
+
+$icon-w: 16px;
+$msg-icon-w: 14px;
+
+@mixin msg {
+  @include v-center($item-h);
+  border: none;
+  padding: 0 $fn-space;
+  background-color: get($bg, "page", 1);
+  border-radius: get($radius, "base");
+  box-shadow: get($shadow, 1);
+  margin: math.div($s-h - $item-h, 2) $fn-space 0 0;
+}
+
+#status {
+  position: fixed;
+  padding: 0;
+  background-color: transparent;
+  right: $dock-w + $btn-interval;
+  bottom: $btn-interval;
+  height: $s-h;
+  transition: width get($transition-duration, "base")
+    get($transition-function, "ease-in-out");
+  border: none;
+
+  // 右下角按钮
+  .toolbar__item {
+    @include item("page");
+    @include svg-div($s-h, $icon-w);
+
+    border-radius: get($radius, "circle");
+    box-shadow: get($shadow, 1);
+
+    .b3-menu {
+      bottom: $s-h !important;
+      left: unset !important;
+      right: $dock-w;
+      z-index: 0;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  #barHelp .b3-menu {
+    bottom: $s-h + $btn-interval + $fn-space * 2 !important;
+    right: $fn-space !important;
+
+    .b3-menu {
+      bottom: $s-h + $btn-interval + $fn-space * 2 !important;
+      right: 180px + $fn-space * 2 !important;
+    }
+  }
+
+  // 边栏设置按钮
+  #barDock {
+    display: none;
+  }
+
+  // 状态栏
+  .status__msg {
+    position: unset;
+    padding: 0;
+
+    &:not(:empty) {
+      @include msg();
+      display: inline-block;
+      max-width: 120px;
+      // animation: msg-w 5s get($transition-function, "ease-in-out");
+      transition: max-width get($transition-duration, "base")
+        get($transition-function, "ease-in-out");
+      &::before {
+        content: "🛈";
+        display: inline-flex;
+        margin: 0 $interval 0 0;
+        background-color: transparent;
+        -webkit-mask: none;
+        mask: none;
+      }
+      &:hover {
+        max-width: 1000px;
+      }
+    }
+  }
+
+  > .fn__flex-1 {
+    display: none;
+  }
+
+  // 文档统计
+  .status__counter {
+    &:not(:empty) {
+      @include msg();
+      padding-right: $fn-space - 5px;
+    }
+  }
+}
+
+// dock
+.dock--vertical div:last-child:not(:empty) {
+  margin-bottom: $interval !important;
+}
+
+// wnd
+#layouts > .fn__flex {
+  > .fn__flex-column:not(.layout__center) {
+    > .fn__flex {
+      &:has(+ .layout__resize.fn__none),
+      &:last-child {
+        > [data-type="wnd"] {
+          padding-bottom: 0 !important;
+        }
+      }
+    }
+  }
+}

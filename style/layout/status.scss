@@ -15,7 +15,7 @@ $bardock-w: $item-w + $s-pad;
 #status {
   position: fixed;
   background-color: get($bg, "page", 1);
-  right: $bardock-w; //+ dock.$dock-w;
+  right: $bardock-w;
   bottom: 0;
   height: $s-h;
   padding: $s-pad 0 $s-pad $s-pad;
@@ -36,19 +36,15 @@ $bardock-w: $item-w + $s-pad;
     border-radius: 4px;
 
     .b3-menu {
-      bottom: $s-h !important;
+      bottom: $s-h + $fn-space !important;
       left: unset !important;
-      right: $s-pad; // + dock.$dock-w;
+      right: $s-pad;
       z-index: 0;
     }
 
     &::after {
       display: none;
     }
-  }
-
-  #barHelp .b3-menu {
-    bottom: $s-h - $s-pad - 2px !important;
   }
 
   // 边栏设置按钮

@@ -3,75 +3,12 @@
 
 $top-h: 40px;
 
-// bread-crumb
-.layout__center .protyle > .protyle-breadcrumb {
-  $item-h: get($component-size, "large");
-  $fz: get($font-size, "base");
-  min-height: $item-h;
-
-  .protyle-breadcrumb {
-    &__bar {
-      min-height: $item-h;
-    }
-    &__item {
-      @include v-center($item-h);
-      line-height: $item-h - 2px;
-
-      &::after {
-        @include v-center($item-h);
-        line-height: $item-h - 2px;
-      }
-
-      svg {
-        @include svg(22px, 11px, $item-h);
-      }
-
-      .protyle-breadcrumb__text:not(:empty) {
-        font-size: $fz;
-      }
-    }
-  }
-}
-
-// wnd
-#layouts > .fn__flex > .fn__flex-column:not(.layout__center) {
-  padding-top: $top-h - $interval;
-}
-
-.layout__center {
-  .layout-tab-container {
-    border-radius: get($radius, "medium");
-    border: $fn-border;
-    border-width: 0 1px 1px 1px;
-    box-shadow: 0 -1px 0 0 get($border, 3);
-  }
-}
-// top-bar
-#toolbar {
-  margin-bottom: -$top-h;
-  .toolbar__item {
-    z-index: 2;
-  }
-}
-
-#drag {
-  height: 0;
-  body:has(.layout__empty) & {
-    @include v-center($top-h);
-  }
-}
-
-//  dock
-.dock--vertical {
-  padding-top: $top-h - $interval;
-}
-
 // tab-bar
 $item-type: "medium";
 $item-h: 34px;
 $item-pad: 8px;
 $bar-h: $top-h - $interval;
-$bar-left: 16px;
+$bar-left: 8px;
 $btn-w: get($component-size, "small") + 1px;
 $inner-btn-w: get($component-size, "exsmall");
 $item-radius: get($radius, $item-type);
@@ -131,11 +68,13 @@ $item-radius: get($radius, $item-type);
     padding: $bar-h - $item-h $bar-left 0;
     background-color: get($bg, "base", 1);
     height: $bar-h !important;
-    margin: 0 !important;
+    margin: 0 8px !important;
+    border-radius: unset !important;
 
     &--readonly {
       -webkit-app-region: drag;
-      margin-left: 8px - $bar-left !important;
+      margin-left: 0 - $bar-left !important;
+      margin-right: 0 !important;
       border-bottom: $fn-border;
       min-width: $btn-w * 2 + $fn-space * 2;
       clip-path: inset(0 $item-radius 0 0);
@@ -289,4 +228,67 @@ $item-radius: get($radius, $item-type);
       }
     }
   }
+}
+
+// bread-crumb
+.layout__center .protyle > .protyle-breadcrumb {
+  $item-h: get($component-size, "large");
+  $fz: get($font-size, "base");
+  min-height: $item-h;
+
+  .protyle-breadcrumb {
+    &__bar {
+      min-height: $item-h;
+    }
+    &__item {
+      @include v-center($item-h);
+      line-height: $item-h - 2px;
+
+      &::after {
+        @include v-center($item-h);
+        line-height: $item-h - 2px;
+      }
+
+      svg {
+        @include svg(22px, 11px, $item-h);
+      }
+
+      .protyle-breadcrumb__text:not(:empty) {
+        font-size: $fz;
+      }
+    }
+  }
+}
+
+// wnd
+#layouts > .fn__flex > .fn__flex-column:not(.layout__center) {
+  padding-top: $top-h - $interval;
+}
+
+.layout__center {
+  .layout-tab-container {
+    border-radius: get($radius, "medium");
+    border: $fn-border;
+    border-width: 0 1px 1px 1px;
+    box-shadow: 0 -1px 0 0 get($border, 3);
+  }
+}
+// top-bar
+#toolbar {
+  margin-bottom: -$top-h;
+  .toolbar__item {
+    z-index: 2;
+  }
+}
+
+#drag {
+  height: 0;
+  body:has(.layout__empty) & {
+    @include v-center($top-h);
+  }
+}
+
+//  dock
+.dock--vertical {
+  padding-top: $top-h - $interval;
 }

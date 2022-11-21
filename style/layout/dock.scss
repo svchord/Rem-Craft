@@ -43,6 +43,7 @@ $dock-w: $item-w + $interval * 2;
 
   div:last-child:not(:empty) {
     @include dock();
+    margin-bottom: status.$s-h + $interval;
   }
 
   &#dockLeft {
@@ -58,18 +59,10 @@ $dock-w: $item-w + $interval * 2;
       left: auto;
       right: 0;
     }
-
-    div:last-child {
-      margin-bottom: status.$s-h + $interval;
-    }
   }
 
   .dock__item[data-index="0"]::after,
   .dock__item[data-index="1"]::after {
     display: none;
   }
-}
-
-.dock--vertical#dockLeft div:last-child {
-  margin-bottom: status.$s-h + $interval;
 }

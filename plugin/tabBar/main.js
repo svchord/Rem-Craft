@@ -1,64 +1,10 @@
-import { numToPx, fisrtToUpper } from "../../util/style.js";
+import { config } from "../../script/config.js";
+import { numToPx } from "../../util/convert.js";
+import { setResizeObserver, setMutationObserver } from "../../util/observer.js";
+import { layout, isDockExist, setDockObserver } from "../../util/layout.js";
 
-// ParentNode.children 属性返回的是一个 HTMLCollection 实例
-// HTMLCollection 是类似数组的对象，需要通过slice强制转换为数组
-let layouts = document.getElementById("layouts").children;
-let layout = Array.prototype.slice.apply(layouts).filter((e) => {
-  return (
-    e.style.height !== "0px" &&
-    e.style.transition === "var(--b3-width-transition)"
-  );
-})[0];
 let center = document.getElementsByClassName("layout__center")[0];
 let customPrefix = "rc-tabBar";
-
-/**
- * 判断dock栏是否存在
- *
- * @param {String} direction - dock栏的方向：left, right
- * @return {Boolean} - 返回dock栏是否存在的布尔值
- */
-function isDockEXist(direction) {
-  direction = fisrtToUpper(direction);
-  let dock = document.getElementById(`dock${direction}`);
-  return !dock.classList.contains("fn__none");
-}
-
-/**
- * 设置元素尺寸监听器
- *
- * @param {Element} element - 被监听的元素
- * @param {Function} func - 获取尺寸后的操作
- */
-function setResizeObserver(element, func) {
-  let callBack = (entries) => {
-    for (const entry of entries) {
-      func(entry.contentBoxSize[0].inlineSize);
-    }
-  };
-
-  const wndObserver = new ResizeObserver(callBack);
-  wndObserver.observe(element);
-}
-
-/**
- * 设置元素DOM监听器
- *
- * @param {Element} element - 被监听的元素
- * @param {Function} func - 获取事件后的操作
- */
-function setMutationObserver(element, func, observerOptions) {
-  let callBack = function (mutationList, observer) {
-    mutationList.forEach((mutation) => {
-      switch (mutation.type) {
-        case "childList":
-          func(observer);
-      }
-    });
-  };
-  var observer = new MutationObserver(callBack, observer);
-  observer.observe(element, observerOptions);
-}
 
 /**
  * 定位左右上角页签栏
@@ -110,8 +56,12 @@ function setMargin(element, direction, value) {
   }
 }
 
+/**
+ * 重置标记选择器
+ *
+ * @param {String} direction - 定位方向：left, right
+ */
 function resetSelector(direction) {
-  // 分屏后重置标记选择器
   let tabBar = document.getElementsByClassName(`${customPrefix}-${direction}`);
   if (tabBar.length > 0) {
     setMargin(tabBar[0], direction, 0);
@@ -120,11 +70,18 @@ function resetSelector(direction) {
   setTabBarSelector(center, direction);
 }
 
+/**
+ * 监听边窗宽度，设置页签栏外边距
+ *
+ * @param {String} direction - 定位方向：left, right
+ * @param {Number} margin - 外边距的值
+ */
 function setTabBarMargin(direction, margin) {
   let wnd =
     direction === "left" ? layout.firstElementChild : layout.lastElementChild;
 
-  setResizeObserver(wnd, (wndWidth) => {
+  setResizeObserver(wnd, (entry) => {
+    let wndWidth = entry.contentBoxSize[0].inlineSize;
     let tabBar = document.getElementsByClassName(
       `${customPrefix}-${direction}`
     )[0];
@@ -135,6 +92,14 @@ function setTabBarMargin(direction, margin) {
       setMargin(tabBar, direction, 0);
     }
   });
+}
+
+function addDockWidth(direction, margin, dockWidth) {
+  if (!isDockExist(direction)) {
+    setTabBarMargin(direction, margin + dockWidth);
+  } else {
+    setTabBarMargin(direction, margin);
+  }
 }
 
 /**
@@ -154,26 +119,20 @@ function autoSetTabBarMargin(direction) {
         : btnWidth * 6 + macBtnsWidth
       : "windows" === window.siyuan.config.system.os
       ? btnWidth * 4 + winBtnsWidth - dockWidth
-      : btnWidth * 5 + 3;
+      : btnWidth * 5 + 2;
 
   setTabBarSelector(center, direction);
 
   // 判断边栏是否存在
-  if (!isDockEXist(direction)) {
-    let tabBar = document.getElementsByClassName(
-      `${customPrefix}-${direction}`
-    )[0];
-    let marginTmp = margin + dockWidth;
-    setMargin(tabBar, direction, marginTmp);
-    // setTabBarMargin(direction, margin + dockWidth);
-  } else {
-    // 监听边窗的宽度
-    setTabBarMargin(direction, margin);
-  }
+  addDockWidth(direction, margin, dockWidth);
+  setDockObserver(direction, () => {
+    addDockWidth(direction, margin, dockWidth);
+  });
 
   // 编辑区域监听
   setMutationObserver(
     center,
+    "childList",
     () => {
       // 分屏监听
       resetSelector(direction);
@@ -184,6 +143,7 @@ function autoSetTabBarMargin(direction) {
       if (empty !== null) {
         setMutationObserver(
           center,
+          "childList",
           (observer) => {
             if (center.querySelector(".layout__empty") === null) {
               resetSelector(direction);
@@ -204,7 +164,9 @@ function autoSetTabBarMargin(direction) {
   );
 }
 
-export function autoSetTabBar() {
-  autoSetTabBarMargin("left");
-  autoSetTabBarMargin("right");
+export function tabBarMain() {
+  if (config.plugin.tabBar) {
+    autoSetTabBarMargin("left");
+    autoSetTabBarMargin("right");
+  }
 }

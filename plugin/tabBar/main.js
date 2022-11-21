@@ -136,7 +136,7 @@ function autoSetTabBarMargin(direction) {
     () => {
       // 分屏监听
       resetSelector(direction);
-      setTabBarMargin(direction, margin);
+      addDockWidth(direction, margin, dockWidth);
 
       // 空白页监听
       let empty = center.querySelector(".layout__empty");
@@ -147,7 +147,7 @@ function autoSetTabBarMargin(direction) {
           (observer) => {
             if (center.querySelector(".layout__empty") === null) {
               resetSelector(direction);
-              setTabBarMargin(direction, margin);
+              addDockWidth(direction, margin, dockWidth);
               observer.disconnect();
             }
           },

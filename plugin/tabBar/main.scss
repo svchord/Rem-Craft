@@ -157,9 +157,6 @@ $item-radius: get($radius, $item-type);
       &--pin {
         background-color: get($bg, "base", 1);
         min-width: unset;
-        &:has(.item__text.fn__none) {
-          padding: 0 12px;
-        }
         &:hover::after {
           z-index: 1;
         }

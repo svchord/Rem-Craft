@@ -79,6 +79,11 @@ $btn-w: get($component-size, "small");
     &--pin {
       background-color: get($bg, "component", 1);
       min-width: unset;
+      .item__icon,
+      .item__graphic{
+        padding: 0;
+        margin: 0 $interval;
+      }
     }
 
     &--focus {

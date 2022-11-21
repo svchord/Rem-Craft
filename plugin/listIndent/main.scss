@@ -1,0 +1,84 @@
+@use "sass:math";
+@use "../../style/common" as *;
+
+$text-h: 20px;
+$padding: 6px;
+//折叠按钮宽度
+$arrow-w: 20px;
+
+.b3-list {
+  &:not(.b3-list--border) {
+    // 子元素向右缩进 && 左侧辅助线
+    //子列表缩进左边距
+    $list-left: 22px;
+    //子列表缩进最大深度
+    $list-depth: 7;
+    // 循环阴影辅助线
+    @function cyclic($cur) {
+      $left: $padding + math.div($arrow-w, 2);
+      $margin: $left;
+      $border: get($border, 3);
+      $list-bg: get($bg, "page", 1);
+      $temp: "#{$margin - 1px} 0 #{$list-bg} inset, #{$margin} 0 #{$border} inset";
+
+      @if $cur > 1 {
+        @for $i from 1 to $cur {
+          $margin: $list-left * $i + $left;
+          $temp: $temp +
+            ", "+"#{$margin - 1px} 0 #{$list-bg} inset, #{$margin} 0 #{$border} inset";
+        }
+      }
+
+      @return $temp;
+    }
+
+    // 递归混合
+    @mixin recursive-item($cur, $end) {
+      > ul {
+        box-shadow: #{cyclic($cur)};
+
+        > .b3-list-item {
+          margin-left: $list-left * $cur !important;
+        }
+
+        @if $cur < $end {
+          @include recursive-item($cur + 1, $end);
+        }
+      }
+    }
+
+    @include recursive-item(1, $list-depth);
+  }
+
+  &-item__toggle {
+    @include svg-div($arrow-w, 8px, $text-h, $important: true);
+    margin-right: $interval;
+
+    // 文档树无子元素
+    @mixin hidden-arrow {
+      display: flex;
+      visibility: visible;
+      width: 2px !important;
+      height: 2px !important;
+      padding: 0;
+      margin: auto;
+      color: transparent;
+      border-radius: get($radius, "circle");
+      background-color: get($text, "secondary");
+    }
+
+    &.fn__hidden {
+      .b3-list-item__arrow {
+        @include hidden-arrow();
+      }
+    }
+
+    // 折叠图标
+    .b3-list-item__arrow {
+      // 大纲、标签无子元素
+      &.fn__hidden {
+        @include hidden-arrow();
+      }
+    }
+  }
+}

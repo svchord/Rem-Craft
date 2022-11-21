@@ -1,6 +1,42 @@
 # 版本日志 | Changelog 
 
 
+## [2.4.0](https://github.com/svchord/Rem-Craft/compare/v2.3.0...v2.4.0) (2022-11-21)
+
+
+### ♻️ 代码重构 | Code Refactoring
+
+* :recycle: 初步重构顶部页签栏 ([a2f9247](https://github.com/svchord/Rem-Craft/commit/a2f92479c6f337cd22684d9267ffaffd89b9bd6e)), closes [#67](https://github.com/svchord/Rem-Craft/issues/67) [#72](https://github.com/svchord/Rem-Craft/issues/72)
+* :recycle: 优化scripts目录结构 ([77b4520](https://github.com/svchord/Rem-Craft/commit/77b452090bec98b2d006e631d5bfd4a36531a113))
+* :recycle: 重构目录结构 ([a314038](https://github.com/svchord/Rem-Craft/commit/a314038a7030e4be2c4b320a4879045ccfc64c0a))
+* :recycle: 重构文件目录，将link-icon转移到plugin目录下，并恢复wnd动画 ([9a22fac](https://github.com/svchord/Rem-Craft/commit/9a22fac85f76f864c39724a7d5a0fec287dba106))
+
+
+### ✨ 新增功能 | Features
+
+* :sparkles: 为非最大化窗口添加边框 ([0605908](https://github.com/svchord/Rem-Craft/commit/0605908addfe9abc38ae62c282cd3415d857186f))
+* :sparkles: 优化Dock栏样式 ([60884f4](https://github.com/svchord/Rem-Craft/commit/60884f4e1398d634a54fef23fd2db73f0b958bf4)), closes [#51](https://github.com/svchord/Rem-Craft/issues/51)
+* :sparkles: 增加日历面板 ([f097ff3](https://github.com/svchord/Rem-Craft/commit/f097ff321409d167b2d5e1fccb2bd91e5481f5e1)), closes [#69](https://github.com/svchord/Rem-Craft/issues/69)
+* :sparkles: 整合siyuan-comment功能 ([210cffb](https://github.com/svchord/Rem-Craft/commit/210cffbfb4748819d89cf17ef50ed069bdf95a0f)), closes [#46](https://github.com/svchord/Rem-Craft/issues/46)
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新Readme和preview.png ([d4ac738](https://github.com/svchord/Rem-Craft/commit/d4ac738505ff99a6cdabeeefbff9f100c61b5099))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复顶部页签栏的边距问题 ([65ed8b0](https://github.com/svchord/Rem-Craft/commit/65ed8b05cb7f4250735f00dd3d8687e9d74e02cf))
+* :bug: 修复块滚动条的样式问题 ([8c3c603](https://github.com/svchord/Rem-Craft/commit/8c3c60378aa7cb907a0b2a9870540624f5954c8e)), closes [#73](https://github.com/svchord/Rem-Craft/issues/73)
+* :bug: 修复文件图标无法显示的问题 ([1cd944e](https://github.com/svchord/Rem-Craft/commit/1cd944e4abd66517d5498556e4b6742bf4cd8923)), closes [#70](https://github.com/svchord/Rem-Craft/issues/70)
+* :bug: 修复文件图标无法显示的问题 ([635bc34](https://github.com/svchord/Rem-Craft/commit/635bc345753a2696d2dce5ce0c899ea82ecbcaf2)), closes [#70](https://github.com/svchord/Rem-Craft/issues/70)
+* :bug: 修复页签栏滚动时，顶栏无法拖拽窗口的问题 ([bb166ad](https://github.com/svchord/Rem-Craft/commit/bb166ad4fadf2b656f155a31ede702c8b0033fac))
+* :bug: 优化选中文字底色，提高可读性 ([13f6e80](https://github.com/svchord/Rem-Craft/commit/13f6e800b74f78f1be975faf732cc6b46bd2ef15)), closes [#66](https://github.com/svchord/Rem-Craft/issues/66)
+* :bug: 优化有序列表序号样式 ([cdde49a](https://github.com/svchord/Rem-Craft/commit/cdde49afcfec9aa8b2968ac5950d0f661d419279)), closes [#66](https://github.com/svchord/Rem-Craft/issues/66)
+* :bug: 优化tanBar写法，暂时删除边窗动画 ([dc0f0ee](https://github.com/svchord/Rem-Craft/commit/dc0f0eee0f9fb957bb460d6d37bff01f57ac667c))
+* :bug: 优化tooltips行高 ([768b3dd](https://github.com/svchord/Rem-Craft/commit/768b3dd6f4fb5dd35ca7fbb5e90f8acc7b8883cd)), closes [#66](https://github.com/svchord/Rem-Craft/issues/66)
+
 ## [2.3.0](https://github.com/svchord/Rem-Craft/compare/v2.2.5...v2.3.0) (2022-11-06)
 
 

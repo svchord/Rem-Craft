@@ -76,7 +76,7 @@ function autoSetMsgWidth() {
     "childList",
     (observer, mutation) => {
       let msgDom = mutation.target;
-      msgDom.style.maxWidth = "1000px";
+      msgDom.style.maxWidth = "400px";
       setTimeout(() => {
         msgDom.style.maxWidth = "120px";
       }, 1500);

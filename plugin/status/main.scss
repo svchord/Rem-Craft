@@ -7,7 +7,7 @@ $dock-w: 44px;
 
 $item-h: 28px;
 
-$icon-w: 16px;
+$icon-w: 18px;
 $msg-icon-w: 14px;
 
 @mixin msg {
@@ -50,6 +50,23 @@ $msg-icon-w: 14px;
   }
 
   #barHelp {
+    &::before {
+      content: "";
+      @include reset-style();
+      @include add-icon("question", get($text, "secondary"), 24, round);
+      -webkit-mask: url("../../asset/icons/question_black_24dp.svg") round;
+      @include svg($icon-w);
+      opacity: 1;
+      transition: get($transition, "all");
+    }
+
+    &:hover::before {
+      background-color: get($text, "primary");
+    }
+
+    > svg {
+      display: none;
+    }
     > .b3-menu {
       bottom: $s-h + $btn-interval + $fn-space * 2 !important;
       right: $fn-space !important;
@@ -87,7 +104,6 @@ $msg-icon-w: 14px;
       @include msg();
       display: inline-block;
       max-width: 120px;
-      // animation: msg-w 5s get($transition-function, "ease-in-out");
       transition: max-width get($transition-duration, "base")
         get($transition-function, "ease-in-out");
       &::before {
@@ -99,7 +115,7 @@ $msg-icon-w: 14px;
         mask: none;
       }
       &:hover {
-        max-width: 1000px !important;
+        max-width: 400px !important;
       }
     }
   }

@@ -5,6 +5,18 @@
   @return color.red($color), color.green($color), color.blue($color);
 }
 
+@function mix-gray($brand, $gray) {
+  $tmp: 0.12;
+  @return $tmp * $brand + (1 - $tmp) * $gray;
+}
+
+@function get-gray($brand, $gray) {
+  @return mix-gray(color.red($brand), color.red($gray)),
+    mix-gray(color.green($brand), color.green($gray)),
+    mix-gray(color.blue($brand), color.blue($gray));
+  // @return hex2rgb(color.mix($brand, $gray, .12));
+}
+
 // Color
 $light-colors: () !default;
 $light-colors: map.deep-merge(
@@ -123,6 +135,23 @@ $light-colors: map.deep-merge(
     ),
   ),
   $light-colors
+);
+
+$light-mix-brands: (
+  1: #f2f3ff,
+  2: #ebedff,
+  3: #e3e7ff,
+  4: #d3dcff,
+  5: #b4c5ff,
+  6: #84a2ff,
+  7: #5885ff,
+  8: #366ef4,
+  9: #0052d9,
+  10: #0042b2,
+  11: #00328b,
+  12: #00266e,
+  13: #001e5c,
+  14: #001442,
 );
 
 $dark-colors: () !default;

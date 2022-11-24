@@ -1,10 +1,19 @@
 @use "./palette" as *;
 
 :root {
-
   @each $type, $maps in $light-colors {
-    @each $i, $color in $maps {
-      #{--#{$type}-#{$i}}: #{hex2rgb($color)};
+    @if $type != "gray" {
+      @each $i, $color in $maps {
+        #{--#{$type}-#{$i}}: #{hex2rgb($color)};
+      }
+    } @else {
+      @each $i, $color in $maps {
+        @each $num, $brand in $light-mix-brands {
+          @if $i == $num {
+            #{--#{$type}-#{$i}}: #{get-gray($brand, $color)};
+          }
+        }
+      }
     }
   }
 

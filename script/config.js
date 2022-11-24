@@ -1,7 +1,7 @@
 export let config = {
   plugin: {
-    tabBar: true,
-    status: true,
-    listIndent: true,
+    tabBar: true, // 顶部页签栏
+    status: true, // 底部状态栏
+    listIndent: true, // 文档树缩进
   },
 };

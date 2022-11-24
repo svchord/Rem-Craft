@@ -1,9 +1,11 @@
-import { fisrtToUpper } from "./convert.js";
+import { fisrtToUpper, numToPx } from "./convert.js";
 import { setMutationObserver } from "./observer.js";
 
 // ParentNode.children 属性返回的是一个 HTMLCollection 实例
 // HTMLCollection 是类似数组的对象，需要通过slice强制转换为数组
 const layouts = document.getElementById("layouts").children;
+
+export const prefix = "rc-";
 
 export const layout = Array.prototype.slice.apply(layouts).filter((e) => {
   return (
@@ -28,4 +30,19 @@ export function setDockObserver(direction, func) {
   direction = fisrtToUpper(direction);
   let dock = document.getElementById(`dock${direction}`);
   setMutationObserver(dock, "attributes", func, { attributes: true });
+}
+
+export function getFolumn(direction) {
+  return direction === "left"
+    ? layout.firstElementChild
+    : layout.lastElementChild;
+}
+
+export function setWndPadding(direction, value) {
+  let folumn = getFolumn(direction);
+  let resize = folumn.querySelector(".layout__resize");
+  let wnd = resize.classList.contains("fn__none")
+    ? folumn.firstElementChild.firstElementChild
+    : folumn.lastElementChild.firstElementChild;
+  wnd.style.paddingBottom = numToPx(value);
 }

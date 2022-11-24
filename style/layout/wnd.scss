@@ -63,13 +63,6 @@ $wnd-transition: all $time $func 0s;
       > div[data-type="wnd"] {
         @include wnd;
       }
-
-      &:has(+ .layout__resize.fn__none),
-      &:last-child {
-        > [data-type="wnd"] {
-          padding-bottom: status.$s-h - $interval;
-        }
-      }
     }
 
     // 隐藏的边窗

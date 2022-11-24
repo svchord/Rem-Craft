@@ -1,5 +1,6 @@
 import { config } from "../../script/config.js";
 import { setMutationObserver } from "../../util/observer.js";
+import { prefix, setWndPadding } from "../../util/layout.js";
 import { isDockExist, setDockObserver } from "../../util/layout.js";
 
 const btnHelp = document.getElementById("barHelp");
@@ -56,7 +57,7 @@ function addDockMenu() {
   let menuBtn = addButton("wndBtn", "iconLeft", "打开选中边窗");
   let dockBtn = document.getElementById("barDock");
   let menu = dockBtn.querySelector(".b3-menu");
-  menu.classList.add("dock-menu");
+  menu.classList.add(prefix + "dock-menu");
   menuBtn.appendChild(menu);
 
   menuBtn.addEventListener("mouseover", () => {
@@ -72,14 +73,15 @@ function autoSetMsgWidth() {
   console.log(msg);
   setMutationObserver(
     msg,
-    "characterData",
+    "childList",
     (observer, mutation) => {
       let msgDom = mutation.target;
-      console.log(msgDom.firstChild.data);
       msgDom.style.maxWidth = "1000px";
-      console.log(msgDom.style.maxWidth);
+      setTimeout(() => {
+        msgDom.style.maxWidth = "120px";
+      }, 1500);
     },
-    { characterData: true }
+    { childList: true }
   );
 }
 
@@ -100,11 +102,38 @@ function setStatusRight() {
   });
 }
 
+function resetBtnListener() {
+  let btn = document.getElementById("barHelp");
+  let menu = btn.querySelector(".b3-menu");
+  menu.dataset.switch = "close";
+  btn.addEventListener("mouseleave", (e) => {
+    e.stopImmediatePropagation();
+  });
+  btn.addEventListener("click", (e) => {
+    if (!menu.contains(e.target)) {
+      e.stopImmediatePropagation();
+      if (menu.dataset.switch === "close") {
+        menu.dataset.switch = "open";
+      } else if (menu.dataset.switch === "open") {
+        menu.dataset.switch = "close";
+      }
+    }
+  });
+  document.addEventListener("mouseup", (e) => {
+    if (!btn.contains(e.target) && menu.dataset.switch === "open") {
+      menu.dataset.switch = "close";
+    }
+  });
+}
+
 export function stautsMain() {
   if (config.plugin.status) {
     autoSetMsgWidth();
     setStatusRight();
     addDockButton();
     addDockMenu();
+    resetBtnListener();
+    setWndPadding("left", 0);
+    setWndPadding("right", 40);
   }
 }

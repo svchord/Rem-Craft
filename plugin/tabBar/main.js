@@ -1,10 +1,15 @@
 import { config } from "../../script/config.js";
 import { numToPx } from "../../util/convert.js";
 import { setResizeObserver, setMutationObserver } from "../../util/observer.js";
-import { layout, isDockExist, setDockObserver } from "../../util/layout.js";
+import {
+  prefix,
+  isDockExist,
+  getFolumn,
+  setDockObserver,
+} from "../../util/layout.js";
 
 let center = document.getElementsByClassName("layout__center")[0];
-let customPrefix = "rc-tabBar";
+let customPrefix = prefix + "tabBar";
 
 /**
  * 定位左右上角页签栏
@@ -77,16 +82,14 @@ function resetSelector(direction) {
  * @param {Number} margin - 外边距的值
  */
 function setTabBarMargin(direction, margin) {
-  let wnd =
-    direction === "left" ? layout.firstElementChild : layout.lastElementChild;
-
-  setResizeObserver(wnd, (entry) => {
-    let wndWidth = entry.contentBoxSize[0].inlineSize;
+  let folumn = getFolumn(direction);
+  setResizeObserver(folumn, (entry) => {
+    let folumnWidth = entry.contentBoxSize[0].inlineSize;
     let tabBar = document.getElementsByClassName(
       `${customPrefix}-${direction}`
     )[0];
-    if (wndWidth >= 0 && wndWidth <= margin) {
-      let marginTmp = margin - wndWidth;
+    if (folumnWidth >= 0 && folumnWidth <= margin) {
+      let marginTmp = margin - folumnWidth;
       setMargin(tabBar, direction, marginTmp);
     } else {
       setMargin(tabBar, direction, 0);
@@ -118,8 +121,8 @@ function autoSetTabBarMargin(direction) {
         ? btnWidth * 7
         : btnWidth * 6 + macBtnsWidth
       : "windows" === window.siyuan.config.system.os
-      ? btnWidth * 4 + winBtnsWidth - dockWidth
-      : btnWidth * 5 + 2;
+      ? btnWidth * 5 + winBtnsWidth - dockWidth
+      : btnWidth * 6 + 2;
 
   setTabBarSelector(center, direction);
 

@@ -1,23 +1,20 @@
-import { prefix, getFolumn } from "../util/layout.js";
-import { fisrtToUpper } from "../util/convert.js";
-import { updateStyle, root } from "../util/resource.js";
+import { getFolumn } from "../util/layout.js";
+import { setMutationObserver } from "../util/observer.js";
 
-function setWndSelector(folumn, directionLR, directionTB) {
+function setWnd(folumn, directionLR, directionTB) {
   let wnd =
-    directionTB === "top"
-      ? folumn.firstElementChild.firstElementChild
-      : folumn.lastElementChild.firstElementChild;
-  wnd.classList.add(`${prefix}-wnd-${directionLR}${fisrtToUpper(directionTB)}`);
+    directionTB === "top" ? folumn.firstElementChild : folumn.lastElementChild;
+  wnd.style.transformOrigin = directionTB + " " + directionLR;
+  // setMutationObserver(wnd, "atrributes", () => {});
 }
 
-function setFolumnSelector(direction) {
+function setFolumn(direction) {
   let folumn = getFolumn(direction);
-  folumn.classList.add(`${prefix}-folumn-${direction}`);
-  setWndSelector(folumn, direction, "top");
-  setWndSelector(folumn, direction, "bottom");
+  setWnd(folumn, direction, "top");
+  setWnd(folumn, direction, "bottom");
 }
 
 export function wndMain() {
-  // setFolumnSelector("left");
-  // setFolumnSelector("right");
+  setFolumn("left");
+  setFolumn("right");
 }

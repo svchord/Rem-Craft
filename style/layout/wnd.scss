@@ -10,7 +10,7 @@ $wnd-radius: get($radius, "medium");
 //边窗动画
 $time: get($transition-duration, "base");
 $func: get($transition-function, "ease-in-out");
-$scale: scale(0.75);
+$scale: scale(0.5);
 $wnd-transition: all $time $func 0s;
 
 :root {
@@ -31,13 +31,33 @@ $wnd-transition: all $time $func 0s;
   50% {
     opacity: 0;
     transform: $scale;
-    max-height: 100%;
+    max-height: 50%;
   }
 
   to {
     opacity: 0;
     transform: $scale;
     max-height: 0;
+  }
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: $scale;
+    max-height: 0;
+  }
+
+  50% {
+    opacity: 0;
+    transform: $scale;
+    max-height: 50%;
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+    max-height: 100%;
   }
 }
 
@@ -58,7 +78,8 @@ $wnd-transition: all $time $func 0s;
   > .fn__flex-column:not(.layout__center) {
     // 显示的边窗
     > .fn__flex {
-      overflow-x: hidden;
+      overflow: hidden;
+      animation: open $time forwards $func;
 
       > div[data-type="wnd"] {
         @include wnd;
@@ -68,24 +89,8 @@ $wnd-transition: all $time $func 0s;
     // 隐藏的边窗
     > .fn__none:not(.layout__resize) {
       display: flex !important;
-      animation: close $time * 2 forwards $func;
-
-      > [data-type="wnd"] {
-        @include wnd;
-        opacity: 0;
-        transform: $scale; //translateX(50%);
-      }
-    }
-  }
-
-  //左侧边窗特殊处理
-  > .fn__flex-shrink:not(.layout__center) {
-    > .fn__none:not(.layout__resize) {
-      animation: close $time * 2 forwards $func;
-
-      > [data-type="wnd"] {
-        transform: $scale;
-      }
+      transition: all $time $func 0s;
+      animation: close $time forwards $func;
     }
   }
 }
@@ -117,7 +122,7 @@ $wnd-transition: all $time $func 0s;
 // 居中窗口
 .layout__center {
   background-color: transparent; //$wnd-base;
-  
+
   [data-type="wnd"] {
     position: relative;
     @include wnd;

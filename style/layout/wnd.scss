@@ -10,7 +10,7 @@ $wnd-radius: get($radius, "medium");
 //边窗动画
 $time: get($transition-duration, "base");
 $func: get($transition-function, "ease-in-out");
-$scale: scale(0.5);
+$scale: scale(0.1);
 $wnd-transition: all $time $func 0s;
 
 :root {
@@ -28,12 +28,6 @@ $wnd-transition: all $time $func 0s;
     max-height: 100%;
   }
 
-  50% {
-    opacity: 0;
-    transform: $scale;
-    max-height: 50%;
-  }
-
   to {
     opacity: 0;
     transform: $scale;
@@ -46,12 +40,6 @@ $wnd-transition: all $time $func 0s;
     opacity: 0;
     transform: $scale;
     max-height: 0;
-  }
-
-  50% {
-    opacity: 0;
-    transform: $scale;
-    max-height: 50%;
   }
 
   to {

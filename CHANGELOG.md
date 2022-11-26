@@ -1,6 +1,15 @@
 # 版本日志 | Changelog 
 
 
+### [2.5.1](https://github.com/svchord/Rem-Craft/compare/v2.5.0...v2.5.1) (2022-11-26)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复替换弹窗的样式问题，并优化搜索结果列表 ([0399a14](https://github.com/svchord/Rem-Craft/commit/0399a142d5752ea52d33e35b58c212868e6e993c)), closes [#76](https://github.com/svchord/Rem-Craft/issues/76)
+* :bug: 修复引号字体的问题 ([6023b8b](https://github.com/svchord/Rem-Craft/commit/6023b8bd6b5b6e13867f634a166d727d40721e8e))
+* :bug: 优化状态栏菜单交互 ([b379384](https://github.com/svchord/Rem-Craft/commit/b37938432011c49126e903e43298ac8ec0b25a91))
+
 ## [2.5.0](https://github.com/svchord/Rem-Craft/compare/v2.4.0...v2.5.0) (2022-11-26)
 
 

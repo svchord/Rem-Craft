@@ -63,6 +63,13 @@ function addDockMenu() {
   menuBtn.addEventListener("mouseover", () => {
     menu.classList.remove("fn__none");
   });
+  helpMenu.querySelectorAll(".b3-menu__item").forEach((element) => {
+    if (element.id !== "wndBtn") {
+      element.addEventListener("mouseover", () => {
+        menu.classList.add("fn__none");
+      });
+    }
+  });
   menu.addEventListener("mouseleave", () => {
     menu.classList.add("fn__none");
   });

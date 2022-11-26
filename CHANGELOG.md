@@ -1,6 +1,29 @@
 # 版本日志 | Changelog 
 
 
+## [2.5.0](https://github.com/svchord/Rem-Craft/compare/v2.4.0...v2.5.0) (2022-11-26)
+
+
+### ♻️ 代码重构 | Code Refactoring
+
+* :recycle: 将文档列表缩进代码抽出，实现用户自定义 ([8355802](https://github.com/svchord/Rem-Craft/commit/83558024aac61439e775a1b48f11a952e177531b))
+
+
+### ✨ 新增功能 | Features
+
+* :sparkles: 增加子弹流列表辅助线功能 ([cec3bfb](https://github.com/svchord/Rem-Craft/commit/cec3bfb96e981ccd1fde0720cc0de27481a32266))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复边栏动画卡顿问题 ([3fedf12](https://github.com/svchord/Rem-Craft/commit/3fedf122346a9a3cfe8c362dc499a4aab0076441))
+* :bug: 修复钉住页签的图标样式 ([a7eb409](https://github.com/svchord/Rem-Craft/commit/a7eb409651eaaef6886c15b3c5c0d89d4ee39d4c))
+* :bug: 修复日历挂件新建日记重复问题 ([94c7673](https://github.com/svchord/Rem-Craft/commit/94c767313c2926fd9df53c43f8ebaf095a61f9a8))
+* :bug: 修复新版状态栏导致的问题 ([8eacca0](https://github.com/svchord/Rem-Craft/commit/8eacca00a4ee1e0287e1c137ccdfa7ebff44e25a))
+* :bug: 修复页签栏关闭动画卡顿问题 ([e70a953](https://github.com/svchord/Rem-Craft/commit/e70a953b865c0b478975810002f056295c8615c6))
+* :bug: 优化中性色 ([8f8e396](https://github.com/svchord/Rem-Craft/commit/8f8e396c1f0d1f47e9b038d545cc785b1a20d643))
+* :bug: 优化状态栏样式 ([1929e56](https://github.com/svchord/Rem-Craft/commit/1929e56d7747dfd50576276b5d7076f5f78fd846)), closes [#75](https://github.com/svchord/Rem-Craft/issues/75)
+
 ## [2.4.0](https://github.com/svchord/Rem-Craft/compare/v2.3.0...v2.4.0) (2022-11-21)
 
 

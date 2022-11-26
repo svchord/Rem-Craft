@@ -10,20 +10,33 @@ $form-h: $btn-h + $padding * 2 + 1px;
   @include component();
   $text-h: list.$text-h;
   $padding: $interval;
+  display: block;
   padding: $padding;
   padding-bottom: $text-h + $padding;
-  height: $text-h * 2 + $padding * 3;
+  height: auto; //$text-h * 2 + $padding * 3;
 
   .b3-list-item {
-    &__meta {
-      top: $text-h + $padding * 2;
-      right: $padding * 2;
-      max-width: 100%;
+    &__graphic {
       position: absolute;
+      top: $padding * 2;
+    }
+    &__text {
+      overflow-y: auto !important;
+      text-overflow: ellipsis !important;
+      -webkit-box-orient: inherit;
+      margin: 0;
+      padding: $padding $padding $padding * 2 20px + $padding;
+    }
+    &__meta {
+      position: absolute;
+      bottom: $padding * 2;
+      left: $padding * 2 + 20px;
+      max-width: 100%;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      width: calc(100% - $padding * 4);
+      margin: 0;
+      width: calc(100% - $padding * 4 - 20px);
     }
   }
 }
@@ -36,6 +49,7 @@ $form-h: $btn-h + $padding * 2 + 1px;
       #searchInput,
       #replaceInput {
         padding-left: 59px !important;
+        flex-shrink: unset;
       }
       .fn__flex-column[style*="70vh"] {
         height: 80vh !important;

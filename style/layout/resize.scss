@@ -2,7 +2,7 @@
 
 .layout__resize {
   &::after {
-    background-color: get($bg, "base", 1);
+    background-color: transparent;
   }
 
   &:hover::after {

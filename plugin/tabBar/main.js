@@ -87,12 +87,14 @@ function setTabBarMargin(direction, margin) {
     let folumnWidth = entry.contentBoxSize[0].inlineSize;
     let tabBar = document.getElementsByClassName(
       `${customPrefix}-${direction}`
-    )[0];
-    if (folumnWidth >= 0 && folumnWidth <= margin) {
-      let marginTmp = margin - folumnWidth;
-      setMargin(tabBar, direction, marginTmp);
-    } else {
-      setMargin(tabBar, direction, 0);
+    );
+    if (tabBar.length > 0) {
+      if (folumnWidth >= 0 && folumnWidth <= margin) {
+        let marginTmp = margin - folumnWidth;
+        setMargin(tabBar[0], direction, marginTmp);
+      } else {
+        setMargin(tabBar[0], direction, 0);
+      }
     }
   });
 }

@@ -11,7 +11,6 @@ $wnd-radius: get($radius, "medium");
 $time: get($transition-duration, "base");
 $func: get($transition-function, "ease-in-out");
 $scale: scale(0.1);
-$wnd-transition: all $time $func 0s;
 
 :root {
   // 动画效果
@@ -49,11 +48,40 @@ $wnd-transition: all $time $func 0s;
   }
 }
 
+@keyframes top-open {
+  from {
+    height: 100%;
+  }
+
+  to {
+    height: 50%;
+  }
+}
+
+@keyframes top-close-open {
+  from {
+    height: 0%;
+  }
+
+  to {
+    height: 50%;
+  }
+}
+
+@keyframes top-has-bottom-close {
+  from {
+    height: 50%;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
 @mixin wnd {
   min-height: 10% !important;
   margin: $interval;
   border-radius: $wnd-radius;
-  transition: all $time $func 0s;
   background-color: $wnd-bg;
   border: $fn-border;
 }
@@ -67,18 +95,18 @@ $wnd-transition: all $time $func 0s;
     // 显示的边窗
     > .fn__flex {
       overflow: hidden;
+      transition: all $time $func 0s;
       animation: open $time forwards $func;
+      
+      // 隐藏的边窗
+      &.fn__none {
+        display: flex !important;
+        animation: close $time forwards $func;
+      }
 
       > div[data-type="wnd"] {
         @include wnd;
       }
-    }
-
-    // 隐藏的边窗
-    > .fn__none:not(.layout__resize) {
-      display: flex !important;
-      transition: all $time $func 0s;
-      animation: close $time forwards $func;
     }
   }
 }

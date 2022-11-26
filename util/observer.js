@@ -5,9 +5,9 @@
  * @param {Function} func - 获取尺寸后的操作
  */
 export function setResizeObserver(element, func) {
-  let callBack = (entries) => {
+  let callBack = function (entries, observer) {
     for (const entry of entries) {
-      func(entry);
+      func(entry, observer);
     }
   };
 

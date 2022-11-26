@@ -20,6 +20,18 @@ $msg-icon-w: 14px;
   margin: math.div($s-h - $item-h, 2) $fn-space 0 0;
 }
 
+@keyframes msg-w {
+  from {
+    max-width: 400px;
+  }
+  90% {
+    max-width: 400px;
+  }
+  to {
+    max-width: 180px;
+  }
+}
+
 #status {
   position: fixed;
   padding: 0;
@@ -103,7 +115,8 @@ $msg-icon-w: 14px;
     &:not(:empty) {
       @include msg();
       display: inline-block;
-      max-width: 120px;
+      max-width: 180px;
+      animation: msg-w 2s ease-out;
       transition: max-width get($transition-duration, "base")
         get($transition-function, "ease-in-out");
       &::before {

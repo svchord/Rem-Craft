@@ -70,7 +70,6 @@ function addDockMenu() {
 
 function autoSetMsgWidth() {
   let msg = document.getElementsByClassName("status__msg")[0];
-  console.log(msg);
   setMutationObserver(
     msg,
     "childList",
@@ -128,7 +127,7 @@ function resetBtnListener() {
 
 export function stautsMain() {
   if (config.plugin.status) {
-    autoSetMsgWidth();
+    // autoSetMsgWidth();
     setStatusRight();
     addDockButton();
     addDockMenu();

@@ -84,7 +84,6 @@ $bardock-w: $item-w + $s-pad;
       padding: 0 $fn-space 0 0;
       margin-right: $interval;
       border-right: $fn-border;
-      animation: msg-w 0.2s ease-in-out;
       &::before {
         content: "";
         display: flex;
@@ -103,7 +102,6 @@ $bardock-w: $item-w + $s-pad;
   // 文档统计
   .status__counter {
     @include v-center($item-h);
-    animation: msg-w 0.2s ease-in-out;
     &:not(:empty) {
       border-right: $fn-border;
       margin: 0 $s-pad;

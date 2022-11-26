@@ -1,0 +1,96 @@
+@use "sass:math";
+@use "../../style/common" as *;
+
+$action-h: 34px;
+$action-w: $action-h;
+
+$width: $action-w;
+$left: 0 - math.div($action-w, 2) - 1px;
+$top: 0 - math.div($action-w, 2) - 3px;
+$height: $action-h + 4px;
+
+.protyle-wysiwyg [data-node-id].li:has(.rc-focus) {
+  > .protyle-action {
+    color: get($text, "brand");
+    svg {
+      @include svg(16px);
+    }
+  }
+  > .list:has(.rc-focus) > .li {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: $width;
+      left: $left;
+      top: $top;
+      border: {
+        style: solid;
+        color: get($text, "brand");
+      }
+    }
+
+    &:not(:has(.rc-focus))::after {
+      bottom: -2px;
+      border: {
+        width: 0 0 0 2px;
+      }
+    }
+
+    &:has(.rc-focus) {
+      &::after {
+        height: $height;
+        border: {
+          radius: 0 0 0 get($radius, "large");
+          width: 0 0 2px 2px;
+        }
+      }
+
+      ~ .li:not(:has(.rc-focus))::after {
+        display: none;
+      }
+    }
+    // 子列表项为有序列表项
+    &[data-subtype="o"]::after {
+      width: $width - 10px;
+    }
+
+    // 子列表项为待办列表项
+    &[data-subtype="t"]::after {
+      width: $width - 6px;
+    }
+  }
+
+  // 列表项为有序列表项
+  &[data-subtype="o"]:has(.rc-focus) {
+    > .list:has(.rc-focus) > .li {
+      &::after {
+        top: $top + 10px;
+      }
+      &:has(.rc-focus)::after {
+        height: $height - 10px;
+      }
+    }
+  }
+
+  // 列表项为待办列表项
+  &[data-subtype="t"]:has(.rc-focus) {
+    > .protyle-action {
+      color: get($text, "brand");
+      svg {
+        @include svg(14px);
+      }
+    }
+    > .list:has(.rc-focus) > .li {
+      &::after {
+        top: $top + 6px;
+      }
+      &:has(.rc-focus)::after {
+        height: $height - 6px;
+      }
+    }
+    &.protyle-task--done > .list:has(.rc-focus) > .li::after {
+      border-color: get($border, 1);
+    }
+  }
+}

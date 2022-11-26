@@ -69,11 +69,11 @@ $item-pad: 3px 2px;
   }
 
   &-scroll {
-    right: 25px;
+    right: 25px !important;
     &__up,
     &__down {
       @include icon-btn("page", 24px, 12px);
-      right: -1px;
+      right: -0.5px;
       color: get($text, "disabled");
     }
     &__down {

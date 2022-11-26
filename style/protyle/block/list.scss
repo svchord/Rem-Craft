@@ -33,11 +33,6 @@ $done-color: get($text, "placeholder");
       // left: $pad-l + 0.5px;
     }
 
-    &:hover::before {
-      border-color: get($text, "brand");
-      transition: get($transition, "all");
-    }
-
     // 列表按钮悬浮底色
     > .protyle-action {
       // width: $action-w;

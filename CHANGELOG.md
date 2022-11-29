@@ -1,6 +1,22 @@
 # 版本日志 | Changelog 
 
 
+### [2.5.2](https://github.com/svchord/Rem-Craft/compare/v2.5.1...v2.5.2) (2022-11-29)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 根据顶栏结构动态计算页签边距 ([c2f5c53](https://github.com/svchord/Rem-Craft/commit/c2f5c536b645d2e88247eb3834fec0e2e30d6742)), closes [#67](https://github.com/svchord/Rem-Craft/issues/67)
+* :bug: 兼容新版搜索界面 ([6280741](https://github.com/svchord/Rem-Craft/commit/6280741063db3c693a403035eb43799c8eda198a))
+* :bug: 修复关闭顶部页签后空白页的样式 ([8caded7](https://github.com/svchord/Rem-Craft/commit/8caded7837b785cc0c28ebab9f896045bbacd7b5))
+* :bug: 修复集市卡片按钮样式问题 ([9d76fb5](https://github.com/svchord/Rem-Craft/commit/9d76fb57b201b8cd94cc8591fc0569339f7d5966))
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新readme ([46840de](https://github.com/svchord/Rem-Craft/commit/46840de79720f0c9426a16417eb8bf8e25837f84))
+* :memo: 更新Readme ([4f198d0](https://github.com/svchord/Rem-Craft/commit/4f198d08c7cfd996975b9e341803bb0c5fc37b15))
+
 ### [2.5.1](https://github.com/svchord/Rem-Craft/compare/v2.5.0...v2.5.1) (2022-11-26)
 
 

@@ -48,36 +48,6 @@ $scale: scale(0.1);
   }
 }
 
-@keyframes top-open {
-  from {
-    height: 100%;
-  }
-
-  to {
-    height: 50%;
-  }
-}
-
-@keyframes top-close-open {
-  from {
-    height: 0%;
-  }
-
-  to {
-    height: 50%;
-  }
-}
-
-@keyframes top-has-bottom-close {
-  from {
-    height: 50%;
-  }
-
-  to {
-    height: 100%;
-  }
-}
-
 @mixin wnd {
   min-height: 10% !important;
   margin: $interval;
@@ -142,53 +112,5 @@ $scale: scale(0.1);
   [data-type="wnd"] {
     position: relative;
     @include wnd;
-
-    // 标签搜索页面
-    .fn__flex-column[style*="min-height"][style*="50%"]
-      > .fn__flex:first-child {
-      padding: 8px !important;
-    }
-
-    // 搜索历史按钮
-    #searchHistoryBtn {
-      @include component();
-      width: 36px;
-
-      svg {
-        &:first-child {
-          @include svg(12px);
-        }
-
-        &:last-child {
-          @include svg(8px, $important: true);
-          margin-left: 2px;
-        }
-      }
-    }
-
-    // 刷新按钮
-    #globalSearchReload {
-      @include icon-btn("page", get($component-size, "base"), 12px);
-    }
-
-    //搜索结果统计
-    #globalSearchResult {
-      @include component();
-      margin: 0 $fn-space $interval !important;
-      padding: 0 8px 4px;
-      cursor: unset;
-      background-color: transparent !important; //get($bg,"component");
-    }
-
-    // 搜索结果列表
-    #globalSearchList {
-      padding: 0;
-      margin: 0 $fn-space;
-    }
-
-    // 搜索结果列表项
-    [data-type="search-item"].b3-list-item {
-      @include search.search-item();
-    }
   }
 }

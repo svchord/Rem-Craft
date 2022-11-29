@@ -1,58 +1,22 @@
+@use "sass:math";
 @use "../common" as *;
+@use "../component/form";
 @use "../component/list";
 @use "big";
 
-$padding: $fn-space + $interval;
+$padding: $fn-space;
 $btn-h: get($component-size, "base");
-$form-h: $btn-h + $padding * 2 + 1px;
+$form-h: 42px;
 
 @mixin search-item {
-  @include component();
-  $text-h: list.$text-h;
-  $padding: $interval;
-  display: block;
-  padding: $padding;
-  padding-bottom: $text-h + $padding;
-  height: auto; //$text-h * 2 + $padding * 3;
-
-  .b3-list-item {
-    &__graphic {
-      position: absolute;
-      top: $padding * 2;
-    }
-    &__text {
-      overflow-y: auto !important;
-      text-overflow: ellipsis !important;
-      -webkit-box-orient: inherit;
-      margin: 0;
-      padding: $padding $padding $padding * 2 20px + $padding;
-    }
-    &__meta {
-      position: absolute;
-      bottom: $padding * 2;
-      left: $padding * 2 + 20px;
-      max-width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin: 0;
-      width: calc(100% - $padding * 4 - 20px);
-    }
-  }
+  // @include component();
 }
 
 .b3-dialog__container {
   &[style*="80vw"] {
     &:has(#searchList) {
       width: 80vw !important;
-      height: 80vh !important;
-      #searchInput,
-      #replaceInput {
-        padding-left: 59px !important;
-        flex-shrink: unset;
-      }
-      .fn__flex-column[style*="70vh"] {
-        height: 80vh !important;
+      .fn__flex-column[style*="80vh"] {
         border-radius: big.$dialog-radius !important;
       }
     }
@@ -61,74 +25,78 @@ $form-h: $btn-h + $padding * 2 + 1px;
       top: $form-h;
       border-radius: big.$dialog-radius;
     }
-
-    .search__arrowdown {
-      margin-left: $interval;
-    }
-
-    // 搜索结果筛选行
-    .b3-form__space--small {
-      margin: 0;
-      height: $form-h;
-      padding: $padding;
-      border-bottom: $fn-border;
-
-      // 筛选项
-      .b3-button--small {
-        @include component();
-        &.b3-button--cancel {
-          @include item("page");
-          color: get($text, "secondary");
-        }
-      }
-
-      // 块类型筛选按钮
-      .svg.ft__on-surface {
-        @include item("page");
-        @include svg($btn-h, get($icon, "base"));
-        border-radius: get($radius, "small");
-        height: $btn-h !important;
-
-        &.ft__primary {
-          @include item-focus();
-        }
-      }
-
-      #searchResult {
-        @include v-center($btn-h);
-      }
-
-      #searchPathInput {
-        @include v-center($btn-h);
-        margin-right: $fn-space;
-      }
-    }
   }
 }
 
-// 块类型筛选界面
-.spread-search__filter {
-  padding-top: 0px;
-  width: 210px;
-  // border-left: $fn-border;
+.search {
+  &__header {
+    @include form.search-input($form-h, 0, 16px);
 
-  // 标题
-  &::before {
-    content: "块类型筛选";
-    display: block;
-    width: 100%;
-    @include v-center(big.$search-h + $padding + 4px);
-    @include center();
-  }
+    // 搜索文本框
+    .b3-text-field {
+      flex-shrink: unset;
+      border: none !important;
+      background-color: get($bg, "page", 1);
 
-  // 块类型筛选项
-  label {
-    .b3-label__text {
-      @include v-center(20px);
-      margin: 0;
+      &#searchInput,
+      &#replaceInput {
+        padding-left: $form-h + $fn-space !important;
+      }
+
+      &:hover,
+      &:focus {
+        box-shadow: unset;
+        border: none;
+      }
     }
 
-    margin-bottom: $fn-space * 2;
+    .block__icons {
+      border-radius: 0 big.$dialog-radius 0 0;
+      height: $form-h;
+      padding: math.div($form-h - 28px, 2) $fn-space;
+      .block__icon {
+        opacity: 1;
+        @include svg-div(28px, 12px, $important: true);
+      }
+    }
+
+    // 搜索结果筛选行
+    + .b3-form__space--small {
+      margin: 0;
+      height: $form-h;
+      padding: 0 $fn-space 0 $fn-space * 2;
+      border-bottom: $fn-border;
+      .block__icon {
+        @include svg-div(28px, 12px, $important: true);
+        margin: auto 0;
+      }
+
+      #searchResult {
+        @include v-center($form-h);
+      }
+
+      #searchPathInput:not(:empty) {
+        @include component($border: 1);
+        border-radius: get($radius, "max");
+        border: 1px solid transparent;
+        padding-right: 28px;
+        font-size: get($font-size, "small");
+        &:hover {
+          border-color: get($border, 3);
+        }
+        .search__rmpath {
+          $w: 18px;
+          @include svg($w, 8px);
+          @include item("page");
+          top: math.div(get($component-size, "base") - $w, 2) - 1px;
+          right: math.div(get($component-size, "base") - $w, 2) - 1px;
+        }
+      }
+    }
+  }
+
+  &__arrowdown {
+    margin-left: $interval;
   }
 }
 
@@ -136,8 +104,54 @@ $form-h: $btn-h + $padding * 2 + 1px;
 #searchList {
   padding: $fn-space;
 
-  [data-type="search-item"].b3-list-item {
-    @include search-item();
+  > .b3-list-item {
+    // &:not([data-type="search-item"]) {
+    //   @include item("component");
+    // }
+    // 分组
+    + div:not([data-type="search-item"]) {
+      box-shadow: 16px 0 rgba(var(--page-1), 1) inset,
+        17px 0 rgba(var(--border-3), 1) inset;
+      > [data-type="search-item"] {
+        height: 32px;
+        margin-left: 24px !important;
+        padding-left: list.$padding !important;
+      }
+    }
+
+    // 未分组
+    &[data-type="search-item"] {
+      $text-h: list.$text-h;
+      $padding: $interval;
+      padding: $padding;
+      display: block;
+      height: auto;
+      padding-bottom: $text-h + $padding;
+      .b3-list-item {
+        &__graphic {
+          position: absolute;
+          top: $padding * 2;
+        }
+        &__text {
+          overflow-y: auto !important;
+          text-overflow: ellipsis !important;
+          -webkit-box-orient: inherit;
+          margin: 0;
+          padding: $padding $padding $padding * 2 20px + $padding;
+        }
+        &__meta {
+          position: absolute;
+          bottom: $padding * 2;
+          left: $padding * 2 + 20px;
+          max-width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin: 0;
+          width: calc(100% - $padding * 4 - 20px);
+        }
+      }
+    }
   }
 }
 
@@ -151,7 +165,11 @@ $form-h: $btn-h + $padding * 2 + 1px;
         // display: -webkit-box;
       }
       .block__icon {
-        @include svg-div(get($component-size, "exsmall"), 10px);
+        @include svg-div(
+          get($component-size, "exsmall"),
+          10px,
+          $important: true
+        );
       }
     }
 
@@ -164,7 +182,7 @@ $form-h: $btn-h + $padding * 2 + 1px;
 /*ctrl+p改造成左右排列*/
 .b3-dialog__container[style*="80vw"] {
   /*先把容器改成左右排列并自动换行*/
-  > div > .fn__flex > .fn__flex-column {
+  > div > .fn__flex-column {
     flex-direction: row !important;
     flex-wrap: wrap;
   }
@@ -187,19 +205,20 @@ $form-h: $btn-h + $padding * 2 + 1px;
     /*结果预览自动占满剩余宽度，高度和结果列表等高*/
     #searchPreview {
       border: none;
+      border-radius: 0 0 big.$dialog-radius;
     }
 
     //替换界面高度
     #searchList,
     #searchPreview {
-      height: calc(100% - big.$search-h * 2 - $form-h) !important;
+      height: calc(100% - ($form-h + 1px) * 3) !important;
     }
 
     // 搜索界面
     .search__header.fn__none {
       ~ #searchList,
       ~ #searchPreview {
-        height: calc(100% - big.$search-h - $form-h) !important;
+        height: calc(100% - ($form-h + 1px) * 2) !important;
       }
     }
   }

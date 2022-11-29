@@ -7,8 +7,6 @@ $item-h: get($component-size, "medium");
 $text-h: 20px;
 $padding: math.div($item-h - $text-h, 2);
 
-
-
 :root {
   // 列表
   --b3-list-hover: #{get($bg, "component", 1)};

@@ -1,5 +1,4 @@
 @use "../common" as *;
-@use "../component/form";
 @use "../component/list";
 
 //弹窗蒙版
@@ -9,7 +8,7 @@ $dialog-radius: get($radius, "exlarge");
 
 $large-width: 66vw;
 
-$search-h: 50px;
+$search-h: 42px;
 
 :root {
   /* 遮罩 */
@@ -49,18 +48,8 @@ $search-h: 50px;
       width: $large-width;
       border-color: get($border, 3);
       border-radius: $dialog-radius $dialog-radius 0 0;
-      @include form.search-input($search-h - 1px, 0, 17px);
-
-      // 搜索文本框
       .b3-text-field {
         border-radius: $dialog-radius $dialog-radius 0 0;
-        background-color: get($bg, "page", 1);
-
-        &:hover,
-        &:focus {
-          box-shadow: unset;
-          border: none;
-        }
       }
     }
 

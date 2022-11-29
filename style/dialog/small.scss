@@ -1,10 +1,12 @@
 @use "sass:math";
 @use "../common" as *;
 @use "../component/list";
+@use "../component/form";
 @use "big";
 
 $w: get($component-size, "small");
 $spacing: math.div(16px * 2 + 24px - $w, 2);
+$mar: 12px;
 $padding: 24px;
 $meta-w: 80px;
 
@@ -41,8 +43,8 @@ $small-radius: big.$dialog-radius;
     .b3-dialog {
       //弹窗标题
       &__header {
-        padding: 16px 12px;
-        margin: 0 12px;
+        padding: 16px $padding - $mar;
+        margin: 0 $mar;
 
         // border: none;
         // border-radius: $small-radius $small-radius 0 0;
@@ -124,8 +126,8 @@ $small-radius: big.$dialog-radius;
 
       // 弹窗底部按钮
       &__action {
-        padding: $padding 12px;
-        margin: 0 12px;
+        padding: $padding $padding - $mar;
+        margin: 0 $mar;
 
         // padding: $padding 24px;
         // border: none;
@@ -135,14 +137,19 @@ $small-radius: big.$dialog-radius;
       }
     }
 
+    .b3-form__icon {
+      @include form.search-input(list.$item-h, 0, 12px);
+      margin: $fn-space $mar !important;
+    }
+
     // 移动弹窗的搜索结果列表
     #foldList {
-      margin: 16px $padding;
+      margin: 0 $mar;
       .b3-list {
         &-item {
-          &__icon {
+          padding: list.$padding !important;
+          &__graphic {
             align-self: flex-start;
-            background-color: transparent;
           }
           &__showall {
             margin-left: list.$padding;
@@ -150,6 +157,10 @@ $small-radius: big.$dialog-radius;
           }
         }
       }
+    }
+
+    #foldTree {
+      margin: 0 $mar;
     }
   }
 

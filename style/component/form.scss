@@ -14,6 +14,7 @@ $svg-width: get($icon, "small");
 
     // 搜索文本框
     &-input {
+      height: $h;
       border-width: $border-w !important;
       padding-left: $h - 2 * $border-w !important;
     }

@@ -3,7 +3,6 @@
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/release/svchord/Rem-Craft?include_prereleases)
 ![GitHub](https://img.shields.io/github/license/svchord/Rem-Craft)
 ![GitHub last commit](https://img.shields.io/github/last-commit/svchord/Rem-Craft)
-![GitHub repo size](https://img.shields.io/github/repo-size/svchord/Rem-Craft)
 ![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hy/svchord/Rem-Craft?label=hits)
 
 一款现代化、平面化设计的思源笔记主题
@@ -12,12 +11,14 @@
 
 ## 使用说明
 
-1. 建议每次更新主题后，注意查看使用说明是否更新
-2. 顶栏除了按钮以外的区域都可以拖拽窗口
-3. 多次分屏后，页签栏有概率出现显示问题，重启软件即可解决
-4. 鼠标点击右下角问号按钮，菜单才会持续显示，再次点击按钮或者点击周围空白处即可关闭，指南文档按钮在右上方
-5. `script/config.js` 可以设置主题特殊功能的启用与否，默认启用，将值修改为 `false` 并重启软件即可关闭
-6. 设置、搜索等大弹窗的关闭按钮被隐藏了，点击周围空白处即可关闭
+- 最新
+  - v2.5.2及之后版本均不再内置 `Noto Sans SC` 字体文件，有需求请往[官网](https://fonts.google.com/noto/specimen/Noto+Sans+SC)下载
+- 其他
+  - `script/config.js` 可以设置主题特殊功能的启用与否，默认启用，将值修改为 `false` 并重启软件即可关闭
+  - 顶栏除了按钮以外的区域都可以拖拽窗口
+  - 多次分屏后，页签栏有概率被顶栏按钮覆盖，重启软件即可解决
+  - 鼠标点击右下角问号按钮，菜单才会持续显示，再次点击按钮或者点击周围空白处即可关闭，指南文档按钮在右上方
+  - 设置、搜索等大弹窗的关闭按钮被隐藏了，点击周围空白处即可关闭
 
 ## 参考样式
 
@@ -66,7 +67,7 @@
 | theme.js 写法和 api | [leolee9086](https://github.com/leolee9086)                                                | [noob](https://github.com/leolee9086/noob)                                                                                                  | 参考部分 theme.js   |
 | 日历面板             | [BryceAndJuly](https://ld246.com/member/BryceAndJuly)                                      | [论坛帖子](https://ld246.com/article/1662969146166)                                                                                             | 整合社区实现          |
 | 行内评论             | [langzhou](https://github.com/langzhou)、[Zuoqiu-Yingyi](https://github.com/Zuoqiu-Yingyi/) | [siyuan-comment](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment)                                                          | 整合社区实现          |
-| 子弹穿线             | [Zuoqiu-Yingyi](https://github.com/Zuoqiu-Yingyi/)、[pengx17](https://github.com/pengx17)   | [Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus)、[logseq-dev-theme](https://github.com/pengx17/logseq-dev-theme)            |                 |
+| 子弹穿线             | [Zuoqiu-Yingyi](https://github.com/Zuoqiu-Yingyi/)、[pengx17](https://github.com/pengx17)   | [Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus)、[logseq-dev-theme](https://github.com/pengx17/logseq-dev-theme)            | 将两个主题的相同功能整合在一起 |
 
 ## 依赖项目
 

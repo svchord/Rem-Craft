@@ -22,14 +22,14 @@ function insertBtn(elementId) {
 }
 
 export function initCalendar() {
-  if ("windows" === window.siyuan.config.system.os) {
-    insertBtn("barBack");
-    let calendarPanel = document.getElementById("calendarPanel");
-    calendarPanel.style.left = "200px";
-  } else {
+  if ("darwin" === window.siyuan.config.system.os) {
     insertBtn("barSearch");
     let calendarPanel = document.getElementById("calendarPanel");
     calendarPanel.style.right = "0px";
+  } else {
+    insertBtn("barBack");
+    let calendarPanel = document.getElementById("calendarPanel");
+    calendarPanel.style.left = "200px";
   }
 
   let calendarIcon = document.getElementById("calendar");

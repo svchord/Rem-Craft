@@ -1,17 +1,12 @@
 @use "../common" as *;
 
-@font-face {
-  font-family: "Noto Sans SC";
-  src: url("#{$asset-path}/fonts/NotoSansSC-Regular.otf");
-}
-
 :root {
   // 字体
-  --b3-font-family: "quote", -apple-system, BlinkMacSystemFont, Segoe UI,
-    "Noto Sans SC", "JetBrains Mono", "Helvetica Neue", "Luxi Sans",
-    "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol",
-    "Android Emoji", "EmojiSymbols";
+  --b3-font-family: "quote", ui-sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Noto Sans SC", "Microsoft Yahei", "JetBrains Mono", Helvetica,
+    Arial, "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
+    "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
   --b3-font-family-code: "JetBrainsMono-Regular", "Noto Sans SC", mononoki,
     Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji",
     "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",

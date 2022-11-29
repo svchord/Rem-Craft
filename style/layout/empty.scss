@@ -24,11 +24,4 @@
       margin-left: 5px;
     }
   }
-
-  .layout__center:has(&){
-    padding-top: top-bar.$bar-h - $interval;
-    .layout-tab-container{
-      border-width: 1px;
-    }
-  }
 }

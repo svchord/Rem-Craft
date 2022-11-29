@@ -290,3 +290,11 @@ $item-radius: get($radius, $item-type);
 .dock--vertical {
   padding-top: $top-h - $interval;
 }
+
+// empty
+.layout__center:has(.layout__empty) {
+  padding-top: $top-h - $interval;
+  .layout-tab-container {
+    border-width: 1px;
+  }
+}

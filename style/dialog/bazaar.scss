@@ -75,7 +75,7 @@
 
     > .block__icon {
       @include icon-btn("pop", get($component-size, "base"), 12px, true);
-      &[data-type="install-t"] {
+      &:has(.ft__primary) {
         @include item("focus", 0, true);
         &:hover svg {
           color: get($text, "focus");
@@ -95,6 +95,11 @@
         > .block__icon {
           @include color-change("focus");
           @include item-focus(true);
+          &:has(.ft__primary) {
+            svg {
+              color: get($text, "focus");
+            }
+          }
         }
       }
     }

@@ -1,6 +1,13 @@
 # 版本日志 | Changelog 
 
 
+### [2.5.3](https://github.com/svchord/Rem-Craft/compare/v2.5.2...v2.5.3) (2022-11-29)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复linux环境下日历按钮的位置 ([c9ac24f](https://github.com/svchord/Rem-Craft/commit/c9ac24f2c269799ebc1605143f96f24248b6a451))
+
 ### [2.5.2](https://github.com/svchord/Rem-Craft/compare/v2.5.1...v2.5.2) (2022-11-29)
 
 

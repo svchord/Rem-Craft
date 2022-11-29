@@ -10,6 +10,7 @@ import {
 
 let center = document.getElementsByClassName("layout__center")[0];
 let customPrefix = prefix + "tabBar";
+const dockWidth = 40;
 
 /**
  * 定位左右上角页签栏
@@ -43,6 +44,48 @@ function setTabBarSelector(parent, direction) {
       // 上下分屏 或 左右分屏，定位方向为左上角
       return setTabBarSelector(children[0], direction);
     }
+  }
+}
+
+function getBtnsWidth(direction) {
+  const topBar = document.getElementById("toolbar");
+  const vip = document.getElementById("toolbarVIP");
+  const btnWidth = 38;
+  const macBtnsWidth = 69;
+  const winBtnsWidth = 46 * 3;
+  let btnNum = 0;
+
+  for (let i = 0; i < topBar.children.length; i++) {
+    const btn = topBar.children.item(i);
+    if (btn.classList.contains("toolbar__item")) {
+      btnNum++;
+    }
+    if (btn.id === "drag") {
+      if (direction === "left") {
+        break;
+      } else {
+        btnNum = 0;
+      }
+    }
+  }
+
+  let margin = 0;
+
+  if (direction === "left") {
+    if (vip.children.length === 2) {
+      btnNum++;
+    }
+    margin = btnNum * btnWidth;
+    if ("darwin" === window.siyuan.config.system.os) {
+      margin += macBtnsWidth;
+    }
+    return margin;
+  } else {
+    margin = btnNum * btnWidth - dockWidth;
+    if (document.getElementById("windowControls")) {
+      margin += winBtnsWidth;
+    }
+    return margin;
   }
 }
 
@@ -99,7 +142,7 @@ function setTabBarMargin(direction, margin) {
   });
 }
 
-function addDockWidth(direction, margin, dockWidth) {
+function addDockWidth(direction, margin) {
   if (!isDockExist(direction)) {
     setTabBarMargin(direction, margin + dockWidth);
   } else {
@@ -113,25 +156,14 @@ function addDockWidth(direction, margin, dockWidth) {
  * @param {String} direction - 设置外边距方向：left, right
  */
 function autoSetTabBarMargin(direction) {
-  let btnWidth = 38;
-  let dockWidth = 40;
-  let macBtnsWidth = 69;
-  let winBtnsWidth = 46 * 3;
-  let margin =
-    direction === "left"
-      ? "windows" === window.siyuan.config.system.os
-        ? btnWidth * 7
-        : btnWidth * 6 + macBtnsWidth
-      : "windows" === window.siyuan.config.system.os
-      ? btnWidth * 5 + winBtnsWidth - dockWidth
-      : btnWidth * 6 + 2;
+  let margin = getBtnsWidth(direction);
 
   setTabBarSelector(center, direction);
 
   // 判断边栏是否存在
-  addDockWidth(direction, margin, dockWidth);
+  addDockWidth(direction, margin);
   setDockObserver(direction, () => {
-    addDockWidth(direction, margin, dockWidth);
+    addDockWidth(direction, margin);
   });
 
   // 编辑区域监听

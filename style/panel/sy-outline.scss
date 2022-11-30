@@ -11,18 +11,21 @@
     margin: 0 8px 4px !important;
     padding-left: 8px;
     .b3-list-item {
+      &__graphic {
+        @include svg(list.$text-h, get($icon, "base"));
+        &:not(svg) {
+          @include emoji-icon(list.$text-h, 12px, get($icon, "base"));
+        }
+      }
       &__text {
         color: get($text, "primary");
-      }
-      &__graphic {
-        @include emoji-icon(list.$text-h, 12px, get($icon, "base"));
       }
     }
 
     &:not(:empty) {
       @include focus-before(math.div(list.$item-h - 16px, 2), 0px);
     }
-    
+
     &:empty {
       @include reset-style();
     }

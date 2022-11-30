@@ -8,23 +8,15 @@ $padding: $fn-space;
 $btn-h: get($component-size, "base");
 $form-h: 42px;
 
-@mixin search-item {
-  // @include component();
-}
+.b3-dialog__container:has(#searchList) {
+  width: 80vw !important;
+  .fn__flex-column[style*="80vh"] {
+    border-radius: big.$dialog-radius !important;
+  }
 
-.b3-dialog__container {
-  &[style*="80vw"] {
-    &:has(#searchList) {
-      width: 80vw !important;
-      .fn__flex-column[style*="80vh"] {
-        border-radius: big.$dialog-radius !important;
-      }
-    }
-
-    .fn__loading--top {
-      top: $form-h;
-      border-radius: big.$dialog-radius;
-    }
+  .fn__loading--top {
+    top: $form-h;
+    border-radius: big.$dialog-radius;
   }
 }
 
@@ -180,7 +172,7 @@ $form-h: 42px;
 }
 
 /*ctrl+p改造成左右排列*/
-.b3-dialog__container[style*="80vw"] {
+.b3-dialog__container:has(#searchList) {
   /*先把容器改成左右排列并自动换行*/
   > div > .fn__flex-column {
     flex-direction: row !important;

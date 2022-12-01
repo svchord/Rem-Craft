@@ -79,12 +79,14 @@ function getBtnsWidth(direction) {
     if ("darwin" === window.siyuan.config.system.os) {
       margin += macBtnsWidth;
     }
+    localStorage.setItem(`margin-${direction}`, margin);
     return margin;
   } else {
     margin = btnNum * btnWidth - dockWidth;
     if (document.getElementById("windowControls")) {
       margin += winBtnsWidth;
     }
+    localStorage.setItem(`margin-${direction}`, margin);
     return margin;
   }
 }
@@ -176,8 +178,7 @@ function autoSetTabBarMargin(direction) {
       addDockWidth(direction, margin, dockWidth);
 
       // 空白页监听
-      let empty = center.querySelector(".layout__empty");
-      if (empty !== null) {
+      if (center.querySelector(".layout__empty")) {
         setMutationObserver(
           center,
           "childList",

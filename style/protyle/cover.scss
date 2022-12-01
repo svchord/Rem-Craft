@@ -2,7 +2,7 @@
 @use "../common" as *;
 @use "icons";
 
-$icon-top: 96px;
+$icon-top: 64px;
 $icon-minus-top: 42px;
 $icon-h: 78px;
 
@@ -27,19 +27,19 @@ $btn-top-l: 80px;
 }
 
 .protyle-background {
-  //无题头图，有emoji
-  min-height: $icon-top + $icon-h + $btns-h !important;
+  // 无题头图，无emoji
+  min-height: $btn-top-l + $btns-h !important;
   box-sizing: content-box;
   margin: 0;
   padding: 0;
 
-  //文档icon + 题头按钮组
+  // 文档icon + 题头按钮组
   &__iconw {
     height: 0;
-    top: $icon-top;
+    top: $btn-top-l;
     display: block;
 
-    //题头按钮组
+    // 题头按钮组
     .protyle-icons {
       @include btns();
       margin: $btn-top 0 0 -1px;
@@ -55,15 +55,20 @@ $btn-top-l: 80px;
     }
   }
 
-  //无题头图，无emoji
-  &:has(.protyle-background__icon.fn__none) {
-    min-height: $btn-top-l + $btns-h !important;
+  // 无题头图，有emoji
+  &[style*="56px"],
+  &[style*="64px"],
+  &[style*="92px"],
+  // 有文档标签
+  &[style*="96px"],
+  &[style*="100px"] {
+    min-height: $icon-top + $icon-h + $btns-h !important;
     .protyle-background__iconw {
-      top: $btn-top-l;
+      top: $icon-top;
     }
   }
 
-  //有题头图
+  // 有题头图
   &[style*="30vh"] {
     min-height: 30vh !important;
     border-bottom: $icon-h - $icon-minus-top + $btns-h solid transparent;
@@ -71,18 +76,10 @@ $btn-top-l: 80px;
     // 有题头图，有emoji
     .protyle-background__iconw {
       top: calc(30vh - $icon-minus-top);
-    }
 
-    //有题头图，无emoji
-    &:has(.protyle-background__icon.fn__none) {
-      min-height: 30vh !important;
-      $temp: 8px;
-      border-bottom: $btns-h + $temp solid transparent;
-      .protyle-background__iconw {
-        top: 30vh;
-        .protyle-icons {
-          margin-top: $btn-top + $temp;
-        }
+      //有题头图，无emoji
+      .protyle-background__icon.fn__none + .protyle-icons {
+        margin-top: $icon-h + 8px;
       }
     }
   }

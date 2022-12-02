@@ -1,5 +1,5 @@
 @use "../../common" as *;
-@use "../../dialog/bazaar";
+@use "../selection";
 
 //块嵌入
 .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
@@ -8,12 +8,29 @@
   border: none;
 
   .protyle-wysiwyg__embed {
-    @include bazaar.card();
-    border-radius: get($radius, "base");
+    border: none;
     background-color: get($bg, "page", 1);
-    padding: 16px;
-    margin-bottom: 16px;
+    transition: get($transition, "all");
+    padding: 4px 8px;
     opacity: 1;
+    &:hover {
+      background-color: selection.$select-bg;
+      .dark & {
+        background-color: selection.$select-dark;
+      }
+    }
+
+    $embed-radius: get($radius, "base");
+    &:nth-child(2) {
+      border-radius: $embed-radius $embed-radius 0 0;
+    }
+    &:nth-last-child(3) {
+      border-radius: 0 0 $embed-radius $embed-radius;
+    }
+
+    &:not(:nth-last-child(3)) {
+      margin-bottom: 1px;
+    }
   }
 
   .protyle-icon {

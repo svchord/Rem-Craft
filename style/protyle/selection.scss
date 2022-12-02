@@ -1,10 +1,12 @@
 @use "../common" as *;
+$select-bg: rgba(var(--brand-6), 0.3);
+$select-dark: get($bg, "page", 4);
 
 ::selection {
-  background-color: rgba(var(--brand-6), 0.3);
+  background-color: $select-bg;
 
   .dark & {
-    background-color: get($bg, "page", 4);
+    background-color: $select-dark;
   }
 }
 

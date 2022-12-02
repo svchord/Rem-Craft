@@ -1,7 +1,9 @@
-
 @use "../common" as *;
 
 .viewer {
+  &-tooltip {
+    color: get($text, "primary");
+  }
   &-toolbar {
     > ul > li {
       svg {

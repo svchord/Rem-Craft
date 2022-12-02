@@ -5,7 +5,7 @@ import { setMutationObserver } from "./observer.js";
 // HTMLCollection 是类似数组的对象，需要通过slice强制转换为数组
 const layouts = document.getElementById("layouts").children;
 
-export const prefix = "rc-";
+export const prefix = "rc";
 
 export const layout = Array.prototype.slice.apply(layouts).filter((e) => {
   return (
@@ -29,7 +29,10 @@ export function isDockExist(direction) {
 export function setDockObserver(direction, func) {
   direction = fisrtToUpper(direction);
   let dock = document.getElementById(`dock${direction}`);
-  setMutationObserver(dock, "attributes", func, { attributes: true });
+  let dockObserver = setMutationObserver("attributes", func);
+  dockObserver.observe(dock, {
+    attributes: true,
+  });
 }
 
 export function getFolumn(direction) {

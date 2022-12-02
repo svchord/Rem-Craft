@@ -1,5 +1,5 @@
 import { config } from "../../script/config.js";
-import { setMutationObserver } from "../../util/observer.js";
+// import { setMutationObserver } from "../../util/observer.js";
 import { prefix, setWndPadding } from "../../util/layout.js";
 import { isDockExist, setDockObserver } from "../../util/layout.js";
 
@@ -57,7 +57,7 @@ function addDockMenu() {
   let menuBtn = addButton("wndBtn", "iconLeft", "打开选中边窗");
   let dockBtn = document.getElementById("barDock");
   let menu = dockBtn.querySelector(".b3-menu");
-  menu.classList.add(prefix + "dock-menu");
+  menu.classList.add(`${prefix}-dock-menu`);
   menuBtn.appendChild(menu);
 
   menuBtn.addEventListener("mouseover", () => {
@@ -75,21 +75,21 @@ function addDockMenu() {
   });
 }
 
-function autoSetMsgWidth() {
-  let msg = document.getElementsByClassName("status__msg")[0];
-  setMutationObserver(
-    msg,
-    "childList",
-    (observer, mutation) => {
-      let msgDom = mutation.target;
-      msgDom.style.maxWidth = "400px";
-      setTimeout(() => {
-        msgDom.style.maxWidth = "120px";
-      }, 1500);
-    },
-    { childList: true }
-  );
-}
+// function autoSetMsgWidth() {
+//   let msg = document.getElementsByClassName("status__msg")[0];
+//   setMutationObserver(
+//     msg,
+//     "childList",
+//     (observer, mutation) => {
+//       let msgDom = mutation.target;
+//       msgDom.style.maxWidth = "400px";
+//       setTimeout(() => {
+//         msgDom.style.maxWidth = "120px";
+//       }, 1500);
+//     },
+//     { childList: true }
+//   );
+// }
 
 function setStatusRight() {
   let status = document.getElementById("status");

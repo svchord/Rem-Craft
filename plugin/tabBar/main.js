@@ -1,210 +1,172 @@
 import { config } from "../../script/config.js";
-import { numToPx } from "../../util/convert.js";
+import { numToPx, pxToNum } from "../../util/convert.js";
 import { setResizeObserver, setMutationObserver } from "../../util/observer.js";
-import {
-  prefix,
-  isDockExist,
-  getFolumn,
-  setDockObserver,
-} from "../../util/layout.js";
+import { isDockExist, getFolumn, setDockObserver } from "../../util/layout.js";
 
-let center = document.getElementsByClassName("layout__center")[0];
-let customPrefix = prefix + "tabBar";
+const center = document.getElementsByClassName("layout__center")[0];
 const dockWidth = 40;
 
-/**
- * 定位左右上角页签栏
- *
- * @param {HTMLCollection} parent - layout__center
- * @param {String} direction - 定位方向：left, right
- */
-function setTabBarSelector(parent, direction) {
-  let children = Array.prototype.slice.apply(parent.children);
-  let isWnd = children.filter((e) => {
-    return e.dataset.type === "wnd";
-  });
+class TabBar {
+  constructor(direction) {
+    this.direction = direction;
+    this.bar = this.getBar(center);
+    this.maxMargin = this.getMaxMargin();
+    this.folumn = getFolumn(direction);
+    this.start();
+  }
 
-  // 定位到编辑窗口
-  if (isWnd.length > 0) {
-    let tabBar = isWnd[0].children[0];
-    // 判断是否显示页签栏
-    if (!tabBar.classList.contains("fn__none")) {
-      tabBar.classList.add(`${customPrefix}-${direction}`);
-      return;
-    }
-  } else {
-    // 未定位到，即分屏情况
-    let isSplitScreen = children.filter((e) => {
-      return e.classList.contains("layout__resize--lr");
+  getBar(parent) {
+    let children = Array.prototype.slice.apply(parent.children);
+    let isWnd = children.filter((e) => {
+      return e.dataset.type === "wnd";
     });
-    if (isSplitScreen.length === 1 && direction === "right") {
-      // 左右分屏 且 定位方向为右上角
-      return setTabBarSelector(children[2], direction);
+
+    // 定位到编辑窗口
+    if (isWnd.length > 0) {
+      let tabBar = isWnd[0].children[0];
+      // 判断是否显示页签栏
+      if (!tabBar.classList.contains("fn__none")) {
+        return tabBar;
+      }
     } else {
-      // 上下分屏 或 左右分屏，定位方向为左上角
-      return setTabBarSelector(children[0], direction);
-    }
-  }
-}
-
-function getBtnsWidth(direction) {
-  const topBar = document.getElementById("toolbar");
-  const vip = document.getElementById("toolbarVIP");
-  const btnWidth = 38;
-  const macBtnsWidth = 69;
-  const winBtnsWidth = 46 * 3;
-  let btnNum = 0;
-
-  for (let i = 0; i < topBar.children.length; i++) {
-    const btn = topBar.children.item(i);
-    if (btn.classList.contains("toolbar__item")) {
-      btnNum++;
-    }
-    if (btn.id === "drag") {
-      if (direction === "left") {
-        break;
+      // 未定位到，即分屏情况
+      let isSplitScreen = children.filter((e) => {
+        return e.classList.contains("layout__resize--lr");
+      });
+      if (isSplitScreen.length > 0 && this.direction === "right") {
+        // 左右分屏 且 定位方向为右上角
+        return this.getBar(children[children.length - 1]);
       } else {
-        btnNum = 0;
+        // 上下分屏 或 左右分屏，定位方向为左上角
+        return this.getBar(children[0]);
       }
     }
   }
 
-  let margin = 0;
+  getMaxMargin() {
+    const topBar = document.getElementById("toolbar");
+    const vip = document.getElementById("toolbarVIP");
+    const btnWidth = 38;
+    const macBtnsWidth = 69;
+    const winBtnsWidth = 46 * 3;
+    let btnNum = 0;
 
-  if (direction === "left") {
-    if (vip.children.length === 2) {
-      btnNum++;
-    }
-    margin = btnNum * btnWidth;
-    if ("darwin" === window.siyuan.config.system.os) {
-      margin += macBtnsWidth;
-    }
-    localStorage.setItem(`margin-${direction}`, margin);
-    return margin;
-  } else {
-    margin = btnNum * btnWidth - dockWidth;
-    if (document.getElementById("windowControls")) {
-      margin += winBtnsWidth;
-    }
-    localStorage.setItem(`margin-${direction}`, margin);
-    return margin;
-  }
-}
-
-/**
- * 设置元素的左右外边距
- *
- * @param {Element} element - 设置的元素
- * @param {String} direction - 外边距方向
- * @param {String} value - 外边距大小
- */
-function setMargin(element, direction, value) {
-  if (direction === "left") {
-    element.style.marginLeft = numToPx(value);
-  } else {
-    element.style.marginRight = numToPx(value);
-  }
-}
-
-/**
- * 重置标记选择器
- *
- * @param {String} direction - 定位方向：left, right
- */
-function resetSelector(direction) {
-  let tabBar = document.getElementsByClassName(`${customPrefix}-${direction}`);
-  if (tabBar.length > 0) {
-    setMargin(tabBar[0], direction, 0);
-    tabBar[0].classList.remove(`${customPrefix}-${direction}`);
-  }
-  setTabBarSelector(center, direction);
-}
-
-/**
- * 监听边窗宽度，设置页签栏外边距
- *
- * @param {String} direction - 定位方向：left, right
- * @param {Number} margin - 外边距的值
- */
-function setTabBarMargin(direction, margin) {
-  let folumn = getFolumn(direction);
-  setResizeObserver(folumn, (entry) => {
-    let folumnWidth = entry.contentBoxSize[0].inlineSize;
-    let tabBar = document.getElementsByClassName(
-      `${customPrefix}-${direction}`
-    );
-    if (tabBar.length > 0) {
-      if (folumnWidth >= 0 && folumnWidth <= margin) {
-        let marginTmp = margin - folumnWidth;
-        setMargin(tabBar[0], direction, marginTmp);
-      } else {
-        setMargin(tabBar[0], direction, 0);
+    for (let i = 0; i < topBar.children.length; i++) {
+      const btn = topBar.children.item(i);
+      if (btn.classList.contains("toolbar__item")) {
+        btnNum++;
+      }
+      if (btn.id === "drag") {
+        if (this.direction === "left") {
+          break;
+        } else {
+          btnNum = 0;
+        }
       }
     }
-  });
-}
 
-function addDockWidth(direction, margin) {
-  if (!isDockExist(direction)) {
-    setTabBarMargin(direction, margin + dockWidth);
-  } else {
-    setTabBarMargin(direction, margin);
+    let margin = 0;
+
+    if (this.direction === "left") {
+      if (vip.children.length === 2) {
+        btnNum++;
+      }
+      margin = btnNum * btnWidth;
+      if ("darwin" === window.siyuan.config.system.os) {
+        margin += macBtnsWidth;
+      }
+      return margin;
+    } else {
+      margin = btnNum * btnWidth - dockWidth;
+      if (document.getElementById("windowControls")) {
+        margin += winBtnsWidth;
+      }
+      return margin;
+    }
   }
-}
 
-/**
- * 根据边栏的宽度给顶部页签栏设置外边距
- *
- * @param {String} direction - 设置外边距方向：left, right
- */
-function autoSetTabBarMargin(direction) {
-  let margin = getBtnsWidth(direction);
+  setMargin(value) {
+    if (this.direction === "left") {
+      this.bar.style.marginLeft = numToPx(value);
+    } else {
+      this.bar.style.marginRight = numToPx(value);
+    }
+  }
 
-  setTabBarSelector(center, direction);
+  autoSetMargin(folumnWidth) {
+    if (this.bar) {
+      if (folumnWidth >= 0 && folumnWidth <= this.maxMargin) {
+        this.setMargin(this.maxMargin - folumnWidth);
+      } else {
+        this.setMargin(0);
+      }
+    }
+  }
 
-  // 判断边栏是否存在
-  addDockWidth(direction, margin);
-  setDockObserver(direction, () => {
-    addDockWidth(direction, margin);
-  });
+  addDockWidth() {
+    if (!isDockExist(this.direction)) {
+      this.maxMargin = this.getMaxMargin() + dockWidth;
+      this.autoSetMargin(pxToNum(this.folumn.style.width));
+    } else {
+      this.maxMargin = this.getMaxMargin();
+      this.autoSetMargin(pxToNum(this.folumn.style.width));
+    }
+  }
 
-  // 编辑区域监听
-  setMutationObserver(
-    center,
-    "childList",
-    () => {
+  resetBar() {
+    if (this.bar) {
+      this.setMargin(0);
+      this.bar = this.getBar(center);
+      this.autoSetMargin(pxToNum(this.folumn.style.width));
+    } else {
+      this.bar = this.getBar(center);
+    }
+  }
+
+  start() {
+    let folumnObserver = setResizeObserver((entry) => {
+      let folumnWidth = entry.contentBoxSize[0].inlineSize;
+      this.autoSetMargin(folumnWidth);
+    });
+    folumnObserver.observe(this.folumn);
+
+    // 判断边栏是否存在
+    this.addDockWidth();
+    setDockObserver(this.direction, () => {
+      this.addDockWidth();
+    });
+
+    // 编辑区域监听
+    let centerObserver = setMutationObserver("childList", (mutation) => {
       // 分屏监听
-      resetSelector(direction);
-      addDockWidth(direction, margin, dockWidth);
-
-      // 空白页监听
-      if (center.querySelector(".layout__empty")) {
-        setMutationObserver(
-          center,
-          "childList",
-          (observer) => {
-            if (center.querySelector(".layout__empty") === null) {
-              resetSelector(direction);
-              addDockWidth(direction, margin, dockWidth);
-              observer.disconnect();
-            }
-          },
-          {
-            childList: true,
-            subtree: true,
-          }
-        );
+      if (
+        mutation?.addedNodes[0]?.classList?.contains("layout__resize") ||
+        mutation?.removedNodes[0]?.classList?.contains("layout__resize")
+      ) {
+        this.resetBar();
+        this.addDockWidth();
       }
-    },
-    {
+      // 空白页监听
+      if (mutation?.removedNodes[0]?.nodeType === 1) {
+        if (mutation.removedNodes[0].querySelector(".layout__empty")) {
+          this.resetBar();
+          this.addDockWidth();
+        }
+      }
+    });
+
+    centerObserver.observe(center, {
       childList: true,
-    }
-  );
+      subtree: true,
+    });
+  }
 }
 
 export function tabBarMain() {
+  let barLeft = null;
+  let barRight = null;
   if (config.plugin.tabBar) {
-    autoSetTabBarMargin("left");
-    autoSetTabBarMargin("right");
+    barLeft = new TabBar("left");
+    barRight = new TabBar("right");
   }
 }

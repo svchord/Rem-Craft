@@ -27,7 +27,7 @@ function getFocusedBlock() {
 function setSelector(block) {
   while (block != null && !block.classList.contains("protyle-wysiwyg")) {
     if (block.dataset.nodeId != null) {
-      block.classList.add(prefix + "focus");
+      block.classList.add(`${prefix}-focus`);
     }
     block = block.parentElement;
   }
@@ -37,15 +37,15 @@ function focusHandler() {
   /* 获取当前编辑区 */
   let block = getFocusedBlock(); // 当前光标所在块
   /* 当前块已经设置焦点 */
-  if (block?.classList.contains(prefix + "focus")) return;
+  if (block?.classList.contains(`${prefix}-focus`)) return;
 
   /* 当前块未设置焦点 */
   const editor = getTargetEditor(block); // 当前光标所在块位于的编辑区
   if (editor) {
     editor
-      .querySelectorAll("." + prefix + "focus")
-      .forEach((element) => element.classList.remove(prefix + "focus"));
-    block.classList.add(prefix + "focus");
+      .querySelectorAll(`.${prefix}-focus`)
+      .forEach((element) => element.classList.remove(`${prefix}-focus`));
+    block.classList.add(`${prefix}-focus`);
     // setSelector(block);
   }
 }

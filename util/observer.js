@@ -4,15 +4,13 @@
  * @param {Element} element - 被监听的元素
  * @param {Function} func - 获取尺寸后的操作
  */
-export function setResizeObserver(element, func) {
+export function setResizeObserver(func) {
   let callBack = function (entries, observer) {
     for (const entry of entries) {
       func(entry, observer);
     }
   };
-
-  const resizeObserver = new ResizeObserver(callBack);
-  resizeObserver.observe(element);
+  return new ResizeObserver(callBack);
 }
 
 /**
@@ -21,15 +19,14 @@ export function setResizeObserver(element, func) {
  * @param {Element} element - 被监听的元素
  * @param {Function} func - 获取事件后的操作
  */
-export function setMutationObserver(element, type, func, observerOptions) {
+export function setMutationObserver(type, func) {
   let callBack = function (mutationList, observer) {
     mutationList.forEach((mutation) => {
       switch (mutation.type) {
         case type:
-          func(observer, mutation);
+          func(mutation, observer);
       }
     });
   };
-  const mutationObserver = new MutationObserver(callBack);
-  mutationObserver.observe(element, observerOptions);
+  return new MutationObserver(callBack);
 }

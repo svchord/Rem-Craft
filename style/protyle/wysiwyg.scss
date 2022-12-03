@@ -70,6 +70,13 @@ $item-pad: 3px 2px;
 
   &-scroll {
     right: 25px !important;
+    &__bar {
+      opacity: 0.3;
+      transition: get($transition, "all");
+      &:hover {
+        opacity: 1;
+      }
+    }
     &__up,
     &__down {
       @include icon-btn("page", 24px, 12px);

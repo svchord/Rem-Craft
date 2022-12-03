@@ -9,6 +9,19 @@ $left: 0 - math.div($action-w, 2) - 1px;
 $top: 0 - math.div($action-w, 2) - 3px;
 $height: $action-h + 4px;
 
+@mixin border {
+  content: "";
+  display: block;
+  position: absolute;
+  width: $width;
+  left: $left;
+  top: $top;
+  border: {
+    style: solid;
+    color: get($text, "brand");
+  }
+}
+
 .protyle-wysiwyg [data-node-id].li:has(.rc-focus) {
   > .protyle-action {
     color: get($text, "brand");
@@ -16,49 +29,69 @@ $height: $action-h + 4px;
       @include svg(16px);
     }
   }
-  > .list:has(.rc-focus) > .li {
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      width: $width;
-      left: $left;
-      top: $top;
-      border: {
-        style: solid;
-        color: get($text, "brand");
+
+  .list:has(.rc-focus) {
+    > .li {
+      &::after {
+        @include border();
+      }
+
+      &:not(:has(.rc-focus))::after {
+        bottom: -2px;
+        border: {
+          width: 0 0 0 2px;
+        }
+      }
+
+      &:has(.rc-focus) {
+        &::after {
+          height: $height;
+          border: {
+            radius: 0 0 0 get($radius, "large");
+            width: 0 0 2px 2px;
+          }
+        }
+
+        ~ .li:not(:has(.rc-focus))::after {
+          border-color: transparent;
+        }
+      }
+      // 子列表项为有序列表项
+      &[data-subtype="o"]::after {
+        width: $width - 10px;
+      }
+
+      // 子列表项为待办列表项
+      &[data-subtype="t"]::after {
+        width: $width - 6px;
       }
     }
+  }
 
-    &:not(:has(.rc-focus))::after {
-      bottom: -2px;
+  > [data-node-id] {
+    &::after {
+      @include border();
+      top: math.div($action-w, 2) + 3px;
+      height: calc(100% + 4px);
       border: {
         width: 0 0 0 2px;
       }
     }
-
-    &:has(.rc-focus) {
-      &::after {
-        height: $height;
-        border: {
-          radius: 0 0 0 get($radius, "large");
-          width: 0 0 2px 2px;
-        }
-      }
-
-      ~ .li:not(:has(.rc-focus))::after {
-        display: none;
-      }
+    // 列表子块的前一个块辅助线去掉毛边
+    &:has(+ .list)::after {
+      height: auto !important;
+      bottom: 0;
     }
-    // 子列表项为有序列表项
-    &[data-subtype="o"]::after {
-      width: $width - 10px;
+    // 焦点列表块
+    &.list:has(.rc-focus)::after,
+    // 焦点列表块后的块
+    &.list:has(.rc-focus) ~ [data-node-id]::after {
+      border-color: transparent;
     }
+  }
 
-    // 子列表项为待办列表项
-    &[data-subtype="t"]::after {
-      width: $width - 6px;
-    }
+  &:has(> .rc-focus) > [data-node-id]::after {
+    border-color: transparent;
   }
 
   // 列表项为有序列表项

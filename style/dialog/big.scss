@@ -18,6 +18,7 @@ $search-h: 42px;
 //弹窗
 //蒙版
 .b3-dialog__scrim {
+  -webkit-app-region: no-drag;
   background-color: $dialog-scrim;
 }
 

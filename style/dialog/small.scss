@@ -168,7 +168,14 @@ $small-radius: big.$dialog-radius;
     width: 360px !important;
     .b3-dialog {
       &__content {
-        padding: 28px $padding;
+        &:has(> .b3-text-field) {
+          padding: 28px $padding;
+        }
+
+        &[style*="height"] {
+          height: auto !important;
+          padding: 0px $padding;
+        }
         .b3-text-field {
           @include component("medium");
         }

@@ -14,6 +14,10 @@ $form-h: 42px;
     border-radius: big.$dialog-radius !important;
   }
 
+  .search__header {
+    width: 100% !important;
+  }
+
   .fn__loading--top {
     top: $form-h;
     border-radius: big.$dialog-radius;
@@ -22,41 +26,42 @@ $form-h: 42px;
 
 .search {
   &__header {
-    @include form.search-input($form-h, 0, 16px);
+    &.b3-form__icon {
+      @include form.search-input($form-h, 0, 16px);
 
-    // 搜索文本框
-    .b3-text-field {
-      flex-shrink: unset;
-      border: none !important;
-      background-color: get($bg, "page", 1);
+      // 搜索文本框
+      .b3-text-field {
+        flex-shrink: unset;
+        border: none !important;
+        background-color: get($bg, "page", 1);
 
-      &#searchInput,
-      &#replaceInput {
-        padding-left: $form-h + $fn-space !important;
+        &#searchInput,
+        &#replaceInput {
+          padding-left: $form-h + $fn-space !important;
+        }
+
+        &:hover,
+        &:focus {
+          box-shadow: unset;
+          border: none;
+        }
       }
 
-      &:hover,
-      &:focus {
-        box-shadow: unset;
-        border: none;
-      }
-    }
-
-    .block__icons {
-      border-radius: 0 big.$dialog-radius 0 0;
-      height: $form-h;
-      padding: math.div($form-h - 28px, 2) $fn-space;
-      .block__icon {
-        opacity: 1;
-        @include svg-div(28px, 12px, $important: true);
+      .block__icons {
+        border-radius: 0 big.$dialog-radius 0 0;
+        height: $form-h;
+        padding: math.div($form-h - 28px, 2) $fn-space;
+        .block__icon {
+          @include svg-div(28px, 12px, $important: true);
+        }
       }
     }
 
     // 搜索结果筛选行
-    + .b3-form__space--small {
+    &.fn__flex {
       margin: 0;
       height: $form-h;
-      padding: 0 $fn-space 0 $fn-space * 2;
+      padding: 0 $fn-space 0 $fn-space * 2 !important;
       border-bottom: $fn-border;
       .block__icon {
         @include svg-div(28px, 12px, $important: true);
@@ -65,6 +70,7 @@ $form-h: 42px;
 
       #searchResult {
         @include v-center($form-h);
+        margin: 0;
       }
 
       #searchPathInput:not(:empty) {
@@ -83,6 +89,10 @@ $form-h: 42px;
           top: math.div(get($component-size, "base") - $w, 2) - 1px;
           right: math.div(get($component-size, "base") - $w, 2) - 1px;
         }
+      }
+
+      #searchInclude{
+        margin: auto 0;
       }
     }
   }
@@ -171,64 +181,3 @@ $form-h: 42px;
   }
 }
 
-/*ctrl+p改造成左右排列*/
-.b3-dialog__container:has(#searchList) {
-  /*先把容器改成左右排列并自动换行*/
-  > div > .fn__flex-column {
-    flex-direction: row !important;
-    flex-wrap: wrap;
-  }
-
-  /*设置需要占满一行的项目*/
-  .search__header,
-  .b3-form__space--small {
-    width: 100%;
-  }
-
-  /*窗口宽度大于一定尺寸时候，左右排列*/
-  @media screen and (min-width: 960px) {
-    /*搜索结果列表占一半宽度，靠左排列*/
-    #searchList {
-      float: left;
-      width: 45%;
-      border-right: $fn-border;
-    }
-
-    /*结果预览自动占满剩余宽度，高度和结果列表等高*/
-    #searchPreview {
-      border: none;
-      border-radius: 0 0 big.$dialog-radius;
-    }
-
-    //替换界面高度
-    #searchList,
-    #searchPreview {
-      height: calc(100% - ($form-h + 1px) * 3) !important;
-    }
-
-    // 搜索界面
-    .search__header.fn__none {
-      ~ #searchList,
-      ~ #searchPreview {
-        height: calc(100% - ($form-h + 1px) * 2) !important;
-      }
-    }
-  }
-
-  /*窗口宽度小于一定尺寸时候，上下排列*/
-  @media screen and (max-width: 960px) {
-    #searchList {
-      width: 100%;
-    }
-  }
-}
-
-/* 修复搜索文章不能完整显示的问题 */
-// .protyle-content {
-//   .spread-search__preview & {
-//     padding-bottom: 56px;
-//   }
-//   div[data-key="⌘R"] #searchPreview & {
-//     padding-bottom: 90px;
-//   }
-// }

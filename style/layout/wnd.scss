@@ -66,8 +66,9 @@ $scale: scale(0.1);
     > .fn__flex {
       overflow: hidden;
       // transition: all $time $func 0s;
+      min-height: 0px !important;
       animation: open $time forwards $func;
-      
+
       // 隐藏的边窗
       &.fn__none {
         display: flex !important;

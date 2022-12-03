@@ -75,12 +75,17 @@ class TabBar {
       if ("darwin" === window.siyuan.config.system.os) {
         margin += macBtnsWidth;
       }
+      margin -= 8;
       return margin;
     } else {
       margin = btnNum * btnWidth - dockWidth;
       if (document.getElementById("windowControls")) {
         margin += winBtnsWidth;
       }
+      if ("darwin" === window.siyuan.config.system.os) {
+        margin += 2;
+      }
+      margin -= 8;
       return margin;
     }
   }

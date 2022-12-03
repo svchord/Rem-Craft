@@ -1,18 +1,22 @@
+import { config } from "./config.js";
 import { getFolumn } from "../util/layout.js";
 
-function setWnd(folumn, directionLR, directionTB) {
-  let wnd =
-    directionTB === "top" ? folumn.firstElementChild : folumn.lastElementChild;
-  wnd.style.transformOrigin = directionTB + " " + directionLR;
-}
-
-function setFolumn(direction) {
-  let folumn = getFolumn(direction);
-  setWnd(folumn, direction, "top");
-  setWnd(folumn, direction, "bottom");
+class Wnd {
+  constructor(directionLR, directionTB) {
+    this.wnd =
+      directionTB === "top"
+        ? getFolumn(directionLR).firstElementChild
+        : getFolumn(directionLR).lastElementChild;
+    this.setWnd(directionLR, directionTB);
+  }
+  setWnd(directionLR, directionTB) {
+    this.wnd.style.transformOrigin = directionTB + " " + directionLR;
+  }
 }
 
 export function wndMain() {
-  setFolumn("left");
-  setFolumn("right");
+  new Wnd("left", "top");
+  new Wnd("left", "bottom");
+  new Wnd("right", "top");
+  new Wnd("right", "bottom");
 }

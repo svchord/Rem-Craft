@@ -104,7 +104,7 @@
 }
 
 @mixin list-root {
-  background-color: get($bg, "page", 2);
+  // background-color: get($bg, "page", 2);
   // font-weight: 600;
   // border: $fn-border;
   //   &--focus {

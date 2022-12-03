@@ -81,9 +81,12 @@ $padding: $fn-space;
 
   // 边窗顶栏logo
   &__logo {
+    font-weight: 700;
+    color: get($text, "primary");
     svg {
       @include svg(get($icon, "small"));
       margin: 0 $padding;
+      color: get($text, "focus");
     }
     // margin-right: $padding * 2;
   }

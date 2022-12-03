@@ -7,25 +7,32 @@
 $per: 0.9;
 
 .sy__backlink {
+  .b3-list {
+    margin: 0 !important;
+    padding: 0 $fn-space;
+  }
+
   [data-treetype="backlink"].b3-list-item {
-    @include list-root();
-    + div {
-      box-shadow: 10px 0 rgba(var(--page-1), 1) inset,
-        11px 0 rgba(var(--border-3), 1) inset;
-    }
+    // @include list-root();
+    // + div {
+    //   box-shadow: 10px 0 rgba(var(--page-1), 1) inset,
+    //     11px 0 rgba(var(--border-3), 1) inset;
+    // }
     &:not(:first-child) {
       margin-top: $interval !important;
     }
   }
   .protyle {
-    // box-shadow: get($shadow, 1);
+    border: $fn-border;
+    border-radius: get($radius, "base");
 
     &-breadcrumb {
       &__bar {
-        // border: $fn-border;
-        border-radius: 4px;
-        box-shadow: get($shadow, 0);
-        padding: 0 4px;
+        margin-bottom: 18px;
+        &:not(:first-child) {
+          margin-top: 18px;
+          border-top: $fn-border;
+        }
       }
       &__item[style*="max-width"][style*="100%"] {
         margin-bottom: 8px;
@@ -33,9 +40,12 @@ $per: 0.9;
       }
     }
     &-wysiwyg {
-      padding-bottom: 5px !important;
-      padding-right: 5px !important;
+      padding: 5px !important;
       [data-node-id] {
+        margin-left: 24px;
+        &:last-child {
+          margin-bottom: 18px;
+        }
         [contenteditable] {
           font-size: math.percentage($per);
         }
@@ -43,6 +53,7 @@ $per: 0.9;
     }
 
     &-gutters {
+
       button {
         @include svg-div(
           gutters.$w * $per,

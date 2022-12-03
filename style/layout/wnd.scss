@@ -10,7 +10,7 @@ $wnd-radius: get($radius, "medium");
 //边窗动画
 $time: get($transition-duration, "base");
 $func: get($transition-function, "ease-in-out");
-$scale: scale(0.1);
+$scale: scale(0.01);
 
 :root {
   // 动画效果
@@ -23,7 +23,6 @@ $scale: scale(0.1);
 @keyframes close {
   from {
     opacity: 1;
-    transform: scale(1);
     max-height: 100%;
   }
 
@@ -37,13 +36,11 @@ $scale: scale(0.1);
 @keyframes open {
   from {
     opacity: 0;
-    transform: $scale;
     max-height: 0;
   }
 
   to {
     opacity: 1;
-    transform: scale(1);
     max-height: 100%;
   }
 }
@@ -65,18 +62,19 @@ $scale: scale(0.1);
     // 显示的边窗
     > .fn__flex {
       overflow: hidden;
-      // transition: all $time $func 0s;
       min-height: 0px !important;
+      height: auto;
+      // transition: all $time $func 0s !important;
       animation: open $time forwards $func;
+
+      > div[data-type="wnd"] {
+        @include wnd;
+      }
 
       // 隐藏的边窗
       &.fn__none {
         display: flex !important;
         animation: close $time forwards $func;
-      }
-
-      > div[data-type="wnd"] {
-        @include wnd;
       }
     }
   }
@@ -97,7 +95,7 @@ $scale: scale(0.1);
       // 列表
       > .b3-list {
         min-width: 200px;
-        margin: 0px 8px 8px;
+        margin: 0px 8px 4px;
         &:last-child {
           margin-bottom: 0;
         }

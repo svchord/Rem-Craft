@@ -79,7 +79,7 @@ $height: $action-h + 4px;
     }
     // 列表子块的前一个块辅助线去掉毛边
     &:has(+ .list)::after {
-      height: auto !important;
+      height: auto;
       bottom: 0;
     }
     // 焦点列表块

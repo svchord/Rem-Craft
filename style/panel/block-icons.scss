@@ -86,7 +86,7 @@ $padding: $fn-space;
     svg {
       @include svg(get($icon, "small"));
       margin: 0 $padding;
-      color: get($text, "focus");
+      color: get($text, "brand");
     }
     // margin-right: $padding * 2;
   }

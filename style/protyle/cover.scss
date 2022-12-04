@@ -9,7 +9,7 @@ $icon-h: 78px;
 $btn-top: 8px;
 $btn-h: 28px;
 $btns-h: $btn-top + $btn-h;
-$btn-top-l: 80px;
+$btn-top-l: 32px;
 
 // 按钮组
 @mixin btns($h: $btn-h, $type: "placeholder", $fz: 14px) {

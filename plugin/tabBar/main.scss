@@ -267,7 +267,7 @@ $item-radius: get($radius, $item-type);
   .layout-tab-container {
     border-radius: get($radius, "medium");
     border: $fn-border;
-    border-width: 0 1px 1px 1px;
+    border-top: 1px solid transparent;
     box-shadow: 0 -1px 0 0 get($border, 3);
   }
 }

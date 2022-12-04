@@ -35,10 +35,7 @@
   }
 
   &__svg {
-    background-color: get($bg, "page", 1);
-    .body--blur & {
-      background-color: get($bg, "page", 1);
-    }
+    background-color: get($bg, "page", 1) !important;
   }
 
   &__loading {

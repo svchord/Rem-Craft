@@ -4,7 +4,7 @@
 //块嵌入
 .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
   background-color: get($bg, "base", 1);
-  padding: 36px 16px 16px;
+  padding: 32px 16px 16px;
   border: none;
 
   .protyle-wysiwyg__embed {
@@ -22,10 +22,12 @@
 
     $embed-radius: get($radius, "base");
     &:nth-child(2) {
-      border-radius: $embed-radius $embed-radius 0 0;
+      border-top-left-radius: $embed-radius;
+      border-top-right-radius: $embed-radius;
     }
     &:nth-last-child(3) {
-      border-radius: 0 0 $embed-radius $embed-radius;
+      border-bottom-left-radius: $embed-radius;
+      border-bottom-right-radius: $embed-radius;
     }
 
     &:not(:nth-last-child(3)) {

@@ -90,6 +90,7 @@ $height: $action-h + 4px;
     }
   }
 
+  &[fold="1"] > [data-node-id]::after,
   &:has(> .rc-focus) > [data-node-id]::after {
     border-color: transparent;
   }

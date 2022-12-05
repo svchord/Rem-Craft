@@ -295,6 +295,6 @@ $item-radius: get($radius, $item-type);
 .layout__center:has(.layout__empty) {
   padding-top: $top-h - $interval;
   .layout-tab-container {
-    border-width: 1px;
+    border-top: $fn-border;
   }
 }

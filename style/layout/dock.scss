@@ -13,6 +13,7 @@ $dock-w: $item-w + $interval * 2;
   .dock__item {
     @include item("base");
     @include svg-div($item-w, 14px);
+    -webkit-app-region: no-drag;
     color: get($text, "secondary");
     border-radius: get($radius, "base");
 
@@ -33,7 +34,8 @@ $dock-w: $item-w + $interval * 2;
 
 //边栏
 .dock--vertical {
-  width: $item-w;
+  width: $item-w + $interval;
+  -webkit-app-region: drag;
   background-color: transparent;
 
   div:first-child:not(:empty) {
@@ -47,12 +49,12 @@ $dock-w: $item-w + $interval * 2;
   }
 
   &#dockLeft {
-    margin-left: $interval;
+    padding-left: $interval;
     border: none;
   }
 
   &#dockRight {
-    margin-right: $interval;
+    padding-right: $interval;
     border: none;
 
     .dock__item--active::before {

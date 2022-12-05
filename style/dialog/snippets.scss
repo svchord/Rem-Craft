@@ -3,6 +3,17 @@
 @use "history";
 @use "small";
 
+@mixin medium-actions {
+  @include history.bar();
+  @include small.actions();
+  .fn__space {
+    width: 16px;
+  }
+  .b3-button {
+    width: 120px;
+  }
+}
+
 .b3-dialog__container:has(#addCodeSnippetCSS) {
   width: 50vw !important;
   div[style*="60vh"] {
@@ -23,17 +34,10 @@
   }
 
   .b3-dialog__close {
-    display: none;
+    @include small.close();
   }
-  
+
   .b3-dialog__action {
-    @include history.bar();
-    @include small.actions();
-    .fn__space {
-      width: 16px;
-    }
-    .b3-button {
-      width: 120px;
-    }
+    @include medium-actions();
   }
 }

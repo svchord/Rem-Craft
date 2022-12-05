@@ -33,6 +33,15 @@ $small-radius: big.$dialog-radius;
   }
 }
 
+@mixin close {
+  @include item-close();
+  @include component();
+  @include svg($w, 8px);
+  background-color: get($bg, "page", 2);
+  top: $spacing;
+  right: $spacing;
+}
+
 //小弹窗
 .b3-dialog__container {
   &[style*="50vw"],
@@ -67,12 +76,7 @@ $small-radius: big.$dialog-radius;
 
       //弹窗关闭按钮
       &__close {
-        @include item-close();
-        @include component();
-        @include svg($w, 8px);
-        background-color: get($bg, "page", 2);
-        top: $spacing;
-        right: $spacing;
+        @include close();
       }
 
       // 属性弹窗
@@ -171,13 +175,14 @@ $small-radius: big.$dialog-radius;
         &:has(> .b3-text-field) {
           padding: 28px $padding;
         }
+        > .b3-text-field {
+          @include component("medium");
+          border-radius: get($radius, "base");
+        }
 
         &[style*="height"] {
           height: auto !important;
           padding: 0px $padding;
-        }
-        .b3-text-field {
-          @include component("medium");
         }
       }
     }

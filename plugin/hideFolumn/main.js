@@ -6,6 +6,13 @@ class hideFolumn {
     this.wakeUpArea = this.getArea(direction);
   }
   getArea(direction) {
-    document.body.insertAdjacentHTML("afterend", `<div id="${direction}-area"></div>`);
+    document.body.insertAdjacentHTML(
+      "afterend",
+      `<div id="${direction}-area" class="hide-area">
+    <div class="hide-btn">
+      
+    </div>
+  </div>`
+    );
   }
 }

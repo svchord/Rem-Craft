@@ -29,10 +29,10 @@ $per: 0.85;
           border-top: $fn-border;
         }
       }
-      &__item[style*="max-width"][style*="100%"] {
-        margin-bottom: 8px;
-        margin-top: -18px;
-      }
+    }
+
+    &:hover .protyle-breadcrumb__item[style*="max-width"][style*="100%"] {
+      @include item("component");
     }
     &-wysiwyg {
       padding: 5px !important;

@@ -42,11 +42,11 @@ $util-radius: get($radius, "medium");
       }
     }
 
-    // 最近使用过的样式
-    > .fn__flex:nth-child(2) {
-      // 清除样式
-      button[style*="margin-right"] {
-        margin-right: $fn-space !important;
+    // 清除样式
+    button[data-type="clear"] {
+      margin-top: $interval;
+      svg {
+        margin-right: $interval;
       }
     }
   }

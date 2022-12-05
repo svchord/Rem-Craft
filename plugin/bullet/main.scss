@@ -13,6 +13,7 @@ $height: $action-h + 4px;
   content: "";
   display: block;
   position: absolute;
+  pointer-events: none;
   width: $width;
   left: $left;
   top: $top;

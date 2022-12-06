@@ -35,6 +35,7 @@
 
   .b3-dialog__close {
     @include small.close();
+    z-index: 2;
   }
 
   .b3-dialog__action {

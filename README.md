@@ -5,7 +5,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/svchord/Rem-Craft)
 ![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hy/svchord/Rem-Craft?label=hits)
 
-一款现代化、平面化设计的思源笔记主题
+一款现代化、扁平化设计的思源笔记主题
 
 <img width="1280" alt="preview" src="https://user-images.githubusercontent.com/61345763/203089325-75a4d1c7-9b59-43a1-b98d-9c1bb0dcd63e.png">
 
@@ -13,7 +13,7 @@
 
 ### 最新
 
-1. 边栏除了按钮以外的区域都可以拖拽窗口
+1. 左右边栏除了按钮以外的区域都可以拖拽窗口
 
 ### 其他
 
@@ -23,7 +23,7 @@
 
 3. 顶栏除了按钮以外的区域都可以拖拽窗口
 
-4. 页签栏有概率被顶栏按钮覆盖，重启软件即可解决
+4. 极端情况下，页签栏可能会被顶栏按钮覆盖，重启软件即可解决
 
 5. 鼠标点击右下角问号按钮，菜单才会持续显示，再次点击按钮或者点击周围空白处即可关闭，指南文档按钮在右上方
 

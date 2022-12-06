@@ -5,19 +5,34 @@
   }
 }
 
-@mixin a($wildcards, $typo: false) {
+@mixin a($wildcards1, $wildcards2: null, $typo: false) {
   @if $typo == false {
-    @each $tmp in $wildcards {
-      .b3-typography a[href#{$tmp}],
-      .protyle-wysiwyg a[href#{$tmp}],
-      .protyle-wysiwyg span[data-type~="a"][data-href#{$tmp}]:not(:empty) {
-        @content;
+    @if $wildcards2 != null {
+      @each $i in $wildcards1 {
+        @each $j in $wildcards2 {
+          .b3-typography a[href#{$i}][href#{$j}],
+          .protyle-wysiwyg a[href#{$i}][href#{$j}],
+          .protyle-wysiwyg
+            span[data-type~="a"][data-href#{$i}][data-href#{$j}]:not(:empty) {
+            @content;
+          }
+        }
+      }
+    } @else {
+      @each $i in $wildcards1 {
+        .b3-typography a[href#{$i}],
+        .protyle-wysiwyg a[href#{$i}],
+        .protyle-wysiwyg span[data-type~="a"][data-href#{$i}]:not(:empty) {
+          @content;
+        }
       }
     }
   } @else {
-    @each $tmp in $wildcards {
-      .b3-typography a[href#{$tmp}] {
-        @content;
+    @each $i in $wildcards1 {
+      @each $j in $wildcards2 {
+        .b3-typography a[href#{$i}][href#{$j}] {
+          @content;
+        }
       }
     }
   }
@@ -60,12 +75,11 @@ $folder-schemes: (
 );
 
 @each $href, $file in $folder-schemes {
-  $wildcard: '^="#{$href}"';
-  @include a($wildcard) {
-    &[data-href$="/"],
-    &[data-href$="\\"] {
-      @include has-icon("#{$icon-path}/scheme", $file);
-    }
+  $wildcard1: '^="#{$href}"';
+  $tmp: \\;
+  $wildcard2: '$="/"', '$="#{$tmp}"';
+  @include a($wildcard1, $wildcard2) {
+    @include has-icon("#{$icon-path}/scheme", $file);
   }
 }
 
@@ -78,11 +92,11 @@ $static: (
 );
 
 @each $href, $file in $static {
-  $wildcard: '^="#{$href}/"', '^="/#{$href}/"';
-  @include a($wildcard) {
-    &[data-href$="/"] {
-      @include has-icon("#{$icon-path}/static", $file);
-    }
+  $wildcard1: '^="#{$href}/"', '^="/#{$href}/"';
+  $wildcard2: '$="/"';
+
+  @include a($wildcard1, $wildcard2) {
+    @include has-icon("#{$icon-path}/static", $file);
   }
 }
 
@@ -286,17 +300,16 @@ $assets: (
 );
 
 @each $href, $file in $assets {
-  $wildcard: '$="#{$href}"';
-  @include a($wildcard, true) {
-    &[href*="assets/"] {
-      @include has-icon("#{$icon-path}/asset", $file);
-    }
+  $wildcard1: '$="#{$href}"';
+  $wildcard2-typo: '*="assets/"';
+
+  @include a($wildcard1, $wildcard2-typo, true) {
+    @include has-icon("#{$icon-path}/asset", $file);
   }
-  @include a($wildcard) {
-    &[data-href^="assets/"],
-    &[data-href^="/assets/"] {
-      @include has-icon("#{$icon-path}/asset", $file);
-    }
+
+  $wildcard2: '^="assets/"', '^="/assets/"';
+  @include a($wildcard1, $wildcard2) {
+    @include has-icon("#{$icon-path}/asset", $file);
   }
 }
 

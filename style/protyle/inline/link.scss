@@ -25,13 +25,15 @@ $text-color: get($text, "secondary");
   }
 
   &::before {
-    @include svg(1em);
+    $w: 16px;
+    @include svg($w);
     display: inline-block;
     position: relative;
+    background-size: contain;
     background-repeat: round;
     margin-right: 0.2em;
     top: 0.1em;
-    opacity: 0.7;
+    opacity: 0.8;
     transition: get($transition, "all");
   }
 

@@ -288,7 +288,8 @@ $item-radius: get($radius, $item-type);
 
 //  dock
 .dock--vertical {
-  padding-top: $top-h - $interval;
+  margin-top: $top-h - $interval;
+  height: calc(100vh - $top-h + $interval);
 }
 
 // empty

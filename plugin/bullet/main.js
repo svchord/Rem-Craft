@@ -1,3 +1,4 @@
+import { config } from "../../script/config.js";
 import { prefix } from "../../util/layout.js";
 
 /**
@@ -18,18 +19,11 @@ function getTargetEditor(block) {
  * @return {null} 光标不在块内
  */
 function getFocusedBlock() {
-  let block = window.getSelection()?.focusNode?.parentElement; // 当前光标
-  while (block != null && block.dataset.nodeId == null)
-    block = block.parentElement;
-  return block;
-}
-
-function setSelector(block) {
-  while (block != null && !block.classList.contains("protyle-wysiwyg")) {
-    if (block.dataset.nodeId != null) {
-      block.classList.add(`${prefix}-focus`);
-    }
-    block = block.parentElement;
+  if (document.activeElement.classList.contains("protyle-wysiwyg")) {
+    let block = window.getSelection()?.focusNode?.parentElement; // 当前光标
+    while (block != null && block.dataset.nodeId == null)
+      block = block.parentElement;
+    return block;
   }
 }
 
@@ -52,6 +46,8 @@ function focusHandler() {
 
 export function bulletMain() {
   // 跟踪当前所在块
-  window.addEventListener("mouseup", focusHandler, true);
-  window.addEventListener("keyup", focusHandler, true);
+  if (config.plugin.bullet) {
+    window.addEventListener("mouseup", focusHandler, true);
+    window.addEventListener("keyup", focusHandler, true);
+  }
 }

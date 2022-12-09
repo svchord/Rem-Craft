@@ -18,29 +18,28 @@ function addButton(id, iconId, label) {
 function addDockButton() {
   let dockBtn = addButton(
     "dockBtn",
-    "iconHideDock",
-    window.siyuan.languages.hideDock
+    window.siyuan.config.uiLayout.hideDock ? "iconDock" : "iconHideDock",
+    window.siyuan.config.uiLayout.hideDock
+      ? window.siyuan.languages.showDock
+      : window.siyuan.languages.hideDock
   );
 
   const useElement = dockBtn.firstElementChild.firstElementChild;
   const label = dockBtn.querySelector(".b3-menu__label");
-  if (!isDockExist("left") && !isDockExist("left")) {
-    useElement.setAttribute("xlink:href", "#iconDock");
-    label.innerHTML = window.siyuan.languages.showDock;
-  }
-
   dockBtn.addEventListener("click", () => {
-    const dockIsShow =
-      useElement.getAttribute("xlink:href") === "#iconHideDock";
-    if (dockIsShow) {
+    // const dockIsShow =
+    //   useElement.getAttribute("xlink:href") === "#iconHideDock";
+    if (!window.siyuan.config.uiLayout.hideDock) {
       useElement.setAttribute("xlink:href", "#iconDock");
       label.innerHTML = window.siyuan.languages.showDock;
+      window.siyuan.config.uiLayout.hideDock = true;
     } else {
       useElement.setAttribute("xlink:href", "#iconHideDock");
       label.innerHTML = window.siyuan.languages.hideDock;
+      window.siyuan.config.uiLayout.hideDock = false;
     }
     document.querySelectorAll(".dock").forEach((item) => {
-      if (dockIsShow) {
+      if (window.siyuan.config.uiLayout.hideDock) {
         if (item.querySelector(".dock__item")) {
           item.classList.add("fn__none");
         }

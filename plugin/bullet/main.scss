@@ -70,7 +70,7 @@ $height: $action-h + 4px;
   }
 
   > [data-node-id] {
-    &::after {
+    &::before {
       @include border();
       top: math.div($action-w, 2) + 3px;
       height: calc(100% + 4px);
@@ -79,20 +79,24 @@ $height: $action-h + 4px;
       }
     }
     // 列表子块的前一个块辅助线去掉毛边
-    &:has(+ .list)::after {
+    &:has(+ .list)::before {
       height: auto;
       bottom: 0;
     }
-    // 焦点列表块
-    &.list:has(.rc-focus)::after,
-    // 焦点列表块后的块
-    &.list:has(.rc-focus) ~ [data-node-id]::after {
-      border-color: transparent;
+    &.list,
+    &.bq,
+    &.sb {
+      // 焦点容器块
+      &:has(.rc-focus)::before,
+      // 焦点容器块后的块
+      &:has(.rc-focus) ~ [data-node-id]::before {
+        border-color: transparent;
+      }
     }
   }
 
-  &[fold="1"] > [data-node-id]::after,
-  &:has(> .rc-focus) > [data-node-id]::after {
+  &[fold="1"] > [data-node-id]::before,
+  &:has(> .rc-focus) > [data-node-id]::before {
     border-color: transparent;
   }
 

@@ -1,6 +1,23 @@
 # 版本日志 | Changelog 
 
 
+### [2.5.5](https://github.com/svchord/Rem-Craft/compare/v2.5.4...v2.5.5) (2022-12-11)
+
+
+### 📦‍ 构建相关 | Build System
+
+* :package: 换用pnpm ([111e67e](https://github.com/svchord/Rem-Craft/commit/111e67e246f65bfe304316c6624c53482b4a3b63))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复超链接图标的问题 ([8612bc7](https://github.com/svchord/Rem-Craft/commit/8612bc72d2a84b59d87572ff5e2a8f31e734787e))
+* :bug: 修复关闭按钮失效的问题 ([2513c3b](https://github.com/svchord/Rem-Craft/commit/2513c3bf6d746e2b9c9a6472829213fd8d011cb8)), closes [#85](https://github.com/svchord/Rem-Craft/issues/85)
+* :bug: 修复光标丢失的问题 ([6bb0503](https://github.com/svchord/Rem-Craft/commit/6bb050305ecc9dfc737aa0655d84c452b556ef41)), closes [#88](https://github.com/svchord/Rem-Craft/issues/88)
+* :bug: 修复行内评论 ([4e326af](https://github.com/svchord/Rem-Craft/commit/4e326afaf73658a7f9ae49a077f72889144b6bf8)), closes [#86](https://github.com/svchord/Rem-Craft/issues/86)
+* :bug: 修复子弹流与引用块的冲突问题 ([5f533b0](https://github.com/svchord/Rem-Craft/commit/5f533b0e08841014673b859b9a05262420da0a1e))
+* :bug: 增加Alt+B反链面板底部内边距 ([a50e055](https://github.com/svchord/Rem-Craft/commit/a50e0554229f86bad9e36a15e50eb00311c0c2f4)), closes [#90](https://github.com/svchord/Rem-Craft/issues/90)
+
 ### [2.5.4](https://github.com/svchord/Rem-Craft/compare/v2.5.3...v2.5.4) (2022-12-06)
 
 

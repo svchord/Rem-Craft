@@ -151,16 +151,6 @@ $msg-icon-w: 14px;
   margin-bottom: $interval !important;
 }
 
-// wnd
-// #layouts > .fn__flex {
-//   > .fn__flex-column:not(.layout__center) {
-//     > .fn__flex {
-//       &:has(+ .layout__resize.fn__none),
-//       &:last-child {
-//         > [data-type="wnd"] {
-//           padding-bottom: 0 !important;
-//         }
-//       }
-//     }
-//   }
-// }
+.layout__center .sy__backlink{
+    padding-bottom: 40px;
+}

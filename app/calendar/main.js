@@ -1,3 +1,5 @@
+import { config } from "../../script/config.js";
+
 function insertBtn(elementId) {
   // 把日历图标 放到  搜索图标前面
   let element = document.getElementById(elementId);
@@ -7,7 +9,7 @@ function insertBtn(elementId) {
   );
 }
 
-export function initCalendar() {
+function initCalendar() {
   // 日历面板，这里是插入挂件
   document.body.insertAdjacentHTML(
     "beforeend",
@@ -64,4 +66,14 @@ export function initCalendar() {
   }
   // 点击其他区域时，隐藏日历面板
   window.addEventListener("click", hideCalendarPanel, false);
+}
+
+export function calendarMain() {
+  try {
+    if (config.app.calendar) {
+      initCalendar();
+    }
+  } catch (error) {
+    console.error(error);
+  }
 }

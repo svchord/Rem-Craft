@@ -1,6 +1,6 @@
-import { initCalendar } from "./calendar/main.js";
-import { SiyuanUtil } from "./comment/main.js";
+import { calendarMain } from "./calendar/main.js";
+import { commentMain } from "./comment/main.js";
 export function appMain() {
-  initCalendar();
-  new SiyuanUtil();
+  calendarMain();
+  commentMain();
 }

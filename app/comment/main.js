@@ -4,9 +4,10 @@
  */
 
 import Comment from "./comment.js";
+import { config } from "../../script/config.js";
 import { root, updateStyle } from "../../util/resource.js";
 
-export class SiyuanUtil {
+class SiyuanUtil {
   constructor() {
     // this.themeName = this.getThemeName()
     // if(this.themeName){
@@ -128,7 +129,7 @@ export class SiyuanUtil {
     if (mutation.addedNodes.length > 0) {
       let node = mutation.addedNodes.item(0);
       // 新增 protyle 节点，即判断为打开了新文档
-      if (node && node.classList.contains("block__popover")) {
+      if (node?.classList?.contains("block__popover")) {
         // 因为 dom 树可能没有完全加载，需要延迟处理
         this.comment.appendToolbarBtn(node.querySelector(".protyle"));
       }
@@ -138,5 +139,15 @@ export class SiyuanUtil {
   /* 插入样式表 */
   appendStyleSheet() {
     updateStyle("appComment", root + "app/comment/comment.css");
+  }
+}
+
+export function commentMain() {
+  try {
+    if (config.app.comment) {
+      new SiyuanUtil();
+    }
+  } catch (err) {
+    console.error(err);
   }
 }

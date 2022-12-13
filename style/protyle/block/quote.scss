@@ -18,7 +18,7 @@ $left-tmp: $side-left + $side-w + $left-interval;
   background-color: transparent;
   border: none;
 
-  &::after {
+  &::before {
     content: "";
     display: block;
     position: absolute;

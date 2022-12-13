@@ -35,7 +35,6 @@ $dock-w: $item-w + $interval * 2;
 //边栏
 .dock--vertical {
   width: $item-w + $interval;
-  -webkit-app-region: drag;
   background-color: transparent;
 
   div:first-child:not(:empty) {
@@ -51,6 +50,7 @@ $dock-w: $item-w + $interval * 2;
   &#dockLeft {
     padding-left: $interval;
     border: none;
+    -webkit-app-region: drag;
   }
 
   &#dockRight {

@@ -1,6 +1,23 @@
 # 版本日志 | Changelog 
 
 
+### [2.5.6](https://github.com/svchord/Rem-Craft/compare/v2.5.5...v2.5.6) (2022-12-23)
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新readme ([27a8a83](https://github.com/svchord/Rem-Craft/commit/27a8a8389f34babe78639dd0185b482e74dabf48))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复暗黑模式下选中底色问题 ([2fd81d1](https://github.com/svchord/Rem-Craft/commit/2fd81d1a17fcb1c740693b0f7e1112becdabcf2f)), closes [#96](https://github.com/svchord/Rem-Craft/issues/96)
+* :bug: 修复弹窗按钮和右边栏的冲突问题 ([1b0e6e1](https://github.com/svchord/Rem-Craft/commit/1b0e6e18680cd28d4867cb4f5d3c27d51e068e59)), closes [#95](https://github.com/svchord/Rem-Craft/issues/95)
+* :bug: 修复列表块内标题块的样式 ([b722e81](https://github.com/svchord/Rem-Craft/commit/b722e81878e24f145a19c4b939380bc20527d447))
+* :bug: 修复输入框样式无法查看的问题 ([94973b2](https://github.com/svchord/Rem-Craft/commit/94973b2242b63409e53b4345b87e803e275b3d82))
+* :bug: 修复搜索弹窗圆角 ([7f26bc9](https://github.com/svchord/Rem-Craft/commit/7f26bc92bbc93f90ba12d0fe9f93bdf830909baf))
+* :bug: 修复子弹流的样式问题 ([b113f62](https://github.com/svchord/Rem-Craft/commit/b113f62632c688385d8aa81b9100bd03054bb2b6))
+
 ### [2.5.5](https://github.com/svchord/Rem-Craft/compare/v2.5.4...v2.5.5) (2022-12-11)
 
 

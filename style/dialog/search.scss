@@ -91,7 +91,7 @@ $form-h: 42px;
         }
       }
 
-      #searchInclude{
+      #searchInclude {
         margin: auto 0;
       }
     }
@@ -159,6 +159,10 @@ $form-h: 42px;
 
 // 搜索预览
 #searchPreview {
+  border-bottom-right-radius: big.$dialog-radius;
+  &[style*="height"] {
+    border-bottom-left-radius: big.$dialog-radius;
+  }
   // 面包屑
   .protyle {
     &-breadcrumb {
@@ -180,4 +184,3 @@ $form-h: 42px;
     }
   }
 }
-

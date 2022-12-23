@@ -31,7 +31,7 @@ $height: $action-h + 4px;
     }
   }
 
-  .list:has(.rc-focus) {
+  > .list:has(.rc-focus) {
     > .li {
       &::after {
         @include border();
@@ -82,6 +82,10 @@ $height: $action-h + 4px;
     &:has(+ .list)::after {
       height: auto;
       bottom: 0;
+    }
+    &[data-type="NodeHeading"]::after{
+      top: 0;
+      height: calc(185%);
     }
     &.list,
     &.bq,

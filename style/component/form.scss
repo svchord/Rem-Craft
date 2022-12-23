@@ -8,7 +8,7 @@ $svg-width: get($icon, "small");
     // 搜索图标
     &-icon {
       @include svg($h, $svg-w);
-      left: 0;
+      left: 0 !important;
       top: 0;
     }
 

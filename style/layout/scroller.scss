@@ -10,7 +10,6 @@ $track-bg: transparent; //get($bg, "page");
 
 // Scrollbar
 ::-webkit-scrollbar {
-  z-index: 0;
   width: 8px;
 
   &:horizontal {
@@ -21,7 +20,6 @@ $track-bg: transparent; //get($bg, "page");
     border-radius: get($radius, "max");
     box-shadow: inset 0 0 6px 6px $thumb-bg;
     border: solid 3px transparent;
-    z-index: 0;
     &:hover {
       border: solid 1.5px transparent;
     }

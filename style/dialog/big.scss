@@ -28,7 +28,8 @@ $search-h: 42px;
   border-radius: $dialog-radius;
   background-color: get($bg, "page", 1);
 
-  &[style*="80vw"] {
+  &[style*="80vw"],
+  &[style*="90vw"] {
     width: $large-width !important;
 
     // 弹窗关闭按钮
@@ -36,10 +37,6 @@ $search-h: 42px;
       display: none;
     }
 
-    // 笔记本设置界面
-    &:has(#dailyNoteSavePath) {
-      width: 45vw !important;
-    }
     .b3-dialog__header {
       border-color: get($border, 3);
     }
@@ -53,7 +50,14 @@ $search-h: 42px;
         border-radius: $dialog-radius $dialog-radius 0 0;
       }
     }
+  }
+  
+  // 笔记本设置界面
+  &:has(#dailyNoteSavePath) {
+    width: 45vw !important;
+  }
 
+  .config__panel {
     // 设置菜单高度
     $h: min(66.1vh, (list.$text-h + 16px * 2 + $fn-space) * 11 - $fn-space);
 
@@ -66,7 +70,7 @@ $search-h: 42px;
       height: $h !important;
       // 导航按钮
       .b3-list-item--big {
-        padding: 16px 24px;
+        padding: 16px 24px !important;
         margin-bottom: $fn-space !important;
 
         &:last-child {

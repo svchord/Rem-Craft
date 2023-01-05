@@ -18,7 +18,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "commitizen": "^4.2.6",
     "cz-git": "^1.4.0",

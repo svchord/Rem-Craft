@@ -1,6 +1,15 @@
 # 版本日志 | Changelog 
 
 
+### [2.5.7](https://github.com/svchord/Rem-Craft/compare/v2.5.6...v2.5.7) (2023-01-05)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复设置菜单样式问题 ([7657d8a](https://github.com/svchord/Rem-Craft/commit/7657d8ae049889a4bc32db95392b9eaf41fabb36)), closes [#99](https://github.com/svchord/Rem-Craft/issues/99)
+* :bug: 优化闪卡页面样式 ([84131f9](https://github.com/svchord/Rem-Craft/commit/84131f9540b795c9d31640e3c43ff90529eafd50)), closes [#97](https://github.com/svchord/Rem-Craft/issues/97)
+* :bug: 增加移动端判断 ([789d8b7](https://github.com/svchord/Rem-Craft/commit/789d8b75e1c7ceeacfa74f5bb0c7d76709a0fb04)), closes [#98](https://github.com/svchord/Rem-Craft/issues/98)
+
 ### [2.5.6](https://github.com/svchord/Rem-Craft/compare/v2.5.5...v2.5.6) (2022-12-23)
 
 

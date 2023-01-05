@@ -7,9 +7,13 @@ $fz: get($font-size, "exsmall");
 
 //面包屑
 .protyle-breadcrumb {
-  padding: 0px 8px 0px;
+  padding: 0;
   min-height: $item-h;
 
+  .layout__center & {
+    padding: 0px 8px 0px;
+  }
+  
   &__bar {
     min-height: $item-h;
     margin: 0;
@@ -59,7 +63,7 @@ $fz: get($font-size, "exsmall");
       &::after {
         display: none;
       }
-      
+
       svg {
         color: get($text, "secondary");
       }

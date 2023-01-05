@@ -2,9 +2,7 @@
 @use "../common" as *;
 @use "big";
 
-.b3-dialog__container[style*="80vw"]
-  > [style*="height"][style*="auto"]
-  > .account {
+.b3-dialog__container .account {
   height: 55vh;
   border-radius: 0 0 big.$dialog-radius big.$dialog-radius;
   .config-account__center--text {

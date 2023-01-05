@@ -53,4 +53,17 @@
   &--small {
     @include component("small");
   }
+
+  @each $type in $feat-types {
+    &--#{$type} {
+      color: get($text, "anti");
+      background-color: get($color, $type, "base");
+      &:hover {
+        background-color: get($color, $type, "hover");
+      }
+      &:active {
+        background-color: get($color, $type, "active");
+      }
+    }
+  }
 }

@@ -1,7 +1,4 @@
-if (
-  window.siyuan.config.system.container !== "ios" &&
-  window.siyuan.config.system.container !== "android"
-) {
+if (window.siyuan.config.system.container === "std") {
   import("./index.js")
     .then((index) => {
       index.main();

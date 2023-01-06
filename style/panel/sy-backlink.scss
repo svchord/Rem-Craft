@@ -36,10 +36,10 @@ $per: 0.85;
     }
     &-wysiwyg {
       padding: 5px !important;
-      [data-node-id] {
+      > [data-node-id] {
         margin-left: 24px;
         &:last-child {
-          margin-bottom: 18px;
+          margin-bottom: 20px;
         }
         [contenteditable] {
           font-size: math.percentage($per);

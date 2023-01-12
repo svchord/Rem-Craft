@@ -1,5 +1,5 @@
 export function pxToNum(str) {
-  return parseInt(str.replace("px", ""));
+  return parseFloat(str);
 }
 
 export function numToPx(num) {

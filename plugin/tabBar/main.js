@@ -45,47 +45,37 @@ class TabBar {
 
   getMaxMargin() {
     const topBar = document.getElementById("toolbar");
-    const vip = document.getElementById("toolbarVIP");
-    const btnWidth = 38;
     const macBtnsWidth = 69;
-    const winBtnsWidth = 46 * 3;
-    let btnNum = 0;
+    let margin = 0;
 
     for (let i = 0; i < topBar.children.length; i++) {
       const btn = topBar.children.item(i);
-      if (btn.classList.contains("toolbar__item")) {
-        btnNum++;
-      }
       if (btn.id === "drag") {
         if (this.direction === "left") {
           break;
         } else {
-          btnNum = 0;
+          margin = 0;
+          continue;
         }
       }
+      let style = window.getComputedStyle(btn);
+      margin +=
+        btn.clientWidth +
+        pxToNum(style.marginLeft) +
+        pxToNum(style.marginRight);
     }
 
-    let margin = 0;
-
+    margin -= 8;
     if (this.direction === "left") {
-      if (vip.children.length === 2) {
-        btnNum++;
-      }
-      margin = btnNum * btnWidth;
       if ("darwin" === window.siyuan.config.system.os) {
         margin += macBtnsWidth;
       }
-      margin -= 8;
       return margin;
     } else {
-      margin = btnNum * btnWidth - dockWidth;
-      if (document.getElementById("windowControls")) {
-        margin += winBtnsWidth;
-      }
       if ("darwin" === window.siyuan.config.system.os) {
         margin += 2;
       }
-      margin -= 8;
+      margin -= dockWidth;
       return margin;
     }
   }

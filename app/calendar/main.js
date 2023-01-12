@@ -51,7 +51,7 @@ function initCalendar() {
         insertBtn("barSearch");
         calendarPanel.style.right = "0px";
     } else {
-        insertBtn("barRiffCard");
+        insertBtn("barBack");
         calendarPanel.style.left = "200px";
     }
 

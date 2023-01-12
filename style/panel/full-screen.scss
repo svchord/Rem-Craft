@@ -5,12 +5,10 @@
 body.body--win32 {
   .fullscreen {
     // 编辑器全屏
-    > .protyle-breadcrumb {
-      padding: 0 top-bar.$win-control-w * 3 + $fn-space 0 8px;
-    }
-
+    > .protyle-breadcrumb,
     // 关系图全屏
     > .block__icons {
+      height: 40px;
       padding: 0 top-bar.$win-control-w * 3 + $fn-space 0 8px;
     }
   }

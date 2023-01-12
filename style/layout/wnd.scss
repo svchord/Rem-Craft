@@ -76,6 +76,10 @@ $scale: scale(0.01);
         display: flex !important;
         animation: close $time forwards $func;
       }
+      
+      &:has(.fullscreen){
+        z-index: 2;
+      }
     }
   }
 }

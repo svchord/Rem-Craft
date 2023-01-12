@@ -131,7 +131,7 @@ $padding: math.div($item-h - $text-h, 2);
 
   // 列表按钮
   &__action {
-    @include svg-div($text-h, get($icon, "base"));
+    @include svg-div($text-h, get($icon, "small"));
     @include list-btn();
     margin-left: $interval;
   }

@@ -119,6 +119,16 @@ class TabBar {
   }
 
   start() {
+    const topBar = document.getElementById("toolbar");
+    let topBarObserver = setMutationObserver("childList", () => {
+      this.maxMargin = this.getMaxMargin();
+      this.autoSetMargin(pxToNum(this.folumn.style.width));
+    });
+    topBarObserver.observe(topBar, {
+      childList: true,
+      subtree: true,
+    });
+
     let folumnObserver = setResizeObserver((entry) => {
       let folumnWidth = entry.contentBoxSize[0].inlineSize;
       this.autoSetMargin(folumnWidth);

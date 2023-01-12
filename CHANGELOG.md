@@ -1,6 +1,16 @@
 # 版本日志 | Changelog 
 
 
+### [2.5.8](https://github.com/svchord/Rem-Craft/compare/v2.5.7...v2.5.8) (2023-01-12)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容新版顶栏 ([eca2ab8](https://github.com/svchord/Rem-Craft/commit/eca2ab8567d3066f1e9932d2d125d89e4f1e9db2))
+* :bug: 修复反链面板样式问题 ([828c546](https://github.com/svchord/Rem-Craft/commit/828c546725da9f221f255b9337fd09d140f9adfb)), closes [#100](https://github.com/svchord/Rem-Craft/issues/100)
+* :bug: 修复关系图全屏下的样式问题 ([dad97e0](https://github.com/svchord/Rem-Craft/commit/dad97e0a917fbaca0746bce43ff208c976a6b5ef))
+* :bug: 优化闪卡卡组预览界面 ([582d359](https://github.com/svchord/Rem-Craft/commit/582d35923c385571d45f456ea703d1542232e895))
+
 ### [2.5.7](https://github.com/svchord/Rem-Craft/compare/v2.5.6...v2.5.7) (2023-01-05)
 
 

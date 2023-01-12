@@ -8,6 +8,19 @@ $padding: 16px;
   padding: $padding 24px - $padding;
 }
 
+@mixin page-btn {
+  @include svg-div(
+    get($component-size, "medium"),
+    get($icon, "small"),
+    get($component-size, "base"),
+    $important: true
+  );
+  &[disabled] {
+    opacity: 1 !important;
+    @include item-disabled();
+  }
+}
+
 @mixin dialog-tabs {
   @include bar();
   border-bottom: $fn-border;
@@ -46,16 +59,7 @@ $padding: 16px;
     border-bottom: $fn-border;
 
     .block__icon {
-      @include svg-div(
-        get($component-size, "medium"),
-        get($icon, "small"),
-        get($component-size, "base"),
-        $important: true
-      );
-      &[disabled] {
-        opacity: 1 !important;
-        @include item-disabled();
-      }
+      @include page-btn();
     }
   }
 }

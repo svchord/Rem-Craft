@@ -29,9 +29,12 @@ $list: (
 @mixin top-item {
   @include item("base", $important: true);
   @include component-base();
-  @include svg-div($item-w, $icon-w, $item-h);
   margin-right: $interval;
 
+  &:not(#barWorkspace) {
+    @include svg-div($item-w, $icon-w, $item-h);
+  }
+  
   &--active {
     background-color: get($bg, "base", 2) !important;
   }

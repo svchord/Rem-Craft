@@ -7,13 +7,13 @@ $fz: get($font-size, "exsmall");
 
 //面包屑
 .protyle-breadcrumb {
-  padding: 0;
+  padding: 0px 8px 0px;
+  // padding: 0;
   min-height: $item-h;
 
-  .layout__center & {
-    padding: 0px 8px 0px;
-  }
-  
+  // .layout__center & {
+  // }
+
   &__bar {
     min-height: $item-h;
     margin: 0;

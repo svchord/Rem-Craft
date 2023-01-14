@@ -10,7 +10,9 @@ class TabBar {
   constructor(direction) {
     this.direction = direction;
     this.bar = this.getBar(center);
-    this.maxMargin = this.getMaxMargin();
+    this.maxMargin = isDockExist(direction)
+      ? this.getMaxMargin()
+      : this.getMaxMargin() + dockWidth;
     this.folumn = getFolumn(direction);
     this.start();
   }
@@ -81,30 +83,16 @@ class TabBar {
   }
 
   setMargin(value) {
-    if (this.direction === "left") {
-      this.bar.style.marginLeft = numToPx(value);
-    } else {
-      this.bar.style.marginRight = numToPx(value);
-    }
+    this.direction === "left"
+      ? (this.bar.style.marginLeft = numToPx(value))
+      : (this.bar.style.marginRight = numToPx(value));
   }
 
   autoSetMargin(folumnWidth) {
     if (this.bar) {
-      if (folumnWidth >= 0 && folumnWidth <= this.maxMargin) {
-        this.setMargin(this.maxMargin - folumnWidth);
-      } else {
-        this.setMargin(0);
-      }
-    }
-  }
-
-  addDockWidth() {
-    if (!isDockExist(this.direction)) {
-      this.maxMargin = this.getMaxMargin() + dockWidth;
-      this.autoSetMargin(pxToNum(this.folumn.style.width));
-    } else {
-      this.maxMargin = this.getMaxMargin();
-      this.autoSetMargin(pxToNum(this.folumn.style.width));
+      folumnWidth >= 0 && folumnWidth <= this.maxMargin
+        ? this.setMargin(this.maxMargin - folumnWidth)
+        : this.setMargin(0);
     }
   }
 
@@ -119,26 +107,30 @@ class TabBar {
   }
 
   start() {
-    const topBar = document.getElementById("toolbar");
+    // 顶栏监听
     let topBarObserver = setMutationObserver("childList", () => {
       this.maxMargin = this.getMaxMargin();
       this.autoSetMargin(pxToNum(this.folumn.style.width));
     });
+    const topBar = document.getElementById("toolbar");
     topBarObserver.observe(topBar, {
       childList: true,
       subtree: true,
     });
 
+    // 边栏监听
     let folumnObserver = setResizeObserver((entry) => {
       let folumnWidth = entry.contentBoxSize[0].inlineSize;
       this.autoSetMargin(folumnWidth);
     });
     folumnObserver.observe(this.folumn);
 
-    // 判断边栏是否存在
-    this.addDockWidth();
+    // dock栏监听
     setDockObserver(this.direction, () => {
-      this.addDockWidth();
+      this.maxMargin = isDockExist(this.direction)
+        ? this.getMaxMargin()
+        : this.getMaxMargin() + dockWidth;
+      this.autoSetMargin(pxToNum(this.folumn.style.width));
     });
 
     // 编辑区域监听
@@ -149,13 +141,11 @@ class TabBar {
         mutation?.removedNodes[0]?.classList?.contains("layout__resize")
       ) {
         this.resetBar();
-        this.addDockWidth();
       }
       // 空白页监听
       if (mutation?.removedNodes[0]?.nodeType === 1) {
         if (mutation.removedNodes[0].querySelector(".layout__empty")) {
           this.resetBar();
-          this.addDockWidth();
         }
       }
     });

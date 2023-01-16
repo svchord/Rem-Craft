@@ -67,7 +67,7 @@ class TabBar {
         pxToNum(style.marginRight);
     }
 
-    margin -= 8;
+    margin -= dockWidth + 8;
     if (this.direction === "left") {
       if ("darwin" === window.siyuan.config.system.os) {
         margin += macBtnsWidth;
@@ -77,7 +77,6 @@ class TabBar {
       if ("darwin" === window.siyuan.config.system.os) {
         margin += 2;
       }
-      margin -= dockWidth;
       return margin;
     }
   }

@@ -116,7 +116,7 @@ $padding: 6px;
       &.b3-menu__item--current {
         @include item("focus", 1, true);
       }
-      .b3-menu {
+      > .b3-menu {
         &__icon,
         &__label {
           @include color("focus");

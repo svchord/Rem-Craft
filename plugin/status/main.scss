@@ -61,7 +61,7 @@ $msg-icon-w: 14px;
     }
   }
 
-  #barHelp {
+  #statusHelp {
     &::before {
       content: "";
       @include reset-style();
@@ -77,13 +77,15 @@ $msg-icon-w: 14px;
     }
 
     > svg {
-      display: none;
+      display: none !important;
     }
+
     > .b3-menu {
       bottom: $s-h + $btn-interval + $fn-space * 2 !important;
       right: $fn-space !important;
       display: block !important;
       visibility: hidden;
+      overflow: visible;
       transform: scale(0.5);
       opacity: 0;
       transform-origin: 60% 100%;
@@ -95,10 +97,9 @@ $msg-icon-w: 14px;
         visibility: visible;
       }
     }
-
     .rc-dock-menu {
       bottom: 0 !important;
-      right: 180px + $fn-space !important;
+      right: 150px + $fn-space !important;
     }
   }
 
@@ -151,6 +152,6 @@ $msg-icon-w: 14px;
   margin-bottom: $interval !important;
 }
 
-.layout__center .sy__backlink{
-    padding-bottom: 40px;
+.layout__center .sy__backlink {
+  padding-bottom: 40px;
 }

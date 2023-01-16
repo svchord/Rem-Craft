@@ -3,7 +3,7 @@ import { config } from "../../script/config.js";
 import { prefix, setWndPadding } from "../../util/layout.js";
 import { isDockExist, setDockObserver } from "../../util/layout.js";
 
-const btnHelp = document.getElementById("barHelp");
+const btnHelp = document.getElementById("statusHelp");
 const helpMenu = btnHelp.querySelector(".b3-menu");
 
 function addButton(id, iconId, label) {
@@ -74,22 +74,6 @@ function addDockMenu() {
   });
 }
 
-// function autoSetMsgWidth() {
-//   let msg = document.getElementsByClassName("status__msg")[0];
-//   setMutationObserver(
-//     msg,
-//     "childList",
-//     (observer, mutation) => {
-//       let msgDom = mutation.target;
-//       msgDom.style.maxWidth = "400px";
-//       setTimeout(() => {
-//         msgDom.style.maxWidth = "120px";
-//       }, 1500);
-//     },
-//     { childList: true }
-//   );
-// }
-
 function setStatusRight() {
   let status = document.getElementById("status");
 
@@ -108,25 +92,23 @@ function setStatusRight() {
 }
 
 function resetBtnListener() {
-  let btn = document.getElementById("barHelp");
-  let menu = btn.querySelector(".b3-menu");
-  menu.dataset.switch = "close";
-  btn.addEventListener("mouseleave", (e) => {
+  helpMenu.dataset.switch = "close";
+  btnHelp.addEventListener("mouseleave", (e) => {
     e.stopImmediatePropagation();
   });
-  btn.addEventListener("click", (e) => {
-    if (!menu.contains(e.target)) {
+  btnHelp.addEventListener("click", (e) => {
+    if (!helpMenu.contains(e.target)) {
       e.stopImmediatePropagation();
-      if (menu.dataset.switch === "close") {
-        menu.dataset.switch = "open";
-      } else if (menu.dataset.switch === "open") {
-        menu.dataset.switch = "close";
+      if (helpMenu.dataset.switch === "close") {
+        helpMenu.dataset.switch = "open";
+      } else if (helpMenu.dataset.switch === "open") {
+        helpMenu.dataset.switch = "close";
       }
     }
   });
   document.addEventListener("mouseup", (e) => {
-    if (!btn.contains(e.target) && menu.dataset.switch === "open") {
-      menu.dataset.switch = "close";
+    if (!btnHelp.contains(e.target) && helpMenu.dataset.switch === "open") {
+      helpMenu.dataset.switch = "close";
     }
   });
 }

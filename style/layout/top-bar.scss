@@ -73,18 +73,6 @@ $list: (
     padding: 0;
   }
 
-  &::before {
-    $icon-w: get($icon, "large");
-    content: "";
-    display: flex;
-    display: block;
-    width: $icon-w;
-    height: $icon-w;
-    margin: auto math.div(dock.$dock-w - $icon-w, 2);
-    background-image: url("#{$asset-path}/icons/siyuan.svg");
-    background-repeat: round;
-  }
-
   .toolbar__item {
     -webkit-app-region: no-drag;
     @include top-item();
@@ -97,8 +85,15 @@ $list: (
       }
       &Workspace {
         padding: 7px 10px;
+        .toolbar__text {
+          color: get($text, "primary");
+          font-size: get($font-size, "base");
+        }
         // margin-left: 3px;
       }
+    }
+    &#windowAppIcon {
+      @include svg-div(dock.$dock-w, $icon-w, $bar-h);
     }
   }
 

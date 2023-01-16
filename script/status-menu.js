@@ -24,7 +24,7 @@ function stayMenu(elementId) {
 
 export function statusMenuMain() {
   if (!config.plugin.status) {
-    stayMenu("barHelp");
+    stayMenu("statusHelp");
     stayMenu("barDock");
     setWndPadding("left", 23);
     setWndPadding("right", 23);

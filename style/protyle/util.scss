@@ -95,4 +95,24 @@ $util-radius: get($radius, "medium");
   > .fn__flex-column > .b3-text-field {
     margin: $fn-space !important;
   }
+
+  // 模板选择弹窗
+  &:has(.protyle-wysiwyg) {
+    .block__icon {
+      @include item("pop", $important: true);
+      margin: auto 0;
+    }
+    > .fn__flex {
+      > .fn__flex-column > .fn__flex:first-child {
+        margin: $fn-space !important;
+      }
+      > div:last-child {
+        margin: $fn-space $fn-space $fn-space 0;
+
+        border-radius: get($radius, "base");
+        background-color: get($bg, "page", 1);
+        width: 480px !important;
+      }
+    }
+  }
 }

@@ -48,8 +48,10 @@ $item-pad: 3px 2px;
   }
 
   &-wysiwyg {
-    padding-top: 5px !important;
-    padding-bottom: 30vh !important;
+    .layout__center .protyle-content > & {
+      padding-top: 5px !important;
+      padding-bottom: 30vh !important;
+    }
 
     [data-node-id][fold="1"]:not(.li):not([data-type="NodeHeading"]) {
       font-size: 1em !important;

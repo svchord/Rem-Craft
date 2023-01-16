@@ -86,7 +86,7 @@ $list: (
       &Workspace {
         padding: 7px 10px;
         .toolbar__text {
-          color: get($text, "primary");
+          font-weight: 600;
           font-size: get($font-size, "base");
         }
         // margin-left: 3px;

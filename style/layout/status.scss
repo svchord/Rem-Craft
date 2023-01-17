@@ -47,6 +47,10 @@ $bardock-w: $item-w + $s-pad;
     }
   }
 
+  > .fn__flex-1 {
+    display: none;
+  }
+
   // 边栏设置按钮
   #barDock {
     position: fixed;
@@ -73,44 +77,51 @@ $bardock-w: $item-w + $s-pad;
       background-color: get($bg, "page", 2);
     }
   }
+}
 
-  // 状态栏
-  .status__msg {
-    display: flex;
-    padding: 0;
-    @include v-center($item-h);
-
-    &:not(:empty) {
-      padding: 0 $fn-space 0 0;
-      margin-right: $interval;
-      border-right: $fn-border;
-      &::before {
-        content: "";
-        display: flex;
-        width: $msg-icon-w;
-        height: $msg-icon-w;
-        margin: 2.5px 3px;
-        @include add-icon("notifications", get($text, "secondary"), 24, round);
-      }
+#commonMenu[data-name="statusHelp"] {
+  top: auto !important;
+  bottom: $s-h + $fn-space !important;
+  .b3-menu__item {
+    margin-top: 2px;
+    margin-bottom: 0;
+    &:first-child {
+      margin-top: 0;
     }
   }
+}
+// 状态栏
+.status__msg {
+  display: flex;
+  padding: 0;
+  @include v-center($item-h);
 
-  > .fn__flex-1 {
-    display: none;
-  }
-
-  // 文档统计
-  .status__counter {
-    @include v-center($item-h);
-    &:not(:empty) {
-      border-right: $fn-border;
-      margin: 0 $s-pad;
+  &:not(:empty) {
+    padding: 0 $fn-space 0 0;
+    margin-right: $interval;
+    border-right: $fn-border;
+    &::before {
+      content: "";
+      display: flex;
+      width: $msg-icon-w;
+      height: $msg-icon-w;
+      margin: 2.5px 3px;
+      @include add-icon("notifications", get($text, "secondary"), 24, round);
     }
   }
 }
 
+// 文档统计
+.status__counter {
+  @include v-center($item-h);
+  &:not(:empty) {
+    border-right: $fn-border;
+    margin: 0 $s-pad;
+  }
+}
+
 // 状态栏
-#status .status__msg {
+.status__msg {
   @include v-center($s-h);
 
   position: fixed;

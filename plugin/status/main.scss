@@ -80,70 +80,61 @@ $msg-icon-w: 14px;
       display: none !important;
     }
 
-    > .b3-menu {
-      bottom: $s-h + $btn-interval + $fn-space * 2 !important;
-      right: $fn-space !important;
-      display: block !important;
-      visibility: hidden;
-      overflow: visible;
-      transform: scale(0.5);
-      opacity: 0;
-      transform-origin: 60% 100%;
-      transition: all get($transition-duration, "base")
-        get($transition-function, "ease-in-out");
-      &[data-switch="open"] {
-        opacity: 1;
-        transform: scale(1);
-        visibility: visible;
-      }
-    }
-    .rc-dock-menu {
-      bottom: 0 !important;
-      right: 150px + $fn-space !important;
+    > .fn__flex-1 {
+      display: none;
     }
   }
+}
 
-  // 边栏设置按钮
-  #barDock {
-    display: none;
-  }
+.rc-dock-menu {
+  // bottom: 0 !important;
+  bottom: $s-h + $btn-interval + $fn-space * 2 !important;
+  left: auto !important;
+  right: 150px + $fn-space * 3 !important;
+}
 
-  // 状态栏
-  .status__msg {
-    position: unset;
-    padding: 0;
+#commonMenu[data-name="statusHelp"] {
+  left: auto !important;
+  bottom: $s-h + $btn-interval + $fn-space * 2 !important;
+  right: $fn-space !important;
+}
 
-    &:not(:empty) {
-      @include msg();
-      display: inline-block;
-      max-width: 180px;
-      animation: msg-w 2s ease-out;
-      transition: max-width get($transition-duration, "base")
-        get($transition-function, "ease-in-out");
-      &::before {
-        content: "🛈";
-        display: inline-flex;
-        margin: 0 $interval 0 0;
-        background-color: transparent;
-        -webkit-mask: none;
-        mask: none;
-      }
-      &:hover {
-        max-width: 400px !important;
-      }
+// 边栏设置按钮
+#barDock {
+  display: none;
+}
+
+// 状态栏
+.status__msg {
+  position: unset;
+  padding: 0;
+
+  &:not(:empty) {
+    @include msg();
+    display: inline-block;
+    max-width: 180px;
+    animation: msg-w 2s ease-out;
+    transition: max-width get($transition-duration, "base")
+      get($transition-function, "ease-in-out");
+    &::before {
+      content: "🛈";
+      display: inline-flex;
+      margin: 0 $interval 0 0;
+      background-color: transparent;
+      -webkit-mask: none;
+      mask: none;
+    }
+    &:hover {
+      max-width: 400px !important;
     }
   }
+}
 
-  > .fn__flex-1 {
-    display: none;
-  }
-
-  // 文档统计
-  .status__counter {
-    &:not(:empty) {
-      @include msg();
-      padding-right: $fn-space - 5px;
-    }
+// 文档统计
+.status__counter {
+  &:not(:empty) {
+    @include msg();
+    padding-right: $fn-space - 5px;
   }
 }
 

@@ -14,17 +14,10 @@ function stayMenu(elementId) {
       menu.classList.add("fn__none");
     }
   });
-  btn.addEventListener("mouseenter", () => {
-    let anotherMenu = document.querySelector(
-      `#status > .toolbar__item:not(#${elementId}) > .b3-menu`
-    );
-    anotherMenu.classList.add("fn__none");
-  });
 }
 
 export function statusMenuMain() {
   if (!config.plugin.status) {
-    stayMenu("statusHelp");
     stayMenu("barDock");
     setWndPadding("left", 23);
     setWndPadding("right", 23);

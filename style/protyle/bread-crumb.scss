@@ -81,5 +81,8 @@ $fz: get($font-size, "exsmall");
     &::after {
       display: none;
     }
+    &[data-type="exit-focus"]{
+      width: auto;
+    }
   }
 }

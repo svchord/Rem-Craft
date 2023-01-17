@@ -1,6 +1,22 @@
 # 版本日志 | Changelog 
 
 
+### [2.5.9](https://github.com/svchord/Rem-Craft/compare/v2.5.8...v2.5.9) (2023-01-17)
+
+
+### ♻️ 代码重构 | Code Refactoring
+
+* :recycle: 优化dock栏监听写法 ([69bbd4d](https://github.com/svchord/Rem-Craft/commit/69bbd4de7d68e40fed8f9891a59234dd6f5e9392))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 初步兼容2.7.0 ([e0d11e7](https://github.com/svchord/Rem-Craft/commit/e0d11e749a7bad8a67bcf6ce50ad53aa6f9b1d87))
+* :bug: 兼容思源2.7.0正式版 ([631b9a0](https://github.com/svchord/Rem-Craft/commit/631b9a079bf6f2bddf9f254795c3e67e07d865b6))
+* :bug: 修复暗黑模式下日历的颜色问题 ([83cfc18](https://github.com/svchord/Rem-Craft/commit/83cfc18da32152bc0b04b194712d614864ccfa04))
+* :bug: 优化模板选择弹窗样式 ([1c43ad3](https://github.com/svchord/Rem-Craft/commit/1c43ad3034b95a545ee3eefb5a8257b52c70add5))
+* :bug: 增加顶栏监听 ([dafcf1d](https://github.com/svchord/Rem-Craft/commit/dafcf1d8973b24f93f68419d697f431f3efcc0f9))
+
 ### [2.5.8](https://github.com/svchord/Rem-Craft/compare/v2.5.7...v2.5.8) (2023-01-12)
 
 

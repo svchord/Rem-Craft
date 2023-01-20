@@ -1,119 +1,114 @@
-@use "sass:list";
-@use "sass:math";
-@use "../common" as *;
-@use "dock";
+@use 'sass:list';
+@use 'sass:math';
+@use '../common' as *;
+@use 'dock';
 
 $bar-h: 40px;
-$bar-bg: get($bg, "base", 1);
+$bar-bg: get($bg, 'base', 1);
 
 $item-w: 34px;
 $item-h: 25px;
-$item-color: get($text, "secondary");
+$item-color: get($text, 'secondary');
 
 $padding: 8px;
 
-$icon-w: get($icon, "medium");
+$icon-w: get($icon, 'medium');
 
 $win-control-w: 46px;
 $mac-pad-right: 2px;
 
-$list: (
-  "Sync",
-  "History",
-  "DailyNote",
-  "Search",
-  "Readonly",
-  "Mode",
-  "Setting"
-);
+$list: ('Sync', 'History', 'DailyNote', 'Search', 'Readonly', 'Mode', 'Setting');
 
 @mixin top-item {
-  @include item("base", $important: true);
-  @include component-base();
-  &:not(#barWorkspace) {
-    @include svg-div($item-w, $icon-w, $item-h);
-    margin-right: 3px;
-  }
-  &--active {
-    background-color: get($bg, "base", 2) !important;
-  }
+    @include item('base', $important: true);
+    @include component-base();
+    &:not(#barWorkspace) {
+        @include svg-div($item-w, $icon-w, $item-h);
+        margin-right: 3px;
+    }
 
-  &--disabled {
-    @include item-disabled(true);
-  }
+    &--active {
+        background-color: get($bg, 'base', 2) !important;
+    }
 
-  cursor: unset;
+    &--disabled {
+        @include item-disabled(true);
+    }
+
+    cursor: unset;
 }
 
 @mixin win-control($svg-w) {
-  @include item-tran("base", $important: true);
-  @include svg-div($win-control-w, $svg-w, $bar-h);
-  border-radius: unset;
-  cursor: pointer;
-  &::after {
-    display: none;
-  }
+    @include item-tran('base', $important: true);
+    @include svg-div($win-control-w, $svg-w, $bar-h);
+    border-radius: unset;
+    cursor: pointer;
+    &::after {
+        display: none;
+    }
 }
 
 :root {
-  --b3-toolbar-background: #{$bar-bg};
-  --b3-toolbar-blur-background: #{$bar-bg};
-  --b3-toolbar-color: #{$item-color};
+    --b3-toolbar-background: #{$bar-bg};
+    --b3-toolbar-blur-background: #{$bar-bg};
+    --b3-toolbar-color: #{$item-color};
 }
 
 //顶部工具栏
 #toolbar {
-  height: $bar-h;
-  margin-bottom: -$interval;
-  border: none;
-  -webkit-app-region: drag;
-  padding-right: $mac-pad-right;
-
-  body.body--win32 & {
-    padding: 0;
-  }
-
-  .toolbar__item {
-    -webkit-app-region: no-drag;
-    @include top-item();
-
-    &#bar {
-      &Back,
-      &Forward {
-        @include svg-div($item-w, $icon-w - 2px, $item-h);
-        margin-right: 3px;
-      }
-      &Workspace {
-        padding: 7px 10px;
-        .toolbar__text {
-          font-weight: 600;
-          font-size: get($font-size, "base");
-        }
-        // margin-left: 3px;
-      }
-    }
-    &#windowAppIcon {
-      @include svg-div(dock.$dock-w, $icon-w, $bar-h);
-    }
-  }
-
-  #drag {
-    font-size: 14px;
-  }
-
-  #windowControls {
     height: $bar-h;
+    margin-bottom: -$interval;
+    border: none;
+    -webkit-app-region: drag;
+    padding-right: $mac-pad-right;
+
+    body.body--win32 & {
+        padding: 0;
+    }
+
     .toolbar__item {
-      @include win-control(12px);
+        -webkit-app-region: no-drag;
+        @include top-item();
+
+        &#bar {
+            &Back,
+            &Forward {
+                @include svg-div($item-w, $icon-w - 2px, $item-h);
+                margin-right: 3px;
+            }
+            &Workspace {
+                padding: 7px 10px;
+                .toolbar__text {
+                    font-weight: 600;
+                    font-size: get($font-size, 'base');
+                }
+                // margin-left: 3px;
+            }
+        }
+        &#windowAppIcon {
+            @include item-unchange('base', $important: true);
+            @include svg-div(dock.$dock-w, $icon-w, $bar-h);
+            -webkit-app-region: drag;
+        }
     }
 
-    #maxWindow {
-      @include win-control(10px);
+    #drag {
+        font-size: 14px;
     }
 
-    #closeWindow {
-      @include win-control(10px);
-      @include item-close(true);
+    #windowControls {
+        height: $bar-h;
+        .toolbar__item {
+            @include win-control(12px);
+        }
+
+        #maxWindow {
+            @include win-control(10px);
+        }
+
+        #closeWindow {
+            @include win-control(10px);
+            @include item-close(true);
+        }
     }
-  }
 }

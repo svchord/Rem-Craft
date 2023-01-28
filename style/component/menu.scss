@@ -18,6 +18,7 @@ $padding: 6px;
 @mixin menu {
   min-width: 150px;
   padding: $padding;
+  border: none;
   border-radius: $menu-radius;
 }
 

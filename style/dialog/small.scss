@@ -1,10 +1,10 @@
-@use "sass:math";
-@use "../common" as *;
-@use "../component/list";
-@use "../component/form";
-@use "big";
+@use 'sass:math';
+@use '../common' as *;
+@use '../component/list';
+@use '../component/form';
+@use 'big';
 
-$w: get($component-size, "small");
+$w: get($component-size, 'small');
 $spacing: math.div(16px * 2 + 24px - $w, 2);
 $mar: 12px;
 $padding: 24px;
@@ -13,178 +13,176 @@ $meta-w: 80px;
 $small-radius: big.$dialog-radius;
 
 @mixin actions {
-  $space: 3%;
+    $space: 3%;
 
-  .fn__space {
-    width: $space;
-  }
-
-  .b3-button {
-    @include item("pop");
-    color: get($text, "primary");
-    box-shadow: get($shadow, 0);
-    letter-spacing: 0.3px;
-    width: math.div(100% - $space, 2);
-
-    // 确认按钮
-    &.b3-button--text {
-      @include item-primary();
+    .fn__space {
+        width: $space;
     }
-  }
+
+    .b3-button {
+        @include item('pop');
+        color: get($text, 'primary');
+        box-shadow: get($shadow, 0);
+        letter-spacing: 0.3px;
+        width: math.div(100% - $space, 2);
+
+        // 确认按钮
+        &.b3-button--text {
+            @include item-primary();
+        }
+    }
 }
 
 @mixin close {
-  @include item-close();
-  @include component();
-  @include svg($w, 8px);
-  background-color: get($bg, "page", 2);
-  top: $spacing;
-  right: $spacing;
+    @include item-close();
+    @include component();
+    @include svg($w, 8px);
+    background-color: get($bg, 'page', 2);
+    top: $spacing;
+    right: $spacing;
 }
 
 //小弹窗
 .b3-dialog__container {
-  &[style*="50vw"],
-  &[style*="520px"] {
-    width: 450px !important;
-    // padding: 0 16px;
+    &[style*='50vw'],
+    &[style*='520px'] {
+        width: 450px !important;
+        // padding: 0 16px;
 
-    .b3-dialog {
-      //弹窗标题
-      &__header {
-        padding: 16px $padding - $mar;
-        margin: 0 $mar;
+        .b3-dialog {
+            //弹窗标题
+            &__header {
+                padding: 16px $padding - $mar;
+                margin: 0 $mar;
 
-        // border: none;
-        // border-radius: $small-radius $small-radius 0 0;
-        // background-color: get($bg, "base", 1);
-        // 新建日记弹窗
-        &.fn__none {
-          display: block !important;
+                // border: none;
+                // border-radius: $small-radius $small-radius 0 0;
+                // background-color: get($bg, "base", 1);
+                // 新建日记弹窗
+                &.fn__none {
+                    display: block !important;
 
-          &::before {
-            content: "新建日记";
-            display: block;
-          }
+                    &::before {
+                        content: '新建日记';
+                        display: block;
+                    }
+                }
+
+                .ft__smaller.ft__on-surface {
+                    display: block;
+                    margin-top: $interval;
+                }
+            }
+
+            //弹窗关闭按钮
+            &__close {
+                @include close();
+            }
+
+            // 属性弹窗
+            &__content {
+                padding: 16px $padding;
+
+                // 书签右侧按钮 && 自定义属性删除按钮
+                .block__icon {
+                    @include svg-div(get($component-size, 'base'), 10px, $important: true);
+                }
+
+                // 属性名
+                .ft__on-surface,
+                .b3-text-field[placeholder='属性名'] {
+                    font-size: get($font-size, 'base');
+                    width: $meta-w !important;
+                    text-align: center !important;
+
+                    // 属性名和输入框的间隔
+                    + .fn__space {
+                        width: 16px;
+                    }
+                }
+
+                textarea {
+                    line-height: 18px;
+                }
+
+                // 属性弹窗第二条分割线
+                div[style*='var(--b3-border-color)'] {
+                    height: 0 !important;
+                    background-color: transparent !important;
+                    border-bottom: $fn-border;
+                }
+
+                // 自定义属性区域
+                .custom-attr__add {
+                    padding: 0;
+                    height: get($component-size, 'base') * 4 + 16px * 3;
+
+                    // 自定义属性添加按钮
+                    .b3-button {
+                        width: $meta-w !important;
+                    }
+                }
+            }
+
+            // 弹窗底部按钮
+            &__action {
+                padding: $padding $padding - $mar;
+                margin: 0 $mar;
+
+                // padding: $padding 24px;
+                // border: none;
+                // background-color: get($bg, "base", 1);
+                // border-radius: 0 0 $small-radius $small-radius;
+                @include actions();
+            }
         }
 
-        .ft__smaller.ft__on-surface {
-          display: block;
-          margin-top: $interval;
-        }
-      }
-
-      //弹窗关闭按钮
-      &__close {
-        @include close();
-      }
-
-      // 属性弹窗
-      &__content {
-        padding: 16px $padding;
-
-        // 书签右侧按钮 && 自定义属性删除按钮
-        .block__icon {
-          @include svg-div(
-            get($component-size, "base"),
-            10px,
-            $important: true
-          );
+        .b3-form__icon {
+            @include form.search-input(list.$item-h, 0, 12px);
+            margin: $fn-space $mar !important;
         }
 
-        // 属性名
-        .ft__on-surface,
-        .b3-text-field[placeholder="属性名"] {
-          font-size: get($font-size, "base");
-          width: $meta-w !important;
-          text-align: center !important;
-
-          // 属性名和输入框的间隔
-          + .fn__space {
-            width: 16px;
-          }
+        // 移动弹窗的搜索结果列表
+        #foldList {
+            margin: 0 $mar;
+            .b3-list {
+                &-item {
+                    padding: list.$padding !important;
+                    &__graphic {
+                        align-self: flex-start;
+                    }
+                    &__showall {
+                        margin-left: list.$padding;
+                        line-height: list.$text-h;
+                    }
+                }
+            }
         }
 
-        textarea {
-          line-height: 18px;
+        #foldTree {
+            margin: 0 $mar;
         }
-
-        // 属性弹窗第二条分割线
-        div[style*="var(--b3-border-color)"] {
-          height: 0 !important;
-          background-color: transparent !important;
-          border-bottom: $fn-border;
-        }
-
-        // 自定义属性区域
-        .custom-attr__add {
-          padding: 0;
-          height: get($component-size, "base") * 4 + 16px * 3;
-
-          // 自定义属性添加按钮
-          .b3-button {
-            width: $meta-w !important;
-          }
-        }
-      }
-
-      // 弹窗底部按钮
-      &__action {
-        padding: $padding $padding - $mar;
-        margin: 0 $mar;
-
-        // padding: $padding 24px;
-        // border: none;
-        // background-color: get($bg, "base", 1);
-        // border-radius: 0 0 $small-radius $small-radius;
-        @include actions();
-      }
     }
 
-    .b3-form__icon {
-      @include form.search-input(list.$item-h, 0, 12px);
-      margin: $fn-space $mar !important;
-    }
+    &[style*='520px'] {
+        width: 360px !important;
+        .b3-dialog {
+            &__content {
+                padding: 28px $padding;
 
-    // 移动弹窗的搜索结果列表
-    #foldList {
-      margin: 0 $mar;
-      .b3-list {
-        &-item {
-          padding: list.$padding !important;
-          &__graphic {
-            align-self: flex-start;
-          }
-          &__showall {
-            margin-left: list.$padding;
-            line-height: list.$text-h;
-          }
-        }
-      }
-    }
+                > .b3-text-field {
+                    @include component('medium');
+                    border-radius: get($radius, 'base');
+                    + .b3-label__text {
+                        margin-top: 8px;
+                    }
+                }
 
-    #foldTree {
-      margin: 0 $mar;
+                &[style*='height'] {
+                    height: auto !important;
+                    padding: 0px $padding;
+                }
+            }
+        }
     }
-  }
-
-  &[style*="520px"] {
-    width: 360px !important;
-    .b3-dialog {
-      &__content {
-        &:has(> .b3-text-field) {
-          padding: 28px $padding;
-        }
-        > .b3-text-field {
-          @include component("medium");
-          border-radius: get($radius, "base");
-        }
-
-        &[style*="height"] {
-          height: auto !important;
-          padding: 0px $padding;
-        }
-      }
-    }
-  }
 }

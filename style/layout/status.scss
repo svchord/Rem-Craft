@@ -1,5 +1,5 @@
-@use "sass:math";
-@use "../common" as *;
+@use 'sass:math';
+@use '../common' as *;
 
 $s-h: 27px;
 $s-pad: 4px;
@@ -13,133 +13,132 @@ $msg-icon-w: 12px;
 $bardock-w: $item-w + $s-pad;
 
 #status {
-  position: fixed;
-  background-color: get($bg, "page", 1);
-  right: $bardock-w;
-  bottom: 0;
-  height: $s-h;
-  padding: $s-pad 0 $s-pad $s-pad;
-  transition: width get($transition-duration, "base")
-    get($transition-function, "ease-in-out");
-  border: {
-    width: 1px 0 0 1px;
-    style: solid;
-    color: get($border, 3);
-    radius: 8px 0 0 0;
-  }
-
-  // 右下角按钮
-  .toolbar__item {
-    @include item-tran("page");
-    @include svg-div($item-w, $icon-w, $item-h);
-
-    border-radius: 4px;
-
-    .b3-menu {
-      bottom: $s-h + $fn-space !important;
-      left: unset !important;
-      right: $s-pad;
-      z-index: 0;
-    }
-
-    &::after {
-      display: none;
-    }
-  }
-
-  > .fn__flex-1 {
-    display: none;
-  }
-
-  // 边栏设置按钮
-  #barDock {
+    @include v-center($item-h);
     position: fixed;
-    right: 0;
+    background-color: get($bg, 'page', 1);
+    right: $bardock-w;
     bottom: 0;
-    width: $bardock-w;
     height: $s-h;
-    padding: $s-pad $s-pad $s-pad 0;
-    @include item-unchange("page");
-
+    padding: $s-pad 0 $s-pad $s-pad;
+    transition: width get($transition-duration, 'base') get($transition-function, 'ease-in-out');
     border: {
-      top: $fn-border;
-      radius: unset;
+        width: 1px 0 0 1px;
+        style: solid;
+        color: get($border, 3);
+        radius: 8px 0 0 0;
     }
 
-    > svg {
-      width: $item-w;
-      height: $item-h;
-      padding: math.div($item-h - $icon-w, 2) math.div($item-w - $icon-w, 2);
-      @include item("page");
+    // 右下角按钮
+    .toolbar__item {
+        @include item-tran('page');
+        @include svg-div($item-w, $icon-w, $item-h);
+
+        border-radius: 4px;
+
+        .b3-menu {
+            bottom: $s-h + $fn-space !important;
+            left: unset !important;
+            right: $s-pad;
+            z-index: 0;
+        }
+
+        &::after {
+            display: none;
+        }
     }
 
-    &:hover > svg {
-      background-color: get($bg, "page", 2);
+    > .fn__flex-1 {
+        display: none;
     }
-  }
+
+    // 边栏设置按钮
+    #barDock {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: $bardock-w;
+        height: $s-h;
+        padding: $s-pad $s-pad $s-pad 0;
+        @include item-unchange('page');
+
+        border: {
+            top: $fn-border;
+            radius: unset;
+        }
+
+        > svg {
+            width: $item-w;
+            height: $item-h;
+            padding: math.div($item-h - $icon-w, 2) math.div($item-w - $icon-w, 2);
+            @include item('page');
+        }
+
+        &:hover > svg {
+            background-color: get($bg, 'page', 2);
+        }
+    }
 }
 
-#commonMenu[data-name="statusHelp"] {
-  top: auto !important;
-  bottom: $s-h + $fn-space !important;
-  .b3-menu__item {
-    margin-top: 2px;
-    margin-bottom: 0;
-    &:first-child {
-      margin-top: 0;
+#commonMenu[data-name='statusHelp'] {
+    top: auto !important;
+    bottom: $s-h + $fn-space !important;
+    .b3-menu__item {
+        margin-top: 2px;
+        margin-bottom: 0;
+        &:first-child {
+            margin-top: 0;
+        }
     }
-  }
 }
 // 状态栏
 .status__msg {
-  display: flex;
-  padding: 0;
-  @include v-center($item-h);
+    display: flex;
+    padding: 0;
 
-  &:not(:empty) {
-    padding: 0 $fn-space 0 0;
-    margin-right: $interval;
-    border-right: $fn-border;
-    &::before {
-      content: "";
-      display: flex;
-      width: $msg-icon-w;
-      height: $msg-icon-w;
-      margin: 2.5px 3px;
-      @include add-icon("notifications", get($text, "secondary"), 24, round);
+    &:not(:empty) {
+        padding: 0 $fn-space 0 0;
+        margin-right: $interval;
+        border-right: $fn-border;
+        &::before {
+            content: '';
+            display: flex;
+            width: $msg-icon-w;
+            height: $msg-icon-w;
+            margin: 2.5px 3px;
+            @include add-icon('notifications', get($text, 'secondary'), 24, round);
+        }
     }
-  }
 }
 
+// 后台任务
+.status__backgroundtask,
 // 文档统计
 .status__counter {
-  @include v-center($item-h);
-  &:not(:empty) {
-    border-right: $fn-border;
-    margin: 0 $s-pad;
-  }
+    &:not(:empty) {
+        border-right: $fn-border;
+        margin: 0 $s-pad;
+    }
 }
 
 // 状态栏
 .status__msg {
-  @include v-center($s-h);
+    @include v-center($s-h);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    background-color: get($bg, 'page', 1);
 
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  background-color: get($bg, "page", 1);
-
-  &:not(:empty) {
-    margin: 0;
-    border: {
-      width: 1px 1px 0 0;
-      style: solid;
-      color: get($border, 3);
-      radius: 0 8px 0 0;
+    &:not(:empty) {
+        margin: 0;
+        border: {
+            width: 1px 1px 0 0;
+            style: solid;
+            color: get($border, 3);
+            radius: 0 8px 0 0;
+        }
+        &::before {
+            margin: math.div($s-h - $msg-icon-w - 1px, 2);
+        }
     }
-    &::before {
-      margin: math.div($s-h - $msg-icon-w - 1px, 2);
-    }
-  }
 }

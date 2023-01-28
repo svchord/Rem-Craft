@@ -66,6 +66,18 @@ $list: ('Sync', 'History', 'DailyNote', 'Search', 'Readonly', 'Mode', 'Setting')
         padding: 0;
     }
 
+    &::before {
+        $icon-w: get($icon, 'large');
+        content: '';
+        display: flex;
+        display: block;
+        width: $icon-w;
+        height: $icon-w;
+        margin: auto math.div(dock.$dock-w - $icon-w, 2);
+        background-image: url('#{$asset-path}/icons/siyuan.svg');
+        background-repeat: round;
+    }
+
     .toolbar__item {
         -webkit-app-region: no-drag;
         @include top-item();
@@ -84,11 +96,6 @@ $list: ('Sync', 'History', 'DailyNote', 'Search', 'Readonly', 'Mode', 'Setting')
                 }
                 // margin-left: 3px;
             }
-        }
-        &#windowAppIcon {
-            @include item-unchange('base', $important: true);
-            @include svg-div(dock.$dock-w, $icon-w, $bar-h);
-            -webkit-app-region: drag;
         }
     }
 

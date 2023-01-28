@@ -1,17 +1,20 @@
-@use "sass:math";
-@use "../common" as *;
-@use "history";
-@use "snippets";
-@use "small";
+@use 'sass:math';
+@use '../common' as *;
+@use 'history';
+@use 'snippets';
+@use 'small';
 
 .b3-dialog__container:has(#preview) {
-  .b3-dialog__header {
-    @include history.bar();
-  }
-  .b3-dialog__close {
-    @include small.close();
-  }
-  .b3-dialog__action {
-    @include snippets.medium-actions();
-  }
+    .b3-dialog__header {
+        @include history.bar();
+        label {
+            margin-right: 50px;
+        }
+    }
+    .b3-dialog__close {
+        @include small.close();
+    }
+    .b3-dialog__action {
+        @include snippets.medium-actions();
+    }
 }

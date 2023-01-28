@@ -1,6 +1,24 @@
 # 版本日志 | Changelog 
 
 
+### [2.5.10](https://github.com/svchord/Rem-Craft/compare/v2.5.9...v2.5.10) (2023-01-28)
+
+
+### ♻️ 代码重构 | Code Refactoring
+
+* :recycle: 重构静态资源加载方式 ([5fda915](https://github.com/svchord/Rem-Craft/commit/5fda91536bc395e574a343c94f4233d6d9d6aaf6))
+
+
+### 📦‍ 构建相关 | Build System
+
+* :package: 更新依赖 ([4ac76c4](https://github.com/svchord/Rem-Craft/commit/4ac76c4d0265d06cd2a7c106d5150c33b72c4af1))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容思源2.7.1 ([bde8953](https://github.com/svchord/Rem-Craft/commit/bde895333f0f7c1ac662a6b983e8100cc9267845))
+* :bug: 修复顶栏按钮悬浮样式 ([bfa9fc8](https://github.com/svchord/Rem-Craft/commit/bfa9fc8685ecfaefaaa32504e6d98ab0382a3975))
+
 ### [2.5.9](https://github.com/svchord/Rem-Craft/compare/v2.5.8...v2.5.9) (2023-01-17)
 
 

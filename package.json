@@ -1,6 +1,6 @@
 {
     "name": "rem-craft",
-    "version": "2.5.11",
+    "version": "2.5.12",
     "description": "My theme for siyuan",
     "main": "theme.js",
     "scripts": {

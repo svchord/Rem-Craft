@@ -1,6 +1,13 @@
 # 版本日志 | Changelog 
 
 
+### [2.5.12](https://github.com/svchord/Rem-Craft/compare/v2.5.11...v2.5.12) (2023-02-03)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复文档树开启卡顿的问题 ([d2c0e98](https://github.com/svchord/Rem-Craft/commit/d2c0e9887b6178257172dc687b597806a569f65e))
+
 ### [2.5.11](https://github.com/svchord/Rem-Craft/compare/v2.5.10...v2.5.11) (2023-02-03)
 
 

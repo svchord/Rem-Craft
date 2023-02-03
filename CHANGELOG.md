@@ -1,6 +1,13 @@
 # 版本日志 | Changelog 
 
 
+### [2.5.11](https://github.com/svchord/Rem-Craft/compare/v2.5.10...v2.5.11) (2023-02-03)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容思源2.7.2 ([128faf8](https://github.com/svchord/Rem-Craft/commit/128faf84437e299dd651b1fcbc1a2f11c139d790))
+
 ### [2.5.10](https://github.com/svchord/Rem-Craft/compare/v2.5.9...v2.5.10) (2023-01-28)
 
 

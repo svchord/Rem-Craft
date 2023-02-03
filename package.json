@@ -1,28 +1,28 @@
 {
-  "name": "rem-craft",
-  "version": "2.5.10",
-  "description": "My theme for siyuan",
-  "main": "theme.js",
-  "scripts": {
-    "build": "sass --watch style/index.scss:theme.css -s compressed",
-    "theme": "sass --watch theme:theme -s compressed --no-source-map",
-    "plugin": "sass --watch plugin:plugin -s compressed --no-source-map",
-    "commit": "git add . && git cz",
-    "release": "standard-version && git push --follow-tags origin main",
-    "amend": "git add . && git commit --amend --no-edit && git push --force"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-git"
+    "name": "rem-craft",
+    "version": "2.5.10",
+    "description": "My theme for siyuan",
+    "main": "theme.js",
+    "scripts": {
+        "build": "sass --watch style/index.scss:theme.css -s compressed",
+        "theme": "sass --watch theme:theme -s compressed --no-source-map",
+        "plugin": "sass --watch plugin:plugin -s compressed --no-source-map",
+        "commit": "git add . && git cz",
+        "release": "standard-version && git push --follow-tags origin main",
+        "amend": "git add . && git commit --amend --no-edit && git push --force"
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-git"
+        }
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "commitizen": "^4.3.0",
+        "cz-git": "^1.4.1",
+        "sass": "^1.58.0",
+        "standard-version": "^9.5.0"
     }
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "commitizen": "^4.3.0",
-    "cz-git": "^1.4.1",
-    "sass": "^1.57.1",
-    "standard-version": "^9.5.0"
-  }
 }

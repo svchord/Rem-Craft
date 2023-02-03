@@ -20,6 +20,12 @@ $bardock-w: $item-w + $s-pad;
     bottom: 0;
     height: $s-h;
     padding: $s-pad 0 $s-pad $s-pad;
+
+    body.body--window & {
+        right: 0;
+        padding: $s-pad;
+    }
+    
     transition: width get($transition-duration, 'base') get($transition-function, 'ease-in-out');
     border: {
         width: 1px 0 0 1px;

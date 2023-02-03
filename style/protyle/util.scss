@@ -72,6 +72,7 @@ $util-radius: get($radius, "medium");
       background-color: get($bg, "pop", 1);
       padding: 16px;
       min-height: 180px;
+      font-size: 1.2em;
 
       &,
       &:hover,

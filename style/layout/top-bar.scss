@@ -48,6 +48,22 @@ $list: ('Sync', 'History', 'DailyNote', 'Search', 'Readonly', 'Mode', 'Setting')
     }
 }
 
+@mixin win-controls {
+    height: $bar-h;
+    .toolbar__item {
+        @include win-control(12px);
+    }
+
+    #maxWindow {
+        @include win-control(10px);
+    }
+
+    #closeWindow {
+        @include win-control(10px);
+        @include item-close(true);
+    }
+}
+
 :root {
     --b3-toolbar-background: #{$bar-bg};
     --b3-toolbar-blur-background: #{$bar-bg};
@@ -93,6 +109,10 @@ $list: ('Sync', 'History', 'DailyNote', 'Search', 'Readonly', 'Mode', 'Setting')
                 .toolbar__text {
                     font-weight: 600;
                     font-size: get($font-size, 'base');
+                    color: get($text, 'secondary');
+                }
+                .toolbar__svg {
+                    color: get($text, 'primary');
                 }
                 // margin-left: 3px;
             }
@@ -104,18 +124,6 @@ $list: ('Sync', 'History', 'DailyNote', 'Search', 'Readonly', 'Mode', 'Setting')
     }
 
     #windowControls {
-        height: $bar-h;
-        .toolbar__item {
-            @include win-control(12px);
-        }
-
-        #maxWindow {
-            @include win-control(10px);
-        }
-
-        #closeWindow {
-            @include win-control(10px);
-            @include item-close(true);
-        }
+        @include win-controls();
     }
 }

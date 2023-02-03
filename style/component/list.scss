@@ -1,166 +1,170 @@
-@use "sass:math";
-@use "sass:list";
-@use "../common" as *;
+@use 'sass:math';
+@use 'sass:list';
+@use '../common' as *;
 
-$list-type: "base";
-$item-h: get($component-size, "medium");
+$list-type: 'base';
+$item-h: get($component-size, 'medium');
 $text-h: 20px;
 $padding: math.div($item-h - $text-h, 2);
 
 :root {
-  // 列表
-  --b3-list-hover: #{get($bg, "component", 1)};
+    // 列表
+    --b3-list-hover: #{get($bg, 'component', 1)};
 }
 
-@mixin list-item($type: "page") {
-  @include item($type);
-  @include component-base($list-type);
-  height: auto;
+@mixin list-item($type: 'page') {
+    @include item($type);
+    @include component-base($list-type);
+    height: auto;
 }
 
-@mixin content($color: "primary") {
-  .b3-list-item {
-    &__text {
-      color: get($text, $color);
-    }
-    // 次级信息
-    &__meta {
-      @include meta();
-    }
-  }
-
-  // 列表选中态
-  &--focus {
-    @include color("focus");
-    @include item-unchange("focus", 1, true);
-
+@mixin content($color: 'primary') {
     .b3-list-item {
-      &__text,
-      &__graphic {
-        @include color("focus");
-      }
-
-      // 次级信息
-      &__meta {
-        @include meta-focus();
-      }
+        &__text {
+            color: get($text, $color);
+        }
+        // 次级信息
+        &__meta {
+            @include meta();
+        }
     }
-  }
+
+    // 列表选中态
+    &--focus {
+        @include color('focus');
+        @include item-unchange('focus', 1, true);
+
+        .b3-list-item {
+            &__text,
+            &__graphic {
+                @include color('focus');
+            }
+
+            // 次级信息
+            &__meta {
+                @include meta-focus();
+            }
+        }
+    }
 }
 
 @mixin list-btn {
-  @include item-tran("component");
-  border-radius: get($radius, "base");
-  &::after {
-    display: none !important;
-  }
+    @include item-tran('component');
+    border-radius: get($radius, 'base');
+    &::after {
+        display: none !important;
+    }
 }
 
 @mixin meta {
-  font-size: get($font-size, "exsmall");
-  color: get($text, "placeholder");
+    font-size: get($font-size, 'exsmall');
+    color: get($text, 'placeholder');
 }
 
 @mixin meta-focus {
-  color: get($text, "meta-focus");
+    color: get($text, 'meta-focus');
 }
 
 // 列表为空
 .b3-list--empty {
-  color: get($text, "disabled");
-  font-size: get($font-size, "base");
+    color: get($text, 'disabled');
+    font-size: get($font-size, 'base');
 }
 
 .b3-list-item {
-  padding: $padding;
-  margin: 0 0 2px !important;
-  line-height: $text-h;
-
-  @include list-item();
-  @include content();
-  // 折叠按钮
-  &__toggle {
-    height: $text-h;
-    margin-right: $interval;
-    padding: 0 6px;
-
-    svg {
-      @include svg(8px);
-    }
-
-    // 鼠标悬浮
-    &.b3-list-item__toggle--hl:hover {
-      background-color: transparent;
-    }
-  }
-
-  // 列表图标（大纲、标签等）
-  &__graphic {
-    @include svg($text-h, get($icon, "small"));
-    // margin-left: $interval;
-
-    // 图标悬浮后有弹窗
-    &.popover__block {
-      display: flex;
-      @include list-btn();
-
-      // 反链展开时的特殊情况
-      .backlink--more & {
-        margin-top: 0px;
-      }
-    }
-  }
-
-  //列表emoji
-  &__icon {
-    @include emoji-icon($text-h, 12px, get($icon, "base"));
-    @include list-btn();
-    margin: 0;
-  }
-
-  // 列表文本
-  &__text {
+    padding: $padding;
+    margin: 0 0 2px !important;
     line-height: $text-h;
-    margin-left: $interval;
-    // 自定义emoji
-    img,
-    svg.custom-icon {
-      @include svg($text-h, get($icon, "base"));
-    }
-  }
 
-  // 列表按钮
-  &__action {
-    @include svg-div($text-h, get($icon, "small"));
-    @include list-btn();
-    margin-left: $interval;
-  }
+    @include list-item();
+    @include content();
+    // 折叠按钮
+    &__toggle {
+        height: $text-h;
+        margin-right: $interval;
+        padding: 0 6px;
 
-  // 列表计数块
-  .counter:not(:empty) {
-    @include counter($text-h);
-    margin-left: $interval;
-  }
+        svg {
+            @include svg(8px);
+        }
 
-  // 列表选中态
-  &--focus {
-    .b3-list-item {
-      &__toggle {
-        @include color("focus");
-      }
+        // 鼠标悬浮
+        &.b3-list-item__toggle--hl:hover {
+            background-color: transparent;
+        }
     }
 
-    .b3-list-item__toggle.fn__hidden .b3-list-item__arrow,
-    .b3-list-item__arrow.fn__hidden {
-      background-color: get($text, "focus") !important;
+    // 列表图标（大纲、标签等）
+    &__graphic {
+        @include svg($text-h, get($icon, 'small'));
+        &:not(svg) {
+            @include emoji-icon($text-h, 12px, get($icon, 'base'));
+        }
+
+        // margin-left: $interval;
+
+        // 图标悬浮后有弹窗
+        &.popover__block {
+            display: flex;
+            @include list-btn();
+
+            // 反链展开时的特殊情况
+            .backlink--more & {
+                margin-top: 0px;
+            }
+        }
     }
 
-    .counter:not(:empty),
-    .b3-list-item__icon,
-    .b3-list-item__action,
-    .b3-list-item__graphic.popover__block {
-      @include color("focus");
-      @include item-tran("focus");
+    //列表emoji
+    &__icon {
+        @include emoji-icon($text-h, 12px, get($icon, 'base'));
+        @include list-btn();
+        margin: 0;
     }
-  }
+
+    // 列表文本
+    &__text {
+        line-height: $text-h;
+        margin-left: $interval;
+        // 自定义emoji
+        img,
+        svg.custom-icon {
+            @include svg($text-h, get($icon, 'base'));
+        }
+    }
+
+    // 列表按钮
+    &__action {
+        @include svg-div($text-h, get($icon, 'small'));
+        @include list-btn();
+        margin-left: $interval;
+    }
+
+    // 列表计数块
+    .counter:not(:empty) {
+        @include counter($text-h);
+        margin-left: $interval;
+    }
+
+    // 列表选中态
+    &--focus {
+        .b3-list-item {
+            &__toggle {
+                @include color('focus');
+            }
+        }
+
+        .b3-list-item__toggle.fn__hidden .b3-list-item__arrow,
+        .b3-list-item__arrow.fn__hidden {
+            background-color: get($text, 'focus') !important;
+        }
+
+        .counter:not(:empty),
+        .b3-list-item__icon,
+        .b3-list-item__action,
+        .b3-list-item__graphic.popover__block {
+            @include color('focus');
+            @include item-tran('focus');
+        }
+    }
 }

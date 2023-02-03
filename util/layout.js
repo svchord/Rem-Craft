@@ -1,8 +1,8 @@
-import { fisrtToUpper, numToPx } from "./convert.js";
-import { setMutationObserver } from "./observer.js";
+import { fisrtToUpper, numToPx } from './convert.js';
+import { setMutationObserver } from './observer.js';
 
-export const prefix = "rc";
-export const layout = window.siyuan.layout.centerLayout.parent.element;
+export const prefix = 'rc';
+export const layout = window.siyuan.layout.centerLayout.parent?.element;
 
 /**
  * 判断dock栏是否存在
@@ -13,29 +13,35 @@ export const layout = window.siyuan.layout.centerLayout.parent.element;
 export function isDockExist(direction) {
     direction = fisrtToUpper(direction);
     let dock = document.getElementById(`dock${direction}`);
-    return !dock.classList.contains("fn__none");
+    if (dock) {
+        return !dock.classList.contains('fn__none');
+    } else {
+        return false;
+    }
 }
 
 export function setDockObserver(direction, func) {
     direction = fisrtToUpper(direction);
     let dock = document.getElementById(`dock${direction}`);
-    let dockObserver = setMutationObserver("attributes", func);
-    dockObserver.observe(dock, {
-        attributes: true,
-    });
+    let dockObserver = setMutationObserver('attributes', func);
+    if (dock) {
+        dockObserver.observe(dock, {
+            attributes: true,
+        });
+    }
 }
 
 export function getFolumn(direction) {
-    return direction === "left"
-        ? layout.firstElementChild
-        : layout.lastElementChild;
+    return direction === 'left' ? layout?.firstElementChild : layout?.lastElementChild;
 }
 
 export function setWndPadding(direction, value) {
     let folumn = getFolumn(direction);
-    let resize = folumn.querySelector(".layout__resize");
-    let wnd = resize.classList.contains("fn__none")
-        ? folumn.firstElementChild.firstElementChild
-        : folumn.lastElementChild.firstElementChild;
-    wnd.style.paddingBottom = numToPx(value);
+    let resize = folumn?.querySelector('.layout__resize');
+    let wnd = resize?.classList.contains('fn__none')
+        ? folumn?.firstElementChild.firstElementChild
+        : folumn?.lastElementChild.firstElementChild;
+    if (wnd) {
+        wnd.style.paddingBottom = numToPx(value);
+    }
 }

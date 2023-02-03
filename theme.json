@@ -1,10 +1,7 @@
 {
-  "name": "Rem Craft",
-  "author": "Seven Chor",
-  "url": "https://github.com/svchord/Rem-Craft",
-  "version": "2.5.10",
-  "modes": [
-    "dark",
-    "light"
-  ]
+    "name": "Rem Craft",
+    "author": "Seven Chor",
+    "url": "https://github.com/svchord/Rem-Craft",
+    "version": "2.5.10",
+    "modes": ["dark", "light"]
 }

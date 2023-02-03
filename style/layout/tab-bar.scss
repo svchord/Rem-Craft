@@ -11,6 +11,7 @@ $btn-w: get($component-size, "small");
 //页签栏
 .layout-tab-bar {
   background-color: get($bg, "page", 1);
+  border: none;
 
   .layout__center & {
     &:not(:empty) {

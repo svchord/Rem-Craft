@@ -1,18 +1,20 @@
-import { config } from "../../script/config.js";
+import { config } from '../../script/config.js';
 
 function insertBtn(elementId) {
     // 把日历图标 放到  搜索图标前面
     let element = document.getElementById(elementId);
-    element.insertAdjacentHTML(
-        "beforebegin",
-        '<div id="calendar" class="toolbar__item b3-tooltips b3-tooltips__se" aria-label="日历" ></div>'
-    );
+    if (element) {
+        element.insertAdjacentHTML(
+            'beforebegin',
+            '<div id="calendar" class="toolbar__item b3-tooltips b3-tooltips__se" aria-label="日历" ></div>'
+        );
+    }
 }
 
 function initCalendar() {
     // 日历面板，这里是插入挂件
     document.body.insertAdjacentHTML(
-        "beforeend",
+        'beforeend',
         ` 
         <div
             data-node-index="1"
@@ -45,34 +47,37 @@ function initCalendar() {
         </div>
         `
     );
-    let calendarPanel = document.getElementById("calendarPanel");
+    let calendarPanel = document.getElementById('calendarPanel');
 
-    if ("darwin" === window.siyuan.config.system.os) {
-        insertBtn("barSearch");
-        calendarPanel.style.right = "0px";
+    if ('darwin' === window.siyuan.config.system.os) {
+        insertBtn('barSearch');
+        calendarPanel.style.right = '0px';
     } else {
-        insertBtn("barBack");
-        calendarPanel.style.left = "200px";
+        insertBtn('barBack');
+        calendarPanel.style.left = '200px';
     }
 
-    let calendarIcon = document.getElementById("calendar");
+    let calendarIcon = document.getElementById('calendar');
 
-    calendarIcon.innerHTML = `<svg t="1662957805816" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2374" width="200" height="200"><path d="M797.257 402.286h-570.514v113.371h570.514v-113.371zM910.629 76.8h-58.514v-76.8h-113.371v76.8h-453.486v-76.8h-113.371v76.8h-58.514c-62.171 0-113.371 51.2-113.371 113.371v724.114c0 62.171 51.2 109.714 113.371 109.714h797.257c62.171 0 113.371-47.543 113.371-109.714v-724.114c0-62.171-51.2-113.371-113.371-113.371zM910.629 914.286h-797.257v-625.371h797.257v625.371zM625.371 629.029h-398.629v113.371h398.629v-113.371z"></path></svg>`;
+    if (calendarIcon) {
+        calendarIcon.innerHTML = `<svg t="1662957805816" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2374" width="200" height="200"><path d="M797.257 402.286h-570.514v113.371h570.514v-113.371zM910.629 76.8h-58.514v-76.8h-113.371v76.8h-453.486v-76.8h-113.371v76.8h-58.514c-62.171 0-113.371 51.2-113.371 113.371v724.114c0 62.171 51.2 109.714 113.371 109.714h797.257c62.171 0 113.371-47.543 113.371-109.714v-724.114c0-62.171-51.2-113.371-113.371-113.371zM910.629 914.286h-797.257v-625.371h797.257v625.371zM625.371 629.029h-398.629v113.371h398.629v-113.371z"></path></svg>`;
 
-    calendarIcon.addEventListener(
-        "click",
-        function (e) {
-            e.stopPropagation();
-            if (calendarPanel.style.visibility === "hidden") {
-                calendarPanel.style.visibility = "visible";
-            } else {
-                calendarPanel.style.visibility = "hidden";
-            }
-        },
-        false
-    );
+        calendarIcon.addEventListener(
+            'click',
+            function (e) {
+                e.stopPropagation();
+                if (calendarPanel.style.visibility === 'hidden') {
+                    calendarPanel.style.visibility = 'visible';
+                } else {
+                    calendarPanel.style.visibility = 'hidden';
+                }
+            },
+            false
+        );
+    }
+    
     calendarPanel.addEventListener(
-        "click",
+        'click',
         function (e) {
             e.stopPropagation();
         },
@@ -81,12 +86,12 @@ function initCalendar() {
 
     // 隐藏历史面板
     function hideCalendarPanel() {
-        if (calendarPanel.style.visibility === "visible") {
-            calendarPanel.style.visibility = "hidden";
+        if (calendarPanel.style.visibility === 'visible') {
+            calendarPanel.style.visibility = 'hidden';
         }
     }
     // 点击其他区域时，隐藏日历面板
-    window.addEventListener("click", hideCalendarPanel, false);
+    window.addEventListener('click', hideCalendarPanel, false);
 }
 
 export function calendarMain() {

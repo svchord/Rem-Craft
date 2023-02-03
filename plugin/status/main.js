@@ -8,7 +8,7 @@ class Status {
         this.btn = document.getElementById('statusHelp');
         this.menu = document.getElementById('commonMenu');
         this.dockBtn = document.getElementById('barDock');
-        this.dockMenu = this.dockBtn.querySelector('.b3-menu');
+        this.dockMenu = this.dockBtn?.querySelector('.b3-menu');
         this.start();
     }
 
@@ -89,19 +89,20 @@ class Status {
     }
 
     start() {
-        this.dockMenu.classList.add(`${prefix}-dock-menu`);
+        if (this.dockMenu) {
+            this.dockMenu.classList.add(`${prefix}-dock-menu`);
+            let commonMenuObserver = setMutationObserver('attributes', (mutation) => {
+                if (mutation.target.dataset.name === 'statusHelp') {
+                    this.addDockBtn();
+                    this.addDockMenu();
+                }
+            });
+            commonMenuObserver.observe(commonMenu, {
+                attributes: true,
+                attributeFilter: ['data-name'],
+            });
+        }
 
-        let commonMenuObserver = setMutationObserver('attributes', (mutation) => {
-            if (mutation.target.dataset.name === 'statusHelp') {
-                console.log(mutation);
-                this.addDockBtn();
-                this.addDockMenu();
-            }
-        });
-        commonMenuObserver.observe(commonMenu, {
-            attributes: true,
-            attributeFilter: ['data-name'],
-        });
         this.setRight();
         setWndPadding('left', 0);
         setWndPadding('right', 40);

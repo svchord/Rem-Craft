@@ -1,9 +1,8 @@
 //行内公式块
-[data-type="inline-math"] {
-  margin: 0 3px;
-  .katex {
-    font-size: 100% ;
-    font-family: KaTeX_Main,var(--b3-font-family-math),  Times New Roman,
-      serif ;
-  }
+[data-type='inline-math'] {
+    margin: 0 3px;
+    .katex {
+        font-size: 108%;
+        font-family: KaTeX_Main, var(--b3-font-family-math), Times New Roman, serif;
+    }
 }

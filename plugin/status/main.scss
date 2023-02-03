@@ -41,6 +41,10 @@ $msg-icon-w: 14px;
     height: $s-h;
     transition: width get($transition-duration, 'base') get($transition-function, 'ease-in-out');
     border: none;
+    
+    body.body--window & {
+        padding: 0;
+    }
 
     // 右下角按钮
     .toolbar__item {
@@ -122,12 +126,17 @@ $msg-icon-w: 14px;
         animation: msg-w 2s ease-out;
         transition: max-width get($transition-duration, 'base') get($transition-function, 'ease-in-out');
         &::before {
-            content: '🛈';
+            // content: '🛈';
+            // display: inline-flex;
+            // margin: 0 $interval 0 0;
+            // background-color: transparent;
+            // -webkit-mask: none;
+            // mask: none;
+            // content: '';
             display: inline-flex;
-            margin: 0 $interval 0 0;
-            background-color: transparent;
-            -webkit-mask: none;
-            mask: none;
+            margin: 0px 3px 0 0;
+            padding-top: 2px;
+            // @include add-icon('notifications', get($text, 'secondary'), 24, round);
         }
         &:hover {
             max-width: 400px !important;

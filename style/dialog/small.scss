@@ -80,7 +80,7 @@ $small-radius: big.$dialog-radius;
             }
 
             // 属性弹窗
-            &__content {
+            &__content.custom-attr {
                 padding: 16px $padding;
 
                 // 书签右侧按钮 && 自定义属性删除按钮
@@ -182,6 +182,15 @@ $small-radius: big.$dialog-radius;
                     height: auto !important;
                     padding: 0px $padding;
                 }
+            }
+        }
+        &:has([style*='40vh']) {
+            width: 450px !important;
+            .ft__on-surface {
+                line-height: 1.6;
+            }
+            [style*='40vh'] {
+                height: 20vh !important;
             }
         }
     }

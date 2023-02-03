@@ -12,7 +12,9 @@ class TabBar {
         this.bar = this.getBar(center);
         this.maxMargin = isDockExist(direction) ? this.getMaxMargin() : this.getMaxMargin() + dockWidth;
         this.folumn = getFolumn(direction);
-        this.start();
+        if (this.folumn) {
+            this.start();
+        }
     }
 
     getBar(parent) {
@@ -48,32 +50,34 @@ class TabBar {
         const macBtnsWidth = 69;
         let margin = 0;
 
-        for (let i = 0; i < topBar.children.length; i++) {
-            const btn = topBar.children.item(i);
-            if (btn.id === 'drag') {
-                if (this.direction === 'left') {
-                    break;
-                } else {
-                    margin = 0;
-                    continue;
+        if (topBar) {
+            for (let i = 0; i < topBar.children.length; i++) {
+                const btn = topBar.children.item(i);
+                if (btn.id === 'drag') {
+                    if (this.direction === 'left') {
+                        break;
+                    } else {
+                        margin = 0;
+                        continue;
+                    }
                 }
+                let style = window.getComputedStyle(btn);
+                margin += btn.clientWidth + pxToNum(style.marginLeft) + pxToNum(style.marginRight);
             }
-            let style = window.getComputedStyle(btn);
-            margin += btn.clientWidth + pxToNum(style.marginLeft) + pxToNum(style.marginRight);
-        }
 
-        margin -= 8;
-        if (this.direction === 'left') {
-            if ('darwin' === window.siyuan.config.system.os) {
-                margin += macBtnsWidth;
+            margin -= 8;
+            if (this.direction === 'left') {
+                if ('darwin' === window.siyuan.config.system.os) {
+                    margin += macBtnsWidth;
+                }
+                return margin;
+            } else {
+                margin -= dockWidth;
+                if ('darwin' === window.siyuan.config.system.os) {
+                    margin += 2;
+                }
+                return margin;
             }
-            return margin;
-        } else {
-            margin -= dockWidth;
-            if ('darwin' === window.siyuan.config.system.os) {
-                margin += 2;
-            }
-            return margin;
         }
     }
 

@@ -275,12 +275,12 @@ $item-radius: get($radius, $item-type);
     }
 }
 
-#drag {
-    height: 0;
-    body:has(.layout__empty) & {
-        @include v-center($top-h);
-    }
-}
+// #drag {
+//     height: 0;
+//     // body:has(.layout__empty) & {
+//     //     @include v-center($top-h);
+//     // }
+// }
 
 //  dock
 .dock--vertical {

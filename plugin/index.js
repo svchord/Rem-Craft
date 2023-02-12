@@ -17,7 +17,7 @@ const pluginConfig = config.plugin;
     try {
         let version = await checkVersion();
         for (const key in pluginConfig) {
-            if (Object.hasOwnProperty.call(pluginConfig, key)) {
+            if (pluginConfig.hasOwnProperty(key)) {
                 if (pluginConfig[key]) {
                     updateStyle(
                         `plugin${fisrtToUpper(key)}`,

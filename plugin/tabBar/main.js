@@ -4,13 +4,16 @@ import { setResizeObserver, setMutationObserver } from '../../util/observer.js';
 import { isDockExist, getFolumn, setDockObserver } from '../../util/layout.js';
 
 const center = document.getElementsByClassName('layout__center')[0];
+const drag = document.getElementById('drag');
 const dockWidth = 40;
 
 class TabBar {
     constructor(direction) {
         this.direction = direction;
         this.bar = this.getBar(center);
-        this.maxMargin = isDockExist(direction) ? this.getMaxMargin() : this.getMaxMargin() + dockWidth;
+        this.maxMargin = isDockExist(direction)
+            ? this.getMaxMargin()
+            : this.getMaxMargin() + dockWidth;
         this.folumn = getFolumn(direction);
         if (this.folumn) {
             this.start();
@@ -105,6 +108,27 @@ class TabBar {
         }
     }
 
+    queryEmpty(hasEmpty) {
+        center.style.paddingTop = hasEmpty ? '36px' : '0';
+        drag.style.opacity = hasEmpty ? '1' : '0';
+        center.querySelectorAll('.layout-tab-container').forEach((element) => {
+            element.style.borderTopColor = hasEmpty ? 'rgba(var(--border-3))' : 'transparent';
+        });
+    }
+
+    centerListener(mutation, operation) {
+        let node = operation === 'add' ? mutation.addedNodes[0] : mutation.removedNodes[0];
+        // 分屏监听
+        if (node.classList?.contains('layout__resize')) {
+            this.resetBar();
+        }
+        // 空白页监听
+        if (node.querySelector('.layout__empty')) {
+            this.resetBar();
+            this.queryEmpty(operation === 'add');
+        }
+    }
+    
     start() {
         // 顶栏监听
         let topBarObserver = setMutationObserver('childList', () => {
@@ -126,24 +150,22 @@ class TabBar {
 
         // dock栏监听
         setDockObserver(this.direction, () => {
-            this.maxMargin = isDockExist(this.direction) ? this.getMaxMargin() : this.getMaxMargin() + dockWidth;
+            this.maxMargin = isDockExist(this.direction)
+                ? this.getMaxMargin()
+                : this.getMaxMargin() + dockWidth;
             this.autoSetMargin(pxToNum(this.folumn.style.width));
         });
 
         // 编辑区域监听
+        this.queryEmpty(center.querySelector('.layout__empty'));
         let centerObserver = setMutationObserver('childList', (mutation) => {
-            // 分屏监听
-            if (
-                mutation?.addedNodes[0]?.classList?.contains('layout__resize') ||
-                mutation?.removedNodes[0]?.classList?.contains('layout__resize')
-            ) {
-                this.resetBar();
+            // 增加节点监听
+            if (mutation?.addedNodes[0]?.nodeType === 1) {
+                this.centerListener(mutation, 'add');
             }
-            // 空白页监听
+            // 删除节点监听
             if (mutation?.removedNodes[0]?.nodeType === 1) {
-                if (mutation.removedNodes[0].querySelector('.layout__empty')) {
-                    this.resetBar();
-                }
+                this.centerListener(mutation, 'remove');
             }
         });
 

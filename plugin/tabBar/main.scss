@@ -83,7 +83,8 @@ $item-radius: get($radius, $item-type);
 
         .item {
             @include item-tran('base');
-            transition: max-width get($transition-duration, 'base') get($transition-function, 'ease-in-out') !important;
+            transition: max-width get($transition-duration, 'base')
+                get($transition-function, 'ease-in-out') !important;
             height: $item-h;
             background-color: transparent;
             padding: 0 math.div($item-h - $inner-btn-w, 2);
@@ -275,29 +276,15 @@ $item-radius: get($radius, $item-type);
     }
 }
 
-// #drag {
-//     height: 0;
-//     // body:has(.layout__empty) & {
-//     //     @include v-center($top-h);
-//     // }
-// }
-
 //  dock
 .dock--vertical {
     padding-top: $top-h - $interval;
 }
 
-// empty
-.layout__center:has(.layout__empty) {
-    padding-top: $top-h - $interval;
-    .layout-tab-container {
-        border-top: $fn-border;
-    }
-}
 
 // window
 body.body--window {
-    [data-type="wnd"]{
+    [data-type='wnd'] {
         padding-top: 0 !important;
     }
 }

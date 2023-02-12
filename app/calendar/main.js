@@ -15,7 +15,7 @@ function insertBtn(elementId) {
 function calcPageHeight(doc) {
     var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight);
     var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
-    var height = Math.max(cHeight, sHeight);
+    var height = Math.max(cHeight, sHeight) + 15;
     return numToPx(height);
 }
 
@@ -23,44 +23,36 @@ function initCalendar() {
     // 日历面板，这里是插入挂件
     document.body.insertAdjacentHTML(
         'beforeend',
-        ` <div            
-            id="calendarPanel"
+        `<iframe
+            id="calendarIframe"
             style="
+                border:none;
                 visibility:hidden;
                 position: fixed; 
                 z-index: 1000; 
                 top: 50px; 
-                width: auto;
-                height: auto; 
-                padding: 1px 0 10px;
-                box-shadow: var(--b3-dialog-shadow); 
-                background-color: var(--b3-theme-background);
+                width:auto;
                 border-radius: 5px; 
-                overflow: auto;"
-            >
-            <iframe
-                id="calendarIframe"
-                style="border:none;"
-                src="/appearance/themes/Rem Craft/app/calendar" 
-                data-src="/appearance/themes/Rem Craft/app/calendar" 
-                data-subtype="widget" 
-            >
-            </iframe>
-        </div>`
+                box-shadow: var(--b3-dialog-shadow); 
+            "
+            src="/appearance/themes/Rem Craft/app/calendar" 
+            data-src="/appearance/themes/Rem Craft/app/calendar" 
+            data-subtype="widget" 
+        />
+        `
     );
-    const panel = document.getElementById('calendarPanel');
+    const ifm = document.getElementById('calendarIframe');
     if ('darwin' === window.siyuan.config.system.os) {
         insertBtn('barSearch');
-        panel.style.right = '50px';
+        ifm.style.right = '50px';
     } else {
         insertBtn('barBack');
-        panel.style.left = '50px';
+        ifm.style.left = '50px';
     }
 
-    const iframe = document.getElementById('calendarIframe');
-    iframe.onload = function () {
-        let iDoc = iframe.contentDocument || iframe.document;
-        iframe.style.height = calcPageHeight(iDoc);
+    ifm.onload = function () {
+        let iDoc = ifm.contentDocument || ifm.document;
+        ifm.style.height = calcPageHeight(iDoc);
     };
 
     const btn = document.getElementById('calendar');
@@ -71,10 +63,10 @@ function initCalendar() {
             'click',
             function (e) {
                 e.stopPropagation();
-                if (panel.style.visibility === 'hidden') {
-                    panel.style.visibility = 'visible';
+                if (ifm.style.visibility === 'hidden') {
+                    ifm.style.visibility = 'visible';
                 } else {
-                    panel.style.visibility = 'hidden';
+                    ifm.style.visibility = 'hidden';
                 }
             },
             false
@@ -85,8 +77,8 @@ function initCalendar() {
     window.addEventListener(
         'click',
         () => {
-            if (panel.style.visibility === 'visible') {
-                panel.style.visibility = 'hidden';
+            if (ifm.style.visibility === 'visible') {
+                ifm.style.visibility = 'hidden';
             }
         },
         false

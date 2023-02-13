@@ -4,16 +4,14 @@ import { setResizeObserver, setMutationObserver } from '../../util/observer.js';
 import { isDockExist, getFolumn, setDockObserver } from '../../util/layout.js';
 
 const center = document.getElementsByClassName('layout__center')[0];
+const topBar = document.getElementById('toolbar');
 const drag = document.getElementById('drag');
-const dockWidth = 40;
 
 class TabBar {
     constructor(direction) {
         this.direction = direction;
         this.bar = this.getBar(center);
-        this.maxMargin = isDockExist(direction)
-            ? this.getMaxMargin()
-            : this.getMaxMargin() + dockWidth;
+        this.maxMargin = this.getMaxMargin();
         this.folumn = getFolumn(direction);
         if (this.folumn) {
             this.start();
@@ -49,8 +47,8 @@ class TabBar {
     }
 
     getMaxMargin() {
-        const topBar = document.getElementById('toolbar');
         const macBtnsWidth = 69;
+        const dockWidth = 40;
         let margin = 0;
 
         if (topBar) {
@@ -68,19 +66,12 @@ class TabBar {
                 margin += btn.clientWidth + pxToNum(style.marginLeft) + pxToNum(style.marginRight);
             }
 
-            margin -= 8;
-            if (this.direction === 'left') {
-                if ('darwin' === window.siyuan.config.system.os) {
-                    margin += macBtnsWidth;
-                }
-                return margin;
-            } else {
-                margin -= dockWidth;
-                if ('darwin' === window.siyuan.config.system.os) {
-                    margin += 2;
-                }
-                return margin;
+            if ('darwin' === window.siyuan.config.system.os) {
+                margin += this.direction === 'left' ? macBtnsWidth : 2;
             }
+            
+            margin -= isDockExist(this.direction) ? dockWidth : 0;
+            return margin - 8;
         }
     }
 
@@ -116,26 +107,24 @@ class TabBar {
         });
     }
 
-    centerListener(mutation, operation) {
-        let node = operation === 'add' ? mutation.addedNodes[0] : mutation.removedNodes[0];
-        // 分屏监听
+    centerListener(node, operation) {
+        // 分屏监听判断
         if (node.classList?.contains('layout__resize')) {
             this.resetBar();
         }
-        // 空白页监听
+        // 空白页监听判断
         if (node.querySelector('.layout__empty')) {
             this.resetBar();
             this.queryEmpty(operation === 'add');
         }
     }
-    
+
     start() {
         // 顶栏监听
         let topBarObserver = setMutationObserver('childList', () => {
             this.maxMargin = this.getMaxMargin();
             this.autoSetMargin(pxToNum(this.folumn.style.width));
         });
-        const topBar = document.getElementById('toolbar');
         topBarObserver.observe(topBar, {
             childList: true,
             subtree: true,
@@ -150,9 +139,7 @@ class TabBar {
 
         // dock栏监听
         setDockObserver(this.direction, () => {
-            this.maxMargin = isDockExist(this.direction)
-                ? this.getMaxMargin()
-                : this.getMaxMargin() + dockWidth;
+            this.maxMargin = this.getMaxMargin();
             this.autoSetMargin(pxToNum(this.folumn.style.width));
         });
 
@@ -161,11 +148,11 @@ class TabBar {
         let centerObserver = setMutationObserver('childList', (mutation) => {
             // 增加节点监听
             if (mutation?.addedNodes[0]?.nodeType === 1) {
-                this.centerListener(mutation, 'add');
+                this.centerListener(mutation.addedNodes[0], 'add');
             }
             // 删除节点监听
             if (mutation?.removedNodes[0]?.nodeType === 1) {
-                this.centerListener(mutation, 'remove');
+                this.centerListener(mutation.removedNodes[0], 'remove');
             }
         });
 

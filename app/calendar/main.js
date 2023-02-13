@@ -6,7 +6,7 @@ function insertBtn(elementId) {
     if (element) {
         element.insertAdjacentHTML(
             'beforebegin',
-            '<div id="calendar" class="toolbar__item b3-tooltips b3-tooltips__se" aria-label="日历" ></div>'
+            `<div id="calendar" class="toolbar__item b3-tooltips b3-tooltips__se" aria-label="日历" ></div>`
         );
     }
 }

@@ -5,11 +5,20 @@ body.body--window {
     .layout-tab-bar {
         opacity: 1 !important;
         &--readonly {
-            padding-right: top-bar.$win-control-w * 3 !important;
+            padding-right: top-bar.$win-control-w * 4 !important;
         }
     }
     .toolbar__window {
         @include top-bar.win-controls();
         -webkit-app-region: no-drag;
+    }
+    #pinWindow {
+        svg {
+            transition: transform get($transition-duration, 'base')
+                get($transition-function, 'ease-in-out');
+        }
+        &.toolbar__item--active svg {
+            transform: rotate(-45deg);
+        }
     }
 }

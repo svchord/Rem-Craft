@@ -19,7 +19,6 @@ $dock-w: $item-w + $interval * 2;
         &:not(:last-child) {
             margin-bottom: $interval;
         }
-
         &--active {
             @include item('base', 2, $important: true);
             @include focus-before(10.35px, 0);
@@ -28,8 +27,12 @@ $dock-w: $item-w + $interval * 2;
                 background-color: get($bg, 'base', 2) !important;
             }
         }
-        &--pin {
-            @include item('base', 2, $important: true);
+        svg {
+            transition: transform get($transition-duration, 'base')
+                get($transition-function, 'ease-in-out');
+        }
+        &--pin svg {
+            transform: rotate(-45deg);
         }
     }
 }

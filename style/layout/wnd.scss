@@ -147,7 +147,8 @@ $scale: scale(0.01);
     }
 }
 
-.layout--floatl {
+.layout--floatl,
+.layout--floatr {
     top: 0px !important;
     bottom: 0px !important;
     &.layout--float {

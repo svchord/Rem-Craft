@@ -12,13 +12,11 @@ class Wnd {
         }
     }
     setWnd(directionLR, directionTB) {
-        this.wnd.style.transformOrigin = directionTB + ' ' + directionLR;
+        // this.wnd.style.transformOrigin = directionTB + ' ' + directionLR;
     }
 }
 
 export function wndMain() {
-    new Wnd('left', 'top');
-    new Wnd('left', 'bottom');
-    new Wnd('right', 'top');
-    new Wnd('right', 'bottom');
+    getFolumn('left').classList.add('rc-left-folumn');
+    getFolumn('right').classList.add('rc-right-folumn');
 }

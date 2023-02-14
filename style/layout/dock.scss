@@ -1,70 +1,71 @@
-@use "../common" as *;
-@use "status";
+@use '../common' as *;
+@use 'status';
 
 $item-w: 36px;
 $dock-w: $item-w + $interval * 2;
 
 //边栏
 @mixin dock {
-  padding: 0px;
-  background-color: get($bg, "base", 1);
-  margin-bottom: $interval;
+    padding: 0px;
+    background-color: get($bg, 'base', 1);
+    margin-bottom: $interval;
 
-  .dock__item {
-    @include item("base");
-    @include svg-div($item-w, 14px);
-    -webkit-app-region: no-drag;
-    color: get($text, "secondary");
-    border-radius: get($radius, "base");
+    .dock__item {
+        @include item('base');
+        @include svg-div($item-w, 14px);
+        color: get($text, 'secondary');
+        border-radius: get($radius, 'base');
 
-    &:not(:last-child) {
-      margin-bottom: $interval;
+        &:not(:last-child) {
+            margin-bottom: $interval;
+        }
+
+        &--active {
+            @include item('base', 2, $important: true);
+            @include focus-before(10.35px, 0);
+            &focus {
+                color: get($text, 'secondary') !important;
+                background-color: get($bg, 'base', 2) !important;
+            }
+        }
+        &--pin {
+            @include item('base', 2, $important: true);
+        }
     }
-
-    &--active {
-      @include item("base", 2, $important: true);
-      @include focus-before(10.35px, 0);
-      &focus {
-        color: get($text, "secondary") !important;
-        background-color: get($bg, "base", 2) !important;
-      }
-    }
-  }
 }
 
 //边栏
 .dock--vertical {
-  width: $item-w + $interval;
-  background-color: transparent;
+    width: $item-w + $interval;
+    background-color: transparent;
 
-  div:first-child:not(:empty) {
-    @include dock();
-    margin-top: $interval;
-  }
-
-  div:last-child:not(:empty) {
-    @include dock();
-    margin-bottom: status.$s-h + $interval;
-  }
-
-  &#dockLeft {
-    padding-left: $interval;
-    border: none;
-    -webkit-app-region: drag;
-  }
-
-  &#dockRight {
-    padding-right: $interval;
-    border: none;
-
-    .dock__item--active::before {
-      left: auto;
-      right: 0;
+    div:first-child:not(:empty) {
+        @include dock();
+        margin-top: $interval;
     }
-  }
 
-  .dock__item[data-index="0"]::after,
-  .dock__item[data-index="1"]::after {
-    display: none;
-  }
+    div:last-child:not(:empty) {
+        @include dock();
+        margin-bottom: status.$s-h + $interval;
+    }
+
+    &#dockLeft {
+        padding-left: $interval;
+        border: none;
+    }
+
+    &#dockRight {
+        padding-right: $interval;
+        border: none;
+
+        .dock__item--active::before {
+            left: auto;
+            right: 0;
+        }
+    }
+
+    .dock__item[data-index='0']::after,
+    .dock__item[data-index='1']::after {
+        display: none;
+    }
 }

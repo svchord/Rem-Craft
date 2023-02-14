@@ -36,8 +36,6 @@ function initCalendar() {
                 box-shadow: var(--b3-dialog-shadow); 
             "
             src="/appearance/themes/Rem Craft/app/calendar" 
-            data-src="/appearance/themes/Rem Craft/app/calendar" 
-            data-subtype="widget" 
         />
         `
     );

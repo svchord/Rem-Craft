@@ -1,6 +1,23 @@
 # 版本日志 | Changelog 
 
 
+## [2.6.0](https://github.com/svchord/Rem-Craft/compare/v2.5.12...v2.6.0) (2023-02-14)
+
+
+### ✨ 新增功能 | Features
+
+* :sparkles: 更换日历插件 ([6b704f6](https://github.com/svchord/Rem-Craft/commit/6b704f694d96cd04f961c0001c3c698352bef72c))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容新窗口顶部的钉住按钮 ([a1ae40d](https://github.com/svchord/Rem-Craft/commit/a1ae40d1f1d04ffee634b342a738697bc9b262c0))
+* :bug: 兼容悬浮边栏 ([706cbea](https://github.com/svchord/Rem-Craft/commit/706cbeae87bc94b593a7ebcb400f23d1a69f964f))
+* :bug: 修复暗黑模式的日历插件颜色问题 ([dae323a](https://github.com/svchord/Rem-Craft/commit/dae323a9d0138a9eb3397c6a5c015840742c3d51))
+* :bug: 修改监听并去除部分:has ([7c51e57](https://github.com/svchord/Rem-Craft/commit/7c51e57c58c38131b4f1ab721375637e6de0597b)), closes [#82](https://github.com/svchord/Rem-Craft/issues/82) [#109](https://github.com/svchord/Rem-Craft/issues/109)
+* :bug: 优化标记本文样式 ([4134bfc](https://github.com/svchord/Rem-Craft/commit/4134bfc06990804a2fb0d885b670030dee2a817d)), closes [#111](https://github.com/svchord/Rem-Craft/issues/111)
+* :bug: 左上角 logo 跟随边栏自动变化 ([8244392](https://github.com/svchord/Rem-Craft/commit/82443921d4b908a3cf432fa215d6b11a42a9ce9c)), closes [#106](https://github.com/svchord/Rem-Craft/issues/106)
+
 ### [2.5.12](https://github.com/svchord/Rem-Craft/compare/v2.5.11...v2.5.12) (2023-02-03)
 
 

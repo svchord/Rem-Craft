@@ -17,48 +17,6 @@ $scale: scale(0.01);
     --b3-width-transition: width #{$time} #{get($transition-function, 'ease-in-out')};
 }
 
-@keyframes left-close {
-    from {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100%);
-        max-height: 0;
-    }
-}
-
-@keyframes left-open {
-    from {
-        max-height: 0;
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes right-close {
-    from {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(100%);
-        max-height: 0;
-    }
-}
-
-@keyframes right-open {
-    from {
-        max-height: 0;
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
 @mixin wnd {
     min-height: 10% !important;
     margin: $interval;
@@ -67,51 +25,96 @@ $scale: scale(0.01);
     border: $fn-border;
 }
 
-//边窗
 #layouts > .fn__flex {
     overflow: hidden;
+}
 
-    //两侧边窗
-    > .fn__flex-column:not(.layout__center) {
-        // 显示的边窗
+//两侧边窗
+
+.layout--floatl,
+.layout--floatr {
+    top: 40px !important;
+    bottom: 0px !important;
+    // 显示的边窗
+    > .fn__flex {
+        overflow: hidden !important;
+        min-height: 0px !important;
+        height: auto;
+        // transition: all $time $func 0s !important;
+
+        > div[data-type='wnd'] {
+            @include wnd;
+        }
+
+        // 隐藏的边窗
+        &.fn__none {
+            display: flex !important;
+        }
+
+        &:has(.fullscreen) {
+            z-index: 2;
+        }
+    }
+
+    &.layout--float {
+        box-shadow: none;
+        border: none;
+        top: 80px !important;
+        bottom: 40px !important;
+        padding-top: 0 !important;
+        overflow: visible !important;
         > .fn__flex {
-            overflow: hidden;
-            min-height: 0px !important;
-            height: auto;
-            // transition: all $time $func 0s !important;
-
-            > div[data-type='wnd'] {
-                @include wnd;
-            }
-
-            // 隐藏的边窗
+            overflow: visible !important;
             &.fn__none {
-                display: flex !important;
-            }
-
-            &:has(.fullscreen) {
-                z-index: 2;
+                opacity: 0 !important;
             }
         }
+        [data-type='wnd'] {
+            box-shadow: get($shadow, 2);
+        }
     }
 }
 
-.rc-left-folumn {
-    > .fn__flex {
-        animation: left-open $time forwards $func;
-        &.fn__none {
-            animation: left-close $time forwards $func;
+@mixin anime($direction, $switch) {
+    @keyframes #{$direction}-#{$switch} {
+        from {
+            @if $switch == 'open' {
+                max-height: 0;
+                transform: translateX(if($direction == 'left', -100%, 100%));
+            } @else {
+                transform: translateX(0);
+            }
+        }
+        to {
+            @if $switch == 'open' {
+                transform: translateX(0);
+            } @else {
+                max-height: 0;
+                transform: translateX(if($direction == 'left', -100%, 100%));
+            }
         }
     }
 }
-.rc-right-folumn {
-    > .fn__flex {
-        animation: right-open $time forwards $func;
-        &.fn__none {
-            animation: right-close $time forwards $func;
+
+@include anime('left', 'open');
+@include anime('left', 'close');
+@include anime('right', 'open');
+@include anime('right', 'close');
+
+@mixin float($direction) {
+    .layout--float#{if($direction == 'left','l','r')} {
+        #{$direction}: 0px !important;
+        > .fn__flex {
+            animation: #{$direction}-open $time forwards $func;
+            &.fn__none {
+                animation: #{$direction}-close $time forwards $func;
+            }
         }
     }
 }
+
+@include float('left');
+@include float('right');
 
 .layout-tab-container {
     overflow-y: hidden;
@@ -144,20 +147,5 @@ $scale: scale(0.01);
     [data-type='wnd'] {
         position: relative;
         @include wnd;
-    }
-}
-
-.layout--floatl,
-.layout--floatr {
-    top: 0px !important;
-    bottom: 0px !important;
-    &.layout--float {
-        box-shadow: none;
-        border: none;
-        top: 40px !important;
-        bottom: 40px !important;
-        [data-type='wnd'] {
-            box-shadow: get($shadow, 1);
-        }
     }
 }

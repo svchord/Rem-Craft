@@ -1,5 +1,3 @@
-import { config } from '../../script/config.js';
-import { numToPx } from '../../util/convert.js';
 function insertBtn(elementId) {
     // 把日历图标 放到 {{elementId}} 图标前面
     const element = document.getElementById(elementId);
@@ -16,7 +14,7 @@ function calcPageHeight(doc) {
     var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight);
     var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
     var height = Math.max(cHeight, sHeight) + 15;
-    return numToPx(height);
+    return height + 'px';
 }
 
 function initCalendar() {
@@ -35,7 +33,7 @@ function initCalendar() {
                 border-radius: 5px; 
                 box-shadow: var(--b3-dialog-shadow); 
             "
-            src="/appearance/themes/Rem Craft/app/calendar" 
+            src="/appearance/themes/Rem Craft/app/calendar/dist"
         />
         `
     );
@@ -85,9 +83,7 @@ function initCalendar() {
 
 export function calendarMain() {
     try {
-        if (config.app.calendar) {
-            initCalendar();
-        }
+        initCalendar();
     } catch (error) {
         console.error(error);
     }

@@ -31,7 +31,7 @@ $dock-w: $item-w + $interval * 2;
             transition: transform get($transition-duration, 'base')
                 get($transition-function, 'ease-in-out');
         }
-        &--pin svg {
+        &--pin[aria-label="取消钉住"] svg {
             transform: rotate(-45deg);
         }
     }

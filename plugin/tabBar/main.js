@@ -20,23 +20,23 @@ class TabBar {
 
     getBar(parent) {
         let children = Array.prototype.slice.apply(parent.children);
-        let isWnd = children.filter((e) => {
+        let isWnd = children.find((e) => {
             return e.dataset.type === 'wnd';
         });
 
         // 定位到编辑窗口
-        if (isWnd.length > 0) {
-            let tabBar = isWnd[0].children[0];
+        if (isWnd) {
+            let tabBar = isWnd.children[0];
             // 判断是否显示页签栏
             if (!tabBar.classList.contains('fn__none')) {
                 return tabBar;
             }
         } else {
             // 未定位到，即分屏情况
-            let isSplitScreen = children.filter((e) => {
+            let isSplitScreen = children.find((e) => {
                 return e.classList.contains('layout__resize--lr');
             });
-            if (isSplitScreen.length > 0 && this.direction === 'right') {
+            if (isSplitScreen && this.direction === 'right') {
                 // 左右分屏 且 定位方向为右上角
                 return this.getBar(children[children.length - 1]);
             } else {
@@ -83,11 +83,13 @@ class TabBar {
 
     autoSetMargin(folumnWidth) {
         if (this.bar) {
+            // window.requestAnimationFrame(() => {
             if (folumnWidth >= 0 && folumnWidth <= this.maxMargin) {
                 this.setMargin(this.maxMargin - folumnWidth);
             } else {
                 this.setMargin(0);
             }
+            // });
         }
     }
 

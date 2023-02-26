@@ -45,13 +45,11 @@ export function appIconMain() {
             addIcon(topBar);
         }
         setDockObserver('left', () => {
-            if (isDockExist('right')) {
+            const icon = document.getElementById('appIcon');
+            if (isDockExist('left') && !icon) {
                 addIcon(topBar);
             } else {
-                const icon = document.getElementById('appIcon');
-                if (icon) {
-                    icon.remove();
-                }
+                icon.remove();
             }
         });
     }

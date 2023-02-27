@@ -53,6 +53,8 @@ $scale: scale(0.01);
 
         &:has(.fullscreen) {
             z-index: 2;
+            transform: unset;
+            animation: unset;
         }
     }
 
@@ -103,7 +105,6 @@ $scale: scale(0.01);
 
 @mixin float($direction) {
     .layout--float#{if($direction == 'left','l','r')} {
-        #{$direction}: 0px !important;
         > .fn__flex {
             animation: #{$direction}-open $time forwards $func;
             &.fn__none {

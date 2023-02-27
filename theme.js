@@ -1,11 +1,17 @@
 (() => {
-    if (window.siyuan.config.system.container === 'std') {
-        import('./index.js')
-            .then((index) => {
-                index.main();
-            })
-            .catch((e) => {
-                console.error(e);
-            });
+    switch (window.siyuan.config.system.container) {
+        case 'std':
+        case 'docker':
+            import('./index.js')
+                .then((index) => {
+                    index.main();
+                })
+                .catch((e) => {
+                    console.error(e);
+                });
+            break;
+
+        default:
+            break;
     }
 })();

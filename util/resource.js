@@ -17,11 +17,14 @@ const elements = {
 export async function checkVersion() {
     try {
         const response = await fetch(root + 'theme.json');
+        if (!response.ok || response.status !== 200) {
+            throw new Error(response.statusText);
+        }
         const json = await response.json();
         let localVersion = json.version;
         return window.siyuan.config.appearance.themeVer === localVersion
             ? window.siyuan.config.appearance.themeVer
-            : localVersion;
+            : window.siyuan.config.appearance.themeVer;
     } catch (e) {
         console.error(e);
     }
@@ -67,7 +70,9 @@ export function addURLParam(
         case url.startsWith('/'):
             return new_url.href.substring(new_url.origin.length);
         default:
-            return new_url.href.substring((window.location.origin + window.location.pathname).length);
+            return new_url.href.substring(
+                (window.location.origin + window.location.pathname).length
+            );
     }
 }
 

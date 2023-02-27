@@ -21,8 +21,8 @@
     "license": "MIT",
     "devDependencies": {
         "commitizen": "^4.3.0",
-        "cz-git": "^1.4.1",
-        "sass": "^1.58.0",
+        "cz-git": "^1.5.0",
+        "sass": "^1.58.3",
         "standard-version": "^9.5.0"
     }
 }

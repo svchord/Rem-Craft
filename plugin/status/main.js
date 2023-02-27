@@ -7,8 +7,6 @@ class Status {
     constructor() {
         this.btn = document.getElementById('statusHelp');
         this.menu = document.getElementById('commonMenu');
-        this.dockBtn = document.getElementById('barDock');
-        this.dockMenu = this.dockBtn?.querySelector('.b3-menu');
         this.start();
     }
 
@@ -55,25 +53,6 @@ class Status {
         });
     }
 
-    addDockMenu() {
-        let menuBtn = this.addBtn('wndBtn', 'iconLeft', '打开选中边窗');
-        menuBtn.appendChild(this.dockMenu);
-        menuBtn.addEventListener('mouseover', () => {
-            this.dockMenu.classList.remove('fn__none');
-        });
-
-        this.menu.querySelectorAll('.b3-menu__item').forEach((element) => {
-            if (element.id !== 'wndBtn') {
-                element.addEventListener('mouseover', () => {
-                    this.dockMenu.classList.add('fn__none');
-                });
-            }
-        });
-        this.dockMenu.addEventListener('mouseleave', () => {
-            this.dockMenu.classList.add('fn__none');
-        });
-    }
-
     setRight() {
         let status = document.getElementById('status');
         if (!isDockExist('right')) {
@@ -90,19 +69,15 @@ class Status {
     }
 
     start() {
-        if (this.dockMenu) {
-            this.dockMenu.classList.add(`${prefix}-dock-menu`);
-            let commonMenuObserver = setMutationObserver('attributes', (mutation) => {
-                if (mutation.target.dataset.name === 'statusHelp') {
-                    this.addDockBtn();
-                    this.addDockMenu();
-                }
-            });
-            commonMenuObserver.observe(commonMenu, {
-                attributes: true,
-                attributeFilter: ['data-name'],
-            });
-        }
+        let commonMenuObserver = setMutationObserver('attributes', () => {
+            if (this.menu.dataset.name === 'statusHelp') {
+                this.addDockBtn();
+            }
+        });
+        commonMenuObserver.observe(this.menu, {
+            attributes: true,
+            attributeFilter: ['data-name'],
+        });
 
         this.setRight();
         setWndPadding('left', 0);

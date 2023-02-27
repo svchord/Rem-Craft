@@ -89,13 +89,6 @@ $msg-icon-w: 14px;
     }
 }
 
-.rc-dock-menu {
-    // bottom: 0 !important;
-    bottom: $s-h + $btn-interval + $fn-space * 2 !important;
-    left: auto !important;
-    right: 150px + $fn-space * 3 !important;
-}
-
 #commonMenu[data-name='statusHelp'] {
     left: auto !important;
     bottom: $s-h + $btn-interval + $fn-space * 2 !important;

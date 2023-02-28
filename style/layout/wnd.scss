@@ -31,8 +31,8 @@ $scale: scale(0.01);
 
 //两侧边窗
 
-.layout--floatl,
-.layout--floatr {
+.layout__dockl,
+.layout__dockr {
     top: 40px !important;
     bottom: 0px !important;
     // 显示的边窗
@@ -44,11 +44,6 @@ $scale: scale(0.01);
 
         > div[data-type='wnd'] {
             @include wnd;
-        }
-
-        // 隐藏的边窗
-        &.fn__none {
-            display: flex !important;
         }
 
         &:has(.fullscreen) {
@@ -65,6 +60,11 @@ $scale: scale(0.01);
         bottom: 40px !important;
         padding-top: 0 !important;
         overflow: visible !important;
+        transition: {
+            property: top, bottom, left, right, opacity, transform, box-shadow;
+            duration: $time;
+            timing-function: $func;
+        }
         > .fn__flex {
             overflow: visible !important;
             &.fn__none {
@@ -82,17 +82,17 @@ $scale: scale(0.01);
         from {
             @if $switch == 'open' {
                 max-height: 0;
-                transform: translateX(if($direction == 'left', -100%, 100%));
+                clip-path: if($direction == 'left', inset(0 100% 0 0), inset(0 0 0 100%));
             } @else {
-                transform: translateX(0);
+                clip-path: unset;
             }
         }
         to {
             @if $switch == 'open' {
-                transform: translateX(0);
+                clip-path: unset;
             } @else {
                 max-height: 0;
-                transform: translateX(if($direction == 'left', -100%, 100%));
+                clip-path: if($direction == 'left', inset(0 100% 0 0), inset(0 0 0 100%));
             }
         }
     }
@@ -104,10 +104,11 @@ $scale: scale(0.01);
 @include anime('right', 'close');
 
 @mixin float($direction) {
-    .layout--float#{if($direction == 'left','l','r')} {
+    .layout__dock#{if($direction == 'left','l','r')} {
         > .fn__flex {
             animation: #{$direction}-open $time forwards $func;
             &.fn__none {
+                display: flex !important;
                 animation: #{$direction}-close $time forwards $func;
             }
         }

@@ -1,61 +1,73 @@
-@use "../common" as *;
-@use "history";
-@use "small";
+@use '../common' as *;
+@use 'history';
+@use 'small';
+
+@mixin header() {
+    .b3-form__space--small {
+        @include history.bar();
+        padding-right: 48px;
+        .fn__flex-center {
+            @include v-center(28px);
+        }
+        .block__icon {
+            @include history.page-btn();
+        }
+    }
+    .b3-dialog__close {
+        @include small.close();
+        display: block;
+        top: 18px;
+    }
+}
 
 .b3-dialog {
-  &__container {
-    &:has(.b3-dialog__cardblock) {
-      width: 50vw !important;
+    &__container {
+        // 闪卡使用界面
+        &:has(.card__block) {
+            @include header();
+            width: 50vw !important;
+        }
+        &:has(#cardPreview) {
+            @include header();
+            // width: 80vw !important;
+            .fn__flex-column[style*='100%'] {
+                > .fn__flex:last-child {
+                    margin: 0 16px;
+                    padding: 8px 0;
+                }
+            }
+            .b3-list {
+                padding-right: 8px;
+                margin-bottom: 8px;
+                border-right: $fn-border;
+            }
+        }
     }
-    &:has(#cardPreview) {
-      width: 80vw !important;
-      .b3-dialog__header {
-        @include history.bar();
-      }
-      .b3-dialog__close {
-        display: block;
-        @include small.close();
-      }
-      .fn__flex-column[style*="100%"] {
-        .fn__flex:nth-child(2),
-        .fn__flex:last-child {
-          margin: 0 16px;
+    // 闪卡使用界面
+    .card {
+        &__block {
+            padding: 8px 12px;
         }
-        .fn__flex:nth-child(2) {
-          padding: 8px 0;
-          .block__icon {
-            @include history.page-btn();
-          }
-        }
-        .fn__flex:last-child {
-          border-top: $fn-border;
-          padding-top: 8px;
-        }
-      }
-      .b3-list{
-        padding-right: 8px;
-        margin-bottom: 8px;
-        border-right: $fn-border;
-      }
-    }
-  }
+        &__action {
+            padding: 16px;
+            > .b3-button {
+                display: flex;
+                height: 36px;
+                line-height: 12px;
+                > svg {
+                    margin: auto 8px;
+                }
+            }
 
-  &__card {
-    &block {
-      .protyle-breadcrumb {
-        padding: 0;
-      }
-    }
-    &action {
-      > div:not(.fn__flex-1) {
-        width: 20%;
-        .b3-button {
-          width: 100%;
+            > div:not(.b3-button) {
+                &:not(:last-child) {
+                    margin-right: 16px;
+                }
+                .b3-button {
+                    width: 100%;
+                    height: auto;
+                }
+            }
         }
-      }
-      > .b3-button {
-        width: 20%;
-      }
     }
-  }
 }

@@ -1,120 +1,116 @@
-@use "../common" as *;
-@use "../component/list";
+@use '../common' as *;
+@use '../component/list';
 
 $padding: 16px;
 
 @mixin bar {
-  margin: 0 $padding;
-  padding: $padding 24px - $padding;
+    margin: 0 $padding;
+    padding: $padding 24px - $padding;
+    border-bottom: $fn-border;
 }
 
 @mixin page-btn {
-  @include svg-div(
-    get($component-size, "medium"),
-    get($icon, "small"),
-    get($component-size, "base"),
-    $important: true
-  );
-  &[disabled] {
-    opacity: 1 !important;
-    @include item-disabled();
-  }
+    @include svg-div(
+        get($component-size, 'medium'),
+        get($icon, 'small'),
+        get($component-size, 'base'),
+        $important: true
+    );
+    &[disabled] {
+        opacity: 1 !important;
+        @include item-disabled();
+    }
 }
 
 @mixin dialog-tabs {
-  @include bar();
-  border-bottom: $fn-border;
-  .item {
-    &__text {
-      margin-left: 0;
+    @include bar();
+    border-bottom: $fn-border;
+    .item {
+        &__text {
+            margin-left: 0;
+        }
     }
-  }
 }
 
 .b3-dialog__container {
-  // 底层元素
-  div[style*="80vh"] {
-    & > .fn__flex-column {
-      border-radius: get($radius, "exlarge");
-    }
+    // 底层元素
+    div[style*='80vh'] {
+        & > .fn__flex-column {
+            border-radius: get($radius, 'exlarge');
+        }
 
-    // 顶部导航栏
-    .layout-tab-bar {
-      @include dialog-tabs();
+        // 顶部导航栏
+        .layout-tab-bar {
+            @include dialog-tabs();
+        }
     }
-  }
 }
 
 // 主界面
 #historyContainer {
-  .b3-list-item {
-    padding: list.$padding !important;
-  }
+    .b3-list-item {
+        padding: list.$padding !important;
+    }
 }
 
 // 文档历史界面 && 数据快照界面公共样式
 .history__repo {
-  .history__repoheader {
-    @include bar();
-    border-bottom: $fn-border;
+    .history__repoheader {
+        @include bar();
 
-    .block__icon {
-      @include page-btn();
+        .block__icon {
+            @include page-btn();
+        }
     }
-  }
 }
 
-[data-type="doc"] {
-  .b3-list {
-    padding: 0 $padding;
-    margin: $padding 0;
-    width: 300px !important;
-    border-right: $fn-border;
-  }
-  .history__text {
-    .protyle-wysiwyg {
-      padding-top: 16px;
+[data-type='doc'] {
+    .b3-list {
+        padding: 0 $padding;
+        margin: $padding 0;
+        width: 300px !important;
+        border-right: $fn-border;
     }
-  }
+    .history__text {
+        .protyle-wysiwyg {
+            padding-top: 16px;
+        }
+    }
 }
 
 // 笔记本历史界面
-[data-type="notebook"] {
-  padding: $padding;
-
-  // 回退按钮
-  .b3-list-item__action {
-    width: auto;
-    height: auto;
-    @include component("exsmall");
-
-    svg {
-      @include svg(8px);
-    }
-    .fn__space {
-      width: $interval;
-    }
-  }
-}
-
-[data-type="repo"] {
-  .b3-list {
+[data-type='notebook'] {
     padding: $padding;
 
-    li {
-      list-style: none;
+    // 回退按钮
+    .b3-list-item__action {
+        width: auto;
+        height: auto;
+        @include component('exsmall');
+
+        svg {
+            @include svg(8px);
+        }
+        .fn__space {
+            width: $interval;
+        }
     }
-    &-item {
-      &__text {
-        margin-left: 0;
-      }
-      &__action {
-        @include icon-btn(
-          "component",
-          get($component-size, "base"),
-          get($icon, "small")
-        );
-      }
+}
+
+[data-type='repo'] {
+    .b3-list {
+        padding: $padding;
+
+        li {
+            list-style: none;
+        }
+        &-item {
+            &__text {
+                margin-left: 0;
+            }
+            &__action {
+                @include icon-btn('component', get($component-size, 'base'), get($icon, 'small'));
+            }
+        }
     }
-  }
 }

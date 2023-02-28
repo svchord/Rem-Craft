@@ -1,45 +1,46 @@
-@use "../common" as *;
-@use "../component/list";
+@use '../common' as *;
+@use '../component/list';
 
 #keymapList {
-  .b3-list {
-    &-item {
-      .b3-text-field {
-        @include component("small");
-      }
+    .b3-list {
+        &-item {
+            .b3-text-field {
+                @include component('small');
+            }
 
-      &:hover {
-        .b3-text-field {
-          background-color: get($bg, "page", 1);
+            &:hover {
+                .b3-text-field {
+                    background-color: get($bg, 'page', 1);
+                }
+            }
+
+            .fn__space {
+                width: $interval;
+            }
+
+            &__action {
+                @include icon-btn('component', 24px, get($icon, 'small'));
+                margin-left: $interval;
+            }
         }
-      }
 
-      .fn__space {
-        width: $interval;
-      }
+        &--border {
+            > .toggle + div {
+                .b3-list-item {
+                    margin: 0 !important;
+                }
+                > .toggle + div::before {
+                    left: -19px - 34px;
+                }
+            }
 
-      &__action {
-        @include icon-btn("component", 24px, get($icon, "small"));
-        margin-left: $interval;
-      }
+            .b3-list-item,
+            .toggle + div {
+                &::before {
+                    left: -19px;
+                    border-color: get($border, 3);
+                }
+            }
+        }
     }
-
-    &--border {
-      > .toggle + div {
-        .b3-list-item {
-          margin: 0 !important;
-        }
-        > .toggle + div::before {
-          left: -21px - 34px;
-        }
-      }
-
-      .b3-list-item,
-      .toggle + div {
-        &::before {
-          border-color: get($border, 3);
-        }
-      }
-    }
-  }
 }

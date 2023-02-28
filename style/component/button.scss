@@ -1,69 +1,75 @@
-@use "../common" as *;
+@use '../common' as *;
 
 //按钮
 .b3-button {
-  @include reset-style();
-  @include component();
-  @include item("primary");
+    @include reset-style();
+    @include component();
+    @include item('primary');
 
-  svg {
-    @include svg(get($icon, "small"));
-  }
-
-  &:hover,
-  &:focus {
-    box-shadow: unset;
-  }
-
-  &--progress {
-    box-shadow: unset;
-    color: transparent;
-    position: relative;
-    background-color: get($bg, "component", 1) !important;
-    > span {
-      background-color: get($bg, "primary", 1);
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
+    svg {
+        @include svg(get($icon, 'small'));
     }
-  }
 
-  &--small,
-  &--cancel,
-  &--outline {
-    @include item-focus();
-  }
-
-  &--outline svg {
-    &[style*="height"] {
-      @include svg(get($icon, "exsmall"));
-      margin-right: $interval;
+    &:hover,
+    &:focus {
+        box-shadow: unset;
     }
-    margin-right: $interval;
-  }
 
-  &--text {
-    @include item("focus", 0);
-    @include color-change("focus");
-  }
-
-  &--white {
-    @include item-unchange("page");
-  }
-
-  &--small {
-    @include component("small");
-  }
-
-  @each $type in $feat-types {
-    &--#{$type} {
-      color: get($text, "anti");
-      background-color: get($color, $type, "base");
-      &:hover {
-        background-color: get($color, $type, "hover");
-      }
-      &:active {
-        background-color: get($color, $type, "active");
-      }
+    &--progress {
+        box-shadow: unset;
+        color: transparent;
+        position: relative;
+        background-color: get($bg, 'component', 1) !important;
+        > span {
+            background-color: get($bg, 'primary', 1);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
     }
-  }
+
+    &--small,
+    &--cancel,
+    &--outline {
+        @include item-focus();
+    }
+
+    &--outline svg {
+        &[style*='height'] {
+            @include svg(get($icon, 'exsmall'));
+            margin-right: $interval;
+        }
+        margin-right: $interval;
+    }
+
+    &--text {
+        @include item('focus', 0);
+        @include color-change('focus');
+    }
+
+    &--white {
+        @include item-unchange('page');
+    }
+
+    &--small {
+        @include component('small');
+    }
+
+    $feat-colors: (
+        'warning': 'orange',
+        'error': 'red',
+        'success': 'green',
+        'info': 'blue',
+    );
+
+    @each $feat, $color-type in $feat-colors {
+        &--#{$feat} {
+            background-color: get($color, $color-type, 1);
+            &:hover {
+                background-color: get($color, $color-type, 3);
+            }
+            &:active {
+                background-color: get($color, $color-type, 4);
+            }
+        }
+    }
 }

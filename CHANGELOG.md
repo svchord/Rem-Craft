@@ -1,6 +1,19 @@
 # 版本日志 | Changelog 
 
 
+### [2.6.1](https://github.com/svchord/Rem-Craft/compare/v2.6.0...v2.6.1) (2023-02-28)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容思源 2.7.7 ([238f600](https://github.com/svchord/Rem-Craft/commit/238f600fb8c57b04abd5d6482f77c2df95fb58ce))
+* :bug: 将表格改成不换行 ([2698ee4](https://github.com/svchord/Rem-Craft/commit/2698ee4a2956fdbef2d1ccec40954c0290a55ed7)), closes [#114](https://github.com/svchord/Rem-Craft/issues/114)
+* :bug: 修复 docker 环境兼容问题 ([3090370](https://github.com/svchord/Rem-Craft/commit/30903700ea075dbec84df7af41911cebb6770b6d)), closes [#104](https://github.com/svchord/Rem-Craft/issues/104) [#117](https://github.com/svchord/Rem-Craft/issues/117)
+* :bug: 修复关系图无法全屏的问题 ([3acbd87](https://github.com/svchord/Rem-Craft/commit/3acbd8792cf2680181990682fd795b4189f54bff)), closes [#113](https://github.com/svchord/Rem-Craft/issues/113)
+* :bug: 修复状态栏的显示问题 ([7795975](https://github.com/svchord/Rem-Craft/commit/77959752068f74b3c0c46d1ebcc3d20ba3e3f4a4))
+* :bug: 修复emoji菜单样式 ([484eb44](https://github.com/svchord/Rem-Craft/commit/484eb44e15be2dda099b6737c715260d4e151704)), closes [#115](https://github.com/svchord/Rem-Craft/issues/115)
+* :bug: 优化日历挂件 ([5883b91](https://github.com/svchord/Rem-Craft/commit/5883b918b200833f6b946373dc968ef82321bcec))
+
 ## [2.6.0](https://github.com/svchord/Rem-Craft/compare/v2.5.12...v2.6.0) (2023-02-14)
 
 

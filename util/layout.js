@@ -31,16 +31,16 @@ export function setDockObserver(direction, func) {
     }
 }
 
-export function getFolumn(direction) {
+export function getLayoutDock(direction) {
     return direction === 'left' ? layout?.firstElementChild : layout?.lastElementChild;
 }
 
 export function setWndPadding(direction, value) {
-    let folumn = getFolumn(direction);
-    let resize = folumn?.querySelector('.layout__resize');
+    let layoutDock = getLayoutDock(direction);
+    let resize = layoutDock?.querySelector('.layout__resize');
     let wnd = resize?.classList.contains('fn__none')
-        ? folumn?.firstElementChild.firstElementChild
-        : folumn?.lastElementChild.firstElementChild;
+        ? layoutDock?.firstElementChild.firstElementChild
+        : layoutDock?.lastElementChild.firstElementChild;
     if (wnd) {
         wnd.style.paddingBottom = numToPx(value);
     }

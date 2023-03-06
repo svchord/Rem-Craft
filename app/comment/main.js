@@ -134,15 +134,8 @@ class SiyuanUtil {
 
     /* 插入样式表 */
     async appendStyleSheet() {
-        try {
-            let version = await checkVersion();
-            updateStyle(
-                'appComment',
-                addURLParam(root + 'app/comment/comment.css', { v: version })
-            );
-        } catch (e) {
-            console.error(e);
-        }
+        let version = await checkVersion();
+        updateStyle('appComment', addURLParam(root + 'app/comment/comment.css', { v: version }));
     }
 }
 

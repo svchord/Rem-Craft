@@ -1,7 +1,7 @@
 import { config } from '../../script/config.js';
 import { numToPx, pxToNum } from '../../util/convert.js';
 import { setResizeObserver, setMutationObserver } from '../../util/observer.js';
-import { isDockExist, getFolumn, setDockObserver } from '../../util/layout.js';
+import { isDockExist, getLayoutDock, setDockObserver } from '../../util/layout.js';
 
 const center = document.getElementsByClassName('layout__center')[0];
 const topBar = document.getElementById('toolbar');
@@ -12,14 +12,14 @@ class TabBar {
         this.direction = direction;
         this.bar = this.getBar(center);
         this.maxMargin = this.getMaxMargin();
-        this.folumn = getFolumn(direction);
-        if (this.folumn) {
+        this.layoutDock = getLayoutDock(direction);
+        if (this.layoutDock) {
             this.start();
         }
     }
 
     getBar(parent) {
-        let children = Array.prototype.slice.apply(parent.children);
+        let children = [...parent.children];
         let isWnd = children.find((e) => {
             return e.dataset.type === 'wnd';
         });
@@ -38,7 +38,7 @@ class TabBar {
             });
             if (isSplitScreen && this.direction === 'right') {
                 // 左右分屏 且 定位方向为右上角
-                return this.getBar(children[children.length - 1]);
+                return this.getBar(children.at(-1));
             } else {
                 // 上下分屏 或 左右分屏，定位方向为左上角
                 return this.getBar(children[0]);
@@ -81,23 +81,23 @@ class TabBar {
             : (this.bar.style.marginRight = numToPx(value));
     }
 
-    autoSetMargin(folumnWidth) {
+    autoSetMargin(layoutDockWidth) {
         if (this.bar) {
             // window.requestAnimationFrame(() => {
-            if (folumnWidth >= 0 && folumnWidth <= this.maxMargin) {
-                this.setMargin(this.maxMargin - folumnWidth);
-            } else {
-                this.setMargin(0);
-            }
+                if (layoutDockWidth >= 0 && layoutDockWidth <= this.maxMargin) {
+                    this.setMargin(this.maxMargin - layoutDockWidth);
+                } else {
+                    this.setMargin(0);
+                }
             // });
         }
     }
 
     resetMargin() {
-        if (this.folumn.classList.contains('layout--float')) {
+        if (this.layoutDock.classList.contains('layout--float')) {
             this.autoSetMargin(0);
         } else {
-            this.autoSetMargin(pxToNum(this.folumn.style.width));
+            this.autoSetMargin(pxToNum(this.layoutDock.style.width));
         }
     }
 
@@ -111,7 +111,7 @@ class TabBar {
         }
     }
 
-    queryEmpty(hasEmpty) {
+    isEmpty(hasEmpty) {
         center.style.paddingTop = hasEmpty ? '36px' : '0';
         drag.style.opacity = hasEmpty ? '1' : '0';
         center.querySelectorAll('.layout-tab-container').forEach((element) => {
@@ -127,7 +127,7 @@ class TabBar {
         // 空白页监听判断
         if (node.querySelector('.layout__empty')) {
             this.resetBar();
-            this.queryEmpty(operation === 'add');
+            this.isEmpty(operation === 'add');
         }
     }
 
@@ -141,18 +141,21 @@ class TabBar {
 
         // 边栏监听
         // 边栏未悬浮的尺寸监听
-        let folumnSizeObserver = setResizeObserver((entry) => {
-            if (!this.folumn.classList.contains('layout--float')) {
-                let folumnWidth = entry.contentBoxSize[0].inlineSize;
-                this.autoSetMargin(folumnWidth);
+        let layoutDockSizeObserver = setResizeObserver((entry) => {
+            if (!entry.target.classList.contains('layout--float')) {
+                let layoutDockWidth = entry.contentBoxSize[0].inlineSize;
+                this.autoSetMargin(layoutDockWidth);
             }
         });
-        folumnSizeObserver.observe(this.folumn);
+        layoutDockSizeObserver.observe(this.layoutDock);
         // 边栏悬浮的选择器监听
-        let folumnObserver = setMutationObserver('attributes', () => {
+        let layoutDockObserver = setMutationObserver('attributes', () => {
             this.resetMargin();
         });
-        folumnObserver.observe(this.folumn, { attributes: true, attributeFilter: ['class'] });
+        layoutDockObserver.observe(this.layoutDock, {
+            attributes: true,
+            attributeFilter: ['class'],
+        });
 
         // dock栏监听
         setDockObserver(this.direction, () => {
@@ -161,7 +164,7 @@ class TabBar {
         });
 
         // 编辑区域监听
-        this.queryEmpty(center.querySelector('.layout__empty'));
+        this.isEmpty(center.querySelector('.layout__empty'));
         let centerObserver = setMutationObserver('childList', (mutation) => {
             // 增加节点监听
             if (mutation?.addedNodes[0]?.nodeType === 1) {

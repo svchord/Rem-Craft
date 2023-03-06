@@ -28,10 +28,7 @@ export async function changeMode() {
             href = light_path;
             break;
     }
-    try {
         let version = await checkVersion();
         updateStyle('colorStyle', addURLParam(href, { v: version }));
-    } catch (e) {
-        console.error(e);
-    }
+   
 }

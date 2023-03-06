@@ -24,7 +24,7 @@ export async function checkVersion() {
         let localVersion = json.version;
         return window.siyuan.config.appearance.themeVer === localVersion
             ? window.siyuan.config.appearance.themeVer
-            : window.siyuan.config.appearance.themeVer;
+            : localVersion;
     } catch (e) {
         console.error(e);
     }

@@ -14,19 +14,13 @@ const pluginConfig = config.plugin;
     stautsMain();
     bulletMain();
 
-    try {
-        let version = await checkVersion();
-        for (const key in pluginConfig) {
-            if (pluginConfig.hasOwnProperty(key)) {
-                if (pluginConfig[key]) {
-                    updateStyle(
-                        `plugin${fisrtToUpper(key)}`,
-                        addURLParam(pluginRoot + key + '/main.css', { v: version })
-                    );
-                }
-            }
+    let version = await checkVersion();
+    for (const [key, value] of Object.entries(pluginConfig)) {
+        if (value) {
+            updateStyle(
+                `plugin${fisrtToUpper(key)}`,
+                addURLParam(pluginRoot + key + '/main.css', { v: version })
+            );
         }
-    } catch (e) {
-        console.error(e);
     }
 })();

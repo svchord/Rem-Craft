@@ -70,10 +70,11 @@ $padding: $fn-space;
                 transition: transform get($transition-duration, 'base')
                     get($transition-function, 'ease-in-out');
             }
-            &[aria-label='取消钉住'] {
-                svg {
-                    transform: rotate(-45deg);
-                }
+            &[aria-label='钉住'] svg {
+                transform: rotate(45deg);
+            }
+            &[aria-label='取消钉住'] svg {
+                transform: rotate(0deg);
             }
         }
     }

@@ -1,6 +1,16 @@
 # 版本日志 | Changelog 
 
 
+### [2.6.2](https://github.com/svchord/Rem-Craft/compare/v2.6.1...v2.6.2) (2023-03-21)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容思源新版输入框和选择器样式 ([6856f41](https://github.com/svchord/Rem-Craft/commit/6856f417fe85ee0c71efb8e1f46606ebca8f075e)), closes [#118](https://github.com/svchord/Rem-Craft/issues/118)
+* :bug: 优化钉住图标的动画 ([89f1c19](https://github.com/svchord/Rem-Craft/commit/89f1c199072d42765a2afb07085fd427434cf399))
+* :bug: 优化日历挂件样式 ([01c1dc8](https://github.com/svchord/Rem-Craft/commit/01c1dc893344c839522f5c04aa3545511451ba28))
+* :bug: 优化日历样式 ([6909c79](https://github.com/svchord/Rem-Craft/commit/6909c7987e128b066614e47691ebcfb13811bbbf)), closes [#120](https://github.com/svchord/Rem-Craft/issues/120)
+
 ### [2.6.1](https://github.com/svchord/Rem-Craft/compare/v2.6.0...v2.6.1) (2023-02-28)
 
 

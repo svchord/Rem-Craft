@@ -1,12 +1,13 @@
-@use "../common" as *;
+@use '../common' as *;
 //选择菜单
 
 .b3-select {
-  @include component();
-  background-color: get($bg, "component", 1);
-  &:hover,
-  &:focus,
-  &:focus-visible {
+    @include component();
     box-shadow: unset;
-  }
+    background-color: get($bg, 'component', 1);
+    &:hover,
+    &:focus,
+    &:focus-visible {
+        box-shadow: unset;
+    }
 }

@@ -79,6 +79,7 @@
     .b3-text-field {
         width: 100%;
         margin: 0 !important;
+        flex-shrink: 0;
         background-color: get($bg, 'pop', 2);
     }
 }

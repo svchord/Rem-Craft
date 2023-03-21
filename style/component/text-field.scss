@@ -1,20 +1,20 @@
-@use "../common" as *;
+@use '../common' as *;
 
 //输入框
 .b3-text-field {
-  @include reset-style();
-  @include component($border: 1px);
-  border: 1px solid get($border, 4) !important;
-  border-bottom: $fn-border-2 !important;
-  background-color: get($bg, "component", 1);
-  flex-shrink: 0;
+    @include reset-style();
+    @include component($border: 1px);
+    border: 1px solid get($border, 4) !important;
+    border-bottom: $fn-border-2 !important;
+    background-color: get($bg, 'component', 1);
 
-  &:hover {
-    box-shadow: unset;
-  }
-
-  &:focus {
-    box-shadow: 0 -3px 0 -2px inset get($color, "brand", "base");
-    border-bottom: 1px solid get($color, "brand", "base");
-  }
+    &:not(.b3-text-field--text) {
+        &:hover {
+            box-shadow: unset;
+        }
+        &:focus {
+            box-shadow: 0 -3px 0 -2px inset get($color, 'brand', 'base');
+            border-bottom: 1px solid get($color, 'brand', 'base');
+        }
+    }
 }

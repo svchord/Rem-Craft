@@ -206,13 +206,14 @@ $item-radius: get($radius, $item-type);
                 padding: 0 8px 0 0;
                 min-width: $btn-w * 2 + $fn-space * 2 - $item-radius;
 
-                .item__close {
-                    @include icon-btn('base', $btn-w, 12px, true);
+                .block__icon {
+                    // @include icon-btn('base', $btn-w, 12px, true);
+                    @include item('base', $important: true);
                     cursor: pointer;
                     -webkit-app-region: no-drag;
 
-                    &[data-type='more'] {
-                        @include svg-div($btn-w, 10px, $important: true);
+                    &[data-type='new'] {
+                        @include svg-div($btn-w, 12px, $important: true);
                     }
                 }
 
@@ -280,7 +281,6 @@ $item-radius: get($radius, $item-type);
 .dock--vertical {
     padding-top: $top-h - $interval;
 }
-
 
 // window
 body.body--window {

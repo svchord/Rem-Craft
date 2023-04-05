@@ -1,264 +1,263 @@
-@use "sass:math";
-@use "../common" as *;
-@use "../component/list";
+@use 'sass:math';
+@use '../common' as *;
+@use '../component/list';
 
 //菜单底色
-$menu-bg: get($bg, "pop", 1);
-$menu-radius: get($radius, "medium");
+$menu-bg: get($bg, 'pop', 1);
+$menu-radius: get($radius, 'medium');
 $padding: 6px;
 
 :root {
-  // 菜单
-  --b3-menu-background: #{$menu-bg};
-  // 阴影
-  --b3-dialog-shadow: #{get($shadow, 2)};
+    // 菜单
+    --b3-menu-background: #{$menu-bg};
+    // 阴影
+    --b3-dialog-shadow: #{get($shadow, 2)};
 }
 
 //菜单
 @mixin menu {
-  min-width: 150px;
-  padding: $padding;
-  border: none;
-  border-radius: $menu-radius;
+    min-width: 150px;
+    padding: $padding;
+    border: none;
+    border-radius: $menu-radius;
 }
 
 @mixin menu-item {
-  min-width: 0px;
-  margin-bottom: 2px;
-  -webkit-app-region: no-drag;
+    min-width: 0px;
+    margin-bottom: 2px;
+    -webkit-app-region: no-drag;
 
-  @include item("pop");
-  @include component-base();
-  &:last-child {
-    margin-bottom: 0 !important;
-  }
+    @include item('pop');
+    @include component-base();
+    &:last-child {
+        margin-bottom: 0 !important;
+    }
 }
 
 @mixin menu-li {
-  @include menu-item();
-  padding: math.div(get($component-size, "base") - list.$text-h, 2)
-    list.$padding;
+    @include menu-item();
+    padding: math.div(get($component-size, 'base') - list.$text-h, 2) list.$padding;
 }
 
 @mixin no-icon {
-  padding: 0;
-  margin-bottom: $padding;
+    padding: 0;
+    margin-bottom: $padding;
 
-  .fn__hr,
-  .fn__hr--small,
-  & > .b3-menu__icon {
-    display: none;
-  }
+    .fn__hr,
+    .fn__hr--small,
+    & > .b3-menu__icon {
+        display: none;
+    }
 
-  &:hover,
-  &.b3-menu__item--current {
-    background-color: transparent !important;
-  }
+    &:hover,
+    &.b3-menu__item--current {
+        background-color: transparent !important;
+    }
 }
 
 @mixin color-square($w: 20px, $svg-w: 20px, $fz: 13px) {
-  @include svg($svg-w);
-  display: flex;
-  margin: math.div($w - $svg-w, 2);
-  box-shadow: unset;
-  border: $fn-border;
-  border-radius: get($radius, "base");
-  font-size: $fz;
-  &[style*="color13"] {
-    background-color: get($text, "primary");
-  }
-  &[style*="background13"] {
-    color: get($text, "anti");
-  }
+    @include svg($svg-w);
+    display: flex;
+    margin: math.div($w - $svg-w, 2);
+    box-shadow: unset;
+    border: $fn-border;
+    border-radius: get($radius, 'base');
+    font-size: $fz;
+    &[style*='color13'] {
+        background-color: get($text, 'primary');
+    }
+    &[style*='background13'] {
+        color: get($text, 'anti');
+    }
 }
 
 //菜单
 .b3-menu {
-  @include menu();
-
-  &__item {
-    @include menu-item();
-    padding: 0px 8px;
-
-    > .b3-menu__icon {
-      @include svg(get($icon, "small"));
-      color: get($text, "secondary");
-      margin-right: $fn-space;
-
-      // 关闭icon
-      &[style*="height"] {
-        @include svg(8px, $important: true);
-        margin-right: $fn-space;
-      }
-      // 向右箭头
-      &--arrow {
-        @include svg(8px);
-      }
-    }
-
-    .b3-menu__label {
-      @include v-center(get($component-size, "base"));
-    }
-
-    // 自定义菜单项（文本框或滑条）
-    &--custom {
-      &:has(.b3-switch),
-      &:has(.b3-text-field),
-      &:has(.b3-slider) {
-        @include no-icon();
-      }
-      &:has(.b3-switch) {
-        padding: 0 $fn-space;
-      }
-    }
-
-    &--selected {
-      @include item("focus");
-      &.b3-menu__item--current {
-        @include item("focus", 1, true);
-      }
-      > .b3-menu {
-        &__icon,
-        &__label {
-          @include color("focus");
-        }
-        &__accelerator {
-          @include list.meta-focus();
-        }
-      }
-    }
-
-    &[disabled="disabled"] {
-      @include item-disabled();
-    }
-
-    // 其他信息
-    &--readonly {
-      @include list.meta();
-      @include no-icon();
-      padding: 2px 8px;
-      height: auto;
-      .b3-menu__label {
-        height: auto;
-        line-height: 20px;
-
-        [style*="margin"] {
-          margin: 0 !important;
-        }
-      }
-    }
-  }
-
-  & &__submenu {
     @include menu();
-    min-width: 200px;
-    top: 0 - $padding;
-    border: none;
 
-    $sub-interval: 4px;
-    margin-left: $sub-interval;
-    margin-right: $sub-interval;
+    &__item {
+        @include menu-item();
+        padding: 0px 8px;
 
-    //【外观】二级菜单
-    &--row {
-      width: 389px;
-      padding: 12px;
+        > .b3-menu__icon {
+            @include svg(get($icon, 'small'));
+            color: get($text, 'secondary');
+            margin-right: $fn-space;
 
-      // 每个样式选项
-      .b3-menu {
-        &__item {
-          margin: 0px 8px 0 0;
-          padding: 0;
-          height: auto;
-          // 鼠标选项
-          &--current {
-            background-color: transparent;
-          }
-        }
-        &__separator {
-          border-color: transparent;
-          margin: 6px 0;
-          // margin: 0;
-        }
-
-        &__label {
-          height: auto;
-        }
-
-        // 清除样式
-        &__item:last-child {
-          .b3-menu__label > .fn__flex {
-            @include item-focus();
-            @include component("small");
-            margin: $interval 0;
-            &::after {
-              content: attr(aria-label);
-              display: flex;
+            // 关闭icon
+            &[style*='height'] {
+                @include svg(8px, $important: true);
+                margin-right: $fn-space;
             }
-          }
-
-          .b3-color__square {
-            display: none;
-          }
+            // 向右箭头
+            &--arrow {
+                @include svg(8px);
+            }
         }
-      }
 
-      .b3-color__square {
-        @include color-square();
-
-        &:hover {
-          border-color: get($border, 1);
+        .b3-menu__label {
+            @include v-center(get($component-size, 'base'));
         }
-      }
+
+        // 自定义菜单项（文本框或滑条）
+        &--custom {
+            &:has(.b3-switch),
+            &:has(.b3-text-field),
+            &:has(.b3-slider) {
+                @include no-icon();
+            }
+            &:has(.b3-switch) {
+                padding: 0 $fn-space;
+            }
+        }
+
+        &--selected {
+            @include item('focus');
+            &.b3-menu__item--current {
+                @include item('focus', 1, true);
+            }
+            > .b3-menu {
+                &__icon,
+                &__label {
+                    @include color('focus');
+                }
+                &__accelerator {
+                    @include list.meta-focus();
+                }
+            }
+        }
+
+        &[disabled='disabled'] {
+            @include item-disabled();
+        }
+
+        // 其他信息
+        &--readonly {
+            @include list.meta();
+            @include no-icon();
+            padding: 2px 8px;
+            height: auto;
+            .b3-menu__label {
+                height: auto;
+                line-height: 20px;
+
+                [style*='margin'] {
+                    margin: 0 !important;
+                }
+            }
+        }
     }
-  }
 
-  // 分割线
-  &__separator {
-    border-bottom: $fn-border;
-    height: 0;
-    background-color: transparent;
-  }
+    & &__submenu {
+        @include menu();
+        min-width: 200px;
+        top: 0 - $padding;
+        border: none;
 
-  // 菜单项快捷键
-  &__accelerator {
-    @include list.meta();
-  }
+        $sub-interval: 4px;
+        margin-left: $sub-interval;
+        margin-right: $sub-interval;
 
-  // 搜索历史菜单
-  &.b3-list,
-  &.b3-list--background {
-    @include menu();
+        //【外观】二级菜单
+        &--row {
+            width: 389px;
+            padding: 12px;
 
-    .b3-list-item {
-      @include menu-li();
+            // 每个样式选项
+            .b3-menu {
+                &__item {
+                    margin: 0px 8px 0 0;
+                    padding: 0;
+                    height: auto;
+                    // 鼠标选项
+                    &--current {
+                        background-color: transparent;
+                    }
+                }
+                &__separator {
+                    border-color: transparent;
+                    margin: 6px 0;
+                    // margin: 0;
+                }
+
+                &__label {
+                    height: auto;
+                }
+
+                // 清除样式
+                &__item:last-child {
+                    .b3-menu__label > .fn__flex {
+                        @include item-focus();
+                        @include component('small');
+                        margin: $interval 0;
+                        &::after {
+                            content: attr(aria-label);
+                            display: flex;
+                        }
+                    }
+
+                    .b3-color__square {
+                        display: none;
+                    }
+                }
+            }
+
+            .b3-color__square {
+                @include color-square();
+
+                &:hover {
+                    border-color: get($border, 1);
+                }
+            }
+        }
     }
-  }
 
-  &#commonMenu {
-    @include menu();
-
-    .b3-menu__icon {
-      @include emoji-icon(10px, 10px, get($icon, "small"));
+    // 分割线
+    &__separator {
+        border-bottom: $fn-border;
+        height: 0;
+        background-color: transparent;
     }
 
-    // 添加文档标签菜单 列表
-    .b3-list--background {
-      padding: 0;
-      margin: 0;
-      &:not(:empty) {
-        margin-top: $padding;
-      }
-      .b3-list-item {
-        @include menu-li();
-      }
+    // 菜单项快捷键
+    &__accelerator {
+        @include list.meta();
     }
-  }
 
-  // 菜单输入框
-  .b3-text-field {
-    width: 100%;
-    margin: 0 !important;
-    background-color: get($bg, "pop", 2);
-  }
+    // 搜索历史菜单
+    &.b3-list,
+    &.b3-list--background {
+        @include menu();
+
+        .b3-list-item {
+            @include menu-li();
+        }
+    }
+
+    &#commonMenu {
+        @include menu();
+
+        .b3-menu__icon {
+            @include emoji-icon(10px, 10px, get($icon, 'small'));
+        }
+
+        // 添加文档标签菜单 列表
+        .b3-list--background {
+            padding: 0;
+            margin: 0;
+            &:not(:empty) {
+                margin-top: $padding;
+            }
+            .b3-list-item {
+                @include menu-li();
+            }
+        }
+    }
+
+    // 菜单输入框
+    .b3-text-field {
+        width: 100%;
+        margin: 0 !important;
+        background-color: get($bg, 'pop', 2);
+    }
 }

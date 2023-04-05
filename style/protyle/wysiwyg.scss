@@ -1,97 +1,97 @@
-@use "sass:math";
-@use "../common" as *;
+@use 'sass:math';
+@use '../common' as *;
 
 $width: 750px;
 $padding: max(64px, 50% - math.div($width, 2));
 $item-pad: 3px 2px;
 
 .protyle {
-  &-content {
-    .layout__center &[data-fullwidth="true"] {
-      .protyle {
-        &-background {
-          &__img .protyle-icons {
-            right: 96px;
-          }
+    &-content {
+        .layout__center &[data-fullwidth='true'] {
+            .protyle {
+                &-background {
+                    &__img .protyle-icons {
+                        right: 96px;
+                    }
+                }
+                &-title {
+                    margin-top: 0 !important;
+                }
+            }
         }
-        &-title {
-          margin-top: 0 !important;
+
+        .layout__center &:not([data-fullwidth='true']) {
+            overflow-y: scroll;
+
+            .protyle {
+                &-background {
+                    &__iconw {
+                        left: $padding !important;
+                    }
+                    &__img .protyle-icons {
+                        right: $padding;
+                    }
+                }
+                &-title {
+                    // margin-top: 0 !important;
+                    margin: 0 $padding !important;
+                    width: auto !important;
+                }
+                &-wysiwyg {
+                    padding-left: $padding !important;
+                    padding-right: $padding !important;
+                    transition: unset !important;
+                    width: 100% !important;
+                }
+            }
         }
-      }
     }
 
-    .layout__center &:not([data-fullwidth="true"]) {
-      overflow-y: scroll;
-
-      .protyle {
-        &-background {
-          &__iconw {
-            left: $padding !important;
-          }
-          &__img .protyle-icons {
-            right: $padding;
-          }
+    &-wysiwyg {
+        .layout__center .protyle-content > & {
+            padding-top: 5px !important;
+            padding-bottom: 30vh !important;
         }
-        &-title {
-          // margin-top: 0 !important;
-          margin: 0 $padding !important;
-          width: auto !important;
+
+        [data-node-id][fold='1']:not(.li):not([data-type='NodeHeading']) {
+            font-size: 1em !important;
         }
-        &-wysiwyg {
-          padding-left: $padding !important;
-          padding-right: $padding !important;
-          transition: unset !important;
-          width: 100% !important;
+
+        [data-type] {
+            border-radius: get($radius, 'base');
         }
-      }
-    }
-  }
 
-  &-wysiwyg {
-    .layout__center .protyle-content > & {
-      padding-top: 5px !important;
-      padding-bottom: 30vh !important;
-    }
+        > [data-type] {
+            padding: $item-pad;
+        }
 
-    [data-node-id][fold="1"]:not(.li):not([data-type="NodeHeading"]) {
-      font-size: 1em !important;
+        .def--mark {
+            color: get($text, 'primary') !important;
+        }
     }
 
-    [data-type] {
-      border-radius: get($radius, "base");
+    &-scroll {
+        &__bar {
+            opacity: 0.3;
+            right: -89px !important;
+            transition: get($transition, 'all');
+            &:hover {
+                opacity: 1;
+            }
+        }
+        &__up,
+        &__down {
+            @include icon-btn('page', 24px, 12px);
+            right: -0.5px;
+            color: get($text, 'disabled');
+        }
+        &__down {
+            top: calc(50% + 120px);
+        }
     }
 
-    > [data-type] {
-      padding: $item-pad;
+    //文本转语音按钮
+    &-speech {
+        border-color: get($border, 2);
     }
-
-    .def--mark {
-      color: get($text, "primary") !important;
-    }
-  }
-
-  &-scroll {
-    right: 25px !important;
-    &__bar {
-      opacity: 0.3;
-      transition: get($transition, "all");
-      &:hover {
-        opacity: 1;
-      }
-    }
-    &__up,
-    &__down {
-      @include icon-btn("page", 24px, 12px);
-      right: -0.5px;
-      color: get($text, "disabled");
-    }
-    &__down {
-      top: calc(50% + 120px);
-    }
-  }
-
-  //文本转语音按钮
-  &-speech {
-    border-color: get($border, 2);
-  }
 }

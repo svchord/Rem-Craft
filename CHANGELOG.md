@@ -1,6 +1,15 @@
 # 版本日志 | Changelog 
 
 
+### [2.6.3](https://github.com/svchord/Rem-Craft/compare/v2.6.2...v2.6.3) (2023-04-06)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复顶栏页签问题 ([d971383](https://github.com/svchord/Rem-Craft/commit/d971383f1efacf38abe07d16c63a86ed64ebf2c5))
+* :bug: 修复滑动条位置问题 ([086faa4](https://github.com/svchord/Rem-Craft/commit/086faa4c52d30626691e71b7239dfeb7de33e662))
+* :bug: 优化搜索行高度 ([f234c85](https://github.com/svchord/Rem-Craft/commit/f234c85f96da822ed1778b3e76c83693df6fc4e3))
+
 ### [2.6.2](https://github.com/svchord/Rem-Craft/compare/v2.6.1...v2.6.2) (2023-03-21)
 
 

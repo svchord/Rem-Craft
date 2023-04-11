@@ -1,6 +1,13 @@
 # 版本日志 | Changelog 
 
 
+### [2.6.5](https://github.com/svchord/Rem-Craft/compare/v2.6.4...v2.6.5) (2023-04-11)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复新版menu兼容问题 ([fc71f48](https://github.com/svchord/Rem-Craft/commit/fc71f48b27fc14495de73d927058023398302377))
+
 ### [2.6.4](https://github.com/svchord/Rem-Craft/compare/v2.6.3...v2.6.4) (2023-04-11)
 
 

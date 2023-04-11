@@ -1,6 +1,14 @@
 # 版本日志 | Changelog 
 
 
+### [2.6.4](https://github.com/svchord/Rem-Craft/compare/v2.6.3...v2.6.4) (2023-04-11)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 删除了主题自带的日历功能，并适配了日历插件 ([672050b](https://github.com/svchord/Rem-Craft/commit/672050b46750af9ade4d3137840b75595276ced3))
+* :bug: 修复右侧边栏被底栏遮挡的问题 ([763a58f](https://github.com/svchord/Rem-Craft/commit/763a58fb63fc849d98548b251704d9806c54be0b)), closes [#121](https://github.com/svchord/Rem-Craft/issues/121)
+
 ### [2.6.3](https://github.com/svchord/Rem-Craft/compare/v2.6.2...v2.6.3) (2023-04-06)
 
 

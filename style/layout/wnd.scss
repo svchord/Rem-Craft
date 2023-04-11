@@ -98,10 +98,10 @@ $scale: scale(0.01);
     }
 }
 
-@include anime('left', 'open');
-@include anime('left', 'close');
-@include anime('right', 'open');
-@include anime('right', 'close');
+// @include anime('left', 'open');
+// @include anime('left', 'close');
+// @include anime('right', 'open');
+// @include anime('right', 'close');
 
 @mixin float($direction) {
     .layout__dock#{if($direction == 'left','l','r')} {
@@ -115,8 +115,8 @@ $scale: scale(0.01);
     }
 }
 
-@include float('left');
-@include float('right');
+// @include float('left');
+// @include float('right');
 
 .layout-tab-container {
     overflow-y: hidden;

@@ -80,7 +80,7 @@ class Status {
         });
 
         this.setRight();
-        setWndPadding('left', 0);
+        // setWndPadding('left', 0);
         setWndPadding('right', 40);
     }
 }

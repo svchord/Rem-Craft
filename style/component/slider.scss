@@ -7,7 +7,7 @@
   // padding: 0 1px;
 
   &::-webkit-slider-thumb {
-    @include item("primary");
+    @include item("primarybg");
     width: 18px;
     height: 18px;
     box-shadow: get($shadow, 0);
@@ -29,7 +29,7 @@
 
   &::-webkit-slider-runnable-track {
     height: 4px;
-    background-color: get($bg, "primary", 1);
+    background-color: get($bg, "primarybg", 1);
     border-radius: get($radius, "max");
   }
 }

@@ -33,7 +33,7 @@ $color: add-color($color, ("cyan", "purple", "yellow", "pink"), "base");
 
 // 背景色
 $bg: () !default;
-$bg-types: "base", "page", "component", "pop", "primary", "focus";
+$bg-types: "base", "page", "component", "pop", "primarybg", "focus";
 $bg: add-color($bg, $bg-types, 4);
 
 @each $type in $bg-types {

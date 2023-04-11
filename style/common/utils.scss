@@ -107,7 +107,7 @@
 }
 
 @mixin item-primary($important: false) {
-  @include item("primary", 1, $important);
+  @include item("primarybg", 1, $important);
   @include color("anti", $important);
 }
 

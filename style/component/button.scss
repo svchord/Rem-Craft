@@ -4,7 +4,7 @@
 .b3-button {
     @include reset-style();
     @include component();
-    @include item('primary');
+    @include item('primarybg');
 
     svg {
         @include svg(get($icon, 'small'));
@@ -21,7 +21,7 @@
         position: relative;
         background-color: get($bg, 'component', 1) !important;
         > span {
-            background-color: get($bg, 'primary', 1);
+            background-color: get($bg, 'primarybg', 1);
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }

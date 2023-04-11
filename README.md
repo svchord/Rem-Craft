@@ -13,7 +13,7 @@
 
 ### 最新
 
-1. **左边栏**除了按钮以外的区域都可以拖拽窗口
+1. 删除了主题自带的日历功能，并适配了[日历插件](https://github.com/svchord/siyuan-arco-calendar)的样式
 
 ### 其他
 
@@ -66,17 +66,17 @@
 
 ## 参考与致谢
 
-| 功能               | 作者/项目                                                                                                                                                              | 说明              |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------- |
-| 行内超链接自动展示图标      | [Achuan-2/Tsundoku Light](https://github.com/Achuan-2/siyuan-themes-tsundoku-light)、[Zuoqiu-Yingyi/Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus) | 将两个主题的相同功能整合在一起 |
-| 明暗切换             | [Zuoqiu-Yingyi/Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus)                                                                                     | 参考部分 theme.js   |
-| 斜杠快捷菜单分列显示       | [Zuoqiu-Yingyi/Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus)、[royc01/notion-theme](https://github.com/royc01/notion-theme)                       | 将两个主题的相同功能整合在一起 |
-| 文档树辅助线           | [royc01/notion-theme](https://github.com/royc01/notion-theme)                                                                                                      | 群聊中交流讨论提供思路     |
-| 顶部页签栏            | [royc01/notion-theme](https://github.com/royc01/notion-theme)                                                                                                      | 提供顶栏下沉的思路       |
-| theme.js 写法和 api | [leolee9086/noob](https://github.com/leolee9086/noob)                                                                                                              | 参考部分 theme.js   |
-| 日历面板             | [论坛帖子](https://ld246.com/article/1662969146166)                                                                                                                    | 整合社区实现          |
-| 行内评论             | [langzhou/siyuan-comment](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment)                                                                        | 整合社区实现          |
-| 子弹穿线             | [Zuoqiu-Yingyi/Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus)、[pengx17/logseq-dev-theme](https://github.com/pengx17/logseq-dev-theme)             | 将两个主题的相同功能整合在一起 |
+| 功能                   | 作者/项目                                                                                                                                                           | 说明                           |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| 行内超链接自动展示图标 | [Achuan-2/Tsundoku Light](https://github.com/Achuan-2/siyuan-themes-tsundoku-light)、[Zuoqiu-Yingyi/Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus) | 将两个主题的相同功能整合在一起 |
+| 明暗切换               | [Zuoqiu-Yingyi/Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus)                                                                                      | 参考部分 theme.js              |
+| 斜杠快捷菜单分列显示   | [Zuoqiu-Yingyi/Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus)、[royc01/notion-theme](https://github.com/royc01/notion-theme)                       | 将两个主题的相同功能整合在一起 |
+| 文档树辅助线           | [royc01/notion-theme](https://github.com/royc01/notion-theme)                                                                                                       | 群聊中交流讨论提供思路         |
+| 顶部页签栏             | [royc01/notion-theme](https://github.com/royc01/notion-theme)                                                                                                       | 提供顶栏下沉的思路             |
+| theme.js 写法和 api    | [leolee9086/noob](https://github.com/leolee9086/noob)                                                                                                               | 参考部分 theme.js              |
+| 日历面板               | [论坛帖子](https://ld246.com/article/1662969146166)                                                                                                                 | 整合社区实现                   |
+| 行内评论               | [langzhou/siyuan-comment](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment)                                                                         | 整合社区实现                   |
+| 子弹穿线               | [Zuoqiu-Yingyi/Dark+](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus)、[pengx17/logseq-dev-theme](https://github.com/pengx17/logseq-dev-theme)             | 将两个主题的相同功能整合在一起 |
 
 ## 依赖项目
 

@@ -4,8 +4,10 @@
 #keymapList {
     .b3-list {
         &-item {
+            min-height: 36px;
+            .config-keymap__key,
             .b3-text-field {
-                @include component('small');
+                @include component('small', 1px);
             }
 
             &:hover {
@@ -24,23 +26,8 @@
             }
         }
 
-        &--border {
-            > .toggle + div {
-                .b3-list-item {
-                    margin: 0 !important;
-                }
-                > .toggle + div::before {
-                    left: -19px - 34px;
-                }
-            }
-
-            .b3-list-item,
-            .toggle + div {
-                &::before {
-                    left: -19px;
-                    border-color: get($border, 3);
-                }
-            }
+        &--border .b3-list__panel:before {
+            left: -19px;
         }
     }
 }

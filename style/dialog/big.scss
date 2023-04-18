@@ -1,5 +1,7 @@
+@use 'sass:math';
 @use '../common' as *;
 @use '../component/list';
+@use '../component/form';
 
 //弹窗蒙版
 $dialog-scrim: get($mask, 'active');
@@ -30,7 +32,7 @@ $search-h: 42px;
 
     &[style*='80vw'],
     &[style*='90vw'] {
-        width: $large-width !important;
+        // width: $large-width !important;
 
         // 弹窗关闭按钮
         .b3-dialog__close {
@@ -40,16 +42,6 @@ $search-h: 42px;
         .b3-dialog__header {
             border-color: get($border, 3);
         }
-
-        // 顶部搜索框
-        .search__header {
-            width: $large-width;
-            border-color: get($border, 3);
-            border-radius: $dialog-radius $dialog-radius 0 0;
-            .b3-text-field {
-                border-radius: $dialog-radius $dialog-radius 0 0;
-            }
-        }
     }
 
     // 笔记本设置界面
@@ -58,37 +50,45 @@ $search-h: 42px;
     }
 
     .config__panel {
-        // 设置菜单高度
-        $h: min(66.1vh, (list.$text-h + 16px * 2 + $fn-space) * 11 - $fn-space);
+        background-color: get($bg, 'base', 1);
+        border-radius: $dialog-radius;
 
-        // 侧边导航栏
-        .b3-tab-bar {
-            margin: $fn-space 0;
-            padding: 0 $fn-space !important;
-            // border-right: $fn-border;
-            width: 160px !important;
-            height: $h !important;
-            // 导航按钮
-            .b3-list-item--big {
-                padding: 16px 24px !important;
-                margin-bottom: $fn-space !important;
-
-                &:last-child {
-                    margin-bottom: 0px !important;
-                }
-
-                // 导航图标
-                .b3-list-item__graphic {
-                    @include svg(20px, 12px);
-                    margin-right: 18px;
+        > .b3-tab-bar {
+            padding: 24px 16px;
+            width: 250px;
+            .b3-list-item {
+                margin-bottom: 8px;
+                @include item('base');
+                &--focus {
+                    @include focus-before(math.div(list.$item-h - 16px, 2), 0px);
+                    @include item('base', 2, $important: true);
+                    .b3-list-item__text,
+                    .b3-list-item__graphic {
+                        color: get($text, 'primary') !important;
+                    }
                 }
             }
+            > .b3-form__icon {
+                @include form.search-input(32px, 1px);
+                .b3-text-field.b3-form__icon-input {
+                    @include item-unchange('page', $important: true);
+                }
+                margin: 0 0 16px;
+            }
+            &::before {
+                display: block;
+                content: '设置';
+                font-size: 16px;
+                margin-bottom: 16px;
+                padding-left: 4px;
+            }
         }
-
-        // 设置项界面
-        .config__tab-container {
-            overflow: overlay;
-            height: $h !important;
+        > .config__tab-container {
+            padding: 24px 0;
+            border-radius: 0 $dialog-radius $dialog-radius 0;
+            .layout-tab-bar {
+                padding: 0px 16px 8px;
+            }
         }
 
         //label

@@ -1,107 +1,108 @@
-@use "../common" as *;
+@use '../common' as *;
 
 @mixin card {
-  box-shadow: get($shadow, 1);
-  border-radius: get($radius, "large");
-  transition: get($transition, "all");
+    box-shadow: get($shadow, 1);
+    border-radius: get($radius, 'large');
+    transition: get($transition, 'all');
 
-  &:hover {
-    box-shadow: get($shadow, 2);
-    transform: translateY(-2px);
-  }
+    &:hover {
+        box-shadow: get($shadow, 2);
+        transform: translateY(-2px);
+    }
 }
 
-.config__tab-container[data-name="bazaar"] {
-  //集市tab
-  .layout-tab-bar {
-    padding: 16px 16px 8px;
+.config__tab-container[data-name='bazaar'] {
+    padding:24px 8px !important;
+    //集市tab
+    .layout-tab-bar {
+        padding: 0px 16px 8px;
 
-    &[style*="border"] {
-      padding: 8px;
+        &[style*='border'] {
+            padding: 8px;
+        }
+        .item__text {
+            margin-left: 0;
+        }
     }
-    .item__text {
-      margin-left: 0;
-    }
-  }
 }
 
 .bazaarPanel {
-  // 筛选图标
-  > .fn__flex > .svg {
-    margin-left: 4px;
-  }
-  // 已下载
-  &[data-type="downloaded"] {
-    > .fn__flex .b3-button {
-      width: 72px;
-      @include item-focus();
-      &.b3-button--outline {
-        @include item("page");
-      }
+    // 筛选图标
+    > .fn__flex > .svg {
+        margin-left: 4px;
     }
-  }
+    // 已下载
+    &[data-type='downloaded'] {
+        > .fn__flex .b3-button {
+            width: 72px;
+            @include item-focus();
+            &.b3-button--outline {
+                @include item('page');
+            }
+        }
+    }
 }
 
 //集市卡片
 .b3-card {
-  $mar-lr: 12px;
-  @include item-unchange("pop");
-  @include card();
+    $mar-lr: 12px;
+    @include item-unchange('pop');
+    @include card();
 
-  &__img {
-    margin: 16px $mar-lr 8px;
-    width: calc(100% - $mar-lr * 2);
-    border-radius: get($radius, "large");
-    // opacity: 0.9;
+    &__img {
+        margin: 16px $mar-lr 8px;
+        width: calc(100% - $mar-lr * 2);
+        border-radius: get($radius, 'large');
+        // opacity: 0.9;
 
-    img {
-      object-fit: cover;
-      border-radius: get($radius, "base");
-    }
-  }
-
-  &__info {
-    padding: 8px 16px 0px;
-
-    .svg {
-      @include svg(get($icon, "small"));
-      margin-top: 3.5px;
-    }
-  }
-
-  &__actions {
-    height: get($component-size, "base") + $fn-space * 2;
-    padding: $fn-space;
-
-    > .block__icon {
-      @include icon-btn("pop", get($component-size, "base"), 12px, true);
-      &:has(.ft__primary) {
-        @include item("focus", 0, true);
-        &:hover svg {
-          color: get($text, "focus");
-          transition: get($transition, "all");
+        img {
+            object-fit: cover;
+            border-radius: get($radius, 'base');
         }
-      }
     }
-  }
 
-  &--current {
-    .b3-card {
-      &__info {
-        background-color: get($bg, "focus", 1);
-      }
-      &__actions {
-        background-color: get($bg, "focus", 1);
+    &__info {
+        padding: 8px 16px 0px;
+
+        .svg {
+            @include svg(get($icon, 'small'));
+            margin-top: 3.5px;
+        }
+    }
+
+    &__actions {
+        height: get($component-size, 'base') + $fn-space * 2;
+        padding: $fn-space;
+
         > .block__icon {
-          @include color-change("focus");
-          @include item-focus(true);
-          &:has(.ft__primary) {
-            svg {
-              color: get($text, "focus");
+            @include icon-btn('pop', get($component-size, 'base'), 12px, true);
+            &:has(.ft__primary) {
+                @include item('focus', 0, true);
+                &:hover svg {
+                    color: get($text, 'focus');
+                    transition: get($transition, 'all');
+                }
             }
-          }
         }
-      }
     }
-  }
+
+    &--current {
+        .b3-card {
+            &__info {
+                background-color: get($bg, 'focus', 1);
+            }
+            &__actions {
+                background-color: get($bg, 'focus', 1);
+                > .block__icon {
+                    @include color-change('focus');
+                    @include item-focus(true);
+                    &:has(.ft__primary) {
+                        svg {
+                            color: get($text, 'focus');
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

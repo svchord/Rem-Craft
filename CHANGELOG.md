@@ -1,6 +1,15 @@
 # 版本日志 | Changelog 
 
 
+### [2.6.6](https://github.com/svchord/Rem-Craft/compare/v2.6.5...v2.6.6) (2023-04-18)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容新版设置界面 ([7f7d465](https://github.com/svchord/Rem-Craft/commit/7f7d465d140513aa69ef135703e8e433c8d33d2c))
+* :bug: 修复悬浮窗内块滚动条的样式 ([e8fdedb](https://github.com/svchord/Rem-Craft/commit/e8fdedbe00d5081586d865b0474f49116a98a844))
+* :bug: 优化快捷键设置页面的样式 ([fd1e375](https://github.com/svchord/Rem-Craft/commit/fd1e3751627a89b631191fd6994e8928e7eb1f4b))
+
 ### [2.6.5](https://github.com/svchord/Rem-Craft/compare/v2.6.4...v2.6.5) (2023-04-11)
 
 

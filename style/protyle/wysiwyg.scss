@@ -71,10 +71,11 @@ $item-pad: 3px 2px;
     }
 
     &-scroll {
+        right: 25px !important;
         &__bar {
             opacity: 0.3;
-            right: -89px !important;
             transition: get($transition, 'all');
+            transform: translateX(-7px) rotate(90deg);
             &:hover {
                 opacity: 1;
             }

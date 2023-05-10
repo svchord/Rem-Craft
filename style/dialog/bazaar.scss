@@ -4,11 +4,10 @@
     width: calc(50% - 18px);
     margin: 16px 0 0 16px;
     min-width: 342px;
-    border: none;
-    // border-color: get($border, 3);
+    border-color: get($border, 3);
     padding: 16px 0 16px 16px;
-    box-shadow: get($shadow, 0);
-    // box-shadow: none;
+    // box-shadow: get($shadow, 0);
+    box-shadow: none;
     transition: get($transition, 'all');
     border-radius: get($radius, 'medium');
 
@@ -90,21 +89,13 @@
                 width: auto;
                 @include item-unchange('pop', $important: true);
                 font-size: 13px;
-                // background-color: transparent !important;
             }
-            // @include icon-btn('pop', get($component-size, 'base'), 12px, true);
-            //             &:has(.ft__primary) {
-            //                 @include item('focus', 0, true);
-            //                 &:hover svg {
-            //                     color: get($text, 'focus');
-            //                     transition: get($transition, 'all');
-            //                 }
-            //             }
         }
     }
 
     &--current {
         @include item-unchange('focus');
+        border-color: get($bg, 'focus', 1);
         .b3-card {
             &__info {
                 background-color: get($bg, 'focus', 1);

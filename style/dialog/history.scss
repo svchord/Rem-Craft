@@ -26,6 +26,7 @@ $padding: 16px;
     @include bar();
     border-bottom: $fn-border;
     .item {
+        min-width: unset !important;
         &__text {
             margin-left: 0;
         }
@@ -55,8 +56,10 @@ $padding: 16px;
 
 // 文档历史界面 && 数据快照界面公共样式
 .history__repo {
-    .history__repoheader {
+    background-color: get($bg, 'page', 1);
+    > div:first-child {
         @include bar();
+        padding: 8px 0;
 
         .block__icon {
             @include page-btn();

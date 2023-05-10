@@ -59,6 +59,9 @@ $search-h: 42px;
             .b3-list-item {
                 margin-bottom: 8px;
                 @include item('base');
+                &__graphic{
+                    padding: 3px;
+                }
                 &--focus {
                     @include focus-before(math.div(list.$item-h - 16px, 2), 0px);
                     @include item('base', 2, $important: true);

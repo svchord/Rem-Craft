@@ -83,6 +83,7 @@ $padding: $fn-space;
     &__logo {
         font-weight: 700;
         color: get($text, 'primary');
+        min-width: 74px;
         svg {
             @include svg(get($icon, 'small'));
             margin: 0 $padding;

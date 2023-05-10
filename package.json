@@ -22,7 +22,7 @@
     "devDependencies": {
         "commitizen": "^4.3.0",
         "cz-git": "^1.6.1",
-        "sass": "^1.61.0",
+        "sass": "^1.62.1",
         "standard-version": "^9.5.0"
     }
 }

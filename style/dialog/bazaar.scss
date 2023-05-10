@@ -1,18 +1,25 @@
 @use '../common' as *;
 
 @mixin card {
-    box-shadow: get($shadow, 1);
-    border-radius: get($radius, 'large');
+    width: calc(50% - 18px);
+    margin: 16px 0 0 16px;
+    min-width: 342px;
+    border: none;
+    // border-color: get($border, 3);
+    padding: 16px 0 16px 16px;
+    box-shadow: get($shadow, 0);
+    // box-shadow: none;
     transition: get($transition, 'all');
+    border-radius: get($radius, 'medium');
 
     &:hover {
-        box-shadow: get($shadow, 2);
+        box-shadow: get($shadow, 1);
         transform: translateY(-2px);
     }
 }
 
 .config__tab-container[data-name='bazaar'] {
-    padding:24px 8px !important;
+    padding: 24px 8px !important;
     //集市tab
     .layout-tab-bar {
         padding: 0px 16px 8px;
@@ -23,6 +30,17 @@
         .item__text {
             margin-left: 0;
         }
+    }
+}
+
+#configBazaarDownloaded {
+    display: flex;
+    flex-wrap: wrap;
+    [style*='837px'] {
+        width: 100%;
+    }
+    &:has(.b3-list--empty) {
+        margin-top: 16px;
     }
 }
 
@@ -45,62 +63,58 @@
 
 //集市卡片
 .b3-card {
-    $mar-lr: 12px;
     @include item-unchange('pop');
     @include card();
 
     &__img {
-        margin: 16px $mar-lr 8px;
-        width: calc(100% - $mar-lr * 2);
-        border-radius: get($radius, 'large');
-        // opacity: 0.9;
-
+        border-radius: get($radius, 'small');
+        width: 80px;
+        height: 80px;
         img {
-            object-fit: cover;
-            border-radius: get($radius, 'base');
+            border-radius: get($radius, 'small');
         }
     }
-
     &__info {
-        padding: 8px 16px 0px;
-
-        .svg {
-            @include svg(get($icon, 'small'));
-            margin-top: 3.5px;
+        padding: 0 16px 0px;
+        .ft__smaller.ft__on-surface:last-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 
     &__actions {
-        height: get($component-size, 'base') + $fn-space * 2;
-        padding: $fn-space;
-
+        padding: 0px 16px;
+        height: 24px;
         > .block__icon {
-            @include icon-btn('pop', get($component-size, 'base'), 12px, true);
-            &:has(.ft__primary) {
-                @include item('focus', 0, true);
-                &:hover svg {
-                    color: get($text, 'focus');
-                    transition: get($transition, 'all');
-                }
+            &.ft__primary {
+                width: auto;
+                @include item-unchange('pop', $important: true);
+                font-size: 13px;
+                // background-color: transparent !important;
             }
+            // @include icon-btn('pop', get($component-size, 'base'), 12px, true);
+            //             &:has(.ft__primary) {
+            //                 @include item('focus', 0, true);
+            //                 &:hover svg {
+            //                     color: get($text, 'focus');
+            //                     transition: get($transition, 'all');
+            //                 }
+            //             }
         }
     }
 
     &--current {
+        @include item-unchange('focus');
         .b3-card {
             &__info {
                 background-color: get($bg, 'focus', 1);
             }
             &__actions {
                 background-color: get($bg, 'focus', 1);
+
                 > .block__icon {
                     @include color-change('focus');
                     @include item-focus(true);
-                    &:has(.ft__primary) {
-                        svg {
-                            color: get($text, 'focus');
-                        }
-                    }
                 }
             }
         }

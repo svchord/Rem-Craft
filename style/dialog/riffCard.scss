@@ -3,32 +3,27 @@
 @use 'small';
 
 @mixin header() {
-    .b3-form__space--small {
-        @include history.bar();
-        padding-right: 48px;
-        .fn__flex-center {
-            @include v-center(28px);
-        }
-        .block__icon {
-            @include history.page-btn();
-        }
+    .fn__flex-center {
+        @include v-center(28px);
     }
-    .b3-dialog__close {
-        @include small.close();
-        display: block;
-        top: 18px;
+    .fn__space {
+        width: 8px;
+    }
+    .counter {
+        @include counter(24px);
     }
 }
 
 .b3-dialog {
     &__container {
-        // 闪卡使用界面
-        &:has(.card__block) {
-            @include header();
-            width: 50vw !important;
-        }
+        // 闪卡管理界面
         &:has(#cardPreview) {
-            @include header();
+            .block__icons {
+                @include history.bar();
+                @include header();
+                height: 61px;
+                font-size: 14px;
+            }
             // width: 80vw !important;
             .fn__flex-column[style*='100%'] {
                 > .fn__flex:last-child {
@@ -43,30 +38,39 @@
             }
         }
     }
-    // 闪卡使用界面
-    .card {
-        &__block {
-            padding: 8px 12px;
-        }
-        &__action {
-            padding: 16px;
-            > .b3-button {
-                display: flex;
-                height: 36px;
-                line-height: 12px;
-                > svg {
-                    margin: auto 8px;
-                }
-            }
+}
 
-            > div:not(.b3-button) {
-                &:not(:last-child) {
-                    margin-right: 16px;
-                }
-                .b3-button {
-                    width: 100%;
-                    height: auto;
-                }
+// 闪卡使用界面
+.card {
+    &__main {
+        background-color: get($bg, 'page', 1);
+        border-radius: small.$small-radius;
+        .block__icons {
+            @include header();
+            border-radius: small.$small-radius small.$small-radius 0 0;
+            margin: 0;
+            border-bottom: $fn-border;
+        }
+    }
+    &__action {
+        padding: 16px;
+        background-color: get($bg, 'page', 1);
+        > .b3-button {
+            display: flex;
+            height: 36px;
+            line-height: 12px;
+            > svg {
+                margin: auto 8px;
+            }
+        }
+
+        > div:not(.b3-button) {
+            &:not(:last-child) {
+                margin-right: 16px;
+            }
+            .b3-button {
+                width: 100%;
+                height: auto;
             }
         }
     }

@@ -12,7 +12,8 @@
         }
     }
     .b3-dialog__close {
-        @include small.close();
+        display: none;
+        // @include small.close();
     }
     .b3-dialog__action {
         @include snippets.medium-actions();

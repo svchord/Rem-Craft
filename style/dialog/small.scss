@@ -11,10 +11,9 @@ $padding: 24px;
 $meta-w: 80px;
 
 $small-radius: big.$dialog-radius;
+$space: 3%;
 
 @mixin actions {
-    $space: 3%;
-
     .fn__space {
         width: $space;
     }
@@ -33,20 +32,20 @@ $small-radius: big.$dialog-radius;
     }
 }
 
-@mixin close {
-    @include item-close();
-    @include component();
-    @include svg($w, 8px);
-    background-color: get($bg, 'page', 2);
-    top: $spacing;
-    right: $spacing;
-}
+// @mixin close {
+//     @include item-close();
+//     @include component();
+//     @include svg($w, 16px);
+//     background-color: get($bg, 'page', 2);
+//     top: $spacing;
+//     right: $spacing;
+// }
 
 //小弹窗
 .b3-dialog__container {
     &[style*='50vw'],
     &[style*='520px'] {
-        width: 450px !important;
+        width: 520px !important;
         // padding: 0 16px;
 
         .b3-dialog {
@@ -76,64 +75,45 @@ $small-radius: big.$dialog-radius;
 
             //弹窗关闭按钮
             &__close {
-                @include close();
-            }
-
-            // 属性弹窗
-            &__content.custom-attr {
-                padding: 16px $padding;
-
-                // 书签右侧按钮 && 自定义属性删除按钮
-                .block__icon {
-                    @include svg-div(get($component-size, 'base'), 10px, $important: true);
-                }
-
-                // 属性名
-                .ft__on-surface,
-                .b3-text-field[placeholder='属性名'] {
-                    font-size: get($font-size, 'base');
-                    width: $meta-w !important;
-                    text-align: center !important;
-
-                    // 属性名和输入框的间隔
-                    + .fn__space {
-                        width: 16px;
-                    }
-                }
-
-                textarea {
-                    line-height: 18px;
-                }
-
-                // 属性弹窗第二条分割线
-                div[style*='var(--b3-border-color)'] {
-                    height: 0 !important;
-                    background-color: transparent !important;
-                    border-bottom: $fn-border;
-                }
-
-                // 自定义属性区域
-                .custom-attr__add {
-                    padding: 0;
-                    height: get($component-size, 'base') * 4 + 16px * 3;
-
-                    // 自定义属性添加按钮
-                    .b3-button {
-                        width: $meta-w !important;
-                    }
-                }
+                display: none;
+                // @include close();
             }
 
             // 弹窗底部按钮
             &__action {
                 padding: $padding $padding - $mar;
                 margin: 0 $mar;
-
-                // padding: $padding 24px;
-                // border: none;
-                // background-color: get($bg, "base", 1);
-                // border-radius: 0 0 $small-radius $small-radius;
                 @include actions();
+            }
+        }
+
+        // 属性弹窗
+        .custom-attr {
+            padding: 16px $padding;
+
+            .b3-label {
+                padding: 0;
+                margin: 0 0 24px;
+                font-size: get($font-size, 'base');
+            }
+
+            + .b3-dialog__action .b3-button {
+                width: math.div(100% - $space * 2, 3);
+            }
+
+            textarea {
+                line-height: 18px;
+            }
+
+            // 自定义属性区域
+            .custom-attr__add {
+                padding: 0;
+                height: get($component-size, 'base') * 4 + 16px * 3;
+
+                // 自定义属性添加按钮
+                .b3-button {
+                    width: $meta-w !important;
+                }
             }
         }
 

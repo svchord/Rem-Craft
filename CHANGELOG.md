@@ -1,6 +1,22 @@
 # 版本日志 | Changelog 
 
 
+### [2.6.7](https://github.com/svchord/Rem-Craft/compare/v2.6.6...v2.6.7) (2023-05-11)
+
+
+### ✏️ 文档更新 | Documentation
+
+* :memo: 更新Readme，增加英文Readme及集市icon ([6f43c71](https://github.com/svchord/Rem-Craft/commit/6f43c71b156f1f8b7c184447369ba7e10add02a3))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 兼容思源v2.8.7新集市样式 ([ae1318b](https://github.com/svchord/Rem-Craft/commit/ae1318bffc6b0e6be27c38d45f6d70564a8e7c72))
+* :bug: 修复闪卡使用和管理界面样式 ([71811df](https://github.com/svchord/Rem-Craft/commit/71811df875126c4b33f3bfd78acfad3327ae2ccb))
+* :bug: 修复属性弹窗的样式 ([ddbb061](https://github.com/svchord/Rem-Craft/commit/ddbb061ecfbd5fa0e94dc18ba36c295d181cd89a))
+* :bug: 修复数据历史菜单样式 ([af515b9](https://github.com/svchord/Rem-Craft/commit/af515b94a0d141ff21a627c3ec67a7269181fbb4))
+* :bug: 修复题头图标按钮组的样式问题 ([b570e9a](https://github.com/svchord/Rem-Craft/commit/b570e9abd2a6c24937048f22c77927a6c0a15bcb))
+
 ### [2.6.6](https://github.com/svchord/Rem-Craft/compare/v2.6.5...v2.6.6) (2023-04-18)
 
 

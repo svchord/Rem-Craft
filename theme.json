@@ -2,8 +2,11 @@
     "name": "Rem Craft",
     "author": "Seven Chor",
     "url": "https://github.com/svchord/Rem-Craft",
-    "version": "2.6.6",
-    "modes": ["dark", "light"],
+    "version": "2.6.7",
+    "modes": [
+        "dark",
+        "light"
+    ],
     "displayName": {
         "default": "瑞姆工艺",
         "zh_CN": "瑞姆工艺",
@@ -23,6 +26,8 @@
         "openCollective": "",
         "patreon": "",
         "github": "",
-        "custom": ["https://afdian.net/a/sevenchord"]
+        "custom": [
+            "https://afdian.net/a/sevenchord"
+        ]
     }
 }

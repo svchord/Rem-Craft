@@ -35,7 +35,7 @@
 #configBazaarDownloaded {
     display: flex;
     flex-wrap: wrap;
-    [style*='837px'] {
+    [style*='px'] {
         width: 100%;
     }
     &:has(.b3-list--empty) {

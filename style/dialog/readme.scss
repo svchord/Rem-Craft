@@ -15,7 +15,7 @@ $com-radius: get($radius, 'large');
         &__side {
             background-color: $com-bg;
             border-radius: $com-radius;
-            width: 320px;
+            width: 350px;
 
             // 按钮
             .b3-button {
@@ -31,6 +31,9 @@ $com-radius: get($radius, 'large');
             .svg {
                 @include svg(12px);
                 margin-top: 3px;
+            }
+            .block__icon.ft__primary {
+                @include item-unchange('page', $important: true);
             }
         }
 

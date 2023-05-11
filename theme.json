@@ -3,8 +3,26 @@
     "author": "Seven Chor",
     "url": "https://github.com/svchord/Rem-Craft",
     "version": "2.6.6",
-    "modes": [
-        "dark",
-        "light"
-    ]
+    "modes": ["dark", "light"],
+    "displayName": {
+        "default": "瑞姆工艺",
+        "zh_CN": "瑞姆工艺",
+        "en_US": "Rem Craft"
+    },
+    "description": {
+        "default": "一款现代化、扁平化设计的思源笔记主题",
+        "zh_CN": "一款现代化、扁平化设计的思源笔记主题",
+        "en_US": "A modern, flat design siyuan note theme"
+    },
+    "readme": {
+        "default": "README.md",
+        "zh_CN": "README.md",
+        "en_US": "README_en_US.md"
+    },
+    "funding": {
+        "openCollective": "",
+        "patreon": "",
+        "github": "",
+        "custom": ["https://afdian.net/a/sevenchord"]
+    }
 }

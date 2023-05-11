@@ -1,23 +1,37 @@
 name: Release
 
 on:
-  push:
-    tags:
-    - 'v*'
+    push:
+        tags:
+            - 'v*'
 
 jobs:
-  release:
-    name: Create Release
-    runs-on: ubuntu-latest
-    steps:
-    
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref }}
-        release_name: ${{ github.ref }}
-        draft: false
-        prerelease: false
+    release:
+        name: Create Release
+        runs-on: ubuntu-latest
+        steps:
+            # Archive package
+            - name: Archive package
+              uses: vimtor/action-zip@v1
+              with:
+                  files: app/ asset/ plugin/ script/ theme/ util/ icon.png index.js preview.png README_en_US.md README.md theme.css theme.js theme.json
+                  dest: package.zip
+
+            - name: Create Release
+              id: create_release
+              uses: actions/create-release@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  tag_name: ${{ github.ref }}
+                  release_name: ${{ github.ref }}
+                  draft: false
+                  prerelease: false
+
+            # Upload package to release
+            # https://github.com/philips-labs/terraform-aws-github-runner/blob/main/.github/workflows/release.yml#L46
+            - name: Upload package.zip to the release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  gh release upload ${{ steps.create_release.outputs.tag_name }} package.zip

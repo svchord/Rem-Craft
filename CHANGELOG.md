@@ -1,6 +1,13 @@
 # 版本日志 | Changelog 
 
 
+### [2.6.8](https://github.com/svchord/Rem-Craft/compare/v2.6.7...v2.6.8) (2023-05-17)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复新版readme界面样式 ([00d9a30](https://github.com/svchord/Rem-Craft/commit/00d9a30c657cee9ffae9215b1eeaf980261819f1))
+
 ### [2.6.7](https://github.com/svchord/Rem-Craft/compare/v2.6.6...v2.6.7) (2023-05-11)
 
 

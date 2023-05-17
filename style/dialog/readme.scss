@@ -6,9 +6,10 @@ $com-bg: get($bg, 'page', 1);
 $com-radius: get($radius, 'large');
 
 //集市Readme
-.config-bazaar__readme {
+#configBazaarReadme {
     background-color: get($bg, 'base', 1);
     border-radius: big.$dialog-radius;
+    padding: 16px;
 
     .item {
         // 侧栏
@@ -18,59 +19,38 @@ $com-radius: get($radius, 'large');
             width: 350px;
 
             // 按钮
-            .b3-button {
-                // 返回按钮
-                &--outline[data-type='goBack'] {
-                    $w: get($component-size, 'base');
-                    @include svg-div($w, 11px);
-                    @include item('page');
-                    margin: $fn-space;
-                    color: get($text, 'secondary');
+            .block__icon {
+                &[data-type='goBack'] {
+                    width: auto;
+                    margin-top: 16px;
+                    @include component-base();
                 }
-            }
-            .svg {
-                @include svg(12px);
-                margin-top: 3px;
-            }
-            .block__icon.ft__primary {
-                @include item-unchange('page', $important: true);
+                &.ft__primary {
+                    @include item-unchange('page', $important: true);
+                }
             }
         }
 
-        // 侧栏顶部标签
-        &__nav {
-            $h: get($component-size, 'small');
-            $margin: $fn-space + math.div(get($component-size, 'base') - $h, 2);
-
-            @include v-center($h);
-            width: auto;
-            margin: $margin 30%;
-            border-radius: get($radius, 'max');
-            box-shadow: get($shadow, 0);
-            font-size: get($font-size, 'small');
-            transform: translateX(0 - math.div(get($component-size, 'base') + 2 * $fn-space, 2))
-                translateY(0px);
+        // 预览图
+        &__preview {
+            border-radius: unset;
+            //             margin-bottom: 0;
         }
 
         // Readme主页
         &__main {
             background-color: $com-bg;
             border-radius: $com-radius;
-        }
-
-        // 预览图
-        &__preview {
-            border-radius: unset;
-            margin-bottom: 0;
-            &--fullscreen {
-                border-radius: big.$dialog-radius;
+            // Readme正文
+            .b3-typography {
+                // box-sizing: content-box;
+                padding: 0 96px;
             }
         }
 
-        // Readme正文
         &__readme {
-            box-sizing: content-box;
-            padding: 16px 96px 30vh;
+            margin-top: 0;
+            padding-bottom: 30vh;
         }
     }
 }

@@ -1,11 +1,7 @@
 @use '../common' as *;
 
 @mixin card {
-    width: calc(50% - 18px);
-    margin: 16px 0 0 16px;
-    min-width: 342px;
     border-color: get($border, 3);
-    padding: 16px 0 16px 16px;
     // box-shadow: get($shadow, 0);
     box-shadow: none;
     transition: get($transition, 'all');
@@ -35,6 +31,11 @@
 #configBazaarDownloaded {
     display: flex;
     flex-wrap: wrap;
+    .b3-card {
+        width: calc(50% - 16px);
+        min-width: 342px;
+        margin: 16px 0 0 16px;
+    }
     [style*='px'] {
         width: 100%;
     }
@@ -66,24 +67,21 @@
     @include card();
 
     &__img {
-        border-radius: get($radius, 'small');
-        width: 80px;
-        height: 80px;
+        // border-radius: get($radius, 'small');
         img {
-            border-radius: get($radius, 'small');
+            width: 80px;
+            height: 80px;
+            // border-radius: get($radius, 'small');
         }
     }
     &__info {
-        padding: 0 16px 0px;
-        .ft__smaller.ft__on-surface:last-child {
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .b3-card__desc {
+            -webkit-line-clamp: 1;
         }
     }
 
     &__actions {
-        padding: 0px 16px;
-        height: 24px;
+        // padding-bottom: 16px;
         > .block__icon {
             @include item('pop', $important: true);
             &.ft__primary {
@@ -107,6 +105,9 @@
                 > .block__icon {
                     @include color-change('focus');
                     @include item-focus(true);
+                    &.ft__primary {
+                        @include item-unchange('focus', $important: true);
+                    }
                 }
             }
         }

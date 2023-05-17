@@ -14,7 +14,7 @@ jobs:
 
             - name: Package
               run: |
-                  zip package.zip app/* asset/* plugin/* script/* theme/* util/* icon.png index.js preview.png README_en_US.md README.md theme.css theme.js theme.json
+                  zip -r package.zip app asset plugin script theme util icon.png index.js preview.png README_en_US.md README.md theme.css theme.js theme.json
 
             - name: Release
               uses: ncipollo/release-action@v1

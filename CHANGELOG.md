@@ -1,6 +1,8 @@
 # 版本日志 | Changelog 
 
 
+### [2.6.9](https://github.com/svchord/Rem-Craft/compare/v2.6.8...v2.6.9) (2023-05-17)
+
 ### [2.6.8](https://github.com/svchord/Rem-Craft/compare/v2.6.7...v2.6.8) (2023-05-17)
 
 

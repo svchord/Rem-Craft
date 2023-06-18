@@ -1,6 +1,14 @@
 # 版本日志 | Changelog 
 
 
+### [2.6.11](https://github.com/svchord/Rem-Craft/compare/v2.6.10...v2.6.11) (2023-06-18)
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复段间距的问题 ([f5d468a](https://github.com/svchord/Rem-Craft/commit/f5d468a370c0f952c630650d9678566f7e710508))
+* :bug: 修复块菜单样式 ([8a8e6be](https://github.com/svchord/Rem-Craft/commit/8a8e6be488325eede2b6942e348fcc35e63b37c7))
+
 ### [2.6.10](https://github.com/svchord/Rem-Craft/compare/v2.6.9...v2.6.10) (2023-05-17)
 
 ### [2.6.9](https://github.com/svchord/Rem-Craft/compare/v2.6.8...v2.6.9) (2023-05-17)

@@ -1,6 +1,20 @@
 # 版本日志 | Changelog 
 
 
+### [2.6.12](https://github.com/svchord/Rem-Craft/compare/v2.6.11...v2.6.12) (2023-07-09)
+
+
+### 📦‍ 构建相关 | Build System
+
+* :package: 更新依赖 ([e6c7db4](https://github.com/svchord/Rem-Craft/commit/e6c7db486baa211c83a20a47c28c7f926edb3706))
+
+
+### 🐛 修复缺陷 | Bug Fixes
+
+* :bug: 修复设置菜单相关样式 ([a232156](https://github.com/svchord/Rem-Craft/commit/a232156b82881d822a516627d116fe729fbf69ab))
+* :bug: 修复题头图按钮位置问题 ([fa89c4a](https://github.com/svchord/Rem-Craft/commit/fa89c4a236596ceb4d20736fe1632faedefef88c)), closes [#132](https://github.com/svchord/Rem-Craft/issues/132)
+* :bug: 修复新窗口标签页的样式问题 ([6919037](https://github.com/svchord/Rem-Craft/commit/6919037e831ec9e1736d937585199e3a042c0897))
+
 ### [2.6.11](https://github.com/svchord/Rem-Craft/compare/v2.6.10...v2.6.11) (2023-06-18)
 
 

@@ -1,115 +1,129 @@
 @use '../common' as *;
 
 @mixin card {
-    border-color: get($border, 3);
-    // box-shadow: get($shadow, 0);
-    box-shadow: none;
-    transition: get($transition, 'all');
-    border-radius: get($radius, 'medium');
+  border: 1px solid get($border, 3);
+  // box-shadow: get($shadow, 0);
+  box-shadow: none;
+  transition: get($transition, 'all');
+  border-radius: get($radius, 'medium');
 
-    &:hover {
-        box-shadow: get($shadow, 1);
-        transform: translateY(-2px);
-    }
+  &:hover {
+    box-shadow: get($shadow, 1);
+    transform: translateY(-2px);
+  }
 }
 
 .config__tab-container[data-name='bazaar'] {
-    padding: 24px 8px !important;
-    //集市tab
-    .layout-tab-bar {
-        padding: 0px 16px 8px;
+  padding: 24px 8px !important;
+  //集市tab
+  .layout-tab-bar {
+    padding: 0px 16px 8px;
 
-        &[style*='border'] {
-            padding: 8px;
-        }
-        .item__text {
-            margin-left: 0;
-        }
+    &[style*='border'] {
+      padding: 8px;
     }
+
+    .item__text {
+      margin-left: 0;
+    }
+  }
 }
 
 #configBazaarDownloaded {
-    display: flex;
-    flex-wrap: wrap;
-    .b3-card {
-        width: calc(50% - 16px);
-        min-width: 342px;
-        margin: 16px 0 0 16px;
-    }
-    [style*='px'] {
-        width: 100%;
-    }
-    &:has(.b3-list--empty) {
-        margin-top: 16px;
-    }
+  display: flex;
+  flex-wrap: wrap;
+
+  > .fn__flex:first-child {
+    width: 100%;
+  }
+
+  .b3-card {
+    width: calc(50% - 16px);
+    min-width: 342px;
+    margin: 16px 0 0 16px;
+  }
+
+  //[style*='px'] {
+  //    width: 100%;
+  //}
+  &:has(.b3-list--empty) {
+    margin-top: 16px;
+  }
 }
 
 .bazaarPanel {
-    // 筛选图标
-    > .fn__flex > .svg {
-        margin-left: 4px;
+  // 筛选图标
+  > .fn__flex > .svg {
+    margin-left: 4px;
+  }
+
+  // 已下载
+  &[data-type='downloaded'] {
+    > .fn__flex .b3-button {
+      width: 72px;
+      @include item-focus();
+
+      &.b3-button--outline {
+        @include item('page');
+      }
     }
-    // 已下载
-    &[data-type='downloaded'] {
-        > .fn__flex .b3-button {
-            width: 72px;
-            @include item-focus();
-            &.b3-button--outline {
-                @include item('page');
-            }
-        }
-    }
+  }
 }
 
 //集市卡片
 .b3-card {
-    @include item-unchange('pop');
-    @include card();
+  @include item-unchange('pop');
+  @include card();
 
-    &__img {
-        // border-radius: get($radius, 'small');
-        img {
-            width: 80px;
-            height: 80px;
-            // border-radius: get($radius, 'small');
-        }
+  &__img {
+    // border-radius: get($radius, 'small');
+    img {
+      width: 80px;
+      height: 80px;
+      // border-radius: get($radius, 'small');
     }
-    &__info {
-        .b3-card__desc {
-            -webkit-line-clamp: 1;
-        }
-    }
+  }
 
-    &__actions {
-        // padding-bottom: 16px;
+  &__info {
+    .b3-card__desc {
+      -webkit-line-clamp: 1;
+    }
+  }
+
+  &__actions {
+    // padding-bottom: 16px;
+    > .block__icon {
+      @include item('pop', $important: true);
+
+      &.ft__primary {
+        width: auto;
+        @include item-unchange('pop', $important: true);
+        font-size: 13px;
+      }
+    }
+  }
+
+  &--current {
+    @include item-unchange('focus');
+    border-color: get($bg, 'focus', 1);
+
+    .b3-card {
+      &__info {
+        background-color: get($bg, 'focus', 1);
+      }
+
+      &__actions {
+        background-color: get($bg, 'focus', 1);
+
         > .block__icon {
-            @include item('pop', $important: true);
-            &.ft__primary {
-                width: auto;
-                @include item-unchange('pop', $important: true);
-                font-size: 13px;
-            }
-        }
-    }
+          @include color-change('focus');
+          @include item-focus(true);
 
-    &--current {
-        @include item-unchange('focus');
-        border-color: get($bg, 'focus', 1);
-        .b3-card {
-            &__info {
-                background-color: get($bg, 'focus', 1);
-            }
-            &__actions {
-                background-color: get($bg, 'focus', 1);
-
-                > .block__icon {
-                    @include color-change('focus');
-                    @include item-focus(true);
-                    &.ft__primary {
-                        @include item-unchange('focus', $important: true);
-                    }
-                }
-            }
+          &.ft__primary {
+            @include item-unchange('focus', $important: true);
+          }
         }
+      }
     }
+  }
 }

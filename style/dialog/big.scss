@@ -13,95 +13,106 @@ $large-width: 66vw;
 $search-h: 42px;
 
 :root {
-    /* 遮罩 */
-    --b3-mask-background: #{$dialog-scrim};
+  /* 遮罩 */
+  --b3-mask-background: #{$dialog-scrim};
 }
 
 //弹窗
 //蒙版
 .b3-dialog__scrim {
-    -webkit-app-region: no-drag;
-    background-color: $dialog-scrim;
+  -webkit-app-region: no-drag;
+  background-color: $dialog-scrim;
 }
 
 //大弹窗
 .b3-dialog__container {
-    box-shadow: get($shadow, 3);
+  box-shadow: get($shadow, 3);
+  border-radius: $dialog-radius;
+  background-color: get($bg, 'page', 1);
+
+  &[style*='80vw'],
+  &[style*='90vw'] {
+    // width: $large-width !important;
+
+    // 弹窗关闭按钮
+    .b3-dialog__close {
+      display: none;
+    }
+
+    .b3-dialog__header {
+      border-color: get($border, 3);
+    }
+  }
+
+  // 笔记本设置界面
+  &:has(#dailyNoteSavePath) {
+    width: 45vw !important;
+  }
+
+  .config__panel {
+    background-color: get($bg, 'base', 1);
     border-radius: $dialog-radius;
-    background-color: get($bg, 'page', 1);
 
-    &[style*='80vw'],
-    &[style*='90vw'] {
-        // width: $large-width !important;
+    > .b3-tab-bar {
+      padding: 24px 16px;
+      width: 320px;
 
-        // 弹窗关闭按钮
-        .b3-dialog__close {
-            display: none;
+      .b3-list-item {
+        margin-bottom: 8px;
+        @include item('base');
+
+        &__graphic {
+          padding: 3px;
         }
 
-        .b3-dialog__header {
-            border-color: get($border, 3);
+        &--focus {
+          @include focus-before(math.div(list.$item-h - 16px, 2), 0px);
+          @include item('base', 2, $important: true);
+
+          .b3-list-item__text,
+          .b3-list-item__graphic {
+            color: get($text, 'primary') !important;
+          }
         }
+      }
+
+      > .b3-form__icon {
+        @include form.search-input(32px, 1px);
+
+        .b3-text-field.b3-form__icon-input {
+          @include item-unchange('page', $important: true);
+        }
+
+        margin: 0 0 16px;
+      }
+
+      &::before {
+        display: block;
+        content: '设置';
+        font-size: 16px;
+        margin-bottom: 16px;
+        padding-left: 4px;
+      }
     }
+  }
 
-    // 笔记本设置界面
-    &:has(#dailyNoteSavePath) {
-        width: 45vw !important;
+
+  .config__tab-container {
+    padding: 24px 0;
+    border-radius: 0 $dialog-radius $dialog-radius 0;
+
+    .layout-tab-bar {
+      padding: 0px 16px 8px;
     }
+  }
 
-    .config__panel {
-        background-color: get($bg, 'base', 1);
-        border-radius: $dialog-radius;
-
-        > .b3-tab-bar {
-            padding: 24px 16px;
-            width: 250px;
-            .b3-list-item {
-                margin-bottom: 8px;
-                @include item('base');
-                &__graphic{
-                    padding: 3px;
-                }
-                &--focus {
-                    @include focus-before(math.div(list.$item-h - 16px, 2), 0px);
-                    @include item('base', 2, $important: true);
-                    .b3-list-item__text,
-                    .b3-list-item__graphic {
-                        color: get($text, 'primary') !important;
-                    }
-                }
-            }
-            > .b3-form__icon {
-                @include form.search-input(32px, 1px);
-                .b3-text-field.b3-form__icon-input {
-                    @include item-unchange('page', $important: true);
-                }
-                margin: 0 0 16px;
-            }
-            &::before {
-                display: block;
-                content: '设置';
-                font-size: 16px;
-                margin-bottom: 16px;
-                padding-left: 4px;
-            }
-        }
-        > .config__tab-container {
-            padding: 24px 0;
-            border-radius: 0 $dialog-radius $dialog-radius 0;
-            .layout-tab-bar {
-                padding: 0px 16px 8px;
-            }
-        }
-
-        //label
-        .b3-label {
-            // 搜索筛选设置
-            .config-query {
-                label {
-                    margin-top: 8px;
-                }
-            }
-        }
+  //label
+  .b3-label {
+    // 搜索筛选设置
+    .config-query {
+      label {
+        margin-top: 8px;
+      }
     }
+  }
 }

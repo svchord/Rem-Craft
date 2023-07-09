@@ -13,193 +13,201 @@ $btn-top-l: 32px;
 
 // 按钮组
 @mixin btns($h: $btn-h, $type: 'placeholder', $fz: 14px) {
-    height: $h;
-    transition: get($transition, 'fade');
-    .protyle-icon {
-        @include item('page');
-        @include component();
-        @include v-center($h);
-        @include icons.btn-text($h, $type, $fz, 12px);
-        color: get($text, $type);
-        font-size: $fz;
-        padding: 0 8px;
-    }
+  height: $h;
+  transition: get($transition, 'fade');
+  .protyle-icon {
+    @include item('page');
+    @include component();
+    @include v-center($h);
+    @include icons.btn-text($h, $type, $fz, 12px);
+    color: get($text, $type);
+    font-size: $fz;
+    padding: 0 8px;
+  }
 }
 
 .protyle-background {
-    // 无题头图，无emoji
-    min-height: $btn-top-l + $btns-h !important;
-    box-sizing: content-box;
-    margin: 0;
-    padding: 0;
+  // 无题头图，无emoji
+  min-height: $btn-top-l + $btns-h !important;
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
 
-    // 文档icon + 题头按钮组
-    &__iconw {
-        height: 0;
-        top: $btn-top-l;
-        display: block;
+  // 文档icon + 题头按钮组
+  &__iconw {
+    height: 0;
+    top: $btn-top-l;
+    display: block;
 
-        // 题头按钮组
-        .protyle-icons {
-            @include btns();
-            margin: $btn-top 0 0 -1px;
-            .protyle-icon:nth-child(2)::after {
-                content: '随机图标';
-            }
-        }
+    // 题头按钮组
+    .protyle-icons {
+      @include btns();
+      margin: $btn-top 0 0 -1px;
+
+      .protyle-icon:nth-child(2)::after {
+        content: '随机图标';
+      }
     }
+  }
+
+  &:hover {
+    .protyle-background__iconw .protyle-icons {
+      opacity: 1;
+    }
+  }
+
+  // 无题头图，有emoji
+  &[style*="56px"],
+  &[style*="64px"],
+  &[style*="92px"],
+    // 有文档标签
+  &[style*="96px"],
+  &[style*="100px"] {
+    min-height: $icon-top + $icon-h + $btns-h !important;
+
+    .protyle-background__iconw {
+      top: $icon-top;
+      // // 题头按钮组
+      .protyle-icons {
+        margin-top: $btn-top;
+      }
+    }
+  }
+
+  // 有题头图
+  &[style*='30vh'] {
+    min-height: 30vh !important;
+    border-bottom: $icon-h - $icon-minus-top + $btns-h solid transparent;
+
+    // 有题头图，有emoji
+    .protyle-background__iconw {
+      top: calc(30vh - $icon-minus-top);
+
+      .protyle-background__icon:not(.fn__none) + .protyle-icons {
+        margin-top: 8px;
+      }
+
+      //有题头图，无emoji
+      .protyle-background__icon.fn__none + .protyle-icons {
+        margin-top: $icon-h + 8px;
+      }
+    }
+  }
+
+  //题头图
+  &__img {
+    .protyle-icons {
+      @include btns(26px, 'secondary', 12px);
+      box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px, rgb(15 15 15 / 10%) 0px 2px 4px;
+
+      // 题头图按钮
+      .protyle-icon {
+        border-radius: unset;
+        @include icons.action();
+
+        svg {
+          width: 10px;
+        }
+
+        &:first-child {
+          input {
+            width: 100% !important;
+          }
+        }
+
+        &:not(:last-child) {
+          border-right: $fn-border;
+        }
+
+        &:nth-child(4)::after {
+          content: '调整';
+        }
+      }
+
+      // 拖动图片按钮组
+      &[style*='opacity'] {
+        opacity: 1 !important;
+      }
+
+      // 拖动图片提示条
+      &:nth-child(3) {
+        $h: 25.2px;
+        height: $h;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 1 !important;
+
+        .protyle-icon {
+          @include v-center($h);
+          background-color: transparent;
+          color: get($text, 'anti');
+          padding: 0em 18px;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    &:hover .protyle-icons {
+      opacity: 1 !important;
+    }
+  }
+
+  //题头emoji
+  &__icon {
+    @include emoji-icon($icon-h, 54px, $icon-h);
+    border-radius: get($radius, 'base');
+    margin-left: 3px;
 
     &:hover {
-        .protyle-background__iconw .protyle-icons {
-            opacity: 1;
-        }
+      background-color: rgba(var(--gray-5), 0.4);
     }
 
-    // 无题头图，有emoji
-    &[style*="56px"],
-    &[style*="64px"],
-    &[style*="92px"],
-    // 有文档标签
-    &[style*="96px"],
-    &[style*="100px"] {
-        min-height: $icon-top + $icon-h + $btns-h !important;
-        .protyle-background__iconw {
-            top: $icon-top;
-            // // 题头按钮组
-            .protyle-icons {
-                margin-top: $btn-top;
-            }
-        }
+    &:active {
+      background-color: rgba(var(--gray-5), 0.8);
     }
+  }
 
-    // 有题头图
-    &[style*='30vh'] {
-        min-height: 30vh !important;
-        border-bottom: $icon-h - $icon-minus-top + $btns-h solid transparent;
+  // 文档标签
+  &__tags {
+    .item {
+      @include component('small');
+      padding: 4px 12px;
+      border-radius: get($radius, 'max');
+      transition: padding opacity get($transition-duration, 'base') get($transition-function, 'fast');
+      box-shadow: get($shadow, 1);
 
-        // 有题头图，有emoji
-        .protyle-background__iconw {
-            top: calc(30vh - $icon-minus-top);
+      $w: get($component-size, 'exsmall');
+      $spacing: math.div(get($component-size, 'small') - $w, 2);
 
-            //有题头图，无emoji
-            .protyle-background__icon.fn__none + .protyle-icons {
-                margin-top: $icon-h + 8px;
-            }
+      &:hover {
+        padding-right: $w + $spacing;
+      }
+
+      svg {
+        @include svg($w, 8px);
+        top: $spacing;
+        right: $spacing;
+        background-color: transparent !important;
+      }
+
+      $types: (
+              0: 'success',
+              1: 'info',
+              2: 'warning',
+              3: 'error',
+      );
+
+      @each $i, $type in $types {
+        &--#{$i}:hover {
+          color: get($color, $type, 'base');
+
+          svg {
+            color: get($color, $type, 'base');
+          }
         }
+      }
     }
-
-    //题头图
-    &__img {
-        .protyle-icons {
-            @include btns(26px, 'secondary', 12px);
-            box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px, rgb(15 15 15 / 10%) 0px 2px 4px;
-
-            // 题头图按钮
-            .protyle-icon {
-                border-radius: unset;
-                @include icons.action();
-
-                svg {
-                    width: 10px;
-                }
-
-                &:first-child {
-                    input {
-                        width: 100% !important;
-                    }
-                }
-
-                &:not(:last-child) {
-                    border-right: $fn-border;
-                }
-
-                &:nth-child(4)::after {
-                    content: '调整';
-                }
-            }
-
-            // 拖动图片按钮组
-            &[style*='opacity'] {
-                opacity: 1 !important;
-            }
-
-            // 拖动图片提示条
-            &:nth-child(3) {
-                $h: 25.2px;
-                height: $h;
-                background: rgba(0, 0, 0, 0.4);
-                opacity: 1 !important;
-
-                .protyle-icon {
-                    @include v-center($h);
-                    background-color: transparent;
-                    color: get($text, 'anti');
-                    padding: 0em 18px;
-
-                    &:hover {
-                        background-color: transparent;
-                    }
-                }
-            }
-        }
-
-        &:hover .protyle-icons {
-            opacity: 1 !important;
-        }
-    }
-
-    //题头emoji
-    &__icon {
-        @include emoji-icon($icon-h, 54px, $icon-h);
-        border-radius: get($radius, 'base');
-        margin-left: 3px;
-
-        &:hover {
-            background-color: rgba(var(--gray-5), 0.4);
-        }
-        &:active {
-            background-color: rgba(var(--gray-5), 0.8);
-        }
-    }
-
-    // 文档标签
-    &__tags {
-        .item {
-            @include component('small');
-            padding: 4px 12px;
-            border-radius: get($radius, 'max');
-            transition: padding opacity get($transition-duration, 'base')
-                get($transition-function, 'fast');
-            box-shadow: get($shadow, 1);
-
-            $w: get($component-size, 'exsmall');
-            $spacing: math.div(get($component-size, 'small') - $w, 2);
-            &:hover {
-                padding-right: $w + $spacing;
-            }
-
-            svg {
-                @include svg($w, 8px);
-                top: $spacing;
-                right: $spacing;
-                background-color: transparent !important;
-            }
-
-            $types: (
-                0: 'success',
-                1: 'info',
-                2: 'warning',
-                3: 'error',
-            );
-
-            @each $i, $type in $types {
-                &--#{$i}:hover {
-                    color: get($color, $type, 'base');
-                    svg {
-                        color: get($color, $type, 'base');
-                    }
-                }
-            }
-        }
-    }
+  }
 }

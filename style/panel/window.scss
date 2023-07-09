@@ -2,12 +2,6 @@
 @use '../layout/top-bar';
 
 body.body--window {
-    .layout-tab-bar {
-        opacity: 1 !important;
-        &--readonly {
-            padding-right: top-bar.$win-control-w * 4 !important;
-        }
-    }
     .toolbar__window {
         @include top-bar.win-controls();
         -webkit-app-region: no-drag;

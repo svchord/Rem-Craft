@@ -191,5 +191,7 @@ export function tabBarMain() {
   if (config.plugin.tabBar) {
     barLeft = new TabBar('left');
     barRight = new TabBar('right');
+    barLeft.resetMargin();
+    barRight.resetMargin();
   }
 }
